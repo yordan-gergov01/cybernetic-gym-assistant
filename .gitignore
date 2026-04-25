@@ -1,0 +1,76 @@
+# Environment & Secrets
+.env
+.env.local
+.env.production
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+eggs/
+*.egg-info/
+.eggs/
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+.conda/
+
+# Data 
+data/raw/
+data/processed/
+data/vectorstore/
+*.pdf
+*.xlsx
+*.docx
+*.csv
+
+# FAISS indexes
+*.index
+*.faiss
+
+# Model Cache
+.cache/
+models/
+*.bin
+*.safetensors
+*.gguf
+
+# Logs
+*.log
+logs/
+.loguru/
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.cursor/
+
+
+# Frontend
+frontend/node_modules/
+frontend/build/
+frontend/dist/
