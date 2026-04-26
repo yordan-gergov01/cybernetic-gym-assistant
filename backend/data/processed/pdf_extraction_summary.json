@@ -1,0 +1,710 @@
+{
+  "extracted_at": "2026-04-26T18:49:31.573411",
+  "total_pdfs": 70,
+  "successful": 70,
+  "errors": [],
+  "total_words": 541200,
+  "total_tables_found": 211,
+  "files": [
+    {
+      "filename": "AAS PTC 2022.pdf",
+      "source": "AAS PTC 2022.pdf",
+      "num_pages": 47,
+      "word_count": 8572,
+      "table_count": 2,
+      "heading_count": 50,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "AAS_PTC_2022.json"
+    },
+    {
+      "filename": "Ad libitum dieting case study.pdf",
+      "source": "Ad libitum dieting case study.pdf",
+      "num_pages": 4,
+      "word_count": 684,
+      "table_count": 0,
+      "heading_count": 4,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Ad_libitum_dieting_case_study.json"
+    },
+    {
+      "filename": "Ad libitum dieting PTC 2022.pdf",
+      "source": "Ad libitum dieting PTC 2022.pdf",
+      "num_pages": 73,
+      "word_count": 16169,
+      "table_count": 0,
+      "heading_count": 53,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Ad_libitum_dieting_PTC_2022.json"
+    },
+    {
+      "filename": "Adherence PTC 2022.pdf",
+      "source": "Adherence PTC 2022.pdf",
+      "num_pages": 107,
+      "word_count": 31507,
+      "table_count": 1,
+      "heading_count": 87,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Adherence_PTC_2022.json"
+    },
+    {
+      "filename": "Advanced strength training techniques PTC 2023.pdf",
+      "source": "Advanced strength training techniques PTC 2023.pdf",
+      "num_pages": 58,
+      "word_count": 13402,
+      "table_count": 0,
+      "heading_count": 35,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Advanced_strength_training_techniques_PTC_2023.json"
+    },
+    {
+      "filename": "Age specific programming PTC 2022.pdf",
+      "source": "Age specific programming PTC 2022.pdf",
+      "num_pages": 25,
+      "word_count": 4033,
+      "table_count": 0,
+      "heading_count": 26,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Age_specific_programming_PTC_2022.json"
+    },
+    {
+      "filename": "Biochemistry 101 PTC 2022.pdf",
+      "source": "Biochemistry 101 PTC 2022.pdf",
+      "num_pages": 14,
+      "word_count": 1396,
+      "table_count": 0,
+      "heading_count": 12,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Biochemistry_101_PTC_2022.json"
+    },
+    {
+      "filename": "Body fat percentage visual reference guide PTC.pdf",
+      "source": "Body fat percentage visual reference guide PTC.pdf",
+      "num_pages": 67,
+      "word_count": 1602,
+      "table_count": 0,
+      "heading_count": 78,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Body_fat_percentage_visual_reference_guide_PTC.json"
+    },
+    {
+      "filename": "Carbohydrates PTC 2022.pdf",
+      "source": "Carbohydrates PTC 2022.pdf",
+      "num_pages": 91,
+      "word_count": 19573,
+      "table_count": 4,
+      "heading_count": 54,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Carbohydrates_PTC_2022.json"
+    },
+    {
+      "filename": "Cardio PTC 2022.pdf",
+      "source": "Cardio PTC 2022.pdf",
+      "num_pages": 37,
+      "word_count": 8782,
+      "table_count": 5,
+      "heading_count": 47,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Cardio_PTC_2022.json"
+    },
+    {
+      "filename": "Case study average Joe program design.pdf",
+      "source": "Case study average Joe program design.pdf",
+      "num_pages": 13,
+      "word_count": 2733,
+      "table_count": 5,
+      "heading_count": 172,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_average_Joe_program_design.json"
+    },
+    {
+      "filename": "Case study block periodization and mixing different goals.pdf",
+      "source": "Case study block periodization and mixing different goals.pdf",
+      "num_pages": 8,
+      "word_count": 1974,
+      "table_count": 0,
+      "heading_count": 8,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_block_periodization_and_mixing_different_goals.json"
+    },
+    {
+      "filename": "Case study booty building intake form.pdf",
+      "source": "Case study booty building intake form.pdf",
+      "num_pages": 8,
+      "word_count": 1105,
+      "table_count": 0,
+      "heading_count": 47,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_booty_building_intake_form.json"
+    },
+    {
+      "filename": "Case study Chad BJJ.pdf",
+      "source": "Case study Chad BJJ.pdf",
+      "num_pages": 7,
+      "word_count": 2563,
+      "table_count": 6,
+      "heading_count": 30,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_Chad_BJJ.json"
+    },
+    {
+      "filename": "Case study classic bodybuilding peak week.pdf",
+      "source": "Case study classic bodybuilding peak week.pdf",
+      "num_pages": 10,
+      "word_count": 1568,
+      "table_count": 0,
+      "heading_count": 15,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_classic_bodybuilding_peak_week.json"
+    },
+    {
+      "filename": "Case study diet design Kevin intermediate.pdf",
+      "source": "Case study diet design Kevin intermediate.pdf",
+      "num_pages": 5,
+      "word_count": 1684,
+      "table_count": 1,
+      "heading_count": 13,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_diet_design_Kevin_intermediate.json"
+    },
+    {
+      "filename": "Case study diet design Matthew novice.pdf",
+      "source": "Case study diet design Matthew novice.pdf",
+      "num_pages": 7,
+      "word_count": 1675,
+      "table_count": 0,
+      "heading_count": 16,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_diet_design_Matthew_novice.json"
+    },
+    {
+      "filename": "Case study female Powerlifter prep.pdf",
+      "source": "Case study female Powerlifter prep.pdf",
+      "num_pages": 5,
+      "word_count": 1604,
+      "table_count": 3,
+      "heading_count": 20,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_female_Powerlifter_prep.json"
+    },
+    {
+      "filename": "Case study intermediate lean bulk Marco.pdf",
+      "source": "Case study intermediate lean bulk Marco.pdf",
+      "num_pages": 13,
+      "word_count": 2012,
+      "table_count": 0,
+      "heading_count": 63,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_intermediate_lean_bulk_Marco.json"
+    },
+    {
+      "filename": "Case study John untrained ketogenic.pdf",
+      "source": "Case study John untrained ketogenic.pdf",
+      "num_pages": 7,
+      "word_count": 1126,
+      "table_count": 0,
+      "heading_count": 35,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_John_untrained_ketogenic.json"
+    },
+    {
+      "filename": "Case study keto 2.pdf",
+      "source": "Case study keto 2.pdf",
+      "num_pages": 5,
+      "word_count": 1393,
+      "table_count": 3,
+      "heading_count": 12,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_keto_2.json"
+    },
+    {
+      "filename": "Case study M simple calorie cycling.pdf",
+      "source": "Case study M simple calorie cycling.pdf",
+      "num_pages": 14,
+      "word_count": 2428,
+      "table_count": 2,
+      "heading_count": 77,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_M_simple_calorie_cycling.json"
+    },
+    {
+      "filename": "Case study MP competitor offseason shoulder rehab intake form.pdf",
+      "source": "Case study MP competitor offseason shoulder rehab intake form.pdf",
+      "num_pages": 8,
+      "word_count": 961,
+      "table_count": 0,
+      "heading_count": 37,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_MP_competitor_offseason_shoulder_rehab_intake_form.json"
+    },
+    {
+      "filename": "Case study novice vegan.pdf",
+      "source": "Case study novice vegan.pdf",
+      "num_pages": 11,
+      "word_count": 2567,
+      "table_count": 0,
+      "heading_count": 39,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_novice_vegan.json"
+    },
+    {
+      "filename": "Case study PSMF.pdf",
+      "source": "Case study PSMF.pdf",
+      "num_pages": 5,
+      "word_count": 1314,
+      "table_count": 1,
+      "heading_count": 9,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Case_study_PSMF.json"
+    },
+    {
+      "filename": "Case study untrained.pdf",
+      "source": "Case study untrained.pdf",
+      "num_pages": 10,
+      "word_count": 1919,
+      "table_count": 0,
+      "heading_count": 92,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Case_study_untrained.json"
+    },
+    {
+      "filename": "Dietary fat PTC 2022.pdf",
+      "source": "Dietary fat PTC 2022.pdf",
+      "num_pages": 89,
+      "word_count": 19212,
+      "table_count": 2,
+      "heading_count": 65,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Dietary_fat_PTC_2022.json"
+    },
+    {
+      "filename": "Energy PTC 2022.pdf",
+      "source": "Energy PTC 2022.pdf",
+      "num_pages": 122,
+      "word_count": 28208,
+      "table_count": 9,
+      "heading_count": 127,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Energy_PTC_2022.json"
+    },
+    {
+      "filename": "Exercise Library PTC.pdf",
+      "source": "Exercise Library PTC.pdf",
+      "num_pages": 65,
+      "word_count": 13596,
+      "table_count": 0,
+      "heading_count": 180,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Exercise_Library_PTC.json"
+    },
+    {
+      "filename": "Exercise performance PTC 2022.pdf",
+      "source": "Exercise performance PTC 2022.pdf",
+      "num_pages": 59,
+      "word_count": 14964,
+      "table_count": 0,
+      "heading_count": 33,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Exercise_performance_PTC_2022.json"
+    },
+    {
+      "filename": "Exercise selection in home gym.pdf",
+      "source": "Exercise selection in home gym.pdf",
+      "num_pages": 1,
+      "word_count": 162,
+      "table_count": 0,
+      "heading_count": 8,
+      "strategy": "single chunk (file too short to split)",
+      "output_file": "Exercise_selection_in_home_gym.json"
+    },
+    {
+      "filename": "Exercise Selection PTC 2022 (1).pdf",
+      "source": "Exercise Selection PTC 2022 (1).pdf",
+      "num_pages": 110,
+      "word_count": 25872,
+      "table_count": 0,
+      "heading_count": 91,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Exercise_Selection_PTC_2022_(1).json"
+    },
+    {
+      "filename": "Fasting and biorhythms PTC 2022.pdf",
+      "source": "Fasting and biorhythms PTC 2022.pdf",
+      "num_pages": 77,
+      "word_count": 16649,
+      "table_count": 3,
+      "heading_count": 46,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Fasting_and_biorhythms_PTC_2022.json"
+    },
+    {
+      "filename": "Female powerlifter in home gym case study intake form.pdf",
+      "source": "Female powerlifter in home gym case study intake form.pdf",
+      "num_pages": 8,
+      "word_count": 1287,
+      "table_count": 0,
+      "heading_count": 42,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Female_powerlifter_in_home_gym_case_study_intake_form.json"
+    },
+    {
+      "filename": "Fitness for women PTC 2022.pdf",
+      "source": "Fitness for women PTC 2022.pdf",
+      "num_pages": 58,
+      "word_count": 12959,
+      "table_count": 4,
+      "heading_count": 48,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Fitness_for_women_PTC_2022.json"
+    },
+    {
+      "filename": "Health science and food choices PTC 2022.pdf",
+      "source": "Health science and food choices PTC 2022.pdf",
+      "num_pages": 133,
+      "word_count": 26615,
+      "table_count": 5,
+      "heading_count": 99,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Health_science_and_food_choices_PTC_2022.json"
+    },
+    {
+      "filename": "Henselmans Sleep Optimization Guide PTC.pdf",
+      "source": "Henselmans Sleep Optimization Guide PTC.pdf",
+      "num_pages": 20,
+      "word_count": 3758,
+      "table_count": 0,
+      "heading_count": 26,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Henselmans_Sleep_Optimization_Guide_PTC.json"
+    },
+    {
+      "filename": "Henselmans Stress Management Guide PTC.pdf",
+      "source": "Henselmans Stress Management Guide PTC.pdf",
+      "num_pages": 9,
+      "word_count": 1693,
+      "table_count": 0,
+      "heading_count": 7,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Henselmans_Stress_Management_Guide_PTC.json"
+    },
+    {
+      "filename": "How to fill in your micros guide PTC.pdf",
+      "source": "How to fill in your micros guide PTC.pdf",
+      "num_pages": 3,
+      "word_count": 709,
+      "table_count": 2,
+      "heading_count": 5,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "How_to_fill_in_your_micros_guide_PTC.json"
+    },
+    {
+      "filename": "How to learn think and research PTC 2022.pdf",
+      "source": "How to learn think and research PTC 2022.pdf",
+      "num_pages": 60,
+      "word_count": 7895,
+      "table_count": 0,
+      "heading_count": 97,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_learn_think_and_research_PTC_2022.json"
+    },
+    {
+      "filename": "How to manage social eating events PTC.pdf",
+      "source": "How to manage social eating events PTC.pdf",
+      "num_pages": 16,
+      "word_count": 2622,
+      "table_count": 0,
+      "heading_count": 17,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_manage_social_eating_events_PTC.json"
+    },
+    {
+      "filename": "How to prevent buttwink PTC.pdf",
+      "source": "How to prevent buttwink PTC.pdf",
+      "num_pages": 15,
+      "word_count": 494,
+      "table_count": 0,
+      "heading_count": 2,
+      "strategy": "single chunk (file too short to split)",
+      "output_file": "How_to_prevent_buttwink_PTC.json"
+    },
+    {
+      "filename": "How to save time in the gym guide PTC.pdf",
+      "source": "How to save time in the gym guide PTC.pdf",
+      "num_pages": 10,
+      "word_count": 1509,
+      "table_count": 0,
+      "heading_count": 9,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_save_time_in_the_gym_guide_PTC.json"
+    },
+    {
+      "filename": "How to structure your workouts PTC 2022.pdf",
+      "source": "How to structure your workouts PTC 2022.pdf",
+      "num_pages": 44,
+      "word_count": 9747,
+      "table_count": 0,
+      "heading_count": 40,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_structure_your_workouts_PTC_2022.json"
+    },
+    {
+      "filename": "How to use calipers (F).pdf",
+      "source": "How to use calipers (F).pdf",
+      "num_pages": 5,
+      "word_count": 595,
+      "table_count": 0,
+      "heading_count": 7,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_use_calipers_(F).json"
+    },
+    {
+      "filename": "How to use calipers (M).pdf",
+      "source": "How to use calipers (M).pdf",
+      "num_pages": 4,
+      "word_count": 491,
+      "table_count": 0,
+      "heading_count": 5,
+      "strategy": "single chunk (file too short to split)",
+      "output_file": "How_to_use_calipers_(M).json"
+    },
+    {
+      "filename": "How to use powerlifting bands PTC.pdf",
+      "source": "How to use powerlifting bands PTC.pdf",
+      "num_pages": 8,
+      "word_count": 542,
+      "table_count": 0,
+      "heading_count": 5,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "How_to_use_powerlifting_bands_PTC.json"
+    },
+    {
+      "filename": "Hunger management guide PTC.pdf",
+      "source": "Hunger management guide PTC.pdf",
+      "num_pages": 15,
+      "word_count": 1369,
+      "table_count": 0,
+      "heading_count": 16,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Hunger_management_guide_PTC.json"
+    },
+    {
+      "filename": "Injury management PTC 2022.pdf",
+      "source": "Injury management PTC 2022.pdf",
+      "num_pages": 94,
+      "word_count": 19328,
+      "table_count": 0,
+      "heading_count": 73,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Injury_management_PTC_2022.json"
+    },
+    {
+      "filename": "Lifestyle case study female BodyFitness competitor.pdf",
+      "source": "Lifestyle case study female BodyFitness competitor.pdf",
+      "num_pages": 4,
+      "word_count": 1180,
+      "table_count": 0,
+      "heading_count": 4,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Lifestyle_case_study_female_BodyFitness_competitor.json"
+    },
+    {
+      "filename": "Lifestyle case study male bodybuilder.pdf",
+      "source": "Lifestyle case study male bodybuilder.pdf",
+      "num_pages": 14,
+      "word_count": 3314,
+      "table_count": 1,
+      "heading_count": 51,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Lifestyle_case_study_male_bodybuilder.json"
+    },
+    {
+      "filename": "Lifestyle factors PTC 2022.pdf",
+      "source": "Lifestyle factors PTC 2022.pdf",
+      "num_pages": 33,
+      "word_count": 6703,
+      "table_count": 0,
+      "heading_count": 34,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Lifestyle_factors_PTC_2022.json"
+    },
+    {
+      "filename": "Micronutrition PTC 2022.pdf",
+      "source": "Micronutrition PTC 2022.pdf",
+      "num_pages": 78,
+      "word_count": 20088,
+      "table_count": 124,
+      "heading_count": 148,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Micronutrition_PTC_2022.json"
+    },
+    {
+      "filename": "Nutrition case studies PTC 2022.pdf",
+      "source": "Nutrition case studies PTC 2022.pdf",
+      "num_pages": 6,
+      "word_count": 1397,
+      "table_count": 0,
+      "heading_count": 0,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Nutrition_case_studies_PTC_2022.json"
+    },
+    {
+      "filename": "Periodization and progress PTC 2022.pdf",
+      "source": "Periodization and progress PTC 2022.pdf",
+      "num_pages": 70,
+      "word_count": 16909,
+      "table_count": 0,
+      "heading_count": 52,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Periodization_and_progress_PTC_2022.json"
+    },
+    {
+      "filename": "Posture PTC 2022.pdf",
+      "source": "Posture PTC 2022.pdf",
+      "num_pages": 19,
+      "word_count": 3940,
+      "table_count": 0,
+      "heading_count": 15,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Posture_PTC_2022.json"
+    },
+    {
+      "filename": "Powerlifting PTC 2022.pdf",
+      "source": "Powerlifting PTC 2022.pdf",
+      "num_pages": 46,
+      "word_count": 10115,
+      "table_count": 0,
+      "heading_count": 34,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Powerlifting_PTC_2022.json"
+    },
+    {
+      "filename": "Press technique common problems guide PTC.pdf",
+      "source": "Press technique common problems guide PTC.pdf",
+      "num_pages": 9,
+      "word_count": 390,
+      "table_count": 0,
+      "heading_count": 3,
+      "strategy": "single chunk (file too short to split)",
+      "output_file": "Press_technique_common_problems_guide_PTC.json"
+    },
+    {
+      "filename": "Program customization PTC 2022.pdf",
+      "source": "Program customization PTC 2022.pdf",
+      "num_pages": 36,
+      "word_count": 7334,
+      "table_count": 4,
+      "heading_count": 33,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Program_customization_PTC_2022.json"
+    },
+    {
+      "filename": "Progression Guidelines PTC.pdf",
+      "source": "Progression Guidelines PTC.pdf",
+      "num_pages": 15,
+      "word_count": 2399,
+      "table_count": 0,
+      "heading_count": 16,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Progression_Guidelines_PTC.json"
+    },
+    {
+      "filename": "Protein PTC 2022.pdf",
+      "source": "Protein PTC 2022.pdf",
+      "num_pages": 149,
+      "word_count": 33216,
+      "table_count": 11,
+      "heading_count": 160,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Protein_PTC_2022.json"
+    },
+    {
+      "filename": "Stretching PTC 2022.pdf",
+      "source": "Stretching PTC 2022.pdf",
+      "num_pages": 20,
+      "word_count": 3869,
+      "table_count": 0,
+      "heading_count": 23,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Stretching_PTC_2022.json"
+    },
+    {
+      "filename": "Supplements PTC 2022.pdf",
+      "source": "Supplements PTC 2022.pdf",
+      "num_pages": 129,
+      "word_count": 26075,
+      "table_count": 1,
+      "heading_count": 292,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Supplements_PTC_2022.json"
+    },
+    {
+      "filename": "The genetic basis of exercise motivation PTC bonus (1).pdf",
+      "source": "The genetic basis of exercise motivation PTC bonus (1).pdf",
+      "num_pages": 12,
+      "word_count": 2212,
+      "table_count": 0,
+      "heading_count": 13,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "The_genetic_basis_of_exercise_motivation_PTC_bonus_(1).json"
+    },
+    {
+      "filename": "The ketogenic diet PTC 2022.pdf",
+      "source": "The ketogenic diet PTC 2022.pdf",
+      "num_pages": 49,
+      "word_count": 11966,
+      "table_count": 6,
+      "heading_count": 51,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "The_ketogenic_diet_PTC_2022.json"
+    },
+    {
+      "filename": "Training case studies PTC 2022.pdf",
+      "source": "Training case studies PTC 2022.pdf",
+      "num_pages": 8,
+      "word_count": 2051,
+      "table_count": 1,
+      "heading_count": 29,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Training_case_studies_PTC_2022.json"
+    },
+    {
+      "filename": "Training gear PTC 2022.pdf",
+      "source": "Training gear PTC 2022.pdf",
+      "num_pages": 33,
+      "word_count": 7358,
+      "table_count": 0,
+      "heading_count": 23,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Training_gear_PTC_2022.json"
+    },
+    {
+      "filename": "Training volume frequency intensity PTC 2022.pdf",
+      "source": "Training volume frequency intensity PTC 2022.pdf",
+      "num_pages": 75,
+      "word_count": 18238,
+      "table_count": 5,
+      "heading_count": 75,
+      "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+      "output_file": "Training_volume_frequency_intensity_PTC_2022.json"
+    },
+    {
+      "filename": "Understanding muscle growth and strength PTC 2022.pdf",
+      "source": "Understanding muscle growth and strength PTC 2022.pdf",
+      "num_pages": 77,
+      "word_count": 14396,
+      "table_count": 0,
+      "heading_count": 48,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Understanding_muscle_growth_and_strength_PTC_2022.json"
+    },
+    {
+      "filename": "Warming up PTC 2022.pdf",
+      "source": "Warming up PTC 2022.pdf",
+      "num_pages": 16,
+      "word_count": 3428,
+      "table_count": 0,
+      "heading_count": 15,
+      "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+      "output_file": "Warming_up_PTC_2022.json"
+    }
+  ]
+}

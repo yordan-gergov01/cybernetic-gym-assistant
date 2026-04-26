@@ -1,0 +1,682 @@
+{
+  "filename": "How to learn think and research PTC 2022.pdf",
+  "source": "How to learn think and research PTC 2022.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 60,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nHOW TO LEARN, THINK AND\nRESEARCH",
+      "headings": [
+        "HOW TO LEARN, THINK AND",
+        "RESEARCH"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\n\nIn this module of the course you will learn how to research topics yourself and interpret\nscientific research. There are already too many of these 'how to do research' articles and\neven books, but most of them suck, because:\n• They're overly abstract.\n• They are longwinded and only cover the blatantly obvious.\n• The politically correct approach to science they advocate is not actually practiced by\nmany good field researchers.\n• They're excruciatingly boring.\n\nSo we'll keep this practical and concise without regard for what's politically correct.",
+      "headings": [
+        "many good field researchers."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "3\nContents\nHow to study...............................................................................................................5\n\nWhat is learning?.....................................................................................................5\n\nThe best study techniques........................................................................................5\n\nHow to distribute your studying time..........................................................................7\n\nLogical reasoning skills...............................................................................................10\n\n1. Beware of science mumbo-jumbo........................................................................10\n\n2. Scientific skepticism vs. Bayesian thinking............................................................11\n\n3. There is no proof, only probability.........................................................................13\n\n4. It's only a single study!........................................................................................14\n\n5. Know the difference between correlation and causation.........................................15\n\n6. Be skeptical of information from mainstream media...............................................16\n\n7. Objectivity vs. subjectivity....................................................................................17\n\n8. Accept that your ego is weak...............................................................................19\n\nFinding and filtering information..................................................................................20\n\n1. Always reading the full text is inefficient................................................................20\n\n2. Filter your information..........................................................................................21\n\nThe 3. best search engines to find research.............................................................23\n\n4. Master Google search operators..........................................................................25\n4. Master P\n\n5. Don't limit yourself to the English language...........................................................32\n\n6. How to get full texts without subscribing to tons of journals....................................33",
+      "headings": [
+        "Contents",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "........................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "...............................",
+        "................................",
+        "................................",
+        "................................",
+        "............................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "........................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "....................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "..........................",
+        "................................",
+        ".............................",
+        "................................",
+        "................................",
+        "4. Master P",
+        "................................",
+        "...........................",
+        "................................"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "4\n7. The best journals to subscribe to..........................................................................34\n\nInterpreting scientific research....................................................................................35\n\nHow to read a paper...............................................................................................35\n\nThe different types of scientific publications..............................................................37\n\nScientific jargon......................................................................................................43\n\nStatistics 101.............................................................................................................48\n\nStatistical significance.............................................................................................48\n\nStatistical significance vs. effect size........................................................................51\n\nStatistical power.....................................................................................................52\n\nConfidence intervals...............................................................................................55\n\nNoise vs. bias.........................................................................................................57\n\nLearning objectives....................................................................................................60",
+      "headings": [
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "....................",
+        "................................",
+        "................................",
+        "...............................",
+        "................................",
+        "..............................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        ".............................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "...............................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................",
+        "................................"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "5\nHow to study\nYou'll learn many new things in this course. To optimize your learning experience, here's\na guide with a scientific approach to study.\n\nWhat is learning?\nFrom a neuroscientific perspective, learning is the remodeling of the neuronal circuits in\nyour brain [2]. Psychologically, learning is integrating new information in your cognitive\nmap of the world. Your conscious awareness of learning is not all that you learn. Much\ninformation is processed in your brain that does not enter your consciousness but may still\nbe stored in the brain: this is called latent learning.\n\nThe best study techniques\nExtensive research has been on which study techniques are most effective. As it turns\nout, the most commonly used techniques do not offer the most return on your learning\ntime. Rereading, summarizing and highlighting can be useful, but they don't enhance your\nunderstanding as much as thinking more organically about the topics you learned about.\nThey focus too much on acquiring new information rather than remodeling your brain's\norganization of this knowledge. See the following table for an overview of study\ntechniques and how they fare in scientific research.",
+      "headings": [
+        "How to study",
+        "What is learning?",
+        "The best study techniques"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "6\n\nSource\n\nIt's clear that the best way to enhance your understanding of a topic is deliberate practice.\nTo that end, we have added 2 sections at the end of every module that we encourage you\nto make use of.\n1. Learning objectives: you should go through this list and evaluate for each point if\nyou're capable of doing this.\n2. Example exam questions: try to answer these. No answers are provided on\npurpose so that you can't cheat and you're forced to formulate questions in the\nFacebook group or live Q&A sessions to discuss the materials. Think back on when\nyou learned math in high school: you can see the answer to a question and think\n'ok simple' yet when you then have to get to the answer yourself on your own, you\nrealize you haven't fully understood it yet.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "7\nAt the end of the nutrition modules and at the end of the training modules we also have\ncase study weeks in the course. Here we'll provide you with real-life and theoretical case\nstudies on how to implement everything you learned thus far in practice. You'll find that\nthere are some intentional delays in the course materials before all the pieces fall together\nto foster deliberate practice, repetition and reflection of the materials and thereby improve\nyour learning.\n\nWe also encourage you to create your own practice materials. The following techniques\nare particularly effective based on the research.\n• Creating flashcards with questions and terms to explain with the answers on the\nback. If you prefer to use your smartphone, you can use the app Anki to create\ndigital flashcards.\n• Print the course materials and black out key terms. Later, go through the document\nand fill in the blanks.\n• Implement the Cornell Note Taking System for each course module.\n\nHow to distribute your studying time\nMany students wait until the last minute to study before their exams and then try to cram\nin all the information. Psychologists call this 'massing'. As your teachers probably\npreached to you on many occasions, massing is not an ideal learning experience. It\ncertainly beats not learning, but a plethora of research shows spacing your studying time\nmore evenly over time improves information retention, recall, and general task",
+      "headings": [
+        "How to distribute your studying time"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "8\nperformance compared to massing [1, 2, 3, 4, 5, 6]. This is called the 'spacing effect'.\nYour memory thrives on repetition, especially for long-term retention. To make use of the\nspacing effect, try to plan your learning schedule as follows if possible:\n● Plan in one full evening or weekend day to study each week's course materials.\n● Plan in 2 shorter sessions later in the week: one to reflect on the learning\nobjectives and another moment to answer the example exam questions. Based on\nyour performance, revisit the parts of the module you didn't fully understand yet.\n\nMany students also fall for the planning fallacy: they systematically underestimate how\nmuch time it will take to learn something.\n\nAs a result of the above, people learn better when they have set deadlines spaced evenly\napart. Self-imposed deadlines are also effective but not as effective as external deadlines,\npresumably because they are not as strict. In line with this, we have spaced the course\ncontents at a very deliberate pace and we will close off the Comments section for each\nmodule when we start discussing the next module. If you want to ask questions and\nengage in the discussion, you'll thus have to keep up with the pace of the course. This set\ncourse structure should also help reduce procrastination.\n\nAs a final tip, be strict with yourself. Free up a liberal amount of study time each week in\nyour agenda, such as Saturday morning, and stick to it. Making up excuses to rationalize\nmissed deadlines is one of the most common reasons people fail online courses.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "9",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "10\nLogical reasoning skills\nAny intellectual endeavor relies on logical reasoning skills. In this section, we'll give you\nmany tips to improve your brain gains.\n\n1. Beware of science mumbo-jumbo\n'Big words' and technical jargon can give the impression of validity. Don't fall for theories\nand plausibility: look for probability and empirical evidence of each theory. Broscience\noften relies on theory without evidence.\n\nSo always ask yourself if you see any theory: what's the actual evidence supporting this?\nIs there direct evidence from randomized controlled experiments on this?",
+      "headings": [
+        "Logical reasoning skills",
+        "1. Beware of science mumbo-jumbo"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "11\n2. Scientific skepticism vs. Bayesian thinking\nScientific consensus is a turtle moving along the sands of truth… Or whatever: it's a slow\nprocess. Scientists only speak of something as a consensus or a well-established finding\nif multiple research groups using different methods in different populations have replicated\nthe finding. That's why it took decades before the scientific community reached an\nagreement that androgenic anabolic steroids enhance performance, that strength athletes\nbenefit from more protein than sedentary individuals and that multiple sets are superior to\nsingle sets for strength development.\n\nThe issue here is that science is about knowledge and truth, not about the practical\napplication thereof. So the scientific perspective on the vast majority of the questions we\nfind relevant is 'Well, there's research to suggest X, but we face limitations A-Z, so we\nneed additional research before we can answer this question.' That's an answer that\ndoesn't benefit anyone and as a coach, it's a cop-out. If you have clients, you have to\nadvise them something. To get from facts to recommendations, you have to think like a\nBayesian, a rational style of thinking popular in economics that is inspired by the\nstatistician Thomas Bayes.\n\nA Bayesian estimates a probability of truth for every belief and updates this probability\nbased on the available evidence. That probability is then multiplied by the expected pay-\noffs to come to conclusions (economists call this expected utility theory).\n\nIn other words, Bayesian thinking prescribes how scientific evidence - statements of fact\n- translate into advice and decisions. When you know someone's goals and the relevant\nfacts, Bayesian advice optimizes that person's decisions to reach those goals.",
+      "headings": [
+        "2. Scientific skepticism vs. Bayesian thinking"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "12\n\nExample: You're a sponsored athlete and receive a new test booster. Other than a lot of\nresearch establishing the supplement's safety, there are only 2 studies on its\neffectiveness: 1 in favor and one against. A scientific perspective can only answer if it\nworks, not if you should take it. The answer to 'if it works' in scientific terms will be \"No,\nmore research is needed before we can claim if it works.\" Yet a Bayesian may think as\nfollows. The probability that the supplement works is substantial, even though the benefit\nis small. The cost of taking the supplement is virtually nil. So the benefit multiplied by the\nprobability that it works exceeds the cost of taking it. A Bayesian would probably take the\nsupplement; it's a virtually zero-cost, low-benefit decision.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "13\n3. There is no proof, only probability\nProof is the highest standard of evidence. It is normally reserved for logical statements,\nsuch as mathematics. Empirical sciences - the sciences of observable facts - cannot\nprovide more evidence than probability by definition. Science does not prove supplement\nX works; it says it is probable (95% probable, to be specific). When there is no empirical\nevidence for a statement, as is often the case for broscientific statements, it can merely be\nplausible.\n\nThe hierarchy in standards of proof can conveniently be remembered by the 3 Ps. Any\ntheory can sound plausible, but only with actual data can we say it's probable and we\nhave to accept that most things will never be proven.",
+      "headings": [
+        "3. There is no proof, only probability",
+        "theory can sound plausible, but only with actual data can we say it’s probable and we",
+        "have to accept that most things will never be proven."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "14\n4. It's only a single study!\nImagine there's a new supplement on the market called STX. You want to know if it's\nworth buying, so you Google it. You find a forum where someone has tried it and says it\ngreatly increased his muscle growth. 5 others noticed the same thing.\n\nA blogger did DXA scans to confirm the muscle growth he experienced and it was legit.\nHe then tested the supplement in a lab and the results match the label's ingredients.\n\nAfter some more research, you find 3 more people who have confirmed their muscle\ngrowth using MRI after taking STX.\n\nSounds pretty convincing, right?\n\nThe above evidence doesn't come anywhere remotely close to that of a single published\nscientific experiment. No subject data, unknown motives and sponsorship, heterogeneous\nmeasurement techniques, no control group, no randomization, no peer-review, no double\nblinding, etc.\n\nDon't underestimate the evidence provided by a study. Don't overestimate the worth of an\nanecdote.",
+      "headings": [
+        "4. It’s only a single study!"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 15,
+      "text": "15\n5. Know the difference between correlation and causation\n\nSource",
+      "headings": [
+        "5. Know the difference between correlation and causation"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 16,
+      "text": "16\n6. Be skeptical of information from mainstream media",
+      "headings": [
+        "6. Be skeptical of information from mainstream media"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 17,
+      "text": "17\n7. Objectivity vs. subjectivity\nA statement is either objective or subjective. Objective statements are statements of fact;\nthey refer to a state of nature. Subjective statements are statements of feeling.\n\nDetermining whether a statement is objective or subjective is in itself an objective\nquestion. \"Ronnie Coleman is 9 feet tall\" is actually a statement of fact, not an opinion. It is\na claim of the state of nature. A false one, obviously, but the statement is still objective.\n\nMore common examples are people trying to humbly add 'in my opinion' to a statement of\nfact. Similarly, you'll often see people add \"and that's a fact\" or something along those\nlines to strengthen their position. Doing so is at best redundant and often blatantly false.\n\nAnd this isn't simply a semantic or moralistic distinction. It is crucial. Recall that Bayesian\nthinking translates facts into decisions based on someone's goals. Any subjective\nstatement is entirely meaningless from a Bayesian or scientific perspective. This makes a\ngreat difference in terms of how you give advice, because everything revolves around\nsomeone's goals.\n\nMany questions are subjective or worse, hypothetical (not referring to any facts), and thus\ndo not have a Bayesian answer. Example: \"If you could only do one exercise, which would\nit be?\" You will be asked these questions, so you will have to help the person asking the\nquestion to reformulate the question in objective terms. In this case, the person is\nprobably interested in optimizing his or her exercise selection given a time constraint. So\nyou will have to dig into the person's true intentions and not just take the question for\ngranted.",
+      "headings": [
+        "7. Objectivity vs. subjectivity"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 18,
+      "text": "18\n\nWithout knowing someone's goals, which is often the case on social media and on\ninternet forums, the best a Bayesian can often do is provide a statement of fact. For\nexample, \"supplementing BCAAs on top of sufficient dietary protein intake will not\nincrease strength development, muscle hypertrophy or fat loss.\" When you know that your\nclient's goal is one of the above and the client's dietary protein intake is already sufficient,\nyou can then advise them not to take BCAAs.\n\nHere are some concrete, down-to-earth tips to give more Bayesian advice:\n• Be mindful of the person's goals. It sounds so simple, but many coaches give advice\nbased on their own goals instead of those of their client, like powerlifters advising\nclients interested in looking better to get fat to increase squat strength.\n• Weigh the costs and benefits of the decision. Things aren't black and white.\n• Use contingencies when the person's goals are not known to you. For instance, \"If\nmoney is not a concern, these supplements may be worth trying, as they provide a\nsmall performance boost in some of the research.\"",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 19,
+      "text": "19\n8. Accept that your ego is weak\nWhen you come across new evidence, you are strongly inclined to find an explanation that\nfits with your prior beliefs. This robust finding in psychology is called confirmation bias.\nThe mind always tries to minimize cognitive dissonance between your ideas. This is\ngenerally a good thing, because a Bayesian should not believe statements that contradict\neach other. Having consistent beliefs is fundamental to being rational.\n\nHowever, accepting that prior beliefs were wrong requires that your self-image takes a hit.\nAnother fundamental finding in psychology is that humans will go to great lengths to\nmaintain a positive self-image, since a positive self-image and happiness are closely\nrelated. As such, the mind often finds it easier to 'explain away' new findings than to\naccept that old beliefs were wrong.\n\nWhat can we do? Realize that your mind is imperfect. You are psychologically biased\ntowards rejecting revolutionary information. Being a Bayesian requires fighting this urge\nand overcoming your feelings with reason.",
+      "headings": [
+        "8. Accept that your ego is weak"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 20,
+      "text": "20\nFinding and filtering information\nOur goal with this course is to provide you with all the information that's relevant for a\nPersonal Trainer or recreational strength trainee. However, we encourage you to do your\nown research as well, especially after the course. In this section, we'll give you many tips\nto turn you into Sherlock Science.\n\n1. Always reading the full text is inefficient\nPubMed contains over 27 million articles. About half a million more are published each\nyear. Even if you read 5,000 articles per year, which means reading 13-14 articles per\nday, you're only covering 1% of the new literature.\n\n'Fortunately,' exercise science and nutrition are very small scientific disciplines. It is\npossible, if you're efficient, to consume the vast majority of the available information. Still,\nhundreds of papers are published each month. The need for efficiency is particularly high\nbecause the quality of these papers is very low compared to more popular scientific\ndisciplines.\n\nRoughly a hundred interesting articles appear each month. 'Interesting' in this case means\nthe title suggests the article is relevant for a strength trainee. Then you should generally\nread the abstract to determine if it's interesting and only if that piques your interest, should\nyou bother to read more.",
+      "headings": [
+        "Finding and filtering information",
+        "1. Always reading the full text is inefficient"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 21,
+      "text": "21\n2. Filter your information\nIn this digital age, lack of information is rarely ever the problem. The problem is knowing\nwhich information to trust. Person A says X, person B says Y. The following guideline\nshould help you cut through the noise very effectively: if someone doesn't normally\nreference his or her work, you can generally ignore whatever facts they claim. Better yet,\ndon't read their stuff at all. You'll either learn nothing new or you'll gain a question, never\nan answer.\n\nEven worse, it's quite likely you'll remember a statement or argument without\nremembering its source and forget that it's incorrect. Psychologists call this source\namnesia and it's a major reason for the unreliability of eyewitness testimony.\n\nThat said, you may obviously still benefit from someone's experience, perspective or\nlogical arguments. There just aren't many people who stick to those sorts of claims\nwithout invoking pseudoscience or unsupported facts.\n\nFiltering your information sources will greatly minimize the paralysis by analysis that's so\ncommon in the fitness industry.\n\nHere are several evidence-based fitness authors that Menno vouches for after having\npersonally met them and worked with them. Note that they don't always agree on\neverything and their views may be biased by most of them being friends.\n• Brad Schoenfeld\n• Bret Contreras",
+      "headings": [
+        "2. Filter your information"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 22,
+      "text": "22\n• Borge Fagerli\n• Alan Aragon\n• Eric Helms\n• Greg Nuckols",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 23,
+      "text": "23\nThe 3. best search engines to find research\nGoogle Scholar\n• Excellent search functionality\n• Extremely large database (the internet)\n• Not always up-to-date\n• Links to free non-open access publications (read: potentially copyright infringed)\n• No filtering of journal quality\n\nPubMed\n• Poor search functionality\n• Limited to relatively prestigious publications\n• Allows you to selectively search for reviews and open access publications\n• Excellent 'related articles' algorithm\n\nSciELO\n• Excellent search functionality (Google)\n• Moderately sized database\n• Open access\n• Great to find non-English language publications",
+      "headings": [
+        "The 3. best search engines to find research"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 24,
+      "text": "24\nThere are a few other large academic search engines, but it's exceedingly rare to find an\narticle on any of them that you can't find with any of the above 3.\n\nWhen searching, think of the keywords that pertain to the article you're looking for, not the\ntitle of the paper. Academic search engines are based on a keyword system. You often\nwant to add 'resistance training' to your search to avoid getting tons of research on people\nwho don't even lift.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 25,
+      "text": "25\n4. Master Google search operators\nYou should at least know the following:\n• You can use quotes \"\" to search for keywords in that exact order. For example, if\nyou know the title of a study you're searching, you'll almost certainly get the right\nstudy as the first hit if you search the study title surrounded by quotes.\nFor example:\n\"Sex Differences in Adaptations in Muscle Strength and Size Following Resistance\nTraining in Older Adults: A Systematic Review and Meta-analysis\"\n• You can use AND and OR to logically combine keywords and - to exclude\nkeywords. For example, if you're looking for a study specifically on strength training\nwomen, you could add the following to your search:\nwomen OR female -men -male \"strength training\" OR \"resistance training\" OR\nbodybuilders OR \"resistance-trained\" OR powerlifters\n• You can use before:[year] and after:[year] to limit your search to specific dates. For\nexample, if you're looking for a study that you know was published after the year\n2018, you can add after:2018 to your search.\n• When you're looking for the full text of a paper, you can use:\nfiletype:pdf \"[journal article title]\"\nThis limits the search to PDF files and searches for the exact title of the paper\nyou're looking for.",
+      "headings": [
+        "4. Master Google search operators"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 26,
+      "text": "26 4. Master\nBoolean logic represents the relationship between the search terms:\nAND (hypertrophy AND training volume)\nOR (resistance exercise OR strength training)\nNOT (resistance exercise NOT endurance) ← many recommend not to use this one as it\nmay exclude some relevant papersIf you are going to search for words that are similar but have a diff",
+      "headings": [
+        "4. Master",
+        "If you are going to search for words that are similar but have a diff"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 27,
+      "text": "27 FiltersOn th",
+      "headings": [
+        "On th"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 28,
+      "text": "28 Here you can",
+      "headings": [
+        "Here you can"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 29,
+      "text": "29 After the",
+      "headings": [
+        "After the"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 30,
+      "text": "30 ((caffeine[t",
+      "headings": [
+        "((caffeine[t"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 31,
+      "text": "31 Click on \"",
+      "headings": [
+        "lick on “"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 32,
+      "text": "32\n5. Don't limit yourself to the English language\nScience is an English language enterprise; it's generally safe to say that all non-English\npublications and researchers are not among the scientific elite. But occasionally, very\ninteresting research is published in another language, often Russian, Portuguese or\nSpanish. In those instances, Google Translate is your friend; it can translate entire\ndocuments for you.",
+      "headings": [
+        "5. Don’t limit yourself to the English language"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 33,
+      "text": "33\n6. How to get full texts without subscribing to tons of journals\nDisclaimer: check your governing laws before considering any of the information\npresented here.\n• Ask a student for his or her institutional log-in information\n• Join Reddit.com/r/Scholar\n• Use the search engines in tip 3\n• Search on Sci-Hub or Library Genesis\n• Ask the corresponding author: every scientific paper has the contact information of\none of the authors listed with it.\n• Join ResearchGate\n• Go to your local library\n• Buy an institutional log-in from any of the shady online sellers (at your own risk; no,\nthere's none we recommend)",
+      "headings": [
+        "6. How to get full texts without subscribing to tons of journals",
+        "Reddit.com/r/Scholar",
+        "ResearchGate"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 34,
+      "text": "34\n7. The best journals to subscribe to\nWith the caveat from tip 2 in mind, subscribing to the journals with the highest Impact\nFactor, a common measure of academic success, in exercise science, sports sciences (2)\n\nand nutrition is an easy way to get overviews of new studies in your inbox so you don't\nhave to look for them.\n\nNote that 'subscribe' for journals often means paying for them. Look for the alert manager\nor eTOC (electronic table of contents). Unfortunately, it's often quite a hassle to subscribe\nand when you get overviews of new studies in your inbox you still have to filter through\nvast amounts of uninteresting studies to find relevant research.\n\nIf you don't mind paying a bit extra to have experts filter through the research and review\nthe most interesting studies for you, Menno recommends MASS Research Review. Menno reviews most",
+      "headings": [
+        "7. The best journals to subscribe to",
+        "Menno reviews most"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 35,
+      "text": "35\nInterpreting scientific research\nScientific research provides the highest quality of evidence on most topics, but it's not\nalways easy to interpret scientific publications. In this section, we'll teach you how to read\nand interpret scientific publications.\n\nHow to read a paper\nThe most common paper structure in academia is the IMRaD model, illustrated below.",
+      "headings": [
+        "Interpreting scientific research",
+        "How to read a paper"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 36,
+      "text": "36\n\nYou'll often find a Conclusions section at the end of the Discussion with a summary of the\nmain findings and their implications.\n\nWay at the end you often find the Acknowledgements section, which is what you should\ncheck for the study funding sources to see if the authors have any conflicts of interest or\npotential sponsorship biases.\n\nWhile this is a useful structure to write up a paper, it is not the order you should read a\npaper in if you want to critically evaluate a study. Many study findings make people go\n'well, duh.' Yet when you ask people beforehand what they predict the study's outcome is,\nthey're often wrong. Here's how to read a paper you're genuinely interested in:\n1. Read the methods section. This explains what they did.\n2. Try to predict what the results will be.\n3. Read the results section. This lists the results without any interpretation from the\nauthors.\n4. If your prediction was inaccurate, think about why this was the case.\n5. Read the introduction, which should discuss prior literature on the topic, and then\nthe conclusion, which has the interpretation of the study's findings from the authors.\n\nIf you read the introduction first, your view will always be influenced by the perspective of\nthe researchers. In spite of what you may have learned in Research Methodology 101, the\nauthors often write the introduction after having seen their own results, so it's a biased\naccount of the prior literature.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 37,
+      "text": "37\n\nThe different types of scientific publications\nThere are several types of publications. When we think of a 'study', we're often thinking of\na randomized controlled trial (RCT). These generally considered the gold-standard\nmethod to obtain new information about a topic. By randomizing the participants to the\nstudy groups and controlling for all variables, they provide more robust evidence than\nmost other forms of evidence. If a study did not randomize the participants to the study\ngroups, the design is sometimes called quasi-experimental.\n\nThe lowest level of evidence is a case study or report. This just describes what happened\nwithout any control or intervention, often in a single individual. It's still better than an\nanecdote, as it's validated and much information is provided.",
+      "headings": [
+        "The different types of scientific publications"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 38,
+      "text": "38\nA case-control study is one step better, as it compares a group of individuals with a\ncertain common denominator, like a disease or outstanding academic achievements, with\na control group of individuals that don't have it.\n\nAnother level of evidence quality up we have cohort studies. Cohort studies are\nessentially case-control studies over a long period. Ideally, cohort studies have a\nprospective design, which means the methods were determined beforehand and the\nresearchers followed the groups of people in real-time. For example, a prospective cohort\nstudy may compare students with low and high academic achievements and follow them\nover their life to see who ends up happier.\n\nThese separate studies are compiled together in scientific reviews. Some of these are\n'narrative' reviews, which means they have no pre-set structure. 'Systematic' reviews are\nmore controlled in that you have to specify the exact study inclusion criteria and show\nwhich studies you found and excluded.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 39,
+      "text": "39\nA systematic review can also be meta-analyzed, which is a method\nto take the available information from these studies, notably the\neffect sizes, and use statistical calculations to sort of 'average them\nout'. For example, if 5 studies show a supplement works and 5 show\nit doesn't, we can do a meta-analysis to serve as the arbiter to see if\nthe overall effect size is positive. It's important to note a meta-\nanalysis basically recycles information, so if you meta-analyze 5\ncrappy studies, you often still have poor quality of evidence.\n'Garbage in, garbage out.' In this sense, it's better to think of\nreviews and meta-analyses as separate lenses looking at the\nliterature, not as strictly higher-quality evidence. A single well-\ndesigned RCT can provide stronger evidence than a meta-analysis\nof 10 low-quality studies.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 40,
+      "text": "40\n\nThe hierarchy of evidence. Source\n\nThe above types of publications can have various structures. Here are several research\ndesign structures you should be familiar with.\n\nCross-over design: This is a type of within-subject design where each participant\nundergoes both treatments, ideally in randomized order with a wash-out period in\nbetween. By having each person by his or her own control, you eliminate the variance\nfrom having different people be in the different study groups. Example: Every subject tries\nboth a high-volume and a low-volume training program to see which works better.",
+      "headings": [
+        "Cross-over design: This is a type of within-subject design where each participant"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 41,
+      "text": "41\n\nCross-sectional research: A type of\nresearch that compares multiple populations\nat a specific point in time. Example:\ncomparing meat-eaters and non-meat eaters\nand looking at their health.\n\nLongitudinal research: This means the\nresearch spanned over a certain period with\nrepeated measurements.",
+      "headings": [
+        "Cross-sectional research: A type of",
+        "Longitudinal research: This means the"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 42,
+      "text": "42\nObservational research: This means the study did not have an intervention. It merely\nmeasured what happened in a certain situation.\n\nEpidemiology: This is a collective term for unrandomized, observational research,\ngenerally about health with very large participant numbers due to relying on surveys and\nself-reported data. It includes mainly cross-sectional and longitudinal research with case-\ncontrol and cohort studies.",
+      "headings": [
+        "Observational research: This means the study did not have an intervention. It merely",
+        "Epidemiology: This is a collective term for unrandomized, observational research,"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 43,
+      "text": "43\nScientific jargon\nScientific publications are filled with technical terms lay populations may not understand.\nHere's a mini-dictionary to understand the research jargon.\nAnecdotes: Records of observed behaviors' which relies on personal testimony. Anecdotal evidence\n\nAttrition/drop-out: Losing a study participant during a study. Participants may fall ill,\nmove or just can't be bothered to show up anymore. In nutritional and exercise science\nresearch, drop-out rates are typically high, as some participants can't adhere to the\nprogram.\n\nBaseline: The moment in time at the start of the study. You often compare post-\nintervention results with the measurement done at baseline. Confounding variables: A variable that af\n\nEmpirical: Having facts, data. Without empirical research, we just have theories.\n\nHomogeneity/heterogeneity: A homogeneous sample has similar subjects, like all being\nuntrained male students. Heterogeneity is the opposite: it means there is large variance.",
+      "headings": [
+        "Scientific jargon",
+        "Anecdotes:",
+        "Records of observed behaviors’ which relies on personal testimony.",
+        "Anecdotal evidence",
+        "Attrition/drop-out: Losing a study participant during a study. Participants may fall ill,",
+        "Baseline: The moment in time at the start of the study. You often compare post-",
+        "Confounding variables:",
+        "A variable that af",
+        "Empirical: Having facts, data. Without empirical research, we just have theories.",
+        "Homogeneity/heterogeneity: A homogeneous sample has similar subjects, like all being"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 44,
+      "text": "44\nExternal validity: The degree to which the results of the study can be generalized beyond\nthe study sample, to other situations, times and people. Do the same results occur in\nother settings?\n\nInternal validity: The degree to which the study's methods allow us to answer its\nresearch question. In other words, whether we can establish causality between the\nindependent variable that was manipulated and the dependent variable that was\nobserved. If a study sets out to determine if carbohydrate intake influences performance,\nbut it does not control for energy and protein intake, it has low internal validity, as the\nresults are confounded by energy and protein intake. We cannot know which of those 3\nfactors influenced the results.\n\nInteraction effects: An effect of a combination of two or more independent variables on a\ndependent variable. For example, ephedrine and caffeine have an interaction effect: their\ncombined effect is greater than the combined effects of both in isolation. They work\nsynergistically, not just additively.\nOutliers: An observation in the data set that is much different than the other observations in the data\n\nPeer-review: The scrutiny of a paper before its\npublication by other researchers. Ideally, this is done anonymously from both sides to\navoid bias, mediated by the editor of the publishing journal.",
+      "headings": [
+        "External validity: The degree to which the results of the study can be generalized beyond",
+        "Internal validity: The degree to which the study’s methods allow us to answer its",
+        "Interaction effects: An effect of a combination of two or more independent variables on a",
+        "Outliers:",
+        "An observation in the data set that is",
+        "much different than the other observations in the",
+        "data",
+        "Peer-review: The scrutiny of a paper before its"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 45,
+      "text": "45\nPilot study: A small-scale study on a new topic to determine if it's worth investing more\nresources into studying this topic.\n\nPlacebo: A placebo group act as a control group where a real-looking yet inactive\nsubstance or sham treatment is given to the control group of participants to be sure that\nany effects that happen to the actual treatment group are caused by the treatment.\nPlacebos themselves often also have significant effects purely due to the expectation of\nan effect. These are called placebo effects. Position stand: Position stands are systematic reviews of\nR and R square: R is the correlation between two variables.R-square is the proportion of the vari\nReliability (and validity): Reliability is the degree to which the values measured with an instrument",
+      "headings": [
+        "Pilot study: A small-scale study on a new topic to determine if it’s worth investing more",
+        "Placebo: A placebo group act as a control group where a real-looking yet inactive",
+        "Position stand:",
+        "Position stands are systematic reviews of",
+        "R and R square:",
+        "R is the correlation between two variables.",
+        "square is the proportion of the vari",
+        "Reliability (and validity):",
+        "Reliability is the degree to which the values measured wi",
+        "instrument"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 46,
+      "text": "46 again on Tue\nStandard deviation: Is a measure of variability. For data with a normal distribution, about 95% of the",
+      "headings": [
+        "again on Tue",
+        "Is a measure of variability. For data with a normal",
+        "95% of the"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 47,
+      "text": "47 believed to",
+      "headings": [
+        "believed to"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 48,
+      "text": "48\nStatistics 101\nScience relies on the collection of data. To interpret those data, we need to perform\nstatistical analyses. As such, if you don't understand statistical methods, you can't truly\nunderstand any research findings. Unfortunately, most current scientific fields rely strongly\non frequentist statistics. These statistical methods are often very counterintuitive (unlike\nsay Bayesian statistics).\n\nIn the following lecture, we'll provide a simplified interpretation of common statistical terms\nand analyses. Below we go into more detail and formal definitions.\n\n➢ Lecture\nStats 101\n\nStatistical significance\nIn exercise and nutritional sciences, you often want to know whether a certain treatment\nworked better than placebo. Say training program A results in 2% growth and program B\nresults in 3% growth. Is A more effective than B? To determine this, we can test for\nstatistical significance with a probability (p) value. If the p-value is above 0.05, we say the\ndifference is not statistically significant. 0.05 is an arbitrary but firmly engrained\nconvention.",
+      "headings": [
+        "Statistics 101",
+        "➢ Lecture",
+        "Statistical significance"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 49,
+      "text": "49\nThe p-value measures the probability of obtaining all results in the study under the\nassumption that all the statistical model's assumptions are correct, including the null\nhypothesis. The null hypothesis (H0) is the theory that there is no difference between the\nstudy groups. As such, a low p-value means the chance of observing the results we see is\nlow if we assume there is in reality no difference between the groups. The results are too\nextreme to be due to chance. As such, you can roughly think of the p-value as being the\nprobability that the results are due to chance. That actual probability is higher, 23% based\non some estimates, but the intuition is the same: a low p-value supports that there is in\nfact a difference between groups.\n\nWhy can't we just say 3% is greater than 2% and leave it at that? There are virtually\nalways confounding factors that induce variance in any study. For example, some people\ntrain harder than others. If you happen to have more hardcore people in one group than\nthe other, that may be the reason they grew more from a certain strength training protocol\nthan others, even though the protocols were equally effective physiologically speaking. If\nyou plot the muscle growth rates of both groups, you'll get 2 distributions. If there is no\noverlap between these distributions at all, it's easy to see there is a difference in muscle\ngrowth between these groups: the worst gains in one group were still better than the best\ngains in the other group. However, in practice the graphs will overlap and a statistical\nsignificance test then tells us if these 2 distributions are likely part of the same distribution\nor if they're in fact different distributions.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 50,
+      "text": "50\n\nExample: You plot the increase in total training tonnage of program 1 with sample 1 and\nprogram 2 with sample 2. In this case, while the average increase in tonnage of program 2\nis higher, this difference is so small relative to the variance in individual results that we\ncannot say the distributions of the results are really different from each other. It's likely\nsample 1 and sample 2 achieved the same distribution of results (plotted in orange).\n\nIn short, statistical significance means there is most likely a true difference between\ngroups, not just between-subject variance or measurement error. Assuming the study was\nwell-designed (high internal validity), we can conclude this effect was caused by the",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 51,
+      "text": "51\nindependent variable of the study and, for example, program A was more effective than\nprogram B.\n\nStatistical significance vs. effect size\n'Statistically significant' intuitively sounds like it means something is highly relevant, like\nthe effect is big. However, statistical significance does not directly measure the magnitude\nof an effect. Large effects are more likely to be statistically significant, but very small\neffects that are practically insignificant can also reach statistical significance. To look at\nthe strength of an effect, we can look at the raw values or the effect size, which is a\nstandardized measure of the strength of an effect. Effect sizes can be computed in\nvarious ways, but most rely on dividing the average difference by the standard deviation.\n\nThe formulas for various effect sizes.\n\nAs an example to contrast effect size with statistical significance, in a very large study of\nsupplement X, we may find that testosterone increases by 3% in the experimental group\nand this is significantly more than the placebo group. Testosterone production fluctuates",
+      "headings": [
+        "Statistical significance vs. effect size"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 52,
+      "text": "52\nby about 50% across the day in healthy men, so 3% is a trivial increase and the effect size\nis small.\n\nAs an opposite example, let's say a group of researchers try to replicate the above finding,\nbut their measurement instruments are older than Gandalf, so the measurements are all\nover the place. They find a 178% increase in testosterone, but individual readings vary\nfrom -340 to +421% and the finding does not reach statistical significance. In this\nscenario, we cannot even talk about the effect size, since we cannot say with any\ncertainty that this finding is not just measurement error. However, depending on the\ntheoretical basis and the other literature, these kinds of findings can indicate a trend. So\njust because statistical significance was not reached, it does not mean that this finding is\nuninteresting. This brings us to the discussion of statistical power.\n\nStatistical power\nThe power of a statistical test is the probability that the test will reject the null hypothesis\nwhen the null hypothesis is false. It's identical to the probability of not making a type II\nerror (failing to reject a false null hypothesis): 1 minus power = type II error probability. For\nthose unfamiliar with the statistical jargon, here's a more intuitive explanation: statistical\npower is the ability to detect an effect with a study when there is a truly an effect. It is the\nsensitivity of a test: sensitivity in this case is both an intuitive and the proper statistical\nterminology.\n\nHere's an example in lay terms. You're conducting a study on the efficacy of supplement\nX. There's the physical reality of its effectiveness, unknown to you, and there's the",
+      "headings": [
+        "Statistical power"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 53,
+      "text": "53\noutcome of your statistical test. Let's suppose that supplement X is the holy grail of\nmuscle building supps and transforms you into the incredible hulk in a manner of weeks. If\nthat's also what your test shows, everyone's happy. However, if supplement X actually\nworks, but your test says it doesn't, you've failed to detect an effect even though there\nactually was one. That's a type II error and it's caused by a lack of statistical power. A\nmore sensitive test would have found an effect. (Lack of) statistical power is an important\nreason why different studies can show different things.\n\nWhat determines the statistical power of a test? A full power analysis takes into account\nmany things, including the design of the experiment, but there are 3 main factors.\n1. The statistical significance criterion we call alpha. You can basically forget about\nthis, because the convention of using a significance level of 0.05 has become so\ndeeply ingrained in the scientific literature it may as well have been enforced by\nlaw.\n\n2. Sample size: The larger the sample size of a study, the easier it is to detect effects.\nIn our example, if the group receiving supplement X and the placebo group both\nconsisted of thousands of people, it's most likely that any difference between the\ngroups at the end of the study was caused by supplement X, because the large\nsample size cancels out between-subject variance and ensures that the observed\nvalues are very close to the actual population means (provided the sampling was\nrandom and the study was well controlled). A sample size of only a few participants\nhas far less statistical power, because the effect of supplement X is obscured by\nrandom variation or noise. In such a small sample, just one individual with, say, a\nheart condition that makes him or her unsusceptible to the effects of supplement X",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 54,
+      "text": "54\nmay be enough to fool the test into thinking supplement X doesn't work.\n\n3. Third, there's the effect size, which is, as the name suggests, the magnitude of the\neffect you're looking for. In our example, the effect size of supplement X is\nextremely high, because it turns you into the incredible bulk. If that were literally the\ncase, you only really need a sample size of one or two people to know supplement\nX is the bomb. Some things can have such a large effect size that personal\nexperience and anecdotes are enough evidence to see it's true. This was the case\nwith injectable testosterone when it first came on the market. Researchers debated\nfor decades whether injecting testosterone resulted in increased muscle growth,\nmostly using absurdly small dosages, while it was blatantly obvious to bodybuilders\nthat had injected it that it increased their gains. In contrast, if supplement X were\nonly mildly effective, you'd need a far larger sample to detect its effects.\n\nType II errors can be contrasted with type I errors, which are false positives. A small\nsample increases the chance of not just type II but also type I errors. If you happen to\nhave 3 genetic freaks in a study of 5 people, you may observe a statistically significant\ndifference between groups with a large effect size that has nothing to do with the study's\nindependent variable. It's just that those 3 people grew so much more muscle than the\nothers regardless of which group they were in because of their genetics.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 55,
+      "text": "55\n\nGood studies perform an a priori power analysis, which means they estimate the power of\ntheir study based on effect sizes from previous data or theory. An a priori power\nestimation can be used to determine how many subjects are needed to reach 80% power,\nwhich is commonly regarded as the minimum needed for a viable study.\n\nImportantly, statistical power should not be calculated with the study's own observed\neffect size after the study has completed (post-hoc). Using the study's own effect size\nmakes it useless, as it just becomes a recalculation of the p-value. If you question the\nobserved p-value, it's better to look at the confidence interval of the effect than post-hoc\npower.\n\nConfidence intervals\nScientific publications commonly report 95% confidence intervals (CIs). Confidence\nintervals are interval estimates, as opposed to a fixed-point estimate. For example, if you\nwant to know how long the average dog is, you can measure 91 dogs and your average\nmay be 69 cm. That's probably not exactly the true average length in the whole population\nof dogs. A confidence interval illustrates this by computing a range of values rather than",
+      "headings": [
+        "Confidence intervals"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 56,
+      "text": "56\njust reporting the average. The 95% CI is typically calculated as being 2 standard\ndeviations below the average up to 2 standard deviations above the average, as\nillustrated below. In a normal distribution, we can say that 95% of our sample values fall\nwithin this range. You can also compute the confidence interval for an effect, like that of\nthe difference in muscle growth rate between 2 groups.\n\nImportantly, a confidence interval says 95% of the sample values fall within its range\nunder valid model assumptions. This does not mean 95% of the true (population) values\nfall within this range. In theory, if one would repeat the study a near-infinite number of\ntimes, 95% of confidence intervals should contain the true value (assuming all analysis\nassumptions were correct in the first place), but a single confidence interval may not\ncontain the true value. As such, a 95% confidence interval does not mean there is a 95%\nchance the true value falls within this range. There is such a statistic in Bayesian\nstatistics: it's called a credible interval.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 57,
+      "text": "57\n\nHowever, we can still roughly interpret a 95% CI as a range of potential values that are\nmore compatible with the study's data than values outside of this range. It's particularly\nuseful to know if the CI spans the null. If the CI of an effect size, such as the increase in\nmuscle growth from a supplement, does not include zero, this is strong evidence for the\neffectiveness of the supplement. If the effect size CI does include zero, we cannot exclude\nthe supplement doesn't work.\nNoise vs. bias\nMany people overlook this distinction. Plenty of study reviews try to assess the truth of a\nstudy's findings by listing its strengths and weaknesses instead of, as a Bayesian,\ninferring probability from statistical principles. You can't just list the limitations of a study\nand then conclude 'therefore: screw this study.'\n\nWhen you want to discredit a finding, you need to demonstrate bias, not just noise.\n\nExample: A study finds that a greater meal frequency results in higher nitrogen balance in\ntrained but not untrained individuals. If the trained group had a higher protein intake than\nthe untrained group, that would be bias: the higher nitrogen balance in the trained group\ncould have been the result of this increased protein intake and not the meal frequency.\n\nThat's bias: a systematic flaw in the internal validity of the study that predisposes the\nstudy's results in a specific direction.",
+      "headings": [
+        "Noise vs. bias"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 58,
+      "text": "58\nStating that nitrogen balance is an unreliable measurement technique is an example of\nnoise. Noise reduces statistical power. If you understood statistical power, you should now\nunderstand that statistical significance in spite of this noise is actually an argument in\nfavor of the study's relevance. This suggests the effect size or the reliability of the effect\nwas high.\n\nMost study limitations and weaknesses people use to discredit a study finding they don't\nwant to believe are noise, not bias. Common biases in exercise and nutritional literature\nare:\n• Not controlling for a treatment imbalance in calories, protein or physical work\nbetween groups.\n• Having a sample imbalance by having one group that is fatter or less experienced\nthan the other group.\n\nCommon sources of noise include:\n• Small sample sizes.\n• Large sample heterogeneity (variation) due to having people with varying training\nexperience in the experiment and the inherent genetic variability in responsiveness\nto exercise.\n• Measurement error: the best measurement instruments are expensive and exercise\nscience is a poorly funded field.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 59,
+      "text": "59\nThe above is all the statistical knowledge you'll need in practice as an evidence-based\npersonal trainer. However, if you're considering a career in academia or you're interested\nin reading scientific studies yourself, here's a good article to further your education.\n\n➢ Optional further reading\nStatistical tests, P values, confidence intervals, and power: a guide to misinterpretations\n\nIf you want to learn even more statistics, Discovering Statistics by Andy Field is a good\nbook.",
+      "headings": [
+        "➢ Optional further reading"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 60,
+      "text": "60\nLearning objectives\nFor the exam, you should be able to do the following, though this module will not be tested\nas extensively as the modules on training and nutrition.\n• Effectively use search engines to find information.\n• Find the full text of publicly accessible research papers based on partial\ninformation, such as the authors, year and topic.\n• Explain what statistical power, correlations, effect sizes, p-values and statistical\nsignificance mean.\n• Understand scientific methodology jargon.\n\n➢ Click here for example exam questions.",
+      "headings": [
+        "Learning objectives",
+        "➢ Click here for example exam questions."
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "HOW TO LEARN, THINK AND",
+    "RESEARCH",
+    "many good field researchers.",
+    "Contents",
+    "................................",
+    "........................",
+    "...............................",
+    "............................",
+    "....................",
+    "..........................",
+    ".............................",
+    "4. Master P",
+    "...........................",
+    "..............................",
+    "How to study",
+    "What is learning?",
+    "The best study techniques",
+    "How to distribute your studying time",
+    "Logical reasoning skills",
+    "1. Beware of science mumbo-jumbo",
+    "2. Scientific skepticism vs. Bayesian thinking",
+    "3. There is no proof, only probability",
+    "theory can sound plausible, but only with actual data can we say it’s probable and we",
+    "have to accept that most things will never be proven.",
+    "4. It’s only a single study!",
+    "5. Know the difference between correlation and causation",
+    "6. Be skeptical of information from mainstream media",
+    "7. Objectivity vs. subjectivity",
+    "8. Accept that your ego is weak",
+    "Finding and filtering information",
+    "1. Always reading the full text is inefficient",
+    "2. Filter your information",
+    "The 3. best search engines to find research",
+    "4. Master Google search operators",
+    "4. Master",
+    "If you are going to search for words that are similar but have a diff",
+    "On th",
+    "Here you can",
+    "After the",
+    "((caffeine[t",
+    "lick on “",
+    "5. Don’t limit yourself to the English language",
+    "6. How to get full texts without subscribing to tons of journals",
+    "Reddit.com/r/Scholar",
+    "ResearchGate",
+    "7. The best journals to subscribe to",
+    "Menno reviews most",
+    "Interpreting scientific research",
+    "How to read a paper",
+    "The different types of scientific publications",
+    "Cross-over design: This is a type of within-subject design where each participant",
+    "Cross-sectional research: A type of",
+    "Longitudinal research: This means the",
+    "Observational research: This means the study did not have an intervention. It merely",
+    "Epidemiology: This is a collective term for unrandomized, observational research,",
+    "Scientific jargon",
+    "Anecdotes:",
+    "Records of observed behaviors’ which relies on personal testimony.",
+    "Anecdotal evidence",
+    "Attrition/drop-out: Losing a study participant during a study. Participants may fall ill,",
+    "Baseline: The moment in time at the start of the study. You often compare post-",
+    "Confounding variables:",
+    "A variable that af",
+    "Empirical: Having facts, data. Without empirical research, we just have theories.",
+    "Homogeneity/heterogeneity: A homogeneous sample has similar subjects, like all being",
+    "External validity: The degree to which the results of the study can be generalized beyond",
+    "Internal validity: The degree to which the study’s methods allow us to answer its",
+    "Interaction effects: An effect of a combination of two or more independent variables on a",
+    "Outliers:",
+    "An observation in the data set that is",
+    "much different than the other observations in the",
+    "data",
+    "Peer-review: The scrutiny of a paper before its",
+    "Pilot study: A small-scale study on a new topic to determine if it’s worth investing more",
+    "Placebo: A placebo group act as a control group where a real-looking yet inactive",
+    "Position stand:",
+    "Position stands are systematic reviews of",
+    "R and R square:",
+    "R is the correlation between two variables.",
+    "square is the proportion of the vari",
+    "Reliability (and validity):",
+    "Reliability is the degree to which the values measured wi",
+    "instrument",
+    "again on Tue",
+    "Is a measure of variability. For data with a normal",
+    "95% of the",
+    "believed to",
+    "Statistics 101",
+    "➢ Lecture",
+    "Statistical significance",
+    "Statistical significance vs. effect size",
+    "Statistical power",
+    "Confidence intervals",
+    "Noise vs. bias",
+    "➢ Optional further reading",
+    "Learning objectives",
+    "➢ Click here for example exam questions."
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nHOW TO LEARN, THINK AND\nRESEARCH\n\n\n--- Page 2 ---\n2\n\nIn this module of the course you will learn how to research topics yourself and interpret\nscientific research. There are already too many of these 'how to do research' articles and\neven books, but most of them suck, because:\n• They're overly abstract.\n• They are longwinded and only cover the blatantly obvious.\n• The politically correct approach to science they advocate is not actually practiced by\nmany good field researchers.\n• They're excruciatingly boring.\n\nSo we'll keep this practical and concise without regard for what's politically correct.\n\n\n--- Page 3 ---\n3\nContents\nHow to study...............................................................................................................5\n\nWhat is learning?.....................................................................................................5\n\nThe best study techniques........................................................................................5\n\nHow to distribute your studying time..........................................................................7\n\nLogical reasoning skills...............................................................................................10\n\n1. Beware of science mumbo-jumbo........................................................................10\n\n2. Scientific skepticism vs. Bayesian thinking............................................................11\n\n3. There is no proof, only probability.........................................................................13\n\n4. It's only a single study!........................................................................................14\n\n5. Know the difference between correlation and causation.........................................15\n\n6. Be skeptical of information from mainstream media...............................................16\n\n7. Objectivity vs. subjectivity....................................................................................17\n\n8. Accept that your ego is weak...............................................................................19\n\nFinding and filtering information..................................................................................20\n\n1. Always reading the full text is inefficient................................................................20\n\n2. Filter your information..........................................................................................21\n\nThe 3. best search engines to find research.............................................................23\n\n4. Master Google search operators..........................................................................25\n4. Master P\n\n5. Don't limit yourself to the English language...........................................................32\n\n6. How to get full texts without subscribing to tons of journals....................................33\n\n\n--- Page 4 ---\n4\n7. The best journals to subscribe to..........................................................................34\n\nInterpreting scientific research....................................................................................35\n\nHow to read a paper...............................................................................................35\n\nThe different types of scientific publications..............................................................37\n\nScientific jargon......................................................................................................43\n\nStatistics 101.............................................................................................................48\n\nStatistical significance.............................................................................................48\n\nStatistical significance vs. effect size........................................................................51\n\nStatistical power.....................................................................................................52\n\nConfidence intervals...............................................................................................55\n\nNoise vs. bias.........................................................................................................57\n\nLearning objectives....................................................................................................60\n\n\n--- Page 5 ---\n5\nHow to study\nYou'll learn many new things in this course. To optimize your learning experience, here's\na guide with a scientific approach to study.\n\nWhat is learning?\nFrom a neuroscientific perspective, learning is the remodeling of the neuronal circuits in\nyour brain [2]. Psychologically, learning is integrating new information in your cognitive\nmap of the world. Your conscious awareness of learning is not all that you learn. Much\ninformation is processed in your brain that does not enter your consciousness but may still\nbe stored in the brain: this is called latent learning.\n\nThe best study techniques\nExtensive research has been on which study techniques are most effective. As it turns\nout, the most commonly used techniques do not offer the most return on your learning\ntime. Rereading, summarizing and highlighting can be useful, but they don't enhance your\nunderstanding as much as thinking more organically about the topics you learned about.\nThey focus too much on acquiring new information rather than remodeling your brain's\norganization of this knowledge. See the following table for an overview of study\ntechniques and how they fare in scientific research.\n\n\n--- Page 6 ---\n6\n\nSource\n\nIt's clear that the best way to enhance your understanding of a topic is deliberate practice.\nTo that end, we have added 2 sections at the end of every module that we encourage you\nto make use of.\n1. Learning objectives: you should go through this list and evaluate for each point if\nyou're capable of doing this.\n2. Example exam questions: try to answer these. No answers are provided on\npurpose so that you can't cheat and you're forced to formulate questions in the\nFacebook group or live Q&A sessions to discuss the materials. Think back on when\nyou learned math in high school: you can see the answer to a question and think\n'ok simple' yet when you then have to get to the answer yourself on your own, you\nrealize you haven't fully understood it yet.\n\n\n--- Page 7 ---\n7\nAt the end of the nutrition modules and at the end of the training modules we also have\ncase study weeks in the course. Here we'll provide you with real-life and theoretical case\nstudies on how to implement everything you learned thus far in practice. You'll find that\nthere are some intentional delays in the course materials before all the pieces fall together\nto foster deliberate practice, repetition and reflection of the materials and thereby improve\nyour learning.\n\nWe also encourage you to create your own practice materials. The following techniques\nare particularly effective based on the research.\n• Creating flashcards with questions and terms to explain with the answers on the\nback. If you prefer to use your smartphone, you can use the app Anki to create\ndigital flashcards.\n• Print the course materials and black out key terms. Later, go through the document\nand fill in the blanks.\n• Implement the Cornell Note Taking System for each course module.\n\nHow to distribute your studying time\nMany students wait until the last minute to study before their exams and then try to cram\nin all the information. Psychologists call this 'massing'. As your teachers probably\npreached to you on many occasions, massing is not an ideal learning experience. It\ncertainly beats not learning, but a plethora of research shows spacing your studying time\nmore evenly over time improves information retention, recall, and general task\n\n\n--- Page 8 ---\n8\nperformance compared to massing [1, 2, 3, 4, 5, 6]. This is called the 'spacing effect'.\nYour memory thrives on repetition, especially for long-term retention. To make use of the\nspacing effect, try to plan your learning schedule as follows if possible:\n● Plan in one full evening or weekend day to study each week's course materials.\n● Plan in 2 shorter sessions later in the week: one to reflect on the learning\nobjectives and another moment to answer the example exam questions. Based on\nyour performance, revisit the parts of the module you didn't fully understand yet.\n\nMany students also fall for the planning fallacy: they systematically underestimate how\nmuch time it will take to learn something.\n\nAs a result of the above, people learn better when they have set deadlines spaced evenly\napart. Self-imposed deadlines are also effective but not as effective as external deadlines,\npresumably because they are not as strict. In line with this, we have spaced the course\ncontents at a very deliberate pace and we will close off the Comments section for each\nmodule when we start discussing the next module. If you want to ask questions and\nengage in the discussion, you'll thus have to keep up with the pace of the course. This set\ncourse structure should also help reduce procrastination.\n\nAs a final tip, be strict with yourself. Free up a liberal amount of study time each week in\nyour agenda, such as Saturday morning, and stick to it. Making up excuses to rationalize\nmissed deadlines is one of the most common reasons people fail online courses.\n\n\n--- Page 9 ---\n9\n\n\n--- Page 10 ---\n10\nLogical reasoning skills\nAny intellectual endeavor relies on logical reasoning skills. In this section, we'll give you\nmany tips to improve your brain gains.\n\n1. Beware of science mumbo-jumbo\n'Big words' and technical jargon can give the impression of validity. Don't fall for theories\nand plausibility: look for probability and empirical evidence of each theory. Broscience\noften relies on theory without evidence.\n\nSo always ask yourself if you see any theory: what's the actual evidence supporting this?\nIs there direct evidence from randomized controlled experiments on this?\n\n\n--- Page 11 ---\n11\n2. Scientific skepticism vs. Bayesian thinking\nScientific consensus is a turtle moving along the sands of truth… Or whatever: it's a slow\nprocess. Scientists only speak of something as a consensus or a well-established finding\nif multiple research groups using different methods in different populations have replicated\nthe finding. That's why it took decades before the scientific community reached an\nagreement that androgenic anabolic steroids enhance performance, that strength athletes\nbenefit from more protein than sedentary individuals and that multiple sets are superior to\nsingle sets for strength development.\n\nThe issue here is that science is about knowledge and truth, not about the practical\napplication thereof. So the scientific perspective on the vast majority of the questions we\nfind relevant is 'Well, there's research to suggest X, but we face limitations A-Z, so we\nneed additional research before we can answer this question.' That's an answer that\ndoesn't benefit anyone and as a coach, it's a cop-out. If you have clients, you have to\nadvise them something. To get from facts to recommendations, you have to think like a\nBayesian, a rational style of thinking popular in economics that is inspired by the\nstatistician Thomas Bayes.\n\nA Bayesian estimates a probability of truth for every belief and updates this probability\nbased on the available evidence. That probability is then multiplied by the expected pay-\noffs to come to conclusions (economists call this expected utility theory).\n\nIn other words, Bayesian thinking prescribes how scientific evidence - statements of fact\n- translate into advice and decisions. When you know someone's goals and the relevant\nfacts, Bayesian advice optimizes that person's decisions to reach those goals.\n\n\n--- Page 12 ---\n12\n\nExample: You're a sponsored athlete and receive a new test booster. Other than a lot of\nresearch establishing the supplement's safety, there are only 2 studies on its\neffectiveness: 1 in favor and one against. A scientific perspective can only answer if it\nworks, not if you should take it. The answer to 'if it works' in scientific terms will be \"No,\nmore research is needed before we can claim if it works.\" Yet a Bayesian may think as\nfollows. The probability that the supplement works is substantial, even though the benefit\nis small. The cost of taking the supplement is virtually nil. So the benefit multiplied by the\nprobability that it works exceeds the cost of taking it. A Bayesian would probably take the\nsupplement; it's a virtually zero-cost, low-benefit decision.\n\n\n--- Page 13 ---\n13\n3. There is no proof, only probability\nProof is the highest standard of evidence. It is normally reserved for logical statements,\nsuch as mathematics. Empirical sciences - the sciences of observable facts - cannot\nprovide more evidence than probability by definition. Science does not prove supplement\nX works; it says it is probable (95% probable, to be specific). When there is no empirical\nevidence for a statement, as is often the case for broscientific statements, it can merely be\nplausible.\n\nThe hierarchy in standards of proof can conveniently be remembered by the 3 Ps. Any\ntheory can sound plausible, but only with actual data can we say it's probable and we\nhave to accept that most things will never be proven.\n\n\n--- Page 14 ---\n14\n4. It's only a single study!\nImagine there's a new supplement on the market called STX. You want to know if it's\nworth buying, so you Google it. You find a forum where someone has tried it and says it\ngreatly increased his muscle growth. 5 others noticed the same thing.\n\nA blogger did DXA scans to confirm the muscle growth he experienced and it was legit.\nHe then tested the supplement in a lab and the results match the label's ingredients.\n\nAfter some more research, you find 3 more people who have confirmed their muscle\ngrowth using MRI after taking STX.\n\nSounds pretty convincing, right?\n\nThe above evidence doesn't come anywhere remotely close to that of a single published\nscientific experiment. No subject data, unknown motives and sponsorship, heterogeneous\nmeasurement techniques, no control group, no randomization, no peer-review, no double\nblinding, etc.\n\nDon't underestimate the evidence provided by a study. Don't overestimate the worth of an\nanecdote.\n\n\n--- Page 15 ---\n15\n5. Know the difference between correlation and causation\n\nSource\n\n\n--- Page 16 ---\n16\n6. Be skeptical of information from mainstream media\n\n\n--- Page 17 ---\n17\n7. Objectivity vs. subjectivity\nA statement is either objective or subjective. Objective statements are statements of fact;\nthey refer to a state of nature. Subjective statements are statements of feeling.\n\nDetermining whether a statement is objective or subjective is in itself an objective\nquestion. \"Ronnie Coleman is 9 feet tall\" is actually a statement of fact, not an opinion. It is\na claim of the state of nature. A false one, obviously, but the statement is still objective.\n\nMore common examples are people trying to humbly add 'in my opinion' to a statement of\nfact. Similarly, you'll often see people add \"and that's a fact\" or something along those\nlines to strengthen their position. Doing so is at best redundant and often blatantly false.\n\nAnd this isn't simply a semantic or moralistic distinction. It is crucial. Recall that Bayesian\nthinking translates facts into decisions based on someone's goals. Any subjective\nstatement is entirely meaningless from a Bayesian or scientific perspective. This makes a\ngreat difference in terms of how you give advice, because everything revolves around\nsomeone's goals.\n\nMany questions are subjective or worse, hypothetical (not referring to any facts), and thus\ndo not have a Bayesian answer. Example: \"If you could only do one exercise, which would\nit be?\" You will be asked these questions, so you will have to help the person asking the\nquestion to reformulate the question in objective terms. In this case, the person is\nprobably interested in optimizing his or her exercise selection given a time constraint. So\nyou will have to dig into the person's true intentions and not just take the question for\ngranted.\n\n\n--- Page 18 ---\n18\n\nWithout knowing someone's goals, which is often the case on social media and on\ninternet forums, the best a Bayesian can often do is provide a statement of fact. For\nexample, \"supplementing BCAAs on top of sufficient dietary protein intake will not\nincrease strength development, muscle hypertrophy or fat loss.\" When you know that your\nclient's goal is one of the above and the client's dietary protein intake is already sufficient,\nyou can then advise them not to take BCAAs.\n\nHere are some concrete, down-to-earth tips to give more Bayesian advice:\n• Be mindful of the person's goals. It sounds so simple, but many coaches give advice\nbased on their own goals instead of those of their client, like powerlifters advising\nclients interested in looking better to get fat to increase squat strength.\n• Weigh the costs and benefits of the decision. Things aren't black and white.\n• Use contingencies when the person's goals are not known to you. For instance, \"If\nmoney is not a concern, these supplements may be worth trying, as they provide a\nsmall performance boost in some of the research.\"\n\n\n--- Page 19 ---\n19\n8. Accept that your ego is weak\nWhen you come across new evidence, you are strongly inclined to find an explanation that\nfits with your prior beliefs. This robust finding in psychology is called confirmation bias.\nThe mind always tries to minimize cognitive dissonance between your ideas. This is\ngenerally a good thing, because a Bayesian should not believe statements that contradict\neach other. Having consistent beliefs is fundamental to being rational.\n\nHowever, accepting that prior beliefs were wrong requires that your self-image takes a hit.\nAnother fundamental finding in psychology is that humans will go to great lengths to\nmaintain a positive self-image, since a positive self-image and happiness are closely\nrelated. As such, the mind often finds it easier to 'explain away' new findings than to\naccept that old beliefs were wrong.\n\nWhat can we do? Realize that your mind is imperfect. You are psychologically biased\ntowards rejecting revolutionary information. Being a Bayesian requires fighting this urge\nand overcoming your feelings with reason.\n\n\n--- Page 20 ---\n20\nFinding and filtering information\nOur goal with this course is to provide you with all the information that's relevant for a\nPersonal Trainer or recreational strength trainee. However, we encourage you to do your\nown research as well, especially after the course. In this section, we'll give you many tips\nto turn you into Sherlock Science.\n\n1. Always reading the full text is inefficient\nPubMed contains over 27 million articles. About half a million more are published each\nyear. Even if you read 5,000 articles per year, which means reading 13-14 articles per\nday, you're only covering 1% of the new literature.\n\n'Fortunately,' exercise science and nutrition are very small scientific disciplines. It is\npossible, if you're efficient, to consume the vast majority of the available information. Still,\nhundreds of papers are published each month. The need for efficiency is particularly high\nbecause the quality of these papers is very low compared to more popular scientific\ndisciplines.\n\nRoughly a hundred interesting articles appear each month. 'Interesting' in this case means\nthe title suggests the article is relevant for a strength trainee. Then you should generally\nread the abstract to determine if it's interesting and only if that piques your interest, should\nyou bother to read more.\n\n\n--- Page 21 ---\n21\n2. Filter your information\nIn this digital age, lack of information is rarely ever the problem. The problem is knowing\nwhich information to trust. Person A says X, person B says Y. The following guideline\nshould help you cut through the noise very effectively: if someone doesn't normally\nreference his or her work, you can generally ignore whatever facts they claim. Better yet,\ndon't read their stuff at all. You'll either learn nothing new or you'll gain a question, never\nan answer.\n\nEven worse, it's quite likely you'll remember a statement or argument without\nremembering its source and forget that it's incorrect. Psychologists call this source\namnesia and it's a major reason for the unreliability of eyewitness testimony.\n\nThat said, you may obviously still benefit from someone's experience, perspective or\nlogical arguments. There just aren't many people who stick to those sorts of claims\nwithout invoking pseudoscience or unsupported facts.\n\nFiltering your information sources will greatly minimize the paralysis by analysis that's so\ncommon in the fitness industry.\n\nHere are several evidence-based fitness authors that Menno vouches for after having\npersonally met them and worked with them. Note that they don't always agree on\neverything and their views may be biased by most of them being friends.\n• Brad Schoenfeld\n• Bret Contreras\n\n\n--- Page 22 ---\n22\n• Borge Fagerli\n• Alan Aragon\n• Eric Helms\n• Greg Nuckols\n\n\n--- Page 23 ---\n23\nThe 3. best search engines to find research\nGoogle Scholar\n• Excellent search functionality\n• Extremely large database (the internet)\n• Not always up-to-date\n• Links to free non-open access publications (read: potentially copyright infringed)\n• No filtering of journal quality\n\nPubMed\n• Poor search functionality\n• Limited to relatively prestigious publications\n• Allows you to selectively search for reviews and open access publications\n• Excellent 'related articles' algorithm\n\nSciELO\n• Excellent search functionality (Google)\n• Moderately sized database\n• Open access\n• Great to find non-English language publications\n\n\n--- Page 24 ---\n24\nThere are a few other large academic search engines, but it's exceedingly rare to find an\narticle on any of them that you can't find with any of the above 3.\n\nWhen searching, think of the keywords that pertain to the article you're looking for, not the\ntitle of the paper. Academic search engines are based on a keyword system. You often\nwant to add 'resistance training' to your search to avoid getting tons of research on people\nwho don't even lift.\n\n\n--- Page 25 ---\n25\n4. Master Google search operators\nYou should at least know the following:\n• You can use quotes \"\" to search for keywords in that exact order. For example, if\nyou know the title of a study you're searching, you'll almost certainly get the right\nstudy as the first hit if you search the study title surrounded by quotes.\nFor example:\n\"Sex Differences in Adaptations in Muscle Strength and Size Following Resistance\nTraining in Older Adults: A Systematic Review and Meta-analysis\"\n• You can use AND and OR to logically combine keywords and - to exclude\nkeywords. For example, if you're looking for a study specifically on strength training\nwomen, you could add the following to your search:\nwomen OR female -men -male \"strength training\" OR \"resistance training\" OR\nbodybuilders OR \"resistance-trained\" OR powerlifters\n• You can use before:[year] and after:[year] to limit your search to specific dates. For\nexample, if you're looking for a study that you know was published after the year\n2018, you can add after:2018 to your search.\n• When you're looking for the full text of a paper, you can use:\nfiletype:pdf \"[journal article title]\"\nThis limits the search to PDF files and searches for the exact title of the paper\nyou're looking for.\n\n\n--- Page 26 ---\n26 4. Master\nBoolean logic represents the relationship between the search terms:\nAND (hypertrophy AND training volume)\nOR (resistance exercise OR strength training)\nNOT (resistance exercise NOT endurance) ← many recommend not to use this one as it\nmay exclude some relevant papersIf you are going to search for words that are similar but have a diff\n\n\n--- Page 27 ---\n27 FiltersOn th\n\n\n--- Page 28 ---\n28 Here you can\n\n\n--- Page 29 ---\n29 After the\n\n\n--- Page 30 ---\n30 ((caffeine[t\n\n\n--- Page 31 ---\n31 Click on \"\n\n\n--- Page 32 ---\n32\n5. Don't limit yourself to the English language\nScience is an English language enterprise; it's generally safe to say that all non-English\npublications and researchers are not among the scientific elite. But occasionally, very\ninteresting research is published in another language, often Russian, Portuguese or\nSpanish. In those instances, Google Translate is your friend; it can translate entire\ndocuments for you.\n\n\n--- Page 33 ---\n33\n6. How to get full texts without subscribing to tons of journals\nDisclaimer: check your governing laws before considering any of the information\npresented here.\n• Ask a student for his or her institutional log-in information\n• Join Reddit.com/r/Scholar\n• Use the search engines in tip 3\n• Search on Sci-Hub or Library Genesis\n• Ask the corresponding author: every scientific paper has the contact information of\none of the authors listed with it.\n• Join ResearchGate\n• Go to your local library\n• Buy an institutional log-in from any of the shady online sellers (at your own risk; no,\nthere's none we recommend)\n\n\n--- Page 34 ---\n34\n7. The best journals to subscribe to\nWith the caveat from tip 2 in mind, subscribing to the journals with the highest Impact\nFactor, a common measure of academic success, in exercise science, sports sciences (2)\n\nand nutrition is an easy way to get overviews of new studies in your inbox so you don't\nhave to look for them.\n\nNote that 'subscribe' for journals often means paying for them. Look for the alert manager\nor eTOC (electronic table of contents). Unfortunately, it's often quite a hassle to subscribe\nand when you get overviews of new studies in your inbox you still have to filter through\nvast amounts of uninteresting studies to find relevant research.\n\nIf you don't mind paying a bit extra to have experts filter through the research and review\nthe most interesting studies for you, Menno recommends MASS Research Review. Menno reviews most\n\n\n--- Page 35 ---\n35\nInterpreting scientific research\nScientific research provides the highest quality of evidence on most topics, but it's not\nalways easy to interpret scientific publications. In this section, we'll teach you how to read\nand interpret scientific publications.\n\nHow to read a paper\nThe most common paper structure in academia is the IMRaD model, illustrated below.\n\n\n--- Page 36 ---\n36\n\nYou'll often find a Conclusions section at the end of the Discussion with a summary of the\nmain findings and their implications.\n\nWay at the end you often find the Acknowledgements section, which is what you should\ncheck for the study funding sources to see if the authors have any conflicts of interest or\npotential sponsorship biases.\n\nWhile this is a useful structure to write up a paper, it is not the order you should read a\npaper in if you want to critically evaluate a study. Many study findings make people go\n'well, duh.' Yet when you ask people beforehand what they predict the study's outcome is,\nthey're often wrong. Here's how to read a paper you're genuinely interested in:\n1. Read the methods section. This explains what they did.\n2. Try to predict what the results will be.\n3. Read the results section. This lists the results without any interpretation from the\nauthors.\n4. If your prediction was inaccurate, think about why this was the case.\n5. Read the introduction, which should discuss prior literature on the topic, and then\nthe conclusion, which has the interpretation of the study's findings from the authors.\n\nIf you read the introduction first, your view will always be influenced by the perspective of\nthe researchers. In spite of what you may have learned in Research Methodology 101, the\nauthors often write the introduction after having seen their own results, so it's a biased\naccount of the prior literature.\n\n\n--- Page 37 ---\n37\n\nThe different types of scientific publications\nThere are several types of publications. When we think of a 'study', we're often thinking of\na randomized controlled trial (RCT). These generally considered the gold-standard\nmethod to obtain new information about a topic. By randomizing the participants to the\nstudy groups and controlling for all variables, they provide more robust evidence than\nmost other forms of evidence. If a study did not randomize the participants to the study\ngroups, the design is sometimes called quasi-experimental.\n\nThe lowest level of evidence is a case study or report. This just describes what happened\nwithout any control or intervention, often in a single individual. It's still better than an\nanecdote, as it's validated and much information is provided.\n\n\n--- Page 38 ---\n38\nA case-control study is one step better, as it compares a group of individuals with a\ncertain common denominator, like a disease or outstanding academic achievements, with\na control group of individuals that don't have it.\n\nAnother level of evidence quality up we have cohort studies. Cohort studies are\nessentially case-control studies over a long period. Ideally, cohort studies have a\nprospective design, which means the methods were determined beforehand and the\nresearchers followed the groups of people in real-time. For example, a prospective cohort\nstudy may compare students with low and high academic achievements and follow them\nover their life to see who ends up happier.\n\nThese separate studies are compiled together in scientific reviews. Some of these are\n'narrative' reviews, which means they have no pre-set structure. 'Systematic' reviews are\nmore controlled in that you have to specify the exact study inclusion criteria and show\nwhich studies you found and excluded.\n\n\n--- Page 39 ---\n39\nA systematic review can also be meta-analyzed, which is a method\nto take the available information from these studies, notably the\neffect sizes, and use statistical calculations to sort of 'average them\nout'. For example, if 5 studies show a supplement works and 5 show\nit doesn't, we can do a meta-analysis to serve as the arbiter to see if\nthe overall effect size is positive. It's important to note a meta-\nanalysis basically recycles information, so if you meta-analyze 5\ncrappy studies, you often still have poor quality of evidence.\n'Garbage in, garbage out.' In this sense, it's better to think of\nreviews and meta-analyses as separate lenses looking at the\nliterature, not as strictly higher-quality evidence. A single well-\ndesigned RCT can provide stronger evidence than a meta-analysis\nof 10 low-quality studies.\n\n\n--- Page 40 ---\n40\n\nThe hierarchy of evidence. Source\n\nThe above types of publications can have various structures. Here are several research\ndesign structures you should be familiar with.\n\nCross-over design: This is a type of within-subject design where each participant\nundergoes both treatments, ideally in randomized order with a wash-out period in\nbetween. By having each person by his or her own control, you eliminate the variance\nfrom having different people be in the different study groups. Example: Every subject tries\nboth a high-volume and a low-volume training program to see which works better.\n\n\n--- Page 41 ---\n41\n\nCross-sectional research: A type of\nresearch that compares multiple populations\nat a specific point in time. Example:\ncomparing meat-eaters and non-meat eaters\nand looking at their health.\n\nLongitudinal research: This means the\nresearch spanned over a certain period with\nrepeated measurements.\n\n\n--- Page 42 ---\n42\nObservational research: This means the study did not have an intervention. It merely\nmeasured what happened in a certain situation.\n\nEpidemiology: This is a collective term for unrandomized, observational research,\ngenerally about health with very large participant numbers due to relying on surveys and\nself-reported data. It includes mainly cross-sectional and longitudinal research with case-\ncontrol and cohort studies.\n\n\n--- Page 43 ---\n43\nScientific jargon\nScientific publications are filled with technical terms lay populations may not understand.\nHere's a mini-dictionary to understand the research jargon.\nAnecdotes: Records of observed behaviors' which relies on personal testimony. Anecdotal evidence\n\nAttrition/drop-out: Losing a study participant during a study. Participants may fall ill,\nmove or just can't be bothered to show up anymore. In nutritional and exercise science\nresearch, drop-out rates are typically high, as some participants can't adhere to the\nprogram.\n\nBaseline: The moment in time at the start of the study. You often compare post-\nintervention results with the measurement done at baseline. Confounding variables: A variable that af\n\nEmpirical: Having facts, data. Without empirical research, we just have theories.\n\nHomogeneity/heterogeneity: A homogeneous sample has similar subjects, like all being\nuntrained male students. Heterogeneity is the opposite: it means there is large variance.\n\n\n--- Page 44 ---\n44\nExternal validity: The degree to which the results of the study can be generalized beyond\nthe study sample, to other situations, times and people. Do the same results occur in\nother settings?\n\nInternal validity: The degree to which the study's methods allow us to answer its\nresearch question. In other words, whether we can establish causality between the\nindependent variable that was manipulated and the dependent variable that was\nobserved. If a study sets out to determine if carbohydrate intake influences performance,\nbut it does not control for energy and protein intake, it has low internal validity, as the\nresults are confounded by energy and protein intake. We cannot know which of those 3\nfactors influenced the results.\n\nInteraction effects: An effect of a combination of two or more independent variables on a\ndependent variable. For example, ephedrine and caffeine have an interaction effect: their\ncombined effect is greater than the combined effects of both in isolation. They work\nsynergistically, not just additively.\nOutliers: An observation in the data set that is much different than the other observations in the data\n\nPeer-review: The scrutiny of a paper before its\npublication by other researchers. Ideally, this is done anonymously from both sides to\navoid bias, mediated by the editor of the publishing journal.\n\n\n--- Page 45 ---\n45\nPilot study: A small-scale study on a new topic to determine if it's worth investing more\nresources into studying this topic.\n\nPlacebo: A placebo group act as a control group where a real-looking yet inactive\nsubstance or sham treatment is given to the control group of participants to be sure that\nany effects that happen to the actual treatment group are caused by the treatment.\nPlacebos themselves often also have significant effects purely due to the expectation of\nan effect. These are called placebo effects. Position stand: Position stands are systematic reviews of\nR and R square: R is the correlation between two variables.R-square is the proportion of the vari\nReliability (and validity): Reliability is the degree to which the values measured with an instrument\n\n\n--- Page 46 ---\n46 again on Tue\nStandard deviation: Is a measure of variability. For data with a normal distribution, about 95% of the\n\n\n--- Page 47 ---\n47 believed to\n\n\n--- Page 48 ---\n48\nStatistics 101\nScience relies on the collection of data. To interpret those data, we need to perform\nstatistical analyses. As such, if you don't understand statistical methods, you can't truly\nunderstand any research findings. Unfortunately, most current scientific fields rely strongly\non frequentist statistics. These statistical methods are often very counterintuitive (unlike\nsay Bayesian statistics).\n\nIn the following lecture, we'll provide a simplified interpretation of common statistical terms\nand analyses. Below we go into more detail and formal definitions.\n\n➢ Lecture\nStats 101\n\nStatistical significance\nIn exercise and nutritional sciences, you often want to know whether a certain treatment\nworked better than placebo. Say training program A results in 2% growth and program B\nresults in 3% growth. Is A more effective than B? To determine this, we can test for\nstatistical significance with a probability (p) value. If the p-value is above 0.05, we say the\ndifference is not statistically significant. 0.05 is an arbitrary but firmly engrained\nconvention.\n\n\n--- Page 49 ---\n49\nThe p-value measures the probability of obtaining all results in the study under the\nassumption that all the statistical model's assumptions are correct, including the null\nhypothesis. The null hypothesis (H0) is the theory that there is no difference between the\nstudy groups. As such, a low p-value means the chance of observing the results we see is\nlow if we assume there is in reality no difference between the groups. The results are too\nextreme to be due to chance. As such, you can roughly think of the p-value as being the\nprobability that the results are due to chance. That actual probability is higher, 23% based\non some estimates, but the intuition is the same: a low p-value supports that there is in\nfact a difference between groups.\n\nWhy can't we just say 3% is greater than 2% and leave it at that? There are virtually\nalways confounding factors that induce variance in any study. For example, some people\ntrain harder than others. If you happen to have more hardcore people in one group than\nthe other, that may be the reason they grew more from a certain strength training protocol\nthan others, even though the protocols were equally effective physiologically speaking. If\nyou plot the muscle growth rates of both groups, you'll get 2 distributions. If there is no\noverlap between these distributions at all, it's easy to see there is a difference in muscle\ngrowth between these groups: the worst gains in one group were still better than the best\ngains in the other group. However, in practice the graphs will overlap and a statistical\nsignificance test then tells us if these 2 distributions are likely part of the same distribution\nor if they're in fact different distributions.\n\n\n--- Page 50 ---\n50\n\nExample: You plot the increase in total training tonnage of program 1 with sample 1 and\nprogram 2 with sample 2. In this case, while the average increase in tonnage of program 2\nis higher, this difference is so small relative to the variance in individual results that we\ncannot say the distributions of the results are really different from each other. It's likely\nsample 1 and sample 2 achieved the same distribution of results (plotted in orange).\n\nIn short, statistical significance means there is most likely a true difference between\ngroups, not just between-subject variance or measurement error. Assuming the study was\nwell-designed (high internal validity), we can conclude this effect was caused by the\n\n\n--- Page 51 ---\n51\nindependent variable of the study and, for example, program A was more effective than\nprogram B.\n\nStatistical significance vs. effect size\n'Statistically significant' intuitively sounds like it means something is highly relevant, like\nthe effect is big. However, statistical significance does not directly measure the magnitude\nof an effect. Large effects are more likely to be statistically significant, but very small\neffects that are practically insignificant can also reach statistical significance. To look at\nthe strength of an effect, we can look at the raw values or the effect size, which is a\nstandardized measure of the strength of an effect. Effect sizes can be computed in\nvarious ways, but most rely on dividing the average difference by the standard deviation.\n\nThe formulas for various effect sizes.\n\nAs an example to contrast effect size with statistical significance, in a very large study of\nsupplement X, we may find that testosterone increases by 3% in the experimental group\nand this is significantly more than the placebo group. Testosterone production fluctuates\n\n\n--- Page 52 ---\n52\nby about 50% across the day in healthy men, so 3% is a trivial increase and the effect size\nis small.\n\nAs an opposite example, let's say a group of researchers try to replicate the above finding,\nbut their measurement instruments are older than Gandalf, so the measurements are all\nover the place. They find a 178% increase in testosterone, but individual readings vary\nfrom -340 to +421% and the finding does not reach statistical significance. In this\nscenario, we cannot even talk about the effect size, since we cannot say with any\ncertainty that this finding is not just measurement error. However, depending on the\ntheoretical basis and the other literature, these kinds of findings can indicate a trend. So\njust because statistical significance was not reached, it does not mean that this finding is\nuninteresting. This brings us to the discussion of statistical power.\n\nStatistical power\nThe power of a statistical test is the probability that the test will reject the null hypothesis\nwhen the null hypothesis is false. It's identical to the probability of not making a type II\nerror (failing to reject a false null hypothesis): 1 minus power = type II error probability. For\nthose unfamiliar with the statistical jargon, here's a more intuitive explanation: statistical\npower is the ability to detect an effect with a study when there is a truly an effect. It is the\nsensitivity of a test: sensitivity in this case is both an intuitive and the proper statistical\nterminology.\n\nHere's an example in lay terms. You're conducting a study on the efficacy of supplement\nX. There's the physical reality of its effectiveness, unknown to you, and there's the\n\n\n--- Page 53 ---\n53\noutcome of your statistical test. Let's suppose that supplement X is the holy grail of\nmuscle building supps and transforms you into the incredible hulk in a manner of weeks. If\nthat's also what your test shows, everyone's happy. However, if supplement X actually\nworks, but your test says it doesn't, you've failed to detect an effect even though there\nactually was one. That's a type II error and it's caused by a lack of statistical power. A\nmore sensitive test would have found an effect. (Lack of) statistical power is an important\nreason why different studies can show different things.\n\nWhat determines the statistical power of a test? A full power analysis takes into account\nmany things, including the design of the experiment, but there are 3 main factors.\n1. The statistical significance criterion we call alpha. You can basically forget about\nthis, because the convention of using a significance level of 0.05 has become so\ndeeply ingrained in the scientific literature it may as well have been enforced by\nlaw.\n\n2. Sample size: The larger the sample size of a study, the easier it is to detect effects.\nIn our example, if the group receiving supplement X and the placebo group both\nconsisted of thousands of people, it's most likely that any difference between the\ngroups at the end of the study was caused by supplement X, because the large\nsample size cancels out between-subject variance and ensures that the observed\nvalues are very close to the actual population means (provided the sampling was\nrandom and the study was well controlled). A sample size of only a few participants\nhas far less statistical power, because the effect of supplement X is obscured by\nrandom variation or noise. In such a small sample, just one individual with, say, a\nheart condition that makes him or her unsusceptible to the effects of supplement X\n\n\n--- Page 54 ---\n54\nmay be enough to fool the test into thinking supplement X doesn't work.\n\n3. Third, there's the effect size, which is, as the name suggests, the magnitude of the\neffect you're looking for. In our example, the effect size of supplement X is\nextremely high, because it turns you into the incredible bulk. If that were literally the\ncase, you only really need a sample size of one or two people to know supplement\nX is the bomb. Some things can have such a large effect size that personal\nexperience and anecdotes are enough evidence to see it's true. This was the case\nwith injectable testosterone when it first came on the market. Researchers debated\nfor decades whether injecting testosterone resulted in increased muscle growth,\nmostly using absurdly small dosages, while it was blatantly obvious to bodybuilders\nthat had injected it that it increased their gains. In contrast, if supplement X were\nonly mildly effective, you'd need a far larger sample to detect its effects.\n\nType II errors can be contrasted with type I errors, which are false positives. A small\nsample increases the chance of not just type II but also type I errors. If you happen to\nhave 3 genetic freaks in a study of 5 people, you may observe a statistically significant\ndifference between groups with a large effect size that has nothing to do with the study's\nindependent variable. It's just that those 3 people grew so much more muscle than the\nothers regardless of which group they were in because of their genetics.\n\n\n--- Page 55 ---\n55\n\nGood studies perform an a priori power analysis, which means they estimate the power of\ntheir study based on effect sizes from previous data or theory. An a priori power\nestimation can be used to determine how many subjects are needed to reach 80% power,\nwhich is commonly regarded as the minimum needed for a viable study.\n\nImportantly, statistical power should not be calculated with the study's own observed\neffect size after the study has completed (post-hoc). Using the study's own effect size\nmakes it useless, as it just becomes a recalculation of the p-value. If you question the\nobserved p-value, it's better to look at the confidence interval of the effect than post-hoc\npower.\n\nConfidence intervals\nScientific publications commonly report 95% confidence intervals (CIs). Confidence\nintervals are interval estimates, as opposed to a fixed-point estimate. For example, if you\nwant to know how long the average dog is, you can measure 91 dogs and your average\nmay be 69 cm. That's probably not exactly the true average length in the whole population\nof dogs. A confidence interval illustrates this by computing a range of values rather than\n\n\n--- Page 56 ---\n56\njust reporting the average. The 95% CI is typically calculated as being 2 standard\ndeviations below the average up to 2 standard deviations above the average, as\nillustrated below. In a normal distribution, we can say that 95% of our sample values fall\nwithin this range. You can also compute the confidence interval for an effect, like that of\nthe difference in muscle growth rate between 2 groups.\n\nImportantly, a confidence interval says 95% of the sample values fall within its range\nunder valid model assumptions. This does not mean 95% of the true (population) values\nfall within this range. In theory, if one would repeat the study a near-infinite number of\ntimes, 95% of confidence intervals should contain the true value (assuming all analysis\nassumptions were correct in the first place), but a single confidence interval may not\ncontain the true value. As such, a 95% confidence interval does not mean there is a 95%\nchance the true value falls within this range. There is such a statistic in Bayesian\nstatistics: it's called a credible interval.\n\n\n--- Page 57 ---\n57\n\nHowever, we can still roughly interpret a 95% CI as a range of potential values that are\nmore compatible with the study's data than values outside of this range. It's particularly\nuseful to know if the CI spans the null. If the CI of an effect size, such as the increase in\nmuscle growth from a supplement, does not include zero, this is strong evidence for the\neffectiveness of the supplement. If the effect size CI does include zero, we cannot exclude\nthe supplement doesn't work.\nNoise vs. bias\nMany people overlook this distinction. Plenty of study reviews try to assess the truth of a\nstudy's findings by listing its strengths and weaknesses instead of, as a Bayesian,\ninferring probability from statistical principles. You can't just list the limitations of a study\nand then conclude 'therefore: screw this study.'\n\nWhen you want to discredit a finding, you need to demonstrate bias, not just noise.\n\nExample: A study finds that a greater meal frequency results in higher nitrogen balance in\ntrained but not untrained individuals. If the trained group had a higher protein intake than\nthe untrained group, that would be bias: the higher nitrogen balance in the trained group\ncould have been the result of this increased protein intake and not the meal frequency.\n\nThat's bias: a systematic flaw in the internal validity of the study that predisposes the\nstudy's results in a specific direction.\n\n\n--- Page 58 ---\n58\nStating that nitrogen balance is an unreliable measurement technique is an example of\nnoise. Noise reduces statistical power. If you understood statistical power, you should now\nunderstand that statistical significance in spite of this noise is actually an argument in\nfavor of the study's relevance. This suggests the effect size or the reliability of the effect\nwas high.\n\nMost study limitations and weaknesses people use to discredit a study finding they don't\nwant to believe are noise, not bias. Common biases in exercise and nutritional literature\nare:\n• Not controlling for a treatment imbalance in calories, protein or physical work\nbetween groups.\n• Having a sample imbalance by having one group that is fatter or less experienced\nthan the other group.\n\nCommon sources of noise include:\n• Small sample sizes.\n• Large sample heterogeneity (variation) due to having people with varying training\nexperience in the experiment and the inherent genetic variability in responsiveness\nto exercise.\n• Measurement error: the best measurement instruments are expensive and exercise\nscience is a poorly funded field.\n\n\n--- Page 59 ---\n59\nThe above is all the statistical knowledge you'll need in practice as an evidence-based\npersonal trainer. However, if you're considering a career in academia or you're interested\nin reading scientific studies yourself, here's a good article to further your education.\n\n➢ Optional further reading\nStatistical tests, P values, confidence intervals, and power: a guide to misinterpretations\n\nIf you want to learn even more statistics, Discovering Statistics by Andy Field is a good\nbook.\n\n\n--- Page 60 ---\n60\nLearning objectives\nFor the exam, you should be able to do the following, though this module will not be tested\nas extensively as the modules on training and nutrition.\n• Effectively use search engines to find information.\n• Find the full text of publicly accessible research papers based on partial\ninformation, such as the authors, year and topic.\n• Explain what statistical power, correlations, effect sizes, p-values and statistical\nsignificance mean.\n• Understand scientific methodology jargon.\n\n➢ Click here for example exam questions.",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:42:50.096780",
+  "error": null
+}

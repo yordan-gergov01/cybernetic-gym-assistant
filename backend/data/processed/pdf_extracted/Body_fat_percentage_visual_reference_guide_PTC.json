@@ -1,0 +1,634 @@
+{
+  "filename": "Body fat percentage visual reference guide PTC.pdf",
+  "source": "Body fat percentage visual reference guide PTC.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 67,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nBODY FAT PERCENTAGE\nVISUAL REFERENCE GUIDE",
+      "headings": [
+        "BODY FAT PERCENTAGE",
+        "VISUAL REFERENCE GUIDE"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\nThis guide can be used to estimate someone's body fat percentage by eye. All of the\nphotos in this guide were taken within a few days of having done a high-quality body\ncomposition measurement, e.g. hydrostatic weighing, DXA, InBody, full BIA, underwater\nweighing. Most are from clients of Menno. A few publicly posted photos from the\ninternet are included as well with their names.\n\nAs a reference, the following table shows the body composition of the average, healthy\nAmerican individual. They are not representative of an \"ideal\" body composition.\nEssential fat is fat associated with bone marrow, the central nervous system, viscera\n(internal organs), and cell membranes, and in females, essential fat also includes fat in\nmammary glands and the pelvic region. Note that body composition is influenced not\nonly by gender but also by i.a. age, race, heredity and stature.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "3\n\nAs an additional reference, you can use the following table from the American Council\non Exercise to classify individuals in terms of leanness. It's good to keep these objective\nreferences in mind next time you hear someone say they're at 2% body fat.",
+      "headings": [
+        "references in mind next time you hear someone say they’re at 2% body fat."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "4",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "5\nMen\n\n4.1% (DXA): Wesley Vissers\nNote the grainy appearance of the whole body and the deep muscle striations.",
+      "headings": [
+        "Men",
+        "4.1% (DXA): Wesley Vissers"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "6\n6.2% (DXA): Alberto Nuñez\nNote the extreme vascularity, striated glutes and Christmas tree lower back definition.\nThis is pretty much as lean as it gets, so it's a good example that getting below ~5%\nbody fat is generally only possible with extreme levels of muscle mass.",
+      "headings": [
+        "6.2% (DXA): Alberto Nuñez"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "7",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "8\n6.3 - 16.7% (DXA)\nHere's a selection of DXA scans and corresponding photos of Sigvar Garfors during his\ncontest prep with Menno Henselmans (in reverse order obviously).\n\n6.3%\nNote the start of glute striations and clear separation of the heads of the quads.\n\n10.6%\nNote the presence of muscle striations in multiple muscles in his back and the caved in\nabdominal structure before being at a single digit body fat percentage.",
+      "headings": [
+        "6.3 - 16.7% (DXA)",
+        "6.3%",
+        "10.6%"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "9\n\n16.7%\nNote how a muscular individual at 16.7% body fat still has visible ab definition - one\ncould say a sixpack when flexed in good lighting (which this isn't at all).",
+      "headings": [
+        "16.7%"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "10\n8% (DXA)\nThis is probably an overestimation, as he's very dry.\n\n8% (InBody)",
+      "headings": [
+        "8% (DXA)",
+        "8% (InBody)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "11\n15.6% vs. 10.6% vs ~8% (DXA)\n\n18% to 8% (DXA)",
+      "headings": [
+        "15.6% vs. 10.6% vs ~8% (DXA)",
+        "18% to 8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "12\n8.8% (Hydrostatic weighing): James Krieger\nDXA showed a several percent higher fat percentage a few weeks back, so the true\nbody fat percentage may well be higher, especially since the lower abdominals and\nback are still covered by fat.",
+      "headings": [
+        "8.8% (Hydrostatic weighing): James Krieger"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "13\n9.6 vs. 10.6% (DXA)\nNote how it's hard to tell the difference of 1% change in body fatness with a change in\nlighting.",
+      "headings": [
+        "9.6 vs. 10.6% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "14\n9.6 vs. 16.4% (DXA)\nNote the lean shoulders and abs without flexing when below 10%. At 16% there is still\nfaint ab definition.",
+      "headings": [
+        "9.6 vs. 16.4% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 15,
+      "text": "15",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 16,
+      "text": "16\n10.2% (DXA)\nNote how the abs are visible without flexing, there's separation in his delts and he\ncarries considerable muscle mass.",
+      "headings": [
+        "10.2% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 17,
+      "text": "17\n10.3% (InBody): Menno Henselmans offseason shape",
+      "headings": [
+        "10.3% (InBody): Menno Henselmans offseason shape"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 18,
+      "text": "18\n11.2 vs. 11.2 vs. 10.2% (DXA): Bodybuilder\nFrom left to right, he first lean bulked while staying at the exact same fat percentage.\nDue to being considerably more bloated in the middle photo, he appears much fatter.\nIt's difficult to learn to distinguish between water retention and fat.\n\nIn the right photo he's a little leaner, but as you can see it's very difficult to be accurate\nto a single percent visually. It mostly shows in his lower back.",
+      "headings": [
+        "11.2 vs. 11.2 vs. 10.2% (DXA): Bodybuilder"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 19,
+      "text": "19\n\n11.1% (DXA)",
+      "headings": [
+        "11.1% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 20,
+      "text": "20\n11.6 vs 12.3% (DXA): Brad Pilon\nIt's hard to tell the difference with the change in lighting.\n\n11.9% (BodPod)",
+      "headings": [
+        "11.6 vs 12.3% (DXA): Brad Pilon",
+        "11.9% (BodPod)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 21,
+      "text": "21\n11.9% vs. 19% (DXA)\nWorse lighting when leaner makes it somewhat hard to tell the difference, but look at\nthe more capped delts, the obliques and the vascularity.",
+      "headings": [
+        "11.9% vs. 19% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 22,
+      "text": "22\n12.1 vs. 7.9% (DXA)\nBefore at 12.1% (above) and after photoshoot prep at 7.9% (below). Note how at 12%\nhe already has a full sixpack when flexed and when he's 'ripped', he's really still 8%. It\nis quite hard to get to stage condition without a lot of muscle mass. Also note how\nprofessional photos can make you look signficantly leaner.",
+      "headings": [
+        "12.1 vs. 7.9% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 23,
+      "text": "23",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 24,
+      "text": "24\n10% to 12.1% (BodPod)\nThese photos are from the bulk phase of one of Menno's clients. He went from 192 lb at\n10% body fat to 216 lb at 12.1% body fat over about half a year. This progression\nillustrates how adding a substantial amount of muscle mass can make you look leaner\neven while gaining several pounds of fat.",
+      "headings": [
+        "10% to 12.1% (BodPod)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 25,
+      "text": "25\n12.5% (DXA)\n\n12.6% (DXA)",
+      "headings": [
+        "12.5% (DXA)",
+        "12.6% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 26,
+      "text": "26\n12.9% (DXA) / 12.3% (InBody)\n\n13% (DXA)\nThese were posted publicly, so we can't verify this fat percentage with certainty, but it\nlooks accurate given that he's muscular enough and bloated.",
+      "headings": [
+        "12.9% (DXA) / 12.3% (InBody)",
+        "13% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 27,
+      "text": "27\n13% (DXA & Skulpt)",
+      "headings": [
+        "13% (DXA & Skulpt)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 28,
+      "text": "28\n13.7% (DXA)\nDon't be fooled by his stocky physique. The ab separation is clearly indicative of being\nsub 15%.\n\n14% - 10.3% (DXA)\nNote how his vascularity and abdominals improve as he leans out (and gained muscle).",
+      "headings": [
+        "13.7% (DXA)",
+        "14% – 10.3% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 29,
+      "text": "29\n14.5% (DXA)\n\n14.8% (DXA)",
+      "headings": [
+        "14.5% (DXA)",
+        "14.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 30,
+      "text": "30\n16.1% (DXA)\nNote how his loose skin makes him look significantly fatter than he really is.\n\n16.7% (DXA)",
+      "headings": [
+        "16.1% (DXA)",
+        "16.7% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 31,
+      "text": "31\n17.4% (DXA)\n\n17.6%: skinny vs. trained individual (DXAs)",
+      "headings": [
+        "17.4% (DXA)",
+        "17.6%: skinny vs. trained individual (DXAs)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 32,
+      "text": "32\n17.8% (DXA)\nThis is a telling example of where many men think they're 'a bit over 10%' when in\nreality they're far closer to being overweight. Abdominal definition normally occurs well\nbefore a man is at 10% body fat, assuming a decent amount of muscle mass.",
+      "headings": [
+        "17.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 33,
+      "text": "33\n19% (DXA)\nThis is a good example of the skinny-fat look.",
+      "headings": [
+        "19% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 34,
+      "text": "34\n19% (DXA): Mike Cernovich",
+      "headings": [
+        "19% (DXA): Mike Cernovich"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 35,
+      "text": "35\n20.3% (DXA)",
+      "headings": [
+        "20.3% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 36,
+      "text": "36\n21.8% (DXA): Overweight from here on",
+      "headings": [
+        "21.8% (DXA): Overweight from here on"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 37,
+      "text": "37\n22% to 16.9% (DXA): Bret Contreras",
+      "headings": [
+        "22% to 16.9% (DXA): Bret Contreras"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 38,
+      "text": "38\n22.6% (BodPod)\n\n23.4% (DXA)",
+      "headings": [
+        "22.6% (BodPod)",
+        "23.4% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 39,
+      "text": "39\n24% (DXA)",
+      "headings": [
+        "24% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 40,
+      "text": "40\n24.8% (DXA)\nTypical skinny fat example.",
+      "headings": [
+        "24.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 41,
+      "text": "41\n25.5% (DXA)\nThis is a good example of large abdominal fat storage.",
+      "headings": [
+        "25.5% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 42,
+      "text": "42\n26.6% (DXA): Obese from here on",
+      "headings": [
+        "26.6% (DXA): Obese from here on"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 43,
+      "text": "43\n27.4% (DXA)\nTypical skinny fat example.\n\n28.2% (hydrostatic weighing)",
+      "headings": [
+        "27.4% (DXA)",
+        "28.2% (hydrostatic weighing)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 44,
+      "text": "44\n28.8% (DXA)\n\n29.6% (DXA)",
+      "headings": [
+        "28.8% (DXA)",
+        "29.6% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 45,
+      "text": "45\n\n30%, 30% & 31% (InBody & 2 DXAs)",
+      "headings": [
+        "30%, 30% & 31% (InBody & 2 DXAs)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 46,
+      "text": "46",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 47,
+      "text": "47\n33.3% & 33.8% (DXA)",
+      "headings": [
+        "33.3% & 33.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 48,
+      "text": "48\n40% to 33.8% (DXA)\nNote the loose skin after weight loss.",
+      "headings": [
+        "40% to 33.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 49,
+      "text": "49\n43% (DXA)",
+      "headings": [
+        "43% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 50,
+      "text": "50\nWomen\n\n12.8% (DXA): Figure competitor\nNote the ab vascularity, grainy skin and muscle striations, including the start of glute\nstriations.",
+      "headings": [
+        "Women",
+        "12.8% (DXA): Figure competitor"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 51,
+      "text": "51\n14%? (InBody)\nInBody scans typically underestimate the body fat percentage of strength trainees at\nlower fat levels, so Menno's client is probably more like 18% here in reality.",
+      "headings": [
+        "14%? (InBody)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 52,
+      "text": "52\n17.4% & 17% (DXA): Bikini contest shape",
+      "headings": [
+        "17.4% & 17% (DXA): Bikini contest shape"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 53,
+      "text": "53\n18% (BodPod): Female physique competitor (off-season)\nNote how having a lot of muscle drives down your body fat percentage, although this\nmay be an underestimation.",
+      "headings": [
+        "18% (BodPod): Female physique competitor (off-season)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 54,
+      "text": "54\n20.2% vs. 16.8% (DXA)\nNote how at over 20% body fat she already has visible abdominal definition without\nflexing when in favorable lighting. Much of the fat loss was in her lower posterior chain.",
+      "headings": [
+        "20.2% vs. 16.8% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 55,
+      "text": "55\n21.9% vs. 17% vs. 13.1% (DXA)",
+      "headings": [
+        "21.9% vs. 17% vs. 13.1% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 56,
+      "text": "56\nThis series clearly shows how significantly different the body fat distribution of men and\nwomen can be. The glute-ham area stores a very large amount of fat for many women\nand this area is notoriously difficult to get lean.\n\nAlso note how unfavorable lighting can mask even competition level conditioning (13%\nBF) in women without a competitive physique athlete level of muscle mass. Below is a\ncomparison shot with more favorable lighting and after a water cut (dehydration) at\n~13% body fat.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 57,
+      "text": "57\n21% (DXA)",
+      "headings": [
+        "21% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 58,
+      "text": "58\n21.5% (InBody)",
+      "headings": [
+        "21.5% (InBody)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 59,
+      "text": "59\n\n20% vs. 18% (hydrostatic weighing)",
+      "headings": [
+        "20% vs. 18% (hydrostatic weighing)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 60,
+      "text": "60",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 61,
+      "text": "61\n22.9% vs. 18.5% (DXA)",
+      "headings": [
+        "22.9% vs. 18.5% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 62,
+      "text": "62\n22.5% (InBody)\nThis is probably a slight underestimation.",
+      "headings": [
+        "22.5% (InBody)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 63,
+      "text": "63\n24.5% (DXA)",
+      "headings": [
+        "24.5% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 64,
+      "text": "64\n25% (BIA)\nThis is a typical feminine body fat storage pattern with most fat stored on the lower body\nand hips.",
+      "headings": [
+        "25% (BIA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 65,
+      "text": "65\n26% (DXA)\nThis is a typical 'love handle' body fat storage pattern for an otherwise quite lean\nwoman.\n\n26% (DXA)",
+      "headings": [
+        "26% (DXA)",
+        "26% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 66,
+      "text": "66\n26.9% vs. 15.7% (DXA)\n32.4% (DXA)",
+      "headings": [
+        "26.9% vs. 15.7% (DXA)",
+        "32.4% (DXA)"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 67,
+      "text": "67\n36.7% (DXA): Overweight\n\n44% (DXA): Obese",
+      "headings": [
+        "36.7% (DXA): Overweight",
+        "44% (DXA): Obese"
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "BODY FAT PERCENTAGE",
+    "VISUAL REFERENCE GUIDE",
+    "references in mind next time you hear someone say they’re at 2% body fat.",
+    "Men",
+    "4.1% (DXA): Wesley Vissers",
+    "6.2% (DXA): Alberto Nuñez",
+    "6.3 - 16.7% (DXA)",
+    "6.3%",
+    "10.6%",
+    "16.7%",
+    "8% (DXA)",
+    "8% (InBody)",
+    "15.6% vs. 10.6% vs ~8% (DXA)",
+    "18% to 8% (DXA)",
+    "8.8% (Hydrostatic weighing): James Krieger",
+    "9.6 vs. 10.6% (DXA)",
+    "9.6 vs. 16.4% (DXA)",
+    "10.2% (DXA)",
+    "10.3% (InBody): Menno Henselmans offseason shape",
+    "11.2 vs. 11.2 vs. 10.2% (DXA): Bodybuilder",
+    "11.1% (DXA)",
+    "11.6 vs 12.3% (DXA): Brad Pilon",
+    "11.9% (BodPod)",
+    "11.9% vs. 19% (DXA)",
+    "12.1 vs. 7.9% (DXA)",
+    "10% to 12.1% (BodPod)",
+    "12.5% (DXA)",
+    "12.6% (DXA)",
+    "12.9% (DXA) / 12.3% (InBody)",
+    "13% (DXA)",
+    "13% (DXA & Skulpt)",
+    "13.7% (DXA)",
+    "14% – 10.3% (DXA)",
+    "14.5% (DXA)",
+    "14.8% (DXA)",
+    "16.1% (DXA)",
+    "16.7% (DXA)",
+    "17.4% (DXA)",
+    "17.6%: skinny vs. trained individual (DXAs)",
+    "17.8% (DXA)",
+    "19% (DXA)",
+    "19% (DXA): Mike Cernovich",
+    "20.3% (DXA)",
+    "21.8% (DXA): Overweight from here on",
+    "22% to 16.9% (DXA): Bret Contreras",
+    "22.6% (BodPod)",
+    "23.4% (DXA)",
+    "24% (DXA)",
+    "24.8% (DXA)",
+    "25.5% (DXA)",
+    "26.6% (DXA): Obese from here on",
+    "27.4% (DXA)",
+    "28.2% (hydrostatic weighing)",
+    "28.8% (DXA)",
+    "29.6% (DXA)",
+    "30%, 30% & 31% (InBody & 2 DXAs)",
+    "33.3% & 33.8% (DXA)",
+    "40% to 33.8% (DXA)",
+    "43% (DXA)",
+    "Women",
+    "12.8% (DXA): Figure competitor",
+    "14%? (InBody)",
+    "17.4% & 17% (DXA): Bikini contest shape",
+    "18% (BodPod): Female physique competitor (off-season)",
+    "20.2% vs. 16.8% (DXA)",
+    "21.9% vs. 17% vs. 13.1% (DXA)",
+    "21% (DXA)",
+    "21.5% (InBody)",
+    "20% vs. 18% (hydrostatic weighing)",
+    "22.9% vs. 18.5% (DXA)",
+    "22.5% (InBody)",
+    "24.5% (DXA)",
+    "25% (BIA)",
+    "26% (DXA)",
+    "26.9% vs. 15.7% (DXA)",
+    "32.4% (DXA)",
+    "36.7% (DXA): Overweight",
+    "44% (DXA): Obese"
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nBODY FAT PERCENTAGE\nVISUAL REFERENCE GUIDE\n\n\n--- Page 2 ---\n2\nThis guide can be used to estimate someone's body fat percentage by eye. All of the\nphotos in this guide were taken within a few days of having done a high-quality body\ncomposition measurement, e.g. hydrostatic weighing, DXA, InBody, full BIA, underwater\nweighing. Most are from clients of Menno. A few publicly posted photos from the\ninternet are included as well with their names.\n\nAs a reference, the following table shows the body composition of the average, healthy\nAmerican individual. They are not representative of an \"ideal\" body composition.\nEssential fat is fat associated with bone marrow, the central nervous system, viscera\n(internal organs), and cell membranes, and in females, essential fat also includes fat in\nmammary glands and the pelvic region. Note that body composition is influenced not\nonly by gender but also by i.a. age, race, heredity and stature.\n\n\n--- Page 3 ---\n3\n\nAs an additional reference, you can use the following table from the American Council\non Exercise to classify individuals in terms of leanness. It's good to keep these objective\nreferences in mind next time you hear someone say they're at 2% body fat.\n\n\n--- Page 4 ---\n4\n\n\n--- Page 5 ---\n5\nMen\n\n4.1% (DXA): Wesley Vissers\nNote the grainy appearance of the whole body and the deep muscle striations.\n\n\n--- Page 6 ---\n6\n6.2% (DXA): Alberto Nuñez\nNote the extreme vascularity, striated glutes and Christmas tree lower back definition.\nThis is pretty much as lean as it gets, so it's a good example that getting below ~5%\nbody fat is generally only possible with extreme levels of muscle mass.\n\n\n--- Page 7 ---\n7\n\n\n--- Page 8 ---\n8\n6.3 - 16.7% (DXA)\nHere's a selection of DXA scans and corresponding photos of Sigvar Garfors during his\ncontest prep with Menno Henselmans (in reverse order obviously).\n\n6.3%\nNote the start of glute striations and clear separation of the heads of the quads.\n\n10.6%\nNote the presence of muscle striations in multiple muscles in his back and the caved in\nabdominal structure before being at a single digit body fat percentage.\n\n\n--- Page 9 ---\n9\n\n16.7%\nNote how a muscular individual at 16.7% body fat still has visible ab definition - one\ncould say a sixpack when flexed in good lighting (which this isn't at all).\n\n\n--- Page 10 ---\n10\n8% (DXA)\nThis is probably an overestimation, as he's very dry.\n\n8% (InBody)\n\n\n--- Page 11 ---\n11\n15.6% vs. 10.6% vs ~8% (DXA)\n\n18% to 8% (DXA)\n\n\n--- Page 12 ---\n12\n8.8% (Hydrostatic weighing): James Krieger\nDXA showed a several percent higher fat percentage a few weeks back, so the true\nbody fat percentage may well be higher, especially since the lower abdominals and\nback are still covered by fat.\n\n\n--- Page 13 ---\n13\n9.6 vs. 10.6% (DXA)\nNote how it's hard to tell the difference of 1% change in body fatness with a change in\nlighting.\n\n\n--- Page 14 ---\n14\n9.6 vs. 16.4% (DXA)\nNote the lean shoulders and abs without flexing when below 10%. At 16% there is still\nfaint ab definition.\n\n\n--- Page 15 ---\n15\n\n\n--- Page 16 ---\n16\n10.2% (DXA)\nNote how the abs are visible without flexing, there's separation in his delts and he\ncarries considerable muscle mass.\n\n\n--- Page 17 ---\n17\n10.3% (InBody): Menno Henselmans offseason shape\n\n\n--- Page 18 ---\n18\n11.2 vs. 11.2 vs. 10.2% (DXA): Bodybuilder\nFrom left to right, he first lean bulked while staying at the exact same fat percentage.\nDue to being considerably more bloated in the middle photo, he appears much fatter.\nIt's difficult to learn to distinguish between water retention and fat.\n\nIn the right photo he's a little leaner, but as you can see it's very difficult to be accurate\nto a single percent visually. It mostly shows in his lower back.\n\n\n--- Page 19 ---\n19\n\n11.1% (DXA)\n\n\n--- Page 20 ---\n20\n11.6 vs 12.3% (DXA): Brad Pilon\nIt's hard to tell the difference with the change in lighting.\n\n11.9% (BodPod)\n\n\n--- Page 21 ---\n21\n11.9% vs. 19% (DXA)\nWorse lighting when leaner makes it somewhat hard to tell the difference, but look at\nthe more capped delts, the obliques and the vascularity.\n\n\n--- Page 22 ---\n22\n12.1 vs. 7.9% (DXA)\nBefore at 12.1% (above) and after photoshoot prep at 7.9% (below). Note how at 12%\nhe already has a full sixpack when flexed and when he's 'ripped', he's really still 8%. It\nis quite hard to get to stage condition without a lot of muscle mass. Also note how\nprofessional photos can make you look signficantly leaner.\n\n\n--- Page 23 ---\n23\n\n\n--- Page 24 ---\n24\n10% to 12.1% (BodPod)\nThese photos are from the bulk phase of one of Menno's clients. He went from 192 lb at\n10% body fat to 216 lb at 12.1% body fat over about half a year. This progression\nillustrates how adding a substantial amount of muscle mass can make you look leaner\neven while gaining several pounds of fat.\n\n\n--- Page 25 ---\n25\n12.5% (DXA)\n\n12.6% (DXA)\n\n\n--- Page 26 ---\n26\n12.9% (DXA) / 12.3% (InBody)\n\n13% (DXA)\nThese were posted publicly, so we can't verify this fat percentage with certainty, but it\nlooks accurate given that he's muscular enough and bloated.\n\n\n--- Page 27 ---\n27\n13% (DXA & Skulpt)\n\n\n--- Page 28 ---\n28\n13.7% (DXA)\nDon't be fooled by his stocky physique. The ab separation is clearly indicative of being\nsub 15%.\n\n14% - 10.3% (DXA)\nNote how his vascularity and abdominals improve as he leans out (and gained muscle).\n\n\n--- Page 29 ---\n29\n14.5% (DXA)\n\n14.8% (DXA)\n\n\n--- Page 30 ---\n30\n16.1% (DXA)\nNote how his loose skin makes him look significantly fatter than he really is.\n\n16.7% (DXA)\n\n\n--- Page 31 ---\n31\n17.4% (DXA)\n\n17.6%: skinny vs. trained individual (DXAs)\n\n\n--- Page 32 ---\n32\n17.8% (DXA)\nThis is a telling example of where many men think they're 'a bit over 10%' when in\nreality they're far closer to being overweight. Abdominal definition normally occurs well\nbefore a man is at 10% body fat, assuming a decent amount of muscle mass.\n\n\n--- Page 33 ---\n33\n19% (DXA)\nThis is a good example of the skinny-fat look.\n\n\n--- Page 34 ---\n34\n19% (DXA): Mike Cernovich\n\n\n--- Page 35 ---\n35\n20.3% (DXA)\n\n\n--- Page 36 ---\n36\n21.8% (DXA): Overweight from here on\n\n\n--- Page 37 ---\n37\n22% to 16.9% (DXA): Bret Contreras\n\n\n--- Page 38 ---\n38\n22.6% (BodPod)\n\n23.4% (DXA)\n\n\n--- Page 39 ---\n39\n24% (DXA)\n\n\n--- Page 40 ---\n40\n24.8% (DXA)\nTypical skinny fat example.\n\n\n--- Page 41 ---\n41\n25.5% (DXA)\nThis is a good example of large abdominal fat storage.\n\n\n--- Page 42 ---\n42\n26.6% (DXA): Obese from here on\n\n\n--- Page 43 ---\n43\n27.4% (DXA)\nTypical skinny fat example.\n\n28.2% (hydrostatic weighing)\n\n\n--- Page 44 ---\n44\n28.8% (DXA)\n\n29.6% (DXA)\n\n\n--- Page 45 ---\n45\n\n30%, 30% & 31% (InBody & 2 DXAs)\n\n\n--- Page 46 ---\n46\n\n\n--- Page 47 ---\n47\n33.3% & 33.8% (DXA)\n\n\n--- Page 48 ---\n48\n40% to 33.8% (DXA)\nNote the loose skin after weight loss.\n\n\n--- Page 49 ---\n49\n43% (DXA)\n\n\n--- Page 50 ---\n50\nWomen\n\n12.8% (DXA): Figure competitor\nNote the ab vascularity, grainy skin and muscle striations, including the start of glute\nstriations.\n\n\n--- Page 51 ---\n51\n14%? (InBody)\nInBody scans typically underestimate the body fat percentage of strength trainees at\nlower fat levels, so Menno's client is probably more like 18% here in reality.\n\n\n--- Page 52 ---\n52\n17.4% & 17% (DXA): Bikini contest shape\n\n\n--- Page 53 ---\n53\n18% (BodPod): Female physique competitor (off-season)\nNote how having a lot of muscle drives down your body fat percentage, although this\nmay be an underestimation.\n\n\n--- Page 54 ---\n54\n20.2% vs. 16.8% (DXA)\nNote how at over 20% body fat she already has visible abdominal definition without\nflexing when in favorable lighting. Much of the fat loss was in her lower posterior chain.\n\n\n--- Page 55 ---\n55\n21.9% vs. 17% vs. 13.1% (DXA)\n\n\n--- Page 56 ---\n56\nThis series clearly shows how significantly different the body fat distribution of men and\nwomen can be. The glute-ham area stores a very large amount of fat for many women\nand this area is notoriously difficult to get lean.\n\nAlso note how unfavorable lighting can mask even competition level conditioning (13%\nBF) in women without a competitive physique athlete level of muscle mass. Below is a\ncomparison shot with more favorable lighting and after a water cut (dehydration) at\n~13% body fat.\n\n\n--- Page 57 ---\n57\n21% (DXA)\n\n\n--- Page 58 ---\n58\n21.5% (InBody)\n\n\n--- Page 59 ---\n59\n\n20% vs. 18% (hydrostatic weighing)\n\n\n--- Page 60 ---\n60\n\n\n--- Page 61 ---\n61\n22.9% vs. 18.5% (DXA)\n\n\n--- Page 62 ---\n62\n22.5% (InBody)\nThis is probably a slight underestimation.\n\n\n--- Page 63 ---\n63\n24.5% (DXA)\n\n\n--- Page 64 ---\n64\n25% (BIA)\nThis is a typical feminine body fat storage pattern with most fat stored on the lower body\nand hips.\n\n\n--- Page 65 ---\n65\n26% (DXA)\nThis is a typical 'love handle' body fat storage pattern for an otherwise quite lean\nwoman.\n\n26% (DXA)\n\n\n--- Page 66 ---\n66\n26.9% vs. 15.7% (DXA)\n32.4% (DXA)\n\n\n--- Page 67 ---\n67\n36.7% (DXA): Overweight\n\n44% (DXA): Obese",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:41:58.022565",
+  "error": null
+}

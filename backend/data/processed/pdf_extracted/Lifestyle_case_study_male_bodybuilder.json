@@ -1,0 +1,255 @@
+{
+  "filename": "Lifestyle case study male bodybuilder.pdf",
+  "source": "Lifestyle case study male bodybuilder.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 14,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nPERSONAL TRAINING CLIENT APPLICATION FORM\nPlease fill in and save this form in Word or ODS. The more information\nyou provide, the better I will be able to assist you. If you have any\nquestions with regards to this form, please do not hesitate to contact me.\nYou can use whichever measurement system (e.g. metric, imperial) you\nprefer to fill in this form. Just state which unit you used (e.g. cm, kg, lb,\ninch).\n\nGeneral\n Full legal name: D\n Age: 31\n Height: 5' 10\"\n Weight: 215.3 lbs\n Body fat percentage (plus measurement technique): 9.9%\n(measured via BodPod on 10/9/15)\n Years of training experience: Intermediate (lifting for ~17 years\ntotal although with many breaks and poor coaching through much of\nthat time)\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n Bench press: 335 lbs x 3\n Squat (excluding body weight): 405 lbs x 3\n Chin-up (excluding body weight): (BW + 90 lbs) x 4",
+      "headings": [
+        "PERSONAL TRAINING CLIENT APPLICATION FORM",
+        "General",
+        "Strength"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "BAYESIAN BODYBUILDING 2015\n\n Overhead press: 225 lbs x 2\n\nWhat are your fitness goals?\n1. Bodybuilding stage ready ASAP. I just recently got down to 10% and\nneed help getting the rest of the way down to 4-6% to be stage-ready.\n2. Then I would like to maintain at no more than 4 weeks out from stage-\nready indefinitely (assuming this is possible).\n3. Then bring up lagging areas to ideal proportions (e.g. upper arm\nsmaller than calves right now).\n4. Finally I have a few strength goals that I'd like to hit at some point\n(i.e. bench 400 lbs, squat 500 lbs, deadlift 600 lbs, chins 20 reps).\n\nHow often in a week would you be prepared to train, if this was\nthe optimal training frequency?\nTo get down to 10% I was lifting 5 days per week for 1.5 hours. And I was\ndoing MISS cardio @ ~135 bpm for 1 hour fasted in the morning and\nanother 1 hour after lifting or before bed 7 days per week. This was under\nmy old bodybuilding coach. This was torture. I would prefer to train less\nbut I am prepared to train as much if needed. So ~3 hours per day max.\n\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nI am a technology planner for Apple (e.g. what is the screen in the next\niPhone going to be like?). My natural circadian rhythm would be sleeping\n2am to 10am but generally end up doing midnight to 6am.",
+      "headings": [
+        "What are your fitness goals?",
+        "How often in a week would you be prepared to train, if this was",
+        "the optimal training frequency?",
+        "What is your occupation?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\nDiagnosed with low testosterone a few years ago (i.e. down in the low\n200s). I had never Also hypothyroid and adrenal fatigue. Have since been\non testosterone injections, exemestane, and some version of thyroid med\n(Armour, T3, or T3/T4 compounded). These have brought my levels into\n\"normal-high\" range (e.g. test is now ~900). Before this I had never\ntaken any PEDs so I have come to believe all of my levels were destroyed\nthrough stress and abuse of thermogenic when I was bulking/cutting in\nhigh school and college for sports.\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nOther than those above I had been recommended to take ECA, yohimbine,\nand HGH-Fragment by my old coach. I suppose I don't really consider\nthose PEDs although some countries believe otherwise. I am not\nparticularly for or against any such additional things but generally prefer\nto be as natural as possible for fear of screwing up the tenuous balance I\nhave now.",
+      "headings": [
+        "Please list any pathologies and injuries (disabilities, allergies,",
+        "illnesses, syndromes, disorders etc.) you have or had:",
+        "Do you plan to use any PEDs while working together? If so, please",
+        "list them:"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\n(This includes when you're at work!) If so, please list them:\nMy work schedule is somewhat flexible so I can train almost anytime.\nIdeal to avoid 9-5pm if possible due to normal work hours.\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n Sedentary (e.g. office job)\n\nStress level\nPlease mark one of the fields below or delete the rest.\n Average stress (e.g. full-time work with deadlines and commuting)\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please attach at least two full-body pictures\nof yourself in clear lighting, preferably including a back double biceps and front\nrelaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your trainer.",
+      "headings": [
+        "Lifestyle",
+        "Are there any times at which you are unable or unwilling to train?",
+        "(This includes when you’re at work!) If so, please list them:",
+        "Activity level",
+        "Stress level",
+        "At this point, you may choose to return this form to me to obtain a price",
+        "quote before filling in the rest. Please attach at least two full-body pictures"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nHow is your sleep rhythm and quality?\nRhythm is somewhat off but generally midnight to 6am works. Longer on\nthe weekends. Quality is poor as I routinely wake up 3 times to urinate at\nnight due to high fluid intake around lifting at night (pre-workout (Evogen\nEVP) and post-workout (Evogen Cell KEM and whey) shakes).\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\nA lot. Caffeine pills before fasted cardio (400mg). ECA pill at lunch. Large\ncoffee in the morning. Sometimes a tea or more coffee before the gym at\nnight.\n\nGenetics\n Wrist circumference: 18.4 cm (left) and 18.3 cm (right)\n Ankle circumference: 25.4 cm (left) and 25.3 cm (right)\n How much did you weigh before you started lifting and what was\nyour height at that point? ~200 lbs at 12 years old before starting\nwrestling and began some lifting. Weight came down to 170 lbs and\nthen I have been between 170 and 230 lbs ever since either from\nlifting or cutting. Set point seems to really like 210 - 220 lbs.\n Were you heavy as a baby? Yes, always the fat kid :/\n Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.",
+      "headings": [
+        "How is your sleep rhythm and quality?",
+        "How much caffeine do you consume daily on average or on a",
+        "typical work day?",
+        "Genetics"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nNo, willing to purchase some that you recommend.\n\nWhat are the lightest barbell weight plates you have access to?\n2.5 lbs",
+      "headings": [
+        "Equipment",
+        "Do you have skinfold calipers and if so, which one(s)?",
+        "What are the lightest barbell weight plates you have access to?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n2.5 lbs for weights ≤ 30 lbs\n5 lbs for weights > 30 lbs\n\n Do you have access to…\n a squat cage or rack? Yes\n a 45° hyperextension bench? Yes\n a reverse hyper machine? No\n a glute-ham raise (see example image below)? No\n\n a standing calf raise machine? No\n a dip/chin-up belt? Yes\n a leg curl machine and if so, is it seated, lying or standing? Yes,\nseated\n a pair of knee wraps? No, but willing to purchase\n gymnastic rings? No\n a TRX or similar suspension device? Yes\n powerlifting bands (not the light home workout crap)? No, but willing\nto purchase\n powerlifting chains? No",
+      "headings": [
+        "What are the smallest weight increments between the sets of",
+        "dumbbells you have access to?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "BAYESIAN BODYBUILDING 2015\n\n a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different? Yes, but different\nwhere I am stationary and only the weight move up and down\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nOffice gym so really nothing too specially good or bad about it. Extremely\nbusy so it can be more difficult to keep ideal pace or perform super sets\n\nSupplements\nPlease list all the supplements you are currently taking:\nSupplements\n•\nPre-Cardio (morning):\n\n◦\n2x Evogen Cell KEM\n\n◦\n1x Warrior Greens\n\n◦\n1x Evogen Carnigen\n\n◦\n2x Evogen Lipocide / 8x Primaforce Yohimbine HCL + 6x L-\nTyrosine\n•\nMid-day = 1x ECA + 325mg Aspirin\n•\nPre-workout = 2x EVP\n•\nPost-workout = 2x Cell KEM + 2x Hydrowhey\n\nECA, yohimbine, and HGH-Fragment\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:",
+      "headings": [
+        "Does your available equipment differ from that in most gyms in",
+        "any other way (e.g. you train in a Crossfit box or at home)?",
+        "Supplements",
+        "Supplements",
+        "Current Program"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nMost recent plan I used to go from 12% to 10% over 6 weeks:\nWeekly Diet Schedule\n•\n2x protein / veggie days\n•\n1x ketogenic days\n•\n2x protein / veggie days\n•\n1x ketogenic days\n•\n1x high anabolic day\n\nProtein / Veggie Day\n•\n1x egg + 2x cups egg whites\n•\n5x 9oz lean protein\n\nKetogenic Day\n•\n3x egg + 1x cup egg whites\n•\n2x 7oz 93% ground beef + 1 tsp MCT oil\n•\n2x 7oz chicken + 1/2 avo\n•\n1x 7oz fatty protein\n\nHigh Anabolic Day\n•\n2x egg + 1.5x cups egg whites + Salsa + 2x servings oatmeal\n•\n1x 8oz fatty protein + 6oz Sweet Potato\n•\n3x 8oz lean protein + 6oz Sweet Potato\n•\n1x 8oz fatty protein + 6oz Sweet Potato\n•\n2x Evogen Glycoject (added to post-workout)\n\nPlease describe or attach your current training program in detail:\nDay 1 - 7: Cardio\n•\n1 hour fasted cardio every morning @ ~135 bpm\n•\n1 hour cardio immediately after lifting (or before bed on non-lifting\ndays) @ ~135 bpm\n\nDay 1: Chest / Triceps + Abs\n•\n60 seconds rest between sets\n•\n45% Incline Barbell bench press: 4 sets @ 12 / 10 / 8 / 6 reps\n•\nSuperset:\n\n◦\n15% Incline Dumbell bench press: 3 sets @ 10 / 8 / 6 reps\n\n◦\nIncline cable fly: 3 sets @ 20 reps\n•\nSuperset:",
+      "headings": [
+        "Weekly Diet Schedule",
+        "Protein / Veggie Day",
+        "Ketogenic Day",
+        "High Anabolic Day",
+        "Day 1 - 7:  Cardio",
+        "Day 1:  Chest / Triceps + Abs"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "BAYESIAN BODYBUILDING 2015\n\n◦\nWeighted dips: 3 sets @ 12 / 10 / 8 reps - all to failure\n\n◦\nDecline cable fly: 3 sets @ 20 reps\n•\nClose grip bench: 3 sets @ 12 / 9 / 6 reps\n•\nV handle triceps press down:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nelbows in\n•\nOverhead cable tri extension:\n\n◦\n3 sets @ 12 / 10 / 8 reps\n\n◦\nelbows out, rope over shoulder, alternate each set\n\nDay 2: Back / Biceps\n•\n60 seconds rest between sets\n•\nBack extension: warm-up lower back\n•\nBarbell row: 3 sets @ 12 / 9 / 6 reps\n•\n1-arm dumbbell row (or Unilateral Hammer Strength row):\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring weight down and back to hip flexing lower lat\n•\nSeated cable low row:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nuse rope, split across abs, elbows down and low\n•\nWide grip lat pull down:\n\n◦\n4 sets @ 12 / 10 / 8 / 6 reps\n\n◦\nchest up, shoulders back, from extended arms down to -\nhalfway down behind head\n•\nClose grip lat pull down:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nuse V grip bar, chest up, shoulders back, from extended arms\ndown to touching chest\n•\nStraight arm pull over: 3 sets @ 12 / 11 / 10 reps\n•\nBarbell biceps curl:\n\n◦\n3 supersets @ 3 dropsets @ 10 reps\n\n▪\ne.g. 100 lbs failure @ 10 reps > 70 lbs fail @ 10 reps >\n50 lbs fail @ 10 reps, then 8>8>8, then 6>6>6\n\n◦\nfrom almost extended up to highest point before flex\ndisengages\n•\nUnilateral dumbbell curl on incline bench - facing up:\n\n◦\n5 sets @ 5 reps (each arm on its own)\n\n◦\ne.g. 5 sets of 35 lbs @ 5 reps right arm then 5 reps left arm\n•\nHammer curl - standing:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring weight across body; maintain hammer grip throughout",
+      "headings": [
+        "◦",
+        "Day 2:  Back / Biceps",
+        "•",
+        "•",
+        "•",
+        "•"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nDay 3: Legs\n•\n90 - 180 seconds rest between sets\n•\nLeg Extensions:\n\n◦\n3 sets @ 20 reps\n\n◦\nonly warming up\n•\nLeg Press:\n\n◦\n3 sets @ 20 reps\n\n◦\nfeet & knees straight, knees rotated into focus on outer\nquads; set back on most reclined option to reduce hip rotation\n•\nProne Leg Curls:\n\n◦\n3 sets @ 15 - 12 reps\n\n◦\nconstant tension on hamstrings\n•\nAbductor Machine: 3 sets @ 15 - 12 reps\n•\nAdductor Machine: 3 sets @ 15 - 12 reps\n•\nSquat:\n\n◦\n4 sets @ 15 / 14 / 13 / 12 reps\n\n◦\nfocus on pump in glutes not joint pain, take wider stance than\nnormal, stop short of bottom, don't bounce\n\n◦\nmoved to end of workout to reduce back strain\n•\nSeated Calf Raises:\n\n◦\n3 sets @ 30 reps\n\n◦\nchange to \"dirty 30\": 30 reps with necessary pauses, focus on\npinky toe to develop outside of calves\n•\nStanding Calf Raises: 3 sets @ 30 reps (dirty 30)\n\nDay 4: Rest\n\nDay 5: Shoulders\n•\n60 seconds rest between sets\n•\nDumbbell shoulder press:\n\n◦\n4 sets @ 12 / 10 / 8 / 6 reps\n\n◦\nstraight out, elbows to 90 degrees\n\n◦\ncan move reps up to reduce weights -> 4 sets @ 16 / 14 / 12\n/ 10\n•\nClose grip front shoulder press:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nperform as Arnolds, focus on front of anterior delt\n•\nDumbbell side laterals:\n\n◦\n3 supersets @ 4 sets @ 10 reps",
+      "headings": [
+        "Day 3:  Legs",
+        "•",
+        "•",
+        "Day 4:  Rest",
+        "Day 5:  Shoulders",
+        "•"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "BAYESIAN BODYBUILDING 2015\n\n▪\ne.g. 50 lbs failure @ 10 reps > 35 @ 10 > 25 @ 10 > 15\n@ 10\n\n◦\nelbows up & bent, wrists slightly down & rotated\n•\nDumbbell front raises:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\narm straight, weight brought up in front of face slightly across\nbody\n•\nUpright rows wide grip:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring to pec line, wide enough grip to hit 90 degrees with\nelbows at top of rep, isolate traps out\n•\nDumbbell shrugs:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\non incline bench, head forward, flex shoulders up and into\ntraps not into neck\n\nDay 6: Arms\n•\n60 seconds rest between sets\n•\nStanding Bicep Curl (Bent-Bar / Close-Grip):\n\n◦\n3 sets @ 21's (7 bottom, 7 top, 7 full ROM)\n\n◦\ne.g. 65 lbs @ 3 sets @ 21's\n•\nPreacher Bicep Curl (Bent-Bar / Close-Grip):\n\n◦\n3 sets @ 10 reps @ double pumped\n\n◦\nflex to top, drop 1-inch, flex again to top\n\n◦\nweight ~= 10% less than normal preacher curls\n•\nStanding Bicep Curl (Bent-Bar / Wide-Grip):\n\n◦\nCentury set w/ 1st failure @ 50 reps\n\n◦\nafterwards rest-pause to 100 reps\n\n◦\ne.g. 50 lbs\n•\nTricep Superset:\n\n◦\nSkull Crusher: 3 sets @ 10 reps\n\n◦\nClose-Grip Bench Press: 3 sets @ failure following Skull\nCrushers\n•\nBehind-Head Rope Extensions:\n\n◦\n4 sets @ 10 reps - blood-starving (don't drop arms until the\nend)\n\n◦\nplace pin behind middle of back\n\n◦\npress overhead and separate arms\n•\nTricep Dips:\n\n◦\n3 sets @ 10 reps @ double pumped",
+      "headings": [
+        "•",
+        "Day 6:  Arms",
+        "•",
+        "•",
+        "•",
+        "•",
+        "•",
+        "•"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "BAYESIAN BODYBUILDING 2015\n\nDay 7: Rest\n\nAbs:\n•\nno rotation - need to minimize obliques\n•\nRope crunches\n\n◦\n30 reps\n\n◦\nsetup like rope triceps, bring elbows to mid-quads\n•\nSuperset decline bench crunches: 30 reps\n•\nSuperset hanging leg raises: to failure\n•\nComplete the above tri-set for three rounds, every other workout -\nfor a total of 3x per week\n\nSo we've got an advanced bodybuilder that's strength training 7.5 hours a week and doing 2\nhours of cardio a day. His hormone levels are normal, albeit via hormone replacement\ntherapy and he's on a crapload of stimulants in addition to growth hormone boosters. Yet\nhis fat loss plateaued at ~10% body fat (which was probably in retrospect in fact more like\n15%). What gives?\n\nGenetics are clearly not the cause, since his muscular potential is excellent and he doesn't\nappear to even have maxed it out yet (and indeed he didn't, I can say in retrospect).\n\nHere's what we did.\n We dropped all cardio.\n We ditched all the stimulants and growth hormone boosters. We reintroduced\ncaffeine, yohimbine and ephedrine at far lower dosages gradually after 9 days. (See\nsupplements topic.)\nPlease return the filled in form to\nMennoHenselmans@BayesianBodybuilding.com and attach at least two\nfull-body pictures of yourself in clear lighting (without excessive\nshadows; not your flattering Facebook selfies), preferably including a\nback double biceps and front relaxed pose. If you recently had blood\nwork done, please attach its results as well.",
+      "headings": [
+        "Day 7:  Rest",
+        "Abs:"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "BAYESIAN BODYBUILDING 2015\n\n We increased caloric intake to 2799 a day: still 'low' carb but no longer ketogenic.\n We implemented high frequency training amounting to a training time of approx. one\nhour a day.\n We focused greatly on stress management, improving his traveling habits (he traveled\na ton) and improving his sleep quality and time. Decreasing his meal frequency to just\n3 meals a day and implementing intermittent morning fasting made his meal prep a lot\neasier.\n\nThe result: He actually started recomping throughout the first month, which was beyond my\nexpectation and indicative of greatly above average muscular potential. His strength levels\nincreased by ~10% in this period.\n\nTake-home message: Never underestimate the importance of stress and sleep.\n\nJust so you don't get the wrong idea, after this period the recomping stopped and we still\nhad to decrease caloric intake and introduce cardio, as expected during contest prep.\n30-Nov 01-Dec\n02-Dec\n03-Dec\n04-Dec\n05-Dec\n06-Dec\nSuprailiac Umbilical\nWeight\n217.5\n222.7\n224.2\n221.0\n218.3\n220.7\n6.6\n11.6\n07-Dec 08-Dec\n09-Dec\n10-Dec\n11-Dec\n12-Dec\n13-Dec\nWeight\n222.6\n222.0\n222.1\n220.7\n225.3\n218.6\n221.6\n221.8\n0.5\n6.2\n10.8\n14-Dec 15-Dec\n16-Dec\n17-Dec\n18-Dec\n19-Dec\n20-Dec\nWeight\n221.2\n222.3\n221.9\n223.5\n225.8\n222.9\n222.9\n0.5\n6.0\n11.0\n21-Dec 22-Dec\n23-Dec\n24-Dec\n25-Dec\n26-Dec\n27-Dec\nWeight\n223.2\n223.2\n0.1\n5.8\n10.6\nMeasurement Day*\nM BW dBW (%)\nSkinfold (mm)**",
+      "headings": [
+        "Suprailiac Umbilical",
+        "Weight",
+        "Weight",
+        "Weight",
+        "Weight",
+        "Measurement Day*",
+        "M BW dBW (%)",
+        "Skinfold (mm)**"
+      ],
+      "tables": [
+        {
+          "page_num": 14,
+          "markdown": "|  | Measurement Day* M BW 30-Nov 01-Dec 02-Dec 03-Dec 04-Dec 05-Dec 06-Dec |  |  |  |  |  |  |  | dBW (%) | Skinfold (mm)** Suprailiac Umbilical |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Weight | 217.5 |  |  | 222.7 | 224.2 | 221.0 | 218.3 | 220.7 |  | 6.6 | 11.6 |\n|  | 07-Dec | 08-Dec | 09-Dec | 10-Dec | 11-Dec | 12-Dec | 13-Dec | 221.8 | 0.5 6.2 10.8 |  |  |\n| Weight | 222.6 | 222.0 | 222.1 | 220.7 | 225.3 | 218.6 | 221.6 |  |  | 6.2 | 10.8 |\n|  | 14-Dec | 15-Dec | 16-Dec | 17-Dec | 18-Dec | 19-Dec | 20-Dec |  |  |  |  |\n| Weight | 221.2 | 222.3 | 221.9 | 223.5 | 225.8 | 222.9 |  | 222.9 | 0.5 6.0 11.0 | 6.0 | 11.0 |\n|  | 21-Dec | 22-Dec | 23-Dec | 24-Dec | 25-Dec | 26-Dec | 27-Dec |  |  |  |  |\n| Weight |  | 223.2 |  |  |  |  |  | 223.2 | 0.1 | 5.8 | 10.6 |",
+          "bbox": [
+            70.85999806722005,
+            324.0543518066406,
+            585.82236328125,
+            474.419287109375
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "PERSONAL TRAINING CLIENT APPLICATION FORM",
+    "General",
+    "Strength",
+    "What are your fitness goals?",
+    "How often in a week would you be prepared to train, if this was",
+    "the optimal training frequency?",
+    "What is your occupation?",
+    "Please list any pathologies and injuries (disabilities, allergies,",
+    "illnesses, syndromes, disorders etc.) you have or had:",
+    "Do you plan to use any PEDs while working together? If so, please",
+    "list them:",
+    "Lifestyle",
+    "Are there any times at which you are unable or unwilling to train?",
+    "(This includes when you’re at work!) If so, please list them:",
+    "Activity level",
+    "Stress level",
+    "At this point, you may choose to return this form to me to obtain a price",
+    "quote before filling in the rest. Please attach at least two full-body pictures",
+    "How is your sleep rhythm and quality?",
+    "How much caffeine do you consume daily on average or on a",
+    "typical work day?",
+    "Genetics",
+    "Equipment",
+    "Do you have skinfold calipers and if so, which one(s)?",
+    "What are the lightest barbell weight plates you have access to?",
+    "What are the smallest weight increments between the sets of",
+    "dumbbells you have access to?",
+    "Does your available equipment differ from that in most gyms in",
+    "any other way (e.g. you train in a Crossfit box or at home)?",
+    "Supplements",
+    "Current Program",
+    "Weekly Diet Schedule",
+    "Protein / Veggie Day",
+    "Ketogenic Day",
+    "High Anabolic Day",
+    "Day 1 - 7:  Cardio",
+    "Day 1:  Chest / Triceps + Abs",
+    "◦",
+    "Day 2:  Back / Biceps",
+    "•",
+    "Day 3:  Legs",
+    "Day 4:  Rest",
+    "Day 5:  Shoulders",
+    "Day 6:  Arms",
+    "Day 7:  Rest",
+    "Abs:",
+    "Suprailiac Umbilical",
+    "Weight",
+    "Measurement Day*",
+    "M BW dBW (%)",
+    "Skinfold (mm)**"
+  ],
+  "full_text": "--- Page 1 ---\nBAYESIAN BODYBUILDING 2015\n\nPERSONAL TRAINING CLIENT APPLICATION FORM\nPlease fill in and save this form in Word or ODS. The more information\nyou provide, the better I will be able to assist you. If you have any\nquestions with regards to this form, please do not hesitate to contact me.\nYou can use whichever measurement system (e.g. metric, imperial) you\nprefer to fill in this form. Just state which unit you used (e.g. cm, kg, lb,\ninch).\n\nGeneral\n Full legal name: D\n Age: 31\n Height: 5' 10\"\n Weight: 215.3 lbs\n Body fat percentage (plus measurement technique): 9.9%\n(measured via BodPod on 10/9/15)\n Years of training experience: Intermediate (lifting for ~17 years\ntotal although with many breaks and poor coaching through much of\nthat time)\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n Bench press: 335 lbs x 3\n Squat (excluding body weight): 405 lbs x 3\n Chin-up (excluding body weight): (BW + 90 lbs) x 4\n\n\n--- Page 2 ---\nBAYESIAN BODYBUILDING 2015\n\n Overhead press: 225 lbs x 2\n\nWhat are your fitness goals?\n1. Bodybuilding stage ready ASAP. I just recently got down to 10% and\nneed help getting the rest of the way down to 4-6% to be stage-ready.\n2. Then I would like to maintain at no more than 4 weeks out from stage-\nready indefinitely (assuming this is possible).\n3. Then bring up lagging areas to ideal proportions (e.g. upper arm\nsmaller than calves right now).\n4. Finally I have a few strength goals that I'd like to hit at some point\n(i.e. bench 400 lbs, squat 500 lbs, deadlift 600 lbs, chins 20 reps).\n\nHow often in a week would you be prepared to train, if this was\nthe optimal training frequency?\nTo get down to 10% I was lifting 5 days per week for 1.5 hours. And I was\ndoing MISS cardio @ ~135 bpm for 1 hour fasted in the morning and\nanother 1 hour after lifting or before bed 7 days per week. This was under\nmy old bodybuilding coach. This was torture. I would prefer to train less\nbut I am prepared to train as much if needed. So ~3 hours per day max.\n\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nI am a technology planner for Apple (e.g. what is the screen in the next\niPhone going to be like?). My natural circadian rhythm would be sleeping\n2am to 10am but generally end up doing midnight to 6am.\n\n\n--- Page 3 ---\nBAYESIAN BODYBUILDING 2015\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\nDiagnosed with low testosterone a few years ago (i.e. down in the low\n200s). I had never Also hypothyroid and adrenal fatigue. Have since been\non testosterone injections, exemestane, and some version of thyroid med\n(Armour, T3, or T3/T4 compounded). These have brought my levels into\n\"normal-high\" range (e.g. test is now ~900). Before this I had never\ntaken any PEDs so I have come to believe all of my levels were destroyed\nthrough stress and abuse of thermogenic when I was bulking/cutting in\nhigh school and college for sports.\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nOther than those above I had been recommended to take ECA, yohimbine,\nand HGH-Fragment by my old coach. I suppose I don't really consider\nthose PEDs although some countries believe otherwise. I am not\nparticularly for or against any such additional things but generally prefer\nto be as natural as possible for fear of screwing up the tenuous balance I\nhave now.\n\n\n--- Page 4 ---\nBAYESIAN BODYBUILDING 2015\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\n(This includes when you're at work!) If so, please list them:\nMy work schedule is somewhat flexible so I can train almost anytime.\nIdeal to avoid 9-5pm if possible due to normal work hours.\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n Sedentary (e.g. office job)\n\nStress level\nPlease mark one of the fields below or delete the rest.\n Average stress (e.g. full-time work with deadlines and commuting)\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please attach at least two full-body pictures\nof yourself in clear lighting, preferably including a back double biceps and front\nrelaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your trainer.\n\n\n--- Page 5 ---\nBAYESIAN BODYBUILDING 2015\n\nHow is your sleep rhythm and quality?\nRhythm is somewhat off but generally midnight to 6am works. Longer on\nthe weekends. Quality is poor as I routinely wake up 3 times to urinate at\nnight due to high fluid intake around lifting at night (pre-workout (Evogen\nEVP) and post-workout (Evogen Cell KEM and whey) shakes).\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\nA lot. Caffeine pills before fasted cardio (400mg). ECA pill at lunch. Large\ncoffee in the morning. Sometimes a tea or more coffee before the gym at\nnight.\n\nGenetics\n Wrist circumference: 18.4 cm (left) and 18.3 cm (right)\n Ankle circumference: 25.4 cm (left) and 25.3 cm (right)\n How much did you weigh before you started lifting and what was\nyour height at that point? ~200 lbs at 12 years old before starting\nwrestling and began some lifting. Weight came down to 170 lbs and\nthen I have been between 170 and 230 lbs ever since either from\nlifting or cutting. Set point seems to really like 210 - 220 lbs.\n Were you heavy as a baby? Yes, always the fat kid :/\n Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.\n\n\n--- Page 6 ---\nBAYESIAN BODYBUILDING 2015\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nNo, willing to purchase some that you recommend.\n\nWhat are the lightest barbell weight plates you have access to?\n2.5 lbs\n\n\n--- Page 7 ---\nBAYESIAN BODYBUILDING 2015\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n2.5 lbs for weights ≤ 30 lbs\n5 lbs for weights > 30 lbs\n\n Do you have access to…\n a squat cage or rack? Yes\n a 45° hyperextension bench? Yes\n a reverse hyper machine? No\n a glute-ham raise (see example image below)? No\n\n a standing calf raise machine? No\n a dip/chin-up belt? Yes\n a leg curl machine and if so, is it seated, lying or standing? Yes,\nseated\n a pair of knee wraps? No, but willing to purchase\n gymnastic rings? No\n a TRX or similar suspension device? Yes\n powerlifting bands (not the light home workout crap)? No, but willing\nto purchase\n powerlifting chains? No\n\n\n--- Page 8 ---\nBAYESIAN BODYBUILDING 2015\n\n a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different? Yes, but different\nwhere I am stationary and only the weight move up and down\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nOffice gym so really nothing too specially good or bad about it. Extremely\nbusy so it can be more difficult to keep ideal pace or perform super sets\n\nSupplements\nPlease list all the supplements you are currently taking:\nSupplements\n•\nPre-Cardio (morning):\n\n◦\n2x Evogen Cell KEM\n\n◦\n1x Warrior Greens\n\n◦\n1x Evogen Carnigen\n\n◦\n2x Evogen Lipocide / 8x Primaforce Yohimbine HCL + 6x L-\nTyrosine\n•\nMid-day = 1x ECA + 325mg Aspirin\n•\nPre-workout = 2x EVP\n•\nPost-workout = 2x Cell KEM + 2x Hydrowhey\n\nECA, yohimbine, and HGH-Fragment\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:\n\n\n--- Page 9 ---\nBAYESIAN BODYBUILDING 2015\n\nMost recent plan I used to go from 12% to 10% over 6 weeks:\nWeekly Diet Schedule\n•\n2x protein / veggie days\n•\n1x ketogenic days\n•\n2x protein / veggie days\n•\n1x ketogenic days\n•\n1x high anabolic day\n\nProtein / Veggie Day\n•\n1x egg + 2x cups egg whites\n•\n5x 9oz lean protein\n\nKetogenic Day\n•\n3x egg + 1x cup egg whites\n•\n2x 7oz 93% ground beef + 1 tsp MCT oil\n•\n2x 7oz chicken + 1/2 avo\n•\n1x 7oz fatty protein\n\nHigh Anabolic Day\n•\n2x egg + 1.5x cups egg whites + Salsa + 2x servings oatmeal\n•\n1x 8oz fatty protein + 6oz Sweet Potato\n•\n3x 8oz lean protein + 6oz Sweet Potato\n•\n1x 8oz fatty protein + 6oz Sweet Potato\n•\n2x Evogen Glycoject (added to post-workout)\n\nPlease describe or attach your current training program in detail:\nDay 1 - 7: Cardio\n•\n1 hour fasted cardio every morning @ ~135 bpm\n•\n1 hour cardio immediately after lifting (or before bed on non-lifting\ndays) @ ~135 bpm\n\nDay 1: Chest / Triceps + Abs\n•\n60 seconds rest between sets\n•\n45% Incline Barbell bench press: 4 sets @ 12 / 10 / 8 / 6 reps\n•\nSuperset:\n\n◦\n15% Incline Dumbell bench press: 3 sets @ 10 / 8 / 6 reps\n\n◦\nIncline cable fly: 3 sets @ 20 reps\n•\nSuperset:\n\n\n--- Page 10 ---\nBAYESIAN BODYBUILDING 2015\n\n◦\nWeighted dips: 3 sets @ 12 / 10 / 8 reps - all to failure\n\n◦\nDecline cable fly: 3 sets @ 20 reps\n•\nClose grip bench: 3 sets @ 12 / 9 / 6 reps\n•\nV handle triceps press down:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nelbows in\n•\nOverhead cable tri extension:\n\n◦\n3 sets @ 12 / 10 / 8 reps\n\n◦\nelbows out, rope over shoulder, alternate each set\n\nDay 2: Back / Biceps\n•\n60 seconds rest between sets\n•\nBack extension: warm-up lower back\n•\nBarbell row: 3 sets @ 12 / 9 / 6 reps\n•\n1-arm dumbbell row (or Unilateral Hammer Strength row):\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring weight down and back to hip flexing lower lat\n•\nSeated cable low row:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nuse rope, split across abs, elbows down and low\n•\nWide grip lat pull down:\n\n◦\n4 sets @ 12 / 10 / 8 / 6 reps\n\n◦\nchest up, shoulders back, from extended arms down to -\nhalfway down behind head\n•\nClose grip lat pull down:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nuse V grip bar, chest up, shoulders back, from extended arms\ndown to touching chest\n•\nStraight arm pull over: 3 sets @ 12 / 11 / 10 reps\n•\nBarbell biceps curl:\n\n◦\n3 supersets @ 3 dropsets @ 10 reps\n\n▪\ne.g. 100 lbs failure @ 10 reps > 70 lbs fail @ 10 reps >\n50 lbs fail @ 10 reps, then 8>8>8, then 6>6>6\n\n◦\nfrom almost extended up to highest point before flex\ndisengages\n•\nUnilateral dumbbell curl on incline bench - facing up:\n\n◦\n5 sets @ 5 reps (each arm on its own)\n\n◦\ne.g. 5 sets of 35 lbs @ 5 reps right arm then 5 reps left arm\n•\nHammer curl - standing:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring weight across body; maintain hammer grip throughout\n\n\n--- Page 11 ---\nBAYESIAN BODYBUILDING 2015\n\nDay 3: Legs\n•\n90 - 180 seconds rest between sets\n•\nLeg Extensions:\n\n◦\n3 sets @ 20 reps\n\n◦\nonly warming up\n•\nLeg Press:\n\n◦\n3 sets @ 20 reps\n\n◦\nfeet & knees straight, knees rotated into focus on outer\nquads; set back on most reclined option to reduce hip rotation\n•\nProne Leg Curls:\n\n◦\n3 sets @ 15 - 12 reps\n\n◦\nconstant tension on hamstrings\n•\nAbductor Machine: 3 sets @ 15 - 12 reps\n•\nAdductor Machine: 3 sets @ 15 - 12 reps\n•\nSquat:\n\n◦\n4 sets @ 15 / 14 / 13 / 12 reps\n\n◦\nfocus on pump in glutes not joint pain, take wider stance than\nnormal, stop short of bottom, don't bounce\n\n◦\nmoved to end of workout to reduce back strain\n•\nSeated Calf Raises:\n\n◦\n3 sets @ 30 reps\n\n◦\nchange to \"dirty 30\": 30 reps with necessary pauses, focus on\npinky toe to develop outside of calves\n•\nStanding Calf Raises: 3 sets @ 30 reps (dirty 30)\n\nDay 4: Rest\n\nDay 5: Shoulders\n•\n60 seconds rest between sets\n•\nDumbbell shoulder press:\n\n◦\n4 sets @ 12 / 10 / 8 / 6 reps\n\n◦\nstraight out, elbows to 90 degrees\n\n◦\ncan move reps up to reduce weights -> 4 sets @ 16 / 14 / 12\n/ 10\n•\nClose grip front shoulder press:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nperform as Arnolds, focus on front of anterior delt\n•\nDumbbell side laterals:\n\n◦\n3 supersets @ 4 sets @ 10 reps\n\n\n--- Page 12 ---\nBAYESIAN BODYBUILDING 2015\n\n▪\ne.g. 50 lbs failure @ 10 reps > 35 @ 10 > 25 @ 10 > 15\n@ 10\n\n◦\nelbows up & bent, wrists slightly down & rotated\n•\nDumbbell front raises:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\narm straight, weight brought up in front of face slightly across\nbody\n•\nUpright rows wide grip:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\nbring to pec line, wide enough grip to hit 90 degrees with\nelbows at top of rep, isolate traps out\n•\nDumbbell shrugs:\n\n◦\n3 sets @ 12 / 9 / 6 reps\n\n◦\non incline bench, head forward, flex shoulders up and into\ntraps not into neck\n\nDay 6: Arms\n•\n60 seconds rest between sets\n•\nStanding Bicep Curl (Bent-Bar / Close-Grip):\n\n◦\n3 sets @ 21's (7 bottom, 7 top, 7 full ROM)\n\n◦\ne.g. 65 lbs @ 3 sets @ 21's\n•\nPreacher Bicep Curl (Bent-Bar / Close-Grip):\n\n◦\n3 sets @ 10 reps @ double pumped\n\n◦\nflex to top, drop 1-inch, flex again to top\n\n◦\nweight ~= 10% less than normal preacher curls\n•\nStanding Bicep Curl (Bent-Bar / Wide-Grip):\n\n◦\nCentury set w/ 1st failure @ 50 reps\n\n◦\nafterwards rest-pause to 100 reps\n\n◦\ne.g. 50 lbs\n•\nTricep Superset:\n\n◦\nSkull Crusher: 3 sets @ 10 reps\n\n◦\nClose-Grip Bench Press: 3 sets @ failure following Skull\nCrushers\n•\nBehind-Head Rope Extensions:\n\n◦\n4 sets @ 10 reps - blood-starving (don't drop arms until the\nend)\n\n◦\nplace pin behind middle of back\n\n◦\npress overhead and separate arms\n•\nTricep Dips:\n\n◦\n3 sets @ 10 reps @ double pumped\n\n\n--- Page 13 ---\nBAYESIAN BODYBUILDING 2015\n\nDay 7: Rest\n\nAbs:\n•\nno rotation - need to minimize obliques\n•\nRope crunches\n\n◦\n30 reps\n\n◦\nsetup like rope triceps, bring elbows to mid-quads\n•\nSuperset decline bench crunches: 30 reps\n•\nSuperset hanging leg raises: to failure\n•\nComplete the above tri-set for three rounds, every other workout -\nfor a total of 3x per week\n\nSo we've got an advanced bodybuilder that's strength training 7.5 hours a week and doing 2\nhours of cardio a day. His hormone levels are normal, albeit via hormone replacement\ntherapy and he's on a crapload of stimulants in addition to growth hormone boosters. Yet\nhis fat loss plateaued at ~10% body fat (which was probably in retrospect in fact more like\n15%). What gives?\n\nGenetics are clearly not the cause, since his muscular potential is excellent and he doesn't\nappear to even have maxed it out yet (and indeed he didn't, I can say in retrospect).\n\nHere's what we did.\n We dropped all cardio.\n We ditched all the stimulants and growth hormone boosters. We reintroduced\ncaffeine, yohimbine and ephedrine at far lower dosages gradually after 9 days. (See\nsupplements topic.)\nPlease return the filled in form to\nMennoHenselmans@BayesianBodybuilding.com and attach at least two\nfull-body pictures of yourself in clear lighting (without excessive\nshadows; not your flattering Facebook selfies), preferably including a\nback double biceps and front relaxed pose. If you recently had blood\nwork done, please attach its results as well.\n\n\n--- Page 14 ---\nBAYESIAN BODYBUILDING 2015\n\n We increased caloric intake to 2799 a day: still 'low' carb but no longer ketogenic.\n We implemented high frequency training amounting to a training time of approx. one\nhour a day.\n We focused greatly on stress management, improving his traveling habits (he traveled\na ton) and improving his sleep quality and time. Decreasing his meal frequency to just\n3 meals a day and implementing intermittent morning fasting made his meal prep a lot\neasier.\n\nThe result: He actually started recomping throughout the first month, which was beyond my\nexpectation and indicative of greatly above average muscular potential. His strength levels\nincreased by ~10% in this period.\n\nTake-home message: Never underestimate the importance of stress and sleep.\n\nJust so you don't get the wrong idea, after this period the recomping stopped and we still\nhad to decrease caloric intake and introduce cardio, as expected during contest prep.\n30-Nov 01-Dec\n02-Dec\n03-Dec\n04-Dec\n05-Dec\n06-Dec\nSuprailiac Umbilical\nWeight\n217.5\n222.7\n224.2\n221.0\n218.3\n220.7\n6.6\n11.6\n07-Dec 08-Dec\n09-Dec\n10-Dec\n11-Dec\n12-Dec\n13-Dec\nWeight\n222.6\n222.0\n222.1\n220.7\n225.3\n218.6\n221.6\n221.8\n0.5\n6.2\n10.8\n14-Dec 15-Dec\n16-Dec\n17-Dec\n18-Dec\n19-Dec\n20-Dec\nWeight\n221.2\n222.3\n221.9\n223.5\n225.8\n222.9\n222.9\n0.5\n6.0\n11.0\n21-Dec 22-Dec\n23-Dec\n24-Dec\n25-Dec\n26-Dec\n27-Dec\nWeight\n223.2\n223.2\n0.1\n5.8\n10.6\nMeasurement Day*\nM BW dBW (%)\nSkinfold (mm)**\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 14):\n|  | Measurement Day* M BW 30-Nov 01-Dec 02-Dec 03-Dec 04-Dec 05-Dec 06-Dec |  |  |  |  |  |  |  | dBW (%) | Skinfold (mm)** Suprailiac Umbilical |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Weight | 217.5 |  |  | 222.7 | 224.2 | 221.0 | 218.3 | 220.7 |  | 6.6 | 11.6 |\n|  | 07-Dec | 08-Dec | 09-Dec | 10-Dec | 11-Dec | 12-Dec | 13-Dec | 221.8 | 0.5 6.2 10.8 |  |  |\n| Weight | 222.6 | 222.0 | 222.1 | 220.7 | 225.3 | 218.6 | 221.6 |  |  | 6.2 | 10.8 |\n|  | 14-Dec | 15-Dec | 16-Dec | 17-Dec | 18-Dec | 19-Dec | 20-Dec |  |  |  |  |\n| Weight | 221.2 | 222.3 | 221.9 | 223.5 | 225.8 | 222.9 |  | 222.9 | 0.5 6.0 11.0 | 6.0 | 11.0 |\n|  | 21-Dec | 22-Dec | 23-Dec | 24-Dec | 25-Dec | 26-Dec | 27-Dec |  |  |  |  |\n| Weight |  | 223.2 |  |  |  |  |  | 223.2 | 0.1 | 5.8 | 10.6 |\n",
+  "tables": [
+    {
+      "page_num": 14,
+      "markdown": "|  | Measurement Day* M BW 30-Nov 01-Dec 02-Dec 03-Dec 04-Dec 05-Dec 06-Dec |  |  |  |  |  |  |  | dBW (%) | Skinfold (mm)** Suprailiac Umbilical |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Weight | 217.5 |  |  | 222.7 | 224.2 | 221.0 | 218.3 | 220.7 |  | 6.6 | 11.6 |\n|  | 07-Dec | 08-Dec | 09-Dec | 10-Dec | 11-Dec | 12-Dec | 13-Dec | 221.8 | 0.5 6.2 10.8 |  |  |\n| Weight | 222.6 | 222.0 | 222.1 | 220.7 | 225.3 | 218.6 | 221.6 |  |  | 6.2 | 10.8 |\n|  | 14-Dec | 15-Dec | 16-Dec | 17-Dec | 18-Dec | 19-Dec | 20-Dec |  |  |  |  |\n| Weight | 221.2 | 222.3 | 221.9 | 223.5 | 225.8 | 222.9 |  | 222.9 | 0.5 6.0 11.0 | 6.0 | 11.0 |\n|  | 21-Dec | 22-Dec | 23-Dec | 24-Dec | 25-Dec | 26-Dec | 27-Dec |  |  |  |  |\n| Weight |  | 223.2 |  |  |  |  |  | 223.2 | 0.1 | 5.8 | 10.6 |",
+      "bbox": [
+        70.85999806722005,
+        324.0543518066406,
+        585.82236328125,
+        474.419287109375
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:53.016447",
+  "error": null
+}

@@ -1,0 +1,134 @@
+{
+  "filename": "Biochemistry 101 PTC 2022.pdf",
+  "source": "Biochemistry 101 PTC 2022.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 14,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nBIOCHEMISTRY 101",
+      "headings": [
+        "BIOCHEMISTRY 101"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\nIn this topic, you'll learn the basics of biochemistry, the science of chemical processes in\norganisms. This topic should give you the basic background information to understand\nhow the body produces energy, which it needs for everything from kidney functioning to\nmuscle contractions. As long as you understand the practical take-home messages,\nyou're fine as a Personal Trainer. All of this will be covered again in the next modules\non the 3 major macronutrients.\n\nAll matter is composed of particles. One of the most fundamental classes of chemical\nelements a nutritionist needs to be aware of is the macronutrient groups. Macronutrients\nare components of food that organisms need to function (nutrients) and are consumed in\nlarge (macro) quantities. There are 3 important dietary macronutrients:\n• Carbohydrates\n• Protein\n• Fat\n\nThere is also a fourth macronutrient that may be important for some of you - alcohol -\nbut we won't go into that here.\n\nOne thing that all 3 macros have in common is that their molecular structures are based\non a carbon skeleton, several carbons that are interconnected to form a carbon chain.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "3\nCarbohydrates\nAs the name suggests, carbohydrates are hydrated carbons; carbons (C) with water\n(H20) attached to them. The most basic form of carbohydrate is glucose.\n\nThe molecular structure of glucose\n\nCarbon is black yet sugar is white. To realize that white sugar consists of black carbon,\nsee what happens when you dehydrate sugar: watch this video.",
+      "headings": [
+        "Carbohydrates"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "4\nProtein\nA protein molecule is a long chain of amino acids (= polypeptide) that folds to give a 3-\ndimensional structure. Amino acid molecules are connected to each other via peptide\nbonds. Each amino acid consists of a carbon chain (α-carbon and the side chain) that\ncarries an amino group and an acid group. (The exception to this is the amino acid\nglycine, which only contains the α-carbon and no side chain.)",
+      "headings": [
+        "Protein"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "5\nFat\nFatty acids consist of long carbon chains with an acid group (carboxyl group).",
+      "headings": [
+        "Fat"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "6\nEnergy production and fat storage\nKnowing that all the 3 macronutrients are built from carbon chains is crucial to\nunderstand the main principles of human metabolism.\n1. The human body oxidizes ('burns') carbon chains to gain energy. For this reason,\nwe can gain energy from carbohydrates, protein and fat.\n2. The breakdown products (metabolites) of carbohydrates, protein and fat can be\ntransferred into each other. This connects metabolic pathways and allows the\nbody to transform one nutrient class into another, such as storing carbohydrates\nas fat in an energy surplus or making glucose out of the carbon skeletons of\namino acids when no glucose is ingested.\n\nBelow is a schematic diagram of a connection between different metabolic pathways,\nshowing how the body can create energy (directly or indirectly) from all 3\nmacronutrients.",
+      "headings": [
+        "Energy production and fat storage"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "7\n\nAn overview of how the body produces energy, fat and carbs.\n\nAs you can see, acetyl-CoA is the central metabolite for energy production (via\noxidation to carbon dioxide, CO2) and the body can obtain this from whichever\nmacronutrient you eat.\n• From carbs, via intermediate conversion of glucose to pyruvate, a process called\nglycolysis.\n• From fat, specifically fatty acids.\n• From protein, specifically amino acids.\n\nAcetyl-CoA can also be converted to fat. Since the body can create acetyl-CoA from not\njust fat but also indirectly from carbs and protein, the body can use all 3 major\nmacronutrients as substrate ('building blocks') to store body fat. All energy we consume\ncan make us fat.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "8\nATP\nThe story of energy production in the human body essentially always ends with ATP\n(adenosine triphosphate). ATP transports chemical energy that is required for metabolic\nprocesses. ATP is basically a battery. Energy is released when ATP is hydrolyzed to\nADP (adenosine diphosphate), so ADP is basically a partially charged battery. ADP can\nbe further hydrolyzed to AMP (adenosine monophosphate) to release more energy and\nfully deplete the battery.",
+      "headings": [
+        "ATP"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "9\n\nNow that we understand the basics of energy production, let's zoom in on certain\nmetabolic pathways. These metabolic pathways explain how the body produces energy\nfrom the food we eat and how it discards the waste products that are formed along the\nway, such as carbon dioxide (CO2) and urea.\n\nBelow is a more detailed overview of human energy production. We'll start with the top\nleft green area.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "10\n\nZooming in on how the body produces energy. Note the position of acetyl-CoA and\noxaloacetate in this figure and compare them to the previous zoomed-out overview.\nYou're not expected to understand this graphic yet, but after the modules on each\nmacronutrient, come back to this overview and you should fully understand it.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "11\nEnergy production from carbohydrates\nAs we'll explain in more detail in the specific module on carbs, most carbs we eat are\nbroken down to glucose. Each glucose molecule is then broken down into smaller\nmolecules in a process called glycolysis. The product of glycolysis is pyruvate.\nGlycolysis already releases some energy (ATP), but pyruvate can be broken down\nfurther in 2 ways.\n\nFirst, as you learned, pyruvate be broken down to acetyl-CoA, which can be stored as\nbody fat for future energy production or used for immediate energy production. Energy\nproduction from acetyl-CoA occurs via the so-called TCA cycle and oxidative\nphosphorylation. All acetyl-CoA is completely oxidized, burned up, leaving only CO2,\nwhich we expel through our lungs, and water, H2O. As the name suggests, this type of\nenergy production occurs in aerobic (oxygen containing) conditions.\n\nWhen oxygen is not available, in anaerobic conditions, or when the demand for rapid\nenergy is high, pyruvate is converted to lactate. The conversion to lactate occurs mainly\nin times of strenuous exercise when the demand for oxygen by the working muscles\nexceeds what is available.",
+      "headings": [
+        "Energy production from carbohydrates"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "12\nThe tricarboxylic acid (TCA) cycle\nThe tricarboxylic acid (TCA) cycle, also called the Krebs cycle or the citric acid cycle, is\na vital energy production pathway for the body. Metabolites of carbohydrate, fat and\nprotein that enter the cycle can be completely oxidized to CO2 and H2O with an\naccompanying release of energy (though some intermediate substrates are formed that\nare used to i.a. 'recycle' back into glucose or amino acids).\n\nYou don't need to understand the specifics of the TCA cycle, but for reference, in a\nprocess called decarboxylation, CO2 is removed from pyruvate, the product of\nglycolysis, to form acetyl-CoA. The product of pyruvate is acetyl, which is coupled to\nCoenzyme A (CoA) that functions as a carrier. Acetyl-CoA is incorporated into\noxaloacetic acid to form citric acid and subsequently lost as CO2 in the decarboxylation\nstep of the TCA cycle. Two important products of the TCA cycle are NADH and FADH2.\nThese products can be used to reduce O2 to H2O in a process that is called oxidative\nphosphorylation, during which ATP is formed.\n\nAnother product of the TCA cycle is GTP, which has a similar function to ATP but\npossesses higher 'reaction specificity': it can only be used for specific reactions.\n\nAll you need to understand is that the TCA cycle and subsequent oxidative\nphosphorylation are essentially a metabolic furnace. The body throws in the metabolites\nof the macronutrients we eat and they get burned in the furnace to give us energy.",
+      "headings": [
+        "The tricarboxylic acid (TCA) cycle"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "13\nFurther reading\nIf you are interested in the nitty gritty of biochemistry, the book Advanced Nutrition and\nHuman Metabolism is a great reference. It is difficult to read, however, and contains far\nmore information than you need to know as a nutritionist, so all the important topics\nfrom that book are summarized in a more reader friendly format in the course\ndocuments.",
+      "headings": [
+        "Further reading"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "14\nLearning objectives\nThis module should teach you basic biochem terminology and how the body produces\nenergy. All of this will be detailed further and repeated in the sections where it becomes\nrelevant for practical application, but you should understand some basic biochemistry\nand terminology by now, including the following.\n• ATP\n• Aerobic vs. anaerobic metabolism\n• Glycolysis\n• Metabolites\n• Oxidation\n\n➢ Click here to try example exam questions for this\nmodule.",
+      "headings": [
+        "Learning objectives",
+        "➢ Click here to try example exam questions for this",
+        "module."
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "BIOCHEMISTRY 101",
+    "Carbohydrates",
+    "Protein",
+    "Fat",
+    "Energy production and fat storage",
+    "ATP",
+    "Energy production from carbohydrates",
+    "The tricarboxylic acid (TCA) cycle",
+    "Further reading",
+    "Learning objectives",
+    "➢ Click here to try example exam questions for this",
+    "module."
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nBIOCHEMISTRY 101\n\n\n--- Page 2 ---\n2\nIn this topic, you'll learn the basics of biochemistry, the science of chemical processes in\norganisms. This topic should give you the basic background information to understand\nhow the body produces energy, which it needs for everything from kidney functioning to\nmuscle contractions. As long as you understand the practical take-home messages,\nyou're fine as a Personal Trainer. All of this will be covered again in the next modules\non the 3 major macronutrients.\n\nAll matter is composed of particles. One of the most fundamental classes of chemical\nelements a nutritionist needs to be aware of is the macronutrient groups. Macronutrients\nare components of food that organisms need to function (nutrients) and are consumed in\nlarge (macro) quantities. There are 3 important dietary macronutrients:\n• Carbohydrates\n• Protein\n• Fat\n\nThere is also a fourth macronutrient that may be important for some of you - alcohol -\nbut we won't go into that here.\n\nOne thing that all 3 macros have in common is that their molecular structures are based\non a carbon skeleton, several carbons that are interconnected to form a carbon chain.\n\n\n--- Page 3 ---\n3\nCarbohydrates\nAs the name suggests, carbohydrates are hydrated carbons; carbons (C) with water\n(H20) attached to them. The most basic form of carbohydrate is glucose.\n\nThe molecular structure of glucose\n\nCarbon is black yet sugar is white. To realize that white sugar consists of black carbon,\nsee what happens when you dehydrate sugar: watch this video.\n\n\n--- Page 4 ---\n4\nProtein\nA protein molecule is a long chain of amino acids (= polypeptide) that folds to give a 3-\ndimensional structure. Amino acid molecules are connected to each other via peptide\nbonds. Each amino acid consists of a carbon chain (α-carbon and the side chain) that\ncarries an amino group and an acid group. (The exception to this is the amino acid\nglycine, which only contains the α-carbon and no side chain.)\n\n\n--- Page 5 ---\n5\nFat\nFatty acids consist of long carbon chains with an acid group (carboxyl group).\n\n\n--- Page 6 ---\n6\nEnergy production and fat storage\nKnowing that all the 3 macronutrients are built from carbon chains is crucial to\nunderstand the main principles of human metabolism.\n1. The human body oxidizes ('burns') carbon chains to gain energy. For this reason,\nwe can gain energy from carbohydrates, protein and fat.\n2. The breakdown products (metabolites) of carbohydrates, protein and fat can be\ntransferred into each other. This connects metabolic pathways and allows the\nbody to transform one nutrient class into another, such as storing carbohydrates\nas fat in an energy surplus or making glucose out of the carbon skeletons of\namino acids when no glucose is ingested.\n\nBelow is a schematic diagram of a connection between different metabolic pathways,\nshowing how the body can create energy (directly or indirectly) from all 3\nmacronutrients.\n\n\n--- Page 7 ---\n7\n\nAn overview of how the body produces energy, fat and carbs.\n\nAs you can see, acetyl-CoA is the central metabolite for energy production (via\noxidation to carbon dioxide, CO2) and the body can obtain this from whichever\nmacronutrient you eat.\n• From carbs, via intermediate conversion of glucose to pyruvate, a process called\nglycolysis.\n• From fat, specifically fatty acids.\n• From protein, specifically amino acids.\n\nAcetyl-CoA can also be converted to fat. Since the body can create acetyl-CoA from not\njust fat but also indirectly from carbs and protein, the body can use all 3 major\nmacronutrients as substrate ('building blocks') to store body fat. All energy we consume\ncan make us fat.\n\n\n--- Page 8 ---\n8\nATP\nThe story of energy production in the human body essentially always ends with ATP\n(adenosine triphosphate). ATP transports chemical energy that is required for metabolic\nprocesses. ATP is basically a battery. Energy is released when ATP is hydrolyzed to\nADP (adenosine diphosphate), so ADP is basically a partially charged battery. ADP can\nbe further hydrolyzed to AMP (adenosine monophosphate) to release more energy and\nfully deplete the battery.\n\n\n--- Page 9 ---\n9\n\nNow that we understand the basics of energy production, let's zoom in on certain\nmetabolic pathways. These metabolic pathways explain how the body produces energy\nfrom the food we eat and how it discards the waste products that are formed along the\nway, such as carbon dioxide (CO2) and urea.\n\nBelow is a more detailed overview of human energy production. We'll start with the top\nleft green area.\n\n\n--- Page 10 ---\n10\n\nZooming in on how the body produces energy. Note the position of acetyl-CoA and\noxaloacetate in this figure and compare them to the previous zoomed-out overview.\nYou're not expected to understand this graphic yet, but after the modules on each\nmacronutrient, come back to this overview and you should fully understand it.\n\n\n--- Page 11 ---\n11\nEnergy production from carbohydrates\nAs we'll explain in more detail in the specific module on carbs, most carbs we eat are\nbroken down to glucose. Each glucose molecule is then broken down into smaller\nmolecules in a process called glycolysis. The product of glycolysis is pyruvate.\nGlycolysis already releases some energy (ATP), but pyruvate can be broken down\nfurther in 2 ways.\n\nFirst, as you learned, pyruvate be broken down to acetyl-CoA, which can be stored as\nbody fat for future energy production or used for immediate energy production. Energy\nproduction from acetyl-CoA occurs via the so-called TCA cycle and oxidative\nphosphorylation. All acetyl-CoA is completely oxidized, burned up, leaving only CO2,\nwhich we expel through our lungs, and water, H2O. As the name suggests, this type of\nenergy production occurs in aerobic (oxygen containing) conditions.\n\nWhen oxygen is not available, in anaerobic conditions, or when the demand for rapid\nenergy is high, pyruvate is converted to lactate. The conversion to lactate occurs mainly\nin times of strenuous exercise when the demand for oxygen by the working muscles\nexceeds what is available.\n\n\n--- Page 12 ---\n12\nThe tricarboxylic acid (TCA) cycle\nThe tricarboxylic acid (TCA) cycle, also called the Krebs cycle or the citric acid cycle, is\na vital energy production pathway for the body. Metabolites of carbohydrate, fat and\nprotein that enter the cycle can be completely oxidized to CO2 and H2O with an\naccompanying release of energy (though some intermediate substrates are formed that\nare used to i.a. 'recycle' back into glucose or amino acids).\n\nYou don't need to understand the specifics of the TCA cycle, but for reference, in a\nprocess called decarboxylation, CO2 is removed from pyruvate, the product of\nglycolysis, to form acetyl-CoA. The product of pyruvate is acetyl, which is coupled to\nCoenzyme A (CoA) that functions as a carrier. Acetyl-CoA is incorporated into\noxaloacetic acid to form citric acid and subsequently lost as CO2 in the decarboxylation\nstep of the TCA cycle. Two important products of the TCA cycle are NADH and FADH2.\nThese products can be used to reduce O2 to H2O in a process that is called oxidative\nphosphorylation, during which ATP is formed.\n\nAnother product of the TCA cycle is GTP, which has a similar function to ATP but\npossesses higher 'reaction specificity': it can only be used for specific reactions.\n\nAll you need to understand is that the TCA cycle and subsequent oxidative\nphosphorylation are essentially a metabolic furnace. The body throws in the metabolites\nof the macronutrients we eat and they get burned in the furnace to give us energy.\n\n\n--- Page 13 ---\n13\nFurther reading\nIf you are interested in the nitty gritty of biochemistry, the book Advanced Nutrition and\nHuman Metabolism is a great reference. It is difficult to read, however, and contains far\nmore information than you need to know as a nutritionist, so all the important topics\nfrom that book are summarized in a more reader friendly format in the course\ndocuments.\n\n\n--- Page 14 ---\n14\nLearning objectives\nThis module should teach you basic biochem terminology and how the body produces\nenergy. All of this will be detailed further and repeated in the sections where it becomes\nrelevant for practical application, but you should understand some basic biochemistry\nand terminology by now, including the following.\n• ATP\n• Aerobic vs. anaerobic metabolism\n• Glycolysis\n• Metabolites\n• Oxidation\n\n➢ Click here to try example exam questions for this\nmodule.",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:41:57.857433",
+  "error": null
+}

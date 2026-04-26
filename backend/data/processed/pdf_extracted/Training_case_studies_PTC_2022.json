@@ -1,0 +1,152 @@
+{
+  "filename": "Training case studies PTC 2022.pdf",
+  "source": "Training case studies PTC 2022.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 8,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nTRAINING PROGRAMMING\nCASE STUDIES",
+      "headings": [
+        "TRAINING PROGRAMMING",
+        "CASE STUDIES"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\n\nAt this point you have learned everything you need to know to design optimal training\nprograms. Anything in this document is mostly practical and you could skip this\ndocument entirely in principle. Designing an optimal program is a bit like a puzzle,\nexcept that there isn't just a single right way to allocate the pieces. Often, there are\nmany different ways to structure a program and they will be similarly effective. As long\nas your program fits the optimal training principles, you're all good. With that in mind,\nhere's a general framework of how to go about creating a training program.\n1. Determine the total weekly training frequency. If the trainee is not averse to\ntraining, this is generally equal to the highest number of sessions they're\nconsistently willing to go to the gym. Example, if someone's willing to go to the\ngym 6x per week, the total training frequency will be 6x.\n2. Determine the optimal weekly training frequency per muscle group for each\nmuscle. Example: A guy has his upper body as the priority, which is developed\nat a serious intermediate level, so it probably needs to be trained at least 3x per\nweek for optimal progress, whereas the lower body is at an earlier intermediate\nstage and only needs to be trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them\nand the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.",
+      "headings": [
+        "1. Determine the total weekly training frequency. If the trainee is not averse to",
+        "2. Determine the optimal weekly training frequency per muscle group for each",
+        "muscle. Example: A guy has his upper body as the priority, which is developed",
+        "3. Create the program split."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "3\n\n4. Determine the optimal weekly total work set training volume for each\nmuscle. In the above example, it may be 15 sets for the upper body and 12 sets\nfor the lower body. That means each lower body muscle should do on average 6\nsets per each workout; 5 sets per workout for the upper body muscles.\nIf you're going to implement training to failure or advanced training techniques,\ntake this into account and lower the volume for the affected muscles\ncorrespondingly.\n5. Select your exercises, their training intensities and progression models\nbased on i.a. the available equipment and their synergy, ensuring you hit the\nminimum optimal exercise variety for each muscle group. For example, you need\nto ensure you hit the hamstrings with a knee flexion and a hip extension exercise,\nsuch as glute-ham raises at 70% and pull-throughs at 80% of 1RM. Since you\nhave 3 days on which you train the pecs, you could select either 2 or 3 different\npec exercises. If you select 2, you'll train each exercise 1.5x per week, which is\nclose to ideal. However, it's also fine to select 3 and train each exercise once per\nweek if you want higher variety for some reason, such as injury prevention. In\nthis case, you need to select 3 complementary exercises with different training\nintensities. You would not want to select the decline, incline and flat bench press\nall at 80% of 1RM, as they're too similar, especially in terms of injury risk.\nInstead, go with something like Bayesian flys at 65%, flat bench presses at 80%\nand suspended push-ups and 77.5% (an intensity in the middle of the other 2).\n6. Allocate the exercises over the program split, paying attention to the\nprinciples of exercise ordering to maximize total repetition volume. Set volume\ncan generally be split equally across your exercises. In the above example, that\nwould be 12 / 2 / 2 = 3 sets per exercise for the hamstrings and 15 / 3 / 1 = 5 sets\nfor the pecs.\n7. Look back over the program and apply good ol' common sense. Most\nprograms require some ad hoc decision making. For example, maybe the gym\nlogistics mean you can't separate delt and pec exercises very well in the program",
+      "headings": [
+        "4. Determine the optimal weekly total work set training volume for each",
+        "muscle. In the above example, it may be 15 sets for the upper body and 12 sets",
+        "5. Select your exercises, their training intensities and progression models",
+        "6. Allocate the exercises over the program split, paying attention to the",
+        "7. Look back over the program and apply good ol’ common sense. Most"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "4\n\nand they end up being trained in a fatigued state every session. Then add some\nmore sets to them to make up for the lower than planned volume.\n\nThe steps to creating an optimal training program.\n\n➢ Bonus lecture [optional]\nReflecting on mechanisms of muscle growth\n\nDetermine total weekly training frequency\nDetermine training frequency per muscle group to create the training split\nDetermine work sets per muscle group\nSelect exercises and their training intensities and progression models per muscle group\nAllocate the exercises over the training split\nDo practicality check of the program",
+      "headings": [
+        "➢ Bonus lecture [optional]"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "5\n\nNow we'll show some case studies as examples of what good programs may end up\nlooking like. Note that without the context of the email correspondence and without\nbeing able to see exactly when what was changed in the programs, it is important to\nfocus on the general principles, not on trying to replicate these programs to the letter.\n\n• Case study: Average Joe program design\nThis is a straightforward case study of the program design process for a typical PT\nclient: an intermediate level office worker that 'just wants to look good naked'.\n\n• Case study: Novice vegan\nThis is a fictional case study created by the Bayesian team to illustrate the full decision-\nmaking process of creating a program from scratch.\n\n• Case study: Completely untrained individual\nThis is another fictional case study created by the Bayesian team to illustrate the full\ndecision-making process of creating a program from scratch.\n\n• Case study: female Powerlifter training in a home gym [intake form]\nThis was one of Menno's female powerlifting clients tentatively preparing for a future\ncompetition while cutting down to a more competitive weight class. She was training\ndaily.\nAlso, here's a more general case study on exercise selection in a home gym with\nonly free-weights\n\n• Case study: Men's Physique competitor shoulder rehab [intake form]",
+      "headings": [
+        "• Case study: Average Joe program design",
+        "• Case study: Novice vegan",
+        "• Case study: Completely untrained individual",
+        "• Case study: female Powerlifter training in a home gym [intake form]",
+        "Also, here’s a more general case study on exercise selection in a home gym with",
+        "only free-weights",
+        "• Case study: Men’s Physique competitor shoulder rehab [intake form]"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "6\n\nThis was another one of Menno's clients, a Men's Physique competitor far out from\ncompetition in the off-season. The focus here was on rehabbing his shoulder and\nmaintaining with only 3 workouts a week. Notice the prioritization of muscle groups by\nMen's Physique standards and the exercise selection\n\n• Case study: booty building [intake form]\nThis was one of Menno's female clients with the almost sole focus being to build, as she\nput it, massive glutes. Menno set up her program with instructions to follow the program\non her own, so they started with undulating periodization right from the start. She was\ntraining daily.\n\n• Case study: difficult progression\nHere's the progression track of one of Menno's clients preparing for his first Physique\nshow. High stress, mediocre to poor sleep quality, moderate genetic potential, could\nonly train 4x a week and he sometimes had to train in the morning, so this is a good\nexample of poor progression with plenty of modifications. Menno highlighted and\ncommented on the most important changes in his progression plan so you can see how\nwe dealt with stagnation and how everything worked.\n\nThe notation is [weight] x [reps in first set] x [total number of sets]. This is\nAutoregulatory Volume Training where you only log the first set and on the other sets go\nby feel, focusing on explosiveness and good technique (but still 1 rep to failure) instead\nof on achieving X reps.\n\nNote that he often did not follow the progression guidelines as planned and e.g. stuck\nwith the same weight repeatedly after stalling.",
+      "headings": [
+        "• Case study: booty building [intake form]",
+        "• Case study: difficult progression"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "7\n\n• Case study: moving a national level powerlifting champion up a weight\nclass\nThis is the exact progression track Menno used to get one of his Powerlifting clients up\na weight class after he became national powerlifting champion in -83 kg. There was a\nreason for the low amount of calf work, but Menno's doesn't remember (part of it was\nlimited equipment availability).\n\n• Case study: IFBB Pro Bikini competitor\nBelow is a case study of an elite level bi-daily program for a woman. It's one of the\nprograms Menno created for Nina Ross that resulted in several international titles and\nan IFBB Pro card. Notice how high the volume is when all volume influencing variables\nare ideal and how the volume and frequency differ drastically per body part to get the\ndesired Bikini physique for her: glutes > quads / shoulders > hams > calves > rest. The\nformat in the periodization column is [reps on first set] x [sets] with Autoregulatory\nVolume Training.",
+      "headings": [
+        "• Case study: moving a national level powerlifting champion up a weight",
+        "class",
+        "• Case study: IFBB Pro Bikini competitor"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "8\n\nExercise\nSession\nPeriodization\n1) Barbell low-bar back squat\n1, 14:30h\nx8x6 / x5x6 Undulating\n2) Barbell hip thrust from deficit\n1, 14:30h\nx8x3 / x12x3 Undulating\n1) Sumo press\n1, 20:00h\nx7x5 / x5x5 Undulating\n2) Pull-through\n1, 20:00h\nx14x3\n3) GHR\n1, 20:00h\nx9x3\n1) Unilateral Romanian deadlift\n2, 14:30h\nx6x3\n2) Bulgarian split squat from deficit (2 DB)\n2, 14:30h\nx10x5\n3) Overhead dumbbell press\n2, 14:30h\nx8x3 / x10x3 Undulating\n1) Unilateral hip thrust from deficit\n2, 20:00h\nx15x3\n2) Calf jumps\n2, 20:00h\nx6x4\n3) Cable lateral raise\n2, 20:00h\nx13x3 / x15x3 Undulating\n\n• Case study: no gym, no weights, no problem\nHere's a case study of an intermediate level client that started backpack-traveling the\nworld. He only occasionally had access to a gym, so Menno created his program almost\nexclusively with bodyweight work, a TRX suspender and 2 light elastic training bands.\nAs you can see, with some creativity in terms of exercise selection and the application\nof progressive overload, this can get you very far and he gained an excellent amount of\nlean body mass during the coaching period.\n\n• Case study: Block periodization and mixing different goals\nYou can consider this a bonus case study, as Powerlifting and Olympic Weightlifting\naren't core contents of the Bayesian PT Course, but it provides some insight in how to\ndeal with the common problem of clients wanting to achieve various, often interfering\ngoals all at once. As a coach you have to learn to really dig into the motivation of your\nclients to see which goals are most important to them.",
+      "headings": [
+        "Exercise",
+        "Session",
+        "Periodization",
+        "• Case study: no gym, no weights, no problem",
+        "• Case study: Block periodization and mixing different goals"
+      ],
+      "tables": [
+        {
+          "page_num": 8,
+          "markdown": "| Exercise |  |  | Session |  |  | Periodization |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 1) Barbell low-bar back squat |  |  | 1, 14:30h |  |  | x8x6 / x5x6 Undulating |  |\n| 2) Barbell hip thrust from deficit |  |  | 1, 14:30h |  |  | x8x3 / x12x3 Undulating |  |  |\n|  | 1) Sumo press |  |  | 1, 20:00h |  |  | x7x5 / x5x5 Undulating |  |\n| 2) Pull-through |  |  | 1, 20:00h |  |  | x14x3 |  |  |\n|  | 3) GHR |  |  | 1, 20:00h |  |  | x9x3 |  |\n| 1) Unilateral Romanian deadlift |  |  | 2, 14:30h |  |  | x6x3 |  |  |\n|  | 2) Bulgarian split squat from deficit (2 DB) |  |  | 2, 14:30h |  |  | x10x5 |  |\n| 3) Overhead dumbbell press |  |  | 2, 14:30h |  |  | x8x3 / x10x3 Undulating |  |  |\n|  | 1) Unilateral hip thrust from deficit |  |  | 2, 20:00h |  |  | x15x3 |  |\n| 2) Calf jumps |  |  | 2, 20:00h |  |  | x6x4 |  |  |\n|  | 3) Cable lateral raise |  |  | 2, 20:00h |  |  | x13x3 / x15x3 Undulating |  |",
+          "bbox": [
+            72.33600158691407,
+            72.35760498046875,
+            564.2644836425782,
+            345.40999908447264
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "TRAINING PROGRAMMING",
+    "CASE STUDIES",
+    "1. Determine the total weekly training frequency. If the trainee is not averse to",
+    "2. Determine the optimal weekly training frequency per muscle group for each",
+    "muscle. Example: A guy has his upper body as the priority, which is developed",
+    "3. Create the program split.",
+    "4. Determine the optimal weekly total work set training volume for each",
+    "muscle. In the above example, it may be 15 sets for the upper body and 12 sets",
+    "5. Select your exercises, their training intensities and progression models",
+    "6. Allocate the exercises over the program split, paying attention to the",
+    "7. Look back over the program and apply good ol’ common sense. Most",
+    "➢ Bonus lecture [optional]",
+    "• Case study: Average Joe program design",
+    "• Case study: Novice vegan",
+    "• Case study: Completely untrained individual",
+    "• Case study: female Powerlifter training in a home gym [intake form]",
+    "Also, here’s a more general case study on exercise selection in a home gym with",
+    "only free-weights",
+    "• Case study: Men’s Physique competitor shoulder rehab [intake form]",
+    "• Case study: booty building [intake form]",
+    "• Case study: difficult progression",
+    "• Case study: moving a national level powerlifting champion up a weight",
+    "class",
+    "• Case study: IFBB Pro Bikini competitor",
+    "Exercise",
+    "Session",
+    "Periodization",
+    "• Case study: no gym, no weights, no problem",
+    "• Case study: Block periodization and mixing different goals"
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nTRAINING PROGRAMMING\nCASE STUDIES\n\n\n--- Page 2 ---\n2\n\nAt this point you have learned everything you need to know to design optimal training\nprograms. Anything in this document is mostly practical and you could skip this\ndocument entirely in principle. Designing an optimal program is a bit like a puzzle,\nexcept that there isn't just a single right way to allocate the pieces. Often, there are\nmany different ways to structure a program and they will be similarly effective. As long\nas your program fits the optimal training principles, you're all good. With that in mind,\nhere's a general framework of how to go about creating a training program.\n1. Determine the total weekly training frequency. If the trainee is not averse to\ntraining, this is generally equal to the highest number of sessions they're\nconsistently willing to go to the gym. Example, if someone's willing to go to the\ngym 6x per week, the total training frequency will be 6x.\n2. Determine the optimal weekly training frequency per muscle group for each\nmuscle. Example: A guy has his upper body as the priority, which is developed\nat a serious intermediate level, so it probably needs to be trained at least 3x per\nweek for optimal progress, whereas the lower body is at an earlier intermediate\nstage and only needs to be trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them\nand the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.\n\n\n--- Page 3 ---\n3\n\n4. Determine the optimal weekly total work set training volume for each\nmuscle. In the above example, it may be 15 sets for the upper body and 12 sets\nfor the lower body. That means each lower body muscle should do on average 6\nsets per each workout; 5 sets per workout for the upper body muscles.\nIf you're going to implement training to failure or advanced training techniques,\ntake this into account and lower the volume for the affected muscles\ncorrespondingly.\n5. Select your exercises, their training intensities and progression models\nbased on i.a. the available equipment and their synergy, ensuring you hit the\nminimum optimal exercise variety for each muscle group. For example, you need\nto ensure you hit the hamstrings with a knee flexion and a hip extension exercise,\nsuch as glute-ham raises at 70% and pull-throughs at 80% of 1RM. Since you\nhave 3 days on which you train the pecs, you could select either 2 or 3 different\npec exercises. If you select 2, you'll train each exercise 1.5x per week, which is\nclose to ideal. However, it's also fine to select 3 and train each exercise once per\nweek if you want higher variety for some reason, such as injury prevention. In\nthis case, you need to select 3 complementary exercises with different training\nintensities. You would not want to select the decline, incline and flat bench press\nall at 80% of 1RM, as they're too similar, especially in terms of injury risk.\nInstead, go with something like Bayesian flys at 65%, flat bench presses at 80%\nand suspended push-ups and 77.5% (an intensity in the middle of the other 2).\n6. Allocate the exercises over the program split, paying attention to the\nprinciples of exercise ordering to maximize total repetition volume. Set volume\ncan generally be split equally across your exercises. In the above example, that\nwould be 12 / 2 / 2 = 3 sets per exercise for the hamstrings and 15 / 3 / 1 = 5 sets\nfor the pecs.\n7. Look back over the program and apply good ol' common sense. Most\nprograms require some ad hoc decision making. For example, maybe the gym\nlogistics mean you can't separate delt and pec exercises very well in the program\n\n\n--- Page 4 ---\n4\n\nand they end up being trained in a fatigued state every session. Then add some\nmore sets to them to make up for the lower than planned volume.\n\nThe steps to creating an optimal training program.\n\n➢ Bonus lecture [optional]\nReflecting on mechanisms of muscle growth\n\nDetermine total weekly training frequency\nDetermine training frequency per muscle group to create the training split\nDetermine work sets per muscle group\nSelect exercises and their training intensities and progression models per muscle group\nAllocate the exercises over the training split\nDo practicality check of the program\n\n\n--- Page 5 ---\n5\n\nNow we'll show some case studies as examples of what good programs may end up\nlooking like. Note that without the context of the email correspondence and without\nbeing able to see exactly when what was changed in the programs, it is important to\nfocus on the general principles, not on trying to replicate these programs to the letter.\n\n• Case study: Average Joe program design\nThis is a straightforward case study of the program design process for a typical PT\nclient: an intermediate level office worker that 'just wants to look good naked'.\n\n• Case study: Novice vegan\nThis is a fictional case study created by the Bayesian team to illustrate the full decision-\nmaking process of creating a program from scratch.\n\n• Case study: Completely untrained individual\nThis is another fictional case study created by the Bayesian team to illustrate the full\ndecision-making process of creating a program from scratch.\n\n• Case study: female Powerlifter training in a home gym [intake form]\nThis was one of Menno's female powerlifting clients tentatively preparing for a future\ncompetition while cutting down to a more competitive weight class. She was training\ndaily.\nAlso, here's a more general case study on exercise selection in a home gym with\nonly free-weights\n\n• Case study: Men's Physique competitor shoulder rehab [intake form]\n\n\n--- Page 6 ---\n6\n\nThis was another one of Menno's clients, a Men's Physique competitor far out from\ncompetition in the off-season. The focus here was on rehabbing his shoulder and\nmaintaining with only 3 workouts a week. Notice the prioritization of muscle groups by\nMen's Physique standards and the exercise selection\n\n• Case study: booty building [intake form]\nThis was one of Menno's female clients with the almost sole focus being to build, as she\nput it, massive glutes. Menno set up her program with instructions to follow the program\non her own, so they started with undulating periodization right from the start. She was\ntraining daily.\n\n• Case study: difficult progression\nHere's the progression track of one of Menno's clients preparing for his first Physique\nshow. High stress, mediocre to poor sleep quality, moderate genetic potential, could\nonly train 4x a week and he sometimes had to train in the morning, so this is a good\nexample of poor progression with plenty of modifications. Menno highlighted and\ncommented on the most important changes in his progression plan so you can see how\nwe dealt with stagnation and how everything worked.\n\nThe notation is [weight] x [reps in first set] x [total number of sets]. This is\nAutoregulatory Volume Training where you only log the first set and on the other sets go\nby feel, focusing on explosiveness and good technique (but still 1 rep to failure) instead\nof on achieving X reps.\n\nNote that he often did not follow the progression guidelines as planned and e.g. stuck\nwith the same weight repeatedly after stalling.\n\n\n--- Page 7 ---\n7\n\n• Case study: moving a national level powerlifting champion up a weight\nclass\nThis is the exact progression track Menno used to get one of his Powerlifting clients up\na weight class after he became national powerlifting champion in -83 kg. There was a\nreason for the low amount of calf work, but Menno's doesn't remember (part of it was\nlimited equipment availability).\n\n• Case study: IFBB Pro Bikini competitor\nBelow is a case study of an elite level bi-daily program for a woman. It's one of the\nprograms Menno created for Nina Ross that resulted in several international titles and\nan IFBB Pro card. Notice how high the volume is when all volume influencing variables\nare ideal and how the volume and frequency differ drastically per body part to get the\ndesired Bikini physique for her: glutes > quads / shoulders > hams > calves > rest. The\nformat in the periodization column is [reps on first set] x [sets] with Autoregulatory\nVolume Training.\n\n\n--- Page 8 ---\n8\n\nExercise\nSession\nPeriodization\n1) Barbell low-bar back squat\n1, 14:30h\nx8x6 / x5x6 Undulating\n2) Barbell hip thrust from deficit\n1, 14:30h\nx8x3 / x12x3 Undulating\n1) Sumo press\n1, 20:00h\nx7x5 / x5x5 Undulating\n2) Pull-through\n1, 20:00h\nx14x3\n3) GHR\n1, 20:00h\nx9x3\n1) Unilateral Romanian deadlift\n2, 14:30h\nx6x3\n2) Bulgarian split squat from deficit (2 DB)\n2, 14:30h\nx10x5\n3) Overhead dumbbell press\n2, 14:30h\nx8x3 / x10x3 Undulating\n1) Unilateral hip thrust from deficit\n2, 20:00h\nx15x3\n2) Calf jumps\n2, 20:00h\nx6x4\n3) Cable lateral raise\n2, 20:00h\nx13x3 / x15x3 Undulating\n\n• Case study: no gym, no weights, no problem\nHere's a case study of an intermediate level client that started backpack-traveling the\nworld. He only occasionally had access to a gym, so Menno created his program almost\nexclusively with bodyweight work, a TRX suspender and 2 light elastic training bands.\nAs you can see, with some creativity in terms of exercise selection and the application\nof progressive overload, this can get you very far and he gained an excellent amount of\nlean body mass during the coaching period.\n\n• Case study: Block periodization and mixing different goals\nYou can consider this a bonus case study, as Powerlifting and Olympic Weightlifting\naren't core contents of the Bayesian PT Course, but it provides some insight in how to\ndeal with the common problem of clients wanting to achieve various, often interfering\ngoals all at once. As a coach you have to learn to really dig into the motivation of your\nclients to see which goals are most important to them.\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 8):\n| Exercise |  |  | Session |  |  | Periodization |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 1) Barbell low-bar back squat |  |  | 1, 14:30h |  |  | x8x6 / x5x6 Undulating |  |\n| 2) Barbell hip thrust from deficit |  |  | 1, 14:30h |  |  | x8x3 / x12x3 Undulating |  |  |\n|  | 1) Sumo press |  |  | 1, 20:00h |  |  | x7x5 / x5x5 Undulating |  |\n| 2) Pull-through |  |  | 1, 20:00h |  |  | x14x3 |  |  |\n|  | 3) GHR |  |  | 1, 20:00h |  |  | x9x3 |  |\n| 1) Unilateral Romanian deadlift |  |  | 2, 14:30h |  |  | x6x3 |  |  |\n|  | 2) Bulgarian split squat from deficit (2 DB) |  |  | 2, 14:30h |  |  | x10x5 |  |\n| 3) Overhead dumbbell press |  |  | 2, 14:30h |  |  | x8x3 / x10x3 Undulating |  |  |\n|  | 1) Unilateral hip thrust from deficit |  |  | 2, 20:00h |  |  | x15x3 |  |\n| 2) Calf jumps |  |  | 2, 20:00h |  |  | x6x4 |  |  |\n|  | 3) Cable lateral raise |  |  | 2, 20:00h |  |  | x13x3 / x15x3 Undulating |  |\n",
+  "tables": [
+    {
+      "page_num": 8,
+      "markdown": "| Exercise |  |  | Session |  |  | Periodization |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 1) Barbell low-bar back squat |  |  | 1, 14:30h |  |  | x8x6 / x5x6 Undulating |  |\n| 2) Barbell hip thrust from deficit |  |  | 1, 14:30h |  |  | x8x3 / x12x3 Undulating |  |  |\n|  | 1) Sumo press |  |  | 1, 20:00h |  |  | x7x5 / x5x5 Undulating |  |\n| 2) Pull-through |  |  | 1, 20:00h |  |  | x14x3 |  |  |\n|  | 3) GHR |  |  | 1, 20:00h |  |  | x9x3 |  |\n| 1) Unilateral Romanian deadlift |  |  | 2, 14:30h |  |  | x6x3 |  |  |\n|  | 2) Bulgarian split squat from deficit (2 DB) |  |  | 2, 14:30h |  |  | x10x5 |  |\n| 3) Overhead dumbbell press |  |  | 2, 14:30h |  |  | x8x3 / x10x3 Undulating |  |  |\n|  | 1) Unilateral hip thrust from deficit |  |  | 2, 20:00h |  |  | x15x3 |  |\n| 2) Calf jumps |  |  | 2, 20:00h |  |  | x6x4 |  |  |\n|  | 3) Cable lateral raise |  |  | 2, 20:00h |  |  | x13x3 / x15x3 Undulating |  |",
+      "bbox": [
+        72.33600158691407,
+        72.35760498046875,
+        564.2644836425782,
+        345.40999908447264
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:43:27.300952",
+  "error": null
+}

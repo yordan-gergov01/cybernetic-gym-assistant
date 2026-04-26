@@ -1,0 +1,136 @@
+{
+  "filename": "Case study keto 2.pdf",
+  "source": "Case study keto 2.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 5,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "Personal Training Client Application Form\n\nFull legal name: Shane\n\nCountry: US\n\nAge: 35\n\nHeight: 6ft 1in\n\nWeight: 181 lb\n\nBody fat percentage (plus measurement technique): 19.8% with friend's Skulpt\n\nYears of training experience: 6 months 5x5\n\nFor the section below, please give your current maximum abilities in weight\ntimes reps, e.g. 250 lb x 6.\n\nBench press: 140lb x 5\n\nSquat (excluding body weight): 230lb x 5\n\nChin-up (excluding body weight): 3 bodyweight chin ups\n\nOverhead press: 90lb x 5\n\nWhat is your occupation?\nI do finance in an office setting. Normally wake up at 7am and sleep around\nmidnight or just before.\n\nPEDs: No\n\nActivity level: Sedentary (e.g. office job)\n\nGym Access: Your standard globo gym. No reverse hyper",
+      "headings": [
+        "Personal Training Client Application Form",
+        "Body fat percentage (plus measurement technique): 19.8% with friend’s Skulpt",
+        "Years of training experience: 6 months 5x5",
+        "For the section below, please give your current maximum abilities in weight",
+        "PEDs: No",
+        "Activity level:  Sedentary (e.g. office job)",
+        "Gym Access: Your standard globo gym. No reverse hyper"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "Please list all the supplements you are currently taking: Whey, creatine, fish oil ,\nmutlivitamin\n\nPlease describe or attach your current diet plan in detail:\n\nI have been doing keto for about a year. I have at times tracked my macros and\ncooked my food and would be willing to do that for a lot of my meals and have the\nother meals be keto from a service that tells me the food macros. Right now I eat\nwhenever I'm hungry but think I could do a more set schedule. 3 meals and\nsomething before bed would work. I am used to eating something like that\nschedule. I don't like eating under 1700 calories a day. Currently my average\ncalorie intake to maintain with 3 days a week of lifting is 2500.\n\nI don't really go off keto or cheat. If I do it's with high fat food. I don't like having\nto readjust to keto after a carb feed.\n\nI have lost about 30 lbs in the last year on keto. I would really like to get to a six\npack level which i think will be around 12 to 14% bf and get more muscular.\nGetting lean and muscle growth is more important right now than how I do in\nbench , squat , and deadlift.\n\nMy weightloss has slowed down recently and now I want something more\nstructured that I know will get me results. When I was losing 1lb a week that was\ngreat and that is something I would like to be able to do again.\n\nAre there any times at which you are unable or unwilling to train? If so,\nplease list them:\nReally would prefer to train after work. I finish between 5 or 6 most days. I can eat\nbefore and/or after but don't want to go home first or I won't hit gym.\n\nFitness Summary\n\nI have trained for 3 months here and there the last 5 years. However I have been\nconsistent with 3 days a week of 5x5 for the last 6 months and would like to do that\nor 4 days a week on a S,M,W,F schedule after work.",
+      "headings": [
+        "Please describe or attach your current diet plan in detail:",
+        "Are there any times at which you are unable or unwilling to train? If so,",
+        "please list them:",
+        "Fitness Summary"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "James' Analysis\n\nThis is more of late 20's to mid 30's bro I have been targeting and speaking with\nmore. Many tend to have tried some IIFYM stuff before and now are doing Keto and\nlost weight with it. They also usually have had some success with something like 5\nx 5 but now feel like they are slowing down in weightloss and gym growth.\n\nI wouldn't have gotten all this info just from sending out a sheet like this. I usually\ndo a phone call with people and would have gotten this summary.\n\nI am going to give him the 24 hour anabolic window and I would want to get him\ndoing a full strength lifting routing 4 days a week on SMWF. So this will just have\nTraining and Rest days for calories.\n\nHere are how I would calculate his macros :\n\nNotes on that. In this case he will cook or order something that is whole food\nrelated so I am giving him the 1.15 for Thermal Effect, assuming it will be better\nthan just cream cheese but not lean beef and veggies.\n\nI think my program for him would be over 60 minutes but I still prefer a more\nconservative calorie estimate.\n\nI don't really use the energy balance factor than to get a general rule of thumb\nwhat percent of a deficit is will be their floor days.\n\nSo here is how I would break up calories over the week\n\nMaintenance Calories\nFor 4 Days a Week\nTraining\nMy\nRecommendation\n\nS\n2389\n2005\nTraining",
+      "headings": [
+        "James’ Analysis"
+      ],
+      "tables": [
+        {
+          "page_num": 3,
+          "markdown": "|  | Maintenance Calories For 4 Days a Week Training |  | My Recommendation |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| S |  | 2389 |  | 2005 |  | Training |  |",
+          "bbox": [
+            71.952001953125,
+            650.6799926757812,
+            368.0585632324219,
+            711.7860056559244
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 4,
+      "text": "M\n2389\n2005\nRest\nT\n2389\n1708\n\nW\n2389\n2005\n\nT\n2389\n1708\n\nF\n2389\n2005\n\nSat\n2389\n1708\n\nWeekly\nTotal\n16723\n13144\n\nProjected Weekly\nFat Loss\n\n1.02 lbs\n\nSo he wants to lose 1 pound a week and doesn't like eating less than 1700 calories\nin a day but seems ok with 1700 especially if it is not every day.\n\nTraining\nTotal\nBreakfast\nLunch\nDinner\nPre Bed\nRemaining\nPro\n150\n25\n25\n40\n60\n0\nFat\n145\n25\n25\n45\n50\n0\nCarb\n25\n3\n3\n10\n9\n0\nKcal\n2005\n337\n337\n605\n726\n0\n\nRest\nTotal\nBreakfast\nLunch\nDinner\nPre Bed\nRemaining\nPro\n150\n50\n25\n25\n50\n0\nFat\n112\n35\n25\n25\n27\n0\nCarb\n25\n3\n3\n10\n9\n0\nKcal\n1708\n527\n337\n365\n479\n0\n\nThis is how I would set the daily meal macros. Protein is just a bit above 1.8g/kg\nbecause 150 is an easy number to remember and work with. 25 net is my usually\nstarting point for carbs in keto and if they can do a few more without hunger issues\nthen that is fine. The rest is fat. I use 0.3 g/kg protein in each meal as a minimum.\nI think some of the meals are a bit small and would let them usually adjust that to\ntheir liking.\n\nNutrients are concentrated in the 6 hour window around training with the\nexpectation in this case that they would eat an hour or two before training as they",
+      "headings": [],
+      "tables": [
+        {
+          "page_num": 4,
+          "markdown": "| M | 2389 |  | 2005 |  |  | Rest |\n| --- | --- | --- | --- | --- | --- | --- |\n| T | 2389 |  | 1708 |  |  |  |\n| W | 2389 |  | 2005 |  |  |  |\n| T | 2389 |  | 1708 |  |  |  |\n| F | 2389 |  | 2005 |  |  |  |\n| Sat |  | 2389 |  | 1708 |  |  |\n| Weekly Total | 16723 |  | 13144 |  |  |  |\n|  |  |  | Projected Weekly Fat Loss |  |  |  |\n|  |  |  | 1.02 |  | lbs |  |",
+          "bbox": [
+            72.0068591889881,
+            73.44132656521268,
+            368.2528483072917,
+            260.75
+          ]
+        },
+        {
+          "page_num": 4,
+          "markdown": "| Training | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| --- | --- | --- | --- | --- | --- | --- |\n| Pro | 150 | 25 | 25 | 40 | 60 | 0 |\n| Fat | 145 | 25 | 25 | 45 | 50 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 2005 | 337 | 337 | 605 | 726 | 0 |\n| Rest | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| Pro | 150 | 50 | 25 | 25 | 50 | 0 |\n| Fat | 112 | 35 | 25 | 25 | 27 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 1708 | 527 | 337 | 365 | 479 | 0 |",
+          "bbox": [
+            72.0068591889881,
+            338.165002822876,
+            515.3956882642663,
+            536.0349884033203
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 5,
+      "text": "indicated they could and then and hour or two after training. Then the following\nrest day there is a decent size breakfast. This breakdown was an attempt to do\nsomething like Kevin's Rest day 1.",
+      "headings": [],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "Personal Training Client Application Form",
+    "Body fat percentage (plus measurement technique): 19.8% with friend’s Skulpt",
+    "Years of training experience: 6 months 5x5",
+    "For the section below, please give your current maximum abilities in weight",
+    "PEDs: No",
+    "Activity level:  Sedentary (e.g. office job)",
+    "Gym Access: Your standard globo gym. No reverse hyper",
+    "Please describe or attach your current diet plan in detail:",
+    "Are there any times at which you are unable or unwilling to train? If so,",
+    "please list them:",
+    "Fitness Summary",
+    "James’ Analysis"
+  ],
+  "full_text": "--- Page 1 ---\nPersonal Training Client Application Form\n\nFull legal name: Shane\n\nCountry: US\n\nAge: 35\n\nHeight: 6ft 1in\n\nWeight: 181 lb\n\nBody fat percentage (plus measurement technique): 19.8% with friend's Skulpt\n\nYears of training experience: 6 months 5x5\n\nFor the section below, please give your current maximum abilities in weight\ntimes reps, e.g. 250 lb x 6.\n\nBench press: 140lb x 5\n\nSquat (excluding body weight): 230lb x 5\n\nChin-up (excluding body weight): 3 bodyweight chin ups\n\nOverhead press: 90lb x 5\n\nWhat is your occupation?\nI do finance in an office setting. Normally wake up at 7am and sleep around\nmidnight or just before.\n\nPEDs: No\n\nActivity level: Sedentary (e.g. office job)\n\nGym Access: Your standard globo gym. No reverse hyper\n\n\n--- Page 2 ---\nPlease list all the supplements you are currently taking: Whey, creatine, fish oil ,\nmutlivitamin\n\nPlease describe or attach your current diet plan in detail:\n\nI have been doing keto for about a year. I have at times tracked my macros and\ncooked my food and would be willing to do that for a lot of my meals and have the\nother meals be keto from a service that tells me the food macros. Right now I eat\nwhenever I'm hungry but think I could do a more set schedule. 3 meals and\nsomething before bed would work. I am used to eating something like that\nschedule. I don't like eating under 1700 calories a day. Currently my average\ncalorie intake to maintain with 3 days a week of lifting is 2500.\n\nI don't really go off keto or cheat. If I do it's with high fat food. I don't like having\nto readjust to keto after a carb feed.\n\nI have lost about 30 lbs in the last year on keto. I would really like to get to a six\npack level which i think will be around 12 to 14% bf and get more muscular.\nGetting lean and muscle growth is more important right now than how I do in\nbench , squat , and deadlift.\n\nMy weightloss has slowed down recently and now I want something more\nstructured that I know will get me results. When I was losing 1lb a week that was\ngreat and that is something I would like to be able to do again.\n\nAre there any times at which you are unable or unwilling to train? If so,\nplease list them:\nReally would prefer to train after work. I finish between 5 or 6 most days. I can eat\nbefore and/or after but don't want to go home first or I won't hit gym.\n\nFitness Summary\n\nI have trained for 3 months here and there the last 5 years. However I have been\nconsistent with 3 days a week of 5x5 for the last 6 months and would like to do that\nor 4 days a week on a S,M,W,F schedule after work.\n\n\n--- Page 3 ---\nJames' Analysis\n\nThis is more of late 20's to mid 30's bro I have been targeting and speaking with\nmore. Many tend to have tried some IIFYM stuff before and now are doing Keto and\nlost weight with it. They also usually have had some success with something like 5\nx 5 but now feel like they are slowing down in weightloss and gym growth.\n\nI wouldn't have gotten all this info just from sending out a sheet like this. I usually\ndo a phone call with people and would have gotten this summary.\n\nI am going to give him the 24 hour anabolic window and I would want to get him\ndoing a full strength lifting routing 4 days a week on SMWF. So this will just have\nTraining and Rest days for calories.\n\nHere are how I would calculate his macros :\n\nNotes on that. In this case he will cook or order something that is whole food\nrelated so I am giving him the 1.15 for Thermal Effect, assuming it will be better\nthan just cream cheese but not lean beef and veggies.\n\nI think my program for him would be over 60 minutes but I still prefer a more\nconservative calorie estimate.\n\nI don't really use the energy balance factor than to get a general rule of thumb\nwhat percent of a deficit is will be their floor days.\n\nSo here is how I would break up calories over the week\n\nMaintenance Calories\nFor 4 Days a Week\nTraining\nMy\nRecommendation\n\nS\n2389\n2005\nTraining\n\n\n--- Page 4 ---\nM\n2389\n2005\nRest\nT\n2389\n1708\n\nW\n2389\n2005\n\nT\n2389\n1708\n\nF\n2389\n2005\n\nSat\n2389\n1708\n\nWeekly\nTotal\n16723\n13144\n\nProjected Weekly\nFat Loss\n\n1.02 lbs\n\nSo he wants to lose 1 pound a week and doesn't like eating less than 1700 calories\nin a day but seems ok with 1700 especially if it is not every day.\n\nTraining\nTotal\nBreakfast\nLunch\nDinner\nPre Bed\nRemaining\nPro\n150\n25\n25\n40\n60\n0\nFat\n145\n25\n25\n45\n50\n0\nCarb\n25\n3\n3\n10\n9\n0\nKcal\n2005\n337\n337\n605\n726\n0\n\nRest\nTotal\nBreakfast\nLunch\nDinner\nPre Bed\nRemaining\nPro\n150\n50\n25\n25\n50\n0\nFat\n112\n35\n25\n25\n27\n0\nCarb\n25\n3\n3\n10\n9\n0\nKcal\n1708\n527\n337\n365\n479\n0\n\nThis is how I would set the daily meal macros. Protein is just a bit above 1.8g/kg\nbecause 150 is an easy number to remember and work with. 25 net is my usually\nstarting point for carbs in keto and if they can do a few more without hunger issues\nthen that is fine. The rest is fat. I use 0.3 g/kg protein in each meal as a minimum.\nI think some of the meals are a bit small and would let them usually adjust that to\ntheir liking.\n\nNutrients are concentrated in the 6 hour window around training with the\nexpectation in this case that they would eat an hour or two before training as they\n\n\n--- Page 5 ---\nindicated they could and then and hour or two after training. Then the following\nrest day there is a decent size breakfast. This breakdown was an attempt to do\nsomething like Kevin's Rest day 1.\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 3):\n|  | Maintenance Calories For 4 Days a Week Training |  | My Recommendation |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| S |  | 2389 |  | 2005 |  | Training |  |\n\nTable 2 (page 4):\n| M | 2389 |  | 2005 |  |  | Rest |\n| --- | --- | --- | --- | --- | --- | --- |\n| T | 2389 |  | 1708 |  |  |  |\n| W | 2389 |  | 2005 |  |  |  |\n| T | 2389 |  | 1708 |  |  |  |\n| F | 2389 |  | 2005 |  |  |  |\n| Sat |  | 2389 |  | 1708 |  |  |\n| Weekly Total | 16723 |  | 13144 |  |  |  |\n|  |  |  | Projected Weekly Fat Loss |  |  |  |\n|  |  |  | 1.02 |  | lbs |  |\n\nTable 3 (page 4):\n| Training | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| --- | --- | --- | --- | --- | --- | --- |\n| Pro | 150 | 25 | 25 | 40 | 60 | 0 |\n| Fat | 145 | 25 | 25 | 45 | 50 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 2005 | 337 | 337 | 605 | 726 | 0 |\n| Rest | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| Pro | 150 | 50 | 25 | 25 | 50 | 0 |\n| Fat | 112 | 35 | 25 | 25 | 27 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 1708 | 527 | 337 | 365 | 479 | 0 |\n",
+  "tables": [
+    {
+      "page_num": 3,
+      "markdown": "|  | Maintenance Calories For 4 Days a Week Training |  | My Recommendation |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n| S |  | 2389 |  | 2005 |  | Training |  |",
+      "bbox": [
+        71.952001953125,
+        650.6799926757812,
+        368.0585632324219,
+        711.7860056559244
+      ]
+    },
+    {
+      "page_num": 4,
+      "markdown": "| M | 2389 |  | 2005 |  |  | Rest |\n| --- | --- | --- | --- | --- | --- | --- |\n| T | 2389 |  | 1708 |  |  |  |\n| W | 2389 |  | 2005 |  |  |  |\n| T | 2389 |  | 1708 |  |  |  |\n| F | 2389 |  | 2005 |  |  |  |\n| Sat |  | 2389 |  | 1708 |  |  |\n| Weekly Total | 16723 |  | 13144 |  |  |  |\n|  |  |  | Projected Weekly Fat Loss |  |  |  |\n|  |  |  | 1.02 |  | lbs |  |",
+      "bbox": [
+        72.0068591889881,
+        73.44132656521268,
+        368.2528483072917,
+        260.75
+      ]
+    },
+    {
+      "page_num": 4,
+      "markdown": "| Training | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| --- | --- | --- | --- | --- | --- | --- |\n| Pro | 150 | 25 | 25 | 40 | 60 | 0 |\n| Fat | 145 | 25 | 25 | 45 | 50 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 2005 | 337 | 337 | 605 | 726 | 0 |\n| Rest | Total | Breakfast | Lunch | Dinner | Pre Bed | Remaining |\n| Pro | 150 | 50 | 25 | 25 | 50 | 0 |\n| Fat | 112 | 35 | 25 | 25 | 27 | 0 |\n| Carb | 25 | 3 | 3 | 10 | 9 | 0 |\n| Kcal | 1708 | 527 | 337 | 365 | 479 | 0 |",
+      "bbox": [
+        72.0068591889881,
+        338.165002822876,
+        515.3956882642663,
+        536.0349884033203
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:10.095343",
+  "error": null
+}

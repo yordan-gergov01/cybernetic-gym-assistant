@@ -1,0 +1,110 @@
+{
+  "filename": "Case study diet design Kevin intermediate.pdf",
+  "source": "Case study diet design Kevin intermediate.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 5,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "BAYESIAN BODYBUILDING 2014\nCase study: client cannot lose weight\n\n•\nFull legal name: Kevin\n•\nFull billing address:\n•\nAge: 43\n•\nHeight: 183cm\n•\nWeight: 92.8kg\n•\nBody fat percentage (plus measurement technique): 20% using bio impedance\ninbody570 machine.\nThis suggests Kevin would be in contest shape at around 79 kg, a competitive weight at his\nheight. Given his novice strength level below, it is more likely that bioelectrical impedance\nanalysis underestimated his fat percentage, but since we don't have any pictures, let's use\n20%.\n•\nYears of training experience: 2-3\nFor the section below, please give your current maximum abilities in weight times reps, e.g. 250 lb x\n6.\n•\nBench press: 70k x 5\n•\nSquat (excluding body weight): 80k x 5\n•\nChin-up (excluding body weight): 5 x body weight only\n•\nOverhead press: 45k x 5\n\nWhat are your fitness goals? Wants to be maximum muscular hypertrophy naturally with a\nbody fat of around 12%. Especially interested in upper body hypertrophy.\n\nHow often in a week would you be prepared to train? Note that no session should last longer\nthan an hour; 2 sessions is maintenance, 3 is doable and twice daily would be the absolute\nmaximum at which more is no longer better.\n3 days per week in the gym.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "BAYESIAN BODYBUILDING 2014\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nManager at a bank.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes, disorders\netc.) you have or had:\nHas lower back trouble. Told by physio it is not a disc problem. Comes and goes. Usually is\nworse after travelling on long flights, which is only once every 2 months.\nTraveling long distance is a red flag combined with subpar compliance or an ad libitum diet\n(described below). The stress and difficulty in maintaining a consistent training program almost\ninvariably lead to fat gain.\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNo\n\nActivity level: please mark one of the fields below or delete the rest.\nSomewhat active (e.g. doing groceries or walking your dog but otherwise sedentary) Y\nStress level: please mark one of the fields below or delete the rest.\nAverage stress (e.g. full-time work with deadlines and commuting) Y\n\nPlease list all the supplements you are currently taking:\nWhey protein, cod liver oil, multi vit,\n\nPlease describe or attach your current diet plan in detail:\n\nMaxmuscle cyclone whey protein.\n7am - actimel yoghurt drink, low fat fruit yoghurt\n7.30am - medium banana, cup of black tea\n10am - cup of green tea\nMidday - chicken noodle salad and medium skimmed milk latte\n2pm - Goberry shake with 1 scoop Maxmuscle cyclone whey protein powder\n3pm - cup of green tea and 300mls of water\n4pm - trail mix granola bar\n6pm - beef lasagne and baked beans\n8pm - protein shake (400mls skimmed milk and 1 scoops maxi muscle cyclone)\n9pm - 300mls water with fruit cordial\n\n8 meals a day, this is one of the first priorities to correct.\n\n7th Jan",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "BAYESIAN BODYBUILDING 2014\n\n7am - actimel yoghurt drink and low fat fruit yoghurt\n7.30am - medium sized banana, cup of black tea, 350mls maxi-muscle cyclone protein shake\n(1 scoops)\n10am - cup of black tea and a trail mix granola bar\n12.30 - ceasar salad with grilled salmon, small brown bread roll. 500mls water\n3pm - skimmed milk latte\n4pm - cup of black tea\n5.30pm - roast beef, broccoli, carrot, swede, parsnips, roast potatoes.\n6pm - 300mls water\n9pm - protein shake, 300mls skimmed milk and 1 scoops protein\n\nNow only 7 meals: his meal frequency is not only possibly too high, it is also inconsistent.\n\n8th Jan\n\n7am - actimel yoghurt drink, low fat fruit yoghurt, protein shake - 350mls water and 1 scoops\npowder.\n10am - small latte, fresh strawberries\n1.15pm - large Goberry shake with 1 scoops protein\n2.30 - chicken Caesar salad, cup of black tea, 300mls water\n3pm - medium banana\n4pm - cup of black tea, 300mls of water.\n6pm - Shepherds Pie with garden peas (lamb mince).\n6.30pm - 330mls water\n9pm - protein shake - 400mls skimmed milk, 1 scoops protein.\nClient not counting macros but is willing to start now.\n\nKevin isn't tracking his macros while eating a subpar diet with meals that don't contain protein or\nconsist entirely of supplements or processed food more or less around the clock. It is not surprising\nthen that he isn't losing weight. In this case, I highly recommend having Kevin track his macros for at\nleast 2 weeks. He's already logging his meals, so as his trainer you may even offer to calculate his\nmacros for now and give him feedback. Kevin needs to learn how many calories are in 'innocent'\nmeals like Goberry shakes and a latte (if it's from Starbucks, there could be several hundred calories\nin it), not to mention Shepherd's Pie.\nPlease describe or attach your current training program in detail:\nTrains with weights 3 days per week. Full body each day. One day 8-10 reps bodybuilding\nexercises, 1 exercise per muscle group 4 sets. One day strength 3-6 reps 3-5 sets per exercise.\nOne day higher reps of 10-15 reps, 4 sets per exercise, one exercise per muscle, with overload\ntechniques added (eg. Rest pause and drop sets).\nSome cycling outside of the gym. A few miles 1-2 times per week.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "BAYESIAN BODYBUILDING 2014\nLet's create a diet for Kevin based on the above information. Compliance wise, I would\nrecommend prescribing a full meal plan for Kevin with food choices that differ completely\nfrom his regular diet. This will open up his mind to a more regular fitness diet with protein\nat every meal and less processed foods.\n\nKevin's genetic indicators were at least average, so it's likely that his 3 years in the gym\nsimply weren't spent productively, based on his strength level, and we can estimate that his\nanabolic window is about 24 h. However, to differentiate this case study from the previous\none, let's assume Kevin has poor genetic capacity to build muscle and he is now already\nrelatively advanced with an anabolic window of 16 h.\n\nThis also has implications for his diet: despite his fat percentage of 20%, his poor\nbodybuilding genetics and relatively advanced training status make it unwise to use a deficit\nof more than 20%, so we'll use 20%.\n\nLet's also postulate he can only train after work and needs to go to bed early, leaving him\nwith only enough time to consume 1 large meal between his work-out and going to bed.\n\nThis leads to the following diet.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nTraining Day\nPRO\nTotal\nBreakfast\nLunch\nDinner\nPre-bed\n151\n28\n28\n28\n67\nFAT\n77\n7\n7\n7\n56\nCARB\n259\n14\n14\n28\n203\nKcal\n2333\n231\n231\n287\n1584\nRest Day 1 Total\nBreakfast\nLunch\nDinner\nPre-bed\nPRO\n185\n56\n45\n28\n56\nFAT\n37\n37\n14\n7\n14\nCARB\n205\n135\n28\n14\n28\nKcal\n2208\n1097\n418\n231\n462\nRest Day 2 Total\nBreakfast*\nLunch\nDinner\nPre-bed\nPRO\n168\n56\n28\n28\n56\nFAT\n42\n14\n7\n7\n14\nCARB\n84\n28\n14\n14\n28\nKcal\n1386\n462\n231\n231\n462\n\n*: mainly for compliance. Where you distribute these nutrients won't matter much physiologically.",
+      "headings": [
+        "Training Day",
+        "PRO",
+        "Total",
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "FAT",
+        "CARB",
+        "Kcal",
+        "Rest Day 1 Total",
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "PRO",
+        "FAT",
+        "CARB",
+        "Kcal",
+        "Rest Day 2 Total",
+        "Breakfast*",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "PRO",
+        "FAT",
+        "CARB",
+        "Kcal"
+      ],
+      "tables": [
+        {
+          "page_num": 5,
+          "markdown": "|  | Training Day |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | PRO |  |  | 151 |  |  | 28 |  |  | 28 |  |  | 28 |  |  | 67 |  |\n|  | FAT |  | 77 7 7 7 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 259 |  |  | 14 |  |  | 14 |  |  | 28 |  |  | 203 |  |\n|  | Kcal |  | 2333 231 231 287 1584 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Rest Day 1 |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n|  | PRO |  | 185 56 45 28 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | FAT |  |  | 37 |  |  | 37 |  |  | 14 |  |  | 7 |  |  | 14 |  |\n|  | CARB |  | 205 135 28 14 28 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 2208 |  |  | 1097 |  |  | 418 |  |  | 231 |  |  | 462 |  |\n|  | Rest Day 2 |  | Total Breakfast* Lunch Dinner Pre-bed |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | PRO |  |  | 168 |  |  | 56 |  |  | 28 |  |  | 28 |  |  | 56 |  |\n|  | FAT |  | 42 14 7 7 14 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 84 |  |  | 28 |  |  | 14 |  |  | 14 |  |  | 28 |  |\n|  | Kcal |  | 1386 462 231 231 462 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |",
+          "bbox": [
+            65.42400360107422,
+            154.71895559210526,
+            529.6600341796875,
+            588.3099975585938
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "Training Day",
+    "PRO",
+    "Total",
+    "Breakfast",
+    "Lunch",
+    "Dinner",
+    "Pre-bed",
+    "FAT",
+    "CARB",
+    "Kcal",
+    "Rest Day 1 Total",
+    "Rest Day 2 Total",
+    "Breakfast*"
+  ],
+  "full_text": "--- Page 1 ---\nBAYESIAN BODYBUILDING 2014\nCase study: client cannot lose weight\n\n•\nFull legal name: Kevin\n•\nFull billing address:\n•\nAge: 43\n•\nHeight: 183cm\n•\nWeight: 92.8kg\n•\nBody fat percentage (plus measurement technique): 20% using bio impedance\ninbody570 machine.\nThis suggests Kevin would be in contest shape at around 79 kg, a competitive weight at his\nheight. Given his novice strength level below, it is more likely that bioelectrical impedance\nanalysis underestimated his fat percentage, but since we don't have any pictures, let's use\n20%.\n•\nYears of training experience: 2-3\nFor the section below, please give your current maximum abilities in weight times reps, e.g. 250 lb x\n6.\n•\nBench press: 70k x 5\n•\nSquat (excluding body weight): 80k x 5\n•\nChin-up (excluding body weight): 5 x body weight only\n•\nOverhead press: 45k x 5\n\nWhat are your fitness goals? Wants to be maximum muscular hypertrophy naturally with a\nbody fat of around 12%. Especially interested in upper body hypertrophy.\n\nHow often in a week would you be prepared to train? Note that no session should last longer\nthan an hour; 2 sessions is maintenance, 3 is doable and twice daily would be the absolute\nmaximum at which more is no longer better.\n3 days per week in the gym.\n\n\n--- Page 2 ---\nBAYESIAN BODYBUILDING 2014\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nManager at a bank.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes, disorders\netc.) you have or had:\nHas lower back trouble. Told by physio it is not a disc problem. Comes and goes. Usually is\nworse after travelling on long flights, which is only once every 2 months.\nTraveling long distance is a red flag combined with subpar compliance or an ad libitum diet\n(described below). The stress and difficulty in maintaining a consistent training program almost\ninvariably lead to fat gain.\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNo\n\nActivity level: please mark one of the fields below or delete the rest.\nSomewhat active (e.g. doing groceries or walking your dog but otherwise sedentary) Y\nStress level: please mark one of the fields below or delete the rest.\nAverage stress (e.g. full-time work with deadlines and commuting) Y\n\nPlease list all the supplements you are currently taking:\nWhey protein, cod liver oil, multi vit,\n\nPlease describe or attach your current diet plan in detail:\n\nMaxmuscle cyclone whey protein.\n7am - actimel yoghurt drink, low fat fruit yoghurt\n7.30am - medium banana, cup of black tea\n10am - cup of green tea\nMidday - chicken noodle salad and medium skimmed milk latte\n2pm - Goberry shake with 1 scoop Maxmuscle cyclone whey protein powder\n3pm - cup of green tea and 300mls of water\n4pm - trail mix granola bar\n6pm - beef lasagne and baked beans\n8pm - protein shake (400mls skimmed milk and 1 scoops maxi muscle cyclone)\n9pm - 300mls water with fruit cordial\n\n8 meals a day, this is one of the first priorities to correct.\n\n7th Jan\n\n\n--- Page 3 ---\nBAYESIAN BODYBUILDING 2014\n\n7am - actimel yoghurt drink and low fat fruit yoghurt\n7.30am - medium sized banana, cup of black tea, 350mls maxi-muscle cyclone protein shake\n(1 scoops)\n10am - cup of black tea and a trail mix granola bar\n12.30 - ceasar salad with grilled salmon, small brown bread roll. 500mls water\n3pm - skimmed milk latte\n4pm - cup of black tea\n5.30pm - roast beef, broccoli, carrot, swede, parsnips, roast potatoes.\n6pm - 300mls water\n9pm - protein shake, 300mls skimmed milk and 1 scoops protein\n\nNow only 7 meals: his meal frequency is not only possibly too high, it is also inconsistent.\n\n8th Jan\n\n7am - actimel yoghurt drink, low fat fruit yoghurt, protein shake - 350mls water and 1 scoops\npowder.\n10am - small latte, fresh strawberries\n1.15pm - large Goberry shake with 1 scoops protein\n2.30 - chicken Caesar salad, cup of black tea, 300mls water\n3pm - medium banana\n4pm - cup of black tea, 300mls of water.\n6pm - Shepherds Pie with garden peas (lamb mince).\n6.30pm - 330mls water\n9pm - protein shake - 400mls skimmed milk, 1 scoops protein.\nClient not counting macros but is willing to start now.\n\nKevin isn't tracking his macros while eating a subpar diet with meals that don't contain protein or\nconsist entirely of supplements or processed food more or less around the clock. It is not surprising\nthen that he isn't losing weight. In this case, I highly recommend having Kevin track his macros for at\nleast 2 weeks. He's already logging his meals, so as his trainer you may even offer to calculate his\nmacros for now and give him feedback. Kevin needs to learn how many calories are in 'innocent'\nmeals like Goberry shakes and a latte (if it's from Starbucks, there could be several hundred calories\nin it), not to mention Shepherd's Pie.\nPlease describe or attach your current training program in detail:\nTrains with weights 3 days per week. Full body each day. One day 8-10 reps bodybuilding\nexercises, 1 exercise per muscle group 4 sets. One day strength 3-6 reps 3-5 sets per exercise.\nOne day higher reps of 10-15 reps, 4 sets per exercise, one exercise per muscle, with overload\ntechniques added (eg. Rest pause and drop sets).\nSome cycling outside of the gym. A few miles 1-2 times per week.\n\n\n--- Page 4 ---\nBAYESIAN BODYBUILDING 2014\nLet's create a diet for Kevin based on the above information. Compliance wise, I would\nrecommend prescribing a full meal plan for Kevin with food choices that differ completely\nfrom his regular diet. This will open up his mind to a more regular fitness diet with protein\nat every meal and less processed foods.\n\nKevin's genetic indicators were at least average, so it's likely that his 3 years in the gym\nsimply weren't spent productively, based on his strength level, and we can estimate that his\nanabolic window is about 24 h. However, to differentiate this case study from the previous\none, let's assume Kevin has poor genetic capacity to build muscle and he is now already\nrelatively advanced with an anabolic window of 16 h.\n\nThis also has implications for his diet: despite his fat percentage of 20%, his poor\nbodybuilding genetics and relatively advanced training status make it unwise to use a deficit\nof more than 20%, so we'll use 20%.\n\nLet's also postulate he can only train after work and needs to go to bed early, leaving him\nwith only enough time to consume 1 large meal between his work-out and going to bed.\n\nThis leads to the following diet.\n\n\n--- Page 5 ---\nBAYESIAN BODYBUILDING 2014\n\nTraining Day\nPRO\nTotal\nBreakfast\nLunch\nDinner\nPre-bed\n151\n28\n28\n28\n67\nFAT\n77\n7\n7\n7\n56\nCARB\n259\n14\n14\n28\n203\nKcal\n2333\n231\n231\n287\n1584\nRest Day 1 Total\nBreakfast\nLunch\nDinner\nPre-bed\nPRO\n185\n56\n45\n28\n56\nFAT\n37\n37\n14\n7\n14\nCARB\n205\n135\n28\n14\n28\nKcal\n2208\n1097\n418\n231\n462\nRest Day 2 Total\nBreakfast*\nLunch\nDinner\nPre-bed\nPRO\n168\n56\n28\n28\n56\nFAT\n42\n14\n7\n7\n14\nCARB\n84\n28\n14\n14\n28\nKcal\n1386\n462\n231\n231\n462\n\n*: mainly for compliance. Where you distribute these nutrients won't matter much physiologically.\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 5):\n|  | Training Day |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | PRO |  |  | 151 |  |  | 28 |  |  | 28 |  |  | 28 |  |  | 67 |  |\n|  | FAT |  | 77 7 7 7 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 259 |  |  | 14 |  |  | 14 |  |  | 28 |  |  | 203 |  |\n|  | Kcal |  | 2333 231 231 287 1584 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Rest Day 1 |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n|  | PRO |  | 185 56 45 28 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | FAT |  |  | 37 |  |  | 37 |  |  | 14 |  |  | 7 |  |  | 14 |  |\n|  | CARB |  | 205 135 28 14 28 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 2208 |  |  | 1097 |  |  | 418 |  |  | 231 |  |  | 462 |  |\n|  | Rest Day 2 |  | Total Breakfast* Lunch Dinner Pre-bed |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | PRO |  |  | 168 |  |  | 56 |  |  | 28 |  |  | 28 |  |  | 56 |  |\n|  | FAT |  | 42 14 7 7 14 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 84 |  |  | 28 |  |  | 14 |  |  | 14 |  |  | 28 |  |\n|  | Kcal |  | 1386 462 231 231 462 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n",
+  "tables": [
+    {
+      "page_num": 5,
+      "markdown": "|  | Training Day |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | PRO |  |  | 151 |  |  | 28 |  |  | 28 |  |  | 28 |  |  | 67 |  |\n|  | FAT |  | 77 7 7 7 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 259 |  |  | 14 |  |  | 14 |  |  | 28 |  |  | 203 |  |\n|  | Kcal |  | 2333 231 231 287 1584 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Rest Day 1 |  |  | Total |  |  | Breakfast |  |  | Lunch |  |  | Dinner |  |  | Pre-bed |  |\n|  | PRO |  | 185 56 45 28 56 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | FAT |  |  | 37 |  |  | 37 |  |  | 14 |  |  | 7 |  |  | 14 |  |\n|  | CARB |  | 205 135 28 14 28 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 2208 |  |  | 1097 |  |  | 418 |  |  | 231 |  |  | 462 |  |\n|  | Rest Day 2 |  | Total Breakfast* Lunch Dinner Pre-bed |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | PRO |  |  | 168 |  |  | 56 |  |  | 28 |  |  | 28 |  |  | 56 |  |\n|  | FAT |  | 42 14 7 7 14 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n|  | CARB |  |  | 84 |  |  | 28 |  |  | 14 |  |  | 14 |  |  | 28 |  |\n|  | Kcal |  | 1386 462 231 231 462 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |",
+      "bbox": [
+        65.42400360107422,
+        154.71895559210526,
+        529.6600341796875,
+        588.3099975585938
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:08.748238",
+  "error": null
+}

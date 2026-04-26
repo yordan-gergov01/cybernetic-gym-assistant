@@ -1,0 +1,329 @@
+{
+  "filename": "Case study M simple calorie cycling.pdf",
+  "source": "Case study M simple calorie cycling.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 14,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "BAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n Full legal name: M\n Age: 32\n Height: 178cm\n Weight: 72\n Body fat percentage (plus estimation method): around 14% (3 point\ncaliper)\n Years of training experience: about 8",
+      "headings": [
+        "PERSONAL TRAINING CLIENT INTAKE FORM",
+        "General"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "BAYESIANBODYBUILDING.COM\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n Bench press: 1RM = 95kg\n Squat (excluding body weight): 1RM = 110kg\n Chin-up (excluding body weight): I don't have a weight belt\n Overhead press: 1RM = 45kg",
+      "headings": [
+        "Strength"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "BAYESIANBODYBUILDING.COM\n\nWhat are your fitness goals?\nLoose the belly fat, build muscle to reach my full potential.\n\nHow often in a week would you be prepared to train for maximal\nresults?\n2\n\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nSelf-employed office job. Working on the computer.\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\nLumbar disc herniation (4+5) about two years ago. Since then, lifting\nheavy is a problem on squats and deadlifts (which I don't do anymore\nanyway)\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nVegetarian preferred\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nNo. I think natural limits are there for a reason.",
+      "headings": [
+        "What are your fitness goals?",
+        "How often in a week would you be prepared to train for maximal",
+        "results?",
+        "What is your occupation?",
+        "Please list any pathologies and injuries (disabilities, allergies,",
+        "illnesses, syndromes, disorders etc.) you have or had:",
+        "Do you insist on any special diet (e.g. ketogenic, vegan)?",
+        "Do you plan to use any PEDs while working together? If so, please",
+        "list them:"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "BAYESIANBODYBUILDING.COM\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\n(This includes when you're at work!) If so, please list them:\nno\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n Sedentary (e.g. office job)\n Somewhat active (e.g. you walk your dog several times a day or you\ncommute by bicycle)\n Active (e.g. full-time PT, literally on your feet most of the day)\n Very active (e.g. involved in manual labor)\n\nStress level\nPlease mark one of the fields below or delete the rest.\nAt this point, you may choose to return this form to me to obtain a\nprice quote before filling in the rest. Please attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps\nand front relaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your trainer.",
+      "headings": [
+        "Lifestyle",
+        "Are there any times at which you are unable or unwilling to train?",
+        "(This includes when you’re at work!) If so, please list them:",
+        "Activity level",
+        "Stress level",
+        "At this point, you may choose to return this form to me to obtain a",
+        "price quote before filling in the rest. Please attach at least two full-body"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "BAYESIANBODYBUILDING.COM\n\n Stress-free (e.g. on holiday)\n Only occasional/mild stress (e.g. student not during exam period)\n Average stress (e.g. full-time work with deadlines and commuting)\n High stress (e.g. very high-paced work environment with great\nresponsibility)\n\nHow is your sleep rhythm and quality?\nBedtime: Between 10 & 11 pm\nWakeup time: around 7.30 am\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\n2-3 Cups of coffee\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nYes, a plastic one.\n\nWhat are the lightest barbell weight plates you have access to?\n1.25kg\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n1kg steps for 1kg to 10kg, after that the increments are 2kg.\n\nDo you have access to…",
+      "headings": [
+        "How is your sleep rhythm and quality?",
+        "How much caffeine do you consume daily on average or on a",
+        "typical work day?",
+        "Equipment",
+        "Do you have skinfold calipers and if so, which one(s)?",
+        "What are the lightest barbell weight plates you have access to?",
+        "What are the smallest weight increments between the sets of",
+        "dumbbells you have access to?",
+        "Do you have access to…"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "BAYESIANBODYBUILDING.COM\n\n a squat cage or rack? Yes\n a 45° hyperextension bench? Yes\n a reverse hyper machine? No\n a glute-ham raise (see example image below)? Yes\n\n a standing calf raise machine? Sort of\n a dip/chin-up belt? yes\n a leg curl machine and if so, is it seated, lying or standing? Lying and\nseated\n a pair of knee wraps? no\n gymnastic rings? no\n a TRX or similar suspension device? yes\n powerlifting bands (not the light home workout stuff)? Yes\n powerlifting chains? No\n a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different?\n\nYes, should be the exact same as on the image\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nNo. But I've got access to a barbell with some weights, dumbbells and a\nmedicine ball (12kg). I've got this stuff at home for an afternoon session.",
+      "headings": [
+        "Does your available equipment differ from that in most gyms in",
+        "any other way (e.g. you train in a Crossfit box or at home)?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "BAYESIANBODYBUILDING.COM\n\nSupplements\nPlease list all the supplements you are currently taking:\nWhey sometimes\nMagnesium\nB12\nZink\nVitamin-D\nGenetics\n Wrist circumference (smallest point): 17cm\n Ankle circumference (smallest point): 23cm\n How much did you weigh before you started lifting and what was\nyour height at that point? I don't know anymore. But I think I was\nthe same height as now, 178cm\n Were you heavy as a baby? No, I was more on the lower end\n Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:\nI've tried a bulk over the last 10 weeks. I think I've gained a lot of fat…\nStarting point was 73kg at about 8% bodyfat (3 point caliper measure\n\nMy Plan looked as follows:\n- Week 1: 2500kcal/day\n- Week 2-5: 2650kcal/day -> 77,1kg bodyfat around 10%",
+      "headings": [
+        "Supplements",
+        "Genetics",
+        "Current Program"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "BAYESIANBODYBUILDING.COM\n\n- Week 6&7: 2550kcal/day -> Weight stayed pretty much the same\n- Week 8: 2600kcal/day -> 77,5kg\n- Week 9: 2650kcal/day -> 77,3kg bodyfat around 13,5%\nMy Macros were like this: 50% Carbs, 25% Fats, 25% Protein\nMy typical food choices over the day:\n- Breakfast:\no Wholegrain bread or toast with cheese and eggs on top\no smoothie consisting of wholegrain oats, apple, banana,\ncinnamon and a scoop whey\n- Lunch:\no Meat like soy or milk thingy with veggies and rice, noodles or\npotatoes\no Lentils\no Beans\n- Dinner:\no Mozzarella with tomatoes\no toast with cheese\no red peppers\no salad\n- Snacks:\no Nuts\no Almonds\no Protein Bar if I'm out of office\n\n- Week 10: started cutting with keto diet on 3000kcal/day for\nadaptation phase -> Failed (First week was ok, 2nd week I was a\nmess, legs were cramping walking stairs, I couldn't concentrate\nanymore, therefore couldn't work. So I stopped it.\nMy Split was like this:",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "BAYESIANBODYBUILDING.COM\n\nC: 5%\nF: 75%\nP: 20%\n\nPlease describe or attach your current training program in detail:\n\nBefore the \"bulk\" I did this:\n2 days/week\nDay 1:\nWarm-Up Row 2k\nPull-Ups\n\n3x15\nBench Press\n\n3x15\n55kg\nBarbell Row\n\n3x15\n22,5kg\nIncline Dumbbell Press 3x15\n18kg\nBarbell Biceps Curls\n3x15\n25kg\nBarbell Shoulder Press 3x15\n25kg\nTriceps Cable\n\n3x15\n18kg\nFront Raises with plate 3x15\n10kg\n\nDay 2:\nWarm-Up Row 2k\nLunges with Dumbbells\n3x15\n12kg\nSquats\n\n3x15\n50kg\nLeg Extensions\n\n3x15\n25kg/per leg\nBack Extensions\n\n3x15\n10kg\nLeg Curls\n\n3x15\n20kg/per leg\nCalve Raises sitting\n\n3x15\n40kg\n\nDuring the \"bulk\" I did Crossfit like excercises combined with compound\nlifts 3 days/week.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "BAYESIANBODYBUILDING.COM\n\nA day looked like this:\n\nWarm-Up Row 2k\nLift heavy on a compound movement (BenchPress, Squat, Deadlift)\no Six sets with increasing weights and decreasing reps of Squats\no Six sets with increasing weights and decreasing reps of\nDeadlifts\no Six sets with increasing weights and decreasing reps of Bench\nPress\no 100 Thrusters or Power Cleans\no 50 Pullups or Dips or Burpees\nI mixed this workout week by week with this:\nDay 1:\n\nDay 2:\n\nDay 3:\nDeadlifts\n\n5x3 100kg\n5x3 75kg\n5x3 75kg\nBench Press\n4x4 85kg\n5x3 40kg\n4x4 105kg\nSquat\n\n3x10 85kg\n4x4 95kg\n3x10 40kg\nOverhead Press 4x4 45kg\n3x10 90kg\n3x10 75kg\nPullups\n\n4xMax\n\n4xMax\n\n4xMax\nI've played with the rest between sets and tried to reduce it whenever\npossible. This program though fatigued me extremely. And my back\nstarted to tighten up.\n1,5 weeks rest.\n\nMy current Program I'm doing for about 1 week now looks like this:\nAs I'm still suffering from the Keto-fail I struggle through…\nNow I'm at 2300kcal/day with a split of C40, P20, F40.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "BAYESIANBODYBUILDING.COM\n\nThe 1 RM I planned for every 3 weeks.\nI've eliminated the Deadlifts! Squats only once a week, to help my back\nrecover.\n\nPlease return the filled in form to Coaching@BayesianBodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting\n(without excessive shadows; not your most flattering Facebook selfies),\npreferably including a back double biceps and front relaxed pose. If you\nrecently had blood work done, please attach its results as well.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "BAYESIANBODYBUILDING.COM\n\nClient assessment\nPlugging his data into the Bayesian PT Course calculator gives the following result.\n\nWith likely impulsive eating habits, a low training frequency and a high body fat percentage, I\nrecommend 4 meals a day with an early breakfast.\n\nSince he's still far removed from his genetic limitations and he only has 2 workouts per\nweek, we can expect high MPS in the anabolic window for at least 24 hours. Outside of that,\nwe can go with a moderate PSMF with kcal = 9.7 * protein intake, setting protein intake at\n73 kg * 0.4 g/kg = 29 g. With a total protein intake of 72 kg * 1.8 g/kg/d = 130 g protein, that\ngives us his 3 weekly PSMF rest days.\n\nOur target weekly energy intake is 7 * 1727 = 12089 kcal. With the rest days subtracted, we\nhave 12089 - 3 * 1261 = 8306 kcal left. If he trains after meal 2, his anabolic window spans\nright across 2 days. That's 8306 / 4 = 2077 kcal per day.\n\nWith 8 years of training experience and still close to novice level strength, a body fat\npercentage close to overweight status and a willingness to do no more than 2 workouts per\nweek, it's safe to say diet adherence will be problematic. So to make meal planning and\nadherence easy, I simplified his diet to have only 2 different meal macros: bulk and cut meals\nwith bulk meals from the pre-workout meal until meal 3 the next day about 24 hours after\nRest day after rest day (3x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n29\n29\n29\n43\n130\nKcal\n281\n281\n281\n417\n1261",
+      "headings": [
+        "BAYESIANBODYBUILDING.COM",
+        "Client assessment",
+        "Plugging his data into the Bayesian PT Course calculator gives the following result.",
+        "With likely impulsive eating habits, a low training frequency and a high body fat percentage, I",
+        "recommend 4 meals a day with an early breakfast.",
+        "Since he’s still far removed from his genetic limitations and he only has 2 workouts per",
+        "week, we can expect high MPS in the anabolic window for at least 24 hours. Outside of that,",
+        "we can go with a moderate PSMF with kcal = 9.7 * protein intake, setting protein intake at",
+        "73 kg * 0.4 g/kg = 29 g. With a total protein intake of 72 kg * 1.8 g/kg/d = 130 g protein, that",
+        "gives us his 3 weekly PSMF rest days.",
+        "Our target weekly energy intake is 7 * 1727 = 12089 kcal. With the rest days subtracted, we",
+        "have 12089 - 3 * 1261 = 8306 kcal left. If he trains after meal 2, his anabolic window spans",
+        "right across 2 days. That’s 8306 / 4 = 2077 kcal per day.",
+        "With 8 years of training experience and still close to novice level strength, a body fat",
+        "percentage close to overweight status and a willingness to do no more than 2 workouts per",
+        "week, it’s safe to say diet adherence will be problematic. So to make meal planning and",
+        "adherence easy, I simplified his diet to have only 2 different meal macros: bulk and cut meals",
+        "with bulk meals from the pre-workout meal until meal 3 the next day about 24 hours after",
+        "Rest day after rest day (3x)",
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "Total",
+        "Protein (g)",
+        "Kcal"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "BAYESIANBODYBUILDING.COM\n\nthat meal. That's 3 bulk meals 2x per week with a 281 kcal PSMF meal each day, giving (2077\n- 281) / 3 = 599 kcal per bulk meal.\n\nSince he's vegetarian, to make up for reduced protein quality, I added 20% to the usual 1.8\ng/kg/d protein requirement on the 4 days in his anabolic window, giving 1.8 g/kg/d * 1.2 * 72\nkg = 156 g protein on those days. Without the PSMF meal, that's (155 - 29) / 3 = 42 g\nprotein per bulk meal.\n\nFat intake I set at 40% of bulk day energy intake: 0.4 * 2078 / 9 = 92 g fat. That's a bit tough\nfor compliance for him perhaps, but he needs a lot of fat as a vegetarian and his rest days will\nprobably have almost no fat.\n\nTo keep things relatively simple, I gave no instructions for the distribution of fat or\ncarbohydrate intake per meal at first, giving the following macro set-up with the following\ninstructions.\n\nTraining days (2x)\nBreakfast\nLunch\nPost-workout\nPre-bed\nTotal\nProtein (g)\n29\n42\n42\n42\n155\nFat (g)\n92\nCarbohydrate (g)\n158\nKcal\n281\n599\n599\n599\n2078\nRest days after training days (2x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n42\n42\n42\n29\n155\nFat (g)\n92\nCarbohydrate (g)\n158\nKcal\n599\n599\n599\n281\n2078\nRest day after rest day (3x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n29\n29\n29\n43\n130\nKcal\n281\n281\n281\n417\n1261\nYour program has bulk and cut meals.\nThe first 6 meals after each training session and the first meal before it are bulk meals.\nAny meals after that until your next training session are cut meals.\nCut meals/days are protein sparing modified fasts (PSMFs).\nThis means you should aim to minimize caloric intake.\nThis effectively means your calories are maxima and your protein intake is a minimum.\nDon't worry about the carb:fat ratio.\nDuring bulk meals, your calorie intake is a fixed target. During bulk periods you also want to ensure a sufficient daily fat intake.\nAdditionally, it's helpful to make your last meal of the day relatively high carb.\nBlanks in the macro overview indicate there is no target: as long as all other targets are met, this could be any number.\nMeal",
+      "headings": [
+        "BAYESIANBODYBUILDING.COM",
+        "that meal. That’s 3 bulk meals 2x per week with a 281 kcal PSMF meal each day, giving (2077",
+        "- 281) / 3 = 599 kcal per bulk meal.",
+        "Since he’s vegetarian, to make up for reduced protein quality, I added 20% to the usual 1.8",
+        "g/kg/d protein requirement on the 4 days in his anabolic window, giving 1.8 g/kg/d * 1.2 * 72",
+        "kg = 156 g protein on those days. Without the PSMF meal, that’s (155 - 29) / 3 = 42 g",
+        "protein per bulk meal.",
+        "Fat intake I set at 40% of bulk day energy intake: 0.4 * 2078 / 9 = 92 g fat. That’s a bit tough",
+        "for compliance for him perhaps, but he needs a lot of fat as a vegetarian and his rest days will",
+        "probably have almost no fat.",
+        "To keep things relatively simple, I gave no instructions for the distribution of fat or",
+        "carbohydrate intake per meal at first, giving the following macro set-up with the following",
+        "instructions.",
+        "Training days (2x)",
+        "Breakfast",
+        "Lunch",
+        "Post-workout",
+        "Pre-bed",
+        "Total",
+        "Protein (g)",
+        "Fat (g)",
+        "Carbohydrate (g)",
+        "Kcal",
+        "Rest days after training days (2x)",
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "Total",
+        "Protein (g)",
+        "Fat (g)",
+        "Carbohydrate (g)",
+        "Kcal",
+        "Rest day after rest day (3x)",
+        "Breakfast",
+        "Lunch",
+        "Dinner",
+        "Pre-bed",
+        "Total",
+        "Protein (g)",
+        "Kcal",
+        "Meal"
+      ],
+      "tables": [
+        {
+          "page_num": 13,
+          "markdown": "|  | Meal |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| Training days (2x) | Breakfast Lunch Post-workout Pre-bed |  |  | Total |  |\n| Protein (g) | 29 42 42 42 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 281 599 599 599 |  |  | 2078 |  |\n| Rest days after training days (2x) Breakfast Lunch Dinner Pre-bed |  |  |  | Total |  |\n| Protein (g) | 42 42 42 29 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 599 599 599 281 |  |  | 2078 |  |",
+          "bbox": [
+            70.79999750310725,
+            404.87078857421875,
+            555.55810546875,
+            569.7662963867188
+          ]
+        },
+        {
+          "page_num": 13,
+          "markdown": "| Rest day after rest day (3x) Breakfast Lunch Dinner Pre-bed |  | Total |\n| --- | --- | --- |\n| Protein (g) | 29 29 29 43 | 130 |\n| Kcal | 281 281 281 417 1261 |  |",
+          "bbox": [
+            70.79999750310725,
+            580.7890625,
+            524.2441326638926,
+            621.05615234375
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 14,
+      "text": "BAYESIANBODYBUILDING.COM\n\n- Menno",
+      "headings": [],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "PERSONAL TRAINING CLIENT INTAKE FORM",
+    "General",
+    "Strength",
+    "What are your fitness goals?",
+    "How often in a week would you be prepared to train for maximal",
+    "results?",
+    "What is your occupation?",
+    "Please list any pathologies and injuries (disabilities, allergies,",
+    "illnesses, syndromes, disorders etc.) you have or had:",
+    "Do you insist on any special diet (e.g. ketogenic, vegan)?",
+    "Do you plan to use any PEDs while working together? If so, please",
+    "list them:",
+    "Lifestyle",
+    "Are there any times at which you are unable or unwilling to train?",
+    "(This includes when you’re at work!) If so, please list them:",
+    "Activity level",
+    "Stress level",
+    "At this point, you may choose to return this form to me to obtain a",
+    "price quote before filling in the rest. Please attach at least two full-body",
+    "How is your sleep rhythm and quality?",
+    "How much caffeine do you consume daily on average or on a",
+    "typical work day?",
+    "Equipment",
+    "Do you have skinfold calipers and if so, which one(s)?",
+    "What are the lightest barbell weight plates you have access to?",
+    "What are the smallest weight increments between the sets of",
+    "dumbbells you have access to?",
+    "Do you have access to…",
+    "Does your available equipment differ from that in most gyms in",
+    "any other way (e.g. you train in a Crossfit box or at home)?",
+    "Supplements",
+    "Genetics",
+    "Current Program",
+    "BAYESIANBODYBUILDING.COM",
+    "Client assessment",
+    "Plugging his data into the Bayesian PT Course calculator gives the following result.",
+    "With likely impulsive eating habits, a low training frequency and a high body fat percentage, I",
+    "recommend 4 meals a day with an early breakfast.",
+    "Since he’s still far removed from his genetic limitations and he only has 2 workouts per",
+    "week, we can expect high MPS in the anabolic window for at least 24 hours. Outside of that,",
+    "we can go with a moderate PSMF with kcal = 9.7 * protein intake, setting protein intake at",
+    "73 kg * 0.4 g/kg = 29 g. With a total protein intake of 72 kg * 1.8 g/kg/d = 130 g protein, that",
+    "gives us his 3 weekly PSMF rest days.",
+    "Our target weekly energy intake is 7 * 1727 = 12089 kcal. With the rest days subtracted, we",
+    "have 12089 - 3 * 1261 = 8306 kcal left. If he trains after meal 2, his anabolic window spans",
+    "right across 2 days. That’s 8306 / 4 = 2077 kcal per day.",
+    "With 8 years of training experience and still close to novice level strength, a body fat",
+    "percentage close to overweight status and a willingness to do no more than 2 workouts per",
+    "week, it’s safe to say diet adherence will be problematic. So to make meal planning and",
+    "adherence easy, I simplified his diet to have only 2 different meal macros: bulk and cut meals",
+    "with bulk meals from the pre-workout meal until meal 3 the next day about 24 hours after",
+    "Rest day after rest day (3x)",
+    "Breakfast",
+    "Lunch",
+    "Dinner",
+    "Pre-bed",
+    "Total",
+    "Protein (g)",
+    "Kcal",
+    "that meal. That’s 3 bulk meals 2x per week with a 281 kcal PSMF meal each day, giving (2077",
+    "- 281) / 3 = 599 kcal per bulk meal.",
+    "Since he’s vegetarian, to make up for reduced protein quality, I added 20% to the usual 1.8",
+    "g/kg/d protein requirement on the 4 days in his anabolic window, giving 1.8 g/kg/d * 1.2 * 72",
+    "kg = 156 g protein on those days. Without the PSMF meal, that’s (155 - 29) / 3 = 42 g",
+    "protein per bulk meal.",
+    "Fat intake I set at 40% of bulk day energy intake: 0.4 * 2078 / 9 = 92 g fat. That’s a bit tough",
+    "for compliance for him perhaps, but he needs a lot of fat as a vegetarian and his rest days will",
+    "probably have almost no fat.",
+    "To keep things relatively simple, I gave no instructions for the distribution of fat or",
+    "carbohydrate intake per meal at first, giving the following macro set-up with the following",
+    "instructions.",
+    "Training days (2x)",
+    "Post-workout",
+    "Fat (g)",
+    "Carbohydrate (g)",
+    "Rest days after training days (2x)",
+    "Meal"
+  ],
+  "full_text": "--- Page 1 ---\nBAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n Full legal name: M\n Age: 32\n Height: 178cm\n Weight: 72\n Body fat percentage (plus estimation method): around 14% (3 point\ncaliper)\n Years of training experience: about 8\n\n\n--- Page 2 ---\nBAYESIANBODYBUILDING.COM\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n Bench press: 1RM = 95kg\n Squat (excluding body weight): 1RM = 110kg\n Chin-up (excluding body weight): I don't have a weight belt\n Overhead press: 1RM = 45kg\n\n\n--- Page 3 ---\nBAYESIANBODYBUILDING.COM\n\nWhat are your fitness goals?\nLoose the belly fat, build muscle to reach my full potential.\n\nHow often in a week would you be prepared to train for maximal\nresults?\n2\n\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nSelf-employed office job. Working on the computer.\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\nLumbar disc herniation (4+5) about two years ago. Since then, lifting\nheavy is a problem on squats and deadlifts (which I don't do anymore\nanyway)\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nVegetarian preferred\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nNo. I think natural limits are there for a reason.\n\n\n--- Page 4 ---\nBAYESIANBODYBUILDING.COM\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\n(This includes when you're at work!) If so, please list them:\nno\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n Sedentary (e.g. office job)\n Somewhat active (e.g. you walk your dog several times a day or you\ncommute by bicycle)\n Active (e.g. full-time PT, literally on your feet most of the day)\n Very active (e.g. involved in manual labor)\n\nStress level\nPlease mark one of the fields below or delete the rest.\nAt this point, you may choose to return this form to me to obtain a\nprice quote before filling in the rest. Please attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps\nand front relaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your trainer.\n\n\n--- Page 5 ---\nBAYESIANBODYBUILDING.COM\n\n Stress-free (e.g. on holiday)\n Only occasional/mild stress (e.g. student not during exam period)\n Average stress (e.g. full-time work with deadlines and commuting)\n High stress (e.g. very high-paced work environment with great\nresponsibility)\n\nHow is your sleep rhythm and quality?\nBedtime: Between 10 & 11 pm\nWakeup time: around 7.30 am\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\n2-3 Cups of coffee\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nYes, a plastic one.\n\nWhat are the lightest barbell weight plates you have access to?\n1.25kg\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n1kg steps for 1kg to 10kg, after that the increments are 2kg.\n\nDo you have access to…\n\n\n--- Page 6 ---\nBAYESIANBODYBUILDING.COM\n\n a squat cage or rack? Yes\n a 45° hyperextension bench? Yes\n a reverse hyper machine? No\n a glute-ham raise (see example image below)? Yes\n\n a standing calf raise machine? Sort of\n a dip/chin-up belt? yes\n a leg curl machine and if so, is it seated, lying or standing? Lying and\nseated\n a pair of knee wraps? no\n gymnastic rings? no\n a TRX or similar suspension device? yes\n powerlifting bands (not the light home workout stuff)? Yes\n powerlifting chains? No\n a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different?\n\nYes, should be the exact same as on the image\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nNo. But I've got access to a barbell with some weights, dumbbells and a\nmedicine ball (12kg). I've got this stuff at home for an afternoon session.\n\n\n--- Page 7 ---\nBAYESIANBODYBUILDING.COM\n\nSupplements\nPlease list all the supplements you are currently taking:\nWhey sometimes\nMagnesium\nB12\nZink\nVitamin-D\nGenetics\n Wrist circumference (smallest point): 17cm\n Ankle circumference (smallest point): 23cm\n How much did you weigh before you started lifting and what was\nyour height at that point? I don't know anymore. But I think I was\nthe same height as now, 178cm\n Were you heavy as a baby? No, I was more on the lower end\n Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:\nI've tried a bulk over the last 10 weeks. I think I've gained a lot of fat…\nStarting point was 73kg at about 8% bodyfat (3 point caliper measure\n\nMy Plan looked as follows:\n- Week 1: 2500kcal/day\n- Week 2-5: 2650kcal/day -> 77,1kg bodyfat around 10%\n\n\n--- Page 8 ---\nBAYESIANBODYBUILDING.COM\n\n- Week 6&7: 2550kcal/day -> Weight stayed pretty much the same\n- Week 8: 2600kcal/day -> 77,5kg\n- Week 9: 2650kcal/day -> 77,3kg bodyfat around 13,5%\nMy Macros were like this: 50% Carbs, 25% Fats, 25% Protein\nMy typical food choices over the day:\n- Breakfast:\no Wholegrain bread or toast with cheese and eggs on top\no smoothie consisting of wholegrain oats, apple, banana,\ncinnamon and a scoop whey\n- Lunch:\no Meat like soy or milk thingy with veggies and rice, noodles or\npotatoes\no Lentils\no Beans\n- Dinner:\no Mozzarella with tomatoes\no toast with cheese\no red peppers\no salad\n- Snacks:\no Nuts\no Almonds\no Protein Bar if I'm out of office\n\n- Week 10: started cutting with keto diet on 3000kcal/day for\nadaptation phase -> Failed (First week was ok, 2nd week I was a\nmess, legs were cramping walking stairs, I couldn't concentrate\nanymore, therefore couldn't work. So I stopped it.\nMy Split was like this:\n\n\n--- Page 9 ---\nBAYESIANBODYBUILDING.COM\n\nC: 5%\nF: 75%\nP: 20%\n\nPlease describe or attach your current training program in detail:\n\nBefore the \"bulk\" I did this:\n2 days/week\nDay 1:\nWarm-Up Row 2k\nPull-Ups\n\n3x15\nBench Press\n\n3x15\n55kg\nBarbell Row\n\n3x15\n22,5kg\nIncline Dumbbell Press 3x15\n18kg\nBarbell Biceps Curls\n3x15\n25kg\nBarbell Shoulder Press 3x15\n25kg\nTriceps Cable\n\n3x15\n18kg\nFront Raises with plate 3x15\n10kg\n\nDay 2:\nWarm-Up Row 2k\nLunges with Dumbbells\n3x15\n12kg\nSquats\n\n3x15\n50kg\nLeg Extensions\n\n3x15\n25kg/per leg\nBack Extensions\n\n3x15\n10kg\nLeg Curls\n\n3x15\n20kg/per leg\nCalve Raises sitting\n\n3x15\n40kg\n\nDuring the \"bulk\" I did Crossfit like excercises combined with compound\nlifts 3 days/week.\n\n\n--- Page 10 ---\nBAYESIANBODYBUILDING.COM\n\nA day looked like this:\n\nWarm-Up Row 2k\nLift heavy on a compound movement (BenchPress, Squat, Deadlift)\no Six sets with increasing weights and decreasing reps of Squats\no Six sets with increasing weights and decreasing reps of\nDeadlifts\no Six sets with increasing weights and decreasing reps of Bench\nPress\no 100 Thrusters or Power Cleans\no 50 Pullups or Dips or Burpees\nI mixed this workout week by week with this:\nDay 1:\n\nDay 2:\n\nDay 3:\nDeadlifts\n\n5x3 100kg\n5x3 75kg\n5x3 75kg\nBench Press\n4x4 85kg\n5x3 40kg\n4x4 105kg\nSquat\n\n3x10 85kg\n4x4 95kg\n3x10 40kg\nOverhead Press 4x4 45kg\n3x10 90kg\n3x10 75kg\nPullups\n\n4xMax\n\n4xMax\n\n4xMax\nI've played with the rest between sets and tried to reduce it whenever\npossible. This program though fatigued me extremely. And my back\nstarted to tighten up.\n1,5 weeks rest.\n\nMy current Program I'm doing for about 1 week now looks like this:\nAs I'm still suffering from the Keto-fail I struggle through…\nNow I'm at 2300kcal/day with a split of C40, P20, F40.\n\n\n--- Page 11 ---\nBAYESIANBODYBUILDING.COM\n\nThe 1 RM I planned for every 3 weeks.\nI've eliminated the Deadlifts! Squats only once a week, to help my back\nrecover.\n\nPlease return the filled in form to Coaching@BayesianBodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting\n(without excessive shadows; not your most flattering Facebook selfies),\npreferably including a back double biceps and front relaxed pose. If you\nrecently had blood work done, please attach its results as well.\n\n\n--- Page 12 ---\nBAYESIANBODYBUILDING.COM\n\nClient assessment\nPlugging his data into the Bayesian PT Course calculator gives the following result.\n\nWith likely impulsive eating habits, a low training frequency and a high body fat percentage, I\nrecommend 4 meals a day with an early breakfast.\n\nSince he's still far removed from his genetic limitations and he only has 2 workouts per\nweek, we can expect high MPS in the anabolic window for at least 24 hours. Outside of that,\nwe can go with a moderate PSMF with kcal = 9.7 * protein intake, setting protein intake at\n73 kg * 0.4 g/kg = 29 g. With a total protein intake of 72 kg * 1.8 g/kg/d = 130 g protein, that\ngives us his 3 weekly PSMF rest days.\n\nOur target weekly energy intake is 7 * 1727 = 12089 kcal. With the rest days subtracted, we\nhave 12089 - 3 * 1261 = 8306 kcal left. If he trains after meal 2, his anabolic window spans\nright across 2 days. That's 8306 / 4 = 2077 kcal per day.\n\nWith 8 years of training experience and still close to novice level strength, a body fat\npercentage close to overweight status and a willingness to do no more than 2 workouts per\nweek, it's safe to say diet adherence will be problematic. So to make meal planning and\nadherence easy, I simplified his diet to have only 2 different meal macros: bulk and cut meals\nwith bulk meals from the pre-workout meal until meal 3 the next day about 24 hours after\nRest day after rest day (3x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n29\n29\n29\n43\n130\nKcal\n281\n281\n281\n417\n1261\n\n\n--- Page 13 ---\nBAYESIANBODYBUILDING.COM\n\nthat meal. That's 3 bulk meals 2x per week with a 281 kcal PSMF meal each day, giving (2077\n- 281) / 3 = 599 kcal per bulk meal.\n\nSince he's vegetarian, to make up for reduced protein quality, I added 20% to the usual 1.8\ng/kg/d protein requirement on the 4 days in his anabolic window, giving 1.8 g/kg/d * 1.2 * 72\nkg = 156 g protein on those days. Without the PSMF meal, that's (155 - 29) / 3 = 42 g\nprotein per bulk meal.\n\nFat intake I set at 40% of bulk day energy intake: 0.4 * 2078 / 9 = 92 g fat. That's a bit tough\nfor compliance for him perhaps, but he needs a lot of fat as a vegetarian and his rest days will\nprobably have almost no fat.\n\nTo keep things relatively simple, I gave no instructions for the distribution of fat or\ncarbohydrate intake per meal at first, giving the following macro set-up with the following\ninstructions.\n\nTraining days (2x)\nBreakfast\nLunch\nPost-workout\nPre-bed\nTotal\nProtein (g)\n29\n42\n42\n42\n155\nFat (g)\n92\nCarbohydrate (g)\n158\nKcal\n281\n599\n599\n599\n2078\nRest days after training days (2x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n42\n42\n42\n29\n155\nFat (g)\n92\nCarbohydrate (g)\n158\nKcal\n599\n599\n599\n281\n2078\nRest day after rest day (3x)\nBreakfast\nLunch\nDinner\nPre-bed\nTotal\nProtein (g)\n29\n29\n29\n43\n130\nKcal\n281\n281\n281\n417\n1261\nYour program has bulk and cut meals.\nThe first 6 meals after each training session and the first meal before it are bulk meals.\nAny meals after that until your next training session are cut meals.\nCut meals/days are protein sparing modified fasts (PSMFs).\nThis means you should aim to minimize caloric intake.\nThis effectively means your calories are maxima and your protein intake is a minimum.\nDon't worry about the carb:fat ratio.\nDuring bulk meals, your calorie intake is a fixed target. During bulk periods you also want to ensure a sufficient daily fat intake.\nAdditionally, it's helpful to make your last meal of the day relatively high carb.\nBlanks in the macro overview indicate there is no target: as long as all other targets are met, this could be any number.\nMeal\n\n\n--- Page 14 ---\nBAYESIANBODYBUILDING.COM\n\n- Menno\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 13):\n|  | Meal |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| Training days (2x) | Breakfast Lunch Post-workout Pre-bed |  |  | Total |  |\n| Protein (g) | 29 42 42 42 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 281 599 599 599 |  |  | 2078 |  |\n| Rest days after training days (2x) Breakfast Lunch Dinner Pre-bed |  |  |  | Total |  |\n| Protein (g) | 42 42 42 29 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 599 599 599 281 |  |  | 2078 |  |\n\nTable 2 (page 13):\n| Rest day after rest day (3x) Breakfast Lunch Dinner Pre-bed |  | Total |\n| --- | --- | --- |\n| Protein (g) | 29 29 29 43 | 130 |\n| Kcal | 281 281 281 417 1261 |  |\n",
+  "tables": [
+    {
+      "page_num": 13,
+      "markdown": "|  | Meal |  |  |  |  |\n| --- | --- | --- | --- | --- | --- |\n| Training days (2x) | Breakfast Lunch Post-workout Pre-bed |  |  | Total |  |\n| Protein (g) | 29 42 42 42 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 281 599 599 599 |  |  | 2078 |  |\n| Rest days after training days (2x) Breakfast Lunch Dinner Pre-bed |  |  |  | Total |  |\n| Protein (g) | 42 42 42 29 |  |  | 155 |  |\n| Fat (g) |  |  |  | 92 |  |\n| Carbohydrate (g) |  |  |  | 158 |  |\n| Kcal | 599 599 599 281 |  |  | 2078 |  |",
+      "bbox": [
+        70.79999750310725,
+        404.87078857421875,
+        555.55810546875,
+        569.7662963867188
+      ]
+    },
+    {
+      "page_num": 13,
+      "markdown": "| Rest day after rest day (3x) Breakfast Lunch Dinner Pre-bed |  | Total |\n| --- | --- | --- |\n| Protein (g) | 29 29 29 43 | 130 |\n| Kcal | 281 281 281 417 1261 |  |",
+      "bbox": [
+        70.79999750310725,
+        580.7890625,
+        524.2441326638926,
+        621.05615234375
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:10.583344",
+  "error": null
+}

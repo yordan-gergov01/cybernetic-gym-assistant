@@ -1,0 +1,165 @@
+{
+  "filename": "Case study booty building intake form.pdf",
+  "source": "Case study booty building intake form.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 8,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "BAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n● Full legal name: Z\n● Age: 20\n● Height: 5'4\n● Weight: 126-128lbs\n● Body fat percentage (plus measurement technique): not sure\n● Years of training experience: 1 year powerlifting/bodybuilding. 2+\nyears being active\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n● Bench press: 120x5",
+      "headings": [
+        "PERSONAL TRAINING CLIENT INTAKE FORM",
+        "General",
+        "Strength"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "BAYESIANBODYBUILDING.COM\n\n● Squat (excluding body weight): not sure, stopped squatting a while\nago\n● Chin-up (excluding body weight): weighted 12.5 lbs x9-10\n● Overhead press: 60lbs x5\n● Deadlifts ( since I don't squat ) : 245lbs x6\n● hipthrusts : 245 x8 with bands\n\nWhat are your fitness goals?\nAesthetics. I want to build MASSIVE glutes, maybe some hamstrings too,\nbut main focus is definitely the glutes. Im pretty happy with my muscular\ndevelopment in other parts but wouldn't mind growing a little more overall\n, but mostly want to maintain a feminine figure, bc I tend to put on width\neasily.\nWant to get and stay very lean. I know contest level leanness is not\nsustainable, but I do want to maintain at a level where I can have good\nmuscle definition . I will attach an example of what I want to look like in\nterms of muscular development and the level of leanness.\n\nDo you have any muscle groups you do nót want to get bigger?\nQuads. That's the main reason why I stopped squatting. I also have a pretty wide back so don't want\nto put on anymore width. Also calves.\nWill you be performing any other form of exercise alongside\nstrength training (e.g. soccer, yoga, Olympic Weightlifting)?\nNot really, maybe some walking here and there.\n\nOn the following 7-point scale, how would you rate your\ndedication level?\n1: I want some results for the minimum amount of effort.\n4: I want to strike a reasonable balance between good results in\nproportion to effort and sustainability.",
+      "headings": [
+        "What are your fitness goals?",
+        "Do you have any muscle groups you do nót want to get bigger?",
+        "Will you be performing any other form of exercise alongside",
+        "strength training (e.g. soccer, yoga, Olympic Weightlifting)?",
+        "On the following 7-point scale, how would you rate your",
+        "dedication level?",
+        "1: I want some results for the minimum amount of effort.",
+        "4: I want to strike a reasonable balance between good results in",
+        "proportion to effort and sustainability."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "BAYESIANBODYBUILDING.COM\n\n7: I will do whatever it takes to achieve maximum results.\n7, will do whatever I can given my circumstances.\n\nHow often in a week would you be prepared to train for maximal\nresults?\n6\n\nWhat is your occupation?\nStudent. Interning at an accounting firm this summer, may be stressful\nhere and there. Also can only lift after work, which is 6PM or later.\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\n\nEating disorder tendencies. Tend to stress out , perfectionist mindset\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nnope\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nno",
+      "headings": [
+        "7: I will do whatever it takes to achieve maximum results.",
+        "How often in a week would you be prepared to train for maximal",
+        "results?",
+        "6",
+        "What is your occupation?",
+        "Please list any pathologies and injuries (disabilities, allergies,",
+        "illnesses, syndromes, disorders etc.) you have or had:",
+        "Do you insist on any special diet (e.g. ketogenic, vegan)?",
+        "Do you plan to use any PEDs while working together? If so, please",
+        "list them:"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "BAYESIANBODYBUILDING.COM\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\nThis includes when you're at work. If you don't answer this\nquestion acurately with detailed times, you may get a program you\ncan't follow(!):\nhave work on weekdays 8-6PM ish. Weekends free to train whenever\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n● Sedentary (e.g. office job)\n\nStress level\nPlease mark one of the fields below or delete the rest.\n\n● Average stress (e.g. full-time work with deadlines and commuting)",
+      "headings": [
+        "Lifestyle",
+        "Are there any times at which you are unable or unwilling to train?",
+        "This includes when you’re at work. If you don’t answer this",
+        "question acurately with detailed times, you may get a program you",
+        "can’t follow(!):",
+        "Activity level",
+        "Stress level"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "BAYESIANBODYBUILDING.COM\n\nHow is your sleep rhythm and quality?\n6-7 hours a day, pretty good\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\none or two cups of coffee a day, preworkout sometimes\n\n[Women only] Do you have a regular menstrual cycle? And are you\nusing any form of contraception? If these questions are sensitive,\nfeel free to ignore them, but the more information I have, the\nbetter I can help you.\nnot regular. may have some hormonal issues. very long cycles\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nnope\n\nWhat are the lightest barbell weight plates you have access to?\n\n2.5 lbs\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n5 lbs",
+      "headings": [
+        "How is your sleep rhythm and quality?",
+        "How much caffeine do you consume daily on average or on a",
+        "typical work day?",
+        "[Women only] Do you have a regular menstrual cycle? And are you",
+        "using any form of contraception? If these questions are sensitive,",
+        "feel free to ignore them, but the more information I have, the",
+        "better I can help you.",
+        "Equipment",
+        "Do you have skinfold calipers and if so, which one(s)?",
+        "What are the lightest barbell weight plates you have access to?",
+        "What are the smallest weight increments between the sets of",
+        "dumbbells you have access to?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "BAYESIANBODYBUILDING.COM\n\nDo you have access to…\n● a squat cage or rack? Yes\n● a 45° hyperextension bench? Yes\n● a reverse hyper machine? no\n\n● a glute-ham raise?no\n\n● a standing calf raise machine? no\n● a dip/chin-up belt? no\n● a leg curl machine and if so, is it seated, lying or standing? both seated\nand lying\n● a pair of knee wraps? no\n● gymnastic rings? no\n● a TRX or similar suspension device? no\n● powerlifting bands (not the light home workout stuff)? no\n● powerlifting chains? no\n● a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different? no",
+      "headings": [
+        "Do you have access to…"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "BAYESIANBODYBUILDING.COM\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nno\n\nSupplements\nFish oil, borage oil, selenium, ashwanganda, phenibut ( rarely), protein\npowder, PEScience high volume\n\nGenetics\n● Wrist circumference (smallest point): 14.5 cm\n● Ankle circumference (smallest point): 20.5 cm\n● How much did you weigh before you started lifting and what was\nyour height at that point? 115 lbs, 5'4\n● Were you heavy as a baby? not sure\n● Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:\nAttached program. Ignore the #s there, I stopped updating them. But\npretty much UL split repeated 3x a week. Been doing that for about 3\nmonths. Recently went on a hiatus because of traveling and school, about\ntwo weeks no lifting/tracking. Just started to get back into a rountine.\n\ndiet: prior to the hiatus, was hitting about 1950 calories, 220/133/60",
+      "headings": [
+        "Does your available equipment differ from that in most gyms in",
+        "any other way (e.g. you train in a Crossfit box or at home)?",
+        "Supplements",
+        "Genetics",
+        "Current Program"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "BAYESIANBODYBUILDING.COM\n\nC/P/F. was maintaining at around 125 with these macros. However, this is\nwhen I used to walk to all my classes , averaging about 10k steps a day.\n\nPlease describe or attach your current training program in detail:",
+      "headings": [],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "PERSONAL TRAINING CLIENT INTAKE FORM",
+    "General",
+    "Strength",
+    "What are your fitness goals?",
+    "Do you have any muscle groups you do nót want to get bigger?",
+    "Will you be performing any other form of exercise alongside",
+    "strength training (e.g. soccer, yoga, Olympic Weightlifting)?",
+    "On the following 7-point scale, how would you rate your",
+    "dedication level?",
+    "1: I want some results for the minimum amount of effort.",
+    "4: I want to strike a reasonable balance between good results in",
+    "proportion to effort and sustainability.",
+    "7: I will do whatever it takes to achieve maximum results.",
+    "How often in a week would you be prepared to train for maximal",
+    "results?",
+    "6",
+    "What is your occupation?",
+    "Please list any pathologies and injuries (disabilities, allergies,",
+    "illnesses, syndromes, disorders etc.) you have or had:",
+    "Do you insist on any special diet (e.g. ketogenic, vegan)?",
+    "Do you plan to use any PEDs while working together? If so, please",
+    "list them:",
+    "Lifestyle",
+    "Are there any times at which you are unable or unwilling to train?",
+    "This includes when you’re at work. If you don’t answer this",
+    "question acurately with detailed times, you may get a program you",
+    "can’t follow(!):",
+    "Activity level",
+    "Stress level",
+    "How is your sleep rhythm and quality?",
+    "How much caffeine do you consume daily on average or on a",
+    "typical work day?",
+    "[Women only] Do you have a regular menstrual cycle? And are you",
+    "using any form of contraception? If these questions are sensitive,",
+    "feel free to ignore them, but the more information I have, the",
+    "better I can help you.",
+    "Equipment",
+    "Do you have skinfold calipers and if so, which one(s)?",
+    "What are the lightest barbell weight plates you have access to?",
+    "What are the smallest weight increments between the sets of",
+    "dumbbells you have access to?",
+    "Do you have access to…",
+    "Does your available equipment differ from that in most gyms in",
+    "any other way (e.g. you train in a Crossfit box or at home)?",
+    "Supplements",
+    "Genetics",
+    "Current Program"
+  ],
+  "full_text": "--- Page 1 ---\nBAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n● Full legal name: Z\n● Age: 20\n● Height: 5'4\n● Weight: 126-128lbs\n● Body fat percentage (plus measurement technique): not sure\n● Years of training experience: 1 year powerlifting/bodybuilding. 2+\nyears being active\n\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n● Bench press: 120x5\n\n\n--- Page 2 ---\nBAYESIANBODYBUILDING.COM\n\n● Squat (excluding body weight): not sure, stopped squatting a while\nago\n● Chin-up (excluding body weight): weighted 12.5 lbs x9-10\n● Overhead press: 60lbs x5\n● Deadlifts ( since I don't squat ) : 245lbs x6\n● hipthrusts : 245 x8 with bands\n\nWhat are your fitness goals?\nAesthetics. I want to build MASSIVE glutes, maybe some hamstrings too,\nbut main focus is definitely the glutes. Im pretty happy with my muscular\ndevelopment in other parts but wouldn't mind growing a little more overall\n, but mostly want to maintain a feminine figure, bc I tend to put on width\neasily.\nWant to get and stay very lean. I know contest level leanness is not\nsustainable, but I do want to maintain at a level where I can have good\nmuscle definition . I will attach an example of what I want to look like in\nterms of muscular development and the level of leanness.\n\nDo you have any muscle groups you do nót want to get bigger?\nQuads. That's the main reason why I stopped squatting. I also have a pretty wide back so don't want\nto put on anymore width. Also calves.\nWill you be performing any other form of exercise alongside\nstrength training (e.g. soccer, yoga, Olympic Weightlifting)?\nNot really, maybe some walking here and there.\n\nOn the following 7-point scale, how would you rate your\ndedication level?\n1: I want some results for the minimum amount of effort.\n4: I want to strike a reasonable balance between good results in\nproportion to effort and sustainability.\n\n\n--- Page 3 ---\nBAYESIANBODYBUILDING.COM\n\n7: I will do whatever it takes to achieve maximum results.\n7, will do whatever I can given my circumstances.\n\nHow often in a week would you be prepared to train for maximal\nresults?\n6\n\nWhat is your occupation?\nStudent. Interning at an accounting firm this summer, may be stressful\nhere and there. Also can only lift after work, which is 6PM or later.\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had:\n\nEating disorder tendencies. Tend to stress out , perfectionist mindset\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nnope\n\nDo you plan to use any PEDs while working together? If so, please\nlist them:\nno\n\n\n--- Page 4 ---\nBAYESIANBODYBUILDING.COM\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\nThis includes when you're at work. If you don't answer this\nquestion acurately with detailed times, you may get a program you\ncan't follow(!):\nhave work on weekdays 8-6PM ish. Weekends free to train whenever\n\nActivity level\nPlease mark one of the fields below or delete the rest.\n● Sedentary (e.g. office job)\n\nStress level\nPlease mark one of the fields below or delete the rest.\n\n● Average stress (e.g. full-time work with deadlines and commuting)\n\n\n--- Page 5 ---\nBAYESIANBODYBUILDING.COM\n\nHow is your sleep rhythm and quality?\n6-7 hours a day, pretty good\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\none or two cups of coffee a day, preworkout sometimes\n\n[Women only] Do you have a regular menstrual cycle? And are you\nusing any form of contraception? If these questions are sensitive,\nfeel free to ignore them, but the more information I have, the\nbetter I can help you.\nnot regular. may have some hormonal issues. very long cycles\n\nEquipment\nDo you have skinfold calipers and if so, which one(s)?\nnope\n\nWhat are the lightest barbell weight plates you have access to?\n\n2.5 lbs\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\n5 lbs\n\n\n--- Page 6 ---\nBAYESIANBODYBUILDING.COM\n\nDo you have access to…\n● a squat cage or rack? Yes\n● a 45° hyperextension bench? Yes\n● a reverse hyper machine? no\n\n● a glute-ham raise?no\n\n● a standing calf raise machine? no\n● a dip/chin-up belt? no\n● a leg curl machine and if so, is it seated, lying or standing? both seated\nand lying\n● a pair of knee wraps? no\n● gymnastic rings? no\n● a TRX or similar suspension device? no\n● powerlifting bands (not the light home workout stuff)? no\n● powerlifting chains? no\n● a seated calf raise and if so, is it closed chain where you push your\nbody up (see example image below) or different? no\n\n\n--- Page 7 ---\nBAYESIANBODYBUILDING.COM\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\nno\n\nSupplements\nFish oil, borage oil, selenium, ashwanganda, phenibut ( rarely), protein\npowder, PEScience high volume\n\nGenetics\n● Wrist circumference (smallest point): 14.5 cm\n● Ankle circumference (smallest point): 20.5 cm\n● How much did you weigh before you started lifting and what was\nyour height at that point? 115 lbs, 5'4\n● Were you heavy as a baby? not sure\n● Please attach a picture to this form in which the back of your right\nhand is clearly visible. Ideally, place your right hand on a flat\nsurface with your fingers touching each other and then take a\npicture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail:\nAttached program. Ignore the #s there, I stopped updating them. But\npretty much UL split repeated 3x a week. Been doing that for about 3\nmonths. Recently went on a hiatus because of traveling and school, about\ntwo weeks no lifting/tracking. Just started to get back into a rountine.\n\ndiet: prior to the hiatus, was hitting about 1950 calories, 220/133/60\n\n\n--- Page 8 ---\nBAYESIANBODYBUILDING.COM\n\nC/P/F. was maintaining at around 125 with these macros. However, this is\nwhen I used to walk to all my classes , averaging about 10k steps a day.\n\nPlease describe or attach your current training program in detail:",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:42:07.978107",
+  "error": null
+}

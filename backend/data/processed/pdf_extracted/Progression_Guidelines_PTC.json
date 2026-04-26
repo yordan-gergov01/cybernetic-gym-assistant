@@ -1,0 +1,155 @@
+{
+  "filename": "Progression Guidelines PTC.pdf",
+  "source": "Progression Guidelines PTC.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 15,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "PROGRESSION GUIDELINES",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "To cause your body to adapt, it must receive a progressively intense training stimulus\n(progressive overload). Your program has the following progression schemes to cause\ncontinued adaptation. The progression scheme for each exercise is listed in your log.\n\nDon't overthink these guidelines. They may look complicated at first, but they are fairly\nstraightforward once you understand the principles at work, namely striving for continued\nprogressive overload.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "Linearly Progressive\nThis is linear progression in weight on your first work set. During your first work set, you\nstick to the optimum number of reps that was determined during your test sessions (the\nrep target). Every session you hit your rep target, you add the exercise's increment to\nyour next session's first work set weight.\n\nNote that only your first work set of the exercise is used as benchmark of progress. How\nmany reps you perform in any subsequent sets does not influence whether or not you\nadd more weight to the exercise next session.\n\nExample: Your bench press has 3 sets with AVT, a rep target of 11 and an increment of\n2.5 kg. Last session you did 120x11, 8, 7. Next session you do 122.5x11, 7, 6. The\nsession after you do 125x11, 9, 6 etc.\n\nReactive deloading\nIf you could not hit your rep target during your first work set, replace any remaining sets\nwith low rep, explosive technique work: 3-5 reps per set at 60-70% of 1RM (roughly\nequal to a weight you could do 12-20 reps with). This is speed work. If your movement\nspeed slows down at all during any set, you are going far too heavy.\n\nYou don't have to log the speed work, but be sure to mark the whole entry of this\nexercise's session red in your spreadsheet (select the cell, select Font Color and select\na red color).",
+      "headings": [
+        "Linearly Progressive",
+        "Reactive deloading"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "How to change a cell's font color in Excel.\n\nIn your next training session of the affected exercise, go back to the weight you\npreviously managed for the planned number of reps (i.e. your rep target).\n\nExample: Your squats have 4 sets with AVT, a rep target of 7 and an increment of 5 lb.\nLast session you did 345x7,5,4,3. This session you go for 350x7, but you only manage 6\nreps during the first set. So for the remaining 3 sets, you do speed work. You\nconservatively estimate that you could do at least 12 reps with 250, so you do 250x3,3,3\nas a reactive deload. You note down 350x6 in your log and next session you go back to\n345x7 before retrying 350x7.\n\nIf you're interested in the rationale behind reactive deloading compared to more\ntraditional deloading methods, read this article.\n\nAutoregulated progression\nIf, after performing the planned number of reps with the planned weight during set 1, you\nthink you'll be able to perform that number of reps again with a higher weight in\nsubsequent sets, go for it. As long as you think you can keep hitting your rep target,\nkeep increasing the weight to progress as fast as you can.",
+      "headings": [
+        "Autoregulated progression"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "Example: Your Romanian deadlifts have a rep target of 6, 4 sets with AVT and an\nincrement of 1 kg. Last session you did 180x6,5,4,3, so this session you are scheduled\nto do 181x6. Set 1 turns out to be easy. You estimate that you could do 182.5x6, so you\ndo. You still didn't come anywhere near failure, so in your third set you go for 190x6.\nThat took everything you got, so in set 4, you stick with 190 and you happen to get 3\nreps. You note down 181x6, 182.5x6, 190x6,3\n\nSummary\nAs long as you keep hitting your rep target for an exercise in its first work set, Linearly\nProgressive comes down to linearly increasing the weight every session by the\nincrement. If you don't hit your rep target in your first work set, implement a reactive\ndeload. If you can make faster progress than 1 increment per session, go for it.",
+      "headings": [
+        "Summary"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "Rep Range Progression\nRep Range Progression is similar to Linearly Progressive in that your first set is your\nprogression benchmark and your goal over time is to perform your rep target with more\nand more weight. However, during Rep Range Progression, you're not expected to hit\nyour rep target every workout. Instead, you'll generally experience a decrease in reps\nwhen you increase the weight and then you'll progress in reps back up to your rep\ntarget, when you increase the weight again.\n\nThus, you normally progress either in weight or in reps. If you hit your rep target in your\nfirst work set, you increase the weight by the increment next session. If you don't hit your\nrep target yet, you stick with the same weight next session and try to perform more reps\nwith it next session.\n\nAutoregulated Progression\nJust like during Linearly Progressive, if you're confident can progress in weight faster\nthan a single increment per session, go for it.\n\nExample for Bayesian curls with a rep target of 15, 3 sets, and an increment of 1 kg:\nSession 1: 20x15, 13, 11\nSession 2: 21x15, 15, 14\nSession 3: 22x15, 23x15,13 (autoregulated progress as above to progress faster than\nplanned)\nSession 4: 24x13, 10, 8\nSession 5: 24x14, 10, 9\nSession 6: 24x15, 13, 12\nSession 7: 25x10, 9, 8\nSession 8: 25x12, 9, 7\nSession 9: 25x15, 11, 9\nSession 10: 26x10, 8, 7",
+      "headings": [
+        "Rep Range Progression",
+        "Autoregulated Progression"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "etc.\n\nPlateau breakers\nWhenever you don't progress as planned in a workout, in the next workout increase the\nweight by ~10%, up to a maximum weight of ~3RM for compound exercises and ~5RM\nfor isolation exercises. This session is a plateau breaker. The lower volume, high\nintensity workout allows for dissipation of fatigue and an increase in strength. After that,\ngo back down an increment and try to increase your reps again. Repeat if needed.\n\nExample for Bayesian curls with a rep target of 15, 1 set, and an increment of 1 kg:\n15x15\n16x10\n16x10\n17x7\n16x11\n16x15\n17x9\n17x9\n18x6\n17x10\netc.\n\nReactive deloads\nWhen you are clearly underperforming and this is likely due to not having recovered fully\nfrom your last workout, you should implement a reactive deload, in addition to the usual\nplateau breaker.\n\nConcretely, if you perform fewer rather than more reps than last time you performed an\nexercise in the first set, perform a reactive deload. The deload functions exactly like for",
+      "headings": [
+        "Plateau breakers",
+        "Reactive deloads"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "Linearly Progressive progression. For example, if you did 85x7 last time, you should\nachieve 85x8 to progress. If you can only manage 6 or fewer reps, perform a reactive\ndeload.\n\nWhen you increase the weight, you will not have a planned number of reps to perform. If\nyour reps end up at 4 or below in the first set, go back to the weight you used last\nworkout for set 2 (if you have a second set). You can then use the second set to see if\nyou should implement a reactive deload: if you can manage 2+ fewer reps than last\nworkout, do the reactive deload.\nFor example, if you did 85x11,9 last time and in today's workout you do 87.5x4, go back\nto 85 in set 2. If you can only manage 7 or fewer reps instead of the 9 you did last time,\nperform a reactive deload\n\nSummary\nRep Range Progression comes down to trying to hit your rep target with continuously\nmore weight in your first work set. In sessions after you hit your rep target, you increase\nthe weight by the increment (or you already increase the weight within the same session\nif you think you can still hit your rep target then). In sessions after you didn't hit your rep\ntarget, you work up in reps until you do. If you plateau, implement a plateau breaking\nsession before trying to increase your reps again. If your performance is 2+ reps poorer\nthan planned, perform a reactive deload that session in addition to the plateau breaker\nnext session.",
+      "headings": [
+        "Summary"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "Undulating Linearly Progressive\nThis is equal to 2 alternating, independent Linearly Progressive schemes. So you\nalternate training sessions with a lower and a higher rep target progression track. These\n2 tracks function exactly like 2 independent Linearly Progressive schemes.\n\nExample sessions progression for the overhead press with a 2.5 kg increment, one set\nand rep targets of 8 and 3 with color coding to illustrate the alternating rep targets:\n60x8, 70x3, 62.5x8, 72.5x3, 65x8, 75x3",
+      "headings": [
+        "Undulating Linearly Progressive",
+        "60x8, 70x3, 62.5x8, 72.5x3, 65x8, 75x3"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "Undulating Rep Range Progression\nAnalogous to Undulating Periodization in relation to Linearly Progressive, Undulating\nRep Range Progression is equal to 2 alternating, independent rep range progression\nschemes. So you alternate between sessions with a lower and a higher rep target for the\nexercise in question.\n\nExample sessions progression for chin-ups with a 5 lb increment, one set and\nUndulating Rep Range progression with rep targets of 8 and 12 with color coding to\nillustrate the alternating rep targets:\n10x8, 20x3, 10x12, 20x4, 15x8, 20x6, 15x12, 20x8, 20x9, 25x6",
+      "headings": [
+        "Undulating Rep Range Progression",
+        "10x8, 20x3, 10x12, 20x4, 15x8, 20x6, 15x12, 20x8, 20x9, 25x6"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "Set-rep Range Progression\nThis is progression in reps across sets. Set-rep Range Progression functions like Rep\nRange progression except that you now have to reach the rep target in all sets instead\nof only in your first set and you're adhering to a fixed rest interval by using a\ntimer/stopwatch/phone.\n\nExample Set-rep Range Progression during squats with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3,3,3,3\n320x3,3,3,3\n330x3,3,3,3\netc.\n\nReactive deloading\nIf you fail to hit the rep target during any set, you stop the exercise and continue with the\nsame weight next session until you've completed the rep target during every set. If you\ndo not progress in reps next session after the reactive deload, perform a 10% weight\nreset: decrease the weight by 10% the session after the plateau and proceed as\nplanned from there on again.\n\nBe strict with your rest intervals: you have to time them with a stopwatch or your phone.\nIf you cheat by resting longer and longer than planned, you're faking your own progress.\n\nExample Set-rep Range Progression during squats with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3,3,2\n310x3,3,3,3",
+      "headings": [
+        "Set-rep Range Progression",
+        "Reactive deloading"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "320x3,1\n320x3,3,2\n320x3,3,3,3\n330x3,3,3,1\n330x3,3,3,3\netc.\n\nAutoregulated progression\nIf you're very confident that you can reach the rep target during every set with a higher\nweight than planned, go for it.\n\nExample Set-rep Range Progression during deadlifts with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3 (easy), 320x3 (still easy), 330x3,3\n340x3,3,3,3\netc.\n\nSummary\nSet-rep Range Progression comes down to trying to hit your rep target in all your sets\nwhile employing a strictly timed rest interval. When you've hit your rep target in all sets\nwith a certain weight, you increase the weight by the increment. If you don't hit your rep\ntarget in any set, skip your remaining sets and try to hit your rep target in more sets next\nsession. If you plateau, reduce the weight by 10% and work back up.",
+      "headings": [
+        "Autoregulated progression",
+        "Summary"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "Clustered Linearly Progressive\nThis is Linearly Progressive periodization with an intra-set rest interval (cluster sets): you\nrest not just in between sets but also in between clusters. A cluster is a series of reps.\nThe notation and progression rules are the same as for Linearly Progressive.\n\nFor example, x3x5 Clustered with a 30 second inter-cluster rest interval means you\nperform sets of 15 reps with 30 seconds of rust in between every 3 reps.\nSo with 80 kg each set looks like this.\n80x3\n30 seconds rest\n80x3\n30 seconds rest\netc. until you reach 15 reps.",
+      "headings": [
+        "Clustered Linearly Progressive"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "PAP Progression\nPost-activation potentiation (PAP) is a phenomenon where heavy strength training (1-\n5RM usually) induces more performance-enhancing changes in the nervous system and\nthe exercised muscle's architecture than it induces fatigue. As a result, after certain\n(near-)maximal muscle contractions at specific times, you actually become stronger in\nspite of being fatigued. We can take advantage of this by performing a heavy single in\nbetween lighter sets.\n\nConcretely, set 1 is a 1RM. This is your benchmark. If your 1RM didn't increase, perform\nsets of only 3 reps with 80% for your remaining sets and go back 1 increment in weight\nnext session (reactive deload similar to Linearly Progressive). If your 1RM did increase\nas planned, proceed with the following sets as follows.\nSet 2 is performed with 80% of that 1RM, 1 rep to failure.\nSet 3 is a single with 90% of 1RM.\nSet 4 is performed with 80% of 1RM again.\nRepeat alternating between singles with 90 and sets 80% for any remaining sets left in\nyour program.\n\nExample:\nSet 1: 100 kg x 1 rep\nSet 2: 80 kg x 8 reps\nSet 3: 90 kg x 1 rep\nSet 4: 80 kg x 7 reps",
+      "headings": [
+        "PAP Progression"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 15,
+      "text": "Myo Rep Range\nMyo-reps are a rest-pause training method consisting of a 'primer set' and subsequent\n'volume sets'. The primer set is a straight set with a rep count equal to your rep target,\nperformed with 2 full repetitions in reserve. Directly after the primer set, take 5 deep\nbreaths and perform another set with only a single repetition in reserve. Repeat the\nvolume sets until you reach the set volume indicated in your log. During the last set,\nleave no repetitions in reserve: perform every grinder you possibly can.\n\nExample myo-rep set with a rep target of 20: 50 kg x 20 reps, 6 reps, 5 reps, 4 reps.\n\nYour primer set is your benchmark set in terms of how to progress, exactly as for Rep\nRange progression. After you've hit your rep target with any weight in your primer set,\nincrease your working weight by the increment next session. If you don't hit your rep\ntarget the first time again with the higher weight, move up in reps until you do. If you get\nstuck on a certain weight x rep combination, increase the weight next session (plateau\nbreaker) and then go back to the plateau to break it the session after.",
+      "headings": [
+        "Myo Rep Range"
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "Linearly Progressive",
+    "Reactive deloading",
+    "Autoregulated progression",
+    "Summary",
+    "Rep Range Progression",
+    "Autoregulated Progression",
+    "Plateau breakers",
+    "Reactive deloads",
+    "Undulating Linearly Progressive",
+    "60x8, 70x3, 62.5x8, 72.5x3, 65x8, 75x3",
+    "Undulating Rep Range Progression",
+    "10x8, 20x3, 10x12, 20x4, 15x8, 20x6, 15x12, 20x8, 20x9, 25x6",
+    "Set-rep Range Progression",
+    "Clustered Linearly Progressive",
+    "PAP Progression",
+    "Myo Rep Range"
+  ],
+  "full_text": "--- Page 1 ---\nPROGRESSION GUIDELINES\n\n\n--- Page 2 ---\nTo cause your body to adapt, it must receive a progressively intense training stimulus\n(progressive overload). Your program has the following progression schemes to cause\ncontinued adaptation. The progression scheme for each exercise is listed in your log.\n\nDon't overthink these guidelines. They may look complicated at first, but they are fairly\nstraightforward once you understand the principles at work, namely striving for continued\nprogressive overload.\n\n\n--- Page 3 ---\nLinearly Progressive\nThis is linear progression in weight on your first work set. During your first work set, you\nstick to the optimum number of reps that was determined during your test sessions (the\nrep target). Every session you hit your rep target, you add the exercise's increment to\nyour next session's first work set weight.\n\nNote that only your first work set of the exercise is used as benchmark of progress. How\nmany reps you perform in any subsequent sets does not influence whether or not you\nadd more weight to the exercise next session.\n\nExample: Your bench press has 3 sets with AVT, a rep target of 11 and an increment of\n2.5 kg. Last session you did 120x11, 8, 7. Next session you do 122.5x11, 7, 6. The\nsession after you do 125x11, 9, 6 etc.\n\nReactive deloading\nIf you could not hit your rep target during your first work set, replace any remaining sets\nwith low rep, explosive technique work: 3-5 reps per set at 60-70% of 1RM (roughly\nequal to a weight you could do 12-20 reps with). This is speed work. If your movement\nspeed slows down at all during any set, you are going far too heavy.\n\nYou don't have to log the speed work, but be sure to mark the whole entry of this\nexercise's session red in your spreadsheet (select the cell, select Font Color and select\na red color).\n\n\n--- Page 4 ---\nHow to change a cell's font color in Excel.\n\nIn your next training session of the affected exercise, go back to the weight you\npreviously managed for the planned number of reps (i.e. your rep target).\n\nExample: Your squats have 4 sets with AVT, a rep target of 7 and an increment of 5 lb.\nLast session you did 345x7,5,4,3. This session you go for 350x7, but you only manage 6\nreps during the first set. So for the remaining 3 sets, you do speed work. You\nconservatively estimate that you could do at least 12 reps with 250, so you do 250x3,3,3\nas a reactive deload. You note down 350x6 in your log and next session you go back to\n345x7 before retrying 350x7.\n\nIf you're interested in the rationale behind reactive deloading compared to more\ntraditional deloading methods, read this article.\n\nAutoregulated progression\nIf, after performing the planned number of reps with the planned weight during set 1, you\nthink you'll be able to perform that number of reps again with a higher weight in\nsubsequent sets, go for it. As long as you think you can keep hitting your rep target,\nkeep increasing the weight to progress as fast as you can.\n\n\n--- Page 5 ---\nExample: Your Romanian deadlifts have a rep target of 6, 4 sets with AVT and an\nincrement of 1 kg. Last session you did 180x6,5,4,3, so this session you are scheduled\nto do 181x6. Set 1 turns out to be easy. You estimate that you could do 182.5x6, so you\ndo. You still didn't come anywhere near failure, so in your third set you go for 190x6.\nThat took everything you got, so in set 4, you stick with 190 and you happen to get 3\nreps. You note down 181x6, 182.5x6, 190x6,3\n\nSummary\nAs long as you keep hitting your rep target for an exercise in its first work set, Linearly\nProgressive comes down to linearly increasing the weight every session by the\nincrement. If you don't hit your rep target in your first work set, implement a reactive\ndeload. If you can make faster progress than 1 increment per session, go for it.\n\n\n--- Page 6 ---\nRep Range Progression\nRep Range Progression is similar to Linearly Progressive in that your first set is your\nprogression benchmark and your goal over time is to perform your rep target with more\nand more weight. However, during Rep Range Progression, you're not expected to hit\nyour rep target every workout. Instead, you'll generally experience a decrease in reps\nwhen you increase the weight and then you'll progress in reps back up to your rep\ntarget, when you increase the weight again.\n\nThus, you normally progress either in weight or in reps. If you hit your rep target in your\nfirst work set, you increase the weight by the increment next session. If you don't hit your\nrep target yet, you stick with the same weight next session and try to perform more reps\nwith it next session.\n\nAutoregulated Progression\nJust like during Linearly Progressive, if you're confident can progress in weight faster\nthan a single increment per session, go for it.\n\nExample for Bayesian curls with a rep target of 15, 3 sets, and an increment of 1 kg:\nSession 1: 20x15, 13, 11\nSession 2: 21x15, 15, 14\nSession 3: 22x15, 23x15,13 (autoregulated progress as above to progress faster than\nplanned)\nSession 4: 24x13, 10, 8\nSession 5: 24x14, 10, 9\nSession 6: 24x15, 13, 12\nSession 7: 25x10, 9, 8\nSession 8: 25x12, 9, 7\nSession 9: 25x15, 11, 9\nSession 10: 26x10, 8, 7\n\n\n--- Page 7 ---\netc.\n\nPlateau breakers\nWhenever you don't progress as planned in a workout, in the next workout increase the\nweight by ~10%, up to a maximum weight of ~3RM for compound exercises and ~5RM\nfor isolation exercises. This session is a plateau breaker. The lower volume, high\nintensity workout allows for dissipation of fatigue and an increase in strength. After that,\ngo back down an increment and try to increase your reps again. Repeat if needed.\n\nExample for Bayesian curls with a rep target of 15, 1 set, and an increment of 1 kg:\n15x15\n16x10\n16x10\n17x7\n16x11\n16x15\n17x9\n17x9\n18x6\n17x10\netc.\n\nReactive deloads\nWhen you are clearly underperforming and this is likely due to not having recovered fully\nfrom your last workout, you should implement a reactive deload, in addition to the usual\nplateau breaker.\n\nConcretely, if you perform fewer rather than more reps than last time you performed an\nexercise in the first set, perform a reactive deload. The deload functions exactly like for\n\n\n--- Page 8 ---\nLinearly Progressive progression. For example, if you did 85x7 last time, you should\nachieve 85x8 to progress. If you can only manage 6 or fewer reps, perform a reactive\ndeload.\n\nWhen you increase the weight, you will not have a planned number of reps to perform. If\nyour reps end up at 4 or below in the first set, go back to the weight you used last\nworkout for set 2 (if you have a second set). You can then use the second set to see if\nyou should implement a reactive deload: if you can manage 2+ fewer reps than last\nworkout, do the reactive deload.\nFor example, if you did 85x11,9 last time and in today's workout you do 87.5x4, go back\nto 85 in set 2. If you can only manage 7 or fewer reps instead of the 9 you did last time,\nperform a reactive deload\n\nSummary\nRep Range Progression comes down to trying to hit your rep target with continuously\nmore weight in your first work set. In sessions after you hit your rep target, you increase\nthe weight by the increment (or you already increase the weight within the same session\nif you think you can still hit your rep target then). In sessions after you didn't hit your rep\ntarget, you work up in reps until you do. If you plateau, implement a plateau breaking\nsession before trying to increase your reps again. If your performance is 2+ reps poorer\nthan planned, perform a reactive deload that session in addition to the plateau breaker\nnext session.\n\n\n--- Page 9 ---\nUndulating Linearly Progressive\nThis is equal to 2 alternating, independent Linearly Progressive schemes. So you\nalternate training sessions with a lower and a higher rep target progression track. These\n2 tracks function exactly like 2 independent Linearly Progressive schemes.\n\nExample sessions progression for the overhead press with a 2.5 kg increment, one set\nand rep targets of 8 and 3 with color coding to illustrate the alternating rep targets:\n60x8, 70x3, 62.5x8, 72.5x3, 65x8, 75x3\n\n\n--- Page 10 ---\nUndulating Rep Range Progression\nAnalogous to Undulating Periodization in relation to Linearly Progressive, Undulating\nRep Range Progression is equal to 2 alternating, independent rep range progression\nschemes. So you alternate between sessions with a lower and a higher rep target for the\nexercise in question.\n\nExample sessions progression for chin-ups with a 5 lb increment, one set and\nUndulating Rep Range progression with rep targets of 8 and 12 with color coding to\nillustrate the alternating rep targets:\n10x8, 20x3, 10x12, 20x4, 15x8, 20x6, 15x12, 20x8, 20x9, 25x6\n\n\n--- Page 11 ---\nSet-rep Range Progression\nThis is progression in reps across sets. Set-rep Range Progression functions like Rep\nRange progression except that you now have to reach the rep target in all sets instead\nof only in your first set and you're adhering to a fixed rest interval by using a\ntimer/stopwatch/phone.\n\nExample Set-rep Range Progression during squats with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3,3,3,3\n320x3,3,3,3\n330x3,3,3,3\netc.\n\nReactive deloading\nIf you fail to hit the rep target during any set, you stop the exercise and continue with the\nsame weight next session until you've completed the rep target during every set. If you\ndo not progress in reps next session after the reactive deload, perform a 10% weight\nreset: decrease the weight by 10% the session after the plateau and proceed as\nplanned from there on again.\n\nBe strict with your rest intervals: you have to time them with a stopwatch or your phone.\nIf you cheat by resting longer and longer than planned, you're faking your own progress.\n\nExample Set-rep Range Progression during squats with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3,3,2\n310x3,3,3,3\n\n\n--- Page 12 ---\n320x3,1\n320x3,3,2\n320x3,3,3,3\n330x3,3,3,1\n330x3,3,3,3\netc.\n\nAutoregulated progression\nIf you're very confident that you can reach the rep target during every set with a higher\nweight than planned, go for it.\n\nExample Set-rep Range Progression during deadlifts with a 10 lb increment, a rep target\nof 3 and 4 sets:\n300x3,3,3,3\n310x3 (easy), 320x3 (still easy), 330x3,3\n340x3,3,3,3\netc.\n\nSummary\nSet-rep Range Progression comes down to trying to hit your rep target in all your sets\nwhile employing a strictly timed rest interval. When you've hit your rep target in all sets\nwith a certain weight, you increase the weight by the increment. If you don't hit your rep\ntarget in any set, skip your remaining sets and try to hit your rep target in more sets next\nsession. If you plateau, reduce the weight by 10% and work back up.\n\n\n--- Page 13 ---\nClustered Linearly Progressive\nThis is Linearly Progressive periodization with an intra-set rest interval (cluster sets): you\nrest not just in between sets but also in between clusters. A cluster is a series of reps.\nThe notation and progression rules are the same as for Linearly Progressive.\n\nFor example, x3x5 Clustered with a 30 second inter-cluster rest interval means you\nperform sets of 15 reps with 30 seconds of rust in between every 3 reps.\nSo with 80 kg each set looks like this.\n80x3\n30 seconds rest\n80x3\n30 seconds rest\netc. until you reach 15 reps.\n\n\n--- Page 14 ---\nPAP Progression\nPost-activation potentiation (PAP) is a phenomenon where heavy strength training (1-\n5RM usually) induces more performance-enhancing changes in the nervous system and\nthe exercised muscle's architecture than it induces fatigue. As a result, after certain\n(near-)maximal muscle contractions at specific times, you actually become stronger in\nspite of being fatigued. We can take advantage of this by performing a heavy single in\nbetween lighter sets.\n\nConcretely, set 1 is a 1RM. This is your benchmark. If your 1RM didn't increase, perform\nsets of only 3 reps with 80% for your remaining sets and go back 1 increment in weight\nnext session (reactive deload similar to Linearly Progressive). If your 1RM did increase\nas planned, proceed with the following sets as follows.\nSet 2 is performed with 80% of that 1RM, 1 rep to failure.\nSet 3 is a single with 90% of 1RM.\nSet 4 is performed with 80% of 1RM again.\nRepeat alternating between singles with 90 and sets 80% for any remaining sets left in\nyour program.\n\nExample:\nSet 1: 100 kg x 1 rep\nSet 2: 80 kg x 8 reps\nSet 3: 90 kg x 1 rep\nSet 4: 80 kg x 7 reps\n\n\n--- Page 15 ---\nMyo Rep Range\nMyo-reps are a rest-pause training method consisting of a 'primer set' and subsequent\n'volume sets'. The primer set is a straight set with a rep count equal to your rep target,\nperformed with 2 full repetitions in reserve. Directly after the primer set, take 5 deep\nbreaths and perform another set with only a single repetition in reserve. Repeat the\nvolume sets until you reach the set volume indicated in your log. During the last set,\nleave no repetitions in reserve: perform every grinder you possibly can.\n\nExample myo-rep set with a rep target of 20: 50 kg x 20 reps, 6 reps, 5 reps, 4 reps.\n\nYour primer set is your benchmark set in terms of how to progress, exactly as for Rep\nRange progression. After you've hit your rep target with any weight in your primer set,\nincrease your working weight by the increment next session. If you don't hit your rep\ntarget the first time again with the higher weight, move up in reps until you do. If you get\nstuck on a certain weight x rep combination, increase the weight next session (plateau\nbreaker) and then go back to the plateau to break it the session after.",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:43:05.309580",
+  "error": null
+}

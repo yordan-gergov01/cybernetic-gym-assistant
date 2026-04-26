@@ -1,0 +1,151 @@
+{
+  "filename": "Case study female Powerlifter prep.pdf",
+  "source": "Case study female Powerlifter prep.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 5,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "Setting Calories: Step by Step\nBayesian Method\n\nBecause BMR is a function of LBM, we need to know BF% and LBM to be most accurate.\n1. LBM = BW x (1 - BF% / 100): LBM= 55.90(1 - 14.4%/100) = 47.85kg\n\nIf no DEXA, Estimate BF% to find LBM. Find BMI. BMI = Wt (kg) / Ht (m2)\nFor Untrained: BF% = [1.2 x BMI] + [0.23 x Age] - [10.8 x Sex m=1, f=0] - 5.4\n2. Katch McArdle BMR = 370 + (21.6 x LBM in kg):\n1404\n\n3. Conservatively estimate the daily life physical activity level (PA):\n1.00\n\n4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:\n1.2\n\n5. REE (Rest Day EE) = BMR x PA x TEF REE= 1404 x 1.0 x 1.2 = 1685\n6. RT EE = 0.1 kcal/kg/min: 0.1 x 55.9 x 60 = 335\n7. TDEE (Training Day EE) = REE + (RT EE x TEF): 1685 + (335 x 1.2) = 2111\n8. EE (Daily Maintenance EE) = REE (1) & TDEE (6) by # of applicable days. Add sums. Divide by 7:\n[(1685 x 1) + (2111 x 6)] / 7 = 2050 Daily Maintenance EE … I am currently maintaining at this\nintake. Weekly intake is 14351.\n9. Determine the optimal energy balance factor (EBF) based on BF% & training status.\nMy goal is to make the 52kg weight class by Feb. 11th Powerlifting Meet. I typically need go into my\nmeets weighing 53.63kg/118lb and can perform a water cut to 52kg/114.4lb. Given Menno's guidelines\nfor max % BW loss per week, at 14.4%, I this I should aim for max of 0.7 % loss per week or\n0.9lb/0.39kg per week using a 5-25% deficit. Since I have 7 weeks to lose 5lb/2.3kg, perhaps I would\nstart with a 15% deficit. Revision: According to Menno, I should not be in more than a 5% deficit in\norder to prevent substantial muscle losses, as I'm at the very bottom of the athletic bracket with a 5-\n25% deficit recommendation. It's better to do a more aggressive peak week protocol.",
+      "headings": [
+        "Setting Calories: Step by Step",
+        "Bayesian Method",
+        "3. Conservatively estimate the daily life physical activity level (PA):",
+        "4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:",
+        "5. REE (Rest Day EE) = BMR x PA x TEF  REE= 1404 x 1.0 x 1.2 = 1685",
+        "6. RT EE = 0.1 kcal/kg/min: 0.1 x 55.9 x 60 = 335",
+        "7. TDEE (Training Day EE) = REE + (RT EE x TEF): 1685 + (335 x 1.2) = 2111",
+        "8. EE (Daily Maintenance EE) = REE (1) & TDEE (6) by # of applicable days. Add sums. Divide by 7:",
+        "9. Determine the optimal energy balance factor (EBF) based on BF% & training status."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "Category\nFat percentage\nDeficit (%)\nMaximum weekly\nweight loss (%\nBW)\n\nMale\nFemale\n\nContest prep\n<= 9\n<= 14\n2.5 - 7.5\n0.5\nAthletic\n9\n14\n5 - 25\n0.7\nAverage\n15\n24\n20 - 40\n1\nOverweight\n21\n33\n30 - 50\n1.5\nObese\n26\n39\nPSMF\nN.A.\n\n9. Total daily energy intake for bulk or cut = EE x EBF: 2050 x 0.95 = 1948\n\n10. Calculate Macros: P= 1.8-2.7g/kg/d:\n101g\n, F= 40%EE:\n87g\n, C= Remainder Cals:\n\n191g\n\n* Personally, despite these being optimal, I would adjust macros to: 110P/60F/191C due to food\nchoice and personal preference. Would this be an acceptable/reasonable deviation?\nRevision: Based on feedback from classmates that my macro selection was NOT a reasonable\ndeviation. And, in all honesty, demonstrated a bias on my part to carbs, rather than a judgement\nbased on true carb tolerance. Therefore, I'll recalculate using: 100g P, 87g F, 190g C. = 1948/d =\n13636/week.\n\n11. Nutrient Timing:\nI feel that I would be considered a late intermediate or possibly even advanced trainee and thus,\nconsider my anabolic window to be narrow and perhaps lean toward a 24hr limit. I've been training\nwith good programming and decent nutrition for almost three years.\nCurrent 1RM's: Bench 135lb (+12lb BW), Squat 245lb (Double Bodyweight), Deadlift 300lb.\n\nAdditionally, I sleep 12a-8a consistently. I train between 10a-12p (which is not CR-friendly, but have\nfound this time to be optimal for energy/motivation/drive to push hard). I do think my STRENGTH is best\nin late afternoon, but enduance and mental fortitude are horrendous at that time of day.\n\nIn view of this, I figured my macros in the following way.\n\nRest Day: PSMF using a comment from Menno in the course topic for Case Studies, EE of P x 8.3 = 100g\nP/d x 8.3 = 830 calories per day.\nRest Day\nTotal\nBreakfast/End\nAnabolic Window\nLunch\nRevision:\npossibly still in\nA.W\nAfternoon\nRevision: Meal\nRemoved\nDinner\nPre-Bed\nProtein\n100\n28\n28\n-\n16\n28\nFat\n30\n12\n6\n-\n6\n6",
+      "headings": [
+        "Category",
+        "Fat percentage",
+        "Deficit (%)",
+        "Maximum weekly",
+        "weight loss (%",
+        "BW)",
+        "Contest prep",
+        "Athletic",
+        "Average",
+        "Overweight",
+        "Obese"
+      ],
+      "tables": [
+        {
+          "page_num": 2,
+          "markdown": "| Rest Day | Total | Breakfast/End Anabolic Window | Lunch Revision: possibly still in A.W | Afternoon Revision: Meal Removed | Dinner | Pre-Bed |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 100 | 28 | 28 | - | 16 | 28 |\n| Fat | 30 | 12 | 6 | - | 6 | 6 |",
+          "bbox": [
+            72.16800308227539,
+            620.7099914550781,
+            539.9199829101562,
+            707.5260047912598
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 3,
+      "text": "Carbs\n40\n15\n15\n-\n5\n5\nkcal\n830\n280\n226\n-\n138\n186\n\nRevisions: According to Menno and others comments, I needed to better allocate protein to 1. Hit\nleucine threshold each meal and 2. Stack macros closer within the anabolic ending. My leucine\nthreshold should be 0.3g/kg/meal = 0.3g/55.9kg/meal = 16.77g/meal.\nI chose to keep 5 meal despite the scarcity of macros as I find I am more able to control hunger\nbetter with frequent meals. When I become ravenously hungry, I am at high risk for non-compliance.\nI chose a 28g protein breakfast to catch the tail-end of my anabolic window from the previous day\nand chose the remaining protein %'s based on what I understood from the CR protein timing. As for\nthe carb/fat calculations, I based them off my typical food preferences for each of the meals\nrespectively.\nRevision: I removed the afternoon snack as suggested by classmates to better allocate macros.\n\nTraining Day: Revision: Weekly EE = 13636 - 830cal(from 1 rest/PSMF day/week) = 12806 Total\ncalories remaining or 2134 per day for the remaining 6 training days. I chose the following macros\nbased on my best interpretation of the Bayesian principles we covered thus far: 100p/95f/220c.\n(1.8g.kg p, 40%EE for Fat, Remaining calories to carbs). I increased protein by 10g, fat by 20g, and\ncarb by 70g from the based macros calculated above in step 10. I estimate myself to be neutral for\ncarb tolerance. I think these macros satisfy the minimum suggested levels for optimization as\noutlined in this course. Training session is generally 10am or 10:30am until 11:30am or 12pm.\n\nTraining\nTotal\nBfast/PreWO\n8:30am\nLunch/PostWO\n12-12:30pm\nAfternoon\nRevision:Meal\nRemoved\nDinner\n6-7pm\nPre-Bed\n11:30\nProtein\n101\n22 (0.4g/kg)\n28 (0.5g/kg)\n-\n25\n25\nFat\n95\n20\n30\n-\n25\n20\nCarb\n220\n50\n50\n-\n75\n45\nKcal\n2135\n468\n582\n-\n625\n460\n\nRationale Revisions by meal:\n\nBreakfast: P= 0.4g/kg to meet leucine threshold and according to Nutrient Timing II lecture,\npage 30 on timing for intermediate/advance trainees (which actually states 0.6g/kg). 1-2 hr PreWO,\nF= minimal to allow for potentially faster nutrient absorption/ hyperaminoacidemic state, F =\nModerate, C = Moderate for enhanced training energy\n\nLunch/ Post WO: P= 0.5g/kg to meet Leucine threshold and overlap preWO\nhyperaminoacidemic state. F= High to create mixed meal effect (probably whole dairy as encouraged",
+      "headings": [],
+      "tables": [
+        {
+          "page_num": 3,
+          "markdown": "| Carbs | 40 | 15 | 15 | - | 5 | 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| kcal | 830 | 280 | 226 | - | 138 | 186 |",
+          "bbox": [
+            72.21067004733615,
+            72.20999145507812,
+            539.913316514757,
+            106.73001098632812
+          ]
+        },
+        {
+          "page_num": 3,
+          "markdown": "| Training | Total | Bfast/PreWO 8:30am | Lunch/PostWO 12-12:30pm | Afternoon Revision:Meal Removed | Dinner 6-7pm | Pre-Bed 11:30 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 101 | 22 (0.4g/kg) | 28 (0.5g/kg) | - | 25 | 25 |\n| Fat | 95 | 20 | 30 | - | 25 | 20 |\n| Carb | 220 | 50 | 50 | - | 75 | 45 |\n| Kcal | 2135 | 468 | 582 | - | 625 | 460 |",
+          "bbox": [
+            72.21067004733615,
+            441.7599925994873,
+            539.913316514757,
+            561.4599914550781
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 4,
+      "text": "in menno's lectures). C=Moderate/High … creating a mixed meal and higher total EE to sandwich\nnutrients inside peak of anabolic window as per Menno's comments to original case study\nsubmission to \"shift many more calories to toward anabolic window).\n\nAfternoon: Revision: Meal Removed. Pro= enough to hit Leucine threshold, to allow for more\nlater in the day in accord with CR protein timing suggestions. Fat= moderate, C= moderate. I choose\nto have the afternoon meal as I am usually very hungry at this time of day and if I skip this meal, I\nhave a hard time not over eating by dinner time.\n\nDinner: Pro= Higher, CRPT. Revisions: In an effort to increase intake for CRPT period while also\nproviding enough PreBED protein to hit the leucine threshold, I decided to remove the afternoon meal\n(as suggested by fellow classmate). F/C=High Moderate because I like a large dinner meal CR carb timing\nsuggested benefits for carbs later in the day.\n\nPre-Bed: Pro= Overnight MPS support. F=moderate this is what I had left over after adding\nfats to sandwich immediate workout period, C=High, for enhanced sleep-hormone production.\n\nGOALS:\nTotal Weekly EE: 14350, Revision: 13636, utilizing a rest day PSMF and increased training day\nnutrient allocation method. A calculated energy deficit of 15% 5% in attempt to generate a max\n(0.7%TBW) 0.9lb loss 0.7lb loss per week to achieve 53.63kg/118lb BW by Feb 10th.\n\nIf possible, fellow classmates and Menno, please provide any additional insights as to how I may\nbetter optimize my nutrient timing or projected deficit after having made the preceding revisions\nbased on feedback from my original submission.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "REVISED:",
+      "headings": [],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "Setting Calories: Step by Step",
+    "Bayesian Method",
+    "3. Conservatively estimate the daily life physical activity level (PA):",
+    "4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:",
+    "5. REE (Rest Day EE) = BMR x PA x TEF  REE= 1404 x 1.0 x 1.2 = 1685",
+    "6. RT EE = 0.1 kcal/kg/min: 0.1 x 55.9 x 60 = 335",
+    "7. TDEE (Training Day EE) = REE + (RT EE x TEF): 1685 + (335 x 1.2) = 2111",
+    "8. EE (Daily Maintenance EE) = REE (1) & TDEE (6) by # of applicable days. Add sums. Divide by 7:",
+    "9. Determine the optimal energy balance factor (EBF) based on BF% & training status.",
+    "Category",
+    "Fat percentage",
+    "Deficit (%)",
+    "Maximum weekly",
+    "weight loss (%",
+    "BW)",
+    "Contest prep",
+    "Athletic",
+    "Average",
+    "Overweight",
+    "Obese"
+  ],
+  "full_text": "--- Page 1 ---\nSetting Calories: Step by Step\nBayesian Method\n\nBecause BMR is a function of LBM, we need to know BF% and LBM to be most accurate.\n1. LBM = BW x (1 - BF% / 100): LBM= 55.90(1 - 14.4%/100) = 47.85kg\n\nIf no DEXA, Estimate BF% to find LBM. Find BMI. BMI = Wt (kg) / Ht (m2)\nFor Untrained: BF% = [1.2 x BMI] + [0.23 x Age] - [10.8 x Sex m=1, f=0] - 5.4\n2. Katch McArdle BMR = 370 + (21.6 x LBM in kg):\n1404\n\n3. Conservatively estimate the daily life physical activity level (PA):\n1.00\n\n4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:\n1.2\n\n5. REE (Rest Day EE) = BMR x PA x TEF REE= 1404 x 1.0 x 1.2 = 1685\n6. RT EE = 0.1 kcal/kg/min: 0.1 x 55.9 x 60 = 335\n7. TDEE (Training Day EE) = REE + (RT EE x TEF): 1685 + (335 x 1.2) = 2111\n8. EE (Daily Maintenance EE) = REE (1) & TDEE (6) by # of applicable days. Add sums. Divide by 7:\n[(1685 x 1) + (2111 x 6)] / 7 = 2050 Daily Maintenance EE … I am currently maintaining at this\nintake. Weekly intake is 14351.\n9. Determine the optimal energy balance factor (EBF) based on BF% & training status.\nMy goal is to make the 52kg weight class by Feb. 11th Powerlifting Meet. I typically need go into my\nmeets weighing 53.63kg/118lb and can perform a water cut to 52kg/114.4lb. Given Menno's guidelines\nfor max % BW loss per week, at 14.4%, I this I should aim for max of 0.7 % loss per week or\n0.9lb/0.39kg per week using a 5-25% deficit. Since I have 7 weeks to lose 5lb/2.3kg, perhaps I would\nstart with a 15% deficit. Revision: According to Menno, I should not be in more than a 5% deficit in\norder to prevent substantial muscle losses, as I'm at the very bottom of the athletic bracket with a 5-\n25% deficit recommendation. It's better to do a more aggressive peak week protocol.\n\n\n--- Page 2 ---\nCategory\nFat percentage\nDeficit (%)\nMaximum weekly\nweight loss (%\nBW)\n\nMale\nFemale\n\nContest prep\n<= 9\n<= 14\n2.5 - 7.5\n0.5\nAthletic\n9\n14\n5 - 25\n0.7\nAverage\n15\n24\n20 - 40\n1\nOverweight\n21\n33\n30 - 50\n1.5\nObese\n26\n39\nPSMF\nN.A.\n\n9. Total daily energy intake for bulk or cut = EE x EBF: 2050 x 0.95 = 1948\n\n10. Calculate Macros: P= 1.8-2.7g/kg/d:\n101g\n, F= 40%EE:\n87g\n, C= Remainder Cals:\n\n191g\n\n* Personally, despite these being optimal, I would adjust macros to: 110P/60F/191C due to food\nchoice and personal preference. Would this be an acceptable/reasonable deviation?\nRevision: Based on feedback from classmates that my macro selection was NOT a reasonable\ndeviation. And, in all honesty, demonstrated a bias on my part to carbs, rather than a judgement\nbased on true carb tolerance. Therefore, I'll recalculate using: 100g P, 87g F, 190g C. = 1948/d =\n13636/week.\n\n11. Nutrient Timing:\nI feel that I would be considered a late intermediate or possibly even advanced trainee and thus,\nconsider my anabolic window to be narrow and perhaps lean toward a 24hr limit. I've been training\nwith good programming and decent nutrition for almost three years.\nCurrent 1RM's: Bench 135lb (+12lb BW), Squat 245lb (Double Bodyweight), Deadlift 300lb.\n\nAdditionally, I sleep 12a-8a consistently. I train between 10a-12p (which is not CR-friendly, but have\nfound this time to be optimal for energy/motivation/drive to push hard). I do think my STRENGTH is best\nin late afternoon, but enduance and mental fortitude are horrendous at that time of day.\n\nIn view of this, I figured my macros in the following way.\n\nRest Day: PSMF using a comment from Menno in the course topic for Case Studies, EE of P x 8.3 = 100g\nP/d x 8.3 = 830 calories per day.\nRest Day\nTotal\nBreakfast/End\nAnabolic Window\nLunch\nRevision:\npossibly still in\nA.W\nAfternoon\nRevision: Meal\nRemoved\nDinner\nPre-Bed\nProtein\n100\n28\n28\n-\n16\n28\nFat\n30\n12\n6\n-\n6\n6\n\n\n--- Page 3 ---\nCarbs\n40\n15\n15\n-\n5\n5\nkcal\n830\n280\n226\n-\n138\n186\n\nRevisions: According to Menno and others comments, I needed to better allocate protein to 1. Hit\nleucine threshold each meal and 2. Stack macros closer within the anabolic ending. My leucine\nthreshold should be 0.3g/kg/meal = 0.3g/55.9kg/meal = 16.77g/meal.\nI chose to keep 5 meal despite the scarcity of macros as I find I am more able to control hunger\nbetter with frequent meals. When I become ravenously hungry, I am at high risk for non-compliance.\nI chose a 28g protein breakfast to catch the tail-end of my anabolic window from the previous day\nand chose the remaining protein %'s based on what I understood from the CR protein timing. As for\nthe carb/fat calculations, I based them off my typical food preferences for each of the meals\nrespectively.\nRevision: I removed the afternoon snack as suggested by classmates to better allocate macros.\n\nTraining Day: Revision: Weekly EE = 13636 - 830cal(from 1 rest/PSMF day/week) = 12806 Total\ncalories remaining or 2134 per day for the remaining 6 training days. I chose the following macros\nbased on my best interpretation of the Bayesian principles we covered thus far: 100p/95f/220c.\n(1.8g.kg p, 40%EE for Fat, Remaining calories to carbs). I increased protein by 10g, fat by 20g, and\ncarb by 70g from the based macros calculated above in step 10. I estimate myself to be neutral for\ncarb tolerance. I think these macros satisfy the minimum suggested levels for optimization as\noutlined in this course. Training session is generally 10am or 10:30am until 11:30am or 12pm.\n\nTraining\nTotal\nBfast/PreWO\n8:30am\nLunch/PostWO\n12-12:30pm\nAfternoon\nRevision:Meal\nRemoved\nDinner\n6-7pm\nPre-Bed\n11:30\nProtein\n101\n22 (0.4g/kg)\n28 (0.5g/kg)\n-\n25\n25\nFat\n95\n20\n30\n-\n25\n20\nCarb\n220\n50\n50\n-\n75\n45\nKcal\n2135\n468\n582\n-\n625\n460\n\nRationale Revisions by meal:\n\nBreakfast: P= 0.4g/kg to meet leucine threshold and according to Nutrient Timing II lecture,\npage 30 on timing for intermediate/advance trainees (which actually states 0.6g/kg). 1-2 hr PreWO,\nF= minimal to allow for potentially faster nutrient absorption/ hyperaminoacidemic state, F =\nModerate, C = Moderate for enhanced training energy\n\nLunch/ Post WO: P= 0.5g/kg to meet Leucine threshold and overlap preWO\nhyperaminoacidemic state. F= High to create mixed meal effect (probably whole dairy as encouraged\n\n\n--- Page 4 ---\nin menno's lectures). C=Moderate/High … creating a mixed meal and higher total EE to sandwich\nnutrients inside peak of anabolic window as per Menno's comments to original case study\nsubmission to \"shift many more calories to toward anabolic window).\n\nAfternoon: Revision: Meal Removed. Pro= enough to hit Leucine threshold, to allow for more\nlater in the day in accord with CR protein timing suggestions. Fat= moderate, C= moderate. I choose\nto have the afternoon meal as I am usually very hungry at this time of day and if I skip this meal, I\nhave a hard time not over eating by dinner time.\n\nDinner: Pro= Higher, CRPT. Revisions: In an effort to increase intake for CRPT period while also\nproviding enough PreBED protein to hit the leucine threshold, I decided to remove the afternoon meal\n(as suggested by fellow classmate). F/C=High Moderate because I like a large dinner meal CR carb timing\nsuggested benefits for carbs later in the day.\n\nPre-Bed: Pro= Overnight MPS support. F=moderate this is what I had left over after adding\nfats to sandwich immediate workout period, C=High, for enhanced sleep-hormone production.\n\nGOALS:\nTotal Weekly EE: 14350, Revision: 13636, utilizing a rest day PSMF and increased training day\nnutrient allocation method. A calculated energy deficit of 15% 5% in attempt to generate a max\n(0.7%TBW) 0.9lb loss 0.7lb loss per week to achieve 53.63kg/118lb BW by Feb 10th.\n\nIf possible, fellow classmates and Menno, please provide any additional insights as to how I may\nbetter optimize my nutrient timing or projected deficit after having made the preceding revisions\nbased on feedback from my original submission.\n\n\n--- Page 5 ---\nREVISED:\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 2):\n| Rest Day | Total | Breakfast/End Anabolic Window | Lunch Revision: possibly still in A.W | Afternoon Revision: Meal Removed | Dinner | Pre-Bed |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 100 | 28 | 28 | - | 16 | 28 |\n| Fat | 30 | 12 | 6 | - | 6 | 6 |\n\nTable 2 (page 3):\n| Carbs | 40 | 15 | 15 | - | 5 | 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| kcal | 830 | 280 | 226 | - | 138 | 186 |\n\nTable 3 (page 3):\n| Training | Total | Bfast/PreWO 8:30am | Lunch/PostWO 12-12:30pm | Afternoon Revision:Meal Removed | Dinner 6-7pm | Pre-Bed 11:30 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 101 | 22 (0.4g/kg) | 28 (0.5g/kg) | - | 25 | 25 |\n| Fat | 95 | 20 | 30 | - | 25 | 20 |\n| Carb | 220 | 50 | 50 | - | 75 | 45 |\n| Kcal | 2135 | 468 | 582 | - | 625 | 460 |\n",
+  "tables": [
+    {
+      "page_num": 2,
+      "markdown": "| Rest Day | Total | Breakfast/End Anabolic Window | Lunch Revision: possibly still in A.W | Afternoon Revision: Meal Removed | Dinner | Pre-Bed |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 100 | 28 | 28 | - | 16 | 28 |\n| Fat | 30 | 12 | 6 | - | 6 | 6 |",
+      "bbox": [
+        72.16800308227539,
+        620.7099914550781,
+        539.9199829101562,
+        707.5260047912598
+      ]
+    },
+    {
+      "page_num": 3,
+      "markdown": "| Carbs | 40 | 15 | 15 | - | 5 | 5 |\n| --- | --- | --- | --- | --- | --- | --- |\n| kcal | 830 | 280 | 226 | - | 138 | 186 |",
+      "bbox": [
+        72.21067004733615,
+        72.20999145507812,
+        539.913316514757,
+        106.73001098632812
+      ]
+    },
+    {
+      "page_num": 3,
+      "markdown": "| Training | Total | Bfast/PreWO 8:30am | Lunch/PostWO 12-12:30pm | Afternoon Revision:Meal Removed | Dinner 6-7pm | Pre-Bed 11:30 |\n| --- | --- | --- | --- | --- | --- | --- |\n| Protein | 101 | 22 (0.4g/kg) | 28 (0.5g/kg) | - | 25 | 25 |\n| Fat | 95 | 20 | 30 | - | 25 | 20 |\n| Carb | 220 | 50 | 50 | - | 75 | 45 |\n| Kcal | 2135 | 468 | 582 | - | 625 | 460 |",
+      "bbox": [
+        72.21067004733615,
+        441.7599925994873,
+        539.913316514757,
+        561.4599914550781
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:09.191790",
+  "error": null
+}

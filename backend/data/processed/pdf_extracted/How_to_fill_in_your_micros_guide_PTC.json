@@ -1,0 +1,89 @@
+{
+  "filename": "How to fill in your micros guide PTC.pdf",
+  "source": "How to fill in your micros guide PTC.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 3,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nHOW TO FILL IN YOUR MICROS",
+      "headings": [
+        "HOW TO FILL IN YOUR MICROS"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\n\nThe current fitness culture emphasizes macronutrients with little regard for\nmicronutrients, not to mention phytochemicals and other compounds that can have\nsignificant effects on your health or performance. To make sure you cover all your\nmicronutrient needs, here's an overview of the most common micronutrient deficiencies\nand which foods are semi-essential to consume enough of them. The last column\ndescribes an effective supplementation strategy for when the diet does not provide\nadequate amounts of the micronutrient. The table is not exhaustive and there are many\nways to cover your micronutrient needs, but in practice many people will require either\nsupplementation or the listed food sources to avoid deficiency.\n\nFor more information, see the online Henselmans PT Course module on micronutrition\nor ask your coach.\n\nMicronutrient\nGood dietary sources\nSupplementation\nstrategy\nVitamin K\n• Leafy green vegetables\n• Avocado\n• Pumpkin\n• Natto\n1+ mcg/kg/d\nphylloquinones (vitamin\nK1) consumed with a fatty\nmeal\nCalcium\n• Dairy\n• Whole sardines\n• Cruciferous vegetables in very\nlarge amounts\n800 mg/d calcium (any\nform) consumed with a\nlow-magnesium meal\nVitamin D\n• Sun\n2-9000 IU/d Vitamin D3\nwith bloodwork done to\nmaintain serum 25-\nhydroxyvitamin D levels of\n~115 nmol/l\nMagnesium\n• Spinach\n• Mackerel\nUp to 6 mg/kg/d\nmagnesium citrate,",
+      "headings": [
+        "Micronutrient",
+        "Good dietary sources",
+        "Supplementation",
+        "strategy"
+      ],
+      "tables": [
+        {
+          "page_num": 2,
+          "markdown": "| Micronutrient | Good dietary sources |  |  |  | Supplementation |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  | strategy |  |\n| Vitamin K |  | • Leafy green vegetables |  |  | 1+ mcg/kg/d |  |\n|  |  | • Avocado |  |  | phylloquinones (vitamin |  |\n|  |  | • Pumpkin |  |  | K1) consumed with a fatty |  |\n|  |  | • Natto |  |  | meal |  |\n| Calcium | • Dairy • Whole sardines • Cruciferous vegetables in very large amounts |  |  | 800 mg/d calcium (any form) consumed with a low-magnesium meal |  |  |\n| Vitamin D | • Sun |  |  |  | 2-9000 IU/d Vitamin D3 |  |\n|  |  |  |  |  | with bloodwork done to |  |\n|  |  |  |  |  | maintain serum 25- |  |\n|  |  |  |  |  | hydroxyvitamin D levels of |  |\n|  |  |  |  |  | ~115 nmol/l |  |\n| Magnesium | • Spinach • Mackerel |  |  | Up to 6 mg/kg/d magnesium citrate, |  |  |",
+          "bbox": [
+            72.31733491685655,
+            347.45001220703125,
+            539.8033175998264,
+            714.635986328125
+          ]
+        }
+      ]
+    },
+    {
+      "page_num": 3,
+      "text": "3\n\n• Fermented/soaked/sprouted\nwhole grains (oats, wheat, rice,\nnuts, beans, cacao/pure\nchocolate)\n• Potato\nchloride, lactate or\naspartate (nót oxide)\nconsumed with a low-\ncalcium meal\nIodine\n• Iodized salt\n• Seaweed\n• Dairy in large amounts\n150+ mcg/d iodine from\nstandardized kelp extract\nZinc\n• Red meat\n• Shellfish\n10-15 mg/d zinc (any\nform) consumed with a\nlow-calcium and low-\nmagnesium meal\nIron\n• Dark red meats, incl. beef\n• Organ meats\n• Certain types of shellfish\n\nRisky! Have bloodwork\ndone and consult with\nyour coach or a medical\nprofessional.",
+      "headings": [],
+      "tables": [
+        {
+          "page_num": 3,
+          "markdown": "|  | • Fermented/soaked/sprouted whole grains (oats, wheat, rice, nuts, beans, cacao/pure chocolate) • Potato |  |  | chloride, lactate or aspartate (nót oxide) consumed with a low- calcium meal |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Iodine |  | • Iodized salt |  | 150+ mcg/d iodine from standardized kelp extract |  |  |\n|  |  | • Seaweed |  |  |  |  |\n|  |  | • Dairy in large amounts |  |  |  |  |\n| Zinc | • Red meat • Shellfish |  |  | 10-15 mg/d zinc (any form) consumed with a low-calcium and low- magnesium meal |  |  |\n| Iron |  | • Dark red meats, incl. beef |  |  | Risky! Have bloodwork |  |\n|  |  | • Organ meats |  |  | done and consult with |  |\n|  |  | • Certain types of shellfish |  |  | your coach or a medical |  |\n|  |  |  |  |  | professional. |  |",
+          "bbox": [
+            72.29828752790179,
+            72.17999267578125,
+            539.8228410993304,
+            417.8166775173611
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "HOW TO FILL IN YOUR MICROS",
+    "Micronutrient",
+    "Good dietary sources",
+    "Supplementation",
+    "strategy"
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nHOW TO FILL IN YOUR MICROS\n\n\n--- Page 2 ---\n2\n\nThe current fitness culture emphasizes macronutrients with little regard for\nmicronutrients, not to mention phytochemicals and other compounds that can have\nsignificant effects on your health or performance. To make sure you cover all your\nmicronutrient needs, here's an overview of the most common micronutrient deficiencies\nand which foods are semi-essential to consume enough of them. The last column\ndescribes an effective supplementation strategy for when the diet does not provide\nadequate amounts of the micronutrient. The table is not exhaustive and there are many\nways to cover your micronutrient needs, but in practice many people will require either\nsupplementation or the listed food sources to avoid deficiency.\n\nFor more information, see the online Henselmans PT Course module on micronutrition\nor ask your coach.\n\nMicronutrient\nGood dietary sources\nSupplementation\nstrategy\nVitamin K\n• Leafy green vegetables\n• Avocado\n• Pumpkin\n• Natto\n1+ mcg/kg/d\nphylloquinones (vitamin\nK1) consumed with a fatty\nmeal\nCalcium\n• Dairy\n• Whole sardines\n• Cruciferous vegetables in very\nlarge amounts\n800 mg/d calcium (any\nform) consumed with a\nlow-magnesium meal\nVitamin D\n• Sun\n2-9000 IU/d Vitamin D3\nwith bloodwork done to\nmaintain serum 25-\nhydroxyvitamin D levels of\n~115 nmol/l\nMagnesium\n• Spinach\n• Mackerel\nUp to 6 mg/kg/d\nmagnesium citrate,\n\n\n--- Page 3 ---\n3\n\n• Fermented/soaked/sprouted\nwhole grains (oats, wheat, rice,\nnuts, beans, cacao/pure\nchocolate)\n• Potato\nchloride, lactate or\naspartate (nót oxide)\nconsumed with a low-\ncalcium meal\nIodine\n• Iodized salt\n• Seaweed\n• Dairy in large amounts\n150+ mcg/d iodine from\nstandardized kelp extract\nZinc\n• Red meat\n• Shellfish\n10-15 mg/d zinc (any\nform) consumed with a\nlow-calcium and low-\nmagnesium meal\nIron\n• Dark red meats, incl. beef\n• Organ meats\n• Certain types of shellfish\n\nRisky! Have bloodwork\ndone and consult with\nyour coach or a medical\nprofessional.\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 2):\n| Micronutrient | Good dietary sources |  |  |  | Supplementation |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  | strategy |  |\n| Vitamin K |  | • Leafy green vegetables |  |  | 1+ mcg/kg/d |  |\n|  |  | • Avocado |  |  | phylloquinones (vitamin |  |\n|  |  | • Pumpkin |  |  | K1) consumed with a fatty |  |\n|  |  | • Natto |  |  | meal |  |\n| Calcium | • Dairy • Whole sardines • Cruciferous vegetables in very large amounts |  |  | 800 mg/d calcium (any form) consumed with a low-magnesium meal |  |  |\n| Vitamin D | • Sun |  |  |  | 2-9000 IU/d Vitamin D3 |  |\n|  |  |  |  |  | with bloodwork done to |  |\n|  |  |  |  |  | maintain serum 25- |  |\n|  |  |  |  |  | hydroxyvitamin D levels of |  |\n|  |  |  |  |  | ~115 nmol/l |  |\n| Magnesium | • Spinach • Mackerel |  |  | Up to 6 mg/kg/d magnesium citrate, |  |  |\n\nTable 2 (page 3):\n|  | • Fermented/soaked/sprouted whole grains (oats, wheat, rice, nuts, beans, cacao/pure chocolate) • Potato |  |  | chloride, lactate or aspartate (nót oxide) consumed with a low- calcium meal |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Iodine |  | • Iodized salt |  | 150+ mcg/d iodine from standardized kelp extract |  |  |\n|  |  | • Seaweed |  |  |  |  |\n|  |  | • Dairy in large amounts |  |  |  |  |\n| Zinc | • Red meat • Shellfish |  |  | 10-15 mg/d zinc (any form) consumed with a low-calcium and low- magnesium meal |  |  |\n| Iron |  | • Dark red meats, incl. beef |  |  | Risky! Have bloodwork |  |\n|  |  | • Organ meats |  |  | done and consult with |  |\n|  |  | • Certain types of shellfish |  |  | your coach or a medical |  |\n|  |  |  |  |  | professional. |  |\n",
+  "tables": [
+    {
+      "page_num": 2,
+      "markdown": "| Micronutrient | Good dietary sources |  |  |  | Supplementation |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  | strategy |  |\n| Vitamin K |  | • Leafy green vegetables |  |  | 1+ mcg/kg/d |  |\n|  |  | • Avocado |  |  | phylloquinones (vitamin |  |\n|  |  | • Pumpkin |  |  | K1) consumed with a fatty |  |\n|  |  | • Natto |  |  | meal |  |\n| Calcium | • Dairy • Whole sardines • Cruciferous vegetables in very large amounts |  |  | 800 mg/d calcium (any form) consumed with a low-magnesium meal |  |  |\n| Vitamin D | • Sun |  |  |  | 2-9000 IU/d Vitamin D3 |  |\n|  |  |  |  |  | with bloodwork done to |  |\n|  |  |  |  |  | maintain serum 25- |  |\n|  |  |  |  |  | hydroxyvitamin D levels of |  |\n|  |  |  |  |  | ~115 nmol/l |  |\n| Magnesium | • Spinach • Mackerel |  |  | Up to 6 mg/kg/d magnesium citrate, |  |  |",
+      "bbox": [
+        72.31733491685655,
+        347.45001220703125,
+        539.8033175998264,
+        714.635986328125
+      ]
+    },
+    {
+      "page_num": 3,
+      "markdown": "|  | • Fermented/soaked/sprouted whole grains (oats, wheat, rice, nuts, beans, cacao/pure chocolate) • Potato |  |  | chloride, lactate or aspartate (nót oxide) consumed with a low- calcium meal |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n| Iodine |  | • Iodized salt |  | 150+ mcg/d iodine from standardized kelp extract |  |  |\n|  |  | • Seaweed |  |  |  |  |\n|  |  | • Dairy in large amounts |  |  |  |  |\n| Zinc | • Red meat • Shellfish |  |  | 10-15 mg/d zinc (any form) consumed with a low-calcium and low- magnesium meal |  |  |\n| Iron |  | • Dark red meats, incl. beef |  |  | Risky! Have bloodwork |  |\n|  |  | • Organ meats |  |  | done and consult with |  |\n|  |  | • Certain types of shellfish |  |  | your coach or a medical |  |\n|  |  |  |  |  | professional. |  |",
+      "bbox": [
+        72.29828752790179,
+        72.17999267578125,
+        539.8228410993304,
+        417.8166775173611
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:49.860744",
+  "error": null
+}

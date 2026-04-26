@@ -1,0 +1,39 @@
+{
+  "filename": "Exercise selection in home gym.pdf",
+  "source": "Exercise selection in home gym.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "single chunk (file too short to split)",
+  "num_pages": 1,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "Case study: training at home\nWhat if a client trains at home and only has access to barbells and dumbbells? Exercise\nselection can then change as follows.\n\nChest: Dumbbells will have to be used for the fly. Bands and chains would be great here. If\nsomeone doesn't have them and their shoulders act up during DB flies, I like to use fly-presses:\nit's basically a fly movement at the top that turns into a press in the bottom position.\n\nLateral delt & upper traps: DB laterals with a lot of momentum while keeping tension on\nthe muscle\n\nRear delts: High DB rows and reverse DB flies with a lot of momentum while keeping tension\non the muscle\n\nLats: Stick to bodyweight exercises and don't resort to pull-overs.\n\nBiceps: Barbell (drag) curl, Scott DB curl\n\nQuads: If you have bands, you can do terminal knee extensions as isolation work.\n\nHams, glutes, calves, triceps & core: No major limitations here.",
+      "headings": [
+        "Case study: training at home",
+        "Chest: Dumbbells will have to be used for the fly. Bands and chains would be great here. If",
+        "Lateral delt & upper traps: DB laterals with a lot of momentum while keeping tension on",
+        "Rear delts: High DB rows and reverse DB flies with a lot of momentum while keeping tension",
+        "Lats: Stick to bodyweight exercises and don't resort to pull-overs.",
+        "Biceps: Barbell (drag) curl, Scott DB curl",
+        "Quads: If you have bands, you can do terminal knee extensions as isolation work.",
+        "Hams, glutes, calves, triceps & core: No major limitations here."
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "Case study: training at home",
+    "Chest: Dumbbells will have to be used for the fly. Bands and chains would be great here. If",
+    "Lateral delt & upper traps: DB laterals with a lot of momentum while keeping tension on",
+    "Rear delts: High DB rows and reverse DB flies with a lot of momentum while keeping tension",
+    "Lats: Stick to bodyweight exercises and don't resort to pull-overs.",
+    "Biceps: Barbell (drag) curl, Scott DB curl",
+    "Quads: If you have bands, you can do terminal knee extensions as isolation work.",
+    "Hams, glutes, calves, triceps & core: No major limitations here."
+  ],
+  "full_text": "--- Page 1 ---\nCase study: training at home\nWhat if a client trains at home and only has access to barbells and dumbbells? Exercise\nselection can then change as follows.\n\nChest: Dumbbells will have to be used for the fly. Bands and chains would be great here. If\nsomeone doesn't have them and their shoulders act up during DB flies, I like to use fly-presses:\nit's basically a fly movement at the top that turns into a press in the bottom position.\n\nLateral delt & upper traps: DB laterals with a lot of momentum while keeping tension on\nthe muscle\n\nRear delts: High DB rows and reverse DB flies with a lot of momentum while keeping tension\non the muscle\n\nLats: Stick to bodyweight exercises and don't resort to pull-overs.\n\nBiceps: Barbell (drag) curl, Scott DB curl\n\nQuads: If you have bands, you can do terminal knee extensions as isolation work.\n\nHams, glutes, calves, triceps & core: No major limitations here.",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:42:26.497939",
+  "error": null
+}

@@ -1,0 +1,89 @@
+{
+  "filename": "Case study PSMF.pdf",
+  "source": "Case study PSMF.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 5,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "Bayesianbodybuilding.com\n\nPersonal Training Client Application Form\n\nThe more information you provide, the better I will be able to assist you. If you have\nany questions with regards to this form, please do not hesitate to contact me. You\ncan use whichever measurement system (e.g. metric, imperial) you prefer to fill in\nthis form. Just state which unit you used (e.g. cm, kg, lb, inch).\n\n Full legal name: [female]\n Full billing address:\n Age: 26\n Height: 165cm\n Weight: 89kg\n Body fat percentage (plus measurement technique):\n Years of training experience: 0\nWe need to estimate her body fat percentage, but we don't have pictures or caliper\nmeasurements. She's untrained, so we can use BMI, which is 32.7. Then we need to\nconver that to a body fat percentage. [1].\nAdult Body Fat % = (1.20 * 32.7 ) + (0.23 * 26) - (10.8 * 0) - 5.4 = 39.82\n1: Body mass index as a measure of body fatness: age- and sex-specific prediction\nformulas. Authors: Deurenberg P, Weststrate JA, Seidell JC. Journal: Br J Nutr, Mar\n1991;65(2):105-14\nFor the section below, please give your current maximum abilities in weight times\nreps, e.g. 250 lb x 6.\n Bench press:\n Squat (excluding body weight):\n Chin-up (excluding body weight):\n Overhead press:\n\nWhat are your fitness goals?\nLose weight en stay at that weight (60-65kg goal)\n\nThis is good, because she should lose fat. Lots of it and quickly. At her ideal weight\nshe still won't be lean in fitness terms, but compliance wise, it's probably best not to\ntell her that yet.\n\nHow often in a week would you be prepared to train? Note that no session should last\nlonger than an hour; 2 sessions is maintenance, 3 is doable and twice daily would\nbe the absolute maximum at which more is no longer better.\n3 times a week prefereably in the morning",
+      "headings": [
+        "Personal Training Client Application Form",
+        "Adult Body Fat % = (1.20 * 32.7 ) + (0.23 * 26) - (10.8 * 0) - 5.4 = 39.82"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "Bayesianbodybuilding.com\n\nIt is unfortunate that she wants to train in the morning because this is not optimal\n(more on this later). However, this does tell us she likely has good sleeping habits.\nOnly people that sleep enough and at regular times prefer to train in the morning. Or\nthey think they should. In any case, I would probably let her train in the morning\nbecause this client screams 'compliance problems'.\n\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm,\nstress and activity level.\nIm preparing events (owner)\n\nThis means she has a high stress level. Organizing events is stressful and being a\ncompany's owner requires responsibility, which is stressful too. We'll get to the\neffects of stress in more detail later.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes,\ndisorders etc.) you have or had:\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNote that if you answer 'NO' to any of the questions below, I will not be able to take\nyou on as a client.\n I declare that, while Menno Henselmans is my personal trainer, all the\nsubstances I use are obtained and used in accordance with their governing\nlaws: YES / NO (delete one)\n I forego all rights to hold Menno Henselmans liable for any damages caused in\nrelation to following his advice as my trainer: YES / NO (delete one)\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please return the filled in form to\nmennohenselmans@bayesianbodybuilding.com and attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps and\nfront relaxed pose.\n\nActivity level: please mark one of the fields below or delete the rest.\n Sedentary (e.g. desk job) but also doing groceries.\nActivity factor = 1",
+      "headings": [
+        "At this point, you may choose to return this form to me to obtain a price",
+        "quote before filling in the rest. Please return the filled in form to",
+        "front relaxed pose."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "Bayesianbodybuilding.com\n\nStress level: please mark one of the fields below or delete the rest.\n Average stress (e.g. full-time work with deadlines and commuting)\n\nIf you answered yes to the question on PED usage, you can leave the section below\nblank.\n Wrist circumference:\n Ankle circumference:\n How much did you weigh before you started lifting and what was your height\nat that point?\n Were you heavy as a baby?\n Please attach a picture to this form in which the back of your hand is clearly\nvisible (see example image below).\n\nWhat are the lightest barbell weight plates you have access to?\n1kg\n\nWhat are the smallest weight increments between the sets of dumbbells you have\naccess to?\n1kg\n\nDo you have access to…\na squat cage or rack? yes\na 45° hyperextension bench? no\na reverse hyper machine? no\na glute-ham raise? yes\na standing calf raise machine? yes\na dip/chin-up belt? no\na leg curl machine and if so, is it seated, lying or standing? Yes seated\na pair of knee wraps? no\na seated calf raise where you push your body up (closed chain: see example image\nbelow)? no",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "Bayesianbodybuilding.com\n\nPlease list all the supplements you are currently taking:\n\nnon\n\nPlease describe or attach your current diet plan in detail:\n\nMorning: 2 slices of volkoren bread with cheese, ontbijtkoek 1 piece\nCrackers\nAfternoon: bread with cheese, crackers\nDinner, usually some meat with rice and vegetables\nI don't eat/like beef, milk, yoghurt\n\nTypical Dutch diet. This means she likely isn't very educated about nutrition and it\nwill require a lot of education to stop her from eating a high carb diet. It is also highly\nunlikely that this is in fact her typical diet, because she wouldn't have become obese if\nit was. This signals that underreporting is likely to become an issue.\n\nIt is reasonable to estimate her thermic effect of food as 10%, since that is the average\nin research.\n\nPlease describe or attach your current training program in detail: non\n\nAre there any times at which you are unable or unwilling to train? If so, please list\nthem:\nIn the afternoon.\n\nPlease return the filled in form to mennohenselmans@bayesianbodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows), preferably including a back double biceps and front relaxed\npose. If you recently had blood work done, you can attach its results as well.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "Bayesianbodybuilding.com\n\nWe have everything we need to calculate her macros now. However, since she is\nobese, the optimal diet will be a protein sparing modified fast (PSMF).\n\n1.8 g/kg will have her protein intake at 160 g/d. That's probably excessive, but since\nshe is a beginner, she should still be able to build muscle very rapidly even on a\nPSMF, so I wouldn't lower it.\n\nThen we need to evaluate the need for fats and carbs. Given her lifestyle, undoubtedly\nhorrific carb tolerance due to pre-metabolic syndrome and low training frequency,\nthe carb requirement is essentially zero. However, given the likelihood of compliance\nissues and the unlikeliness of hunger being a main problem due to her high body fat\npercentage, I wouldn't recommend a ketogenic diet, at least not to start with.\n\nFats are beneficial because her diet is severely lacking in nutritious fats. With a REE\nof 1680, her optimal minimum fat intake would be 75 g/d. Since her optimal deficit is\n> 50%, that's impossible, so I would recommend the absolute minimum of fats and\ncarbs. In practice, I then often set carbs at half of protein and fat at a quarter of\nprotein.\n\nProtein Intake\n160\nFat Intake\n40\nCarbohydrate Intake 80\nKcal\n1321",
+      "headings": [
+        "Protein Intake",
+        "Fat Intake",
+        "Carbohydrate Intake 80",
+        "Kcal"
+      ],
+      "tables": [
+        {
+          "page_num": 5,
+          "markdown": "| Protein Intake | 160 |\n| --- | --- |\n| Fat Intake | 40 |\n| Carbohydrate Intake | 80 |\n| Kcal | 1321 |",
+          "bbox": [
+            71.01599884033203,
+            384.6899922688802,
+            244.6580017089844,
+            456.489990234375
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "Personal Training Client Application Form",
+    "Adult Body Fat % = (1.20 * 32.7 ) + (0.23 * 26) - (10.8 * 0) - 5.4 = 39.82",
+    "At this point, you may choose to return this form to me to obtain a price",
+    "quote before filling in the rest. Please return the filled in form to",
+    "front relaxed pose.",
+    "Protein Intake",
+    "Fat Intake",
+    "Carbohydrate Intake 80",
+    "Kcal"
+  ],
+  "full_text": "--- Page 1 ---\nBayesianbodybuilding.com\n\nPersonal Training Client Application Form\n\nThe more information you provide, the better I will be able to assist you. If you have\nany questions with regards to this form, please do not hesitate to contact me. You\ncan use whichever measurement system (e.g. metric, imperial) you prefer to fill in\nthis form. Just state which unit you used (e.g. cm, kg, lb, inch).\n\n Full legal name: [female]\n Full billing address:\n Age: 26\n Height: 165cm\n Weight: 89kg\n Body fat percentage (plus measurement technique):\n Years of training experience: 0\nWe need to estimate her body fat percentage, but we don't have pictures or caliper\nmeasurements. She's untrained, so we can use BMI, which is 32.7. Then we need to\nconver that to a body fat percentage. [1].\nAdult Body Fat % = (1.20 * 32.7 ) + (0.23 * 26) - (10.8 * 0) - 5.4 = 39.82\n1: Body mass index as a measure of body fatness: age- and sex-specific prediction\nformulas. Authors: Deurenberg P, Weststrate JA, Seidell JC. Journal: Br J Nutr, Mar\n1991;65(2):105-14\nFor the section below, please give your current maximum abilities in weight times\nreps, e.g. 250 lb x 6.\n Bench press:\n Squat (excluding body weight):\n Chin-up (excluding body weight):\n Overhead press:\n\nWhat are your fitness goals?\nLose weight en stay at that weight (60-65kg goal)\n\nThis is good, because she should lose fat. Lots of it and quickly. At her ideal weight\nshe still won't be lean in fitness terms, but compliance wise, it's probably best not to\ntell her that yet.\n\nHow often in a week would you be prepared to train? Note that no session should last\nlonger than an hour; 2 sessions is maintenance, 3 is doable and twice daily would\nbe the absolute maximum at which more is no longer better.\n3 times a week prefereably in the morning\n\n\n--- Page 2 ---\nBayesianbodybuilding.com\n\nIt is unfortunate that she wants to train in the morning because this is not optimal\n(more on this later). However, this does tell us she likely has good sleeping habits.\nOnly people that sleep enough and at regular times prefer to train in the morning. Or\nthey think they should. In any case, I would probably let her train in the morning\nbecause this client screams 'compliance problems'.\n\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm,\nstress and activity level.\nIm preparing events (owner)\n\nThis means she has a high stress level. Organizing events is stressful and being a\ncompany's owner requires responsibility, which is stressful too. We'll get to the\neffects of stress in more detail later.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes,\ndisorders etc.) you have or had:\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNote that if you answer 'NO' to any of the questions below, I will not be able to take\nyou on as a client.\n I declare that, while Menno Henselmans is my personal trainer, all the\nsubstances I use are obtained and used in accordance with their governing\nlaws: YES / NO (delete one)\n I forego all rights to hold Menno Henselmans liable for any damages caused in\nrelation to following his advice as my trainer: YES / NO (delete one)\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please return the filled in form to\nmennohenselmans@bayesianbodybuilding.com and attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps and\nfront relaxed pose.\n\nActivity level: please mark one of the fields below or delete the rest.\n Sedentary (e.g. desk job) but also doing groceries.\nActivity factor = 1\n\n\n--- Page 3 ---\nBayesianbodybuilding.com\n\nStress level: please mark one of the fields below or delete the rest.\n Average stress (e.g. full-time work with deadlines and commuting)\n\nIf you answered yes to the question on PED usage, you can leave the section below\nblank.\n Wrist circumference:\n Ankle circumference:\n How much did you weigh before you started lifting and what was your height\nat that point?\n Were you heavy as a baby?\n Please attach a picture to this form in which the back of your hand is clearly\nvisible (see example image below).\n\nWhat are the lightest barbell weight plates you have access to?\n1kg\n\nWhat are the smallest weight increments between the sets of dumbbells you have\naccess to?\n1kg\n\nDo you have access to…\na squat cage or rack? yes\na 45° hyperextension bench? no\na reverse hyper machine? no\na glute-ham raise? yes\na standing calf raise machine? yes\na dip/chin-up belt? no\na leg curl machine and if so, is it seated, lying or standing? Yes seated\na pair of knee wraps? no\na seated calf raise where you push your body up (closed chain: see example image\nbelow)? no\n\n\n--- Page 4 ---\nBayesianbodybuilding.com\n\nPlease list all the supplements you are currently taking:\n\nnon\n\nPlease describe or attach your current diet plan in detail:\n\nMorning: 2 slices of volkoren bread with cheese, ontbijtkoek 1 piece\nCrackers\nAfternoon: bread with cheese, crackers\nDinner, usually some meat with rice and vegetables\nI don't eat/like beef, milk, yoghurt\n\nTypical Dutch diet. This means she likely isn't very educated about nutrition and it\nwill require a lot of education to stop her from eating a high carb diet. It is also highly\nunlikely that this is in fact her typical diet, because she wouldn't have become obese if\nit was. This signals that underreporting is likely to become an issue.\n\nIt is reasonable to estimate her thermic effect of food as 10%, since that is the average\nin research.\n\nPlease describe or attach your current training program in detail: non\n\nAre there any times at which you are unable or unwilling to train? If so, please list\nthem:\nIn the afternoon.\n\nPlease return the filled in form to mennohenselmans@bayesianbodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows), preferably including a back double biceps and front relaxed\npose. If you recently had blood work done, you can attach its results as well.\n\n\n--- Page 5 ---\nBayesianbodybuilding.com\n\nWe have everything we need to calculate her macros now. However, since she is\nobese, the optimal diet will be a protein sparing modified fast (PSMF).\n\n1.8 g/kg will have her protein intake at 160 g/d. That's probably excessive, but since\nshe is a beginner, she should still be able to build muscle very rapidly even on a\nPSMF, so I wouldn't lower it.\n\nThen we need to evaluate the need for fats and carbs. Given her lifestyle, undoubtedly\nhorrific carb tolerance due to pre-metabolic syndrome and low training frequency,\nthe carb requirement is essentially zero. However, given the likelihood of compliance\nissues and the unlikeliness of hunger being a main problem due to her high body fat\npercentage, I wouldn't recommend a ketogenic diet, at least not to start with.\n\nFats are beneficial because her diet is severely lacking in nutritious fats. With a REE\nof 1680, her optimal minimum fat intake would be 75 g/d. Since her optimal deficit is\n> 50%, that's impossible, so I would recommend the absolute minimum of fats and\ncarbs. In practice, I then often set carbs at half of protein and fat at a quarter of\nprotein.\n\nProtein Intake\n160\nFat Intake\n40\nCarbohydrate Intake 80\nKcal\n1321\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 5):\n| Protein Intake | 160 |\n| --- | --- |\n| Fat Intake | 40 |\n| Carbohydrate Intake | 80 |\n| Kcal | 1321 |\n",
+  "tables": [
+    {
+      "page_num": 5,
+      "markdown": "| Protein Intake | 160 |\n| --- | --- |\n| Fat Intake | 40 |\n| Carbohydrate Intake | 80 |\n| Kcal | 1321 |",
+      "bbox": [
+        71.01599884033203,
+        384.6899922688802,
+        244.6580017089844,
+        456.489990234375
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:11.372805",
+  "error": null
+}

@@ -1,0 +1,152 @@
+{
+  "filename": "Hunger management guide PTC.pdf",
+  "source": "Hunger management guide PTC.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 15,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "1\n\nHOW TO: HUNGER\nMANAGEMENT",
+      "headings": [
+        "HOW TO: HUNGER",
+        "MANAGEMENT"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "2\n\nHunger is the key reason losing fat is difficult. If you weren't hungry, you could simply\nconsciously decide to eat less and fat loss would merely be a matter of time. In this\nguide we'll give you tips to make your meal plan more satiating and conquer your\nhunger.\n\nAll the scientific references and further details are provided in our online PT Course.\nAsk your coach if you're interested in specific studies. This guide does not go into total\nmacronutrient intake, supplementation or meals consumed outside of your regular meal\nplan.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "3\n\n1. Eat more food\nBy far the most common culprit of hunger is simply not eating enough food. Food's don't\ndiffer that much in how satiating they are, but they do differ enormously in how many\ncalories they have. Your stomach roughly senses total pressure on the gut receptors,\nnot calorie intake, so one of the most effective ways to reduce your hunger is to reduce\nthe average calorie density of your diet. In terms of filling, low calorie foods, nothing\nbeats the following list.\n\n1. Vegetables, including pumpkin, preferably dark (green) ones, excluding\npotatoes and similar starches that are not commonly regarded as vegetables.\n2. Strawberries, blackberries, grapefruit, papaya, chayote, starfruit, hog plums\nand peaches (especially peaches on sugar-free syrup).\n3. Vinegar, mustard, low calorie condiments, herbs and spices and anything with\nzero calories.\n4. Lean protein source, notably egg whites, chicken breast, white fish, tuna,\norgan meat (kidney/liver), 1% beef, cottage cheese, quark and Greek yogurt.",
+      "headings": [
+        "1. Eat more food"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "4\n\n2. Eat more fiber\nYour coach should have programmed in enough dietary fiber in your diet. As a\nguideline, women should consume over 25 grams of fiber per day and men should\nconsume over 38 grams per day. Those are the recommended daily intakes for\nsedentary individuals, so you should think of these as bare minima as a strength\ntrainee. Don't skimp on your fiber intake and get it from whole foods. Supplements\naren't as effective and often upset your digestion.",
+      "headings": [
+        "2. Eat more fiber"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "5\n\n3. Drink more calorie-free liquids\nWhile liquids aren't as satiating as solid foods per unit of volume, many liquids are free\nin terms of calories. Be sure to drink a lot, especially during and right before meals.\nLiquid calories are extremely unsatiating per calorie, so stick with calorie-free liquids.\n• Decaff teas and coffee. Tip: You can make extremely low-calorie cappuccino with\nsucralose powder and just 25 ml of skimmed milk if you beat it thoroughly.\n• Herbal teas.\n• Water, preferably carbonated water. The gas puts extra pressure on the pressure\nreceptors in your gut, increasing your satiation.\n• Diet sodas. There's nothing wrong with artificial sweeteners.\n\nA useful trick to increase satiety is to drink a lot of carbonated water when you're\ndeciding whether to eat more or not. There's generally a certain point in a meal where\nyou're reasonably satiated, but you could eat more. Chugging a glass of carbonated\nwater at this point can be an effective 'finishing blow'.",
+      "headings": [
+        "3. Drink more calorie-free liquids"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "6\n\n4. Limit intra-meal variety\nVariety is good, right? Not for your appetite. Your appetite is sensory-specific, which\nmeans the more tastes you introduce in a meal, the larger your appetite. A good\ntemplate for most diets is to stick with a single high-quality protein source and one type\nof filler food, usually a carbohydrate source, in each meal. Dietary fats are good to use\nto add flavor to the meal.\n\nYou can find recipe ideas on our website.",
+      "headings": [
+        "4. Limit intra-meal variety"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "7\n\n5. End on a satiating note\nBecause your appetite is sensory-specific, consuming a new flavor at the end of a meal\ncan partially reawaken your appetite. Research has found that consuming fruit before a\nmeal is more effective for satiety than consuming it afterwards, for example. As a\ngeneral rule, try to ensure you can satiate the last flavor you consume.\n\nIf you do insist on a dessert with a different flavor, make sure to implement the\ncarbonated water (or perhaps soda) trick to prevent that 1 slice of cake from turning into\n1 cake.",
+      "headings": [
+        "5. End on a satiating note",
+        "1 cake."
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "8\n\n6. Optimize your cutlery\nYour brain uses many cues other than energy content to estimate how much food is\n'enough' for you. These includes environmental references of the portion size. We can\nuse these to trick the brain into believing you're eating more food than you are by eating\nwith small forks, spoons and knives and serving your meal on plates that are only just\nlarge enough to contain the meal. Also, serve your food on brightly colored plates that\ncontrast strongly with your food. The result is that your brain perceives your meal as\nlarger due to the Ebbinghaus-Titchener size-contrast illusion and the Delboeuf effect. As\na result, your brain signals more satiety and you eat less.",
+      "headings": [
+        "6. Optimize your cutlery"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "9\n\n7. Limit your serving sizes\nPeople eat what they're served. This is called the clean-plate-effect. So only serve\nyourself as much as you think you need, not as much as is available.",
+      "headings": [
+        "7. Limit your serving sizes"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "10\n\n8. Eliminate food cues\nYour brain uses food cues, signs of the presence of food in the environment, to\ndetermine how much food is available. Based on that, it stimulates your appetite. This is\nwhy bakers use aromas to give the strong scent of bread that attracts by-walkers. To\navoid your appetite being stimulated by such cues, don't have any food lying on your\nkitchen counter and certainly not on your work desk. All your food should be stored\ninside the kitchen cabinets.",
+      "headings": [
+        "8. Eliminate food cues"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "11\n\n9. Eat at fixed times; don't snack\nA schedule of regular eating times entrains your biorhythm to only evoke hunger at the\ntimes you're accustomed to eating. If you sometimes eat breakfast but not always, you'll\nbe hungry when you don't, but if you never eat breakfast, you get used to it. Concretely,\nit's best to always eat at the same time of day: a 2-hour window is recommended for all\nmeal times.",
+      "headings": [
+        "9. Eat at fixed times; don’t snack"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "12\n\n10. Get enough sleep\nSleep deprivation is bad for everything and your appetite is no exception. Not getting at\nleast 7.5 hours of high quality sleep per night majorly stimulates your appetite.",
+      "headings": [
+        "10. Get enough sleep"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "13\n\n11. Eat mindfully\nYour mother probably taught you not to talk with your mouth full. That's good advice, as\ndistractions enormously increase how much food you eat. The brain has to actively\nregister food intake to create satiety signals. When the brain is occupied by a TV show,\na laptop screen or the person on the other side of the table, you're consuming energy\nwithout much appetite suppression. Not to mention, you're not enjoying your food then,\nwhich entirely defeats the purpose of eating.\n\nWhen you eat, focus on your food. Savor it. Don't eat in front of a TV or a computer. If\nyou want to talk with somebody, first finish your bite and put your cutlery down.",
+      "headings": [
+        "11. Eat mindfully"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 14,
+      "text": "14\n\n12. Chewing gum\nOne of the signals your brain uses to register food intake is the act of chewing. Science\nhas provided us with a marvelous invention to take advantage of this system and\nsuppress our appetite: chewing gum. Chewing gum can significantly decrease feelings\nof hunger and reduce how much you eat.\n\nAlso, be sure to properly chew your food. This should occur automatically if you're\neating mindfully.",
+      "headings": [
+        "12. Chewing gum"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 15,
+      "text": "15\n\n13. Keep meals high in carbs or fat but not both\nWhen a meal is rich in carbs and fats, it is typically very easy to overeat on compared to\nmeals high in only one or the other and protein. You don't have to completely separate\ncarbs and fats, but it can help not to combine high-carb and high-fat foods in the same\nmeal. For example, you may not overeat on avocado and you may not overeat on rice\nwraps, but if you put avocado in the rice wraps, you get a texture that's easy to overeat\non.",
+      "headings": [
+        "13. Keep meals high in carbs or fat but not both"
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "HOW TO: HUNGER",
+    "MANAGEMENT",
+    "1. Eat more food",
+    "2. Eat more fiber",
+    "3. Drink more calorie-free liquids",
+    "4. Limit intra-meal variety",
+    "5. End on a satiating note",
+    "1 cake.",
+    "6. Optimize your cutlery",
+    "7. Limit your serving sizes",
+    "8. Eliminate food cues",
+    "9. Eat at fixed times; don’t snack",
+    "10. Get enough sleep",
+    "11. Eat mindfully",
+    "12. Chewing gum",
+    "13. Keep meals high in carbs or fat but not both"
+  ],
+  "full_text": "--- Page 1 ---\n1\n\nHOW TO: HUNGER\nMANAGEMENT\n\n\n--- Page 2 ---\n2\n\nHunger is the key reason losing fat is difficult. If you weren't hungry, you could simply\nconsciously decide to eat less and fat loss would merely be a matter of time. In this\nguide we'll give you tips to make your meal plan more satiating and conquer your\nhunger.\n\nAll the scientific references and further details are provided in our online PT Course.\nAsk your coach if you're interested in specific studies. This guide does not go into total\nmacronutrient intake, supplementation or meals consumed outside of your regular meal\nplan.\n\n\n--- Page 3 ---\n3\n\n1. Eat more food\nBy far the most common culprit of hunger is simply not eating enough food. Food's don't\ndiffer that much in how satiating they are, but they do differ enormously in how many\ncalories they have. Your stomach roughly senses total pressure on the gut receptors,\nnot calorie intake, so one of the most effective ways to reduce your hunger is to reduce\nthe average calorie density of your diet. In terms of filling, low calorie foods, nothing\nbeats the following list.\n\n1. Vegetables, including pumpkin, preferably dark (green) ones, excluding\npotatoes and similar starches that are not commonly regarded as vegetables.\n2. Strawberries, blackberries, grapefruit, papaya, chayote, starfruit, hog plums\nand peaches (especially peaches on sugar-free syrup).\n3. Vinegar, mustard, low calorie condiments, herbs and spices and anything with\nzero calories.\n4. Lean protein source, notably egg whites, chicken breast, white fish, tuna,\norgan meat (kidney/liver), 1% beef, cottage cheese, quark and Greek yogurt.\n\n\n--- Page 4 ---\n4\n\n2. Eat more fiber\nYour coach should have programmed in enough dietary fiber in your diet. As a\nguideline, women should consume over 25 grams of fiber per day and men should\nconsume over 38 grams per day. Those are the recommended daily intakes for\nsedentary individuals, so you should think of these as bare minima as a strength\ntrainee. Don't skimp on your fiber intake and get it from whole foods. Supplements\naren't as effective and often upset your digestion.\n\n\n--- Page 5 ---\n5\n\n3. Drink more calorie-free liquids\nWhile liquids aren't as satiating as solid foods per unit of volume, many liquids are free\nin terms of calories. Be sure to drink a lot, especially during and right before meals.\nLiquid calories are extremely unsatiating per calorie, so stick with calorie-free liquids.\n• Decaff teas and coffee. Tip: You can make extremely low-calorie cappuccino with\nsucralose powder and just 25 ml of skimmed milk if you beat it thoroughly.\n• Herbal teas.\n• Water, preferably carbonated water. The gas puts extra pressure on the pressure\nreceptors in your gut, increasing your satiation.\n• Diet sodas. There's nothing wrong with artificial sweeteners.\n\nA useful trick to increase satiety is to drink a lot of carbonated water when you're\ndeciding whether to eat more or not. There's generally a certain point in a meal where\nyou're reasonably satiated, but you could eat more. Chugging a glass of carbonated\nwater at this point can be an effective 'finishing blow'.\n\n\n--- Page 6 ---\n6\n\n4. Limit intra-meal variety\nVariety is good, right? Not for your appetite. Your appetite is sensory-specific, which\nmeans the more tastes you introduce in a meal, the larger your appetite. A good\ntemplate for most diets is to stick with a single high-quality protein source and one type\nof filler food, usually a carbohydrate source, in each meal. Dietary fats are good to use\nto add flavor to the meal.\n\nYou can find recipe ideas on our website.\n\n\n--- Page 7 ---\n7\n\n5. End on a satiating note\nBecause your appetite is sensory-specific, consuming a new flavor at the end of a meal\ncan partially reawaken your appetite. Research has found that consuming fruit before a\nmeal is more effective for satiety than consuming it afterwards, for example. As a\ngeneral rule, try to ensure you can satiate the last flavor you consume.\n\nIf you do insist on a dessert with a different flavor, make sure to implement the\ncarbonated water (or perhaps soda) trick to prevent that 1 slice of cake from turning into\n1 cake.\n\n\n--- Page 8 ---\n8\n\n6. Optimize your cutlery\nYour brain uses many cues other than energy content to estimate how much food is\n'enough' for you. These includes environmental references of the portion size. We can\nuse these to trick the brain into believing you're eating more food than you are by eating\nwith small forks, spoons and knives and serving your meal on plates that are only just\nlarge enough to contain the meal. Also, serve your food on brightly colored plates that\ncontrast strongly with your food. The result is that your brain perceives your meal as\nlarger due to the Ebbinghaus-Titchener size-contrast illusion and the Delboeuf effect. As\na result, your brain signals more satiety and you eat less.\n\n\n--- Page 9 ---\n9\n\n7. Limit your serving sizes\nPeople eat what they're served. This is called the clean-plate-effect. So only serve\nyourself as much as you think you need, not as much as is available.\n\n\n--- Page 10 ---\n10\n\n8. Eliminate food cues\nYour brain uses food cues, signs of the presence of food in the environment, to\ndetermine how much food is available. Based on that, it stimulates your appetite. This is\nwhy bakers use aromas to give the strong scent of bread that attracts by-walkers. To\navoid your appetite being stimulated by such cues, don't have any food lying on your\nkitchen counter and certainly not on your work desk. All your food should be stored\ninside the kitchen cabinets.\n\n\n--- Page 11 ---\n11\n\n9. Eat at fixed times; don't snack\nA schedule of regular eating times entrains your biorhythm to only evoke hunger at the\ntimes you're accustomed to eating. If you sometimes eat breakfast but not always, you'll\nbe hungry when you don't, but if you never eat breakfast, you get used to it. Concretely,\nit's best to always eat at the same time of day: a 2-hour window is recommended for all\nmeal times.\n\n\n--- Page 12 ---\n12\n\n10. Get enough sleep\nSleep deprivation is bad for everything and your appetite is no exception. Not getting at\nleast 7.5 hours of high quality sleep per night majorly stimulates your appetite.\n\n\n--- Page 13 ---\n13\n\n11. Eat mindfully\nYour mother probably taught you not to talk with your mouth full. That's good advice, as\ndistractions enormously increase how much food you eat. The brain has to actively\nregister food intake to create satiety signals. When the brain is occupied by a TV show,\na laptop screen or the person on the other side of the table, you're consuming energy\nwithout much appetite suppression. Not to mention, you're not enjoying your food then,\nwhich entirely defeats the purpose of eating.\n\nWhen you eat, focus on your food. Savor it. Don't eat in front of a TV or a computer. If\nyou want to talk with somebody, first finish your bite and put your cutlery down.\n\n\n--- Page 14 ---\n14\n\n12. Chewing gum\nOne of the signals your brain uses to register food intake is the act of chewing. Science\nhas provided us with a marvelous invention to take advantage of this system and\nsuppress our appetite: chewing gum. Chewing gum can significantly decrease feelings\nof hunger and reduce how much you eat.\n\nAlso, be sure to properly chew your food. This should occur automatically if you're\neating mindfully.\n\n\n--- Page 15 ---\n15\n\n13. Keep meals high in carbs or fat but not both\nWhen a meal is rich in carbs and fats, it is typically very easy to overeat on compared to\nmeals high in only one or the other and protein. You don't have to completely separate\ncarbs and fats, but it can help not to combine high-carb and high-fat foods in the same\nmeal. For example, you may not overeat on avocado and you may not overeat on rice\nwraps, but if you put avocado in the rice wraps, you get a texture that's easy to overeat\non.",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:42:52.330662",
+  "error": null
+}

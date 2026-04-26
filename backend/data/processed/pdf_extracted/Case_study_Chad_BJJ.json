@@ -1,0 +1,265 @@
+{
+  "filename": "Case study Chad BJJ.pdf",
+  "source": "Case study Chad BJJ.pdf",
+  "file_type": "pdf",
+  "has_tables": true,
+  "strategy": "PyMuPDF text + table extraction -> agentic chunking via Gemini",
+  "num_pages": 7,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nPersonal Training Client Application Form\n\nThe more information you provide, the better I will be able to assist you. If you have\nany questions with regards to this form, please do not hesitate to contact me. You\ncan use whichever measurement system (e.g. metric, imperial) you prefer to fill in\nthis form. Just state which unit you used (e.g. cm, kg, lb, inch).\n\n Full legal name: Chad\n Age: 35\n Height: 5'6\n Weight: 164.4 lbs\n Years of training experience: 22\nFor the section below, please give your current maximum abilities in weight times\nreps, e.g. 250 lb x 6.\n Bench press: 225lbs x 1\n Squat (excluding body weight): 200 lbs front squat x 1 (same as before, due to\na previous back issues I haven't back squatted in a while, but will be starting\nagain this week)\n Chin-up (excluding body weight): 65 lbs max\n Overhead press: 155 lbs max\n\nWhat are your fitness goals?\n\nCurrent bodyweight is at 164.4 and bodyfat is at 17.3% excluding bone content\n(attached to email is full dexa report.)\nI'd like to improve my composition at the current weight and increase athletic\nperformance.\nIn terms of scale weight I'm not far off where I want to be, 161-162 is good for me and\nfor my gi and no-gi competition. However, my composition I'd like to improve a lot,\non a longer timeline.\nWhen we first worked together, before we started the hydrostatic test had me\nbetween 10-11%, and I was around 157.5. My conditioning felt fantastic, but I didn't\nfeel as strong on the mats or in the gym. So I'm not sure if it's feasible to be in the 10-\n12% range on the dexa at 161-162?\nNot sure if improving hormone levels will come along with that, or can be influenced.\nThat'd be a bonus. So my scale weight is almost there, Being between 161-162 works\nfor both gi and no gi, but I feel my composition and performance can improve.",
+      "headings": [
+        "Personal Training Client Application Form"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "BAYESIAN BODYBUILDING 2014\n\n(despite my higher fat levels right now my conditioning feels pretty good, so it'll only\nimprove now).\n\nHow often in a week would you be prepared to train, if this was the optimal training\nfrequency?\n\nCurrently training 5-6 BJJ sessions per week, and 3 weight training sessions. This\nseems to be a good training frequency and load where I see consistent strength gains\nand consistent BJJ improvement.\n\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm,\nstress and activity level.\n\nI own my own business, we run an ad agency and run online traffic for various clients.\nSometimes I walk on my treadmill while doing my work (treadmill desk), but more\noften than not I'm sitting.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes,\ndisorders etc.) you have or had:\n\nNothing severe, have had a history of various injuries and tweaks from sports. About\n3-4 back pulls in my life, nothing life changing thankfully.\n\nRight knee is anecdotally exhibiting some symptoms of worn meniscus. But my back\nhealth has improved a great deal since we last worked together.\n\nAs you may know I had pneumonia and was hospitalized for 3 days about 6-7 weeks\nago. But currently I feel great, lungs feel good.\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNo I do not. Although I'm young I have considered TRT however my current lab work\nhas shown a good improvement in hormone levels. My total, and especially free\ntestosterone levels used to be low for someone of my age, but the latest test I took in\nApril has shown a decent improvement. So I will continue to monitor.\n\nNote that if you answer 'NO' to any of the questions below, I will not be able to take\nyou on as a client.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "BAYESIAN BODYBUILDING 2014\n\n I declare that, while Menno Henselmans is my personal trainer, all the\nsubstances I use are obtained and used in accordance with their governing\nlaws: YES\n\n I forego all rights to hold Menno Henselmans liable for any damages caused in\nrelation to following his advice as my trainer: YES\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please return the filled in form to\nmennohenselmans@bayesianbodybuilding.com and attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps and\nfront relaxed pose.\n\nActivity level: please mark one of the fields below or delete the rest.\n\nOther than training, I would say between sedentary and somewhat\nactive\n Sedentary (e.g. desk job)\n Somewhat active (e.g. doing groceries or walking your dog but otherwise\nsedentary)\nStress level: please mark one of the fields below or delete the rest.\nAverage Stress\n Average stress (e.g. full-time work with deadlines and commuting)\nIf you answered yes to the question on PED usage, you can leave the section below\nblank.\n Wrist circumference:\n Ankle circumference:\n How much did you weigh before you started lifting and what was your height\nat that point? I began lifting when I was 13, I was around 115-120 lbs, and 5'4\"\n Were you heavy as a baby? No, 7 lbs 3 oz\n Please attach a picture to this form in which the back of your right hand is\nclearly visible. Ideally, place your right hand on a flat surface with your fingers\ntouching each other and then take a picture of it.\n\nWhat are the lightest barbell weight plates you have access to? Microweights, below\n1lb.",
+      "headings": [
+        "laws: YES",
+        "relation to following his advice as my trainer: YES",
+        "At this point, you may choose to return this form to me to obtain a price",
+        "quote before filling in the rest. Please return the filled in form to",
+        "front relaxed pose.",
+        "Other than training, I would say between sedentary and somewhat",
+        "active",
+        "Average Stress"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nWhat are the smallest weight increments between the sets of dumbbells you have\naccess to? 2.5 lbs\n\nDo you have access to…\na squat cage or rack? YES\na 45° hyperextension bench? YES\na reverse hyper machine? No but I use a high box\na glute-ham raise? No but I use a barbell/rack to hold my feet in place and do them\non the ground\na standing calf raise machine? No\na dip/chin-up belt? YES\na leg curl machine and if so, is it seated, lying or standing? No\na pair of knee wraps? NO\ngymnastic rings or a TRX? YES both\na seated calf raise where you push your body up (closed chain: see example image\nbelow)? No\n\nPlease list all the supplements you are currently taking:\n\n• 5 gr Creatine monohydrate daily\n• 3 gr beta alanine\n• 1 tablespoon liquid fish oil\n• Curcumin extract\n• Protein powder (whey/egg white mix)\n• Garlic capsules\n• Grape Seed extract for procyanidins source\n• 4000-5000 iu vitamin D daily\n• sometimes citrulline malate pre-workout\n• 3-4 of my BJJ sessions per week I take caffeine in the form of coffee or powdered.\nNot exceeding 100 mg.\n\nPlease describe or attach your current diet plan in detail:",
+      "headings": [
+        "a squat cage or rack?     YES",
+        "a 45° hyperextension bench?    YES",
+        "a dip/chin-up belt?   YES"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nCurrently I'm not really following a diet plan. I tend to eat low carb, unless I train. I'll\ntypically consume around 100-125 g of carbs immediately post workout, and maybe\n20 g pre-workout. Basically I just tend to focus my carbs around my training.\n\nPlease describe or attach your current training program in detail:\n\nMonday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling), 7 pm strength\ntraining. Typically my strength sessions are compound movement based 19-23 sets\nper workout.\nTuesday: 11 AM competition class BJJ training\nWednesday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling\nThursday: 11 AM competition class BJJ training, 8 pm strength training.\nFriday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling)\nSaturday: Strength training\nSunday: Typically rest\n\n*** There is slight variance in this schedule. The main variable would be for example\nI may do the competition training 3x a week vs. the 9 AM BJJ. But that's the main\ndifference. Strength work is at night typically, except Saturday.\n\n***If possible, can you give me the layout for a day if I did strength training at 9 AM,\nand BJJ at 6 PM. It's a rare occasion that this may happen***\n\nAre there any times at which you are unable or unwilling to train? If so, please list\nthem:\n\nThe BJJ sessions are fixed times of course. But I am flexible on the strength training.\nIf you prefer me to do my strength training immediately following my BJJ, it's\npossible. I typically won't do my strength work immediately before BJJ, however.\n\nPlease return the filled in form to mennohenselmans@bayesianbodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows), preferably including a back double biceps and front relaxed\npose. If you recently had blood work done, you can attach its results as well.\n\nHere we have an intermediate-advanced mixed athlete performing at a high level in BJJ. This\nis a typical case where a high carb diet is advisable. In fact, we found later with repeated\nexperimentation, that we could increase his energy intake significantly more on a high carb\ndiet than a more moderate carb diet, likely as the result of increased performance and\nenergy expenditure. Here's his weekly diet set-up.",
+      "headings": [
+        "If you prefer me to do my strength training immediately following my BJJ, it’s"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nSchedule\nMonday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling), 7 pm\nstrength training.\nTuesday: 11 AM competition class BJJ\ntraining\nWednesday: 9 AM BJJ (30 minutes technique, 40-45 mins live\ngrappling\nThursday: 11 AM competition class BJJ training, 8 pm\nstrength training.\nFriday: 9 AM BJJ (30 minutes technique, 40-45 mins live\ngrappling)\nSaturday: Strength training in the\nmorning\nSunday: Typically\nrest\nMeal 1 is best consumed before your first training session, 8-\n10 AM.\nMeal 2 is best consumed after your first training session or 11\nAM-1 PM.\nMeal 3 is best consumed between 4-6\nPM.\nMeal 4 is best consumed after your evening training session\nor 9-11 PM.\nYour rest/cut days are protein sparing modified\nfasts (PSMFs).\nThis means you should aim to minimize caloric\nintake.\nThis effectively means your calories are maxima and your protein intake is a\nminimum.\nDon't worry about the carb:fat\nratio.\nFor satiety, it tends to help to either keep net carbs under 10 g per meal or to\nminimize fat intake.",
+      "headings": [
+        "Schedule"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "BAYESIAN BODYBUILDING 2014\n\nMeal\nMon, Thu\n1\n2\n3\n4\nProtein Intake\n164\n24\n45\n33\n62\nFat Intake\n92\n7\n21\n21\n43\nCarb Intake\n341\n65\n99\n56\n121\nKcal 2847\n418\n765\n545\n1119\nTue, Wed, Fri\n1\n2\n3\n4\nProtein Intake\n136\n24\n45\n33\n34\nFat Intake\n86\n24\n30\n21\n12\nCarb Intake\n277\n62\n91\n56\n68\nKcal 2427\n560\n814\n542\n512\nSat\n1\n2\n3\n4\nProtein Intake\n137\n24\n46\n33\n34\nFat Intake\n87\n22\n33\n21\n12\nCarb Intake\n152\n34\n51\n30\n37\nKcal 1938\n426\n686\n438\n388\nSunday\n1\n2\n3\n4\nProtein Intake\n135\n30\n30\n30\n45\nKcal 1119\n249\n249\n249\n372",
+      "headings": [
+        "Meal",
+        "Mon, Thu",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Protein Intake",
+        "Fat Intake",
+        "Carb Intake",
+        "Kcal 2847",
+        "Tue, Wed, Fri",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Protein Intake",
+        "Fat Intake",
+        "Carb Intake",
+        "Kcal 2427",
+        "Sat",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Protein Intake",
+        "Fat Intake",
+        "Carb Intake",
+        "Kcal 1938",
+        "Sunday",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Protein Intake",
+        "Kcal 1119"
+      ],
+      "tables": [
+        {
+          "page_num": 7,
+          "markdown": "|  |  |  |  |  |  |  | Meal |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Mon, Thu |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 164 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 62 |  |",
+          "bbox": [
+            70.86000061035156,
+            71.26498413085938,
+            524.52001953125,
+            145.39996337890625
+          ]
+        },
+        {
+          "page_num": 7,
+          "markdown": "|  | Carb Intake |  |  | 341 |  |  | 65 |  |  | 99 |  |  | 56 |  |  | 121 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+          "bbox": [
+            70.86000061035156,
+            162.76998901367188,
+            524.52001953125,
+            179.3599853515625
+          ]
+        },
+        {
+          "page_num": 7,
+          "markdown": "|  | Tue, Wed, Fri |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 136 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 34 |  |",
+          "bbox": [
+            70.86000061035156,
+            214.17999267578125,
+            524.52001953125,
+            254.3599853515625
+          ]
+        },
+        {
+          "page_num": 7,
+          "markdown": "|  | Carb Intake |  |  | 277 |  |  | 62 |  |  | 91 |  |  | 56 |  |  | 68 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+          "bbox": [
+            70.86000061035156,
+            271.7900085449219,
+            524.52001953125,
+            288.3800048828125
+          ]
+        },
+        {
+          "page_num": 7,
+          "markdown": "|  | Sat |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 137 |  |  | 24 |  |  | 46 |  |  | 33 |  |  | 34 |  |\n| Fat Intake 87 |  |  |  |  |  | 22 33 21 12 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Carb Intake |  |  | 152 |  |  | 34 |  |  | 51 |  |  | 30 |  |  | 37 |  |\n| Kcal 1938 |  |  |  |  |  | 426 686 438 388 |  |  |  |  |  |  |  |  |  |  |  |",
+          "bbox": [
+            70.86000061035156,
+            323.154288155692,
+            524.52001953125,
+            414.67425537109375
+          ]
+        },
+        {
+          "page_num": 7,
+          "markdown": "|  | Sunday |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Protein Intake 135 |  |  |  |  |  | 30 30 30 45 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 1119 |  |  | 249 |  |  | 249 |  |  | 249 |  |  | 372 |  |",
+          "bbox": [
+            70.86000061035156,
+            432.1856951032366,
+            524.52001953125,
+            489.3999938964844
+          ]
+        }
+      ]
+    }
+  ],
+  "all_headings": [
+    "Personal Training Client Application Form",
+    "laws: YES",
+    "relation to following his advice as my trainer: YES",
+    "At this point, you may choose to return this form to me to obtain a price",
+    "quote before filling in the rest. Please return the filled in form to",
+    "front relaxed pose.",
+    "Other than training, I would say between sedentary and somewhat",
+    "active",
+    "Average Stress",
+    "a squat cage or rack?     YES",
+    "a 45° hyperextension bench?    YES",
+    "a dip/chin-up belt?   YES",
+    "If you prefer me to do my strength training immediately following my BJJ, it’s",
+    "Schedule",
+    "Meal",
+    "Mon, Thu",
+    "1",
+    "2",
+    "3",
+    "4",
+    "Protein Intake",
+    "Fat Intake",
+    "Carb Intake",
+    "Kcal 2847",
+    "Tue, Wed, Fri",
+    "Kcal 2427",
+    "Sat",
+    "Kcal 1938",
+    "Sunday",
+    "Kcal 1119"
+  ],
+  "full_text": "--- Page 1 ---\nBAYESIAN BODYBUILDING 2014\n\nPersonal Training Client Application Form\n\nThe more information you provide, the better I will be able to assist you. If you have\nany questions with regards to this form, please do not hesitate to contact me. You\ncan use whichever measurement system (e.g. metric, imperial) you prefer to fill in\nthis form. Just state which unit you used (e.g. cm, kg, lb, inch).\n\n Full legal name: Chad\n Age: 35\n Height: 5'6\n Weight: 164.4 lbs\n Years of training experience: 22\nFor the section below, please give your current maximum abilities in weight times\nreps, e.g. 250 lb x 6.\n Bench press: 225lbs x 1\n Squat (excluding body weight): 200 lbs front squat x 1 (same as before, due to\na previous back issues I haven't back squatted in a while, but will be starting\nagain this week)\n Chin-up (excluding body weight): 65 lbs max\n Overhead press: 155 lbs max\n\nWhat are your fitness goals?\n\nCurrent bodyweight is at 164.4 and bodyfat is at 17.3% excluding bone content\n(attached to email is full dexa report.)\nI'd like to improve my composition at the current weight and increase athletic\nperformance.\nIn terms of scale weight I'm not far off where I want to be, 161-162 is good for me and\nfor my gi and no-gi competition. However, my composition I'd like to improve a lot,\non a longer timeline.\nWhen we first worked together, before we started the hydrostatic test had me\nbetween 10-11%, and I was around 157.5. My conditioning felt fantastic, but I didn't\nfeel as strong on the mats or in the gym. So I'm not sure if it's feasible to be in the 10-\n12% range on the dexa at 161-162?\nNot sure if improving hormone levels will come along with that, or can be influenced.\nThat'd be a bonus. So my scale weight is almost there, Being between 161-162 works\nfor both gi and no gi, but I feel my composition and performance can improve.\n\n\n--- Page 2 ---\nBAYESIAN BODYBUILDING 2014\n\n(despite my higher fat levels right now my conditioning feels pretty good, so it'll only\nimprove now).\n\nHow often in a week would you be prepared to train, if this was the optimal training\nfrequency?\n\nCurrently training 5-6 BJJ sessions per week, and 3 weight training sessions. This\nseems to be a good training frequency and load where I see consistent strength gains\nand consistent BJJ improvement.\n\nWhat is your occupation? You may be general here, e.g. student/manager/personal\ntrainer/manual labor/doctor. The aim is to characterize your circadian rhythm,\nstress and activity level.\n\nI own my own business, we run an ad agency and run online traffic for various clients.\nSometimes I walk on my treadmill while doing my work (treadmill desk), but more\noften than not I'm sitting.\n\nPlease list any pathologies and injuries (disabilities, allergies, illnesses, syndromes,\ndisorders etc.) you have or had:\n\nNothing severe, have had a history of various injuries and tweaks from sports. About\n3-4 back pulls in my life, nothing life changing thankfully.\n\nRight knee is anecdotally exhibiting some symptoms of worn meniscus. But my back\nhealth has improved a great deal since we last worked together.\n\nAs you may know I had pneumonia and was hospitalized for 3 days about 6-7 weeks\nago. But currently I feel great, lungs feel good.\n\nDo you plan to use any PEDs while under my supervision? If so, please list them:\n\nNo I do not. Although I'm young I have considered TRT however my current lab work\nhas shown a good improvement in hormone levels. My total, and especially free\ntestosterone levels used to be low for someone of my age, but the latest test I took in\nApril has shown a decent improvement. So I will continue to monitor.\n\nNote that if you answer 'NO' to any of the questions below, I will not be able to take\nyou on as a client.\n\n\n--- Page 3 ---\nBAYESIAN BODYBUILDING 2014\n\n I declare that, while Menno Henselmans is my personal trainer, all the\nsubstances I use are obtained and used in accordance with their governing\nlaws: YES\n\n I forego all rights to hold Menno Henselmans liable for any damages caused in\nrelation to following his advice as my trainer: YES\n\nAt this point, you may choose to return this form to me to obtain a price\nquote before filling in the rest. Please return the filled in form to\nmennohenselmans@bayesianbodybuilding.com and attach at least two full-body\npictures of yourself in clear lighting, preferably including a back double biceps and\nfront relaxed pose.\n\nActivity level: please mark one of the fields below or delete the rest.\n\nOther than training, I would say between sedentary and somewhat\nactive\n Sedentary (e.g. desk job)\n Somewhat active (e.g. doing groceries or walking your dog but otherwise\nsedentary)\nStress level: please mark one of the fields below or delete the rest.\nAverage Stress\n Average stress (e.g. full-time work with deadlines and commuting)\nIf you answered yes to the question on PED usage, you can leave the section below\nblank.\n Wrist circumference:\n Ankle circumference:\n How much did you weigh before you started lifting and what was your height\nat that point? I began lifting when I was 13, I was around 115-120 lbs, and 5'4\"\n Were you heavy as a baby? No, 7 lbs 3 oz\n Please attach a picture to this form in which the back of your right hand is\nclearly visible. Ideally, place your right hand on a flat surface with your fingers\ntouching each other and then take a picture of it.\n\nWhat are the lightest barbell weight plates you have access to? Microweights, below\n1lb.\n\n\n--- Page 4 ---\nBAYESIAN BODYBUILDING 2014\n\nWhat are the smallest weight increments between the sets of dumbbells you have\naccess to? 2.5 lbs\n\nDo you have access to…\na squat cage or rack? YES\na 45° hyperextension bench? YES\na reverse hyper machine? No but I use a high box\na glute-ham raise? No but I use a barbell/rack to hold my feet in place and do them\non the ground\na standing calf raise machine? No\na dip/chin-up belt? YES\na leg curl machine and if so, is it seated, lying or standing? No\na pair of knee wraps? NO\ngymnastic rings or a TRX? YES both\na seated calf raise where you push your body up (closed chain: see example image\nbelow)? No\n\nPlease list all the supplements you are currently taking:\n\n• 5 gr Creatine monohydrate daily\n• 3 gr beta alanine\n• 1 tablespoon liquid fish oil\n• Curcumin extract\n• Protein powder (whey/egg white mix)\n• Garlic capsules\n• Grape Seed extract for procyanidins source\n• 4000-5000 iu vitamin D daily\n• sometimes citrulline malate pre-workout\n• 3-4 of my BJJ sessions per week I take caffeine in the form of coffee or powdered.\nNot exceeding 100 mg.\n\nPlease describe or attach your current diet plan in detail:\n\n\n--- Page 5 ---\nBAYESIAN BODYBUILDING 2014\n\nCurrently I'm not really following a diet plan. I tend to eat low carb, unless I train. I'll\ntypically consume around 100-125 g of carbs immediately post workout, and maybe\n20 g pre-workout. Basically I just tend to focus my carbs around my training.\n\nPlease describe or attach your current training program in detail:\n\nMonday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling), 7 pm strength\ntraining. Typically my strength sessions are compound movement based 19-23 sets\nper workout.\nTuesday: 11 AM competition class BJJ training\nWednesday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling\nThursday: 11 AM competition class BJJ training, 8 pm strength training.\nFriday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling)\nSaturday: Strength training\nSunday: Typically rest\n\n*** There is slight variance in this schedule. The main variable would be for example\nI may do the competition training 3x a week vs. the 9 AM BJJ. But that's the main\ndifference. Strength work is at night typically, except Saturday.\n\n***If possible, can you give me the layout for a day if I did strength training at 9 AM,\nand BJJ at 6 PM. It's a rare occasion that this may happen***\n\nAre there any times at which you are unable or unwilling to train? If so, please list\nthem:\n\nThe BJJ sessions are fixed times of course. But I am flexible on the strength training.\nIf you prefer me to do my strength training immediately following my BJJ, it's\npossible. I typically won't do my strength work immediately before BJJ, however.\n\nPlease return the filled in form to mennohenselmans@bayesianbodybuilding.com\nand attach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows), preferably including a back double biceps and front relaxed\npose. If you recently had blood work done, you can attach its results as well.\n\nHere we have an intermediate-advanced mixed athlete performing at a high level in BJJ. This\nis a typical case where a high carb diet is advisable. In fact, we found later with repeated\nexperimentation, that we could increase his energy intake significantly more on a high carb\ndiet than a more moderate carb diet, likely as the result of increased performance and\nenergy expenditure. Here's his weekly diet set-up.\n\n\n--- Page 6 ---\nBAYESIAN BODYBUILDING 2014\n\nSchedule\nMonday: 9 AM BJJ (30 minutes technique, 40-45 mins live grappling), 7 pm\nstrength training.\nTuesday: 11 AM competition class BJJ\ntraining\nWednesday: 9 AM BJJ (30 minutes technique, 40-45 mins live\ngrappling\nThursday: 11 AM competition class BJJ training, 8 pm\nstrength training.\nFriday: 9 AM BJJ (30 minutes technique, 40-45 mins live\ngrappling)\nSaturday: Strength training in the\nmorning\nSunday: Typically\nrest\nMeal 1 is best consumed before your first training session, 8-\n10 AM.\nMeal 2 is best consumed after your first training session or 11\nAM-1 PM.\nMeal 3 is best consumed between 4-6\nPM.\nMeal 4 is best consumed after your evening training session\nor 9-11 PM.\nYour rest/cut days are protein sparing modified\nfasts (PSMFs).\nThis means you should aim to minimize caloric\nintake.\nThis effectively means your calories are maxima and your protein intake is a\nminimum.\nDon't worry about the carb:fat\nratio.\nFor satiety, it tends to help to either keep net carbs under 10 g per meal or to\nminimize fat intake.\n\n\n--- Page 7 ---\nBAYESIAN BODYBUILDING 2014\n\nMeal\nMon, Thu\n1\n2\n3\n4\nProtein Intake\n164\n24\n45\n33\n62\nFat Intake\n92\n7\n21\n21\n43\nCarb Intake\n341\n65\n99\n56\n121\nKcal 2847\n418\n765\n545\n1119\nTue, Wed, Fri\n1\n2\n3\n4\nProtein Intake\n136\n24\n45\n33\n34\nFat Intake\n86\n24\n30\n21\n12\nCarb Intake\n277\n62\n91\n56\n68\nKcal 2427\n560\n814\n542\n512\nSat\n1\n2\n3\n4\nProtein Intake\n137\n24\n46\n33\n34\nFat Intake\n87\n22\n33\n21\n12\nCarb Intake\n152\n34\n51\n30\n37\nKcal 1938\n426\n686\n438\n388\nSunday\n1\n2\n3\n4\nProtein Intake\n135\n30\n30\n30\n45\nKcal 1119\n249\n249\n249\n372\n\n--- EXTRACTED TABLES ---\n\nTable 1 (page 7):\n|  |  |  |  |  |  |  | Meal |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Mon, Thu |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 164 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 62 |  |\n\nTable 2 (page 7):\n|  | Carb Intake |  |  | 341 |  |  | 65 |  |  | 99 |  |  | 56 |  |  | 121 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\nTable 3 (page 7):\n|  | Tue, Wed, Fri |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 136 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 34 |  |\n\nTable 4 (page 7):\n|  | Carb Intake |  |  | 277 |  |  | 62 |  |  | 91 |  |  | 56 |  |  | 68 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n\nTable 5 (page 7):\n|  | Sat |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 137 |  |  | 24 |  |  | 46 |  |  | 33 |  |  | 34 |  |\n| Fat Intake 87 |  |  |  |  |  | 22 33 21 12 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Carb Intake |  |  | 152 |  |  | 34 |  |  | 51 |  |  | 30 |  |  | 37 |  |\n| Kcal 1938 |  |  |  |  |  | 426 686 438 388 |  |  |  |  |  |  |  |  |  |  |  |\n\nTable 6 (page 7):\n|  | Sunday |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Protein Intake 135 |  |  |  |  |  | 30 30 30 45 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 1119 |  |  | 249 |  |  | 249 |  |  | 249 |  |  | 372 |  |\n",
+  "tables": [
+    {
+      "page_num": 7,
+      "markdown": "|  |  |  |  |  |  |  | Meal |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Mon, Thu |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 164 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 62 |  |",
+      "bbox": [
+        70.86000061035156,
+        71.26498413085938,
+        524.52001953125,
+        145.39996337890625
+      ]
+    },
+    {
+      "page_num": 7,
+      "markdown": "|  | Carb Intake |  |  | 341 |  |  | 65 |  |  | 99 |  |  | 56 |  |  | 121 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+      "bbox": [
+        70.86000061035156,
+        162.76998901367188,
+        524.52001953125,
+        179.3599853515625
+      ]
+    },
+    {
+      "page_num": 7,
+      "markdown": "|  | Tue, Wed, Fri |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 136 |  |  | 24 |  |  | 45 |  |  | 33 |  |  | 34 |  |",
+      "bbox": [
+        70.86000061035156,
+        214.17999267578125,
+        524.52001953125,
+        254.3599853515625
+      ]
+    },
+    {
+      "page_num": 7,
+      "markdown": "|  | Carb Intake |  |  | 277 |  |  | 62 |  |  | 91 |  |  | 56 |  |  | 68 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+      "bbox": [
+        70.86000061035156,
+        271.7900085449219,
+        524.52001953125,
+        288.3800048828125
+      ]
+    },
+    {
+      "page_num": 7,
+      "markdown": "|  | Sat |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |\n|  | Protein Intake |  |  | 137 |  |  | 24 |  |  | 46 |  |  | 33 |  |  | 34 |  |\n| Fat Intake 87 |  |  |  |  |  | 22 33 21 12 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Carb Intake |  |  | 152 |  |  | 34 |  |  | 51 |  |  | 30 |  |  | 37 |  |\n| Kcal 1938 |  |  |  |  |  | 426 686 438 388 |  |  |  |  |  |  |  |  |  |  |  |",
+      "bbox": [
+        70.86000061035156,
+        323.154288155692,
+        524.52001953125,
+        414.67425537109375
+      ]
+    },
+    {
+      "page_num": 7,
+      "markdown": "|  | Sunday |  |  |  |  | 1 |  |  | 2 |  |  | 3 |  |  | 4 |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Protein Intake 135 |  |  |  |  |  | 30 30 30 45 |  |  |  |  |  |  |  |  |  |  |  |\n|  | Kcal |  |  | 1119 |  |  | 249 |  |  | 249 |  |  | 249 |  |  | 372 |  |",
+      "bbox": [
+        70.86000061035156,
+        432.1856951032366,
+        524.52001953125,
+        489.3999938964844
+      ]
+    }
+  ],
+  "extracted_at": "2026-04-26T18:42:08.018978",
+  "error": null
+}

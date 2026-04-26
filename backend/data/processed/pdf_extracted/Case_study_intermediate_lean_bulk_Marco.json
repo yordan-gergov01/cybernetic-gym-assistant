@@ -1,0 +1,253 @@
+{
+  "filename": "Case study intermediate lean bulk Marco.pdf",
+  "source": "Case study intermediate lean bulk Marco.pdf",
+  "file_type": "pdf",
+  "has_tables": false,
+  "strategy": "agentic chunking via Gemini (headline + summary + original text)",
+  "num_pages": 13,
+  "pages": [
+    {
+      "page_num": 1,
+      "text": "MennoHenselmans.com\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n• Full legal name\n\n•\nStreet and house\nnumber\n\n• Postal code\n\n•\nCity\n\n•\nCountry\n\n•\nAge\n32\n•\nHeight\n1.74\n•\nWeight\n76 kg\n• Body fat percentage\n(plus estimation\nmethod)\n8 % InBody 270\n• Years of training\nexperience\n7\n\nStrength level\nState your current maximum abilities in weight times reps, e.g. 250 lb x 6\n• Bench press\n110 lb x 10\n• Squat (excl. body\nweight)\n160 lb x 8\n• Chin-up (excl. body\nweight)\nWithout any additional weight x 8",
+      "headings": [
+        "PERSONAL TRAINING CLIENT INTAKE FORM",
+        "General",
+        "Strength level"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 2,
+      "text": "MennoHenselmans.com\n\n• Overhead press\nWith dumbells of 55 lbs x 6\n\nGoals\nWhat are your fitness goals?\nbuilding muscle, I want to look bigger but as lean as possible, shredded\nphysique can be put in second importance, as I really want to have\nmore volume on all my body.\n\nDo you have any muscle groups you do nót want to get bigger?\nI want to get bigger all muscles.\n\nWill you be performing any other form of exercise alongside\nstrength training (e.g. soccer, yoga, Olympic Weightlifting)?\n\nno\n\nWhich of the following options best describes your dedication\nlevel?\nA: Sustainability is most important to me. As long as I'm moving in the\nright direction, I don't care about the rate of progress.\nB: I want to strike a reasonable balance between good results in\nproportion to effort and sustainability.\nC: I will do whatever it takes to achieve maximum results without\ncompromising my health.",
+      "headings": [
+        "Goals",
+        "What are your fitness goals?",
+        "Do you have any muscle groups you do nót want to get bigger?",
+        "Will you be performing any other form of exercise alongside",
+        "strength training (e.g. soccer, yoga, Olympic Weightlifting)?",
+        "Which of the following options best describes your dedication",
+        "level?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 3,
+      "text": "MennoHenselmans.com\n\nC: I will do whatever it takes to achieve maximum results without\ncompromising my health\n\nHow often in a week would you be prepared to train for maximal\nresults?\nI am looking to train 4 times a week, if it is recommended to build\nmuscle in a short/medium time, I want to start seeing results and\nchanges in my body in the shortest time possible.\n\nMisc.\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nDesk job\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had.\nNone.\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nno",
+      "headings": [
+        "How often in a week would you be prepared to train for maximal",
+        "results?",
+        "Misc.",
+        "What is your occupation?",
+        "Please list any pathologies and injuries (disabilities, allergies,",
+        "illnesses, syndromes, disorders etc.) you have or had.",
+        "Do you insist on any special diet (e.g. ketogenic, vegan)?"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 4,
+      "text": "MennoHenselmans.com\n\nDo you plan to use any PEDs while working together? If so, please\nlist them.\nno\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\nThis includes when you're at work. If you don't answer this question\naccurately with detailed times, you may get a program you can't follow(!)\nI am able to train in the mornings from 6 to 7:30 am and in the\nafternoons from 7-9pm. No time for training from 8:00am to 5:30pm\n\nWhich of the following options best describes your day to day\nactivity level aside from your planned training sessions?\nAt this point, you may choose to return this form to\nCoaching@MennoHenselmans.com to obtain a price quote before filling\nin the rest. Please attach at least two full-body pictures of yourself in clear\nlighting, preferably including a back double biceps and front relaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your coach.",
+      "headings": [
+        "Do you plan to use any PEDs while working together? If so, please",
+        "list them.",
+        "Lifestyle",
+        "Are there any times at which you are unable or unwilling to train?",
+        "accurately with detailed times, you may get a program you can’t follow(!)",
+        "Which of the following options best describes your day to day",
+        "activity level aside from your planned training sessions?",
+        "At this point, you may choose to return this form to",
+        "Coaching@MennoHenselmans.com to obtain a price quote before filling",
+        "in the rest. Please attach at least two full-body pictures of yourself in clear"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 5,
+      "text": "MennoHenselmans.com\n\n• Sedentary (e.g. office job)\nx\n\n• Somewhat active (e.g. you walk your dog several times a day or\nyou commute by bicycle)\n\n• Active (e.g. full-time PT, literally on your feet most of the day)\n\n• Very active (e.g. involved in manual labor)\n\nWhich of the following options best describes your stress level?\n• Stress-free (e.g. on holiday)\n\n• Only occasional/mild stress (e.g. student not during exam period)\nx\n• Average stress (e.g. full-time work with deadlines and commuting)\n• High stress (e.g. very high-paced work environment with great\nresponsibility)\n\nHow is your sleep rhythm and quality?\nI usually go to sleep at 11:00pm and wake up at 5:20 if I have to train\nin the morning, or at 6:40 if a will train in the afternoon. When I sleep I\ndo it deeply.\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\nTwo cups per day as an average during the week, no coffee in\nweekends. But coffee does not help me to wake I only take it because I\nlike it.\n\n[Women only] Do you have a regular menstrual cycle? And are you\nusing any form of contraception? If these questions are sensitive, feel",
+      "headings": [
+        "Which of the following options best describes your stress level?",
+        "How is your sleep rhythm and quality?",
+        "How much caffeine do you consume daily on average or on a",
+        "typical work day?",
+        "[Women only] Do you have a regular menstrual cycle? And are you",
+        "using any form of contraception? If these questions are sensitive, feel"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 6,
+      "text": "MennoHenselmans.com\n\nfree to ignore them, but the more information I have, the better I can\nhelp you.\n\nEquipment\nDo you have skinfold calipers and if so, what's the brand and\nmodel?\nno\n\nWhat are the lightest barbell weight plates you have access to?\n5 lbs\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\nEach 5 lbs\n\nDo you have access to…\n•\na squat cage or rack?\nyes\n• a 45° hyperextension bench?\n45\n• a reverse hyper machine?\nno",
+      "headings": [
+        "Equipment",
+        "Do you have skinfold calipers and if so, what’s the brand and",
+        "model?",
+        "What are the lightest barbell weight plates you have access to?",
+        "What are the smallest weight increments between the sets of",
+        "dumbbells you have access to?",
+        "Do you have access to…"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 7,
+      "text": "MennoHenselmans.com\n\n• a glute-ham raise?\n\nno\n• a standing calf raise machine?\nyes\n• a dip/chin-up belt?\nno\n• a leg curl machine and if so, is it seated, lying or\nstanding?\n• a leg extension machine?\nYes/ lying and\nseated\nyes\n• a pair of knee wraps?\nNo, but I can buy\nthem\n• gymnastic rings?\nno\n• a TRX or similar suspension device?\nyes\n• powerlifting bands (not the light home workout\nstuff)?\nNo, but I can buy\nthem\n• powerlifting chains?\nno\n• a seated calf raise and if so, is it closed chain where\nyou push your body up (see example image below) or\ndifferent?\n\nYes, as the\nexample.\n• a cable tower and if so, is it adjustable?\nYes, it is adjustale.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 8,
+      "text": "MennoHenselmans.com\n\nNote that you don't need access to all of the above equipment to have a\ngood training program. I'm mainly asking for the more uncommon pieces\nof equipment here.\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\n\nno\n\nSupplements\nPlease list all the supplements you are currently taking.\nWhey Isolate protein, glutamine, creatine, BCAAs\n\nGenetics\n•\nWrist circumference (smallest point)\n17cm\n• Ankle circumference (smallest point)\n21cm",
+      "headings": [
+        "Does your available equipment differ from that in most gyms in",
+        "any other way (e.g. you train in a Crossfit box or at home)?",
+        "Supplements",
+        "Genetics"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 9,
+      "text": "MennoHenselmans.com\n\n• How much did you weigh before you started\nlifting and what was your height at that point?\n58kg , 171cm\n• Were you heavy as a baby?\nNO\n\nPlease attach a picture to this form in which the back of your right hand is\nclearly visible: place your right hand on a flat surface with your fingers\ntouching each other and then take a picture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail.\n\nMeal 1 - protein shake with banana and oats zero sugar\nMeal 2 - white eggs with vegetables + 2 pieces of white bread + 1 cup\nof fruit\nMeal 3 - 1 cup of rice + 200g of chicken breast + 1 cup of salad ½\navocado\nMeal 4 - 2 cups of rice + 200g of meat + 1 cup of salad + ½ avocado\nMeal 5 - 2 pieces of rice cakes with 1 spoon of almond butter\nMeal 6 - 200g of salmon + 2 tortillas + ½ avocado + salad\n\nPlease describe or attach your current training program in detail.",
+      "headings": [
+        "Current Program"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 10,
+      "text": "MennoHenselmans.com\n\nBro split\n\nPlease return completed form to Coaching@MennoHenselmans.com and\nattach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows; not your most flattering Facebook selfies), preferably\nincluding a back double biceps and front relaxed pose.\nIf you recently had blood work done, please attach its results as well.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 11,
+      "text": "MennoHenselmans.com\n\nDesigning Marco's diet\nHere we have an intermediate+ level 'bodybuilder' that wants to do a lean\nbulk with a training frequency of 4x/wk. His strength level is only\nintermediate, but this body composition is clearly advanced, so for the\nsake of his energy surplus, I've given him a 3% energy surplus with a\nlittle extra on consecutive training days (see below).\n\nPAL: Desk job so 1.\n\nTEF: He's dedicated so 20%.\n\nWith a BW of 76 kg and 8% BF based on his InBody scan, that gives him a\nBMR of 1880 and a maintenance intake of 2569.\n\nProtein intake: I've added 2 to this bodyweight since he'll get there\nquickly during the bulk and then multiplied this by 1.8 to get 140 g\nprotein per day on average.\n\nFat intake: I've gone with 30% of total energy intake here, i.e. 88 g per\nday on average. Since he'll have plenty of calories to fill in, I've added a\nnote this is the minimum and he's free to increase this up to 45% of\nenergy intake.\n\nCarbohydrates fill in the remainder, i.e. 322 g per day on average.\n\nNutrient timing: He trains 4x per week and he's quite advanced, so if he\nwould train in the mornings, I might have gone with a diet set-up with 4\nbulk days and 3 cut/PSMF. However, training in the evening is preferable,\nwhich leaves time for only a single meal followed by the overnight fast.\nThat means firstly that we want an early morning meal and thus a meal\nfrequency of at least 4 without morning IF. Secondly, his anabolic window",
+      "headings": [
+        "Designing Marco’s diet"
+      ],
+      "tables": []
+    },
+    {
+      "page_num": 12,
+      "text": "MennoHenselmans.com\n\nwill extend well into the next day. The majority of his anabolic window will\nactually take place on his rest days. Thus, I've gone for a simple constant\ndaily energy intake.\n\nI've also distributed his fat intake equally over time, as fat has no timing\nrequirement and there's no need for major calorie cycling here.\n\nFor carbohydrate and protein timing, things get a bit more complex. On\nhis first training days, I've allocated double the protein and carbohydrate\nintake to his last post-workout meal of the day, as this will be his only\nmeal in the anabolic window (easily calculated by multiplying the daily\ntotal by 1/5th for meals 1-4 and 2/5th for meal 4).\nThen on the next rest day I've gone with 4 square meals a day, as this\nwhole day will likely fall in his anabolic window with his high training\nvolume per session.\nOnce a week we'll have a consecutive training day. In this case I've gone\nfor the higher rest day macros for meals 1-3 and the higher post-workout\nmeal macros from his training day. Note that for simplicity's sake, you\ncould make all training days the same and it wouldn't make much of a\ndifference in his results.\nLastly, I've added PSMF instructions in case he ever gets a consecutive\nrest day.\n\nSee the macro overview I gave him below.",
+      "headings": [],
+      "tables": []
+    },
+    {
+      "page_num": 13,
+      "text": "MennoHenselmans.com\n\nTraining days (3x)\nBreakfast\nLunch\nPre-workout\nPost-workout\nTotal\nProtein (g)\n28\n28\n28\n56\n140\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n64\n64\n64\n128\n320\nKcal\n566\n566\n566\n934\n2633\nConsecutive training days (1x)\nBreakfast\nLunch\nPre-workout\nPost-workout\nTotal\nProtein (g)\n35\n35\n35\n56\n161\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n80\n80\n80\n128\n368\nKcal\n658\n658\n658\n934\n2909\nRest days (3x)\nBreakfast\nLunch\nAfternoon\nDinner\nTotal\nProtein (g)\n35\n35\n35\n35\n140\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n80\n80\n80\n80\n320\nKcal\n658\n658\n658\n658\n2633\nConsecutive rest days (unplanned)\nBreakfast\nLunch\nAfternoon\nDinner\nTotal\nProtein (g)\n30\n30\n30\n46\n137\nKcal\n295\n295\n295\n442\n1327\nMeal",
+      "headings": [
+        "MennoHenselmans.com",
+        "Training days (3x)",
+        "Breakfast",
+        "Lunch",
+        "Pre-workout",
+        "Post-workout",
+        "Total",
+        "Protein (g)",
+        "Fat (g)",
+        "Carbohydrate (g)",
+        "Kcal",
+        "Consecutive training days (1x)",
+        "Breakfast",
+        "Lunch",
+        "Pre-workout",
+        "Post-workout",
+        "Total",
+        "Protein (g)",
+        "Fat (g)",
+        "Carbohydrate (g)",
+        "Kcal",
+        "Rest days (3x)",
+        "Breakfast",
+        "Lunch",
+        "Afternoon",
+        "Dinner",
+        "Total",
+        "Protein (g)",
+        "Fat (g)",
+        "Carbohydrate (g)",
+        "Kcal",
+        "Consecutive rest days (unplanned)",
+        "Breakfast",
+        "Lunch",
+        "Afternoon",
+        "Dinner",
+        "Total",
+        "Protein (g)",
+        "Kcal",
+        "Meal"
+      ],
+      "tables": []
+    }
+  ],
+  "all_headings": [
+    "PERSONAL TRAINING CLIENT INTAKE FORM",
+    "General",
+    "Strength level",
+    "Goals",
+    "What are your fitness goals?",
+    "Do you have any muscle groups you do nót want to get bigger?",
+    "Will you be performing any other form of exercise alongside",
+    "strength training (e.g. soccer, yoga, Olympic Weightlifting)?",
+    "Which of the following options best describes your dedication",
+    "level?",
+    "How often in a week would you be prepared to train for maximal",
+    "results?",
+    "Misc.",
+    "What is your occupation?",
+    "Please list any pathologies and injuries (disabilities, allergies,",
+    "illnesses, syndromes, disorders etc.) you have or had.",
+    "Do you insist on any special diet (e.g. ketogenic, vegan)?",
+    "Do you plan to use any PEDs while working together? If so, please",
+    "list them.",
+    "Lifestyle",
+    "Are there any times at which you are unable or unwilling to train?",
+    "accurately with detailed times, you may get a program you can’t follow(!)",
+    "Which of the following options best describes your day to day",
+    "activity level aside from your planned training sessions?",
+    "At this point, you may choose to return this form to",
+    "Coaching@MennoHenselmans.com to obtain a price quote before filling",
+    "in the rest. Please attach at least two full-body pictures of yourself in clear",
+    "Which of the following options best describes your stress level?",
+    "How is your sleep rhythm and quality?",
+    "How much caffeine do you consume daily on average or on a",
+    "typical work day?",
+    "[Women only] Do you have a regular menstrual cycle? And are you",
+    "using any form of contraception? If these questions are sensitive, feel",
+    "Equipment",
+    "Do you have skinfold calipers and if so, what’s the brand and",
+    "model?",
+    "What are the lightest barbell weight plates you have access to?",
+    "What are the smallest weight increments between the sets of",
+    "dumbbells you have access to?",
+    "Do you have access to…",
+    "Does your available equipment differ from that in most gyms in",
+    "any other way (e.g. you train in a Crossfit box or at home)?",
+    "Supplements",
+    "Genetics",
+    "Current Program",
+    "Designing Marco’s diet",
+    "MennoHenselmans.com",
+    "Training days (3x)",
+    "Breakfast",
+    "Lunch",
+    "Pre-workout",
+    "Post-workout",
+    "Total",
+    "Protein (g)",
+    "Fat (g)",
+    "Carbohydrate (g)",
+    "Kcal",
+    "Consecutive training days (1x)",
+    "Rest days (3x)",
+    "Afternoon",
+    "Dinner",
+    "Consecutive rest days (unplanned)",
+    "Meal"
+  ],
+  "full_text": "--- Page 1 ---\nMennoHenselmans.com\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n• Full legal name\n\n•\nStreet and house\nnumber\n\n• Postal code\n\n•\nCity\n\n•\nCountry\n\n•\nAge\n32\n•\nHeight\n1.74\n•\nWeight\n76 kg\n• Body fat percentage\n(plus estimation\nmethod)\n8 % InBody 270\n• Years of training\nexperience\n7\n\nStrength level\nState your current maximum abilities in weight times reps, e.g. 250 lb x 6\n• Bench press\n110 lb x 10\n• Squat (excl. body\nweight)\n160 lb x 8\n• Chin-up (excl. body\nweight)\nWithout any additional weight x 8\n\n\n--- Page 2 ---\nMennoHenselmans.com\n\n• Overhead press\nWith dumbells of 55 lbs x 6\n\nGoals\nWhat are your fitness goals?\nbuilding muscle, I want to look bigger but as lean as possible, shredded\nphysique can be put in second importance, as I really want to have\nmore volume on all my body.\n\nDo you have any muscle groups you do nót want to get bigger?\nI want to get bigger all muscles.\n\nWill you be performing any other form of exercise alongside\nstrength training (e.g. soccer, yoga, Olympic Weightlifting)?\n\nno\n\nWhich of the following options best describes your dedication\nlevel?\nA: Sustainability is most important to me. As long as I'm moving in the\nright direction, I don't care about the rate of progress.\nB: I want to strike a reasonable balance between good results in\nproportion to effort and sustainability.\nC: I will do whatever it takes to achieve maximum results without\ncompromising my health.\n\n\n--- Page 3 ---\nMennoHenselmans.com\n\nC: I will do whatever it takes to achieve maximum results without\ncompromising my health\n\nHow often in a week would you be prepared to train for maximal\nresults?\nI am looking to train 4 times a week, if it is recommended to build\nmuscle in a short/medium time, I want to start seeing results and\nchanges in my body in the shortest time possible.\n\nMisc.\nWhat is your occupation?\nYou may be general here, e.g. student/manager/personal trainer/manual\nlabor/doctor. The aim is to characterize your circadian rhythm, stress and\nactivity level.\nDesk job\n\nPlease list any pathologies and injuries (disabilities, allergies,\nillnesses, syndromes, disorders etc.) you have or had.\nNone.\n\nDo you insist on any special diet (e.g. ketogenic, vegan)?\nno\n\n\n--- Page 4 ---\nMennoHenselmans.com\n\nDo you plan to use any PEDs while working together? If so, please\nlist them.\nno\n\nLifestyle\nAre there any times at which you are unable or unwilling to train?\nThis includes when you're at work. If you don't answer this question\naccurately with detailed times, you may get a program you can't follow(!)\nI am able to train in the mornings from 6 to 7:30 am and in the\nafternoons from 7-9pm. No time for training from 8:00am to 5:30pm\n\nWhich of the following options best describes your day to day\nactivity level aside from your planned training sessions?\nAt this point, you may choose to return this form to\nCoaching@MennoHenselmans.com to obtain a price quote before filling\nin the rest. Please attach at least two full-body pictures of yourself in clear\nlighting, preferably including a back double biceps and front relaxed pose.\n\nLegal disclaimer: By returning this intake form, you declare that while Menno\nHenselmans is your personal trainer, all the substances you use are obtained\nand used in accordance with their governing laws and you forego all rights to\nhold Menno Henselmans liable for any damages caused in relation to following\nhis advice as your coach.\n\n\n--- Page 5 ---\nMennoHenselmans.com\n\n• Sedentary (e.g. office job)\nx\n\n• Somewhat active (e.g. you walk your dog several times a day or\nyou commute by bicycle)\n\n• Active (e.g. full-time PT, literally on your feet most of the day)\n\n• Very active (e.g. involved in manual labor)\n\nWhich of the following options best describes your stress level?\n• Stress-free (e.g. on holiday)\n\n• Only occasional/mild stress (e.g. student not during exam period)\nx\n• Average stress (e.g. full-time work with deadlines and commuting)\n• High stress (e.g. very high-paced work environment with great\nresponsibility)\n\nHow is your sleep rhythm and quality?\nI usually go to sleep at 11:00pm and wake up at 5:20 if I have to train\nin the morning, or at 6:40 if a will train in the afternoon. When I sleep I\ndo it deeply.\n\nHow much caffeine do you consume daily on average or on a\ntypical work day?\nTwo cups per day as an average during the week, no coffee in\nweekends. But coffee does not help me to wake I only take it because I\nlike it.\n\n[Women only] Do you have a regular menstrual cycle? And are you\nusing any form of contraception? If these questions are sensitive, feel\n\n\n--- Page 6 ---\nMennoHenselmans.com\n\nfree to ignore them, but the more information I have, the better I can\nhelp you.\n\nEquipment\nDo you have skinfold calipers and if so, what's the brand and\nmodel?\nno\n\nWhat are the lightest barbell weight plates you have access to?\n5 lbs\n\nWhat are the smallest weight increments between the sets of\ndumbbells you have access to?\nEach 5 lbs\n\nDo you have access to…\n•\na squat cage or rack?\nyes\n• a 45° hyperextension bench?\n45\n• a reverse hyper machine?\nno\n\n\n--- Page 7 ---\nMennoHenselmans.com\n\n• a glute-ham raise?\n\nno\n• a standing calf raise machine?\nyes\n• a dip/chin-up belt?\nno\n• a leg curl machine and if so, is it seated, lying or\nstanding?\n• a leg extension machine?\nYes/ lying and\nseated\nyes\n• a pair of knee wraps?\nNo, but I can buy\nthem\n• gymnastic rings?\nno\n• a TRX or similar suspension device?\nyes\n• powerlifting bands (not the light home workout\nstuff)?\nNo, but I can buy\nthem\n• powerlifting chains?\nno\n• a seated calf raise and if so, is it closed chain where\nyou push your body up (see example image below) or\ndifferent?\n\nYes, as the\nexample.\n• a cable tower and if so, is it adjustable?\nYes, it is adjustale.\n\n\n--- Page 8 ---\nMennoHenselmans.com\n\nNote that you don't need access to all of the above equipment to have a\ngood training program. I'm mainly asking for the more uncommon pieces\nof equipment here.\n\nDoes your available equipment differ from that in most gyms in\nany other way (e.g. you train in a Crossfit box or at home)?\n\nno\n\nSupplements\nPlease list all the supplements you are currently taking.\nWhey Isolate protein, glutamine, creatine, BCAAs\n\nGenetics\n•\nWrist circumference (smallest point)\n17cm\n• Ankle circumference (smallest point)\n21cm\n\n\n--- Page 9 ---\nMennoHenselmans.com\n\n• How much did you weigh before you started\nlifting and what was your height at that point?\n58kg , 171cm\n• Were you heavy as a baby?\nNO\n\nPlease attach a picture to this form in which the back of your right hand is\nclearly visible: place your right hand on a flat surface with your fingers\ntouching each other and then take a picture of it.\n\nCurrent Program\nPlease describe or attach your current diet plan in detail.\n\nMeal 1 - protein shake with banana and oats zero sugar\nMeal 2 - white eggs with vegetables + 2 pieces of white bread + 1 cup\nof fruit\nMeal 3 - 1 cup of rice + 200g of chicken breast + 1 cup of salad ½\navocado\nMeal 4 - 2 cups of rice + 200g of meat + 1 cup of salad + ½ avocado\nMeal 5 - 2 pieces of rice cakes with 1 spoon of almond butter\nMeal 6 - 200g of salmon + 2 tortillas + ½ avocado + salad\n\nPlease describe or attach your current training program in detail.\n\n\n--- Page 10 ---\nMennoHenselmans.com\n\nBro split\n\nPlease return completed form to Coaching@MennoHenselmans.com and\nattach at least two full-body pictures of yourself in clear lighting (without\nexcessive shadows; not your most flattering Facebook selfies), preferably\nincluding a back double biceps and front relaxed pose.\nIf you recently had blood work done, please attach its results as well.\n\n\n--- Page 11 ---\nMennoHenselmans.com\n\nDesigning Marco's diet\nHere we have an intermediate+ level 'bodybuilder' that wants to do a lean\nbulk with a training frequency of 4x/wk. His strength level is only\nintermediate, but this body composition is clearly advanced, so for the\nsake of his energy surplus, I've given him a 3% energy surplus with a\nlittle extra on consecutive training days (see below).\n\nPAL: Desk job so 1.\n\nTEF: He's dedicated so 20%.\n\nWith a BW of 76 kg and 8% BF based on his InBody scan, that gives him a\nBMR of 1880 and a maintenance intake of 2569.\n\nProtein intake: I've added 2 to this bodyweight since he'll get there\nquickly during the bulk and then multiplied this by 1.8 to get 140 g\nprotein per day on average.\n\nFat intake: I've gone with 30% of total energy intake here, i.e. 88 g per\nday on average. Since he'll have plenty of calories to fill in, I've added a\nnote this is the minimum and he's free to increase this up to 45% of\nenergy intake.\n\nCarbohydrates fill in the remainder, i.e. 322 g per day on average.\n\nNutrient timing: He trains 4x per week and he's quite advanced, so if he\nwould train in the mornings, I might have gone with a diet set-up with 4\nbulk days and 3 cut/PSMF. However, training in the evening is preferable,\nwhich leaves time for only a single meal followed by the overnight fast.\nThat means firstly that we want an early morning meal and thus a meal\nfrequency of at least 4 without morning IF. Secondly, his anabolic window\n\n\n--- Page 12 ---\nMennoHenselmans.com\n\nwill extend well into the next day. The majority of his anabolic window will\nactually take place on his rest days. Thus, I've gone for a simple constant\ndaily energy intake.\n\nI've also distributed his fat intake equally over time, as fat has no timing\nrequirement and there's no need for major calorie cycling here.\n\nFor carbohydrate and protein timing, things get a bit more complex. On\nhis first training days, I've allocated double the protein and carbohydrate\nintake to his last post-workout meal of the day, as this will be his only\nmeal in the anabolic window (easily calculated by multiplying the daily\ntotal by 1/5th for meals 1-4 and 2/5th for meal 4).\nThen on the next rest day I've gone with 4 square meals a day, as this\nwhole day will likely fall in his anabolic window with his high training\nvolume per session.\nOnce a week we'll have a consecutive training day. In this case I've gone\nfor the higher rest day macros for meals 1-3 and the higher post-workout\nmeal macros from his training day. Note that for simplicity's sake, you\ncould make all training days the same and it wouldn't make much of a\ndifference in his results.\nLastly, I've added PSMF instructions in case he ever gets a consecutive\nrest day.\n\nSee the macro overview I gave him below.\n\n\n--- Page 13 ---\nMennoHenselmans.com\n\nTraining days (3x)\nBreakfast\nLunch\nPre-workout\nPost-workout\nTotal\nProtein (g)\n28\n28\n28\n56\n140\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n64\n64\n64\n128\n320\nKcal\n566\n566\n566\n934\n2633\nConsecutive training days (1x)\nBreakfast\nLunch\nPre-workout\nPost-workout\nTotal\nProtein (g)\n35\n35\n35\n56\n161\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n80\n80\n80\n128\n368\nKcal\n658\n658\n658\n934\n2909\nRest days (3x)\nBreakfast\nLunch\nAfternoon\nDinner\nTotal\nProtein (g)\n35\n35\n35\n35\n140\nFat (g)\n22\n22\n22\n22\n88\nCarbohydrate (g)\n80\n80\n80\n80\n320\nKcal\n658\n658\n658\n658\n2633\nConsecutive rest days (unplanned)\nBreakfast\nLunch\nAfternoon\nDinner\nTotal\nProtein (g)\n30\n30\n30\n46\n137\nKcal\n295\n295\n295\n442\n1327\nMeal",
+  "tables": [],
+  "extracted_at": "2026-04-26T18:42:09.998152",
+  "error": null
+}
