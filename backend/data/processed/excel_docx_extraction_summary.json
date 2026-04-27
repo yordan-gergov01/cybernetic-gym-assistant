@@ -1,0 +1,108 @@
+{
+  "extracted_at": "2026-04-27T20:00:40.432565",
+  "excel_success": 15,
+  "excel_errors": [],
+  "docx_success": 3,
+  "docx_errors": [],
+  "calculators": [
+    "one_rep_max",
+    "energy_intake",
+    "energy_balance",
+    "caliper_bf",
+    "training_volume"
+  ],
+  "excel_files": [
+    {
+      "filename": "1RM Calculator MennoHenselmans.com.xlsx",
+      "is_calculator": true,
+      "sheets": 1
+    },
+    {
+      "filename": "Caliper usage case study.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Case study booty building.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Case study diet design Bart novice + intermediate.xlsx",
+      "is_calculator": false,
+      "sheets": 2
+    },
+    {
+      "filename": "Case study diet design heavyweight BB.xlsx",
+      "is_calculator": false,
+      "sheets": 2
+    },
+    {
+      "filename": "Case study difficult progression during Physique contest prep.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Case study excellent lean bulk.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Case study MP competitor offseason shoulder rehab.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Case study training without weights gym.xlsx",
+      "is_calculator": false,
+      "sheets": 3
+    },
+    {
+      "filename": "Female powerlifter in home gym case study.xlsx",
+      "is_calculator": false,
+      "sheets": 2
+    },
+    {
+      "filename": "Henselmans Caliper Body Fat Percentage Calculator.xlsx",
+      "is_calculator": true,
+      "sheets": 1
+    },
+    {
+      "filename": "Henselmans Energy Balance Calculator.xlsx",
+      "is_calculator": true,
+      "sheets": 2
+    },
+    {
+      "filename": "Henselmans Energy intake calculator.xlsx",
+      "is_calculator": true,
+      "sheets": 2
+    },
+    {
+      "filename": "National powerlifting champion case study.xlsx",
+      "is_calculator": false,
+      "sheets": 1
+    },
+    {
+      "filename": "Training volume calculator MennoHenselmans.com.xlsx",
+      "is_calculator": true,
+      "sheets": 1
+    }
+  ],
+  "docx_files": [
+    {
+      "filename": "Henselmans Coaching Client Intake Form.docx",
+      "paragraphs": 43,
+      "tables": 6
+    },
+    {
+      "filename": "Muscle Functional Anatomy PTC 2023.docx",
+      "paragraphs": 289,
+      "tables": 0
+    },
+    {
+      "filename": "Program adherence assessment.docx",
+      "paragraphs": 30,
+      "tables": 0
+    }
+  ]
+}

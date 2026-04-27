@@ -1,0 +1,18 @@
+{
+  "filename": "Henselmans Caliper Body Fat Percentage Calculator.xlsx",
+  "source": "Henselmans Caliper Body Fat Percentage Calculator.xlsx",
+  "file_type": "excel",
+  "is_calculator": true,
+  "calculator_id": "caliper_bf",
+  "sheets": [
+    {
+      "sheet_name": "BF% Calculator",
+      "markdown": "|  | Women | Men |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Phenotype is black (1 = yes, 0 = no) | 0 | 1 |  |  |  |  |  |  |  |  |\n| Age | 31 | 30 |  | Click here for the skinfold location instructions. |  |  |  |  |  |  |\n| Chest skinfold (mm) | NA | 3 |  | Click here for the caliper usage instructions. |  |  |  |  |  |  |\n| Subscapular skinfold (mm) | NA | 11 |  |  |  |  |  |  |  |  |\n| Mid-axillary skinfold (mm) | NA | 5 |  |  |  |  |  |  |  |  |\n| Suprailiac skinfold (mm) | 5 | 4.7 |  |  |  |  |  |  |  |  |\n| Umbilical skinfold (mm) | 7 | 10.1 |  |  |  |  |  |  |  |  |\n| Thigh skinfold (mm) | 21 | 15.2 |  |  |  |  |  |  |  |  |\n| Triceps skinfold (mm) | 11 | 7 |  |  |  |  |  |  |  |  |\n| Body fat percentage | 16.8453 | 9.5565 |  |  |  |  |  |  |  |  |\n| Computations by Menno Henselmans based on the gender specific Jackson et al., |  |  |  |  |  |  |  |  |  |  |\n| the CE-corrected Evans C3, Brozek et al., Evans E3 and Oliver et al. model 3. |  |  |  |  |  |  |  |  |  |  |",
+      "rows": 30,
+      "cols": 11
+    }
+  ],
+  "full_text": "# Henselmans Caliper Body Fat Percentage Calculator.xlsx\n\n## Sheet: BF% Calculator\n\n|  | Women | Men |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| Phenotype is black (1 = yes, 0 = no) | 0 | 1 |  |  |  |  |  |  |  |  |\n| Age | 31 | 30 |  | Click here for the skinfold location instructions. |  |  |  |  |  |  |\n| Chest skinfold (mm) | NA | 3 |  | Click here for the caliper usage instructions. |  |  |  |  |  |  |\n| Subscapular skinfold (mm) | NA | 11 |  |  |  |  |  |  |  |  |\n| Mid-axillary skinfold (mm) | NA | 5 |  |  |  |  |  |  |  |  |\n| Suprailiac skinfold (mm) | 5 | 4.7 |  |  |  |  |  |  |  |  |\n| Umbilical skinfold (mm) | 7 | 10.1 |  |  |  |  |  |  |  |  |\n| Thigh skinfold (mm) | 21 | 15.2 |  |  |  |  |  |  |  |  |\n| Triceps skinfold (mm) | 11 | 7 |  |  |  |  |  |  |  |  |\n| Body fat percentage | 16.8453 | 9.5565 |  |  |  |  |  |  |  |  |\n| Computations by Menno Henselmans based on the gender specific Jackson et al., |  |  |  |  |  |  |  |  |  |  |\n| the CE-corrected Evans C3, Brozek et al., Evans E3 and Oliver et al. model 3. |  |  |  |  |  |  |  |  |  |  |",
+  "extracted_at": "2026-04-27T19:35:31.799055",
+  "error": null
+}
