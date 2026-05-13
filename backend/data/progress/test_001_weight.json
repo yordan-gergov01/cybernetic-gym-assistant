@@ -1,0 +1,335 @@
+{
+  "user_id": "test_001",
+  "entries": [
+    {
+      "date": "2026-02-15",
+      "weight_kg": 87.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-16",
+      "weight_kg": 87.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-18",
+      "weight_kg": 87.2,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-19",
+      "weight_kg": 87.6,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-20",
+      "weight_kg": 87.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-21",
+      "weight_kg": 87.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-22",
+      "weight_kg": 87.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-24",
+      "weight_kg": 87.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-25",
+      "weight_kg": 87.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-26",
+      "weight_kg": 86.6,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-27",
+      "weight_kg": 87.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-02-28",
+      "weight_kg": 87.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-02",
+      "weight_kg": 86.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-03",
+      "weight_kg": 85.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-04",
+      "weight_kg": 86.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-06",
+      "weight_kg": 86.2,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-07",
+      "weight_kg": 86.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-08",
+      "weight_kg": 86.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-09",
+      "weight_kg": 86.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-10",
+      "weight_kg": 86.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-11",
+      "weight_kg": 86.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-12",
+      "weight_kg": 85.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-13",
+      "weight_kg": 86.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-14",
+      "weight_kg": 87.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-15",
+      "weight_kg": 86.3,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-16",
+      "weight_kg": 86.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-17",
+      "weight_kg": 86.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-18",
+      "weight_kg": 85.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-19",
+      "weight_kg": 86.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-20",
+      "weight_kg": 85.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-21",
+      "weight_kg": 85.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-23",
+      "weight_kg": 85.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-24",
+      "weight_kg": 85.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-25",
+      "weight_kg": 85.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-26",
+      "weight_kg": 85.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-27",
+      "weight_kg": 84.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-30",
+      "weight_kg": 85.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-03-31",
+      "weight_kg": 85.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-01",
+      "weight_kg": 84.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-02",
+      "weight_kg": 84.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-03",
+      "weight_kg": 84.2,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-06",
+      "weight_kg": 85.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-07",
+      "weight_kg": 84.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-08",
+      "weight_kg": 84.2,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-09",
+      "weight_kg": 84.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-11",
+      "weight_kg": 84.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-14",
+      "weight_kg": 83.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-15",
+      "weight_kg": 84.3,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-17",
+      "weight_kg": 83.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-18",
+      "weight_kg": 83.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-20",
+      "weight_kg": 84.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-21",
+      "weight_kg": 82.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-22",
+      "weight_kg": 84.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-23",
+      "weight_kg": 82.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-25",
+      "weight_kg": 83.4,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-26",
+      "weight_kg": 82.5,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-28",
+      "weight_kg": 82.6,
+      "notes": ""
+    },
+    {
+      "date": "2026-04-29",
+      "weight_kg": 82.9,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-01",
+      "weight_kg": 83.0,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-02",
+      "weight_kg": 82.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-03",
+      "weight_kg": 82.7,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-04",
+      "weight_kg": 82.1,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-05",
+      "weight_kg": 82.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-06",
+      "weight_kg": 82.8,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-08",
+      "weight_kg": 82.2,
+      "notes": ""
+    },
+    {
+      "date": "2026-05-09",
+      "weight_kg": 82.0,
+      "notes": ""
+    }
+  ]
+}

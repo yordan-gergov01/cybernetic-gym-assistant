@@ -1,0 +1,13 @@
+"""Bridge to notebook-era calculators in backend/tools/."""
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+_BACKEND_ROOT = Path(__file__).resolve().parents[2]
+if str(_BACKEND_ROOT) not in sys.path:
+    sys.path.insert(0, str(_BACKEND_ROOT))
+
+from tools.calculators import run_all_calculators  # noqa: E402
+
+__all__ = ["run_all_calculators"]
