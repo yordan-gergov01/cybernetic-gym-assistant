@@ -53,6 +53,43 @@ def chat_system_v1(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+def chat_system_v2(response_language: str, profile_block: str, context: str) -> str:
+    """Grounded variant: forces answers to lean on retrieved context, cite sources,
+    and admit when the course material does not cover the question."""
+    bg = _is_bulgarian(response_language)
+    has_context = bool(context.strip())
+    if bg:
+        intro = "Ти си персонален AI фитнес треньор по методологията на Menno Henselmans."
+        grounding = (
+            "ОСНОВАВАНЕ: Отговаряй приоритетно спрямо КОНТЕКСТА от курса по-долу. "
+            "Когато твърдиш нещо от материалите, цитирай източника в скоби (напр. [Protein PTC 2022.pdf]). "
+            "Ако контекстът НЕ покрива въпроса, кажи ясно, че нямаш конкретна информация от материалите, "
+            "и обозначи общите съвети като такива. Не измисляй цитати, числа или проучвания."
+        )
+        context_label = (
+            "Контекст от курса на Henselmans:" if has_context
+            else "Няма намерен релевантен контекст от курса за този въпрос."
+        )
+    else:
+        intro = "You are a personal AI fitness coach trained on Menno Henselmans methodology."
+        grounding = (
+            "GROUNDING: Base your answer primarily on the COURSE CONTEXT below. "
+            "When you state something from the materials, cite the source in brackets (e.g. [Protein PTC 2022.pdf]). "
+            "If the context does NOT cover the question, say clearly that you have no specific information from the "
+            "materials, and label any general advice as such. Never invent citations, numbers, or studies."
+        )
+        context_label = (
+            "Course context (Henselmans):" if has_context
+            else "No relevant course context was found for this question."
+        )
+    return f"""{intro}
+{chat_language_rules_v1(response_language)}
+{grounding}
+{profile_block}
+{context_label}
+{context}"""
+
+
 # --- PROGRAM GENERATION -------------------------------------------------------
 
 def program_generation_v1(
