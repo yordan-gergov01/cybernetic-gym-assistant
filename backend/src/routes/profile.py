@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -9,6 +11,7 @@ from schemas import NutritionTargetOut, ProfileCreate, ProfileOut
 from services.calculators import run_all_calculators
 
 router = APIRouter(prefix="/profile", tags=["profile"])
+logger = logging.getLogger(__name__)
 
 
 @router.get("", response_model=ProfileOut)
@@ -71,7 +74,10 @@ async def update_profile(
             nt.fat_g = int(calc["energy"].fat_g)
             nt.carbs_g = int(calc["energy"].carbs_g)
         except Exception:
-            pass
+            logger.error(
+                "Calculator pipeline failed for user %s; profile saved WITHOUT macros/nutrition targets",
+                user.id, exc_info=True,
+            )
 
     await db.commit()
     await db.refresh(profile)

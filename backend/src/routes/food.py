@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date as date_type
 
 import httpx
@@ -15,6 +16,7 @@ from models import FoodLog, NutritionTarget, User
 from schemas import DailyNutritionSummary, FoodLogCreate
 
 router = APIRouter(prefix="/food", tags=["food"])
+logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -90,6 +92,7 @@ async def lookup_usda(item: FoodItem) -> dict | None:
         ntr = parse_usda_nutrients(foods[0], item.quantity_g)
         return {"food_name": item.food_name_bg, "source": "USDA", "confidence": "high", "quantity_g": item.quantity_g, **ntr}
     except Exception:
+        logger.info("USDA lookup failed for '%s'; falling back to LLM estimate", item.food_name_en, exc_info=True)
         return None
 
 

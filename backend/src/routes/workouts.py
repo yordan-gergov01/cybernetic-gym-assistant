@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date as date_type
 from datetime import datetime, timedelta
 
@@ -15,6 +16,7 @@ from models import ProgramExercise, User, WorkoutLog, WorkoutSet
 from schemas import WorkoutLogCreate, WorkoutLogOut
 
 router = APIRouter(prefix="/workouts", tags=["workouts"])
+logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -89,7 +91,8 @@ async def update_next_targets(db: AsyncSession, day_id: str, sets: list):
                 ex.target_note = t.get("note")
         await db.commit()
     except Exception:
-        pass
+        logger.warning("Failed to compute next-session targets for day %s; workout was saved without them",
+                       day_id, exc_info=True)
 
 
 @router.get("", response_model=list[WorkoutLogOut])
