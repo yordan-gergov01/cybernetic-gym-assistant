@@ -12,8 +12,16 @@ from sqlalchemy.orm import selectinload
 from core.config import settings
 from db.database import get_db
 from deps import get_current_user
-from models import Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
-from schemas import ProgramCreate, ProgramExerciseOut, ProgramGenerateRequest, ProgramOut
+from models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
+from schemas import (
+    FatigueAssessmentOut,
+    FatigueAssessmentRequest,
+    ProgramCreate,
+    ProgramExerciseOut,
+    ProgramGenerateRequest,
+    ProgramOut,
+)
+from services.fatigue import assess_fatigue
 
 router = APIRouter(prefix="/programs", tags=["programs"])
 
@@ -267,3 +275,81 @@ async def delete_program(program_id: str, user: User = Depends(get_current_user)
         raise HTTPException(404, "Program not found")
     await db.delete(p)
     await db.commit()
+
+
+_DELOAD_LABEL_BG = {"continue": "продължи по план", "caution": "внимание / намали обема", "deload": "deload седмица"}
+
+
+async def _explain_fatigue_bg(decision, answers: dict) -> str:
+    """Phrase the deterministic deload decision for the user, grounded in the course.
+
+    The decision itself is already fixed by services.fatigue.assess_fatigue; the LLM
+    only rewords it. On any failure we fall back to the deterministic Bulgarian text
+    so the user always gets a correct, non-empty explanation.
+    """
+    try:
+        context = await load_rag_context(
+            f"deload умора възстановяване периодизация {' '.join(decision.factors)}"
+        )
+        prompt = f"""Ти си треньор по методологията на Menno Henselmans. Обясни на клиента на БЪЛГАРСКИ (2-3 изречения) защо решението е: {_DELOAD_LABEL_BG.get(decision.decision, decision.decision)}.
+
+Решението вече е взето детерминистично - НЕ го променяй, само го обясни ясно и практично.
+Наблюдавани фактори за умора: {', '.join(decision.factors) or 'няма значими'}.
+Отговори от чек-ина: {json.dumps(answers, ensure_ascii=False)}
+
+Принципи от курса (използвай ги за обосновката):
+{context}"""
+        resp = await openai_client.chat.completions.create(
+            model=settings.PRIMARY_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.3,
+            max_tokens=300,
+        )
+        text = (resp.choices[0].message.content or "").strip()
+        return text or decision.recommendation_bg
+    except Exception:
+        return decision.recommendation_bg
+
+
+@router.post("/{program_id}/fatigue", response_model=FatigueAssessmentOut, status_code=201)
+async def submit_fatigue_assessment(
+    program_id: str,
+    data: FatigueAssessmentRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
+    program = r.scalar_one_or_none()
+    if not program:
+        raise HTTPException(404, "Program not found")
+
+    answers = data.answers.model_dump()
+    decision = assess_fatigue(answers)
+    reasoning = await _explain_fatigue_bg(decision, answers)
+
+    assessment = FatigueAssessment(
+        user_id=user.id,
+        program_id=program_id,
+        week_number=data.week_number,
+        answers=answers,
+        agent_decision=decision.decision,
+        agent_reasoning=reasoning,
+    )
+    db.add(assessment)
+    await db.commit()
+    await db.refresh(assessment)
+    return assessment
+
+
+@router.get("/{program_id}/fatigue", response_model=list[FatigueAssessmentOut])
+async def list_fatigue_assessments(
+    program_id: str,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    r = await db.execute(
+        select(FatigueAssessment)
+        .where(FatigueAssessment.program_id == program_id, FatigueAssessment.user_id == user.id)
+        .order_by(FatigueAssessment.assessed_at.desc())
+    )
+    return r.scalars().all()
