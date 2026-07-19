@@ -16,7 +16,7 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    APP_NAME: str = "Fitness AI API"
+    APP_NAME: str = "Cybernetic Gym Assistant API"
 
     APP_ENV: str = "development"
     DEBUG: bool = False
