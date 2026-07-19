@@ -14,6 +14,7 @@ from core.config import settings
 from db.database import get_db
 from deps import get_current_user
 from models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
+from prompts.registry import get_prompt
 from schemas import (
     FatigueAssessmentOut,
     FatigueAssessmentRequest,
@@ -151,67 +152,22 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
         f"{profile.training_days_per_week} дни седмично цел {profile.goal or ''}"
     )
 
-    prompt = f"""Ти си сертифициран личен треньор по методологията на Menno Henselmans. Генерирай пълна {data.total_weeks}-седмична тренировъчна програма.
-
-КЛИЕНТСКИ ПРОФИЛ:
-- Ниво: {level_map_bg.get(profile.training_status, 'Средно напреднал')}
-- Цел: {profile.goal_validated or profile.goal}
-- Тренировъчни дни седмично: {profile.training_days_per_week}
-- Оборудване: {profile.available_equipment}
-- Продължителност на сесия: {profile.session_duration_min} мин
-- Приоритетни мускули: {profile.priority_muscles}
-- Травми/ограничения: {profile.injuries or 'няма'}
-- Предпочитания за упражнения: {profile.exercise_preferences or 'няма'}
-
-РЕЗУЛТАТИ ОТ КАЛКУЛАТОРИТЕ:
-- Целеви калории: {energy.get('target_kcal', 'няма')} ккал
-- Протеин: {energy.get('protein_g', 'няма')} г
-- Оптимален обем (JSON): {json.dumps(volume, ensure_ascii=False)}
-- Оценени 1ПМ (JSON): {json.dumps(lifts, ensure_ascii=False)}
-
-КОНТЕКСТ ОТ КУРСА (принципи на Henselmans):
-{context}
-
-ИЗИСКВАНИЯ:
-- Прогресивно натоварване (MEV първи седмици, към MAV към седмица {data.total_weeks - 1}).
-- Без отделна deload седмица в този JSON - deload само при нужда от оценка на умора.
-- Всички обяснения в текстовите полета на JSON (`name`, `description`, `notes`, `day_name` и т.н.) на БЪЛГАРСКИ.
-- Полето `exercise_name` за всяко упражнение ВИНАГИ на АНГЛИЙСКИ със стандартно име в залата (напр. "Barbell Bench Press", "Romanian Deadlift").
-- `muscle_group` и `equipment` на латиница с кратки термини (chest, back, barbell, dumbbell) за съвместимост с базата.
-
-Върни САМО валиден JSON със следната структура (пример за форма; попълни реални данни):
-{{
-  "name": "Име на програмата на български",
-  "description": "Кратко описание на български",
-  "template_type": "upper_lower|ppl|full_body|custom",
-  "weeks": [
-    {{
-      "week_number": 1,
-      "week_type": "loading",
-      "notes": "Бележки на български",
-      "days": [
-        {{
-          "day_number": 1,
-          "day_name": "Име на деня на български или латиница",
-          "is_rest_day": false,
-          "exercises": [
-            {{
-              "exercise_name": "Barbell Bench Press",
-              "muscle_group": "chest",
-              "equipment": "barbell",
-              "sets_prescribed": 3,
-              "reps_min": 8,
-              "reps_max": 12,
-              "rir_target": 2,
-              "rest_seconds": 180,
-              "notes": "Бележка на български"
-            }}
-          ]
-        }}
-      ]
-    }}
-  ]
-}}"""
+    prompt = get_prompt("program_generation")(
+        total_weeks=data.total_weeks,
+        level_label=level_map_bg.get(profile.training_status, "Средно напреднал"),
+        goal=profile.goal_validated or profile.goal,
+        training_days_per_week=profile.training_days_per_week,
+        available_equipment=profile.available_equipment,
+        session_duration_min=profile.session_duration_min,
+        priority_muscles=profile.priority_muscles,
+        injuries=profile.injuries,
+        exercise_preferences=profile.exercise_preferences,
+        target_kcal=energy.get("target_kcal", "няма"),
+        protein_g=energy.get("protein_g", "няма"),
+        volume=volume,
+        lifts=lifts,
+        context=context,
+    )
 
     response = await openai_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
@@ -294,14 +250,12 @@ async def _explain_fatigue_bg(decision, answers: dict) -> str:
         context = await load_rag_context(
             f"deload умора възстановяване периодизация {' '.join(decision.factors)}"
         )
-        prompt = f"""Ти си треньор по методологията на Menno Henselmans. Обясни на клиента на БЪЛГАРСКИ (2-3 изречения) защо решението е: {_DELOAD_LABEL_BG.get(decision.decision, decision.decision)}.
-
-Решението вече е взето детерминистично - НЕ го променяй, само го обясни ясно и практично.
-Наблюдавани фактори за умора: {', '.join(decision.factors) or 'няма значими'}.
-Отговори от чек-ина: {json.dumps(answers, ensure_ascii=False)}
-
-Принципи от курса (използвай ги за обосновката):
-{context}"""
+        prompt = get_prompt("fatigue_explanation")(
+            decision_label=_DELOAD_LABEL_BG.get(decision.decision, decision.decision),
+            factors=decision.factors,
+            answers=answers,
+            context=context,
+        )
         resp = await openai_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=[{"role": "user", "content": prompt}],

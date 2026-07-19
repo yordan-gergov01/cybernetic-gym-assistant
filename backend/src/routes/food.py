@@ -13,6 +13,7 @@ from core.config import settings
 from db.database import get_db
 from deps import get_current_user
 from models import FoodLog, NutritionTarget, User
+from prompts.registry import get_prompt
 from schemas import DailyNutritionSummary, FoodLogCreate
 
 router = APIRouter(prefix="/food", tags=["food"])
@@ -29,20 +30,7 @@ class FoodItem(BaseModel):
 
 
 async def extract_food_items(text: str) -> list[FoodItem]:
-    prompt = f"""Извлечи всички храни и количества от текста по-долу. Текстът може да е на български.
-
-Текст: {text}
-
-За всяка храна върни JSON полета (имената на полетата задължително на английски, както е указано):
-- food_name_en: име на английски за търсене в USDA (напр. "chicken breast raw", "oats dry", "whole egg")
-- food_name_bg: име за показване на български
-- quantity_g: грамове (оцени типична порция, ако не е уточнено)
-- cooking_method: начин на приготвяне (напр. raw, boiled, grilled) - на латиница е достатъчно
-
-Чести превръщания: 1 яйце ≈ 60г; 1 банан ≈ 120г; 1 филия хляб ≈ 30г; 1 с.л. масло ≈ 15г; 1 ч.л. ≈ 5г; 1 чаша течност ≈ 240мл.
-
-Върни САМО валиден JSON обект с ключ "items" — масив от обекти с горните полета.
-Примерна структура: {{"items": [{{"food_name_en": "...", "food_name_bg": "...", "quantity_g": 0, "cooking_method": ""}}]}}"""
+    prompt = get_prompt("food_extraction")(text)
     r = await openai_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[{"role": "user", "content": prompt}],
@@ -97,10 +85,11 @@ async def lookup_usda(item: FoodItem) -> dict | None:
 
 
 async def lookup_llm(item: FoodItem) -> dict:
-    prompt = (
-        f"Оцени хранителната стойност за: {item.food_name_en} ({item.cooking_method}), {item.quantity_g} г. "
-        f"Българско име за референция: {item.food_name_bg}. "
-        f"Върни САМО валиден JSON с числови полета: calories, protein_g, fat_g, carbs_g (ключовете точно така, на английски)."
+    prompt = get_prompt("food_llm_estimate")(
+        food_name_en=item.food_name_en,
+        cooking_method=item.cooking_method,
+        quantity_g=item.quantity_g,
+        food_name_bg=item.food_name_bg,
     )
     r = await openai_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,

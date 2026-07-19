@@ -12,6 +12,7 @@ from core.config import settings
 from db.database import get_db
 from deps import get_current_user
 from models import ChatMessage, User, UserProfile
+from prompts.registry import get_prompt
 from schemas import ChatMessageCreate, ChatMessageOut, ChatResponse
 
 router = APIRouter(prefix="/chat", tags=["chat"])
@@ -32,19 +33,6 @@ def _load_index():
 
 
 index, meta = _load_index()
-
-
-def _rag_language_rules() -> str:
-    if "bulgar" in settings.RESPONSE_LANGUAGE.lower():
-        return (
-            "ПРАВИЛА: Отговаряй САМО на БЪЛГАРСКИ. Използвай килограми. "
-            "Имената на упражненията винаги на АНГЛИЙСКИ (стандартни имена в залата, напр. Barbell Row). "
-            "Бъди директен и практичен."
-        )
-    return (
-        f"RULES: Reply in the user's configured language ({settings.RESPONSE_LANGUAGE}). "
-        "Use kilograms. Use standard English names for exercises. Be direct and practical."
-    )
 
 
 async def retrieve_context(question: str, k: int | None = None) -> str:
@@ -88,28 +76,11 @@ async def chat(
         e = calc.get("energy", {})
         levels = ["Начинаещ", "Средно напреднал", "Напреднал"]
         lvl = levels[profile.training_status - 1] if profile.training_status in (1, 2, 3) else "—"
-        profile_ctx = f"""
-Профил на потребителя: ниво {lvl} | цел: {profile.goal_validated or profile.goal}
-Калории (цел): {e.get('target_kcal', '?')} ккал | протеин: {e.get('protein_g', '?')} г | мазнини: {e.get('fat_g', '?')} г | въглехидрати: {e.get('carbs_g', '?')} г
-"""
+        profile_ctx = get_prompt("chat_profile_block")(lvl, profile.goal_validated or profile.goal, e)
 
     context = await retrieve_context(data.content)
 
-    intro_bg = "Ти си персонален AI фитнес треньор по методологията на Menno Henselmans."
-    intro_en = "You are a personal AI fitness coach trained on Menno Henselmans methodology."
-    intro = intro_bg if "bulgar" in settings.RESPONSE_LANGUAGE.lower() else intro_en
-
-    context_label = (
-        "Контекст от курса на Henselmans:"
-        if "bulgar" in settings.RESPONSE_LANGUAGE.lower()
-        else "Course context (Henselmans):"
-    )
-
-    system = f"""{intro}
-{_rag_language_rules()}
-{profile_ctx}
-{context_label}
-{context}"""
+    system = get_prompt("chat_system")(settings.RESPONSE_LANGUAGE, profile_ctx, context)
 
     messages = [{"role": "system", "content": system}]
     for msg in history:
