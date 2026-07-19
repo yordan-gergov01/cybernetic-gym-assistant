@@ -1,10 +1,5 @@
-import json
-import logging
-
-import faiss
-import numpy as np
 from fastapi import APIRouter, Depends
-from openai import AsyncOpenAI, OpenAI
+from openai import AsyncOpenAI
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -14,46 +9,11 @@ from deps import get_current_user
 from models import ChatMessage, User, UserProfile
 from prompts.registry import get_prompt
 from schemas import ChatMessageCreate, ChatMessageOut, ChatResponse
+from services.rag import retrieve_context
 
 router = APIRouter(prefix="/chat", tags=["chat"])
-logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-
-
-def _load_index():
-    try:
-        index = faiss.read_index(str(settings.faiss_index_path))
-        meta = json.loads(settings.faiss_metadata_path.read_text(encoding="utf-8"))
-        return index, meta
-    except Exception:
-        logger.warning("FAISS index/metadata could not be loaded from %s; chat will run without RAG context",
-                       settings.faiss_index_path, exc_info=True)
-        return None, []
-
-
-index, meta = _load_index()
-
-
-async def retrieve_context(question: str, k: int | None = None) -> str:
-    if index is None or not meta:
-        return ""
-    try:
-        top_k = k if k is not None else settings.RETRIEVAL_TOP_K
-        sync_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        emb = np.array(
-            sync_client.embeddings.create(model=settings.EMBEDDING_MODEL, input=[question]).data[0].embedding,
-            dtype="float32",
-        ).reshape(1, -1)
-        faiss.normalize_L2(emb)
-        k_eff = min(top_k, max(1, len(meta) if isinstance(meta, list) else 1))
-        _, ids = index.search(emb, k_eff)
-        if isinstance(meta, list):
-            return "\n\n".join(meta[i]["text"] for i in ids[0] if i != -1 and i < len(meta))
-        return ""
-    except Exception:
-        logger.warning("RAG retrieval failed for question; answering without course context", exc_info=True)
-        return ""
 
 
 @router.post("", response_model=ChatResponse)

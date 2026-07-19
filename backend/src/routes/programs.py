@@ -1,11 +1,8 @@
 import json
-import logging
 from datetime import date, timedelta
 
-import faiss
-import numpy as np
 from fastapi import APIRouter, Depends, HTTPException
-from openai import AsyncOpenAI, OpenAI
+from openai import AsyncOpenAI
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
@@ -24,30 +21,11 @@ from schemas import (
     ProgramOut,
 )
 from services.fatigue import assess_fatigue
+from services.rag import retrieve_context
 
 router = APIRouter(prefix="/programs", tags=["programs"])
-logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
-
-
-async def load_rag_context(query: str) -> str:
-    try:
-        index = faiss.read_index(str(settings.faiss_index_path))
-        meta = json.loads(settings.faiss_metadata_path.read_text(encoding="utf-8"))
-        sync_client = OpenAI(api_key=settings.OPENAI_API_KEY)
-        emb = np.array(
-            sync_client.embeddings.create(model=settings.EMBEDDING_MODEL, input=[query]).data[0].embedding,
-            dtype="float32",
-        ).reshape(1, -1)
-        faiss.normalize_L2(emb)
-        k = min(settings.RETRIEVAL_TOP_K, max(1, len(meta)))
-        _, ids = index.search(emb, k)
-        chunks = [meta[i]["text"] for i in ids[0] if i != -1 and i < len(meta)]
-        return "\n\n".join(chunks)
-    except Exception:
-        logger.warning("RAG context load failed; generating program without course context", exc_info=True)
-        return ""
 
 
 async def save_program_structure(db: AsyncSession, program: Program, weeks_data: list) -> Program:
@@ -147,7 +125,7 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
     volume = calc.get("volume", {})
     lifts = calc.get("lifts", {})
 
-    context = await load_rag_context(
+    context = await retrieve_context(
         f"{level_map_bg.get(profile.training_status, 'трениращ')} клиент програма хипертрофия "
         f"{profile.training_days_per_week} дни седмично цел {profile.goal or ''}"
     )
@@ -247,7 +225,7 @@ async def _explain_fatigue_bg(decision, answers: dict) -> str:
     so the user always gets a correct, non-empty explanation.
     """
     try:
-        context = await load_rag_context(
+        context = await retrieve_context(
             f"deload умора възстановяване периодизация {' '.join(decision.factors)}"
         )
         prompt = get_prompt("fatigue_explanation")(

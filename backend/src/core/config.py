@@ -39,7 +39,12 @@ class Settings(BaseSettings):
     CHUNK_SIZE: int = 512
     CHUNK_OVERLAP: int = 100
     RETRIEVAL_TOP_K: int = 8
+    # Candidate pool pulled from FAISS before reranking narrows to RERANKING_TOP_N.
+    RETRIEVAL_CANDIDATES: int = 30
     RERANKING_TOP_N: int = 4
+    RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
+    # Set false to skip cross-encoder reranking and use raw vector similarity order.
+    RERANK_ENABLED: bool = True
 
     RESPONSE_LANGUAGE: str = "bulgarian"
 
