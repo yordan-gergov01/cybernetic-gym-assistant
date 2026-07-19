@@ -13,6 +13,7 @@ from core.config import settings
 from db.database import get_db
 from deps import get_current_user
 from models import ProgramExercise, User, WorkoutLog, WorkoutSet
+from prompts.registry import get_prompt
 from schemas import WorkoutLogCreate, WorkoutLogOut
 
 router = APIRouter(prefix="/workouts", tags=["workouts"])
@@ -59,20 +60,7 @@ async def update_next_targets(db: AsyncSession, day_id: str, sets: list):
             logged_by_exercise[name] = []
         logged_by_exercise[name].append({"weight_kg": s.weight_kg, "reps": s.reps, "rir": s.rir_actual})
 
-    prompt = f"""Ти си треньор по методологията на Menno Henselmans. Задай цели за следващата тренировъчна сесия.
-
-Логнато представяне (ключовете са имената на упражненията - на английски, както са в програмата):
-{json.dumps(logged_by_exercise, indent=2, ensure_ascii=False)}
-
-За всяко упражнение задай целева тежест (кг) и повторения за следващата сесия. Прогресия по принципите на Henselmans:
-- Ако RIR е над целевия: увеличи теглото с ~2,5 кг следващ път
-- Ако RIR е равен на целевия: увеличи повторенията с 1–2
-- Ако RIR е под целевия: запази теглото, фокус върху техника
-- За изолации: по-малки стъпки (~1,25 кг)
-
-Върни САМО валиден JSON обект: ключовете са ТОЧНО същите `exercise_name` като в лога (на английски). Стойностите са обекти с полета weight_kg (число), reps (цяло число), note (кратко обяснение на БЪЛГАРСКИ).
-
-Пример за форма: {{"Barbell Bench Press": {{"weight_kg": 80.0, "reps": 10, "note": "Кратка бележка на български"}}}}"""
+    prompt = get_prompt("progression_targets")(logged_by_exercise)
 
     try:
         resp = await openai_client.chat.completions.create(
