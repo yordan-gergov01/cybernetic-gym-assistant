@@ -1,4 +1,5 @@
 import json
+import logging
 
 import faiss
 import numpy as np
@@ -14,6 +15,7 @@ from models import ChatMessage, User, UserProfile
 from schemas import ChatMessageCreate, ChatMessageOut, ChatResponse
 
 router = APIRouter(prefix="/chat", tags=["chat"])
+logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -24,6 +26,8 @@ def _load_index():
         meta = json.loads(settings.faiss_metadata_path.read_text(encoding="utf-8"))
         return index, meta
     except Exception:
+        logger.warning("FAISS index/metadata could not be loaded from %s; chat will run without RAG context",
+                       settings.faiss_index_path, exc_info=True)
         return None, []
 
 
@@ -60,6 +64,7 @@ async def retrieve_context(question: str, k: int | None = None) -> str:
             return "\n\n".join(meta[i]["text"] for i in ids[0] if i != -1 and i < len(meta))
         return ""
     except Exception:
+        logger.warning("RAG retrieval failed for question; answering without course context", exc_info=True)
         return ""
 
 
