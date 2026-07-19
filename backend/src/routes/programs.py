@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date, timedelta
 
 import faiss
@@ -16,6 +17,7 @@ from models import Program, ProgramDay, ProgramExercise, ProgramWeek, User, User
 from schemas import ProgramCreate, ProgramExerciseOut, ProgramGenerateRequest, ProgramOut
 
 router = APIRouter(prefix="/programs", tags=["programs"])
+logger = logging.getLogger(__name__)
 
 openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
@@ -35,6 +37,7 @@ async def load_rag_context(query: str) -> str:
         chunks = [meta[i]["text"] for i in ids[0] if i != -1 and i < len(meta)]
         return "\n\n".join(chunks)
     except Exception:
+        logger.warning("RAG context load failed; generating program without course context", exc_info=True)
         return ""
 
 
