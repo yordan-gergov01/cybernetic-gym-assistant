@@ -268,6 +268,10 @@ class FatigueAssessmentCreate(BaseModel):
     week_number: int
     answers: FatigueAnswers
 
+class FatigueAssessmentRequest(BaseModel):
+    week_number: int = Field(ge=1)
+    answers: FatigueAnswers
+
 class FatigueAssessmentOut(BaseModel):
     id: str
     week_number: int
