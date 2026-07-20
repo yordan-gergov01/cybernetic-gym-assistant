@@ -16,7 +16,7 @@ def _is_bulgarian(response_language: str) -> bool:
     return "bulgar" in response_language.lower()
 
 
-# --- CHAT ---------------------------------------------------------------------
+# CHAT
 
 def chat_language_rules_v1(response_language: str) -> str:
     if _is_bulgarian(response_language):
@@ -90,7 +90,7 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
-# --- RAG QUERY REWRITE --------------------------------------------------------
+# RAG QUERY REWRITE
 
 def rag_query_rewrite_v1(question: str) -> str:
     return (
@@ -101,7 +101,7 @@ def rag_query_rewrite_v1(question: str) -> str:
     )
 
 
-# --- PROGRAM GENERATION -------------------------------------------------------
+# PROGRAM GENERATION
 
 def program_generation_v1(
     *,
@@ -183,7 +183,7 @@ def program_generation_v1(
 }}"""
 
 
-# --- FATIGUE / DELOAD EXPLANATION ---------------------------------------------
+# FATIGUE / DELOAD EXPLANATION
 
 def fatigue_explanation_v1(*, decision_label: str, factors: list[str], answers: dict, context: str) -> str:
     return f"""Ти си треньор по методологията на Menno Henselmans. Обясни на клиента на БЪЛГАРСКИ (2-3 изречения) защо решението е: {decision_label}.
@@ -196,7 +196,7 @@ def fatigue_explanation_v1(*, decision_label: str, factors: list[str], answers: 
 {context}"""
 
 
-# --- FOOD ---------------------------------------------------------------------
+# FOOD
 
 def food_extraction_v1(text: str) -> str:
     return f"""Извлечи всички храни и количества от текста по-долу. Текстът може да е на български.
@@ -224,19 +224,4 @@ def food_llm_estimate_v1(*, food_name_en: str, cooking_method: str, quantity_g: 
 
 
 # --- WORKOUT PROGRESSION ------------------------------------------------------
-
-def progression_targets_v1(logged_by_exercise: dict) -> str:
-    return f"""Ти си треньор по методологията на Menno Henselmans. Задай цели за следващата тренировъчна сесия.
-
-Логнато представяне (ключовете са имената на упражненията - на английски, както са в програмата):
-{json.dumps(logged_by_exercise, indent=2, ensure_ascii=False)}
-
-За всяко упражнение задай целева тежест (кг) и повторения за следващата сесия. Прогресия по принципите на Henselmans:
-- Ако RIR е над целевия: увеличи теглото с ~2,5 кг следващ път
-- Ако RIR е равен на целевия: увеличи повторенията с 1–2
-- Ако RIR е под целевия: запази теглото, фокус върху техника
-- За изолации: по-малки стъпки (~1,25 кг)
-
-Върни САМО валиден JSON обект: ключовете са ТОЧНО същите `exercise_name` като в лога (на английски). Стойностите са обекти с полета weight_kg (число), reps (цяло число), note (кратко обяснение на БЪЛГАРСКИ).
-
-Пример за форма: {{"Barbell Bench Press": {{"weight_kg": 80.0, "reps": 10, "note": "Кратка бележка на български"}}}}"""
+# Next-session load progression is deterministic and lives in services/progression.py
