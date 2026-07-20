@@ -23,7 +23,6 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
     "fatigue_explanation": {"v1": templates.fatigue_explanation_v1},
     "food_extraction": {"v1": templates.food_extraction_v1},
     "food_llm_estimate": {"v1": templates.food_llm_estimate_v1},
-    "progression_targets": {"v1": templates.progression_targets_v1},
 }
 
 # Which version is live per prompt.

@@ -1,25 +1,20 @@
-import json
 import logging
 from datetime import date as date_type
 from datetime import datetime, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException
-from openai import AsyncOpenAI
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
-from core.config import settings
 from db.database import get_db
 from deps import get_current_user
 from models import ProgramExercise, User, WorkoutLog, WorkoutSet
-from prompts.registry import get_prompt
 from schemas import WorkoutLogCreate, WorkoutLogOut
+from services.progression import compute_next_target
 
 router = APIRouter(prefix="/workouts", tags=["workouts"])
 logger = logging.getLogger(__name__)
-
-openai_client = AsyncOpenAI(api_key=settings.OPENAI_API_KEY)
 
 
 @router.post("", response_model=WorkoutLogOut, status_code=201)
@@ -53,30 +48,27 @@ async def update_next_targets(db: AsyncSession, day_id: str, sets: list):
     if not exercises:
         return
 
-    logged_by_exercise = {}
+    logged_by_exercise: dict[str, list[dict]] = {}
     for s in sets:
-        name = s.exercise_name
-        if name not in logged_by_exercise:
-            logged_by_exercise[name] = []
-        logged_by_exercise[name].append({"weight_kg": s.weight_kg, "reps": s.reps, "rir": s.rir_actual})
-
-    prompt = get_prompt("progression_targets")(logged_by_exercise)
+        logged_by_exercise.setdefault(s.exercise_name, []).append(
+            {"weight_kg": s.weight_kg, "reps": s.reps, "rir": s.rir_actual}
+        )
 
     try:
-        resp = await openai_client.chat.completions.create(
-            model=settings.PRIMARY_MODEL,
-            messages=[{"role": "user", "content": prompt}],
-            response_format={"type": "json_object"},
-            temperature=0.0,
-            max_tokens=500,
-        )
-        targets = json.loads(resp.choices[0].message.content)
         for ex in exercises:
-            if ex.exercise_name in targets:
-                t = targets[ex.exercise_name]
-                ex.target_weight_kg = t.get("weight_kg")
-                ex.target_reps = t.get("reps")
-                ex.target_note = t.get("note")
+            logged = logged_by_exercise.get(ex.exercise_name)
+            if not logged:
+                continue
+            target = compute_next_target(
+                muscle_group=ex.muscle_group,
+                rir_target=ex.rir_target,
+                reps_min=ex.reps_min,
+                reps_max=ex.reps_max,
+                logged_sets=logged,
+            )
+            ex.target_weight_kg = target.weight_kg
+            ex.target_reps = target.reps
+            ex.target_note = target.note
         await db.commit()
     except Exception:
         logger.warning("Failed to compute next-session targets for day %s; workout was saved without them",
