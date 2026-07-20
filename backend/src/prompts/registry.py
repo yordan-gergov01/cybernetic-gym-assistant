@@ -18,6 +18,7 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
     "chat_system": {"v1": templates.chat_system_v1, "v2": templates.chat_system_v2},
     "chat_language_rules": {"v1": templates.chat_language_rules_v1},
     "chat_profile_block": {"v1": templates.chat_profile_block_v1},
+    "rag_query_rewrite": {"v1": templates.rag_query_rewrite_v1},
     "program_generation": {"v1": templates.program_generation_v1},
     "fatigue_explanation": {"v1": templates.fatigue_explanation_v1},
     "food_extraction": {"v1": templates.food_extraction_v1},
