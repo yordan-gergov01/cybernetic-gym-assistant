@@ -43,8 +43,12 @@ class Settings(BaseSettings):
     RETRIEVAL_CANDIDATES: int = 30
     RERANKING_TOP_N: int = 4
     RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
-    # Set false to skip cross-encoder reranking and use raw vector similarity order.
-    RERANK_ENABLED: bool = True
+    # Off by default: the local cross-encoder needs ~2.3GB RAM, impractical on small
+    # machines. Enable only on a host with headroom (or swap in an API reranker).
+    RERANK_ENABLED: bool = False
+    # Rewrite the (Bulgarian) user question into an English search query and retrieve
+    # on both — improves recall against the English course corpus.
+    QUERY_REWRITE_ENABLED: bool = True
 
     RESPONSE_LANGUAGE: str = "bulgarian"
 

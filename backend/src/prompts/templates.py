@@ -90,6 +90,17 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+# --- RAG QUERY REWRITE --------------------------------------------------------
+
+def rag_query_rewrite_v1(question: str) -> str:
+    return (
+        f"User question: {question}\n"
+        "Rewrite as a SHORT English search query (5-10 words) for a fitness science "
+        "knowledge base (Henselmans PTC course).\n"
+        "Reply ONLY with the search query, nothing else."
+    )
+
+
 # --- PROGRAM GENERATION -------------------------------------------------------
 
 def program_generation_v1(

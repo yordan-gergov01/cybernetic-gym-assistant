@@ -22,6 +22,7 @@ import numpy as np
 from openai import AsyncOpenAI
 
 from core.config import settings
+from prompts.registry import get_prompt
 
 logger = logging.getLogger(__name__)
 
@@ -96,14 +97,55 @@ async def _embed(query: str) -> np.ndarray:
     return emb
 
 
+async def rewrite_query(question: str) -> str | None:
+    """Rewrite a (Bulgarian) question into a short English search query.
+
+    The course corpus is English; searching with an English paraphrase in addition to
+    the original question lifts recall. Returns None if disabled or on failure.
+    """
+    if not settings.QUERY_REWRITE_ENABLED:
+        return None
+    try:
+        prompt = get_prompt("rag_query_rewrite")(question)
+        resp = await _openai.chat.completions.create(
+            model=settings.PRIMARY_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0.0,
+            max_tokens=30,
+        )
+        text = (resp.choices[0].message.content or "").strip().strip('"')
+        return text or None
+    except Exception:
+        logger.warning("Query rewrite failed; using the original query only", exc_info=True)
+        return None
+
+
+def _search(emb: np.ndarray, index, meta: list, candidates: int, filters: dict | None) -> list[tuple[float, dict]]:
+    k = min(candidates, len(meta))
+    sims, ids = index.search(emb, k)
+    out: list[tuple[float, dict]] = []
+    for sim, i in zip(sims[0], ids[0]):
+        if i == -1 or i >= len(meta):
+            continue
+        m = meta[i]
+        if _passes_filters(m, filters):
+            out.append((float(sim), m))
+    return out
+
+
 async def retrieve(
     query: str,
     *,
     top_n: int | None = None,
     candidates: int | None = None,
     filters: dict | None = None,
+    rewrite: bool = True,
 ) -> list[RetrievedChunk]:
-    """Return the top-N most relevant chunks for `query` after reranking."""
+    """Return the top-N most relevant chunks for `query`.
+
+    Pipeline: (optional BG->EN query rewrite) -> dual vector retrieval merged by
+    chunk_id -> (optional cross-encoder rerank) -> top-N.
+    """
     try:
         index, meta = _load_index()
     except Exception:
@@ -115,27 +157,33 @@ async def retrieve(
     top_n = top_n or settings.RERANKING_TOP_N
     candidates = candidates or settings.RETRIEVAL_CANDIDATES
 
-    try:
-        emb = await _embed(query)
-    except Exception:
-        logger.warning("Query embedding failed; retrieving no context", exc_info=True)
-        return []
+    queries = [query]
+    if rewrite:
+        rewritten = await rewrite_query(query)
+        if rewritten and rewritten.lower() != query.lower():
+            queries.append(rewritten)
 
-    k = min(candidates, len(meta))
-    sims, ids = index.search(emb, k)
-    pool: list[tuple[float, dict]] = []
-    for sim, i in zip(sims[0], ids[0]):
-        if i == -1 or i >= len(meta):
+    # Dual retrieval: merge hits from every query variant, keeping the max similarity
+    # per chunk (dedup by chunk_id).
+    merged: dict[str, tuple[float, dict]] = {}
+    for q in queries:
+        try:
+            emb = await _embed(q)
+        except Exception:
+            logger.warning("Embedding failed for a query variant; skipping it", exc_info=True)
             continue
-        m = meta[i]
-        if _passes_filters(m, filters):
-            pool.append((float(sim), m))
-    if not pool:
+        for sim, m in _search(emb, index, meta, candidates, filters):
+            cid = m.get("chunk_id") or str(id(m))
+            if cid not in merged or sim > merged[cid][0]:
+                merged[cid] = (sim, m)
+    if not merged:
         return []
+    pool = sorted(merged.values(), key=lambda x: x[0], reverse=True)
 
     reranker = _get_reranker()
     if reranker is not None:
         try:
+            pool = pool[:candidates]
             pairs = [[query, m["text"]] for _, m in pool]
             scores = await asyncio.to_thread(reranker.compute_score, pairs, normalize=True)
             if not isinstance(scores, list):
@@ -143,9 +191,9 @@ async def retrieve(
             ranked = sorted(zip(scores, (m for _, m in pool)), key=lambda x: x[0], reverse=True)
         except Exception:
             logger.warning("Reranking failed; using vector similarity order", exc_info=True)
-            ranked = [(sim, m) for sim, m in pool]
+            ranked = pool
     else:
-        ranked = [(sim, m) for sim, m in pool]  # already sorted by FAISS similarity
+        ranked = pool
 
     return [
         RetrievedChunk(text=m["text"], source=m.get("source", ""), score=float(score), metadata=m)
