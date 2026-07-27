@@ -32,6 +32,12 @@ class Settings(BaseSettings):
     USDA_API_KEY: str = "DEMO_KEY"
     USDA_BASE_URL: str = "https://api.nal.usda.gov/fdc/v1"
 
+    # Cloudflare R2 (S3-compatible) - stores progress/BF% photos. DB keeps only the key.
+    R2_ENDPOINT_URL: str = ""
+    R2_ACCESS_KEY_ID: str = ""
+    R2_SECRET_ACCESS_KEY: str = ""
+    R2_BUCKET: str = ""
+
     PRIMARY_MODEL: str = "gpt-4o-mini"
     EMBEDDING_MODEL: str = "text-embedding-3-large"
     GEMINI_VISION_MODEL: str = "gemini-2.5-flash"
@@ -86,6 +92,10 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [x.strip() for x in self.CORS_ORIGINS.split(",") if x.strip()]
+
+    @property
+    def r2_configured(self) -> bool:
+        return all([self.R2_ENDPOINT_URL, self.R2_ACCESS_KEY_ID, self.R2_SECRET_ACCESS_KEY, self.R2_BUCKET])
 
 
 @lru_cache

@@ -30,6 +30,7 @@ class User(Base):
     food_logs: Mapped[list["FoodLog"]] = relationship(back_populates="user")
     chat_messages: Mapped[list["ChatMessage"]] = relationship(back_populates="user")
     notifications: Mapped[list["Notification"]] = relationship(back_populates="user")
+    photos: Mapped[list["UserPhoto"]] = relationship(back_populates="user")
 
 
 class UserProfile(Base):
@@ -246,3 +247,18 @@ class Notification(Base):
     created_at: Mapped[datetime] = mapped_column(_TS, default=datetime.utcnow)
 
     user: Mapped["User"] = relationship(back_populates="notifications")
+
+
+class UserPhoto(Base):
+    __tablename__ = "user_photos"
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=new_uuid)
+    user_id: Mapped[str | None] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"))
+    photo_type: Mapped[str | None] = mapped_column(String(20))   # e.g. progress | bf_assessment
+    angle: Mapped[str | None] = mapped_column(String(10))        # front | back | side
+    file_path: Mapped[str | None] = mapped_column(String(500))   # R2 object key (NOT the binary)
+    bf_pct_assessed: Mapped[float | None] = mapped_column(Float)
+    notes: Mapped[str | None] = mapped_column(Text)
+    taken_at: Mapped[date] = mapped_column(Date, nullable=False)
+    uploaded_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+
+    user: Mapped["User"] = relationship(back_populates="photos")
