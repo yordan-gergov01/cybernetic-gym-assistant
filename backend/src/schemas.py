@@ -254,6 +254,18 @@ class NotificationOut(BaseModel):
     created_at: datetime
     class Config: from_attributes = True
 
+# PHOTOS
+class UserPhotoOut(BaseModel):
+    id: str
+    photo_type: Optional[str]
+    angle: Optional[str]
+    bf_pct_assessed: Optional[float]
+    notes: Optional[str]
+    taken_at: date
+    uploaded_at: datetime
+    url: Optional[str] = None   # time-limited presigned URL, populated by the route
+    class Config: from_attributes = True
+
 # FATIGUE ASSESSMENT
 class FatigueAnswers(BaseModel):
     recovery_quality: str       # poor | fair | good
