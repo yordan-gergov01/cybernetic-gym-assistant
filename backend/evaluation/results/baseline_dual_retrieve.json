@@ -1,0 +1,1104 @@
+{
+  "generated_at": "2026-05-09T11:56:33.758402",
+  "model_stack": {
+    "embedding": "text-embedding-3-large (3072d)",
+    "llm": "gpt-4o-mini",
+    "retrieval": "FAISS IndexFlatIP dual retrieve (k=20, top=5)"
+  },
+  "summary": {
+    "faithfulness": 0.8148,
+    "answer_relevancy": 0.97,
+    "context_precision": 0.6867,
+    "context_recall": 0.4735,
+    "ragas_score": 0.7363
+  },
+  "by_category": {
+    "nutrition": 0.6866,
+    "training": 0.8094,
+    "program_design": 0.6937,
+    "body_composition": 0.7469,
+    "recovery": 0.7425
+  },
+  "questions": [
+    {
+      "id": "N01",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "cut",
+      "question": "Колко протеин трябва да приемам докато съм на дефицит?",
+      "ground_truth": "При дефицит Henselmans препоръчва 2.0-2.2 грама протеин на килограм телесно тегло, за да се запази мускулната маса. Приемът трябва да е разпределен в 3-5 хранения дневно, всяко с поне 0.4 грама протеин на килограм.",
+      "answer": "Докато си на дефицит, препоръчителният прием на протеин е около 1.6 до 2.2 грама на килограм телесно тегло на ден. Това е достатъчно, за да помогне за запазване на мускулната маса. Например, ако тежиш 70 кг, трябва да приемаш между 112 и 154 грама протеин на ден. \n\nАко имаш конкретни цели или нужди, кажи ми, за да мога да ти дам по-точни насоки!",
+      "contexts": [
+        " to synthesize new proteins and replace oxidized\nproteins. In energy deficit, protein synthesis rates decrease, while protein oxidation\nrates stay the same. As such, protein needs could logically decrease in energy deficit,\nbecause your body isn't building as much protein as it is in energy surplus. In untrained individuals, research decisively shows increasing your protein intake in a\ndeficit beyond maintenance protein requirements does not help preserve muscle mass\nand does not increase protein balance [2, 3, 4], even when doubling your protein intake\nat just 440 Calories a day. One particularly nice study is Hill et al., which looked at 3\ndifferent protein intakes at weight maintenance and during weight loss. Protein content\ndid not affect body composition and this effect was not different between weight\nmaintenance and weight loss phases. Other research also finds that the beneficial effects\nof protein intake on body composition occur independently of energy balance. How much\nmuscle you lose is instead determined by things like the rate of weight loss, your training",
+        "g\nidea seems to have come from a misinterpretation of the nitrogen balance literature\nshowing more lean mass is lost in more severe caloric deficits. A simple explanation for\nthat finding is that the more total mass you lose, the more lean mass you also lose. No\nsurprises there.\n\n\n--- Page 53 ---\n53 Another practical reason you often don't need more protein in energy deficit is that at\nlower energy intakes, high-quality protein sources like chicken breast make up a greater\npercentage of the total protein requirement, whereas more protein typically comes from\nother foods, such as grains, when bulking.\n\nAs such, there is no empirically substantiated reason to think we need more than 0.82\ng/lb of protein per day when cutting. If anything, you could reason the body should be\nable to use more protein during bulking periods, because more muscle is being built and\na lot of other nutrients are ingested that may enable more protein to be used.\n\n\n--- Page 54 ---\n54",
+        " change and markers of muscle catabolism (incl. hormonal markers\nand CK).\n• Pearson et al. (2021) found no difference in the effectiveness of a protein intake\nof 1.7 g/kg/d vs. 0.9 g/kg/d to maintain lean body mass or exercise performance\nin female sports athletes during a 2-week 40% energy deficit. A different argument for increased protein requirements in energy deficit is that you're\nnot consuming as many carbohydrates or fats, which are supposedly nitrogen sparing.\nHowever, carbs and fats don't spare protein to any considerable extent (and carbs\naren't any more effective than fats) [2]. Only protein spares protein. The protein sparing\nidea seems to have come from a misinterpretation of the nitrogen balance literature\nshowing more lean mass is lost in more severe caloric deficits. A simple explanation for\nthat finding is that the more total mass you lose, the more lean mass you also lose. No\nsurprises there.\n\n\n--- Page 53 ---\n53",
+        "(1988) found 0.73 g/lb sufficed to maintain lean body mass in\ncutting weightlifters.\n• Helms et al. (2014) found no difference in strength or body composition changes\nin weightlifters after a 2-week diet with 40% energy deficit with a protein intake of\n2.8 g/kg/d vs. 1.6 g/kg/d.\n\n\n--- Page 50 ---\n50 • Pikosky et al. (2008) took a group of endurance trained subjects and had them\nconsume either 0.41 or 0.82 g/lb of protein per day. They also added a thousand\ncalories worth of training on top of their regular exercise. Of course, the nitrogen\nbalance in the low protein group plummeted. However, the protein intake of 0.82\ng/lb in the other group completely protected the subjects from muscle loss.\nNitrogen balance, whole-body protein turnover and protein synthesis remained\nunchanged.\n• Jose Antonio et al. (2015) studied strength trained subjects in a mild energy\ndeficit. There was no effect of 3.4 vs. 2.3 g/kg protein on changes in lean body\nmass or strength.\n• Prior research from Jose Antonio in strength trained individuals had found the",
+        "nd protein synthesis remained\nunchanged.\n• Jose Antonio et al. (2015) studied strength trained subjects in a mild energy\ndeficit. There was no effect of 3.4 vs. 2.3 g/kg protein on changes in lean body\nmass or strength.\n• Prior research from Jose Antonio in strength trained individuals had found the same thing: increasing protein from 1.9 to 4.4 g/kg did not affect body\ncomposition (including fat loss) or strength. (Technically these subjects weren't\nsupposed to be in a deficit, but body fat percentage went down in both groups.)\n• Pasiakos et al. (2013) studied physically active individuals, mostly military\npersonnel training 3-4x per week, in a 40% deficit. There was no difference in fat\nor muscle losses between a group consuming 1.6 g/kg/d protein and a group\nconsuming 2.4 g/kg/d protein. A major strength of this study is that they also\nlooked at muscle protein synthesis, anabolic signaling, gene expression, nitrogen\nbalance and resting metabolic rate. None of the measures were different\nbetween the 2 protein intakes, except that the higher protein group had higher"
+      ],
+      "sources": [
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf"
+      ],
+      "scores": [
+        0.7013986110687256,
+        0.6341018676757812,
+        0.6318785548210144,
+        0.6270523071289062,
+        0.6165673732757568
+      ],
+      "error": null,
+      "faithfulness": 0.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.0,
+      "ragas_score": 0.45
+    },
+    {
+      "id": "N02",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "bulk",
+      "question": "Какъв калориен излишък е оптимален за чисто качване на мускули?",
+      "ground_truth": "За чисто качване Henselmans препоръчва умерен излишък от около 200-250 калории над TDEE. По-голям излишък води до непропорционално натрупване на мазнини без допълнителен мускулен растеж.",
+      "answer": "Оптималният калориен излишък за чисто качване на мускули е около 5-10% над поддържащите калории. Това означава, че ако поддържащите ти калории са 2500 ккал, трябва да целиш между 2625 и 2750 ккал на ден. Важно е да следиш прогреса си и да коригираш калорийния прием в зависимост от резултатите. Ако напредъкът ти е по-добър от очакваното и не качваш много мазнини, можеш да увеличиш калориите.",
+      "contexts": [
+        "t not\nstatistically significant and far outweighed by the additional fat gain. It seems that the\nsize of the energy surplus has almost no effect but there is a positive effect of being in\nenergy surplus vs. being in energy deficit. The sweet spot of energy surplus for a lean\nbulk is thus very small. In Menno's experience with his clients, the effect of energy balance on protein balance\nbecomes more relevant at the advanced level. This is in line with the study on Brazilian\nbodybuilders finding more positive effects than the other studies in less muscular\nathletes. As it becomes increasingly difficult to signal the body to build further muscle\nmass, many advanced trainees simply stop gaining any appreciable amount of muscle\nmass while cutting or staying at maintenance. Bulking becomes required for muscle\ngrowth and the effect of positive energy balance on strength development is clearly\nnoticeable in many advanced trainees.",
+        "the course,\nbut here you should already understand that the loss of lean body mass during a bulk in\nthis study should never be allowed to happen under the supervision of a good coach\nand people differ significantly in how fast they can gain muscle due to both genetic as\nwell as controllable factors. Here are some more concrete guidelines on how to adjust the energy surplus.\n• If someone's already above the expected weight gain rate, strength development\nis good and they're not gaining any fat, it's unlikely a natural trainee will benefit\nfrom a further increase in calories.\n• If someone's progress isn't better than expected and they're not gaining fat yet,\ndon't be afraid to push caloric intake up to the point that they gain some fat over\n\n\n--- Page 68 ---\ntime. The minimal amount of fat gain you can achieve is generally the sweet spot\nfor a bulk.\n• If someone is consistently gaining more than a little fat week to week, decrease\nenergy intake to avoid needless fat gain.",
+        "nno. Going by the percentage changes and assuming their\nestimate of muscle mass equals fat-free mass, we can derive that the energy surplus\nmust have been 1% vs. 8%. However, presumably they gained more FFM than muscle\nmass. Going by estimated maintenance intake based on this course's guidelines, it --- Page 64 ---\nwould be 15% vs. 2%. If we back-calculate their post-intervention bodyweights, the\nweekly bodyweight gain rates should have been around 0.5% vs. 1%.\nThe super-lean bulk group gained 0.1 kg fat and 0.4 kg muscle. The more aggressive\nbulk group gained 1.1 kg fat and 1 kg muscle, over double the muscle growth rate of the\nsuper-lean bulk group. These results would support a much higher optimal energy\nsurplus than previous studies.\nHowever, this study was fraught with limitations. Body fat percentage was estimated\nwith skinfolds, muscle mass was estimated with an anthropometric equation instead of\nmeasured, energy intake was self-reported, the study only lasted 4 weeks, data\nreporting was poor and there was no control other than 'I promise' of whether the",
+        "e a dreamer-\nbulk.\n\nUnpublished research from the University of Tampa also found that adding a high dose\nweight-gainer supplement consisting of ~250 g of carbs to a bulking group's diet\nresulted in significantly more fat gain but not significantly more muscle growth compared\nto a more moderate diet. Ribeiro et al. (2019) found more impressive effects of higher energy intakes. In a 4-\nweek pilot study, Brazilian IFBB bodybuilders bulked on a 429-kcal energy surplus or a\n58-kcal energy surplus. Unfortunately, reporting standards were poor and post-\nintervention fat mass, fat-free mass and even bodyweight weren't reported and back-\ncalculating their values resulted in different values than the authors reported in private\ncommunication with Menno. Going by the percentage changes and assuming their\nestimate of muscle mass equals fat-free mass, we can derive that the energy surplus\nmust have been 1% vs. 8%. However, presumably they gained more FFM than muscle\nmass. Going by estimated maintenance intake based on this course's guidelines, it",
+        "eficit than it is positive in energy surplus.\n\nRozenek et al. (2002), summarized in the infographic below, compared the effect of\nadding a 2010 kcal bomb to a control diet in the form of either just carbohydrate or a\ncombination of carbs and protein. Muscle growth was greater in the 2 higher calorie --- Page 59 ---\ngroups than the control group, but the control group was the only group that lost fat.\nThis would suggest a higher energy intake indeed increases muscle growth and a lower\nenergy intake is better for fat loss. However, even this hefty extra energy intake did not\ninfluence strength gains significantly. And protein intake was 1.7 vs. 1.4 g/kg/d in the\ncarbohydrate group, making it ambiguous if it was the extra protein or energy intake that\nfavorably affected muscle growth. It's entirely possible the extra protein intake resulted\nin the extra muscle growth and all the extra energy intake did was reduce fat loss."
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5816487669944763,
+        0.5813314914703369,
+        0.5806432366371155,
+        0.5711557865142822,
+        0.5706765651702881
+      ],
+      "error": null,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.5,
+      "ragas_score": 0.6916666666666667
+    },
+    {
+      "id": "N03",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "all",
+      "question": "Как се изчислява TDEE по метода на Henselmans?",
+      "ground_truth": "TDEE се изчислява чрез BMR по формулата на Katch-McArdle (370 + 21.6 x LBM в кг), умножен по коефициент на активност (1.2-1.9), плюс корекция за тренировъчните дни. Формулата използва чистата мускулна маса вместо общото тегло за по-точен резултат.",
+      "answer": "TDEE (Total Daily Energy Expenditure) се изчислява по следния начин:\n\n1. Изчисли BMR (Basal Metabolic Rate) с формулата на Katch-McArdle:\n   \\[\n   BMR = 370 + (21.6 \\times LBM \\text{ в кг})\n   \\]\n   където LBM (Lean Body Mass) се изчислява като:\n   \\[\n   LBM = BW \\times (1 - BF\\% / 100)\n   \\]\n\n2. Оцени нивото на физическа активност (PA) с множители:\n   - Седящ начин на живот: 1.2\n   - Лека активност: 1.375\n   - Умерена активност: 1.55\n   - Висока активност: 1.725\n   - Много висока активност: 1.9\n\n3. Оцени TEF (Thermic Effect of Food) в диапазона между 1.1 и 1.25, в зависимост от качеството на диетата и процента на телесни мазнини.\n\n4. Изчисли REE (Resting Energy Expenditure):\n   \\[\n   REE = BMR \\times PA \\times TEF\n   \\]\n\n5. Изчисли RT EE (Resistance Training Energy Expenditure) с формулата:\n   \\[\n   RT\\ EE = 0.1 \\text{ kcal/kg/min} \\times \\text{тегло в кг} \\times 60 \\text{ минути}\n   \\]\n\n6. Изчисли TDEE (Training Day Energy Expenditure) с формулата:\n   \\[\n   TDEE = REE + (RT\\ EE \\times TEF)\n   \\]\n\nТака получаваш TDEE, което е общото количество калории, които изразходваш за един ден.",
+      "contexts": [
+        "ween 1.1 and 1.25 based on diet quality and BF%.\n4. REE = BMR × PA × TEF\n5. RT EE = 0.1 kcal/kg/min\n6. Training day EE = REE + RT EE × TEF = (BMR × PA + RT EE) × TEF\n7. Determine the optimal energy balance factor (EBF) based on BF% and training\nstatus.\n8. Average total daily energy intake = EE × EBF In very lean individuals, such as those in contest prep for a physique show, you may\nneed to apply an adaptive thermogenesis multiplier of 0.8 - 1.\n\nIt's important to understand the above math. However, once you do, there's no need to\ndo it all by hand, so here's a calculator to do the math for you.\n\n\n--- Page 89 ---\n➢ PT Toolkit\nEnergy intake calculator",
+        "Energy Intake Calculator — BMR, TDEE, Macros (Henselmans)\n\nBMR via Katch-McArdle: 370 + 21.6 x LBM kg. Activity multipliers: sedentary 1.2 to very active 1.9. Goal adjustments: bulk +250, maintain 0, cut -500, aggressive cut -750 kcal. Protein: 2.0 g/kg cut, 1.8 g/kg bulk. Fat min 0.8 g/kg. Call calculate_energy_intake() from calculators.py.",
+        "(kg) / Ht (m2)\nFor Untrained: BF% = [1.2 x BMI] + [0.23 x Age] - [10.8 x Sex m=1, f=0] - 5.4\n2. Katch McArdle BMR = 370 + (21.6 x LBM in kg):\n1404\n\n3. Conservatively estimate the daily life physical activity level (PA):\n1.00\n\n4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:\n1.2 5. REE (Rest Day EE) = BMR x PA x TEF REE= 1404 x 1.0 x 1.2 = 1685\n6. RT EE = 0.1 kcal/kg/min: 0.1 x 55.9 x 60 = 335\n7. TDEE (Training Day EE) = REE + (RT EE x TEF): 1685 + (335 x 1.2) = 2111\n8. EE (Daily Maintenance EE) = REE (1) & TDEE (6) by # of applicable days. Add sums. Divide by 7:\n[(1685 x 1) + (2111 x 6)] / 7 = 2050 Daily Maintenance EE … I am currently maintaining at this\nintake. Weekly intake is 14351.\n9. Determine the optimal energy balance factor (EBF) based on BF% & training status.\nMy goal is to make the 52kg weight class by Feb. 11th Powerlifting Meet. I typically need go into my\nmeets weighing 53.63kg/118lb and can perform a water cut to 52kg/114.4lb. Given Menno's guidelines\nfor max % BW loss per week, at 14.4%, I this I should aim for max of 0.7 % loss per week or",
+        "--- Page 1 ---\nSetting Calories: Step by Step\nBayesian Method\n\nBecause BMR is a function of LBM, we need to know BF% and LBM to be most accurate.\n1. LBM = BW x (1 - BF% / 100): LBM= 55.90(1 - 14.4%/100) = 47.85kg\n\nIf no DEXA, Estimate BF% to find LBM. Find BMI. BMI = Wt (kg) / Ht (m2)\nFor Untrained: BF% = [1.2 x BMI] + [0.23 x Age] - [10.8 x Sex m=1, f=0] - 5.4\n2. Katch McArdle BMR = 370 + (21.6 x LBM in kg):\n1404\n\n3. Conservatively estimate the daily life physical activity level (PA):\n1.00\n\n4. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%:\n1.2",
+        "sh effect occurs, it's important to keep in mind when interpreting someone's weight\nloss data. If you notice pronounced non-linear weight loss rates, you may need to\ncalculate the average weight loss rate over the past 2 weeks to get a representative\nidea of how fast someone is really losing weight. --- Page 88 ---\nSummary: optimizing energy intake\nHere's a summary of how to determine energy intake. Note that you can write any\npercentage as a factor, e.g. 20% deficit = 0.8 energy balance factor, 10% TEF = 1.1\nTEF factor.\n\n1. Katch McArdle BMR = 370 + (21.6 × FFM in kg)\nFFM = BW × (1 - BF% / 100)\n2. Conservatively estimate the daily life physical activity level using the table below.\n\n3. Estimate TEF in between 1.1 and 1.25 based on diet quality and BF%.\n4. REE = BMR × PA × TEF\n5. RT EE = 0.1 kcal/kg/min\n6. Training day EE = REE + RT EE × TEF = (BMR × PA + RT EE) × TEF\n7. Determine the optimal energy balance factor (EBF) based on BF% and training\nstatus.\n8. Average total daily energy intake = EE × EBF"
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Henselmans Energy intake calculator.xlsx",
+        "Case study female Powerlifter prep.pdf",
+        "Case study female Powerlifter prep.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6305423378944397,
+        0.6102017164230347,
+        0.600831151008606,
+        0.5994065999984741,
+        0.5708377361297607
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.8,
+      "ragas_score": 0.8999999999999999
+    },
+    {
+      "id": "N04",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "all",
+      "question": "Какво е значението на креатина и как да го приемам?",
+      "ground_truth": "Креатин монохидрат е най-добре изследваният ергогенен суплемент. Препоръчителната доза е 3-5 грама дневно. Не е нужна фаза на насищане. Подобрява представянето при високо-интензивни упражнения и може да увеличи мускулния растеж при съпротивително тренировъчно.",
+      "answer": "Креатинът е едно от най-изследваните и ефективни спортни добавки. Той подобрява работоспособността, развитието на силата и мускулния растеж. \n\nКак да го приемаш:\n\n1. **Зареждаща фаза**: Ако не си приемал креатин преди, започни с 5-дневна зареждаща фаза. Приемай 20 г креатин на ден, разделени на поне 3 хранения.\n\n2. **Поддържаща доза**: След зареждащата фаза, приемай 5 г креатин на ден, след тренировка или с първото си хранене.\n\n3. **Жени**: За жени е достатъчно 3 г на ден или 0.03 г на кг телесно тегло.\n\nАко пропуснеш доза, можеш да удвоиш следващата доза, за да компенсираш. Няма нужда от циклично приемане на креатин, можеш да го приемаш безкрайно.",
+      "contexts": [
+        "elligence and short-term memory,\nespecially when the body is under high stress [2] and in elderly individuals. These\neffects may result from extra creatine storage in the brain and improved neuromuscular\nfunctioning. All creatine's health benefits for already healthy individuals are marginal\nthough. How to take it\nIf you haven't supplemented creatine the month before, start with a 5-day loading phase\nwith 20 g creatine per day for men or 15 g for women, spread across at least 3 meals.\nKeep the dosage per serving to no more than 5 grams, as digestive problems can occur\n\n\n--- Page 86 ---\n86\n\nat higher dosages. After this, 5 g per day post-workout or with your first meal of the day\nis an almost universally effective maintenance dosage. 3 Grams per day or 0.03 g/kg/d\nprovides most of the benefits already and is advisable for women, but supplementing 5\ngrams may provide slightly greater benefits in some muscular men, so assuming cost\nand tolerance are not issues, men should supplement 5 g/d.",
+        " there is such a thing, is 2-8 grams of L-citrulline malate\nconsumed about 60 minutes pre-workout.\n\nMenno's verdict: Probably useful for mixed athletes and one of the more promising\nsupplements at the moment, but the current evidence does not show benefits for\nstrength trainees.\n\n\n--- Page 83 ---\n83 Creatine*\nWhat is it?\nCreatine is the most widely studied sports supplement by far and arguably the most\neffective one you can get over the counter. Creatine is a non-protein, nitrogen-\ncontaining organic molecule produced by the body from the precursor amino acids\narginine, glycine and methionine. Approximately 95% of creatine is stored in our\nmuscles as an intermediate to produce energy, two-thirds of which in the form bound to\nphosphate, phosphorylcreatine (PCr), and one-third in free form. Our brains also store\nsome creatine. Our bodies produce about a gram of creatine per day and we get\nanother gram from our diet, but we can supplement another 2-5 grams on top of that to\nsaturate creatine stores.",
+        "universally effective maintenance dosage. 3 Grams per day or 0.03 g/kg/d\nprovides most of the benefits already and is advisable for women, but supplementing 5\ngrams may provide slightly greater benefits in some muscular men, so assuming cost\nand tolerance are not issues, men should supplement 5 g/d. Why load creatine? For one, the benefits emerge faster. Second, creatine loading is\nmore established as an effective dosing protocol in the literature. The idea that creatine\ndoesn't need to be loaded mostly comes from Hultman et al. (1996). Though there was\nno statistically significant difference in loading vs. constant dosing, the loading groups\nhad a 23% increase in free concentrations compared to 20% for the constant dosing\ngroup.\n\nIf you miss a dosage, you can double up the next dosage to make up for it.\n\nThere is no need to cycle creatine. You can supplement it indefinitely.",
+        "ine, creatine supplementation improves work capacity, strength development\nand muscle growth [2]. Over the course of a training program, creatine supplementation\ntypically results in a few kilograms extra strength development on the barbell lifts and a\nkilo extra lean body mass.\n\n\n--- Page 84 ---\n84 Creatine's effectiveness depends on how well the person responds to it. There is a\ncontinuum of creatine response [2], depending primarily on much creatine the person\nnaturally stores. Some people naturally have saturated creatine stores and\nconsequently do not absorb any additional creatine into their muscles at all ('non-\nresponders'). Men also tend to gain more additional lean body mass from creatine\nsupplementation than women, likely in part due to their higher lean body mass and\ngreater proportion of fast-twitch muscle fibers. Most creatine is stored in fast-twitch\nmuscle fibers, so people with more fast-twitch muscle fibers tend to respond more\nfavorably to creatine supplementation.",
+        "Creatine is widely considered safe [2, 3]. Creatine supplementation generally doesn't\naffect liver or kidney functioning [2]. In some individuals, an increase in urinary\ncreatinine levels is observed. This is benign. It just shows the body's breaking down the\ncreatine into creatinine. In fact, creatine supplementation is associated with a wide range of health benefits,\nincluding better cardiovascular health, in particular blood flow, better glucose control,\nimproved cognition, protection against concussions and reduced depression. Creatine\nsupplementation seems to very slightly improve our intelligence and short-term memory,\nespecially when the body is under high stress [2] and in elderly individuals. These\neffects may result from extra creatine storage in the brain and improved neuromuscular\nfunctioning. All creatine's health benefits for already healthy individuals are marginal\nthough."
+      ],
+      "sources": [
+        "Supplements PTC 2022.pdf",
+        "Supplements PTC 2022.pdf",
+        "Supplements PTC 2022.pdf",
+        "Supplements PTC 2022.pdf",
+        "Supplements PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6333586573600769,
+        0.5938427448272705,
+        0.5930548906326294,
+        0.5909819602966309,
+        0.5736463069915771
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.6,
+      "ragas_score": 0.85
+    },
+    {
+      "id": "N05",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко мазнини трябва да приемам минимум?",
+      "ground_truth": "Henselmans препоръчва минимум 0.8 грама мазнини на килограм телесно тегло за поддържане на хормоналното здраве. Отиването под този праг може да наруши тестостероновите нива и общото здраве.",
+      "answer": "Минимумът на мазнини, който трябва да приемаш, е 20% от общия ти енергиен прием. За максимални анаболни ефекти, целта е 40% от BMR за мъже и 40% от REE за жени. Увери се, че мазнините са разнообразни и включват наситени, мононенаситени и полиненаситени мазнини.",
+      "contexts": [
+        "ses in appetite. For maximum benefits, a fat intake of\n40% of energy intake may be advisable when this doesn't decrease carbohydrate intake\nto unsustainably low levels. A good target fat intake for near-maximum benefits with a\nsustainable diet composition is 40% of BMR for men; 40% of REE for women. These guidelines correspond well with the 20-35% Acceptable Macronutrient\nDistribution Range (AMDR) for fat intake recommended by many health organizations\n[2]. So proportional to total energy intake, strength trainees should eat a similar fat\nintake to sedentary individuals.\n\nFor maximum benefits from omega-3 fatty acids, consume 700+ grams of fatty fish per\nweek or supplement 3 grams of combined EPA + DHA in the form of fish oil pills.",
+        " organizations\n[2]. So proportional to total energy intake, strength trainees should eat a similar fat\nintake to sedentary individuals.\n\nFor maximum benefits from omega-3 fatty acids, consume 700+ grams of fatty fish per\nweek or supplement 3 grams of combined EPA + DHA in the form of fish oil pills. All other fatty acids should also be present in the diet. The exact ratios are probably not\nworth calculating, as long as the diet has a good source of saturated fat (e.g. dairy,\nmeat, coconut or chocolate), mono-unsaturated fat (e.g. olives, avocado, nuts, eggs)\nand poly-unsaturated fat. PUFAs are present in almost all foods, so a sufficient total fat\nintake combined with specific attention to omega-3 should naturally result in a sufficient\nPUFA intake, but it's good to keep in mind PUFAs are most beneficial and SFAs are\nleast important.",
+        "ohydrates\n- summarizes the literature on muscle growth in studies comparing diets with different\nratios of fats-to-carbs but the same total energy intake.\n\n➢ Literature overview\nThe effect of fat intake on muscle growth and strength development\nDietary fat intake recommendations\n\n\n--- Page 59 ---\n59 Fat intake does not have major effects on our gains. However, based on the inherently\nanabolic and hormonal effects of dietary fat, a fat intake of at least 20% is\nrecommended for good hormonal health and performance. Anecdotally, much lower fat\nintakes also result in major increases in appetite. For maximum benefits, a fat intake of\n40% of energy intake may be advisable when this doesn't decrease carbohydrate intake\nto unsustainably low levels. A good target fat intake for near-maximum benefits with a\nsustainable diet composition is 40% of BMR for men; 40% of REE for women.",
+        "--- Page 87 ---\n87 Practical applications\n• Fat intake should whenever possible be kept at a minimum of 20% of total\nenergy intake. For maximum anabolic effects an intake of 40% of BMR for men\nand 40% of REE for women is advisable, assuming no carb\nhyperresponsiveness or high carbohydrate exercise requirement.\n• Since each fatty acid has different effects, the diet should have a regular source\nof each fatty acid type: saturated, mono-unsaturated and poly-unsaturated fat.\nUnsaturated fatty acids are particularly important, as they confer direct anabolic\neffects. Saturated fat's anabolic actions are likely restricted to its indirect effects\nvia increased anabolic hormone production.\n• Omega-3 fat is particularly important to get enough of: 3 g of combined EPA +",
+        "ctioning, some reviews have argued that\nathletes should not consume fewer than 25% of their energy from fat. However, the\neffects of going over a fat intake of 20% of energy intake are small, so if there is good\nreason to prefer a higher carbohydrate diet, that should take priority. When there is no reason to prefer a higher carbohydrate diet though, fat intakes of up to 40% may\nfavorably alter anabolic hormone production and subsequently body composition."
+      ],
+      "sources": [
+        "Dietary fat PTC 2022.pdf",
+        "Dietary fat PTC 2022.pdf",
+        "Dietary fat PTC 2022.pdf",
+        "Dietary fat PTC 2022.pdf",
+        "Dietary fat PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6237543821334839,
+        0.5711761713027954,
+        0.5670839548110962,
+        0.5667674541473389,
+        0.563799262046814
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7,
+      "context_precision": 0.8,
+      "context_recall": 0.0,
+      "ragas_score": 0.625
+    },
+    {
+      "id": "N06",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "all",
+      "question": "Важно ли е времето на хранене около тренировката?",
+      "ground_truth": "Времето на хранене има по-малко значение от общия дневен прием. Въглехидратите около тренировката могат да оптимизират представянето и възстановяването, но общата дневна консумация е по-важна от точното тайминг за повечето хора.",
+      "answer": "Да, времето на хранене около тренировката е важно, особено за напреднали трениращи. Препоръчва се да се консумира значителна част от дневния прием на протеин в периода между тренировката и лягане. Най-добре е да имате поне 2 хранения в този период, за да максимизирате синтеза на протеин и мускулния растеж. \n\nАко тренирате вечер, помислете за увеличаване на протеиновия прием не само след тренировката, но и на следващата сутрин. Това е важно, защото всяка тренировка активира \"анаболно прозорче\" за мускулната група, която сте тренирали.",
+      "contexts": [
+        " full stomach or\ncomplain they don't have time to prepare a meal before their workout. These are\ngenerally poor excuses, as you can prepare many meals that are easy to digest and\nrequire minimal preparation time, such as a small piece of fruit and some dairy or\nsmoked poultry.\n\n\n--- Page 124 ---\n124 The anabolic window & post-workout nutrition\nAs we discussed earlier, when nutrient timing is the same in both scenarios, the\nresearch is quite clear there are no benefits to increasing your protein intake above 1.6\ng/kg/d in most if not all circumstances. However, there are several studies that do find\nbenefits of protein intakes over 1.6 g/kg/d when the protein is consumed at specific\ntimes ('protein timing'). Usually, the additional protein is provided as pre- and/or post-\nworkout protein shakes in these studies. Since protein intake itself is well-researched\nnot to have additional effects above this point, it's likely the protein timing resulted in the\nadditional strength development and muscle growth in these studies.",
+        "Sleep quality is typically unaffected as well by pre-bed protein consumption, as we'll\ndiscuss in the topic on sleep.\n\n\n--- Page 145 ---\n145 Traditional pre- and post-workout nutrition guidelines were based on a supplement\nindustry fueled idea of a 1-hour anabolic window around your workouts. In reality, the\nanabolic window is the full process of muscle growth that occurs after a training session.\nIt is formally a delay in the muscle-full effect that creates a window of opportunity for\nincreased protein synthesis. This window can last over 72 hours, but it quite quickly\ndecreases with training experience so that the most major elevation in protein synthesis\nlasts fewer than 24 hours. As such, to stimulate maximal protein balance and muscle\ngrowth, you can synchronize your protein and energy intake with the anabolic window\nand protein timing becomes more important for advanced trainees. Your workouts",
+        "in during this period.\nSpecifically, trained individuals should generally consume a disproportionate amount of\ntheir daily protein requirement in the period between the workout and bedtime. It's likely\nadvisable to have at least 2 meals during this period, or else to have an early meal the\nnext day. If you train in the evening, especially if you only have 1 post-workout meal, you should\nstop thinking in terms of calendar days with your macros. Instead, think in terms of\nanabolic windows across the week. Each workout triggers an anabolic window:\nspecifically, every time you stimulate a muscle group, you create a 'window potential' for\nthat muscle group. This means that, when your anabolic window is long enough, if you\ntrain in the evening, you want to increase your protein intake not just post-workout but\nalso the next morning. So just grouping your nutrition plan into 'training days' and 'rest\ndays' may not always suffice. You want to think in terms of periods in- and outside the\nanabolic window, regardless of which days these periods overlap with.",
+        "endurance adaptations soon become redundant for pure strength training, long before\nthe rate of muscle growth significantly diminishes. In any case, for the purpose of\nnutrient timing it doesn't matter which protein fractions are elevated and which aren't: --- Page 142 ---\n142\n\nmaximum MPS is the goal to facilitate recovery and maximum training progression,\nregardless of which sub factions this MPS occurs in. We want to fuel all adaptations to\nour training. Plus, if total MPS has returned to baseline, that should logically imply\nmyoMPS has also returned to baseline, as myoMPS is a component of total MPS.\n\nMeal frequency vs. workout nutrition\nRemember the boxer study from the meal frequency topic? Assuming the boxers\ntrained somewhere midday and they were quite advanced, the superior results of the 6-\nmeal group over the 2-meal group may well have been the result of workout nutrition,\nsince they sandwiched their workouts better between meals.\n\n\n--- Page 143 ---\n143",
+        "rease your protein intake not just post-workout but\nalso the next morning. So just grouping your nutrition plan into 'training days' and 'rest\ndays' may not always suffice. You want to think in terms of periods in- and outside the\nanabolic window, regardless of which days these periods overlap with. What about the work of Schoenfeld, Aragon & Krieger?\n[Optional section]\nSchoenfeld et al. (2013) performed a meta-analysis on the effect of protein timing on\nmuscle strength and hypertrophy. These authors have since informally become known\nas the team that disproved the relevance of workout protein timing and the anabolic\nwindow. However, closer inspection of the results suggests a strong case of \"Absence\nof evidence does not indicate evidence of absence.\"\n\n\n--- Page 139 ---\n139"
+      ],
+      "sources": [
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6006348133087158,
+        0.5880866050720215,
+        0.5845755934715271,
+        0.5844078063964844,
+        0.5796595811843872
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "ragas_score": 0.8175
+    },
+    {
+      "id": "N07",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "cut",
+      "question": "Какъв дефицит да направя за 0.5 кг загуба на мазнини на седмица?",
+      "ground_truth": "За загуба от 0.5 кг мазнини на седмица е нужен дефицит от около 500 калории на ден (3500 калории на седмица). При дефицит трябва да се увери, че протеинът е достатъчен (2.0-2.2 г/кг) за запазване на мускулната маса.",
+      "answer": "За да постигнеш загуба на 0.5 кг мазнини на седмица, трябва да създадеш дефицит от около 500 kcal на ден. Това е базирано на факта, че 1 кг мазнини съдържа приблизително 7700 kcal. Следователно, за 0.5 кг загуба, нуждаеш се от дефицит от около 3850 kcal на седмица, което е около 550 kcal на ден.\n\nВажно е да знаеш, че дефицитът трябва да бъде адаптиран спрямо твоята поддържаща калорийна стойност. Например, ако поддържащата ти стойност е 2500 kcal, тогава ще трябва да приемаш около 2000 kcal на ден, за да постигнеш желаната загуба на мазнини.",
+      "contexts": [
+        "--- Page 85 ---\nObese\n26+\n39+\nmaximum\nN.A.\n\nNote that the weekly weight loss guideline is a maximum, as the less weight you lose\ngiven a certain amount of fat loss, the better(!) You should always think of weight change as a percentage of body weight change and\nenergy balance as a percentage of maintenance energy intake. This finetunes the diet\nto the individual's bodyweight and metabolism. Many one-size-fits-all diets fail, because\nthey set calories at some predetermined level without considering the individual's weight\nor metabolism. This is also why the often-heard recommendations of cutting on a 500-\ncalorie deficit or losing 1 to 2 pounds a week are arbitrary at best. These numbers may\nwork as averages of averages for some populations of people who are otherwise\nclueless on how to design a diet, but as general laws they suck. 2 Pounds a week is\nextremely drastic for a female Bikini competitor yet slow for many obese men. Likewise,",
+        "mp and 20m sprint\ntime\n0.1 kg/week or 0.3%\nbody weight per week\nvs.\n0.55 kg/week or 0.8%\nbody weight per week\n\nCountermovement\njump, sprint time and\nweight and fat loss\nwere improved in the\ngroup with the higher\ndeficit only.\n50% (0.2 out of 0.4 kg)\nvs.\n23%\n\nNo significant difference\nbetween groups. Based on the above data, we have estimated the optimal deficit and rate of weight loss\nas a function of body fat percentage in the following table. The general principle is that\nthe greater the risk of muscle loss, the more conservative you should be with the energy\ndeficit. The risk of muscle loss in turn is determined chiefly by someone's body fat\npercentage, with greater risk at lower body fat levels, but the person's overall program\nquality, training status and lifestyle factors also influence the risk of muscle loss.\n\nCategory\nFat percentage\n(%)\nOptimal\ndeficit (%)\nMaximum weekly weight\nloss (% BW)\nMale\nFemale\nContest prep\n< 8\n< 14\n2.5 - 7.5\n0.5\nAthletic\n8 - 15\n14 - 24\n5 - 25\n0.7\nAverage\n15 - 21\n24 - 33\n20 - 35\n1\nOverweight\n21 - 26\n33 - 39\n30 - 50\n1.5",
+        "ds a week are arbitrary at best. These numbers may\nwork as averages of averages for some populations of people who are otherwise\nclueless on how to design a diet, but as general laws they suck. 2 Pounds a week is\nextremely drastic for a female Bikini competitor yet slow for many obese men. Likewise, a 500 kcal deficit achieves very different results on a person with a maintenance intake\nof 2000 kcal compared to a person with a 4000 kcal maintenance intake. Same story for\nbulking. Therefore, you should always think of weight change as a percentage of body\nweight change and calculate your energy surplus or deficit as a percentage of your\nmaintenance energy intake.",
+        "3% body weight per week vs. 0.55 kg/week or 0.8% body weight per week Countermovement jump, sprint time and weight and fat loss were improved in the group with the higher deficit only. | 50% (0.2 out of 0.4 kg) vs. 23% No significant difference between groups. |\n| --- | --- | --- | --- | --- | --- | Table 6 (page 84):\n| Category |  | Fat percentage |  |  |  |  | Optimal deficit (%) | Maximum weekly weight loss (% BW) |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  |  | (%) |  |  |  |  |  |  |\n|  |  | Male |  |  | Female |  |  |  |\n| Contest prep | < 8 |  |  | < 14 |  |  | 2.5 – 7.5 | 0.5 |\n| Athletic | 8 – 15 |  |  | 14 – 24 |  |  | 5 – 25 | 0.7 |\n| Average | 15 – 21 |  |  | 24 – 33 |  |  | 20 – 35 | 1 |\n| Overweight | 21 – 26 |  |  | 33 – 39 |  |  | 30 – 50 | 1.5 |\n\nTable 7 (page 85):\n| Obese | 26+ | 39+ | maximum | N.A. |\n| --- | --- | --- | --- | --- |\n\nTable 8 (page 85):\n|  | Observed weekly bodyweight loss rate (%) |  |  | Estimated energy deficit (%) |  |\n| --- | --- | --- | --- | --- | --- |",
+        " weight per week\n\nThe higher deficit\ngroup lost more fat\nmass but decreased\n1RM performance in\nthe bench press.\nNo significant LBM loss\nin either group.\n\n\n--- Page 84 ---\nHuovinen et\nal. (2015)\nElite track and\nfield athletes (8)\nwith a BF% of\n8.5% vs. 10.6%\n(no significant\ndifference\nbetween groups) 4 weeks of\n300 kcal (11%)\ndeficit\nvs.\n750 kcal (24%)\ndeficit\nBody composition\n(incl. weight, lean\nbody mass and fat\nmass),\ncountermovement\njump and 20m sprint\ntime\n0.1 kg/week or 0.3%\nbody weight per week\nvs.\n0.55 kg/week or 0.8%\nbody weight per week\n\nCountermovement\njump, sprint time and\nweight and fat loss\nwere improved in the\ngroup with the higher\ndeficit only.\n50% (0.2 out of 0.4 kg)\nvs.\n23%\n\nNo significant difference\nbetween groups."
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5870969295501709,
+        0.574951171875,
+        0.5728762149810791,
+        0.5716801881790161,
+        0.5710135698318481
+      ],
+      "error": null,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 0.7,
+      "context_precision": 0.8,
+      "context_recall": 0.0,
+      "ragas_score": 0.4583333333333333
+    },
+    {
+      "id": "N08",
+      "category": "nutrition",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко хранения на ден са оптимални за синтез на мускулен протеин?",
+      "ground_truth": "Henselmans препоръчва 3-5 хранения дневно с равномерно разпределение на протеина. Всяко хранене трябва да съдържа 0.4-0.55 грама протеин на килограм телесно тегло за максимален анаболен отговор.",
+      "answer": "Оптималният брой хранения за максимален синтез на мускулен протеин е 3 на ден. При този режим е важно да се осигури равномерно разпределение на протеина в храненията, за да се максимизира мускулният растеж.",
+      "contexts": [
+        "06\n\nBased on the higher amount of protein requirement to maximize MPS in a mixed meal,\nthe contaminant suppression of MPB and the potential for greater MPS after fasting, we\nmay be able to stimulate maximal muscle growth with 3 or even just 2 meals a day,\nprovided the following 2 conditions are met: 1. You consume mixed meals of largely whole foods, not just whey protein powder.\n2. You roughly synchronize your protein intake with the body's capacity to increase\nMPS, i.e. you consume more protein post-workout, pre-bed and after long fasts.\n\nIt's very plausible that this way your body can utilize, for example, 0.6 g/kg protein post-\nworkout and 0.5 g/kg protein in 2 other meals, amounting to 1.6 g/kg effective protein\nusage with just 3 meals a day.",
+        "\n9 %\n50 g\nDairy\nMilk\n8.5 %\n200 ml\nYogurt\n10 %\n90 g\nCheese\n11 %\n20 g\nPlant protein sources\nTofu\n8 %\n70 g\nLegumes\n7-8 %\n40 g\nNuts\n6.5-7 %\n35 g\nProtein powders (ratio)\nMilk protein\n8.5 %\n8 g\nWhey-casein-mix\n(1:1)\n9.5 %\n6 g\nWhey-casein-mix\n(1:4)\n9 %\n6 g\nEgg white protein\n8.5 %\n7 g\n\n\n--- Page 103 ---\n103 Pea-rice-mix (7:3)\n7 %\n9 g\nTake-home message\nTo maximize protein balance, it is advisable to consume at least 0.3 g/kg protein in each\nmeal. If less than half of that comes from a high-quality protein source, foods with a\ncomplementary amino acid profile should be selected to ensure a leucine intake of at\nleast 0.5 g and a complete amino acid profile for the meal as a whole.\n\n\n--- Page 104 ---\n104\n\nMeal frequency\nAfter a meal, protein synthesis normally increases. However, you can't just consume an\nenormous amount of protein and get extremely high levels of protein synthesis. Your\nbody maintains a maximum level of protein balance that it allows based on how much\nmuscle growth requirement has been stimulated.",
+        "ody mass than with-meal supplementation. This was a meta-analysis with many\nstudies supplementing protein on top of their habitual diet. Increasing their meal\nfrequency with between-meal protein supplementation evidently wasn't beneficial for\nmuscle growth and many people only consume 3 meals a day. 2 Meals a day probably won't cut it for maximum muscle growth though. If you recall the\naforementioned study by Yasuda et al. (2020), it found that a roughly even protein\ndistribution across 3 meals led to a strong trend for greater lean tissue growth and\nstrength development than having the same total daily macronutrient intakes with a\nbreakfast with only 0.1 g/kg protein. The subjects were young, strength training men\nand the study lasted 12 weeks. Since the evidence for the leucine threshold is shaky,\nit's plausible that the inferior gains in the group with almost all protein in meals 2 and 3\nwas because 2 meals simply can't maximize protein balance across the entire day in\nstrength trainees.",
+        "\nan intact protein source and especially meals with fats or fiber that slow down the\ndigestion rate. In contrast to whey, 38 g milk protein concentrate seems to maximize\nmuscle protein synthesis for at least 5 hours at rest, so it's implausible splitting up this\nmeal in 2 would have had any benefit. Solid, mixed meals may also have a higher maximum protein synthesis. Kim et al.\n(2016) and Park et al. (2020) showed that in mixed meals, 70 grams of protein\nstimulated slightly greater whole-body protein synthesis than 35-40 grams protein even\nat rest. Moreover, protein breakdown decreased significantly with 70 grams protein\ncompared to 40 grams, further elevating protein balance. Protein breakdown rates\nchanges are generally severalfold smaller than changes in protein synthesis, but this fits\nwith the diminishing returns of protein intakes above ~1.2 g/kg/d. However, it should be\nnoted that protein breakdown levels were estimated, not measured, and there is some\ncontroversy over the accuracy of this estimation method.",
+        "fice for maximal muscular\ndevelopment in strength trainees. Additionally, The Meal Frequency Project shows that\n3 meals a day may be superior to 6 meals a day, at least when bulking. As such, meal\nfrequencies of 3 - 5 meals a day are recommended for optimal body recomposition.\n\n\n--- Page 111 ---\n111 Fasted training\nDuring exercise, the mTOR protein integrates nutrient and exercise signals to determine\nhow much muscle will be built. You can think of mTOR as a little computer that weighs\nthe body's costs and benefits of turning on muscle protein synthesis.\n\nVarious signaling pathways converge on mTORC1 to mediate control of the mRNA\nbinding step in translation initiation in skeletal muscle (see illustration below; source).\nmTORC1 acts as a nexus for numerous signaling pathways, including both positive\ninputs, e.g. amino acids, exercise, and insulin/insulin-like growth factor-1 (IGF-1), and\nnegative inputs, e.g. glucocorticoids, energy stress, and the integrated stress response.\n\n\n--- Page 112 ---\n112"
+      ],
+      "sources": [
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf",
+        "Protein PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6879487633705139,
+        0.6635629534721375,
+        0.6539634466171265,
+        0.6524918675422668,
+        0.6370537877082825
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.7,
+      "context_precision": 0.6,
+      "context_recall": 0.5,
+      "ragas_score": 0.7
+    },
+    {
+      "id": "T01",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко серии на седмица са оптимални за мускулна група при начинаещ?",
+      "ground_truth": "За начинаещи Henselmans препоръчва около 10 серии на седмица за основните мускулни групи. Това е близо до MEV (Minimum Effective Volume). Обемът трябва постепенно да се увеличава с времето към MAV.",
+      "answer": "За начинаещи оптималният обем е 9-14 серии на мускулна група на седмица. Препоръчвам да започнеш с по-ниския край на този диапазон, например 9 серии, и да увеличаваш постепенно, ако се чувстваш комфортно.",
+      "contexts": [
+        "week would allow him some flexibility for scheduling his training\nsessions, and extra time for recuperating from the soreness that is\nlikely to happen during the first few weeks. Because he's a complete novice, 9-14 sets per muscle group per week are\n\n\n--- Page 8 ---\nBAYESIANBODYBUILDING.COM\n\nlikely enough. This makes for very short workouts.\nHowever, we want to limit the amount of muscle damage, as we want as\nmuch of the Muscle Protein Synthesis in the Anabolic Windows left for\nmaking the muscles bigger, instead of just repairing them.\nTo do so, we will start slowly with very light weights, high reps, and at the\nlower end of the optimal amount of sets per week.",
+        "Training Volume Calculator — Optimal Sets Per Week (Henselmans)\n\nNovice/Intermediate/Advanced sets/week: Chest 10/12/16, Back 10/14/18, Shoulders 8/12/16, Biceps 6/10/14, Triceps 6/10/14, Quads 10/14/18, Hamstrings 8/10/14, Glutes 8/12/16. Female lower body +20%. Priority muscles +4 sets. Call calculate_optimal_volume() from calculators.py.",
+        "--- Page 3 ---\n3 4. Determine the optimal weekly total work set training volume for each\nmuscle. In the above example, it may be 15 sets for the upper body and 12 sets\nfor the lower body. That means each lower body muscle should do on average 6\nsets per each workout; 5 sets per workout for the upper body muscles.\nIf you're going to implement training to failure or advanced training techniques,\ntake this into account and lower the volume for the affected muscles\ncorrespondingly.\n5. Select your exercises, their training intensities and progression models\nbased on i.a. the available equipment and their synergy, ensuring you hit the\nminimum optimal exercise variety for each muscle group. For example, you need\nto ensure you hit the hamstrings with a knee flexion and a hip extension exercise,",
+        " trained twice per week, a common oversight in\nsplit routines that try to target each muscle group only once per week. A similarly\ncommon bias in bro bodybuilding routines is that 'the legs' are treated as a single\nmuscle group and most exercises for this body part actually preferentially target the quadriceps, neglecting the posterior chain (hamstrings, calves and gluteus muscles).\nDue to the compound exercises targeting the arms, quadriceps and shoulders as well,\nthe total weekly training for the triceps, biceps and quadriceps was well over 20 sets\nand for the anterior deltoids the training volume was over 30 sets. For novice level\ntrainees, this was evidently excessive.",
+        "ve et al. (2019) found a trend for an optimal training volume of 18 sets\nper week for the biceps: groups training with 9 and 27 sets achieved worse\noverall strength and muscle development. The medium and high volume groups\ntrained their biceps twice per week, so the high volume group performed 13-14 sets per workout for the biceps compared to 9 sets for the medium group."
+      ],
+      "sources": [
+        "Case study untrained.pdf",
+        "Training volume calculator MennoHenselmans.com.xlsx",
+        "Training case studies PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6904319524765015,
+        0.6542164087295532,
+        0.6431522369384766,
+        0.6167054176330566,
+        0.602288007736206
+      ],
+      "error": null,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.33,
+      "ragas_score": 0.6991666666666667
+    },
+    {
+      "id": "T02",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко пъти в седмицата трябва да тренирам всяка мускулна група?",
+      "ground_truth": "Изследванията показват, че трениране на мускулна група 2 пъти седмично е оптимално за хипертрофия в сравнение с 1 път. При напреднали с голям обем, честотата от 3 пъти може да е по-добра за управление на обема.",
+      "answer": "Всяка мускулна група трябва да се тренира поне 2 пъти в седмицата. Ако обемът на тренировките за конкретната мускулна група надвишава 16 серии, е препоръчително да я тренираш поне 3 пъти в седмицата. Напредналите атлети, които натоварват мускулите си до лимита, могат да се възползват от тренировки на мускулите дори всеки ден или два пъти на ден.",
+      "contexts": [
+        "aining volumes. This trend aligns with the theory that as you\nget more advanced, your anabolic window shortens, there is less protein breakdown\nduring training and you become more resistant to muscle damage and neuromuscular\nfatigue. This means you benefit from more total and more frequent exercise. All strength-trained individuals should thus generally exercise each muscle group at\nleast twice per week. You likely need at least 1 weekly workout per week per muscle\ngroup for every 8 sets you do for that muscle group, as there are strong diminishing\nreturns to training a muscle with more than 8 sets in a single workout. Thus, you likely\nneed to train a muscle at least 3x per week when your training volume exceeds 16 sets\nper muscle group. Advanced trainees pushing their training volume to their limits may\nbenefit from training each muscle as much as daily or even twice daily. Since there are\npotential benefits and no downsides to training a muscle more frequently in trained\nindividuals, you can err on the side of higher training frequencies. In fact, a perfectly",
+        "er body days have squats, your squat frequency is 2.\n3. The most relevant definition for muscle growth is the training frequency per\nmuscle group. Your muscles don't care how often you're in the gym or what your\ntraining split is. They only react to how often they experience high mechanical\ntension. Bodybuilders traditionally train a muscle just once a week. This way you get a huge\npump during the workout and a lot of soreness afterwards. But as you've learned, a big\npump and sore muscles, or their rationalized variants, metabolic stress and muscle\ndamage, do not equate to muscle growth. And it would be coincidental if the time-\ncourse of muscle growth happened to coincide exactly with what we define as a week in\nthe Gregorian calendar.",
+        "e trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them and the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.",
+        "at. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others. --- Page 3 ---\n3",
+        "he optimal training principles, you're all good. With that in mind,\nhere's a general framework of how to go about creating a training program.\n1. Determine the total weekly training frequency. If the trainee is not averse to\ntraining, this is generally equal to the highest number of sessions they're consistently willing to go to the gym. Example, if someone's willing to go to the\ngym 6x per week, the total training frequency will be 6x.\n2. Determine the optimal weekly training frequency per muscle group for each\nmuscle. Example: A guy has his upper body as the priority, which is developed\nat a serious intermediate level, so it probably needs to be trained at least 3x per\nweek for optimal progress, whereas the lower body is at an earlier intermediate\nstage and only needs to be trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them"
+      ],
+      "sources": [
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf"
+      ],
+      "scores": [
+        0.7120298147201538,
+        0.6585565805435181,
+        0.656200110912323,
+        0.6485871076583862,
+        0.6449497938156128
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 1.0,
+      "ragas_score": 0.95
+    },
+    {
+      "id": "T03",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "В какъв диапазон на повторения трябва да тренирам за максимална хипертрофия?",
+      "ground_truth": "Хипертрофията може да се постигне в широк диапазон от повторения (5-30), стига сетовете да са близо до отказ. Традиционният диапазон от 8-12 повторения остава ефективен, но не е единственият правилен вариант.",
+      "answer": "За максимална хипертрофия, можеш да тренираш в диапазон от 5 до 30 повторения на серия, стига да тренираш близо до отказ. Няма нужда да се ограничаваш само до 6-12 повторения, както е било популярно вярвано. Основното е да се увериш, че натоварването е достатъчно тежко, за да активира всички мускулни влакна.",
+      "contexts": [
+        "Training intensity correlates with the rep count: see the table below for the conversion.\nFor example, most people can do about 8 reps with 80% of their 1RM and 3 reps with\n90%. By definition, anyone can perform only a single rep with 100% of their 1RM.\n\nSource: ExRx.net One of the greatest broscience myths that persists to date is that there is an optimal\nhypertrophy zone of 6-12 repetitions (reps) which is best for muscle growth. This\nseemed to be based on nothing more than the subjective sensation of training, like most\nbro wisdom. When you perform sets with light enough weights that you can perform\nover 12 reps, you barely feel the first reps at all. It doesn't feel heavy enough. When you\ntrain with such heavy weights that you cannot perform at least 6 reps, you don't get a\npump or burn. So the sweet spot from a sensory point of view seems to be about 6-12\nreps per set.\n\n\n--- Page 5 ---\n5\n\nThe hypertrophy zone: just because someone turned it into a fancy image doesn't make\nit true.",
+        "not be limited primarily by\nforce production but rather by metabolic and cardiorespiratory factors, such as energy\nproduction and oxygen transport. In this case, you will likely not reach full motor unit\nrecruitment and muscle activation levels will remain too low to stimulate maximum\nmuscle growth. In sum, on a set per set basis when training close to failure, the 'maximum hypertrophy\nintensity range' seems to be about 30-85% of 1RM, which is generally equivalent to a\nrange of 5-30 reps. Within this range, any given number of sets produces similar levels\nof (short-term) muscle growth.\n\nIn history's usual pendulum-like nature of idea formation, many people in evidence-\nbased fitness then concluded: \"Training intensity doesn't matter at all for muscle\ngrowth.\"\n\n\n--- Page 10 ---\n10\n\nHowever, there are several considerations to keep in mind when selecting your training\nintensities, other than the weight being heavier than 30% of 1RM.",
+        "ar levels of muscle hypertrophy as that volume in the form of higher reps\nper set while often providing better strength development to boot [2, 3]. If you train to at\nleast volitional failure, the number of reps per set has minimal effects on how much\nmuscle you'll build from a given number of sets. The broscience myth of the 6-12 rep hypertrophy range didn't die for many years,\nhowever. It finally started to crumble over the last few years when studies started\nrepeatedly showing that even sets of very high reps (30% 1RM) are just as effective for\n\n\n--- Page 6 ---\n6\n\nmuscle growth as sets in the traditional bodybuilding rep range (~80% 1RM) when taken\nto (volitional) failure [2, 3, 4].\n\nTraining close to failure seems to be crucial for high rep sets to be maximally effective.\nSimply lifting the simple total tonnage with 30% of 1RM as with 80% or 90% of 1RM\nweights doesn't stimulate as much muscle growth [2].",
+        " number come up all the time, that can mean\nthey have a mental block. Many people, especially men, are reluctant to go\nabove ~12 reps per set, possibly implicitly because they think hypertrophy range\nends there. These individuals benefit from learning to autoregulate their\nprograms and train harder. A simpler method\nIf the muscle-specific hypertrophy methods sounds overly complicated to you, you can\nsimply set fixed rep targets based on the population averages of the intensity-load\nrelation. Instead of prescribing a weight based on the preferred training intensity\n(%1RM) to find someone's rep targets, you can prescribe the following rep targets\ndirectly. The table below lists which rep target you can prescribe based on which\nintensity you would prescribe with the muscle-specific hypertrophy method. You'll\nprobably want to customize these numbers a bit based on which rep targets each\nexercise is better technically suited for. For example, if you have an intermediate trainee\nfor whom you want to set their rep targets with 80% and 65% of 1RM for compound and",
+        "ilding rep range (~80% 1RM) when taken\nto (volitional) failure [2, 3, 4].\n\nTraining close to failure seems to be crucial for high rep sets to be maximally effective.\nSimply lifting the simple total tonnage with 30% of 1RM as with 80% or 90% of 1RM\nweights doesn't stimulate as much muscle growth [2]. If you don't train with either a heavy weight or closer to failure, you won't achieve full\nmotor unit recruitment. If you'll recall from the module on understanding muscle growth,\nhigher-threshold motor units are only recruited when either high forces have to be\nproduced or when lower-threshold motor units fatigue and the big boys have to pick up\nthe slack. Fatigue is crucial to lower the recruitment threshold of the larger motor units.\nLarger motor units not only have more muscle fibers that probably won't grow maximally\nunless they get recruited, they also have more powerful fast-twitch muscle fibers, which\nhave considerably more potential to grow than slow-twitch muscle fibers. So unless you\ntrain with a weight that's heavy enough to recruit all muscle fibers from the start, which"
+      ],
+      "sources": [
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6240658760070801,
+        0.6136082410812378,
+        0.6135875582695007,
+        0.5883104205131531,
+        0.5854350328445435
+      ],
+      "error": null,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 1.0,
+      "ragas_score": 0.8666666666666667
+    },
+    {
+      "id": "T04",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко трябва да почивам между сериите за хипертрофия?",
+      "ground_truth": "За хипертрофия почивките от 2-3 минути между сериите са оптимални. По-кратките почивки (под 60 секунди) компрометират представянето и намаляват общия тренировъчен обем, което води до по-малко мускулен растеж.",
+      "answer": "За хипертрофия, препоръчвам да почиваш между 1.5 и 3 минути между сериите. По-кратките почивки (около 1.5 минути) могат да увеличат метаболитния стрес, но за максимално възстановяване и сила, особено при по-тежки упражнения, е добре да се стремиш към 2-3 минути почивка. Слушай тялото си и почивай, докато се чувстваш готов за следващата серия.",
+      "contexts": [
+        "t periods for isolation work and\n3+ minute rest periods for compound exercises. Resting until complete recovery is also\nacceptable, but in contrast to many armchair experts, complete recovery often requires\nwell over 5 minutes of rest in strong men after a maximal effort set [2], if it occurs at all that workout, as at a molecular level there should be muscle damage after each set that\nyou won't recover from in that workout.",
+        "Exercise order\nExercise order: exercises performed later in a workout typically need more rest. The\naccumulated fatigue delays inter-set recovery. Fortunately, we are intuitively reasonably in tune with these factors, so rather than use\nsome convoluted algorithm and a stopwatch to time your rest periods, in practice you\ncan simply rest until you feel recovered enough to complete your next set with maximal\neffort, which should correspond with good strength recovery [2, 3]. At a minimum, you\nshould rest until you have caught your breath. If you have no feeling at all yet on how to\nautoregulate your rest intervals, start with 2+ minute rest periods for isolation work and\n3+ minute rest periods for compound exercises. Resting until complete recovery is also\nacceptable, but in contrast to many armchair experts, complete recovery often requires\nwell over 5 minutes of rest in strong men after a maximal effort set [2], if it occurs at all",
+        "that workout, as at a molecular level there should be muscle damage after each set that\nyou won't recover from in that workout. Alternatively, you can also rest until your heart rate after the set has returned to a level\nnear what it was after your warm-up. Your heart rate recovery is a reasonable guide of\nhow long you should rest in between sets.\n\nThat said, during autoregulated rest intervals, people tend to rest quite long. Low\nmotivation to exercise can make workouts last much longer than needed. Mental\nrecovery (RPE) after a hard set can take longer than the actual recovery in physical\nperformance. So when time is limited, you should program in fixed rest intervals or\n\n\n--- Page 13 ---\n13\n\nactively work at reducing your rest periods. This will be mentally challenging at first, but\nyour work capacity will improve over time.",
+        "earlier\nfindings of Buresh et al.\n\nSubsequent research also confirmed that resting only a single minute compared to 5\nminutes between sets of leg extensions blunts anabolic signaling and acute myofibrillar\nprotein synthesis in the muscle cells despite higher metabolic stress in the short-rest\ngroup. Paradoxically, in 2015, Villanueva et al. found greater muscle growth as well as greater\nstrength development in elderly men resting 1 minute compared to 4 minutes between\n\n\n--- Page 7 ---\n7\n\nsets. However, total repetition volume and set volume were equated between groups.\nSo the 1-minute group was performing the same total amount of reps in a quarter of the\ntime as the 4-minute group. They were thus simply training harder, reaching higher\nlevels of mechanical tension in their sets and, guess what, hard work pays off.",
+        "14, Schoenfeld et al. compared 2 work matched programs: a\n'powerlifting type' program of 7 sets of 3 reps with 3-minute rest periods and a\nmore traditionally bodybuilding type program of 3 sets of 10 reps with 1.5-minute\nrest periods. Both resulted in similar muscle growth, but the higher-intensity, longer-rest group achieved better strength development."
+      ],
+      "sources": [
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5970751643180847,
+        0.5936121940612793,
+        0.5892385244369507,
+        0.5874460935592651,
+        0.5872870683670044
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.75,
+      "ragas_score": 0.8875
+    },
+    {
+      "id": "T05",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "Какво е прогресивно претоварване и как да го прилагам?",
+      "ground_truth": "Прогресивното претоварване е систематично увеличаване на стимула върху мускула за стимулиране на адаптация. Може да се постигне чрез добавяне на тегло, повторения, серии или подобряване на техниката. Това е основният механизъм за дългосрочен мускулен растеж.",
+      "answer": "Прогресивното претоварване е принцип, при който постепенно увеличаваш натоварването на мускулите си, за да постигнеш растеж и сила. Това може да се реализира по следните начини:\n\n1. **Увеличаване на тежестта**: Най-простият начин е да добавяш килограми на щангата или на уреда. Например, ако в момента правиш Bench Press с 60 кг за 8 повторения, следващия път можеш да опиташ с 62.5 кг.\n\n2. **Увеличаване на повторенията**: Ако не можеш да увеличиш тежестта, можеш да увеличиш броя на повторенията с текущата тежест. Например, ако правиш 8 повторения с 60 кг, опитай да направиш 9 или 10.\n\n3. **Поддържане на обема**: Увери се, че не правиш повече сетове без да увеличаваш натоварването. Например, ако правиш 3 сетове по 8 повторения, не увеличавай само броя на сетовете, а се фокусирай на увеличаване на тежестта или повторенията.\n\n4. **Следи прогреса**: Води записки за всяка тренировка, за да можеш да видиш напредъка си. Записвай какво си правил, с каква тежест и колко повторения.\n\nВажно е да помниш, че прогресивното претоварване не е самоцел. То е мярка за напредъка ти. Увеличавай натоварването постепенно и не забравяй да се възстановяваш адекватно между тренировките.",
+      "contexts": [
+        "e, measured as an\nincrease in weight lifted for a given number of reps or an increase in repetitions\nperformed with a given weight, should be the goal and is in fact necessary for long-term\nmuscle growth. You should ideally be able to measure progressive overload in every\nworkout for every exercise. Other ways than load or repetition volume to implement progressive overload are\ngenerally misguided. They typically rely on an increase in training volume or novelty to\ninduce extra stress under the mistaken belief that this causes new gains. Progressive\noverload itself is not the cause of muscle and strength development. It is a\nmeasure that the previous workouts caused these adaptations, which is why\nyou're now stronger. That you can now add weight to the bar does not guarantee you\ncan lift more weight next time. You can only check that next workout. So progressive\noverload does not guarantee muscle growth or strength development. Progressive\noverload is merely the measure you're making good gains, not the inherent cause.",
+        "ntimately familiar with the SAID principle,\nGAS theory or the morphological and neurological contributions to strength, you should\nrevisit that topic before reading this one.\n\n➢ Lecture\nPeriodization and progress\nThis lecture is optional: all contents are also covered in the text.\n\n\n--- Page 4 ---\n4 Progressive overload\nAfter you set up an initial training program, you will need to start progressing on it. As\nyour strength increases, the stress required for further adaptation inherently increases.\nTo illustrate, if in any workout with an 8RM bench press your 8RM becomes your 9RM\nand you only do 8 reps again the next workout, that next workout is submaximal. If you\nkeep training with your former 8RM instead of with your current 8RM, this workout will\nover time cease to become an effective training stimulus, as the weight becomes too\nsubmaximal. You may end up doing sets of 8 with your 20RM, which won't provide\nmuch stimulus for adaptation anymore. As such, for a training program to keep your\nmuscles growing, it needs to impose continuously higher levels of stress on the muscle.",
+        "ou can now add weight to the bar does not guarantee you\ncan lift more weight next time. You can only check that next workout. So progressive\noverload does not guarantee muscle growth or strength development. Progressive\noverload is merely the measure you're making good gains, not the inherent cause. More importantly, not just any means of increasing the training stress is an effective\nmethod of progressive overload. Here are several ways you should generally not\nimplement progressive overload.\n\n\n--- Page 7 ---\n7\n\n\n--- Page 8 ---\n8\n\n1. Performing more sets\nPerforming more sets is a sure way to increase the training stress, but while you can\nhappily keep increasing the number of sets you do for an exercise, without an increase\nin performance you have no idea if you're actually getting stronger or bigger. If you were\nstalling before on an optimized volume, it's very likely you're still plateaued now and all\nyou're achieving is overreaching.",
+        "arization, mitochondrial protein synthesis or improved oxygen delivery to\nyour muscles and not necessarily myofibrillar protein synthesis or any improvement in\nmuscle force production capacity.\n\nThus, an increase in training density does not tell you if your program is making you\nbigger or stronger. 3. Increasing time under tension (TUT)\nPerforming your reps more slowly can constitute effective progressive overload, but as\nper the course module on training tempo, it's generally not desirable to train with super\nslow tempos and it's very difficult to practically implement slow tempos. 4-second\neccentrics on paper are commonly more like 2-second eccentrics in reality.\n\n\n--- Page 10 ---\n10\n\n4. Increasing the training frequency\nAn increase in training frequency does not in itself constitute progressive overload.\nWhile it may allow you to achieve a higher total load volume with an exercise, this is\nbecause you're performing the exercise in a less fatigued state, not necessarily\nbecause your previous workout made you stronger.",
+        "This fundamental aspect of a good training program is called progressive overload. Perhaps just as importantly as the physical need for progressive overload is the\npsychological need for a system to require you to train beyond your comfort zone.\nWithout prescribed training program goals that require high exertion, many people will\nnot train with maximal effort [2]. Having specified rep targets in your training is an\neffective way to force yourself to train with high effort."
+      ],
+      "sources": [
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6553754806518555,
+        0.632638692855835,
+        0.6299698948860168,
+        0.6252148151397705,
+        0.6190718412399292
+      ],
+      "error": null,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "ragas_score": 0.7460714285714286
+    },
+    {
+      "id": "T06",
+      "category": "training",
+      "level": "intermediate",
+      "goal": "all",
+      "question": "Кога трябва да направя deload и как?",
+      "ground_truth": "Deload се препоръчва след всеки 4-8 седмици прогресивно натоварване. При deload обемът се намалява с 40-60% при запазен интензитет. Това намалява натрупаната умора, намалява риска от нараняване и водо до подобрение в представянето след deload-а.",
+      "answer": "Deload трябва да направиш, когато не напредваш в тренировките си, и е вероятно причината да е пренатоварване, а не фактори от начина на живот или храненето. \n\n**Кога:**\n1. Ако не успееш да увеличиш тежестта с 2.5% в дадено упражнение.\n2. Ако броят на повторенията ти е по-малък в сравнение с предишната тренировка.\n\n**Как:**\n1. Заменяш останалите серии с работа на техника: 1 до 5 повторения на 60-70% от 1RM (тежест, с която можеш да направиш 12-20 повторения).\n2. Фокусирай се върху бързината на изпълнение, за да активираш мускулите, без да натоварваш нервната система прекалено много.\n\nНе забравяй, че deload-ът трябва да е специфичен за упражнението, а не за цялото тяло.",
+      "contexts": [
+        "rreaching from occurring. This is when\ndeloads are applicable. A deload is a reduction in weight to reduce the training stress.\nSometimes the word deload is also used to refer to a more general reduction in training\nstress, like a reduction in training volume by reducing the amount of training sets. Traditional deloading\nA traditional implementation of deloading is to take each 4th week of your program off\nfrom the gym or to reduce the weight in this week. This method of deloading is proactive\nbut arbitrary. The arbitrariness and proactivity of this type of deloading is that it's\nplanned in advance at a set date or time in the program. At best, it's an educated guess\nabout when overreaching is likely to occur. You can't always predict in advance when\nan individual will experience higher stress in their life, sleep less well or deviate from\ntheir diet. Overreaching in any program can occur at many different time points for\ndifferent people.",
+        "it's an educated guess\nabout when overreaching is likely to occur. You can't always predict in advance when\nan individual will experience higher stress in their life, sleep less well or deviate from\ntheir diet. Overreaching in any program can occur at many different time points for\ndifferent people. Taking exactly 1 calendar week off training is also arbitrary. As you learned, your\nmuscles generally recover from any practical workout within 72 hours if you're no longer\na beginner and you're accustomed to the exercises [2, 3, 4]. Any practically viable\ntraining protocol should not require more than 5 days of rest afterwards to recover from\nit. (See the training frequency module for more studies.)\n\nThe third arbitrary aspect of the traditional deload week is that you deload the entire\nbody. As you learned, neuromuscular fatigue is largely a local process, as is connective\ntissue injury. Fatigue in your biceps does not affect your squat. It makes no sense to\nstop squatting because your biceps hasn't recovered. Deloading should thus ideally be\nexercise- or body part-specific.",
+        "ctive deloading\nReactive deloading can solve the problem of the interindividual variability in the\nnecessity of deloads. As the name suggests, a reactive deload is not scheduled ahead\nof time. Just like AVT, reactive deloading is only applied to the affected exercise(s) in a\nsingle training session. Specifically, a reactive deload is implemented whenever a trainee does not progress as\nplanned for that exercise and it is deemed likely that this was due to overreaching, not a\nlifestyle factor like lack of sleep or a nutritional factor like undereating. A decent rule of\nthumb is that reactive deloads are warranted when someone does not progress 2.5% in\nstrength on an exercise or if someone's reps end up lower instead of higher than last\ntime on an exercise. Advanced trainees may need to use 1% progress as their criterion,\nas they can't expect to gain 2.5% strength consistently anymore.",
+        "ey have excellent microloadability and terminal consistency. An\nexample of an exercise that rarely requires a reactive deload is the delt lateral raise,\nbecause it is generally impossible to micro-load it well and small changes in body\nposture or arm positioning can affect performance significantly. When you've established that reactive deloading is useful for an exercise in your\nprogram and a plateau occurs in any workout, you implement a reactive deload as\nfollows. You replace your remaining sets with low rep, explosive technique work: 1 to 5\nreps per set at 60-70% of 1RM (roughly equal to a weight you could do 12-20 reps\nwith). This type of speed work allows you to reach high muscle activation levels and\nwork on your technique while only inducing minimal neuromuscular fatigue. It's\nimportant to realize that to reap these benefits without the cost of high further fatigue, it\nhas to stay speed work. If your movement velocity decreases noticeably at all during\nany set, you are going far too heavy and only digging yourself deeper into your recovery\nhole.",
+        "e deloads are warranted when someone does not progress 2.5% in\nstrength on an exercise or if someone's reps end up lower instead of higher than last\ntime on an exercise. Advanced trainees may need to use 1% progress as their criterion,\nas they can't expect to gain 2.5% strength consistently anymore. There are 2 other considerations for whether you want to implement reactive deloads.\n1. Terminal consistency: Exercises that score poorly on this principle have an\ninherently higher variability in performance. As such, there is a decreased\nprobability that lack of progress is due to overreaching. Therefore, reactive\ndeloads may result in undertraining and are not advisable.\n2. Recovery capacity variability: The more variable someone's rate of recovery, the\ngreater the potential need for reactive deloading. If someone has a very irregular\nrecovery capacity due to, for example, a variable sleep pattern, poor diet\n\n\n--- Page 46 ---\n46\n\nadherence or due to concurrent sport-specific training, there is a greater need for\nreactive deloading to address the likely underrecovery."
+      ],
+      "sources": [
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6667984127998352,
+        0.6096574068069458,
+        0.6088805794715881,
+        0.6038906574249268,
+        0.5974476933479309
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.8,
+      "ragas_score": 0.8500000000000001
+    },
+    {
+      "id": "T07",
+      "category": "training",
+      "level": "all",
+      "goal": "all",
+      "question": "По-добри ли са съставните упражнения от изолацията за мускулен растеж?",
+      "ground_truth": "Съставните упражнения формират основата на всяка програма за хипертрофия. Изолационните упражнения допълват съставните, като насочват специфични мускули с по-голяма прецизност. Комбинацията от двете е оптимална стратегия.",
+      "answer": "Съставните упражнения (compound exercises) и изолационните упражнения (isolation exercises) могат да бъдат ефективни за мускулен растеж, но съставните упражнения обикновено предлагат повече предимства. Те ангажират множество мускулни групи и обикновено водят до по-високи нива на хормонална и неврологична активност. \n\nВ практиката, съставните упражнения често са по-ефективни за изграждане на сила и мускулна маса, особено когато става въпрос за основни движения като Squat, Deadlift и Bench Press. Изолационните упражнения могат да се използват, за да \"запълнят\" тренировъчния обем за конкретни мускулни групи, но не са толкова ефективни сами по себе си.\n\nПрепоръчвам да включваш предимно съставни упражнения в тренировъчната си програма и да добавяш изолационни упражнения, когато е необходимо, за да достигнеш желаното натоварване за конкретни мускули.",
+      "contexts": [
+        "tion\nvolume, the study was only 5 weeks long and hamstring muscle thickness was only\nmeasured in the long head and only in the middle of the femur.\n\nA 2022 meta-analysis by Rosa et al. confirmed that single-joint and multi-joint exercises\nresult in similar muscle growth on average in the literature. Overall, the weight of the evidence supports compound and isolation exercises are\ninherently equally effective for muscle growth, all else being equal. Muscles respond to\ntension and it doesn't inherently matter if there's also tension in other muscles at the\nsame time.\n\nEven if there's no inherent difference between compound and isolation work in terms of\nmuscle stimulation, with compound exercises you'll still generally burn more calories,\nsave time, improve your endurance more, and your strength gains should have more\ncarry-over to other multi-joint movements. So in practice, compound exercises are often\nmore efficient to have in a program and isolation exercises are generally reserved to 'fill\nin the gaps' and reach the desired training volume for each muscle group.",
+        " workout develop faster. Since most people care mostly\nabout strength in compound exercises, it makes sense to perform your compound\nexercises before isolation exercises and not doing any pre-fatiguing. For non-agonist\nmuscle growth though, we have only a few studies on the effect of exercise order. • Pina et al. (2013) compared whole-body body composition changes in a full-body\nprogram performed by strength-trained elderly men starting either with compound\nexercises or isolation exercises. Neither group achieved major body\nrecomposition and there were no statistically significant between-group\ndifferences. However, the group starting with compound exercises gained some\nlean mass and lost some fat, whereas the group starting with isolation exercises\nlost some muscle and gained some fat. Thus, this study provides tentative\nsupport for placing compound exercises before isolation exercises in your\nworkouts.\n• Cardozo et al. (2019) performed a similar study as Pina et al. in untrained elderly\nwomen, but no exercises involving overlapping musculature were performed",
+        "'t have a\nsystematic method to select their exercises. They just do what feels best, what looks\nbest in the mirror or what others do. In this module of the course, you'll learn what\nmakes an exercise effective based on systematic, scientific criteria.\n\n➢ Lecture\nExercise selection\n\n\n--- Page 5 ---\n5 Compound vs. isolation exercises\nCompound or multi-joint exercises are commonly recommended over isolation or single-\njoint exercises. Indeed, compound exercises tend to put much higher neurological,\nhormonal, and cardiorespiratory demands on your body than simple isolation exercises.\nHowever, as you learned earlier in the course, the contribution of systemic factors to\nmuscle growth is highly overrated. Muscle growth is largely a local process. Muscles\nrespond to tension without any care for or indeed knowledge of what's going on in other\nmuscles in the body. So, what does the research say?",
+        "more, and your strength gains should have more\ncarry-over to other multi-joint movements. So in practice, compound exercises are often\nmore efficient to have in a program and isolation exercises are generally reserved to 'fill\nin the gaps' and reach the desired training volume for each muscle group. Other aspects of an exercise than whether it's a compound or isolation exercise do\ndirectly affect its efficacy to stimulate the target muscles.\n\n\n--- Page 8 ---\n8\n\nPrinciple 1: The Limit Factor\nAn exercise is most effective for a muscle if that muscle is a limiting factor in the\nexecution of the exercise, overlooking the other criteria.\n\nThis principle is a simple extension of the facts that muscle fibers grow in response to\nstimulation and that not all exercises stimulate all involved musculature equally. The\nLimit Factor Principle is particularly important in several situations.",
+        "w over 3 times as much in the group starting with compounds. Isolation\nexercises were only performed for the limbs, to this study tentatively supports\nthat arm isolation exercises impair the effectiveness of upper body compound\nexercises for the trunk, as you'd expect from their reduced performance. • Tomeleri et al. (2019) also found a non-significant trend for better results when\nperforming multi-joint exercises before single-joint exercises. As you can see in\nthe table below, while none of the differences reached statistical significance, the\ngroup of older women performing multi-joint exercises first achieved greater\neffect sizes for all measures of strength development, total work and muscle\ngrowth, except upper limb soft tissue change, which was identical in both groups.\n\n\n--- Page 25 ---\n25"
+      ],
+      "sources": [
+        "Exercise Selection PTC 2022 (1).pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "Exercise Selection PTC 2022 (1).pdf",
+        "Exercise Selection PTC 2022 (1).pdf",
+        "How to structure your workouts PTC 2022.pdf"
+      ],
+      "scores": [
+        0.7775924801826477,
+        0.6710497736930847,
+        0.6710216999053955,
+        0.6684707999229431,
+        0.6614891886711121
+      ],
+      "error": null,
+      "faithfulness": 0.8333333333333334,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.67,
+      "ragas_score": 0.8258333333333334
+    },
+    {
+      "id": "T08",
+      "category": "training",
+      "level": "advanced",
+      "goal": "all",
+      "question": "Какво е MEV, MAV и MRV в тренировъчния обем?",
+      "ground_truth": "MEV (Minimum Effective Volume) е минималният обем за поддържане на мускул. MAV (Maximum Adaptive Volume) е оптималният обем за растеж. MRV (Maximum Recoverable Volume) е максималният обем, от който може да се възстановите. Програмите трябва да стартират близо до MEV и да се строят към MAV.",
+      "answer": "MEV (Minimum Effective Volume), MAV (Maximum Adaptive Volume) и MRV (Maximum Recoverable Volume) са термини, свързани с тренировъчния обем:\n\n1. **MEV (Minimum Effective Volume)** - Това е минималният обем тренировки, необходим за да се постигнат видими резултати в мускулната хипертрофия или сила. Под този обем няма да видиш значителни напредъци.\n\n2. **MAV (Maximum Adaptive Volume)** - Това е обемът, при който получаваш оптимални резултати. Тук тялото ти реагира най-добре на тренировките и постигаш най-голям напредък.\n\n3. **MRV (Maximum Recoverable Volume)** - Това е максималният обем, който можеш да тренираш, без да предизвикаш претрениране или наранявания. Ако тренираш над този обем, ще имаш затруднения в възстановяването.\n\nВажно е да знаеш, че тези стойности варират индивидуално в зависимост от опита, целите и възстановителната способност на всяко лице.",
+      "contexts": [
+        "isolation exercises, respectively, you can forego the whole rep target testing and just\ndirectly prescribe them rep targets of 8 for compound exercises and 15 for isolation\nexercises. For most individuals, this method will likely provide similar results as the --- Page 38 ---\n38\n\nmuscle-specific hypertrophy method. However, you do lose out on the information and\ncustomization you would get from the 1RM and rep target testing.\n\nIntensity (%1RM) Rep target\n90%\n3 RM\n85%\n5 RM\n80%\n8 RM\n75%\n10 RM\n70%\n12 RM\n65%\n15 RM\n60%\n20 RM\n\n\n--- Page 39 ---\n39\n\nTraining volume\nTraining volume is a measure of the total amount of work done in a training session.\nThe following definitions of training volume are used in the scientific literature.\n• Training volume load (sometimes called total work) = sets × reps × weight\n• Repetition volume = sets × reps\n• Set volume = number of sets\n\nExample: 2 sets of 9 reps of squats with 100 kg have a total training workload of 2 × 9 ×\n100 = 1800 kg, a repetition volume of 2 × 9 = 18 reps and a set volume of 2.",
+        " 30-90% 1RM.\n\nIt is important to understand though that this is only one method. Other programming\nmethods can benefit from monitoring training volume in different ways. For example,\nyou will learn about the myo-reps method, which monitors 'effective reps', in the\nadvanced training techniques topic. Another thing that is very important to emphasize is that training volume should always\nbe monitored per muscle group. As you've learned in the topic on strength training\nadaptations, muscle hypertrophy is primarily a local, intrinsic process.\n\nSo now we've determined our measure of training volume: number of training sets\nper muscle group per week (or any other period of time). The next step is: how much\nis optimal?",
+        "ing volume load (sometimes called total work) = sets × reps × weight\n• Repetition volume = sets × reps\n• Set volume = number of sets\n\nExample: 2 sets of 9 reps of squats with 100 kg have a total training workload of 2 × 9 ×\n100 = 1800 kg, a repetition volume of 2 × 9 = 18 reps and a set volume of 2. When scientists speak of 'training volume', they are often referring to training volume\nload. However, volume load often has little practical meaning. For one, it is confounded\nby the person's strength level. If person A performs 4 sets of 7 squats with 200 lb., this\nperson's training load is 5600 lb. If another person can do the same workout with 220\nlb., that person's training load is 10% higher. Yet the stimulation of the muscles is very\nsimilar for both persons.\n\nThe same problem arises when comparing different exercises. Squats rival or beat leg\npresses for muscle growth, as we'll discuss in the topic on exercise selection, yet\ntonnage and therefore total work done will almost always be substantially higher in leg\npress workouts because you can move more weight.",
+        "on this subject by Menno's\nresearch team and include all known English literature that compared different strength\ntraining volumes and measured long-term muscle hypertrophy or strength development\n(commonly 1RM). Training volume is calculated here as the average weekly work set\n\n\n--- Page 41 ---\n41 volume for the target outcome measure. A best-fit logarithmic trendline is shown in each\ngraph to illustrate the trend. Formal analysis hasn't concluded yet. A tabular overview of\nthe controlled trials comparing different training volumes including weekly set volumes\nover 10 sets can be found here.",
+        "t\nin results. To ensure you stay in the optimal training volume range and don't cross over\ninto the overreaching range, training volume should be based on recovery capacity.\nPeople vary considerably in how much volume they can tolerate without getting injured\nor overreached based on several factors. In the Lifestyle module, you learned that psychological stress can effectively double the\ntime it takes for someone to recover from their workouts. Sleep deprivation can be\nsimilarly destructive for someone's ability to sustain high training volumes.\n\nWe've also discussed the importance of training status. More advanced muscles are\nmore resistant to metabolic stress and experience less muscle damage from a given\nworkout, so they can recover more quickly than lesser trained muscles.\n\nIn the customized program design topic, you'll learn that women can probably tolerate\nmore volume than men and elderly individuals may or may not tolerate as much volume\nas younger individuals."
+      ],
+      "sources": [
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5529207587242126,
+        0.5186925530433655,
+        0.5075734853744507,
+        0.504768431186676,
+        0.49434924125671387
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.0,
+      "ragas_score": 0.65
+    },
+    {
+      "id": "P01",
+      "category": "program_design",
+      "level": "novice",
+      "goal": "all",
+      "question": "Каква тренировъчна програма е подходяща за начинаещ, 3 пъти седмично?",
+      "ground_truth": "За начинаещи Full Body програмата 3 пъти седмично е оптималният избор. Всяка тренировка включва основните съставни движения (клек, мъртва тяга, лежанка, гребане). Обемът е нисък (2-3 серии на упражнение) с фокус върху техника и прогресия.",
+      "answer": "За начинаещ, който иска да тренира 3 пъти седмично, ето една примерна тренировъчна програма:\n\n### Програма за тренировки (3 пъти седмично)\n\n**Ден 1: Горна част на тялото**\n1. Bench Press: 4 sets x 8 reps\n2. Bent Over Row: 4 sets x 8 reps\n3. Overhead Press: 4 sets x 8 reps\n4. Bicep Curls: 3 sets x 10 reps\n5. Triceps Extensions: 3 sets x 10 reps\n6. Ab Crunches: 4 sets x 15-20 reps\n\n**Ден 2: Долна част на тялото**\n1. Leg Press: 4 sets x 10-15 reps\n2. Leg Curls: 4 sets x 10-15 reps\n3. Calf Raises: 4 sets x 12-15 reps\n4. Glute Bridges: 3 sets x 10-12 reps\n5. Plank: 3 sets x 30-60 секунди\n\n**Ден 3: Цялостна тренировка**\n1. Lat Pulldown: 4 sets x 8 reps\n2. Push-ups: 3 sets x 8-12 reps\n3. Dumbbell Lunges: 3 sets x 10 reps на крак\n4. Dumbbell Shoulder Press: 3 sets x 8-10 reps\n5. Russian Twists: 3 sets x 15-20 reps\n\n### Препоръки:\n- Загрявка: Започнете с 5-10 минути кардио (бягане, велоергометър и т.н.) и динамични стречинг упражнения.\n- Почивка: Оставяйте поне 48 часа между тренировките за същата мускулна група.\n- Тегло: Започнете с леки тежести, за да усвоите техниката и постепенно увеличавайте натоварването.\n- Хидратация: Пийте достатъчно вода преди, по време и след тренировките.\n\nТази програма е адаптирана за начинаещи и е балансирана, за да покрие основните мускулни групи.",
+      "contexts": [
+        "week would allow him some flexibility for scheduling his training\nsessions, and extra time for recuperating from the soreness that is\nlikely to happen during the first few weeks. Because he's a complete novice, 9-14 sets per muscle group per week are\n\n\n--- Page 8 ---\nBAYESIANBODYBUILDING.COM\n\nlikely enough. This makes for very short workouts.\nHowever, we want to limit the amount of muscle damage, as we want as\nmuch of the Muscle Protein Synthesis in the Anabolic Windows left for\nmaking the muscles bigger, instead of just repairing them.\nTo do so, we will start slowly with very light weights, high reps, and at the\nlower end of the optimal amount of sets per week.",
+        "e trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them and the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.",
+        "once. I'm keeping the focus on my upper body because I'm uneasy with --- Page 7 ---\nBAYESIANBODYBUILDING.COM\n\nheavy leg work (and the Lunk Alarm). I also do 15 minutes of cardio after\nevery workout on the elliptical.\n\nWorkout 1 (Twice a Week)\nBench Press: 4 sets x 8 reps\nBicep Curls: 4 sets x 8 reps (last set is a drop set, I really feel the burn!)\nTriceps Extensions: 4 sets x 8 reps (drop sets here, too)\nAb Crunches: 4 sets x 50 reps\n\nWorkout 2 (Once a Week)\nLat Pulldown Machine: 4 sets x 8 reps\nLeg Press: 4 sets x 15 reps\nLeg Curls: 4 sets x 15 reps\nLeg Raises (for lower abs): 4 sets x 15 reps\n\nLet's help our Vegan friend Markos get out of his rut. He's already lost a\nsubstantial amount of weight, but many lifestyle factors are keeping him\nfrom progressing any further.",
+        " Chin-up (excluding body weight):\n Overhead press: What are your fitness goals?\nLose weight en stay at that weight (60-65kg goal)\n\nThis is good, because she should lose fat. Lots of it and quickly. At her ideal weight\nshe still won't be lean in fitness terms, but compliance wise, it's probably best not to\ntell her that yet.\n\nHow often in a week would you be prepared to train? Note that no session should last\nlonger than an hour; 2 sessions is maintenance, 3 is doable and twice daily would\nbe the absolute maximum at which more is no longer better.\n3 times a week prefereably in the morning\n\n\n--- Page 2 ---\nBayesianbodybuilding.com",
+        "ness logic)\n\nDeadlifts (hurt my back before a few yrs ago and my gym doesn't allow\nthem)\n\nSquats (my hips hate them Additionally I don't enjoy the exercise\nAt all thus I've never really bothered to learn them, in terms of cost v\nbenefit.)\n\n^again this is \"blasphemy\" to majority of gym goers, I know. Overhead pressing: (inclusive of this is BB bench - both of these I get\nmixed responses from shoulders... DB never seems to give me problems\nthough? As long as I warm up)\n\nHow often in a week would you be prepared to train? Note that no session should last\nlonger than an hour; 2 sessions is maintenance, 3 is doable and twice daily would\nbe the absolute maximum at which more is no longer better. 4-6 sessions\n\n6 sessions it is then."
+      ],
+      "sources": [
+        "Case study untrained.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Case study novice vegan.pdf",
+        "Case study PSMF.pdf",
+        "Case study average Joe program design.pdf"
+      ],
+      "scores": [
+        0.5245085954666138,
+        0.5144224166870117,
+        0.5104068517684937,
+        0.5047591328620911,
+        0.5010166168212891
+      ],
+      "error": null,
+      "faithfulness": 0.3333333333333333,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.4,
+      "context_recall": 0.0,
+      "ragas_score": 0.43333333333333335
+    },
+    {
+      "id": "P02",
+      "category": "program_design",
+      "level": "intermediate",
+      "goal": "all",
+      "question": "Upper/Lower split подходящ ли е за напреднал начинаещ?",
+      "ground_truth": "Upper/Lower split е отличен избор за напреднал начинаещ или ранен intermediate. Тренировките 4 пъти седмично позволяват достатъчна честота (2x/седмица) и обем за хипертрофия, с добро управление на умората.",
+      "answer": "Да, Upper/Lower split е подходящ за напреднал начинаещ. Този подход позволява да се тренират различни мускулни групи два пъти седмично, което е ефективно за увеличаване на обема на тренировките и прогреса. Можеш да тренираш горната част на тялото (Upper) в два дни и долната част (Lower) в два дни, например:\n\n- Понеделник: Upper\n- Вторник: Lower\n- Четвъртък: Upper\n- Петък: Lower\n\nТази структура ще ти позволи да увеличаваш натоварването и да постигаш оптимални резултати. Не забравяй да добавяш 2.5 кг на всяка сесия, ако можеш, за да напредваш.",
+      "contexts": [
+        "der progress. A beginner does not require any form of\nperiodization, because a beginner on an optimized program should be able to\ncontinually increase the resistance without decreasing the training volume. It is simply\nmathematically implausible that any form of periodization can improve upon linear increases in weight. Most beginners training 3x per week can add 2.5 kg / 5 lb to the bar\nevery session. If you only repeat each intensity once per week in this case with triple\nundulation, you'd have to add over 7.5 kg to the bar all at once very week to progress\nfaster than 2.5 kg per session. That is very implausible.",
+        "velopment. In beginners, many training variables\nare still irrelevant, because the adaptation process is so general that any kind of\nsufficiently intensive exercise can maximize muscular adaptations for the first weeks. As\nyou get more advanced, however, your muscles both require greater stresses to continue adapting and are also capable of generating greater stresses. Advanced\ntrainees can achieve higher levels of muscle activation during high-intensity strength\ntraining than lesser trained individuals, to the point off knocking out motor units.",
+        "e trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them and the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.",
+        "ood exercise. More advanced trainees likely benefit more\nfrom exercise variety than beginners, because they should have more volume to\nallocate, they don't need to worry about exercise technique as much and it's more\nimportant to squeeze out muscle growth from every fiber to get appreciable results. Additional exercise variety beyond that is likely necessary to maximize muscle\nhypertrophy in the long run, but it is easy to overdo it and exercise variety often doesn't\nneed to be immediate: switching between different exercises over time is likely just as\nefficient and more practical from a programming perspective than trying to spread your\ntraining volume over a ton of different exercises. Keep your focus on the progression of\na solid core exercise selection before worrying about trying to stimulate every single\nfiber of each muscle from every angle. The biceps and triceps, for example, likely just\nneed 1 isolation exercise for maximum growth and novices may get away with just\ncompound work.\n\n\n--- Page 102 ---\n102",
+        " or improving strength, it may result in higher training volumes over\ntime. Since increased training volume may enhance muscle growth, daily undulating\nperiodization might improve muscle growth in practical settings when trainees are\npushing their recovery capacity to the limit.\n\n\n--- Page 31 ---\n31 Undulating periodization is only useful for trainees beyond the novice level. Untrained\nand novice level strength trainees generally do just as well sticking to a consistent\ntraining intensity without undulating periodization [2]. Most research has not found any\ndifference in the effectiveness of different periodization models in novice level lifters [2].\nIn novice lifters, the extra muscle damage induced by the variety of undulating\nperiodization may even hinder progress. A beginner does not require any form of\nperiodization, because a beginner on an optimized program should be able to\ncontinually increase the resistance without decreasing the training volume. It is simply\nmathematically implausible that any form of periodization can improve upon linear"
+      ],
+      "sources": [
+        "Periodization and progress PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Exercise Selection PTC 2022 (1).pdf",
+        "Periodization and progress PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5221899151802063,
+        0.5129802823066711,
+        0.5084786415100098,
+        0.486227810382843,
+        0.48270314931869507
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 1.0,
+      "context_recall": 0.67,
+      "ragas_score": 0.9175
+    },
+    {
+      "id": "P03",
+      "category": "program_design",
+      "level": "all",
+      "goal": "all",
+      "question": "Как изглежда правилно попълнена intake форма по Henselmans?",
+      "ground_truth": "Intake формата на Henselmans включва: антропометрия (тегло, височина, възраст, пол), цел (bulk/cut/maintain), активност извън фитнеса, тренировъчна история и ниво, текущи вдигани тежести, предпочитания, наранявания и налично оборудване.",
+      "answer": "Правилно попълнена intake форма по методологията на Henselmans изглежда така:\n\n**Общи данни**\n- Пълно име: [Вашето име]\n- Улица и номер на къща: [Вашият адрес]\n- Пощенски код: [Вашият пощенски код]\n- Град: [Вашият град]\n- Държава: [Вашата държава]\n- Възраст: [Вашата възраст]\n- Височина: [Вашата височина в метри]\n- Тегло: [Вашето тегло в килограми]\n- Процент на телесни мазнини (метод на оценка): [Вашият процент на мазнини и метод на измерване]\n- Години опит в тренировките: [Брой години опит]\n\n**Ниво на сила**\nПосочете текущите си максимални способности в килограми по време на повторения, например:\n- Bench press: [Вашият максимум в килограми x повторения]\n- Squat (без телесно тегло): [Вашият максимум в килограми x повторения]\n- Chin-up (без телесно тегло): [Брой повторения]\n- Overhead press: [Вашият максимум в килограми x повторения]\n\nТази форма трябва да бъде попълнена с точни данни, за да може треньорът да ви предостави най-добрите препоръки.",
+      "contexts": [
+        "--- Page 1 ---\nMennoHenselmans.com\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n• Full legal name\n\n•\nStreet and house\nnumber\n\n• Postal code\n\n•\nCity\n\n•\nCountry\n\n•\nAge\n32\n•\nHeight\n1.74\n•\nWeight\n76 kg\n• Body fat percentage\n(plus estimation\nmethod)\n8 % InBody 270\n• Years of training\nexperience\n7\n\nStrength level\nState your current maximum abilities in weight times reps, e.g. 250 lb x 6\n• Bench press\n110 lb x 10\n• Squat (excl. body\nweight)\n160 lb x 8\n• Chin-up (excl. body\nweight)\nWithout any additional weight x 8\n\n\n--- Page 2 ---\nMennoHenselmans.com\n\n• Overhead press\nWith dumbells of 55 lbs x 6",
+        "--- Page 1 ---\nBAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n● Full legal name: Frank\n● Street and house number: ...\n● Postal code: ...\n● City: Amsterdam\n● Country: Netherlands\n● Age: 26\n● Height: 172 cm\n● Weight: 55 kg\n● Body fat percentage (plus estimation method): 11.4% (according to\nmy cousin, who measured me with skin calipers.\n● Years of training experience: None",
+        "--- Page 1 ---\nBAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).\n\nGeneral\n Full legal name: M\n Age: 32\n Height: 178cm\n Weight: 72\n Body fat percentage (plus estimation method): around 14% (3 point\ncaliper)\n Years of training experience: about 8\n\n\n--- Page 2 ---\nBAYESIANBODYBUILDING.COM",
+        "--- Page 1 ---\nBAYESIANBODYBUILDING.COM\n\nPERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch).",
+        "ERSONAL TRAINING CLIENT INTAKE FORM\nPlease fill in and save this form in Word, Google Docs or ODS.\nThe more information you provide, the better I will be able to assist you.\nYou can use either the imperial or metric system to fill in this form. Just\nstate which unit you used (e.g. cm, kg, lb, inch). General\n Full legal name: Markos\n Street and house number:\n Postal code:\n City:\n Country:\n Age: 31\n Height: 5'11\"\n Weight: 191 lbs (down from ~270 lbs)\n Body fat percentage (plus estimation method): ~20% (neck:waist\nratio)\n Years of training experience: ~1 year\nStrength\nFor the section below, please give your current maximum abilities in\nweight times reps, e.g. 250 lb x 6.\n Bench press: 1RM has been stuck at 195 lbs for a while now\n Squat (excluding body weight): 200 x 15 on leg press (don't feel\nsafe with heavy leg work)\n Chin-up (excluding body weight): Can do 2-3 bodyweight pullups on\na good day\n Overhead press: Don't perform this lift\n\n\n--- Page 2 ---\nBAYESIANBODYBUILDING.COM"
+      ],
+      "sources": [
+        "Case study intermediate lean bulk Marco.pdf",
+        "Case study untrained.pdf",
+        "Case study M simple calorie cycling.pdf",
+        "Case study novice vegan.pdf",
+        "Case study novice vegan.pdf"
+      ],
+      "scores": [
+        0.702677845954895,
+        0.6568554639816284,
+        0.6562139987945557,
+        0.6411838531494141,
+        0.6407637596130371
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.2,
+      "context_recall": 0.375,
+      "ragas_score": 0.64375
+    },
+    {
+      "id": "P04",
+      "category": "program_design",
+      "level": "all",
+      "goal": "cut",
+      "question": "Трябва ли да намаля обема по време на дефицит?",
+      "ground_truth": "По принцип обемът не трябва да се намалява значително при дефицит. Поддържането на тренировъчния стимул е критично за запазване на мускулната маса. При агресивен дефицит може да се наложи леко намаляване на обема, но интензитетът трябва да се запази.",
+      "answer": "Да, по време на дефицит е препоръчително да намалиш обема на тренировките. Според методологията на Menno Henselmans, обемът може да се намали с 10-16% в сравнение с обема по време на поддържане или покачване на мускулна маса. Това е важно, за да се избегне прекомерно натоварване на тялото, когато си в калориен дефицит.",
+      "contexts": [
+        "in practice the most crucial factor\nthough, because it means that people will tolerate a higher training volume when\nbulking than when cutting. In fact, during Ramadan fasting athletes gain strength faster\nwhen they reduce their volume by 22% than when they stick with their previous training\nvolume. So in an energy deficit, the total training stress should be reduced. This can be\nachieved in many ways, but the simplest method by far is to reduce the training volume.\nIn Menno's experience and based on the literature, a 20-33% reduction in volume is\nappropriate during a cut compared to during a bulk. The recommended course volumes\ncan be thought of as being representative of being close to maintenance energy intake\nwith a good but not necessarily outstanding quality diet. So if someone starts a program\nin significant energy deficit, the amount of sets per week may need to be reduced by\n10-16% compared to the average recommendation. Conversely, when bulking the\nweekly set volume may be increased by 10-16%.",
+        "take\nwith a good but not necessarily outstanding quality diet. So if someone starts a program\nin significant energy deficit, the amount of sets per week may need to be reduced by\n10-16% compared to the average recommendation. Conversely, when bulking the\nweekly set volume may be increased by 10-16%. In practice though, while training stress can generally be increased when someone\ntransitions to a bulk, sometimes it's not needed to reduce the training stress when\ntransitioning to a cut. During a prolonged cut, if good progress has been made, it's not\nuncommon for someone to have become advanced enough to handle the same training\nvolume in an energy deficit. Menno often prefers keeping the training stress constant\nduring the start of the cut to avoid suggesting to the client: \"Welcome to cutting. Prepare\nfor your training sessions to suck.\"",
+        "s not\nuncommon for someone to have become advanced enough to handle the same training\nvolume in an energy deficit. Menno often prefers keeping the training stress constant\nduring the start of the cut to avoid suggesting to the client: \"Welcome to cutting. Prepare\nfor your training sessions to suck.\" To help you get an estimate of someone's optimal training volume, you can use the\nfollowing calculator. You should think of the output from this calculator as a guideline.\nThe calculator considers only the listed factors. Many other factors can be relevant as\nwell, notably genetics, vegetarian diets and drug use.\n\n\n--- Page 53 ---\n53\n\n➢ PT Toolkit\nTraining volume calculator\n\nDeterminants of an individual's optimum training volume for maximum muscular\ndevelopment: the better someone's recovery capacity, the more volume they should be\nable to productively tolerate.\n\nOptimal\ntraining\nvolume\nTraining\nstatus\nSleep\nquality\nStress level\nBiological\nsex?\nAge?\nDiet quality\n& energy\nbalance\n\n\n--- Page 54 ---\n54",
+        "stimulates you to find food pronto. One mechanism to lower energy expenditure is\nreducing muscle protein synthesis and thereby muscle growth. If the energy deficit is\nsevere enough and the muscle tissue does not have enough anabolic signaling, the\nbody will catabolize the muscle tissue for fuel. To lose fat and not muscle, we need to make sure there is a greater stimulus to\nmaintain/build muscle mass than to catabolize it.\n\nAs a result of the body's adaptive processes that try to maintain energy homeostasis,\nprogressively greater energy deficits result in less and less additional fat loss. A study\ncomparing the difference between 3 months of dieting with a 25% caloric deficit or a\nVLCD of 890 kcal a day showed that although the VLCD lost more total mass, the ratio\nof muscle to fat loss was also considerably higher and this discrepancy didn't balance\nout over the 6-month study period. Furthermore, the fat lost was not proportional to the\nsize of the deficit. An 890 kcal diet creates a deficit well over twice as large as a 25%",
+        "plete plateaus. If you notice fat loss slowing\ndown and you expect them to be in only a 5% deficit currently, you should decrease\nenergy intake by at least 15% of maintenance to re-optimize their energy deficit. To put\nsomeone from an expected 5% deficit into a 20% deficit, you divide current energy intake by 0.95 and then multiply it by 0.8."
+      ],
+      "sources": [
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5868634581565857,
+        0.5433251261711121,
+        0.49425050616264343,
+        0.4709336757659912,
+        0.4630888104438782
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "ragas_score": 0.8175
+    },
+    {
+      "id": "P05",
+      "category": "program_design",
+      "level": "advanced",
+      "goal": "all",
+      "question": "Как се строи Push Pull Legs програма за напреднал?",
+      "ground_truth": "PPL за напреднал включва 6 тренировки седмично (2 цикъла Push/Pull/Legs). Push: гърди, рамена, трицепс. Pull: гръб, бицепс, задни делтоиди. Legs: квадрицепси, задни бедра, глутеуси. Обемът е висок (16-20 серии/мускулна група/седмица).",
+      "answer": "Push Pull Legs (PPL) програмата за напреднали може да се структурира по следния начин:\n\n**Обща структура:**\n- Тренирайте 6 дни в седмицата, като разделите тренировките на:\n  - Push (гърди, рамене, трицепс)\n  - Pull (гръб, бицепс)\n  - Legs (крака)\n\n**Примерна програма:**\n\n**Ден 1: Push**\n1. Barbell Bench Press - 4x8-10\n2. Dumbbell Shoulder Press - 4x8-10\n3. Incline Dumbbell Flyes - 3x10-12\n4. Tricep Dips - 3x8-10\n5. Lateral Raises - 3x12-15\n\n**Ден 2: Pull**\n1. Pull-Ups - 4x6-8\n2. Bent Over Barbell Row - 4x8-10\n3. Seated Cable Row - 3x10-12\n4. Face Pulls - 3x12-15\n5. Barbell Bicep Curls - 3x10-12\n\n**Ден 3: Legs**\n1. Barbell Squats - 4x8-10\n2. Romanian Deadlifts - 4x8-10\n3. Leg Press - 3x10-12\n4. Calf Raises - 4x10-12\n5. Lunges - 3x10-12 (на крак)\n\n**Ден 4: Push**\n(Повторете Ден 1 с леки вариации в упражненията или интензивността)\n\n**Ден 5: Pull**\n(Повторете Ден 2 с леки вариации)\n\n**Ден 6: Legs**\n(Повторете Ден 3 с леки вариации)\n\n**Ден 7: Почивка**\n\n**Общи насоки:**\n- Увеличавайте интензитета на тренировките, като добавяте тежести или увеличавате обема.\n- Следете прогреса си и адаптирайте обема и интензитета според нуждите.\n- Включвайте изометрични и експлозивни упражнения за разнообразие и допълнителна стимулация.\n\nАко имате конкретни цели или нужди, мога да адаптирам програмата.",
+      "contexts": [
+        "e trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them and the biceps, lats, traps and rear delts in the other. On 4 of those days you\nthen add lower body workouts, one session for the calves and hamstrings and\none session for the erector spinae, quads and glutes.\nCategorizations like push/pull and upper/lower are convenient here sometimes,\nbut don't get stuck in one-size-fits-all models like that. There are tons of options\non how to structure a training program: whatever fits the optimal training\nfrequency and volume is best. Note also that the training frequency per muscle\ngroup is a minimum, not a rigid target. It's thus generally fine if some muscles are\ntrained more often than others.",
+        " select 3 complementary exercises with different training\nintensities. You would not want to select the decline, incline and flat bench press\nall at 80% of 1RM, as they're too similar, especially in terms of injury risk.\nInstead, go with something like Bayesian flys at 65%, flat bench presses at 80% and suspended push-ups and 77.5% (an intensity in the middle of the other 2).\n6. Allocate the exercises over the program split, paying attention to the\nprinciples of exercise ordering to maximize total repetition volume. Set volume\ncan generally be split equally across your exercises. In the above example, that\nwould be 12 / 2 / 2 = 3 sets per exercise for the hamstrings and 15 / 3 / 1 = 5 sets\nfor the pecs.\n7. Look back over the program and apply good ol' common sense. Most\nprograms require some ad hoc decision making. For example, maybe the gym\nlogistics mean you can't separate delt and pec exercises very well in the program",
+        "he optimal training principles, you're all good. With that in mind,\nhere's a general framework of how to go about creating a training program.\n1. Determine the total weekly training frequency. If the trainee is not averse to\ntraining, this is generally equal to the highest number of sessions they're consistently willing to go to the gym. Example, if someone's willing to go to the\ngym 6x per week, the total training frequency will be 6x.\n2. Determine the optimal weekly training frequency per muscle group for each\nmuscle. Example: A guy has his upper body as the priority, which is developed\nat a serious intermediate level, so it probably needs to be trained at least 3x per\nweek for optimal progress, whereas the lower body is at an earlier intermediate\nstage and only needs to be trained at least 2x per week.\n3. Create the program split.\nIn the above example, you could train the upper body every other day and the\nlower body twice a week. You could split the upper body in 2 workouts that you\nalternate between with the pecs, front and lateral delts and triceps in one of them",
+        " 3 sets per exercise for the hamstrings and 15 / 3 / 1 = 5 sets\nfor the pecs.\n7. Look back over the program and apply good ol' common sense. Most\nprograms require some ad hoc decision making. For example, maybe the gym\nlogistics mean you can't separate delt and pec exercises very well in the program --- Page 4 ---\n4\n\nand they end up being trained in a fatigued state every session. Then add some\nmore sets to them to make up for the lower than planned volume.\n\nThe steps to creating an optimal training program.\n\n➢ Bonus lecture [optional]\nReflecting on mechanisms of muscle growth\n\nDetermine total weekly training frequency\nDetermine training frequency per muscle group to create the training split\nDetermine work sets per muscle group\nSelect exercises and their training intensities and progression models per muscle group\nAllocate the exercises over the training split\nDo practicality check of the program\n\n\n--- Page 5 ---\n5",
+        "cle adaptations at this training status.\n\nDay A (Upper Push) (2x/ week)\n4 x 60% (weighted) Push-Up - 1 Chest, 1 Front Delts, ½ Triceps\n2 x 60% DB Overhead Triceps Extension - 1 Triceps\n4 x 60% Plank - 1 Abs (needs some isometric ab work to learn to control\nhis core rigidity and lumbopelvic movement) Day B (Upper Pull) (2x/week)\n4 x 60% TRX Face Pull - 1 Rear Delts, 1 Mid/Upper Traps, ½ Lateral\nDelts, ½ Lower Traps, ½ Biceps\n4 x 60% TRX Close-Grip Row - 1 Lats, ½ Lower Traps, ½ Rear Delts,\n½ Biceps\n4 x 60% DB Lateral Raise - 1 Lateral Delts\n\nDay C (Lower) (2x/week)\n4 x 60% Squat - 1 Quads, 1 Spinal Erectors, 1 Glutes\n4 x 60% TRX Leg Curl - 1 Hamstrings, ¼ Glutes\n\n\n--- Page 9 ---\nBAYESIANBODYBUILDING.COM\n\n5 x 60% Single-leg Calf Raise - 1 Gastrocs, 1 Soleus\n\nWeekly volumes:\nChest - 8\nFront Delts - 8\nTriceps - 8\nAbs - 8\n\nLats\nMid/Upper Traps - 8\nLower Traps - 8\nRear Delts - 12\nLateral Delts - 8\nBiceps - 8\n\nQuads - 8\nHamstrings - 8\nGastrocs - 10\nGlutes - 10\nSoleus - 10\nSpinal Erectors - 8"
+      ],
+      "sources": [
+        "Training case studies PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Training case studies PTC 2022.pdf",
+        "Case study untrained.pdf"
+      ],
+      "scores": [
+        0.5862983465194702,
+        0.581668496131897,
+        0.5624419450759888,
+        0.5413551330566406,
+        0.5403929352760315
+      ],
+      "error": null,
+      "faithfulness": 0.5,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.0,
+      "ragas_score": 0.525
+    },
+    {
+      "id": "P06",
+      "category": "program_design",
+      "level": "all",
+      "goal": "all",
+      "question": "Как да определя тренировъчния си статус - начинаещ, intermediate или напреднал?",
+      "ground_truth": "Тренировъчният статус се определя по опит и постижения. Начинаещ: под 1 година последователно тренировъчно, прогресира на всяка тренировка. Intermediate: 1-3 години, прогресира седмично. Напреднал: 3+ години, прогресира месечно или по-бавно.",
+      "answer": "За да определиш тренировъчния си статус, можеш да се ръководиш от два основни показателя: сила и мускулна маса. \n\n1. **Сила**: Използвай стандартите на Kilgore-Rippetoe-Pendlay. Сравни своите максимални повдигания (1RM) в основни упражнения като Squat, Deadlift и Bench Press с тези стандарти. \n\n2. **FFMI (Fat-Free Mass Index)**: Изчисли своя FFMI, като използваш данните си за височина и тегло. Можеш да използваш калкулатор на сайта MennoHenselmans.com. \n\n- **Начинаещ**: Обикновено имат по-ниски стойности на сила и FFMI.\n- **Intermediate**: Силата и FFMI са средни, т.е. вече имаш опит и напредък.\n- **Напреднал**: Близо до генетичния си потенциал, с високи стойности на сила и FFMI.\n\nАко имаш конкретни стойности, мога да ти помогна да ги интерпретираш.",
+      "contexts": [
+        "defines an advanced lifter?\nWe've seen how both diet and training program design should change as someone gets\nmore advanced. But what constitutes 'advanced'? In the following lecture we'll discuss\nhow to precisely determine someone's training level.\n\n➢ Lecture [optional]\nDetermining training status In conclusion, to determine someone's training advancement, you should relate the\nindividual's level of strength and muscle mass to their genetic potentials. The closer\nsomeone is to their genetic limitations, the more advanced they are. Since someone's\nlevel of advancement depends on how much of their genetic potential they have fulfilled,\nwe need to be able to estimate how much genetic potential someone has in the first\nplace.",
+        "t science crowd who do not deviate from the\n'optimal system' other than for practical considerations. Here identical clients will\nrightfully get the same program, but so will an old male Olympic level sprinter and an\nadolescent female former marathon runner that's now getting into strength training. We can achieve the best of both worlds with systematic customization. In this week we'll\nupgrade your client assessment skills so you can systematically prescribe individualized\ntraining programs. There are several evidence-based ways to achieve this. The first and\narguably most important one is how advanced a trainee is.\n\n\n--- Page 4 ---\n4\n\nWhat defines an advanced lifter?\nWe've seen how both diet and training program design should change as someone gets\nmore advanced. But what constitutes 'advanced'? In the following lecture we'll discuss\nhow to precisely determine someone's training level.\n\n➢ Lecture [optional]\nDetermining training status",
+        "reasonably use someone's absolute FFMI and strength level as a proxy for their training\nstatus. It may not matter that much if they're strong because they have a lot of lifting\nexperience or because they have good genetics: in either case the muscles can\nprobably handle a higher training volume. --- Page 27 ---\n27\n\nBy factoring in someone's genetic potential into their estimate of their training status, we\ncan simplify the customization process to just determining an individual's training status\nbased on the Kilgore-Rippetoe-Pendlay strength standards and the individual's FFMI.\nSo tl;dr, you can determine someone's training status reasonably well simply by\nchecking their strength level against the above strength level chart. To assess\nmuscularity specifically, input their data in the above calculator on\nMennoHenselmans.com. Unfortunately, we don't have enough data to classify FFMI\nlevels into novice/intermediate/advanced categories like we have for strength, but based\non the following chart, you should be able to make a reasonable estimate.\n\n\n--- Page 28 ---\n28",
+        "sculature is and\nwhether it's an isolation or compound exercise. We'll go into detail on how to determine\nsomeone's level of training advancement in the module on customized program design.\n\n\n--- Page 24 ---\n24\n\n50%\n60%\n70%\n80%\n90%\nNovice\nIntermediate\nAdvanced\nIsolation\nCompound\n\n\n--- Page 25 ---\n25 Interindividual variability\nSo, what does this mean in terms of how many reps you should do each set? Most\nprograms prescribe a fixed number of repetitions to perform, such as 4 sets of 12 reps,\nor even a fixed weight/intensity and repetitions, such as 4 sets of 12 reps at 65% of\n1RM. Prescribing a fixed number of repetitions like this ignores interindividual variability.\nWhile for many individuals a 70% intensity indeed corresponds with a set of 12 reps,\nsome individuals will be able to do far more or fewer reps with that weight. Many\nphysiological characteristics of your muscles make you more suitable for either strength\nor endurance exercise. You can take advantage of this by training according to your\ngenetic strengths.",
+        "velopment. In beginners, many training variables\nare still irrelevant, because the adaptation process is so general that any kind of\nsufficiently intensive exercise can maximize muscular adaptations for the first weeks. As\nyou get more advanced, however, your muscles both require greater stresses to continue adapting and are also capable of generating greater stresses. Advanced\ntrainees can achieve higher levels of muscle activation during high-intensity strength\ntraining than lesser trained individuals, to the point off knocking out motor units."
+      ],
+      "sources": [
+        "Program customization PTC 2022.pdf",
+        "Program customization PTC 2022.pdf",
+        "Program customization PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5593094825744629,
+        0.5539288520812988,
+        0.5329181551933289,
+        0.5158921480178833,
+        0.5027695894241333
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.5,
+      "ragas_score": 0.825
+    },
+    {
+      "id": "B01",
+      "category": "body_composition",
+      "level": "all",
+      "goal": "all",
+      "question": "Аз съм мъж, при какъв процент мазнини трябва да започна да свалям вместо да качвам?",
+      "ground_truth": "Henselmans препоръчва мъже да минат на дефицит когато процентът мазнини надхвърли 15-16%. Над този праг инсулиновата чувствителност намалява и партиционирането на хранителните вещества се влошава, което прави качването неефективно.",
+      "answer": "Ако си мъж и процентът на телесните ти мазнини е над 17%, е време да започнеш да сваляш мазнини вместо да качваш. Оптималният диапазон за здравословно ниво на мазнини за мъже е между 9% и 17%. Когато достигнеш под 9%, може да започнеш да изпитваш негативни ефекти върху здравето и хормоналния баланс.",
+      "contexts": [
+        "body fat percentage in sedentary individuals. In our current society, because of near-\nzero activity levels and poor nutrition, many clinically overweight individuals have a\nnormal BMI because they have so little muscle mass. Scientists call this sarcopenic\nobesity. Most people call it 'skinny fat'. The Deurenberg et al. formula is thus generally not useful for trained individuals, but its\nresearch does provide us with a useful rule of thumb to equate body fat levels between\nthe genders. Based on its data, women have a 10.8% higher body fat level than men.\nSo a man with 10% body fat looks about as lean as a woman with 20.8% body fat.\n\nVisual estimation\nA ~10% gender difference is a useful rule of thumb to keep in mind, because as you get\nmore experienced as a coach, you should become reasonably accurate at estimating\nsomeone's body fat percentage visually to the point that you can use a visual estimate\nas a rough starting point for the initial energy intake prescription of a client.",
+        "and lifestyle factors also influence the risk of muscle loss.\n\nCategory\nFat percentage\n(%)\nOptimal\ndeficit (%)\nMaximum weekly weight\nloss (% BW)\nMale\nFemale\nContest prep\n< 8\n< 14\n2.5 - 7.5\n0.5\nAthletic\n8 - 15\n14 - 24\n5 - 25\n0.7\nAverage\n15 - 21\n24 - 33\n20 - 35\n1\nOverweight\n21 - 26\n33 - 39\n30 - 50\n1.5 --- Page 85 ---\nObese\n26+\n39+\nmaximum\nN.A.\n\nNote that the weekly weight loss guideline is a maximum, as the less weight you lose\ngiven a certain amount of fat loss, the better(!)",
+        "lking is likely most effective in the same range as\nsomeone's health is optimal. This corresponds to a body fat percentage somewhere\nabove contest shape but below being overweight. The safest body fat percentage range\nto spend most of your time in is arguably 9-17% for men and 19-28% for women. If a --- Page 80 ---\nwoman loses her period at a certain body fat percentage, or it becomes irregular, that\nprobably corresponds with the lower limit of the optimal range.\n\nThe upper end of the range for both genders is roughly the point where they start\ngetting a protruding belly. For a muscular man that means he should ideally never lose\nall his ab definition. Abdominal fat storage is accompanied by visceral fat accumulation,\nwhich rapidly increases the negative effects of a higher body fat percentage on\nmetabolic health. Women have a lot more leeway than men in terms of adding fat due to\ntheir greater metabolic health and different sex hormone regulation. Women's fat\nstorage will generally result in more feminine curves before turning into a belly.",
+        " this\nguy in my gym says he's at 2% body fat.\" Reality check: if you heard anyone boast\nabout being that lean and they're not speaking to you from the afterlife, they're most\nlikely misinformed. They probably used some crappy body fat caliper or BIA scale that's\ncalibrated for sedentary individuals. Based on the above data, we can say that our health likely takes a turn for the worse\nsomewhere between 12-16% body fat for women and 5-13% for men. This estimate is\nsupported by studies on physique contest competitors, such as bodybuilders. Studies\nthat follow physique competitors find that when they get even leaner than sixpack lean,\ntheir natural anabolic hormone production decreases. Men may even develop\nhypogonadism as their gonads stop producing healthy levels of testosterone. Women\nmay lose their menstrual cycle (amenorrhea), with well-established adverse effects on\nfertility and health.\n\n\n--- Page 12 ---\n12",
+        "ing the Deurenberg et al. formula for a 21-year old, discussed earlier in\nthis module, the optimal body fat level for fertility should be below 18.6% for men and\nbelow 29.4% for women. The suggested optimum body fat level corresponding to a BMI\nof 18.5 is 10.7% for untrained men and 21.5% for women. Being excessively lean is decidedly bad for sexual functioning, however. Any contest\ncompetitor can tell you that contest prep is bad for libido. Anabolic hormone levels\ngenerally tank in the later stages of a prep, sometimes to clinical levels [1, 2]. Women\nalso often lose their menstrual cycle.\n\nSo what's the ideal body fat range?\nBased on multiple lines of evidence, bulking is likely most effective in the same range as\nsomeone's health is optimal. This corresponds to a body fat percentage somewhere\nabove contest shape but below being overweight. The safest body fat percentage range\nto spend most of your time in is arguably 9-17% for men and 19-28% for women. If a"
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Health science and food choices PTC 2022.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5664585828781128,
+        0.5659698247909546,
+        0.5652917623519897,
+        0.5570119619369507,
+        0.5512534976005554
+      ],
+      "error": null,
+      "faithfulness": 0.6666666666666666,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.5,
+      "ragas_score": 0.7416666666666667
+    },
+    {
+      "id": "B02",
+      "category": "body_composition",
+      "level": "all",
+      "goal": "maintain",
+      "question": "Възможно ли е едновременно да се губят мазнини и качват мускули?",
+      "ground_truth": "Рекомпозицията (едновременна загуба на мазнини и качване на мускули) е постижима, особено при начинаещи, хора след пауза или тези с по-висок процент мазнини. Изисква достатъчен протеин, около поддържащи калории и последователни съпротивителни тренировки.",
+      "answer": "Да, възможно е едновременно да губиш мазнини и да качваш мускули. Това е особено вярно за начинаещи и хора, които се завръщат към тренировки след дълга пауза. Ключът е в оптимизацията на тренировъчната програма и хранителния режим. \n\nВажно е да имаш достатъчно стимул за мускулен растеж, което означава, че тренировките трябва да бъдат интензивни и правилно структурирани. Освен това, приемът на протеини трябва да е достатъчен, за да поддържа мускулната маса, докато си в калориен дефицит. \n\nАко имаш конкретни цели или нужди, мога да ти дам по-подробни препоръки.",
+      "contexts": [
+        "pens outside the laboratory? Do people actually\nmanage to build muscle while losing fat?\n\n\n--- Page 17 ---\nYes, they do. For example, in one study, overweight (26% body fat) police officers\nstarting a weight training program lost 9.3 pounds of fat and gained 8.8 pounds of lean\nbody mass in 12 weeks. Ironically, it's usually the self-proclaimed science-based skeptics that say you can't build\nmuscle and lose fat at the same time. Yet people in dozens if not hundreds of studies\nlose fat and build muscle at the same time when they start training, even sometimes\nwhen they only do endurance training [e.g. 1, 2, 3, 4]. Young, old, healthy, unhealthy,\nmale, female, obese, lean, they all can achieve body recomposition. Even on mediocre\ntraining programs with crappy diets with suboptimal protein intakes. Even elderly men\nand women over 60 years old generally gain around 4 pounds of lean body mass with\nthe same amount of fat loss in 12 to 16 weeks [e.g. 1, 2].",
+        " to build pounds and pounds of muscle without even considering you're still\nconsuming energy in your diet as well. Only when you approach essential body fat\nlevels and you're in energy deficit, does the body truly not have any energy substrate to\nbuild muscle without catabolizing functional tissues. In conclusion, as long as your body has sufficient stimulus to build muscle mass, which\nit has if you optimized your training program, it has both the means and the will to build\nmuscle mass while simultaneously losing fat.\n\nBody recomposition\nTheory is nice and all, but what happens outside the laboratory? Do people actually\nmanage to build muscle while losing fat?\n\n\n--- Page 17 ---\nYes, they do. For example, in one study, overweight (26% body fat) police officers\nstarting a weight training program lost 9.3 pounds of fat and gained 8.8 pounds of lean\nbody mass in 12 weeks.",
+        "ss\nprogram or 'bulk' on a muscle growth program. This planning is largely based on the\nfalse interpretation of energy balance that you need to be in energy surplus to build\nmuscle and in energy deficit to lose fat. As you learned, on a good program you can\nbuild muscle and lose fat at the same time. However, positive body recomposition faces an obstacle for both of the 2 primary\ningredients for muscle growth: protein and energy. The availability of protein is a\nlimitation for fat loss. The ideal environment for muscle growth requires\nhyperaminoacidemia, high levels of amino acids in the blood, for a considerable part of\nthe day. This is a problem for fat loss, since having a lot of amino acids in the blood is\nnot an ideal condition for fat loss. Just ~27 g of whey or soy protein already triggers\nenough insulin release to suppress fat burning. Of course this is just temporary, but it\nillustrates that the ideal conditions for fat loss and muscle growth are not the same. On\na high energy intake, insulin levels will generally be substantially higher than on a low",
+        "b (3.1 kg) of fat while gaining almost exactly the same amount of\nmuscle. His weight during the last scan was within 8 grams of his weight when we\nstarted. So this is an example of virtually perfect body recomposition. You can find the\nanonymized DXA scan overview here and his progress photos below. Gaining muscle on a weight loss diet is not only possible, it should be expected for\nalmost all novices, many intermediates and occasionally advanced trainees on an\noptimized program. If that sounds like a bold claim, you'll see it yourself in your\n(motivated) clients after you've learned how to optimize their programs in this course.\nAs long as the stimulus for muscle growth is carefully designed and customized, your\nbody will find a way to get bigger. Your body is not the enemy. It is a miraculous survival\nmachine that adapts to the stress you impose on it. When you understand it, you can\ncontrol it.\n\n\n--- Page 19 ---\nSo screw the naysayers. When you don't believe what you want is possible, you have\ndefeated yourself before you even began.",
+        " mass, which includes muscle\nmass, and fat mass independently. Researchers call this calorie/nutrient partitioning and\nwe can express the resulting change in fat and muscle mass as a P-ratio.\nP = 0 means all weight loss comes from fat.\np = 1 means all weight loss comes from lean body mass (protein). In fact, your body is most likely breaking down and building fat as well as muscle mass\nright at this very moment. All tissues are constantly in flux. If your body couldn't modify\ncertain lean tissues without the total body being in energy surplus, you could not heal\nfrom any injury or disease in energy deficit, which would obviously be an evolutionary\ndisaster.\n\nSo your body can build muscle when you're losing fat at the same time. The\nconservation of energy law only means that you must gain net total energy in energy\nsurplus and lose net total energy in a deficit. Lean body mass and fat mass can both\nchange in different directions, as long as their total sum ends up correctly. It is possible"
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6860114336013794,
+        0.6515848636627197,
+        0.5849760174751282,
+        0.5836697816848755,
+        0.5743398070335388
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.8,
+      "ragas_score": 0.8999999999999999
+    },
+    {
+      "id": "B03",
+      "category": "body_composition",
+      "level": "all",
+      "goal": "all",
+      "question": "Как визуалната оценка на мазнините помага при планиране на програмата?",
+      "ground_truth": "Визуалната оценка на процента мазнини (чрез снимки front/back/side) позволява правилното определяне на целта - bulk или cut. Сравнение с референтни снимки по процент мазнини дава достатъчно точна оценка за практически цели, без нужда от скъпо оборудване.",
+      "answer": "Визуалната оценка на мазнините може да служи като груб стартов ориентир при определяне на енергийния прием на клиента. Въпреки че не е най-точният метод, тя може да помогне за бързо идентифициране на приблизителния процент на телесните мазнини. \n\nТова е полезно, защото:\n\n1. Позволява бърза оценка на текущото състояние на клиента.\n2. Помага за определяне на целите - дали клиентът иска да отслабне, да поддържа тегло или да качи мускулна маса.\n3. Може да се използва за настройка на калорийния дефицит или излишък.\n\nВажно е обаче да се помни, че визуалната оценка не е точна и е най-добре да се комбинира с други методи за оценка на напредъка.",
+      "contexts": [
+        " rule of thumb to keep in mind, because as you get\nmore experienced as a coach, you should become reasonably accurate at estimating\nsomeone's body fat percentage visually to the point that you can use a visual estimate\nas a rough starting point for the initial energy intake prescription of a client. That's all a visual estimate is good for though. As we will discuss in the section on\nprogression measurement later on, most people are terrible at visually estimating\nsomeone's body fat percentage. A particularly important reason is all these images you\nsee online with a set of photos with listed body fat percentages. Looking at these\nimages is one of the absolute worst things you can do to become good at visually\nestimating someone's body fat percentage, because you'll often engrain wrong relations\nbetween visual appearance and body fat percentage. These collages are generally\ncreated by someone who just plucked together a couple of photos from the internet and",
+        "You can also use Menno's PT Intake Form for your own clients to collect the data you\nneed from your clients to estimate their muscular potential and thereby their training\nstatus.\n\n➢ PT Toolkit\n• Training status calculator\n• PT Intake Form In practice, you cannot always use someone's fat-free mass index (FFMI) to estimate\nhow advanced they are, because you need to have a reasonably reliable estimate of\ntheir body fat percentage before you can calculate their FFMI. For these cases, you\nshould learn how to estimate someone's level of muscularity visually based on their\nphotos and, importantly, based on their strength level. Since strength and muscle mass\ncorrelate very well in practice in natural trainees (see course module on understanding\nmuscle growth), the Kilgore-Rippetoe-Pendlay strength standards are often a more\npractical measure of training status than measures of someone's muscularity. These\n\n\n--- Page 26 ---\n26",
+        "st things you can do to become good at visually\nestimating someone's body fat percentage, because you'll often engrain wrong relations\nbetween visual appearance and body fat percentage. These collages are generally\ncreated by someone who just plucked together a couple of photos from the internet and --- Page 42 ---\nslapped on some numbers that he or she thought were good estimates. This creates a\nvicious circle on the internet where the truth goes increasingly lost, while confidence of\neveryone in their ability to determine someone's body composition based on a photo\nkeeps increasing.\n\nTo help you master the skill of visually estimating body fat percentage, here's an\nevidence-based reference guide. All the photos in this guide were made within a few\ndays of having done a reliable 2C or better body composition measurement.\n\n➢ PT Toolkit\nBody fat percentage visual reference guide",
+        "ion, and it's clear that subjectively\nassessing someone's progress photos is a crappy way to monitor progress (but a very\ngood way to convince the gullible masses that you achieve spectacular before-after\nresults with your clients). Specifically, we tend to majorly underestimate body fat\npercentage. The only thing we can really discern well is muscle definition. This is why you almost\nnever see before-after photos of someone bulking. For the untrained eye, a natural\ntrainee will often only look worse and worse throughout a bulk phase, at least in\nshirtless photos.\n\n\n--- Page 98 ---\nAt best, a highly structured client may be able to provide you with very similar photos\ntaken in very similar circumstances that can be used to assess progress over the\ncourse of months.\n\nSo what do you do if photos are unreliable, the scale is incomplete and you don't have\naccess to fancy equipment like a DXA scanner?\n\nYou have several options.\n\nNote: if the difference between error and bias is not clear to you, revisit w",
+        "ding a back double biceps and front relaxed\npose. If you recently had blood work done, you can attach its results as well.\n\n\n--- Page 8 ---\nBAYESIAN BODYBUILDING 2014\n\n\n--- Page 9 ---\nBAYESIAN BODYBUILDING 2014\n\n\n--- Page 10 ---\nBAYESIAN BODYBUILDING 2014\n\n\n--- Page 11 ---\nBAYESIAN BODYBUILDING 2014 Client assessment\nRyan's profile is that of an intermediate lifter with below average upper body genetic\npotential (weak joints, small frame) and at least average lower body genetic potential (much\nlarger frame size). His size would classify him as a novice, but based on his training age,\ngenetic indicators, alleged past strength level and a program that isn't completely terrible, it's\nprobably unfair to say he's still his size simply because his programs sucked.\n\nBefore determining Ryan's basic program parameters, it is necessary to define his goal. Since\nRyan just wants to look good in everyday life. His stress level allows neither a high calorie\nbulk nor a low calorie cut, so I've put him on a 5% deficit with a conservative estimate of\n15% for his body fat."
+      ],
+      "sources": [
+        "Energy PTC 2022.pdf",
+        "Program customization PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Energy PTC 2022.pdf",
+        "Case study average Joe program design.pdf"
+      ],
+      "scores": [
+        0.5330348014831543,
+        0.5309953093528748,
+        0.5089758634567261,
+        0.5023419857025146,
+        0.49099013209342957
+      ],
+      "error": null,
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.0,
+      "ragas_score": 0.6
+    },
+    {
+      "id": "B04",
+      "category": "body_composition",
+      "level": "all",
+      "goal": "all",
+      "question": "Какво е мускулна памет и как влияе на тренировъчното планиране?",
+      "ground_truth": "Мускулната памет позволява бързо възстановяване на изгубена мускулна маса след пауза от тренировки. Дължи се на запазването на миоядрата в мускулните влакна дори след атрофия. Хора, завърнали се след пауза, напредват много по-бързо от истински начинаещи.",
+      "answer": "Мускулната памет е феномен, при който мускулите запазват определени характеристики, дори след период на неактивност. Когато се върнеш към тренировки след пауза, мускулите ти могат да възвърнат предишния си размер и сила по-бързо, отколкото е било необходимо за първоначалното изграждане на мускулната маса. \n\nТова е свързано с увеличен брой на ядрени клетки в мускулните влакна, които остават дори след атрофия. Тези ядра помагат за по-бързото синтезиране на протеини, което улеснява възстановяването на мускулната маса.\n\nВ тренировъчното планиране, знанието за мускулната памет може да се използва, за да се предвиди по-бързо възстановяване на загубените резултати след пауза. Например, ако си спрял тренировките за един месец, може да очакваш да възвърнеш предишната си форма за около две седмици. \n\nТака че, ако планираш програма след пауза, можеш да започнеш с интензивност и обем, близки до предишните, с акцент върху прогресивното натоварване, за да се възползваш от мускулната памет.",
+      "contexts": [
+        "ay facilitate rapid protein\nsynthesis back up to its former size when someone starts training again [2, 3], although\nfindings are very mixed and much of the research is in rodents. Another mechanism for\nmuscle memory is epigenetic. Strength training changes how some of our genes\n\n\n--- Page 27 ---\n27 express themselves, making certain genes more or less active, and these changes\nseem to persist a considerable time during detraining, even after all muscle built from\nthe training has been lost. As a result of the above mechanisms, it's typically\nconsiderably easier to regain lost muscle than it was to originally build it. It also\ngenerally doesn't take nearly as long to rebuild lost muscle as it took to lose it. If you\nstopped training for a month, it shouldn't take you a month to regain the strength and\nsize you lost: 2 weeks is generally realistic. Even if you lose all your gains, your muscles\nact like they 'remember' their former size and it will be easier to get back to your top\nshape the second time than it was the first time.",
+        "ells'. They lie just outside their parent\nmuscle fiber. When the muscle fiber becomes damaged, the satellite cells activate,\nclone themselves, and fuse to the damaged site to patch it up. In this process, their cell\nnucleus can be incorporated into the muscle fiber, increasing its myonuclear number. Muscle memory\nThe added myonuclei seem to persist relatively well even after muscle atrophy, so they\ncan possibly upregulate the muscle fiber's capacity for protein synthesis for years. This\npartly explains the phenomenon of muscle memory: atrophied muscle can still have\nsome of its former peak myonuclear number, which may facilitate rapid protein\nsynthesis back up to its former size when someone starts training again [2, 3], although\nfindings are very mixed and much of the research is in rodents. Another mechanism for\nmuscle memory is epigenetic. Strength training changes how some of our genes\n\n\n--- Page 27 ---\n27",
+        "2. Fatigue impacts the quality of subsequent training. Specifically, muscle damage\nlimits your body's ability to further activate muscle tissue. In this meta-analysis on strength development, you can see the diminishing start well\nbefore the 10 sets per week per exercise mark. Note though that this is sets per\nexercise, not per muscle group. Since most muscle groups are trained with several\nexercises in typical training programs, the volume per muscle group will be substantially\nhigher than per exercise.\nAlso, few data on medium training volumes were available, so you don't want to read\ntoo much in the exact dose-response curve.\n\n\n--- Page 48 ---\n48",
+        "st majority of these studies are practically irrelevant, because they subject people\nto a novel training stimulus. Muscle damage and soreness are very high after you\nperform a workout your muscles are not accustomed to. As you perform the workout\nmore often, however, the repeated bout effect occurs. The repeated bout effect\nRepeated what? The repeated bout effect is the phenomenon that trainees develop far\nless muscle damage when they repeat a workout ('exercise bout') compared to the first\ntime they performed that workout, even if the weights they can lift are now higher.\nTraining causes your connective tissue and your muscle fibers to adapt and become\nstronger. Basically, what doesn't kill a muscle makes it stronger. Moreover, muscles\nalso seem to become stronger as weaker fibers die off ('fiber necrosis', possibly\nfollowed by complete regeneration) and only the strongest cells survive over time. This\nis why you stop being so sore from most training programs over time.",
+        "partitioning and an easier time putting on lean mass without getting fat in the\nprocess. Many other studies find there's no significant relation between how much muscle you\nhave before you start training and how quickly you'll gain muscle when you take up\ntraining. In trained individuals, the trend is even that smaller muscles tend to grow\nfaster, likely because they're relatively less developed. We've compiled a full research\noverview here if you're interested.\n\n\n--- Page 7 ---\n7\n\nSomatotyping\nAnother common idea about muscular potential related to baseline muscle mass is that\nwe can classify people into so called somatotypes that differ in their ability to gain fat\nand muscle. Ectomorph, mesomorph, endomorph, you've probably came across these\nterms. In the article below we'll summarize what you need to know about somatotyping."
+      ],
+      "sources": [
+        "Understanding muscle growth and strength PTC 2022.pdf",
+        "Understanding muscle growth and strength PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Program customization PTC 2022.pdf"
+      ],
+      "scores": [
+        0.5883333683013916,
+        0.5135171413421631,
+        0.4692685604095459,
+        0.4684295654296875,
+        0.4655332565307617
+      ],
+      "error": null,
+      "faithfulness": 0.7142857142857143,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "ragas_score": 0.7460714285714286
+    },
+    {
+      "id": "R01",
+      "category": "recovery",
+      "level": "all",
+      "goal": "all",
+      "question": "Колко часа сън са необходими за оптимално мускулно възстановяване?",
+      "ground_truth": "7-9 часа сън на нощ са критични за оптимално мускулно възстановяване и растеж. По време на дълбокия сън пиковата секреция на растежен хормон, синтезът на протеин и процесите на мускулна репарация са най-активни.",
+      "answer": "За оптимално мускулно възстановяване, целете се към 8-9 часа качествен сън на нощ. Ако се събуждате естествено и се чувствате освежени след 8 часа, вероятно имате достатъчно сън.",
+      "contexts": [
+        "sleep itself directly impairs your health in any way. To maximize the beneficial effects of sleep as a strength trainee, it's advisable to aim for\n9 hours of sleep per night, after having corrected your sleep debt which may require\neven more sleeping for a period.\n\nThe research consensus is that 7.5-8 hours is sufficient, but this is primarily for\nsedentary individuals. Since most of the above systems are influenced by resistance\ntraining, it is plausible that sleep requirements increase as a result of intense training.\nIndeed, meta-analytic research confirms the duration of sleep increases after exercise,\nthough the effect is only 10 minutes on average.",
+        "en sleep quality and workout\nintensiveness in elite athletes [2]. Even late-night workouts improve rather than impair\nsleep quality according to a 2019 meta-analysis [2], though vigorous exercise literally\nright before going to bed can reduce sleep efficiency and make it a bit harder to fall\nasleep. Moreover, afternoon workouts may improve sleep duration compared to morning\nworkouts, though other research finds the timing of exercise is trivial for sleep quality.\nStrength training is in fact an effective treatment for a wide range of sleep disorders. So\n8 hours of high quality sleep may still be sufficient. If you wake up naturally and\nrefreshed after 8 hours of sleep, there's no need to force yourself to sleep longer. More\ngenerally, if you wake up naturally at the same time every day and feel completely\nrefreshed, you have probably slept enough regardless of sleep duration. Some people,\nespecially older individuals, can get by with less than 8 hours of sleep.",
+        " with rapid recovery occurring during the first 11 h, followed by a\nleveling off or a second drop in performance until the next morning, 22 h after exercise.\nAll variables returned to baseline levels 33 h after exercise.\"\n\nSo that's full recovery within 33 hours after 9 all-out, high-intensity sets. Now, the question remains if your muscles only become more resistant to damage or if\nthey also actually recover faster. If muscles only become more resistant to damage\nwithout a change in recovery capacity, then more developed muscles may only need to\nbe trained with a higher training volume without any need for an increased training\nfrequency.",
+        "e after a few days of\ninsufficient sleep in athletes. The long-term effects of your sleep duration are more\n\n\n--- Page 18 ---\n18\n\nimportant than many aspects of your training and nutrition program design. Sleep is\namong the top of the hierarchy of importance for our physique, health and performance. How much sleep do we need?\nThe benefits of enough high-quality sleep are clear, but how much is enough? Average\nsleep duration varies drastically between mammals; elephants sleep as little as 3-4\nhours while the daily sleep time of bats can reach up to 20 hours. Sleep\nrecommendations for human adults age 18-60 are 7+ hours per night. Sleeping less\nthan 7 hours is associated with many of the negative health outcomes mentioned\nabove. Sleeping more than 9 hours on a consistent basis (unless you are in sleep debt\nor underage) may be associated with health risks as well, though this is probably due to\nthe association with depression and boredom. People that sleep 10+ hours a day\nevidently don't have many preoccupations in life. It is physiologically implausible that",
+        " biorhythm and sleep during the night from\nroughly 12:00 - 08:00 h.\n\nFor those with an irregular sleep-wake cycle (we're looking at you, college students), it's\npreferable to wait at least 6 hours after awakening before training. The optimal training\ntime will then be closer to 20:30 h than 14:30 h. However, different people can have a significantly different biorhythm and 'chronotype'.\nThis individual variability in chronotype probably explains why the research isn't very\n\n\n--- Page 20 ---\n20\n\nconsistent. People differ in their chronotype: some people are true 'early birds' and they\nshow far less loss of performance in the morning than typical 'night owls'. People also\nvary in the extent to which they can adapt to morning training. So some people can do\njust fine training in the early morning."
+      ],
+      "sources": [
+        "Lifestyle factors PTC 2022.pdf",
+        "Lifestyle factors PTC 2022.pdf",
+        "Training volume frequency intensity PTC 2022.pdf",
+        "Lifestyle factors PTC 2022.pdf",
+        "Fasting and biorhythms PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6065011024475098,
+        0.5910981893539429,
+        0.55510413646698,
+        0.5517593622207642,
+        0.5462875366210938
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.5,
+      "ragas_score": 0.775
+    },
+    {
+      "id": "R02",
+      "category": "recovery",
+      "level": "all",
+      "goal": "all",
+      "question": "Как стресът влияе на мускулния растеж и как да го управлявам?",
+      "ground_truth": "Хроничният психологически стрес повишава кортизола, което може да наруши мускулния протеинов синтез, да увеличи разграждането на протеин и да влоши качеството на съня. Управлението на стреса е легитимна компонента на всяка сериозна тренировъчна програма.",
+      "answer": "Стресът може значително да повлияе на мускулния растеж. Високите нива на психологически стрес могат да удължат времето за възстановяване след тренировки и да намалят мускулната сила. Например, при хора с висок стрес, мускулният растеж е значително по-нисък в сравнение с тези с нисък стрес.\n\nЗа да управляваш стреса и да минимизираш негативното му влияние, можеш да следваш тези съвети:\n\n1. **Редовна физическа активност**: Упражненията помагат за освобождаване на ендорфини и намаляване на стреса. Стреми се към поне 150 минути умерена аеробна активност на седмица.\n\n2. **Подходящ сън**: Стреми се към 7-9 часа качествен сън на нощ. Сънят е важен за възстановяването на организма и хормоналния баланс.\n\n3. **Техники за релаксация**: Практикувай медитация, дълбоко дишане или йога, за да намалиш стреса.\n\n4. **Планирай времето си**: Организирай задачите си, за да избегнеш стреса от натрупване на работа.\n\n5. **Хранене**: Поддържай балансирана диета, богата на витамини и минерали, които подпомагат нервната система. Избягвай прекомерния прием на кофеин и захар.\n\n6. **Социална подкрепа**: Общувай с близки и приятели, за да споделиш чувствата си и да получиш подкрепа.\n\nСледвай тези стратегии, за да управляваш стреса и да оптимизираш мускулния растеж.",
+      "contexts": [
+        "s group, but this did not reach statistical significance: see the data below. Limb\ncircumference is a notoriously inaccurate measure of muscle size due to the\nconfounding effects of muscle swelling, regional muscle growth, water retention, fat\nmass and changes in fat distribution.\n\n\n--- Page 7 ---\n7 Stress also impairs our recovery capacity. One study found that the difference between\nhigh and low stress made a twofold difference in the rate of recovery after strength\ntraining: experiencing high psychological stress can double the time you need to\nrecover from your workouts. Another study found that the risk of injury roughly doubled\nduring periods of high academic stress in division 1 football players. Changes in\nacademic stress even seemed to be more strongly related to injury risk than changes in\ntraining stress. In medical communities it has long been known that stress considerably\nimpairs the healing time of various pathologies, including that of simple wounds. We can\nalso roughly monitor the training status of athletes by their testosterone-to-cortisol ratio",
+        "ithin that very muscle.\n• The primary type of stress inducing muscle growth is mechanical tension on the\nmuscle fibers. Muscle damage, metabolic stress and exercise induced anabolic\nhormone elevations have been postulated to play a role as well, but their\nsupporting evidence is much less compelling. • Strength is influenced by muscle size but also by several other factors, chiefly:\no biomechanical factors, such as the muscle's pennation angle and the\npositions of its tendons that influence the muscle's leverage;\no neural factors, such as inter- and intramuscular coordination of muscle\n(fibers) and neural drive (motor unit firing frequency and motor unit\nrecruitment) that optimize how the tension produced by your muscle\nfibers is translated into movement;\no metabolic factors, such as calcium metabolism.\nIn practice, however, within an individual, total muscle mass and strength\ntraining performance are highly correlated.",
+        " affect virtually all parts of your body.\nThis is particularly evident in high stress conditions such as burnout and post-traumatic\nstress disorder. We think of these things as psychological phenomena, but their\nsymptoms are clearly physical as well. Cortisol directly links psychology to physiology. Stress and your training\nHollander et al. have performed an unpublished study of the effect of academic stress in\nstudents. In their study, the highest stress group gained less than half the leg press\nstrength of the lowest stress group. The highest stress group also gained body fat and\nlost thigh circumference, whereas the lowest stress group lost body fat and gained thigh\ncircumference. This study included both men and women and the researchers found no\ngender-specific effects.",
+        "he muscle,\nin addition to metabolic stress resulting from rapid energy production, metabolic waste\nproduct formation and oxygen shortage. In evolutionary terms, this fatigue constitutes a\nform of stress that forms an incentive for the muscle to adapt to protect itself from this\nstress in the future. This adaptation process is not unique to muscle tissue. Almost all bodily tissues adapt\nto stressors. Dr. Hans Selye created a framework to understand these processes called\nGeneral Adaptation Syndrome (GAS). When subjected to stressors, there is an 'alarm'\nstage characterized by cortisol release and a state of high arousal. Afterwards, a\n'resistance' phase is entered characterized by anti-catabolic and anabolic processes to\nbolster resistance against this type of stress. This adaptation is specific to bolster\nresistance against the stress imposed, a phenomenon known as Specific Adaptations to\nImposed Demands or simply the Specificity Principle.\n\nSource: Just Fly Sports Performance\n\n\n--- Page 60 ---\n60",
+        "ther minimize, as it\ndelays recovery and muscle growth and impairs performance. It is better thought of as a\n\n\n--- Page 37 ---\n37\n\nbyproduct of the mechanical tension that induces muscle growth than an independent\ncause of the muscle growth. As Lee Haney famously said: \"Stimulate, don't annihilate.\" Fortunately, DOMS is generally harmless and can be trained through. Within reason of\ncourse: if after a thorough warm-up you still can't perform a certain exercise with full\nrange of motion because you're too sore, you probably want to skip that exercise that\nsession to avoid risking excessive muscle damage and injury.\n\n\n--- Page 38 ---\n38\n\nHormones\nMechanical tension, metabolic stress and muscle damage are all local factors. They\noccur within the muscle and the resulting muscle growth happens within that same\nmuscle. In contrast, systemic factors have also been hypothesized to play a role in\nmuscle growth. Your hormones are the most notable systemic factor for muscle growth."
+      ],
+      "sources": [
+        "Lifestyle factors PTC 2022.pdf",
+        "Understanding muscle growth and strength PTC 2022.pdf",
+        "Lifestyle factors PTC 2022.pdf",
+        "Understanding muscle growth and strength PTC 2022.pdf",
+        "Understanding muscle growth and strength PTC 2022.pdf"
+      ],
+      "scores": [
+        0.634857177734375,
+        0.6010244488716125,
+        0.5841602087020874,
+        0.556309700012207,
+        0.5560464859008789
+      ],
+      "error": null,
+      "faithfulness": 0.75,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.4,
+      "ragas_score": 0.6875
+    },
+    {
+      "id": "R03",
+      "category": "recovery",
+      "level": "all",
+      "goal": "all",
+      "question": "Полезно ли е активното възстановяване в почивните дни?",
+      "ground_truth": "Лека аеробна активност (ходене, колоездене с нисък интензитет) в почивните дни подобрява кръвотока, намалява DOMS и ускорява отстраняването на метаболитните странични продукти, без да добавя значителен тренировъчен стрес.",
+      "answer": "Да, активното възстановяване в почивните дни може да бъде полезно. То помага за увеличаване на кръвообращението и премахване на метаболитни отпадъци, което може да ускори възстановяването на мускулите. Примери за активна възстановителна дейност включват лека разходка, разтягане или нежни упражнения за горната част на тялото.\n\nВажно е да се увериш, че активното възстановяване не е интензивно. Избягвай натоварващи упражнения, които могат да увеличат умората. Целта е да останеш активен, без да натоварваш мускулите прекалено.",
+      "contexts": [
+        "\n14\n\nActive recovery\nWhen you've determined your rest intervals, the next question is: what should you do\nwithin these rest periods? Here active recovery comes in. The idea is that by staying\nactive, you can speed up your recovery by increasing blood flow and the removal of\nmetabolic waste products. Indeed, active recovery in the form of light exercise for the fatigued muscle groups helps\nspeed up the removal of lactate during the training and thereby increases performance.\nThe active recovery should involve the fatigued musculature: walking does not improve\nthe rate of recovery of your upper body muscles significantly. Promoting active recovery\ncan slightly enhance work capacity, resulting in a greater total work output, reduced\nneuromuscular fatigue as measured by movement velocity loss and lower perceived\nexertion [2, 3, 4]. A greater training volume may in turn increase muscle growth and\nstrength development.",
+        ". Promoting active recovery\ncan slightly enhance work capacity, resulting in a greater total work output, reduced\nneuromuscular fatigue as measured by movement velocity loss and lower perceived\nexertion [2, 3, 4]. A greater training volume may in turn increase muscle growth and\nstrength development. However, it's very easy to overdo active recovery. In several studies, active 'recovery'\nwithin a training session doesn't improve recovery within or after the training and it can\neasily increase the perceived effort of the training (RPEs). In general, overdoing the\nactive recovery will decrease your performance compared to passive recovery [2].\nBodyweight squats are too intensive to constitute active recovery, for example, and can\ndecrease lower body work capacity.",
+        "nd it can\neasily increase the perceived effort of the training (RPEs). In general, overdoing the\nactive recovery will decrease your performance compared to passive recovery [2].\nBodyweight squats are too intensive to constitute active recovery, for example, and can\ndecrease lower body work capacity. The sweet spot intensity for active recovery is very low: walking is probably the right\nintensity. Since perceived effort tends to increase before performance objectively\ndeteriorates, you can go by feel here. The active recovery should not be strenuous or\neffortful, so if after a heavy set of squats, you feel like you're about to pass out, just sit\ndown. If you feel like you're more at risk of getting cold or you've got an extreme muscle\npump, walk around and do some similarly low intensity upper body movements, such as\ngentle arm swings.\n\n\n--- Page 15 ---\n15",
+        "d set can take longer than the actual recovery in physical\nperformance. So when time is limited, you should program in fixed rest intervals or\n\n\n--- Page 13 ---\n13\n\nactively work at reducing your rest periods. This will be mentally challenging at first, but\nyour work capacity will improve over time. If time is limited, it's generally most time-efficient not to rest until full recovery and to try\nto perform as many sets rather than as many reps per set as possible [2].\n\n\n--- Page 14 ---\n14\n\nActive recovery\nWhen you've determined your rest intervals, the next question is: what should you do\nwithin these rest periods? Here active recovery comes in. The idea is that by staying\nactive, you can speed up your recovery by increasing blood flow and the removal of\nmetabolic waste products.",
+        "scle tissue. The\nlymphatic system, which is in significant part responsible for draining swelling around\ninflamed areas, is even more passive at rest, as unlike blood, it has no heart to pump it\nthrough its circulatory system. Bodily movement serves as the 'pump' of the lymphatic\ncirculatory system. Active recovery needn't be fancy. Electro-myo-stimulation works no better than light\nactivity. Basically any activity that speeds up blood flow without causing tissue damage\ncan function as active recovery.\n\nActive recovery is the closest we have to a panacea. Exercise is basically the only type\nof rehabilitation that is uncontroversial and it's effective for virtually every type of injury.\nEven in people with knee osteoarthritis, the more walking they do, the fewer symptoms\nthey have.\n\nThe positive effects of exercise even outweigh the potential harm of frequent spinal\nloading. Many people believe that manual labor, especially when you're lifting things\n\n\n--- Page 10 ---\n10"
+      ],
+      "sources": [
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "How to structure your workouts PTC 2022.pdf",
+        "Injury management PTC 2022.pdf"
+      ],
+      "scores": [
+        0.7108424305915833,
+        0.6862151622772217,
+        0.6477448344230652,
+        0.5995323061943054,
+        0.5813857913017273
+      ],
+      "error": null,
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.8,
+      "context_recall": 0.5,
+      "ragas_score": 0.825
+    },
+    {
+      "id": "R04",
+      "category": "recovery",
+      "level": "intermediate",
+      "goal": "all",
+      "question": "Как да разпозная признаците на претрениране?",
+      "ground_truth": "Признаците на претрениране включват: постоянна умора, намалено представяне, влошено настроение, нарушен сън, загуба на апетит и повишена честота на заболявания. При тези симптоми е нужен структуриран deload или пълна почивка.",
+      "answer": "Признаците на претрениране включват:\n\n1. **Намалена производителност** - Ако забележиш, че не можеш да вдигаш толкова тежести или да изпълняваш упражненията с предишната интензивност, това е ясен знак.\n\n2. **Постоянна умора** - Чувството на постоянна умора, дори след почивка, е признак на претрениране.\n\n3. **Липса на мотивация** - Ако не можеш да се мотивираш да тренираш, въпреки че преди си бил ентусиазиран, това може да е сигнал.\n\n4. **Болки и наранявания** - Чести наранявания или болки в ставите и мускулите, които не отминават, могат да показват претрениране.\n\n5. **Промени в съня** - Проблеми със съня, като безсъние или прекомерна сънливост, също могат да бъдат индикатор.\n\nАко забележиш тези симптоми, е важно да намалиш интензивността на тренировките и да си осигуриш достатъчно време за възстановяване.",
+      "contexts": [
+        "blems, utter lack of motivation to\ntrain and significantly impaired performance. It's not just 'feeling a bit tired'. More short-\n\n\n--- Page 61 ---\n61\n\nterm decreases in performance are sometimes called overreaching, though it's unclear\nif overtraining is simply a more advanced form of overreaching. Due to the lack of a specific operational definition of overtraining, many people are\ninclined to think along the lines of: \"Oh hey, I'm not that motivated to train this week. I\nmust be overtraining.\" This is generally a cop-out, because the most fundamental\nsymptom and the single necessary and universally agreed upon condition for\novertraining of any kind is reduced performance. Overtraining occurs when you\nchronically dip below the point of recovery in the GAS-cycle. So by definition, any\nstrength gains during that period invariably exclude the diagnosis of overtraining. Let's\nreiterate that. If you are gaining strength, you are not overtraining.",
+        " only just recover from workout to workout, not gaining\nany net strength over time because there is not enough time for\nsupercompensation.\n4. Overreaching: you underrecover and lose strength from workout to workout.\n5. Overtraining: long term overreaching may culminate in true overtraining\nsyndrome. In practice, the order of overtraining is generally more as follows.\n1. Your mind will give out. Don't buy into that \"the mind is strong, but the flesh is\nweak\" crap. That's a metaphor from the Bible based on the quote, \"the spirit is\nwilling, but the flesh is weak.\" It actually means that we find it difficult to resist\ntemptation, to do what is right instead of what our feelings tempt us to do. And\nthat's exactly what will happen when things get tough. You'll start looking for\nexcuses, shortcuts and magic pills. Don't give in. Remember the lectures about\nmental vs. physical fatigue.\n2. Your connective tissue degrades. Muscle is more plastic and can heal faster than\nyour tendons and ligaments, so with heavy training, overuse injuries can occur in",
+        "ly caused by either circadian rhythm disturbances, such as training\nat variable times of day, inconsistent exercise technique or variable training effort. Day\nto day variance in performance in serious trainees on a structured program with good\ntechnique is minimal, a percent or two at most normally. So when is someone at risk for overtraining? There are actually 2 kinds of overtraining.\n\n\n--- Page 62 ---\n62\n\n1. Volume overtraining. And we're not talking about a few sets of squats a couple\ntimes a week here. We're talking about doubling your distance running volume to\n109 miles (175 km) a week within a month, military training, cycling of 2-3 hours\na day or high-intensity rowing for 3 hours a day. Overtraining is far more common\nwith endurance exercise than strength exercise.\n2. Intensity-volume overtraining. Though volume is rarely a concern during strength\ntraining in comparison to the above, very high intensities can increase the\nrecovery demand. Again, we're talking extremes to reach overtraining, like\nperforming 10 squat 1RM attempts every day for 2 weeks straight.",
+        "vertrained people' tend to have normal resting hormone\nlevels. The only consistent marker of overtraining is a decrease in performance. What\nwe do know is that overtraining is exceedingly rare and generally not just the result of\ntraining but rather high psychological stress, like that of competing. Importantly, in science, true overtraining syndrome is usually a term reserved for a\nperiod of weeks or months of severe psychological problems, utter lack of motivation to\ntrain and significantly impaired performance. It's not just 'feeling a bit tired'. More short-\n\n\n--- Page 61 ---\n61\n\nterm decreases in performance are sometimes called overreaching, though it's unclear\nif overtraining is simply a more advanced form of overreaching.",
+        ". You'll start looking for\nexcuses, shortcuts and magic pills. Don't give in. Remember the lectures about\nmental vs. physical fatigue.\n2. Your connective tissue degrades. Muscle is more plastic and can heal faster than\nyour tendons and ligaments, so with heavy training, overuse injuries can occur in your joints before the actual muscle tissue starts limiting you.\n3. You actually become overtrained. Almost nobody ever reaches this stage, as\nthey are prevented by their injuries and fatigue from doing so."
+      ],
+      "sources": [
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf",
+        "Periodization and progress PTC 2022.pdf"
+      ],
+      "scores": [
+        0.6192544102668762,
+        0.59703528881073,
+        0.5817458629608154,
+        0.5792462825775146,
+        0.5630941390991211
+      ],
+      "error": null,
+      "faithfulness": 0.8,
+      "answer_relevancy": 1.0,
+      "context_precision": 0.6,
+      "context_recall": 0.33,
+      "ragas_score": 0.6825
+    }
+  ]
+}
