@@ -90,6 +90,53 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+# BODY-FAT VISUAL ASSESSMENT
+
+def bf_assessment_v1(*, sex: str, angles: list[str], rubric: str, context: str = "") -> str:
+    """Estimate body-fat % from photos, anchored to the course's DXA-verified rubric.
+
+    The model must ground its estimate in observed visual markers and report a range
+    plus a confidence, so an uncertain read stays visible instead of being dressed up
+    as precision (CLAUDE.md rule #12).
+    """
+    rubric_block = (
+        f"КАЛИБРАЦИОННА СКАЛА от курса (DXA-верифицирани примери и техните визуални маркери):\n{rubric}"
+        if rubric
+        else "ВНИМАНИЕ: калибрационната скала от курса не е налична - отбележи това като по-ниска увереност."
+    )
+    extra = f"\n\nДопълнителен контекст от курса:\n{context}" if context else ""
+    return f"""Ти си експерт по оценка на телесна композиция по методологията на Menno Henselmans.
+
+ЗАДАЧА: Оцени процента телесни мазнини (BF%) на човека от приложените снимки.
+Пол: {sex}. Ъгли на снимките: {', '.join(angles) or 'неуточнени'}.
+
+{rubric_block}{extra}
+
+КАК ДА ОЦЕНИШ:
+1. Опиши какво ВИЖДАШ обективно - коремна дефиниция, васкуларност, разделение на мускулите,
+   мазнини около кръста/ханша, набразденост (striations), общ вид на кожата.
+2. Сравни наблюдаваните маркери с калибрационната скала и намери най-близкото ниво.
+3. Дай точкова оценка И диапазон. При лошо осветление, скриващо облекло или неудобен ъгъл
+   НАМАЛИ увереността и го посочи изрично.
+
+ВАЖНО:
+- Не се води по това колко мускулест изглежда човекът - оценяваш САМО мазнините.
+- Осветлението силно влияе на видимата дефиниция; при слабо осветление оценявай консервативно.
+- Ако снимките не позволяват надеждна оценка, кажи го честно с confidence "low".
+
+Върни САМО валиден JSON:
+{{
+  "bf_pct": число (точкова оценка),
+  "bf_range_low": число,
+  "bf_range_high": число,
+  "confidence": "high" | "medium" | "low",
+  "observed_markers": ["маркер 1 на български", "маркер 2"],
+  "closest_reference": "най-близкото ниво от скалата, напр. 15.6% (male)",
+  "limitations": "какво пречи на точността (на български), или празен низ",
+  "reasoning_bg": "2-3 изречения обосновка на БЪЛГАРСКИ"
+}}"""
+
+
 # RAG QUERY REWRITE
 
 def rag_query_rewrite_v1(question: str) -> str:

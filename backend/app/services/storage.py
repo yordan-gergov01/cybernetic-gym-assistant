@@ -39,6 +39,11 @@ def upload_bytes(data: bytes, key: str, content_type: str) -> str:
     return key
 
 
+def download_bytes(key: str) -> bytes:
+    """Fetch an object's bytes from R2. Synchronous - call via to_thread."""
+    return _client().get_object(Bucket=settings.R2_BUCKET, Key=key)["Body"].read()
+
+
 def delete_object(key: str) -> None:
     _client().delete_object(Bucket=settings.R2_BUCKET, Key=key)
 
