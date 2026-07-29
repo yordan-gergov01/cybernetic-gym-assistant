@@ -10,10 +10,10 @@ from logging.config import fileConfig
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
-# `prepend_sys_path = src` in alembic.ini puts backend/src on the path.
-from core.config import settings  # noqa: E402
-from db.database import Base  # noqa: E402
-import models  # noqa: E402,F401  (imported for side effect: registers all tables on Base.metadata)
+# `prepend_sys_path = .` in alembic.ini puts the backend root on the path.
+from app.core.config import settings  # noqa: E402
+from app.db.database import Base  # noqa: E402
+import app.models  # noqa: E402,F401  (side effect: registers all tables on Base.metadata)
 
 config = context.config
 

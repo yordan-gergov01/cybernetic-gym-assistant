@@ -10,25 +10,30 @@ material via RAG, deterministic sport-science calculators, and (planned) ML. Pho
 
 ```
 backend/
-  src/
-    core/        config (pydantic-settings) + security (JWT, bcrypt)
+  app/           the application package (routes → services → components/domain)
+    core/        config, security (JWT/bcrypt), shared LLM client
     db/          async SQLAlchemy engine + session
-    routes/      FastAPI routers: auth, profile, weight, food, programs, workouts, chat, notifications
-    services/    calculators bridge + fatigue/deload engine
-    models.py    SQLAlchemy ORM models
-    schemas.py   Pydantic request/response schemas
-    main.py      FastAPI app + logging
-  tools/         deterministic sport-science calculators (energy, 1RM, volume, goal validation)
+    domain/      deterministic sport science (energy, 1RM, volume, goal validation)
+    components/  retrieval building blocks (FAISS retriever, cross-encoder reranker)
+    services/    RAG pipeline, fatigue/deload, progression, weight trend, R2 storage
+    prompts/     versioned prompt templates + registry
+    routes/      FastAPI routers (HTTP layer only)
+  evaluation/    golden dataset + offline RAG eval + tracked results
   migrations/    Alembic migrations
-  notebooks/     data extraction, chunking, embeddings, RAG eval, agent prototypes
+  scripts/       healthcheck and operational entry points
+  tests/         unit tests for the deterministic engines
+  notebooks/     prototypes: extraction, chunking, embeddings, agent experiments
   data/          extracted course material + FAISS vectorstore (git-ignored)
 frontend/        React PWA (planned)
+docs/            architecture notes
 ```
 
 - **Backend:** FastAPI + async SQLAlchemy + PostgreSQL.
-- **AI:** OpenAI (LLM + embeddings), FAISS retrieval, Gemini Vision (body-fat photo assessment).
+- **AI:** OpenAI (LLM + embeddings), FAISS retrieval, vision model for body-fat photo assessment.
 - **Deterministic first:** all body-composition/energy/volume/1RM numbers come from
-  `backend/tools/calculators.py` — the LLM explains them, never recomputes them.
+  `backend/app/domain/calculators.py` — the LLM explains them, never recomputes them.
+
+See [docs/architecture.md](docs/architecture.md) for the layer rules and RAG pipeline.
 
 ## Setup
 
@@ -73,7 +78,7 @@ python -m alembic upgrade head
 
 ```bash
 cd backend
-python -m uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 Interactive docs at `http://localhost:8000/docs`, health check at `/health`.
@@ -82,7 +87,7 @@ Interactive docs at `http://localhost:8000/docs`, health check at `/health`.
 
 `backend/notebooks/` contains the data pipeline and AI prototypes (extraction → chunking →
 embeddings → RAG evaluation → agent prototypes). They are prototypes: logic proven there is
-ported into `backend/src/` before it counts as shipped.
+ported into `backend/app/` before it counts as shipped.
 
 ## Data & secrets
 

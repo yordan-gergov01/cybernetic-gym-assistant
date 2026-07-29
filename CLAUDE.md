@@ -9,11 +9,11 @@ Guidance for AI assistants (and humans) working in this repository. Read this be
 Personal AI fitness coach for a single primary user, built on the **Menno Henselmans** coaching methodology (PT Certification course materials). The app plans training and nutrition, tracks progress, and makes coaching decisions grounded in the course content via RAG, calculators, and (planned) ML.
 
 - **Primary surface:** mobile (phone-first UI). The frontend does not exist yet — the planned stack is a **React PWA** (installable web app, phone-first). Lives in `frontend/` (currently empty).
-- **Backend:** FastAPI + async SQLAlchemy + PostgreSQL, OpenAI for LLM/embeddings, FAISS for retrieval, Gemini Vision for body-fat photo assessment. Located in `backend/src/`.
-- **Domain logic:** deterministic sport-science calculators live in `backend/tools/calculators.py` (energy intake, 1RM, optimal volume, goal validation). These are the source of truth for numbers — the LLM must not recompute them.
-- **Knowledge base:** course PDFs/Excel/DOCX are extracted to `backend/data/processed/` and embedded into a FAISS index. Prototyping happens in `backend/notebooks/`; production code lives in `backend/src/`.
+- **Backend:** FastAPI + async SQLAlchemy + PostgreSQL, OpenAI for LLM/embeddings, FAISS for retrieval, Gemini Vision for body-fat photo assessment. Located in `backend/app/`.
+- **Domain logic:** deterministic sport-science calculators live in `backend/app/domain/calculators.py` (energy intake, 1RM, optimal volume, goal validation). These are the source of truth for numbers — the LLM must not recompute them.
+- **Knowledge base:** course PDFs/Excel/DOCX are extracted to `backend/data/processed/` and embedded into a FAISS index. Prototyping happens in `backend/notebooks/`; production code lives in `backend/app/`.
 
-When a task is LLM-shaped and the provider is unstated, the stack is **OpenAI** (see `PRIMARY_MODEL`, `EMBEDDING_MODEL` in `backend/src/core/config.py`).
+When a task is LLM-shaped and the provider is unstated, the stack is **OpenAI** (see `PRIMARY_MODEL`, `EMBEDDING_MODEL` in `backend/app/core/config.py`).
 
 ---
 
@@ -48,11 +48,11 @@ These rules are non-negotiable and override any default behavior:
 
 ## 3. Project-specific conventions
 
-- **Deterministic first:** all body-composition, energy, volume, and 1RM numbers come from `backend/tools/calculators.py`. The LLM may explain them but must never recompute or override them.
+- **Deterministic first:** all body-composition, energy, volume, and 1RM numbers come from `backend/app/domain/calculators.py`. The LLM may explain them but must never recompute or override them.
 - **Language:** user-facing coaching text is Bulgarian (`RESPONSE_LANGUAGE=bulgarian`). Exercise names are always standard **English** gym names (e.g. "Barbell Row"). Units are kilograms.
 - **RAG grounding:** coaching advice should be grounded in retrieved Henselmans course context, not the model's general knowledge. Keep retrieval + citation intact when editing chat/program/food flows.
-- **Config:** all settings and secrets go through `backend/src/core/config.py` (`Settings`). Never hardcode keys, models, or paths — add them to config and `.env`.
-- **Notebooks are prototypes.** Logic proven in `backend/notebooks/` must be ported into `backend/src/` (not imported from notebooks) before it counts as shipped.
+- **Config:** all settings and secrets go through `backend/app/core/config.py` (`Settings`). Never hardcode keys, models, or paths — add them to config and `.env`.
+- **Notebooks are prototypes.** Logic proven in `backend/notebooks/` must be ported into `backend/app/` (not imported from notebooks) before it counts as shipped.
 - **Secrets:** `.env` is git-ignored and must stay that way. Never commit API keys or credentials.
 
 ---
