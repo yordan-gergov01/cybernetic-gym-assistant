@@ -266,6 +266,23 @@ class UserPhotoOut(BaseModel):
     url: Optional[str] = None   # time-limited presigned URL, populated by the route
     class Config: from_attributes = True
 
+class BFAssessRequest(BaseModel):
+    photo_ids: list[str] = Field(min_length=1, max_length=5)
+    apply_to_profile: bool = False   # only honoured for non-low confidence
+
+class BFAssessmentOut(BaseModel):
+    bf_pct: float
+    range_low: float
+    range_high: float
+    confidence: str
+    observed_markers: list[str]
+    closest_reference: str
+    limitations: str
+    reasoning_bg: str
+    model: str
+    photo_count: int
+    applied_to_profile: bool
+
 # FATIGUE ASSESSMENT
 class FatigueAnswers(BaseModel):
     recovery_quality: str       # poor | fair | good

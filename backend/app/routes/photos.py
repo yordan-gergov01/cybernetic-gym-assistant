@@ -7,11 +7,13 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.components.vision import VisionUnavailable
 from app.db.database import get_db
 from app.deps import get_current_user
-from app.models import User, UserPhoto
-from app.schemas import UserPhotoOut
+from app.models import User, UserPhoto, UserProfile
+from app.schemas import BFAssessmentOut, BFAssessRequest, UserPhotoOut
 from app.services import storage
+from app.services.bf_assessment import assess_from_r2_keys
 from app.services.storage import StorageNotConfigured
 
 router = APIRouter(prefix="/photos", tags=["photos"])
@@ -78,6 +80,57 @@ async def list_photos(user: User = Depends(get_current_user), db: AsyncSession =
         select(UserPhoto).where(UserPhoto.user_id == user.id).order_by(UserPhoto.taken_at.desc())
     )
     return [_to_out(p) for p in r.scalars().all()]
+
+
+@router.post("/assess-bf", response_model=BFAssessmentOut)
+async def assess_body_fat(
+    data: BFAssessRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Estimate body-fat % from stored photos, anchored to the course's visual rubric.
+
+    Front/back/side photos of the same session should be assessed together — more angles
+    means a better read. The estimate is written onto the photo rows; it is only applied
+    to the profile when the caller asks AND confidence is not low, because the profile
+    value drives the deterministic macro calculations.
+    """
+    r = await db.execute(
+        select(UserPhoto).where(UserPhoto.id.in_(data.photo_ids), UserPhoto.user_id == user.id)
+    )
+    photos = r.scalars().all()
+    if len(photos) != len(data.photo_ids):
+        raise HTTPException(404, "One or more photos not found")
+    keys = [p.file_path for p in photos if p.file_path]
+    if not keys:
+        raise HTTPException(400, "Selected photos have no stored image")
+
+    pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
+    profile = pr.scalar_one_or_none()
+
+    try:
+        result = await assess_from_r2_keys(
+            keys, sex=profile.sex if profile else None, angles=[p.angle for p in photos if p.angle]
+        )
+    except (StorageNotConfigured, VisionUnavailable) as e:
+        raise HTTPException(503, f"Body-fat assessment unavailable: {e}")
+    except ValueError as e:
+        raise HTTPException(502, f"Vision model returned an unusable result: {e}")
+
+    for p in photos:
+        p.bf_pct_assessed = result.bf_pct
+
+    applied = False
+    if data.apply_to_profile and profile:
+        if result.confidence == "low":
+            logger.info("Not applying low-confidence BF estimate %.1f%% to user %s", result.bf_pct, user.id)
+        else:
+            profile.body_fat_pct = result.bf_pct
+            profile.bf_assessment_method = f"visual ({result.model}, {result.confidence})"
+            applied = True
+    await db.commit()
+
+    return BFAssessmentOut(**vars(result), applied_to_profile=applied)
 
 
 @router.delete("/{photo_id}", status_code=204)

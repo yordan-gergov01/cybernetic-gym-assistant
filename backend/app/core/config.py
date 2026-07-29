@@ -40,7 +40,7 @@ class Settings(BaseSettings):
 
     PRIMARY_MODEL: str = "gpt-4o-mini"
     EMBEDDING_MODEL: str = "text-embedding-3-large"
-    GEMINI_VISION_MODEL: str = "gemini-2.5-flash"
+    GEMINI_VISION_MODEL: str = "gemini-3.6-flash"
 
     CHUNK_SIZE: int = 512
     CHUNK_OVERLAP: int = 100
