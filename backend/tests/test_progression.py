@@ -56,3 +56,42 @@ def test_no_working_sets_yields_no_target():
     t = compute_next_target(muscle_group="chest", logged_sets=[{"weight_kg": None, "reps": None, "rir": None}], **RANGE)
     assert t.weight_kg is None and t.reps is None
     assert t.note
+
+
+def test_gym_increment_overrides_textbook_step_when_coarser():
+    """A gym whose lightest jump is 5 kg cannot load +2.5 kg — the target must be loadable."""
+    t = compute_next_target(
+        muscle_group="chest",
+        logged_sets=[{"weight_kg": 100, "reps": 10, "rir": 4}],
+        min_barbell_increment_kg=5.0,
+        **RANGE,
+    )
+    assert t.weight_kg == 105, "must jump by what the gym can actually load"
+
+
+def test_finer_gym_increment_does_not_shrink_the_textbook_step():
+    """Micro-plates allow 0.5 kg jumps, but the prescribed progression stays ~2.5 kg."""
+    t = compute_next_target(
+        muscle_group="chest",
+        logged_sets=[{"weight_kg": 100, "reps": 10, "rir": 4}],
+        min_barbell_increment_kg=0.5,
+        **RANGE,
+    )
+    assert t.weight_kg == 100 + COMPOUND_STEP_KG
+
+
+def test_dumbbell_increment_applies_to_isolation_work():
+    t = compute_next_target(
+        muscle_group="biceps",
+        logged_sets=[{"weight_kg": 20, "reps": 10, "rir": 4}],
+        min_dumbbell_increment_kg=2.0,
+        **RANGE,
+    )
+    assert t.weight_kg == 22.0, "dumbbell sets step by the rack's real gap"
+
+
+def test_unknown_increments_fall_back_to_textbook_steps():
+    t = compute_next_target(
+        muscle_group="chest", logged_sets=[{"weight_kg": 100, "reps": 10, "rir": 4}], **RANGE
+    )
+    assert t.weight_kg == 100 + COMPOUND_STEP_KG

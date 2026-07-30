@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime, date
-from typing import Optional
+from typing import Literal, Optional
 
 # AUTH
 class UserRegister(BaseModel):
@@ -30,26 +30,50 @@ class LiftEntry(BaseModel):
     weight: float
     reps: int
 
+SEX = Literal["male", "female"]
+GOAL = Literal["bulk", "cut", "maintain", "aggressive_cut"]
+ACTIVITY = Literal["sedentary", "light", "moderate", "active", "very_active"]
+EQUIPMENT = Literal["full_gym", "home_gym", "dumbbells_only", "bodyweight"]
+STRESS = Literal["stress_free", "mild", "average", "high"]
+SLEEP = Literal["poor", "fair", "good"]
+DEDICATION = Literal["sustainable", "balanced", "maximal"]
+
 class ProfileCreate(BaseModel):
-    age: int
-    sex: str
-    height_cm: float
-    bodyweight_kg: float
-    body_fat_pct: Optional[float] = None
-    goal: str
+    age: int = Field(ge=14, le=100)
+    sex: SEX
+    height_cm: float = Field(gt=100, lt=250)
+    bodyweight_kg: float = Field(gt=30, lt=300)
+    body_fat_pct: Optional[float] = Field(default=None, ge=2, le=70)
+    goal: GOAL
     goal_details: Optional[str] = None
-    activity_level: str
+    activity_level: ACTIVITY
     activity_details: Optional[str] = None
     training_status: int = Field(ge=1, le=3)
-    training_years: float
+    training_years: float = Field(ge=0, le=60)
     training_days_per_week: int = Field(ge=1, le=7)
-    available_equipment: str
-    session_duration_min: int
+    available_equipment: EQUIPMENT
+    session_duration_min: int = Field(ge=20, le=240)
     lifts: Optional[dict[str, LiftEntry]] = None
     priority_muscles: Optional[list[str]] = None
     injuries: Optional[str] = None
     exercise_preferences: Optional[str] = None
     dietary_restrictions: Optional[str] = None
+
+    # --- coaching intake (see models.UserProfile for why each one matters) ---
+    min_barbell_increment_kg: Optional[float] = Field(default=None, gt=0, le=20)
+    min_dumbbell_increment_kg: Optional[float] = Field(default=None, gt=0, le=20)
+    stress_level: Optional[STRESS] = None
+    sleep_quality: Optional[SLEEP] = None
+    sleep_hours: Optional[float] = Field(default=None, ge=3, le=14)
+    dedication_level: Optional[DEDICATION] = None
+    unavailable_times: Optional[str] = None
+    equipment_details: Optional[dict] = None
+    avoid_growth_muscles: Optional[list[str]] = None
+    other_activities: Optional[str] = None
+    occupation: Optional[str] = Field(default=None, max_length=120)
+    caffeine_mg_per_day: Optional[int] = Field(default=None, ge=0, le=2000)
+    current_program: Optional[str] = None
+    current_diet: Optional[str] = None
 
 class ProfileOut(ProfileCreate):
     id: str

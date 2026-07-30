@@ -37,6 +37,28 @@ def _top_working_set(logged_sets: list[dict]) -> dict | None:
     return max(working, key=lambda s: (s.get("weight_kg") or 0, s.get("reps") or 0))
 
 
+def resolve_step_kg(
+    *,
+    is_isolation: bool,
+    min_barbell_increment_kg: float | None = None,
+    min_dumbbell_increment_kg: float | None = None,
+) -> float:
+    """Pick the load jump, respecting what the user's gym can actually produce.
+
+    The textbook steps are 2.5 kg (compound) and 1.25 kg (isolation), but a gym whose
+    lightest plate pair only makes 5 kg jumps cannot follow "+2.5 kg". Prescribing a
+    load the user cannot load is worse than a coarser progression, so the gym's real
+    minimum increment wins when it is larger.
+    """
+    textbook = ISOLATION_STEP_KG if is_isolation else COMPOUND_STEP_KG
+    available = min_dumbbell_increment_kg if is_isolation else min_barbell_increment_kg
+    if available is None or available <= 0:
+        return textbook
+    # Round up to a multiple of the available increment so the target is loadable.
+    steps = max(1, round(textbook / available))
+    return round(steps * available, 3)
+
+
 def compute_next_target(
     *,
     muscle_group: str | None,
@@ -44,6 +66,8 @@ def compute_next_target(
     reps_min: int | None,
     reps_max: int | None,
     logged_sets: list[dict],
+    min_barbell_increment_kg: float | None = None,
+    min_dumbbell_increment_kg: float | None = None,
 ) -> NextTarget:
     """Compute the next-session target for one exercise from this session's sets.
 
@@ -58,7 +82,11 @@ def compute_next_target(
     rir = top.get("rir")
     target = rir_target if rir_target is not None else DEFAULT_RIR_TARGET
     is_isolation = (muscle_group or "").lower() in _ISOLATION_MUSCLES
-    step = ISOLATION_STEP_KG if is_isolation else COMPOUND_STEP_KG
+    step = resolve_step_kg(
+        is_isolation=is_isolation,
+        min_barbell_increment_kg=min_barbell_increment_kg,
+        min_dumbbell_increment_kg=min_dumbbell_increment_kg,
+    )
 
     if rir is None:
         return NextTarget(weight, reps, "Логни RIR следващия път за точна прогресия; засега запази теглото.")
