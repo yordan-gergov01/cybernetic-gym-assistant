@@ -58,6 +58,46 @@ class UserProfile(Base):
     injuries: Mapped[str | None] = mapped_column(Text)
     exercise_preferences: Mapped[str | None] = mapped_column(Text)
     dietary_restrictions: Mapped[str | None] = mapped_column(Text)
+
+    # --- Henselmans coaching intake form ---------------------------------------
+    # Fields below mirror the official PT client intake form. They are not cosmetic:
+    # each one changes a coaching decision, so they are collected during onboarding.
+
+    # Smallest load jump actually available in the user's gym. The progression engine
+    # assumes 2.5 kg / 1.25 kg steps; if the lightest plates only allow 5 kg jumps,
+    # prescribing +2.5 kg is impossible to follow.
+    min_barbell_increment_kg: Mapped[float | None] = mapped_column(Float)
+    min_dumbbell_increment_kg: Mapped[float | None] = mapped_column(Float)
+
+    # Recovery capacity inputs — they cap how much volume can be tolerated and feed
+    # the deload decision alongside the weekly check-in.
+    stress_level: Mapped[str | None] = mapped_column(String(20))       # stress_free|mild|average|high
+    sleep_quality: Mapped[str | None] = mapped_column(String(10))      # poor|fair|good
+    sleep_hours: Mapped[float | None] = mapped_column(Float)
+
+    # A/B/C in the intake form: how aggressively to push rate of progress.
+    dedication_level: Mapped[str | None] = mapped_column(String(20))   # sustainable|balanced|maximal
+
+    # "If you don't answer this accurately, you may get a program you can't follow."
+    unavailable_times: Mapped[str | None] = mapped_column(Text)
+
+    # Detailed equipment availability (rack, leg curl type, cable tower, bands, ...).
+    equipment_details: Mapped[dict | None] = mapped_column(JSONB)
+
+    # Inverse of priority_muscles — groups the user does NOT want to grow.
+    avoid_growth_muscles: Mapped[list | None] = mapped_column(JSONB)
+
+    # Sport/activity outside lifting: interference effect and recovery budget.
+    other_activities: Mapped[str | None] = mapped_column(Text)
+
+    # Occupation characterises circadian rhythm, stress and non-training activity.
+    occupation: Mapped[str | None] = mapped_column(String(120))
+    caffeine_mg_per_day: Mapped[int | None] = mapped_column(Integer)
+
+    # Where the user is coming from, so the first program is a transition not a shock.
+    current_program: Mapped[str | None] = mapped_column(Text)
+    current_diet: Mapped[str | None] = mapped_column(Text)
+
     calculator_results: Mapped[dict | None] = mapped_column(JSONB)
     updated_at: Mapped[datetime] = mapped_column(_TS, default=datetime.utcnow)
 

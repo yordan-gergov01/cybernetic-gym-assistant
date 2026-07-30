@@ -9,7 +9,7 @@ from sqlalchemy.orm import selectinload
 
 from app.db.database import get_db
 from app.deps import get_current_user
-from app.models import ProgramExercise, User, WorkoutLog, WorkoutSet
+from app.models import ProgramExercise, User, UserProfile, WorkoutLog, WorkoutSet
 from app.schemas import WorkoutLogCreate, WorkoutLogOut
 from app.services.progression import compute_next_target
 
@@ -36,17 +36,23 @@ async def log_workout(data: WorkoutLogCreate, user: User = Depends(get_current_u
     await db.commit()
 
     if data.day_id:
-        await update_next_targets(db, data.day_id, data.sets)
+        await update_next_targets(db, user.id, data.day_id, data.sets)
 
     r = await db.execute(select(WorkoutLog).where(WorkoutLog.id == log.id).options(selectinload(WorkoutLog.sets)))
     return r.scalar_one()
 
 
-async def update_next_targets(db: AsyncSession, day_id: str, sets: list):
+async def update_next_targets(db: AsyncSession, user_id: str, day_id: str, sets: list):
     r = await db.execute(select(ProgramExercise).where(ProgramExercise.day_id == day_id))
     exercises = r.scalars().all()
     if not exercises:
         return
+
+    # The user's gym decides what load jumps are actually possible.
+    pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user_id))
+    profile = pr.scalar_one_or_none()
+    barbell_step = profile.min_barbell_increment_kg if profile else None
+    dumbbell_step = profile.min_dumbbell_increment_kg if profile else None
 
     logged_by_exercise: dict[str, list[dict]] = {}
     for s in sets:
@@ -65,6 +71,8 @@ async def update_next_targets(db: AsyncSession, day_id: str, sets: list):
                 reps_min=ex.reps_min,
                 reps_max=ex.reps_max,
                 logged_sets=logged,
+                min_barbell_increment_kg=barbell_step,
+                min_dumbbell_increment_kg=dumbbell_step,
             )
             ex.target_weight_kg = target.weight_kg
             ex.target_reps = target.reps
