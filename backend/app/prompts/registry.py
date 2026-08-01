@@ -21,6 +21,7 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
     "rag_query_rewrite": {"v1": templates.rag_query_rewrite_v1},
     "bf_assessment": {"v1": templates.bf_assessment_v1},
     "program_generation": {"v1": templates.program_generation_v1},
+    "program_week_template": {"v2": templates.program_week_template_v2, "v3": templates.program_week_template_v3},
     "fatigue_explanation": {"v1": templates.fatigue_explanation_v1},
     "food_extraction": {"v1": templates.food_extraction_v1},
     "food_llm_estimate": {"v1": templates.food_llm_estimate_v1},
@@ -29,6 +30,7 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
 # Which version is live per prompt.
 _ACTIVE_VERSIONS: dict[str, str] = {name: "v1" for name in _REGISTRY}
 _ACTIVE_VERSIONS["chat_system"] = "v2"  # grounded/citation variant
+_ACTIVE_VERSIONS["program_week_template"] = "v3"  # split + frequency decided in code, not by the model
 
 
 def get_prompt(name: str, version: str | None = None) -> Callable[..., str]:

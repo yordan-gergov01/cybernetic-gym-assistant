@@ -90,6 +90,191 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+def program_week_template_v3(
+    *,
+    level_label: str,
+    goal: str | None,
+    training_days_per_week: int | None,
+    split_description: str,
+    split_rationale: str,
+    min_frequency: int,
+    available_equipment: str | None,
+    equipment_details: dict | None,
+    session_duration_min: int | None,
+    priority_muscles,
+    avoid_growth_muscles,
+    injuries: str | None,
+    exercise_preferences: str | None,
+    other_activities: str | None,
+    volume: dict,
+    lifts: dict,
+    context: str,
+    retry_feedback: str = "",
+) -> str:
+    """v3 hands the model a split decided in code, instead of letting it choose one.
+
+    v2 was free to pick the structure and produced Push/Pull/Legs on 3 days, which
+    trains every muscle once a week - a direct violation of the course's ≥2x rule.
+    The split now comes from domain/program_design.py and the frequency requirement is
+    stated as a hard constraint; the model's job is exercise selection within it.
+    """
+    equipment_list = ", ".join(k for k, v in (equipment_details or {}).items() if v) or "не е уточнено"
+    feedback_block = (
+        f"\n\nПРЕДИШНИЯТ ТИ ОТГОВОР БЕШЕ ОТХВЪРЛЕН:\n{retry_feedback}\nПоправи това." if retry_feedback else ""
+    )
+    return f"""Ти си сертифициран личен треньор по методологията на Menno Henselmans. Състави ЕДНА тренировъчна седмица, която ще се повтаря през целия мезоцикъл.
+
+ЗАДЪЛЖИТЕЛНА СТРУКТУРА (определена е предварително, НЕ я променяй):
+- Сплит: {split_description}
+- Защо: {split_rationale}
+- Точно {training_days_per_week} тренировъчни дни.
+- ВСЯКА основна мускулна група трябва да се тренира минимум {min_frequency} пъти седмично.
+  Това е най-важното изискване - програма, която не го спазва, е невалидна.
+
+КЛИЕНТСКИ ПРОФИЛ:
+- Ниво: {level_label}
+- Цел: {goal}
+- Продължителност на сесия: {session_duration_min} мин
+- Оборудване: {available_equipment}
+- Налични уреди: {equipment_list}
+- Приоритетни мускули (повече обем): {priority_muscles}
+- Мускули, които клиентът НЕ иска да уголемява: {avoid_growth_muscles or 'няма'}
+- Травми/ограничения: {injuries or 'няма'}
+- Предпочитания за упражнения: {exercise_preferences or 'няма'}
+- Друга активност извън залата: {other_activities or 'няма'}
+
+ОПТИМАЛЕН СЕДМИЧЕН ОБЕМ (серии на мускулна група, от калкулатора):
+{json.dumps(volume, ensure_ascii=False)}
+
+ОЦЕНЕНИ 1ПМ:
+{json.dumps(lifts, ensure_ascii=False)}
+
+КОНТЕКСТ ОТ КУРСА:
+{context}
+
+ОСТАНАЛИ ИЗИСКВАНИЯ:
+- Разпредели зададения седмичен обем през сесиите; не го надвишавай значително.
+- Избирай упражнения САМО спрямо наличното оборудване; избягвай конфликт с травмите.
+- Съобрази броя серии с продължителността на сесията ({session_duration_min} мин).
+- Всички текстови полета (`name`, `description`, `notes`, `day_name`) на БЪЛГАРСКИ.
+- `exercise_name` ВИНАГИ на АНГЛИЙСКИ със стандартно име в залата.
+- Използвай точно тези стойности за `muscle_group`: chest, back, shoulders, biceps, triceps, quads, hamstrings, glutes, calves, abs, rear_delts.{feedback_block}
+
+Върни САМО валиден JSON:
+{{
+  "name": "Име на програмата на български",
+  "description": "Кратко описание на подхода на български",
+  "template_type": "upper_lower|ppl|full_body|custom",
+  "days": [
+    {{
+      "day_number": 1,
+      "day_name": "Име на деня на български",
+      "exercises": [
+        {{
+          "exercise_name": "Barbell Bench Press",
+          "muscle_group": "chest",
+          "equipment": "barbell",
+          "sets_prescribed": 4,
+          "reps_min": 6,
+          "reps_max": 8,
+          "rir_target": 2,
+          "rest_seconds": 180,
+          "notes": "Кратка бележка на български"
+        }}
+      ]
+    }}
+  ]
+}}"""
+
+
+def program_week_template_v2(
+    *,
+    level_label: str,
+    goal: str | None,
+    training_days_per_week: int | None,
+    available_equipment: str | None,
+    equipment_details: dict | None,
+    session_duration_min: int | None,
+    priority_muscles,
+    avoid_growth_muscles,
+    injuries: str | None,
+    exercise_preferences: str | None,
+    other_activities: str | None,
+    volume: dict,
+    lifts: dict,
+    context: str,
+) -> str:
+    """Ask for ONE training week, not the whole mesocycle.
+
+    Exercise selection is the judgment call worth an LLM; repeating that week and
+    progressing the load is arithmetic the deterministic engine already does
+    (CLAUDE.md rule #5). Asking for all weeks at once also produced JSON large enough
+    to be truncated mid-response.
+    """
+    equipment_list = (
+        ", ".join(k for k, v in (equipment_details or {}).items() if v) or "не е уточнено"
+    )
+    return f"""Ти си сертифициран личен треньор по методологията на Menno Henselmans. Състави ЕДНА тренировъчна седмица, която ще се повтаря през целия мезоцикъл.
+
+КЛИЕНТСКИ ПРОФИЛ:
+- Ниво: {level_label}
+- Цел: {goal}
+- Тренировъчни дни седмично: {training_days_per_week}
+- Продължителност на сесия: {session_duration_min} мин
+- Оборудване: {available_equipment}
+- Налични уреди: {equipment_list}
+- Приоритетни мускули (повече обем): {priority_muscles}
+- Мускули, които клиентът НЕ иска да уголемява: {avoid_growth_muscles or 'няма'}
+- Травми/ограничения: {injuries or 'няма'}
+- Предпочитания за упражнения: {exercise_preferences or 'няма'}
+- Друга активност извън залата: {other_activities or 'няма'}
+
+ОПТИМАЛЕН СЕДМИЧЕН ОБЕМ (серии на мускулна група, от калкулатора):
+{json.dumps(volume, ensure_ascii=False)}
+
+ОЦЕНЕНИ 1ПМ:
+{json.dumps(lifts, ensure_ascii=False)}
+
+КОНТЕКСТ ОТ КУРСА (принципи на Henselmans):
+{context}
+
+ИЗИСКВАНИЯ:
+- Точно {training_days_per_week} тренировъчни дни. Разпредели ги така, че всяка мускулна група да се тренира с подходяща честота.
+- Спазвай зададения седмичен обем по мускулни групи — това са изчислени стойности, не ги надвишавай значително.
+- Избирай упражнения САМО спрямо наличното оборудване и избягвай тези, които влизат в конфликт с травмите.
+- Съобрази обема с продължителността на сесията ({session_duration_min} мин).
+- Всички текстови полета (`name`, `description`, `notes`, `day_name`) на БЪЛГАРСКИ.
+- `exercise_name` ВИНАГИ на АНГЛИЙСКИ със стандартно име в залата (напр. "Barbell Bench Press", "Romanian Deadlift").
+- `muscle_group` и `equipment` на латиница с кратки термини (chest, back, barbell, dumbbell).
+- Използвай точно тези стойности за muscle_group: chest, back, shoulders, biceps, triceps, quads, hamstrings, glutes, calves, abs, rear_delts.
+
+Върни САМО валиден JSON:
+{{
+  "name": "Име на програмата на български",
+  "description": "Кратко описание на подхода на български",
+  "template_type": "upper_lower|ppl|full_body|custom",
+  "days": [
+    {{
+      "day_number": 1,
+      "day_name": "Име на деня на български",
+      "exercises": [
+        {{
+          "exercise_name": "Barbell Bench Press",
+          "muscle_group": "chest",
+          "equipment": "barbell",
+          "sets_prescribed": 4,
+          "reps_min": 6,
+          "reps_max": 8,
+          "rir_target": 2,
+          "rest_seconds": 180,
+          "notes": "Кратка бележка на български"
+        }}
+      ]
+    }}
+  ]
+}}"""
+
+
 # BODY-FAT VISUAL ASSESSMENT
 
 def bf_assessment_v1(*, sex: str, angles: list[str], rubric: str, context: str = "") -> str:
@@ -268,7 +453,3 @@ def food_llm_estimate_v1(*, food_name_en: str, cooking_method: str, quantity_g: 
         f"Българско име за референция: {food_name_bg}. "
         f"Върни САМО валиден JSON с числови полета: calories, protein_g, fat_g, carbs_g (ключовете точно така, на английски)."
     )
-
-
-# --- WORKOUT PROGRESSION ------------------------------------------------------
-# Next-session load progression is deterministic and lives in services/progression.py
