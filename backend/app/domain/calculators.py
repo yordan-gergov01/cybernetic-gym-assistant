@@ -323,10 +323,12 @@ def run_all_calculators(user_profile: dict) -> dict:
         priority_muscles = user_profile.get('priority_muscles'),
     )
 
-    # Step 4: 1RM for all lifts
+    # Step 4: 1RM for all lifts.
+    # `or {}` rather than a .get() default: lifts is an optional field, so the key is
+    # usually present with an explicit None, which a default would not catch.
     results['lifts'] = {
         lift: calculate_1rm(data['weight'], data['reps'])
-        for lift, data in user_profile.get('lifts', {}).items()
+        for lift, data in (user_profile.get('lifts') or {}).items()
     }
 
     return results
