@@ -212,6 +212,27 @@ class ProgramOut(BaseModel):
     weeks: list[ProgramWeekOut] = []
     class Config: from_attributes = True
 
+class ProgramSummary(BaseModel):
+    """Programs list without the nested week/day/exercise tree.
+
+    Loading the full tree for a list means hundreds of rows per program, and reading
+    `weeks` off a lazily-loaded relationship during serialization fails outright under
+    async SQLAlchemy. Callers that need the tree use GET /programs/{id}.
+    """
+    id: str
+    user_id: str
+    name: str
+    description: Optional[str]
+    created_by: str
+    template_type: Optional[str]
+    total_weeks: int
+    start_date: Optional[date]
+    end_date: Optional[date]
+    status: str
+    goal: Optional[str]
+    created_at: datetime
+    class Config: from_attributes = True
+
 class ProgramGenerateRequest(BaseModel):
     total_weeks: int = 8
     start_date: Optional[date] = None
