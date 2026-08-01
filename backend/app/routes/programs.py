@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import date, timedelta
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -10,6 +11,12 @@ from app.core.config import settings
 from app.core.llm import openai_client
 from app.db.database import get_db
 from app.deps import get_current_user
+from app.domain.program_design import (
+    MIN_WEEKLY_FREQUENCY,
+    frequency_violations,
+    recommend_split,
+    weekly_frequency,
+)
 from app.models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
 from app.prompts.registry import get_prompt
 from app.schemas import (
@@ -19,11 +26,13 @@ from app.schemas import (
     ProgramExerciseOut,
     ProgramGenerateRequest,
     ProgramOut,
+    ProgramSummary,
 )
 from app.services.fatigue import assess_fatigue
 from app.services.rag_pipeline import retrieve_context
 
 router = APIRouter(prefix="/programs", tags=["programs"])
+logger = logging.getLogger(__name__)
 
 
 
@@ -65,7 +74,7 @@ async def save_program_structure(db: AsyncSession, program: Program, weeks_data:
     return program
 
 
-@router.get("", response_model=list[ProgramOut])
+@router.get("", response_model=list[ProgramSummary])
 async def list_programs(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
     r = await db.execute(select(Program).where(Program.user_id == user.id).order_by(Program.created_at.desc()))
     return r.scalars().all()
@@ -129,37 +138,99 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
         f"{profile.training_days_per_week} дни седмично цел {profile.goal or ''}"
     )
 
-    prompt = get_prompt("program_generation")(
-        total_weeks=data.total_weeks,
-        level_label=level_map_bg.get(profile.training_status, "Средно напреднал"),
-        goal=profile.goal_validated or profile.goal,
-        training_days_per_week=profile.training_days_per_week,
-        available_equipment=profile.available_equipment,
-        session_duration_min=profile.session_duration_min,
-        priority_muscles=profile.priority_muscles,
-        injuries=profile.injuries,
-        exercise_preferences=profile.exercise_preferences,
-        target_kcal=energy.get("target_kcal", "няма"),
-        protein_g=energy.get("protein_g", "няма"),
-        volume=volume,
-        lifts=lifts,
-        context=context,
-    )
+    # The split is a rule from the course, not something the model gets to choose.
+    split = recommend_split(profile.training_days_per_week or 3)
 
-    response = await openai_client.chat.completions.create(
-        model=settings.PRIMARY_MODEL,
-        messages=[{"role": "user", "content": prompt}],
-        response_format={"type": "json_object"},
-        temperature=0.3,
-        max_tokens=4000,
-    )
-    prog_data = json.loads(response.choices[0].message.content)
+    async def ask_model(feedback: str = "") -> dict:
+        prompt = get_prompt("program_week_template")(
+            level_label=level_map_bg.get(profile.training_status, "Средно напреднал"),
+            goal=profile.goal_validated or profile.goal,
+            training_days_per_week=profile.training_days_per_week,
+            split_description=split.description_bg,
+            split_rationale=split.rationale_bg,
+            min_frequency=MIN_WEEKLY_FREQUENCY,
+            available_equipment=profile.available_equipment,
+            equipment_details=profile.equipment_details,
+            session_duration_min=profile.session_duration_min,
+            priority_muscles=profile.priority_muscles,
+            avoid_growth_muscles=profile.avoid_growth_muscles,
+            injuries=profile.injuries,
+            exercise_preferences=profile.exercise_preferences,
+            other_activities=profile.other_activities,
+            volume=volume,
+            lifts=lifts,
+            context=context,
+            retry_feedback=feedback,
+        )
+        response = await openai_client.chat.completions.create(
+            model=settings.PRIMARY_MODEL,
+            messages=[{"role": "user", "content": prompt}],
+            response_format={"type": "json_object"},
+            temperature=0.3,
+            max_tokens=4000,
+        )
+        choice = response.choices[0]
+        # A truncated response yields invalid JSON; say so instead of failing on a parse
+        # error with no explanation (CLAUDE.md rule #12).
+        if choice.finish_reason == "length":
+            logger.error("Program generation hit the token limit for user %s", user.id)
+            raise HTTPException(502, "Отговорът на модела беше отрязан. Опитай пак или намали броя тренировъчни дни.")
+        try:
+            return json.loads(choice.message.content)
+        except json.JSONDecodeError:
+            logger.error("Program generation returned invalid JSON for user %s: %.400s",
+                         user.id, choice.message.content, exc_info=True)
+            raise HTTPException(502, "Моделът върна невалиден отговор. Опитай пак.") from None
+
+    prog_data = await ask_model()
+    template_days = prog_data.get("days") or []
+    if not template_days:
+        raise HTTPException(502, "Моделът не върна тренировъчни дни. Опитай пак.")
+
+    # Verify the methodology rule rather than trusting the model to have followed it.
+    violations = frequency_violations(template_days)
+    if violations:
+        logger.warning("Generated program under-trains %s for user %s; retrying once",
+                       ", ".join(violations), user.id)
+        retry_data = await ask_model(
+            f"Следните мускулни групи бяха тренирани по-малко от {MIN_WEEKLY_FREQUENCY} пъти седмично: "
+            f"{', '.join(violations)}. Преразпредели упражненията така, че всяка от тях да се тренира "
+            f"поне {MIN_WEEKLY_FREQUENCY} пъти в различни дни."
+        )
+        retry_days = retry_data.get("days") or []
+        if retry_days and not frequency_violations(retry_days):
+            prog_data, template_days, violations = retry_data, retry_days, []
+        elif retry_days:
+            prog_data, template_days = retry_data, retry_days
+            violations = frequency_violations(retry_days)
+
+    # The LLM designs one week; the mesocycle is that week repeated. Load progression
+    # between sessions is handled deterministically by services/progression.py.
+    weeks_data = [
+        {
+            "week_number": week_number,
+            "week_type": "loading",
+            "days": template_days,
+        }
+        for week_number in range(1, data.total_weeks + 1)
+    ]
+
+    description = prog_data.get("description")
+    if violations:
+        # Two attempts and the rule still is not met. Ship the program rather than
+        # leaving the user with nothing, but make the shortfall visible instead of
+        # passing it off as a correct plan (CLAUDE.md rule #12).
+        logger.error("Program for user %s still under-trains %s after retry", user.id, ", ".join(violations))
+        description = (
+            f"{description or ''}\n\n⚠️ Внимание: {', '.join(violations)} се тренира(т) по-рядко от "
+            f"{MIN_WEEKLY_FREQUENCY}× седмично. Прегледай програмата или я генерирай отново."
+        ).strip()
 
     start = data.start_date or date.today()
     program = Program(
         user_id=user.id,
         name=prog_data.get("name", "AI Program"),
-        description=prog_data.get("description"),
+        description=description,
         created_by="ai",
         template_type=prog_data.get("template_type"),
         total_weeks=data.total_weeks,
@@ -167,11 +238,16 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
         end_date=start + timedelta(weeks=data.total_weeks),
         goal=profile.goal_validated or profile.goal,
         training_status=profile.training_status,
-        ai_context={"profile_snapshot": profile.calculator_results},
+        ai_context={
+            "profile_snapshot": profile.calculator_results,
+            "split": split.name,
+            "weekly_frequency": weekly_frequency(template_days),
+            "frequency_violations": violations,
+        },
     )
     db.add(program)
     await db.flush()
-    await save_program_structure(db, program, prog_data.get("weeks", []))
+    await save_program_structure(db, program, weeks_data)
     await db.commit()
 
     r = await db.execute(
