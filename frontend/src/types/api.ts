@@ -3,6 +3,44 @@
 
 export type AuthResponse = { access_token: string; user_id: string; name: string }
 
+/** Mirrors backend ProfileCreate, including the Henselmans intake fields. */
+export type ProfileCreate = {
+  age: number
+  sex: 'male' | 'female'
+  height_cm: number
+  bodyweight_kg: number
+  body_fat_pct?: number | null
+  goal: 'bulk' | 'cut' | 'maintain' | 'aggressive_cut'
+  goal_details?: string | null
+  activity_level: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active'
+  activity_details?: string | null
+  training_status: 1 | 2 | 3
+  training_years: number
+  training_days_per_week: number
+  available_equipment: 'full_gym' | 'home_gym' | 'dumbbells_only' | 'bodyweight'
+  session_duration_min: number
+  lifts?: Record<string, { weight: number; reps: number }> | null
+  priority_muscles?: string[] | null
+  injuries?: string | null
+  exercise_preferences?: string | null
+  dietary_restrictions?: string | null
+  // intake form additions
+  min_barbell_increment_kg?: number | null
+  min_dumbbell_increment_kg?: number | null
+  stress_level?: 'stress_free' | 'mild' | 'average' | 'high' | null
+  sleep_quality?: 'poor' | 'fair' | 'good' | null
+  sleep_hours?: number | null
+  dedication_level?: 'sustainable' | 'balanced' | 'maximal' | null
+  unavailable_times?: string | null
+  equipment_details?: Record<string, boolean | string> | null
+  avoid_growth_muscles?: string[] | null
+  other_activities?: string | null
+  occupation?: string | null
+  caffeine_mg_per_day?: number | null
+  current_program?: string | null
+  current_diet?: string | null
+}
+
 export type Profile = {
   id: string
   age: number
@@ -20,7 +58,35 @@ export type Profile = {
   } | null
 }
 
-export type NutritionTargets = { calories: number; protein_g: number; fat_g: number; carbs_g: number }
+export type PhotoAngle = 'front' | 'side' | 'back'
+
+export type UserPhoto = {
+  id: string
+  photo_type?: string | null
+  angle?: PhotoAngle | null
+  bf_pct_assessed?: number | null
+  taken_at: string
+  /** Time-limited presigned URL; absent when storage could not sign it. */
+  url?: string | null
+}
+
+/** POST /photos/assess-bf. The range and confidence are part of the answer, not
+ *  decoration - a low-confidence read must stay visible to the user. */
+export type BFAssessment = {
+  bf_pct: number
+  range_low: number
+  range_high: number
+  confidence: 'high' | 'medium' | 'low'
+  observed_markers: string[]
+  closest_reference: string
+  limitations: string
+  reasoning_bg: string
+  model: string
+  photo_count: number
+  applied_to_profile: boolean
+}
+
+export type NutritionTargets ={ calories: number; protein_g: number; fat_g: number; carbs_g: number }
 
 export type DailyNutrition = {
   date: string
@@ -79,13 +145,19 @@ export type ProgramDay = {
 
 export type ProgramWeek = { id: string; week_number: number; week_type: string; days: ProgramDay[] }
 
-export type Program = {
+/** GET /programs — list view, no nested weeks (see backend ProgramSummary). */
+export type ProgramSummary = {
   id: string
   name: string
   description?: string | null
   total_weeks: number
   status: string
   goal?: string | null
+  created_at: string
+}
+
+/** GET /programs/{id} — the full tree. */
+export type Program = ProgramSummary & {
   weeks: ProgramWeek[]
 }
 
