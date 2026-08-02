@@ -118,7 +118,13 @@
   letter-spacing: 0.01em;
 }
 
-/* Home-indicator / notch insets, applied where a fixed element touches the edge. */
+/* Home-indicator / notch insets, for a fixed element that touches the screen edge.
+ *
+ * IMPORTANT: these set padding-top / padding-bottom outright, so do NOT combine them
+ * with pt-*, pb-* or py-* on the same element — one declaration silently wins and the
+ * result is either a clipped element or content under the home indicator. When the
+ * element also needs its own padding on that axis, skip the utility and inline
+ * `calc(env(safe-area-inset-*) + <padding>)` instead. */
 @utility safe-bottom {
   padding-bottom: env(safe-area-inset-bottom);
 }

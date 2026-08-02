@@ -108,9 +108,13 @@ async def assess_body_fat(
     pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = pr.scalar_one_or_none()
 
+    # An unanchored rubric mixes the male and female reference points, so the caller's
+    # answer stands in while the profile is still being filled in (onboarding).
+    sex = (profile.sex if profile else None) or data.sex
+
     try:
         result = await assess_from_r2_keys(
-            keys, sex=profile.sex if profile else None, angles=[p.angle for p in photos if p.angle]
+            keys, sex=sex, angles=[p.angle for p in photos if p.angle]
         )
     except (StorageNotConfigured, VisionUnavailable) as e:
         raise HTTPException(503, f"Body-fat assessment unavailable: {e}")

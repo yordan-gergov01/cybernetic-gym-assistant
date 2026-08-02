@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { queryKeys } from '../../constants/query-keys'
 import type { ProgramDay, ProgramExercise, WorkoutSetInput } from '../../types/api'
 import { todayIso } from '../../utils/date'
+import { parseDecimal } from '../../utils/number'
 import { workoutsApi } from './api'
 
 export type SetEntry = { weight: string; reps: string; rir: string; done: boolean }
@@ -72,9 +73,11 @@ export function useTodayWorkout() {
           program_exercise_id: exercise.id,
           exercise_name: exercise.exercise_name,
           set_number: index + 1,
-          weight_kg: row.weight ? Number(row.weight) : null,
-          reps: row.reps ? Number(row.reps) : null,
-          rir_actual: row.rir !== '' ? Number(row.rir) : null,
+          // parseDecimal, not Number: a comma from the phone keyboard would otherwise
+          // become NaN and the logged weight would silently arrive as null.
+          weight_kg: parseDecimal(row.weight) ?? null,
+          reps: parseDecimal(row.reps) ?? null,
+          rir_actual: parseDecimal(row.rir) ?? null,
         })
       })
     }

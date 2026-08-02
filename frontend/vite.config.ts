@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
@@ -38,5 +38,10 @@ export default defineConfig({
     proxy: {
       '/api': { target: 'http://localhost:8000', changeOrigin: true },
     },
+  },
+  // Only the pure logic in src/utils is covered. Components are verified by typecheck,
+  // build and use — a DOM test runner is not worth its weight for this app yet.
+  test: {
+    include: ['src/**/*.test.ts'],
   },
 })

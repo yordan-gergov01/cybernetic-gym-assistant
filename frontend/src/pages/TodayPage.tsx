@@ -1,5 +1,6 @@
 import { Screen } from '../components/layout/Screen'
 import { EmptyState, ErrorNote, Icon, Loading } from '../components/ui'
+import { StartProgramCard } from '../features/programs/StartProgramCard'
 import { ExerciseCard } from '../features/workouts/ExerciseCard'
 import { useTodayWorkout } from '../features/workouts/useTodayWorkout'
 import { WeekStrip, type DayStatus } from '../features/workouts/WeekStrip'
@@ -37,7 +38,7 @@ export function TodayPage() {
     return (
       <Screen title="Днес" subtitle={formatDayLabel(todayIso())} actions={HEADER_ACTIONS}>
         <WeekStrip statuses={statuses} />
-        <EmptyState title="Нямаш активна програма" hint="Създай програма, за да започнеш да тренираш по план." />
+        <StartProgramCard />
       </Screen>
     )
   }
@@ -96,16 +97,22 @@ export function TodayPage() {
         </div>
       )}
 
-      {/* Sits above the bottom nav so it is reachable without scrolling back up. */}
-      <div className="safe-bottom fixed inset-x-0 bottom-[4.5rem] z-20 mx-auto max-w-lg px-4">
-        <button
-          onClick={workout.finish}
-          disabled={workout.completedCount === 0 || workout.isSaving}
-          className="btn-primary w-full shadow-xl shadow-ink-950/80"
-        >
-          {workout.isSaving ? 'Записване…' : `Завърши тренировката · ${workout.completedCount}`}
-        </button>
-      </div>
+      {/* Only appears once something is logged: a disabled floating button is
+          translucent, so it just smears over the exercise underneath it. The gradient
+          strip keeps the content readable as it scrolls behind. */}
+      {workout.completedCount > 0 && (
+        <div className="fixed inset-x-0 bottom-[3.5rem] z-20 bg-gradient-to-t from-ink-950 via-ink-950/95 to-transparent pt-6">
+          <div className="safe-bottom mx-auto max-w-lg px-4 pb-3">
+            <button
+              onClick={workout.finish}
+              disabled={workout.isSaving}
+              className="btn-primary w-full shadow-xl shadow-ink-950/80"
+            >
+              {workout.isSaving ? 'Записване…' : `Завърши тренировката · ${workout.completedCount}`}
+            </button>
+          </div>
+        </div>
+      )}
     </Screen>
   )
 }

@@ -5,3 +5,12 @@ export { Loading, ErrorNote, EmptyState } from './feedback'
 export { Icon } from './Icon'
 export { ICONS } from './icons'
 export type { IconName } from './icons'
+
+// Form controls, shared by the wizard and any screen that has to ask something.
+export { OptionCard } from './OptionCard'
+export type { Option } from './OptionCard'
+export { Chip } from './Chip'
+export { Field } from './Field'
+export { NumericInput } from './NumericInput'
+export { NumberField } from './NumberField'
+export { TextField } from './TextField'
