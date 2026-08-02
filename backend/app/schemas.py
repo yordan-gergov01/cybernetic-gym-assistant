@@ -314,6 +314,10 @@ class UserPhotoOut(BaseModel):
 class BFAssessRequest(BaseModel):
     photo_ids: list[str] = Field(min_length=1, max_length=5)
     apply_to_profile: bool = False   # only honoured for non-low confidence
+    # Sex anchors the visual rubric to the right reference set. Normally it comes from
+    # the profile, but during onboarding the profile does not exist yet, so the wizard
+    # sends the answer it already collected. Ignored when a profile is present.
+    sex: Optional[SEX] = None
 
 class BFAssessmentOut(BaseModel):
     bf_pct: float
