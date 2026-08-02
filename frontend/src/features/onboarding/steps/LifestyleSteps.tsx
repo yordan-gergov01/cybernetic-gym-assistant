@@ -77,6 +77,7 @@ export function SleepStep({ draft, update }: StepProps) {
         placeholder="едно кафе ≈ 90 мг"
         value={draft.caffeine_mg_per_day ?? undefined}
         onChange={(caffeine_mg_per_day) => update({ caffeine_mg_per_day })}
+        integer
         hint="Помага да преценим дали кофеинът пречи на съня ти."
       />
     </StepLayout>

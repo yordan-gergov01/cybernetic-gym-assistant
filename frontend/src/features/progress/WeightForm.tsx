@@ -1,12 +1,13 @@
 import { useState, type SubmitEvent } from 'react'
+import { parseDecimal } from '../../utils/number'
 
 export function WeightForm({ onSubmit, isPending }: { onSubmit: (kg: number) => void; isPending: boolean }) {
   const [value, setValue] = useState('')
 
   function handleSubmit(event: SubmitEvent) {
     event.preventDefault()
-    const kg = Number(value)
-    if (!kg || Number.isNaN(kg)) return
+    const kg = parseDecimal(value)
+    if (!kg) return
     onSubmit(kg)
     setValue('')
   }
