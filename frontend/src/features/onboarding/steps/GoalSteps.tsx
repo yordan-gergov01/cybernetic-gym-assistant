@@ -1,5 +1,6 @@
+import { OptionCard, TextField } from '../../../components/ui'
 import { DEDICATION, GOALS } from '../constants'
-import { OptionCard, StepLayout, TextField } from '../components'
+import { StepLayout } from '../components'
 import { conflictingGoal } from '../../../utils/goal'
 import type { StepProps } from '../types'
 

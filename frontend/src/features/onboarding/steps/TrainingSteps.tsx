@@ -1,12 +1,15 @@
+import { Chip, Field, NumberField, NumericInput, OptionCard, TextField } from '../../../components/ui'
 import {
   BARBELL_INCREMENTS,
   DUMBBELL_INCREMENTS,
   EQUIPMENT,
   EQUIPMENT_CHECKLIST,
+  SESSION_MINUTES,
   STRENGTH_LIFTS,
+  TRAINING_DAYS,
   TRAINING_STATUS,
 } from '../constants'
-import { Chip, Field, NumberField, NumericInput, OptionCard, StepLayout, TextField } from '../components'
+import { StepLayout } from '../components'
 import { estimate1RM } from '../../../utils/strength'
 import type { StepProps } from '../types'
 
@@ -42,7 +45,7 @@ export function ScheduleStep({ draft, update }: StepProps) {
     >
       <Field label="Дни в залата седмично">
         <div className="flex gap-1.5">
-          {[1, 2, 3, 4, 5, 6, 7].map((days) => (
+          {TRAINING_DAYS.map((days) => (
             <button
               key={days}
               type="button"
@@ -62,7 +65,7 @@ export function ScheduleStep({ draft, update }: StepProps) {
 
       <Field label="Време на тренировка">
         <div className="flex flex-wrap gap-2">
-          {[45, 60, 75, 90, 120].map((min) => (
+          {SESSION_MINUTES.map((min) => (
             <Chip
               key={min}
               label={`${min} мин`}

@@ -1,6 +1,5 @@
-import { Icon } from '../../../components/ui'
-import { BfPhotoCapture } from '../BfPhotoCapture'
-import { NumberField, OptionCard, StepLayout } from '../components'
+import { Icon, NumberField, OptionCard } from '../../../components/ui'
+import { BfPhotoCapture, StepLayout } from '../components'
 import type { StepProps } from '../types'
 
 export function WelcomeStep({ draft }: StepProps) {
