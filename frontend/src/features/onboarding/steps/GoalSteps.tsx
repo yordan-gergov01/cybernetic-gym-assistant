@@ -1,25 +1,18 @@
 import { DEDICATION, GOALS } from '../constants'
 import { OptionCard, StepLayout, TextField } from '../components'
+import { conflictingGoal } from '../../../utils/goal'
 import type { StepProps } from '../types'
 
-/** Henselmans goal validation thresholds - the same ones the backend enforces. */
-const CUT_ABOVE = { male: 15, female: 25 }
-const BULK_BELOW = { male: 10, female: 18 }
-
-function goalWarning(draft: StepProps['draft']): string | null {
-  const { body_fat_pct: bf, sex, goal } = draft
-  if (!bf || !sex || !goal) return null
-  if (bf > CUT_ABOVE[sex] && (goal === 'bulk' || goal === 'maintain')) {
-    return `При ${bf}% телесни мазнини качването на маса ще донесе предимно мазнини. Препоръчваме първо сваляне - по-добра инсулинова чувствителност и по-добра основа за покачване на мускулна маса после.`
-  }
-  if (bf < BULK_BELOW[sex] && (goal === 'cut' || goal === 'aggressive_cut')) {
-    return `При ${bf}% телесни мазнини по-нататъшно сваляне рискува хормонални нарушения и загуба на мускул. Препоръчваме покачване.`
-  }
-  return null
+const WARNING: Record<'cut' | 'bulk', (bf: number) => string> = {
+  cut: (bf) =>
+    `При ${bf}% телесни мазнини качването на маса ще донесе предимно мазнини. Препоръчваме първо сваляне - по-добра инсулинова чувствителност и по-добра основа за покачване на мускулна маса после.`,
+  bulk: (bf) =>
+    `При ${bf}% телесни мазнини по-нататъшно сваляне рискува хормонални нарушения и загуба на мускул. Препоръчваме покачване.`,
 }
 
 export function GoalStep({ draft, update }: StepProps) {
-  const warning = goalWarning(draft)
+  const recommended = conflictingGoal(draft.body_fat_pct, draft.sex, draft.goal)
+  const warning = recommended && draft.body_fat_pct ? WARNING[recommended](draft.body_fat_pct) : null
   return (
     <StepLayout title="Каква е целта ти?" explainer="Целта определя калорийния баланс и очакваната скорост на промяна.">
       {GOALS.map((goal) => (
