@@ -1,5 +1,6 @@
+import { Field, NumberField, OptionCard } from '../../../components/ui'
 import { ACTIVITY, SLEEP, STRESS } from '../constants'
-import { Field, NumberField, OptionCard, StepLayout } from '../components'
+import { StepLayout } from '../components'
 import type { StepProps } from '../types'
 
 export function ActivityStep({ draft, update }: StepProps) {

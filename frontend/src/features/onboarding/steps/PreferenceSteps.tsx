@@ -1,8 +1,7 @@
-import { DIETARY, MUSCLES } from '../constants'
-import { Chip, StepLayout, TextField } from '../components'
+import { Chip, TextField } from '../../../components/ui'
+import { DIETARY, MAX_PRIORITY_MUSCLES, MUSCLES } from '../constants'
+import { StepLayout } from '../components'
 import type { StepProps } from '../types'
-
-const MAX_PRIORITY = 3
 
 export function FocusStep({ draft, update }: StepProps) {
   const priority = draft.priority_muscles ?? []
@@ -31,7 +30,7 @@ export function FocusStep({ draft, update }: StepProps) {
             label={muscle.label}
             selected={priority.includes(muscle.value)}
             onToggle={() => togglePriority(muscle.value)}
-            disabled={priority.length >= MAX_PRIORITY}
+            disabled={priority.length >= MAX_PRIORITY_MUSCLES}
           />
         ))}
       </div>
