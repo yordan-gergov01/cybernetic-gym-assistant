@@ -41,7 +41,9 @@ export function BasicsStep({ draft, update }: StepProps) {
         ))}
       </div>
 
-      <NumberField label="Възраст" unit="г." value={draft.age} onChange={(age) => update({ age })} />
+      {/* Age and caffeine are integers in the API (ProfileCreate); everything else here
+          takes decimals. */}
+      <NumberField label="Възраст" unit="г." value={draft.age} onChange={(age) => update({ age })} integer />
       <NumberField
         label="Височина"
         unit="см"
