@@ -6,7 +6,8 @@ import {
   STRENGTH_LIFTS,
   TRAINING_STATUS,
 } from '../constants'
-import { Chip, Field, NumberField, OptionCard, StepLayout, TextField } from '../components'
+import { Chip, Field, NumberField, NumericInput, OptionCard, StepLayout, TextField } from '../components'
+import { estimate1RM } from '../../../utils/strength'
 import type { StepProps } from '../types'
 
 export function ExperienceStep({ draft, update }: StepProps) {
@@ -149,10 +150,6 @@ export function IncrementsStep({ draft, update }: StepProps) {
   )
 }
 
-/** Epley, same formula the backend uses - shown live so the number feels earned. */
-const estimate1RM = (weight: number, reps: number) =>
-  reps === 1 ? weight : Math.round(weight * (1 + reps / 30) * 10) / 10
-
 export function StrengthStep({ draft, update }: StepProps) {
   const lifts = draft.lifts ?? {}
 
@@ -176,20 +173,21 @@ export function StrengthStep({ draft, update }: StepProps) {
           <div key={name} className="card">
             <p className="mb-2 font-semibold">{name}</p>
             <div className="flex items-center gap-2">
-              <input
-                inputMode="decimal"
-                className="input num h-11 min-h-0 flex-1 text-center font-semibold"
+              <NumericInput
+                value={lift?.weight || undefined}
+                onChange={(weight) => setLift(name, 'weight', weight)}
                 placeholder="кг"
-                value={lift?.weight || ''}
-                onChange={(e) => setLift(name, 'weight', Number(e.target.value) || undefined)}
+                ariaLabel={`${name} - тежест в килограми`}
+                className="input num h-11 min-h-0 flex-1 text-center font-semibold"
               />
               <span className="text-chalk-500">×</span>
-              <input
-                inputMode="numeric"
-                className="input num h-11 min-h-0 flex-1 text-center font-semibold"
+              <NumericInput
+                value={lift?.reps || undefined}
+                onChange={(reps) => setLift(name, 'reps', reps)}
+                integer
                 placeholder="повт."
-                value={lift?.reps || ''}
-                onChange={(e) => setLift(name, 'reps', Number(e.target.value) || undefined)}
+                ariaLabel={`${name} - брой повторения`}
+                className="input num h-11 min-h-0 flex-1 text-center font-semibold"
               />
             </div>
             {oneRm && <p className="num mt-2 text-sm text-volt-400">≈ 1ПМ: {oneRm} кг</p>}
