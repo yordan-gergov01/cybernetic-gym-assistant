@@ -29,12 +29,19 @@ class NextTarget:
     note: str
 
 
-def _top_working_set(logged_sets: list[dict]) -> dict | None:
-    """Heaviest set with a recorded weight (working sets drive progression)."""
-    working = [s for s in logged_sets if s.get("weight_kg") is not None]
-    if not working:
-        return None
-    return max(working, key=lambda s: (s.get("weight_kg") or 0, s.get("reps") or 0))
+def benchmark_set(logged_sets: list[dict]) -> dict | None:
+    """The first work set, which is the course's benchmark of progress.
+
+    Progression Guidelines p.3 is explicit that only the first work set decides whether
+    the load goes up; how many reps the later sets produce does not influence it. Those
+    sets are performed under accumulated fatigue, so judging progress by the heaviest
+    set anywhere in the exercise rewards a good third set and punishes a hard first one.
+    Warm-ups are excluded - they are not work sets.
+    """
+    for s in logged_sets:
+        if s.get("weight_kg") is not None and not s.get("is_warmup"):
+            return s
+    return None
 
 
 def resolve_step_kg(
@@ -73,7 +80,7 @@ def compute_next_target(
 
     `logged_sets` items look like {"weight_kg": float|None, "reps": int|None, "rir": int|None}.
     """
-    top = _top_working_set(logged_sets)
+    top = benchmark_set(logged_sets)
     if top is None:
         return NextTarget(None, None, "Няма логнати работни серии с тегло.")
 

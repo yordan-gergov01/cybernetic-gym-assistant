@@ -17,18 +17,23 @@ from app.domain.program_design import (
     recommend_split,
     weekly_frequency,
 )
+from app.domain.plateau import MAX_PROGRAM_WEEKS
 from app.models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
 from app.prompts.registry import get_prompt
 from app.schemas import (
+    ExerciseProgressOut,
     FatigueAssessmentOut,
     FatigueAssessmentRequest,
+    PlateauBreakerOut,
     ProgramCreate,
     ProgramExerciseOut,
     ProgramGenerateRequest,
     ProgramOut,
+    ProgramReviewOut,
     ProgramSummary,
 )
 from app.services.fatigue import assess_fatigue
+from app.services.program_progress import review_program
 from app.services.rag_pipeline import retrieve_context
 
 router = APIRouter(prefix="/programs", tags=["programs"])
@@ -126,6 +131,13 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
     profile = pr.scalar_one_or_none()
     if not profile or not profile.training_status:
         raise HTTPException(400, "Complete your profile before generating a program")
+
+    if data.total_weeks > MAX_PROGRAM_WEEKS:
+        raise HTTPException(
+            400,
+            f"Максималната дължина на програма е {MAX_PROGRAM_WEEKS} седмици. "
+            "Ако прогресът продължава, програмата се удължава седмица по седмица.",
+        )
 
     level_map_bg = {1: "Начинаещ", 2: "Средно напреднал", 3: "Напреднал"}
     calc = profile.calculator_results or {}
@@ -226,6 +238,15 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
             f"{MIN_WEEKLY_FREQUENCY}× седмично. Прегледай програмата или я генерирай отново."
         ).strip()
 
+    # Generating a new program is also how the user swaps out one they are done with.
+    # Leaving the old one active would make "the active program" ambiguous everywhere.
+    if data.archive_active:
+        previous = await db.execute(
+            select(Program).where(Program.user_id == user.id, Program.status == "active")
+        )
+        for old in previous.scalars().all():
+            old.status = "archived"
+
     start = data.start_date or date.today()
     program = Program(
         user_id=user.id,
@@ -287,6 +308,155 @@ async def delete_program(program_id: str, user: User = Depends(get_current_user)
         raise HTTPException(404, "Program not found")
     await db.delete(p)
     await db.commit()
+
+
+@router.get("/{program_id}/review", response_model=ProgramReviewOut)
+async def review_program_progress(
+    program_id: str,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Should this program continue, and if not, what exactly needs to change?
+
+    Every judgement comes from the logged first work sets via domain/plateau.py - no
+    model is involved in the decision.
+    """
+    r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
+    program = r.scalar_one_or_none()
+    if not program:
+        raise HTTPException(404, "Програмата не е намерена.")
+
+    review = await review_program(db, program)
+    return ProgramReviewOut(
+        action=review.decision.action,
+        scope=review.decision.scope,
+        reason_bg=review.decision.reason_bg,
+        muscle_group=review.decision.muscle_group,
+        exercise_name=review.decision.exercise_name,
+        new_rep_target=review.new_rep_target,
+        total_weeks=program.total_weeks,
+        max_weeks=MAX_PROGRAM_WEEKS,
+        exercises=[
+            ExerciseProgressOut(
+                exercise_name=e.exercise_name,
+                muscle_group=e.muscle_group,
+                status=e.status,
+                sessions_since_best=e.sessions_since_best,
+                best_e1rm=e.best_e1rm,
+                latest_e1rm=e.latest_e1rm,
+                change_pct=e.last_session.change_pct if e.last_session else None,
+            )
+            for e in review.exercises
+        ],
+        breakers=[
+            PlateauBreakerOut(exercise_name=b.exercise_name, weight_kg=b.weight_kg, reps=b.reps)
+            for b in review.breakers
+        ],
+        sessions_analysed=review.sessions_analysed,
+        skipped_exercises=review.skipped_exercises,
+    )
+
+
+@router.post("/{program_id}/extend", response_model=ProgramOut)
+async def extend_program(
+    program_id: str,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Add one more week to a program that is still producing progress.
+
+    One week at a time on purpose: any larger step reintroduces exactly the arbitrary
+    scheduling the course argues against (Periodization p.44). The extension is refused
+    while something is stalling - a stall is answered by changing the program, not by
+    running the same one longer.
+    """
+    r = await db.execute(
+        select(Program)
+        .where(Program.id == program_id, Program.user_id == user.id)
+        .options(selectinload(Program.weeks).selectinload(ProgramWeek.days).selectinload(ProgramDay.exercises))
+    )
+    program = r.scalar_one_or_none()
+    if not program:
+        raise HTTPException(404, "Програмата не е намерена.")
+
+    if program.total_weeks >= MAX_PROGRAM_WEEKS:
+        raise HTTPException(
+            400,
+            f"Програмата вече е {program.total_weeks} седмици - максимумът е {MAX_PROGRAM_WEEKS}. "
+            "Време е за нова програма.",
+        )
+
+    review = await review_program(db, program)
+    if review.decision.action != "extend":
+        raise HTTPException(409, review.decision.reason_bg)
+
+    last_week = max(program.weeks, key=lambda w: w.week_number, default=None)
+    if not last_week:
+        raise HTTPException(400, "Програмата няма седмици, които да бъдат повторени.")
+
+    new_week = ProgramWeek(
+        program_id=program.id,
+        week_number=last_week.week_number + 1,
+        week_type=last_week.week_type,
+        notes=last_week.notes,
+    )
+    db.add(new_week)
+    await db.flush()
+    for day in sorted(last_week.days, key=lambda d: d.day_number):
+        new_day = ProgramDay(
+            week_id=new_week.id,
+            day_number=day.day_number,
+            day_name=day.day_name,
+            is_rest_day=day.is_rest_day,
+            notes=day.notes,
+        )
+        db.add(new_day)
+        await db.flush()
+        for ex in sorted(day.exercises, key=lambda e: e.order_index):
+            db.add(
+                ProgramExercise(
+                    day_id=new_day.id,
+                    order_index=ex.order_index,
+                    exercise_name=ex.exercise_name,
+                    muscle_group=ex.muscle_group,
+                    equipment=ex.equipment,
+                    sets_prescribed=ex.sets_prescribed,
+                    reps_min=ex.reps_min,
+                    reps_max=ex.reps_max,
+                    rir_target=ex.rir_target,
+                    rest_seconds=ex.rest_seconds,
+                    notes=ex.notes,
+                )
+            )
+
+    program.total_weeks += 1
+    if program.start_date:
+        program.end_date = program.start_date + timedelta(weeks=program.total_weeks)
+    await db.commit()
+
+    r = await db.execute(
+        select(Program)
+        .where(Program.id == program.id)
+        .options(selectinload(Program.weeks).selectinload(ProgramWeek.days).selectinload(ProgramDay.exercises))
+    )
+    return r.scalar_one()
+
+
+@router.post("/{program_id}/archive", response_model=ProgramSummary)
+async def archive_program(
+    program_id: str,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Stop a program without deleting it - the logged workouts stay attached to it."""
+    r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
+    program = r.scalar_one_or_none()
+    if not program:
+        raise HTTPException(404, "Програмата не е намерена.")
+    program.status = "archived"
+    await db.commit()
+    await db.refresh(program)
+    return program
 
 
 _DELOAD_LABEL_BG = {"continue": "продължи по план", "caution": "внимание / намали обема", "deload": "deload седмица"}
