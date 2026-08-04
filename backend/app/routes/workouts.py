@@ -55,9 +55,13 @@ async def update_next_targets(db: AsyncSession, user_id: str, day_id: str, sets:
     dumbbell_step = profile.min_dumbbell_increment_kg if profile else None
 
     logged_by_exercise: dict[str, list[dict]] = {}
-    for s in sets:
+    # Sorted by set number, because "the first work set" has to mean the first one
+    # performed, not whichever the client happened to send first.
+    for s in sorted(sets, key=lambda s: s.set_number):
         logged_by_exercise.setdefault(s.exercise_name, []).append(
-            {"weight_kg": s.weight_kg, "reps": s.reps, "rir": s.rir_actual}
+            # is_warmup travels with the set: the benchmark is the first WORK set, so a
+            # warm-up must not be mistaken for it.
+            {"weight_kg": s.weight_kg, "reps": s.reps, "rir": s.rir_actual, "is_warmup": s.is_warmup}
         )
 
     try:
