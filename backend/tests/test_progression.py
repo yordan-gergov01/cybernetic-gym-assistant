@@ -46,10 +46,21 @@ def test_missing_rir_holds_and_says_so():
     assert "RIR" in t.note
 
 
-def test_progression_is_driven_by_the_heaviest_working_set():
-    sets = [{"weight_kg": 60, "reps": 12, "rir": 4}, {"weight_kg": 100, "reps": 8, "rir": 0}]
+def test_progression_is_driven_by_the_first_work_set():
+    # Progression Guidelines p.3: only the first work set is the benchmark. Later sets
+    # are performed under accumulated fatigue, so they must not decide the next load.
+    sets = [{"weight_kg": 100, "reps": 8, "rir": 2}, {"weight_kg": 120, "reps": 3, "rir": 0}]
     t = compute_next_target(muscle_group="chest", logged_sets=sets, **RANGE)
-    assert t.weight_kg == 100, "the top set decides progression, not the lighter one"
+    assert t.weight_kg == 100, "the first work set decides progression, not a heavier later one"
+
+
+def test_warmups_are_not_mistaken_for_the_first_work_set():
+    sets = [
+        {"weight_kg": 40, "reps": 10, "rir": 6, "is_warmup": True},
+        {"weight_kg": 100, "reps": 8, "rir": 4},
+    ]
+    t = compute_next_target(muscle_group="chest", logged_sets=sets, **RANGE)
+    assert t.weight_kg == 100 + COMPOUND_STEP_KG, "the warm-up must not become the benchmark"
 
 
 def test_no_working_sets_yields_no_target():

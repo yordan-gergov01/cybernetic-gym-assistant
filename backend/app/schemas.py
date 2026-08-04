@@ -237,6 +237,39 @@ class ProgramGenerateRequest(BaseModel):
     total_weeks: int = 8
     start_date: Optional[date] = None
     additional_notes: Optional[str] = None
+    # Generating a new program is how the user replaces one they are tired of. The old
+    # one is archived by default so two programs are never active at once.
+    archive_active: bool = True
+
+class ExerciseProgressOut(BaseModel):
+    exercise_name: str
+    muscle_group: Optional[str]
+    status: str                      # progressing | holding | stalled | insufficient_data
+    sessions_since_best: int
+    best_e1rm: Optional[float] = None
+    latest_e1rm: Optional[float] = None
+    change_pct: Optional[float] = None
+
+class PlateauBreakerOut(BaseModel):
+    exercise_name: str
+    weight_kg: float
+    reps: int
+
+class ProgramReviewOut(BaseModel):
+    """Whether the program should continue, and what to change if not."""
+    action: str                      # extend | adjust_exercise | adjust_muscle | check_recovery | complete
+    scope: Optional[str] = None      # systemic | local_muscle | local_exercise
+    reason_bg: str
+    muscle_group: Optional[str] = None
+    exercise_name: Optional[str] = None
+    new_rep_target: Optional[int] = None
+    total_weeks: int
+    max_weeks: int
+    exercises: list[ExerciseProgressOut] = []
+    breakers: list[PlateauBreakerOut] = []
+    sessions_analysed: int = 0
+    # Prescribed exercises with no usable work sets yet - visible, not silently dropped.
+    skipped_exercises: list[str] = []
 
 # WORKOUT
 class WorkoutSetCreate(BaseModel):
