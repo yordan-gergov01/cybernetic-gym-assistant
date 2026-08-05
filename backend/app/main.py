@@ -1,9 +1,11 @@
 import logging
 
 from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
+from app.core.errors import unhandled_exception_handler, validation_exception_handler
 from app.router import api_router
 
 logging.basicConfig(
@@ -20,6 +22,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Bulgarian, non-technical error bodies for the two cases FastAPI would otherwise answer
+# in English: a schema violation and an unexpected crash.
+app.add_exception_handler(RequestValidationError, validation_exception_handler)
+app.add_exception_handler(Exception, unhandled_exception_handler)
 
 app.include_router(api_router)
 

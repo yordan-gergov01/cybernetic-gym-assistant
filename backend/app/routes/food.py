@@ -166,6 +166,6 @@ async def delete_food_entry(entry_id: str, user: User = Depends(get_current_user
     r = await db.execute(select(FoodLog).where(FoodLog.id == entry_id, FoodLog.user_id == user.id))
     entry = r.scalar_one_or_none()
     if not entry:
-        raise HTTPException(404, "Entry not found")
+        raise HTTPException(404, "Този запис вече не съществува - вероятно е изтрит.")
     await db.delete(entry)
     await db.commit()

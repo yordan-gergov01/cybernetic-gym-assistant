@@ -68,7 +68,7 @@ async def get_profile(
     result = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = result.scalar_one_or_none()
     if not profile:
-        raise HTTPException(404, "Profile not found")
+        raise HTTPException(404, "Още нямаш профил - попълни настройката, за да продължим.")
     return profile
 
 
@@ -107,7 +107,7 @@ async def recalculate(user: User = Depends(get_current_user), db: AsyncSession =
     result = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = result.scalar_one_or_none()
     if not profile:
-        raise HTTPException(404, "Profile not found")
+        raise HTTPException(404, "Още нямаш профил - попълни настройката, за да продължим.")
     if not (profile.bodyweight_kg and profile.activity_level and profile.goal):
         raise HTTPException(400, "Профилът е непълен - довърши настройката, за да изчислим макросите.")
 
@@ -128,5 +128,5 @@ async def get_nutrition_targets(
     result = await db.execute(select(NutritionTarget).where(NutritionTarget.user_id == user.id))
     nt = result.scalar_one_or_none()
     if not nt:
-        raise HTTPException(404, "No nutrition targets set. Complete your profile first.")
+        raise HTTPException(404, "Още нямаш изчислени хранителни цели - попълни профила си.")
     return nt

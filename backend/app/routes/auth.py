@@ -15,7 +15,7 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 async def register(data: UserRegister, db: AsyncSession = Depends(get_db)):
     existing = await db.execute(select(User).where(User.email == data.email))
     if existing.scalar_one_or_none():
-        raise HTTPException(status_code=400, detail="Email already registered")
+        raise HTTPException(status_code=400, detail="Вече има регистрация с този имейл. Влез в профила си.")
     user = User(
         email=data.email,
         hashed_password=hash_password(data.password),
@@ -38,7 +38,7 @@ async def login(data: UserLogin, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(User).where(User.email == data.email))
     user = result.scalar_one_or_none()
     if not user or not verify_password(data.password, user.hashed_password):
-        raise HTTPException(status_code=401, detail="Invalid credentials")
+        raise HTTPException(status_code=401, detail="Грешен имейл или парола.")
     return TokenResponse(
         access_token=create_access_token(user.id),
         user_id=user.id,
