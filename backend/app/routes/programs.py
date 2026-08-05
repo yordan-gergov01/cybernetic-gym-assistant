@@ -94,7 +94,7 @@ async def get_program(program_id: str, user: User = Depends(get_current_user), d
     )
     p = r.scalar_one_or_none()
     if not p:
-        raise HTTPException(404, "Program not found")
+        raise HTTPException(404, "Програмата не е намерена.")
     return p
 
 
@@ -130,7 +130,7 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
     pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = pr.scalar_one_or_none()
     if not profile or not profile.training_status:
-        raise HTTPException(400, "Complete your profile before generating a program")
+        raise HTTPException(400, "Попълни профила си, преди да генерираме програма.")
 
     if data.total_weeks > MAX_PROGRAM_WEEKS:
         raise HTTPException(
@@ -291,7 +291,7 @@ async def update_exercise(
     r = await db.execute(select(ProgramExercise).where(ProgramExercise.id == exercise_id))
     ex = r.scalar_one_or_none()
     if not ex:
-        raise HTTPException(404, "Exercise not found")
+        raise HTTPException(404, "Упражнението не е намерено в програмата.")
     for k, v in data.items():
         if hasattr(ex, k):
             setattr(ex, k, v)
@@ -305,7 +305,7 @@ async def delete_program(program_id: str, user: User = Depends(get_current_user)
     r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
     p = r.scalar_one_or_none()
     if not p:
-        raise HTTPException(404, "Program not found")
+        raise HTTPException(404, "Програмата не е намерена.")
     await db.delete(p)
     await db.commit()
 
@@ -501,7 +501,7 @@ async def submit_fatigue_assessment(
     r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
     program = r.scalar_one_or_none()
     if not program:
-        raise HTTPException(404, "Program not found")
+        raise HTTPException(404, "Програмата не е намерена.")
 
     answers = data.answers.model_dump()
     decision = assess_fatigue(answers)
