@@ -241,6 +241,14 @@ class ProgramGenerateRequest(BaseModel):
     # one is archived by default so two programs are never active at once.
     archive_active: bool = True
 
+class ExerciseOut(BaseModel):
+    """One entry of the course exercise library (domain/exercise_library.py)."""
+    name: str
+    category: str            # the guide's movement pattern, e.g. "Hip hinges"
+    region: str              # Upper body | Lower body
+    muscle_group: Optional[str]
+    cues: list[str] = []     # technique bullets; empty when the guide gives none
+
 class ExerciseProgressOut(BaseModel):
     exercise_name: str
     muscle_group: Optional[str]
