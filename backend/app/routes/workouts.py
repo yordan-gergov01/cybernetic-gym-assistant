@@ -125,5 +125,5 @@ async def get_workout(workout_id: str, user: User = Depends(get_current_user), d
     )
     w = r.scalar_one_or_none()
     if not w:
-        raise HTTPException(404, "Workout not found")
+        raise HTTPException(404, "Тренировката не е намерена.")
     return w

@@ -51,18 +51,20 @@ async def upload_photo(
 ):
     ext = _ALLOWED_TYPES.get(file.content_type)
     if not ext:
-        raise HTTPException(400, "Unsupported image type; use JPEG, PNG or WebP")
+        raise HTTPException(400, "Този формат не се поддържа. Качи снимка в JPEG, PNG или WebP.")
     data = await file.read()
     if not data:
-        raise HTTPException(400, "Empty file")
+        raise HTTPException(400, "Файлът е празен. Опитай пак със снимката.")
     if len(data) > _MAX_BYTES:
-        raise HTTPException(413, "Image too large (max 15 MB)")
+        raise HTTPException(413, "Снимката е над 15 MB. Намали я или снимай с по-ниско качество.")
 
     key = f"users/{user.id}/photos/{uuid.uuid4()}.{ext}"
     try:
         await asyncio.to_thread(storage.upload_bytes, data, key, file.content_type)
-    except StorageNotConfigured as e:
-        raise HTTPException(503, f"Photo storage unavailable: {e}")
+    except StorageNotConfigured:
+        # The user cannot act on "R2 credentials missing"; the log can.
+        logger.error("Photo storage is not configured; upload rejected", exc_info=True)
+        raise HTTPException(503, "Хранилището за снимки е недостъпно в момента.") from None
 
     photo = UserPhoto(
         user_id=user.id, photo_type=photo_type, angle=angle,
@@ -100,10 +102,10 @@ async def assess_body_fat(
     )
     photos = r.scalars().all()
     if len(photos) != len(data.photo_ids):
-        raise HTTPException(404, "One or more photos not found")
+        raise HTTPException(404, "Част от снимките вече не съществуват. Качи ги отново.")
     keys = [p.file_path for p in photos if p.file_path]
     if not keys:
-        raise HTTPException(400, "Selected photos have no stored image")
+        raise HTTPException(400, "Избраните снимки нямат запазено изображение. Качи ги отново.")
 
     pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = pr.scalar_one_or_none()
@@ -116,10 +118,19 @@ async def assess_body_fat(
         result = await assess_from_r2_keys(
             keys, sex=sex, angles=[p.angle for p in photos if p.angle]
         )
-    except (StorageNotConfigured, VisionUnavailable) as e:
-        raise HTTPException(503, f"Body-fat assessment unavailable: {e}")
-    except ValueError as e:
-        raise HTTPException(502, f"Vision model returned an unusable result: {e}")
+    except (StorageNotConfigured, VisionUnavailable):
+        logger.error("Body-fat assessment unavailable for user %s", user.id, exc_info=True)
+        raise HTTPException(
+            503,
+            "Оценката по снимки е недостъпна в момента. Опитай пак след малко или въведи "
+            "процента ръчно.",
+        ) from None
+    except ValueError:
+        # The model answered, but with something unusable - a clearer photo may fix it.
+        logger.error("Vision model returned an unusable result for user %s", user.id, exc_info=True)
+        raise HTTPException(
+            502, "Не успяхме да разчетем снимките. Опитай с по-ясни снимки при добра светлина."
+        ) from None
 
     for p in photos:
         p.bf_pct_assessed = result.bf_pct
@@ -142,7 +153,7 @@ async def delete_photo(photo_id: str, user: User = Depends(get_current_user), db
     r = await db.execute(select(UserPhoto).where(UserPhoto.id == photo_id, UserPhoto.user_id == user.id))
     photo = r.scalar_one_or_none()
     if not photo:
-        raise HTTPException(404, "Photo not found")
+        raise HTTPException(404, "Снимката не е намерена.")
     if photo.file_path:
         try:
             await asyncio.to_thread(storage.delete_object, photo.file_path)
