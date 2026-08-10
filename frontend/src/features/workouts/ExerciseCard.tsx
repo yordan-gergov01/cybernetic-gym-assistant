@@ -1,6 +1,6 @@
 import type { ProgramExercise } from '../../types/api'
 import { SetRow } from './SetRow'
-import type { SetEntry } from './useTodayWorkout'
+import type { SetEntry } from './useWorkoutLogger'
 
 export function ExerciseCard({
   exercise,

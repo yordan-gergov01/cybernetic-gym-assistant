@@ -10,8 +10,19 @@ from sqlalchemy.orm import selectinload
 from app.db.database import get_db
 from app.deps import get_current_user
 from app.models import ProgramExercise, User, UserProfile, WorkoutLog, WorkoutSet
-from app.schemas import WorkoutLogCreate, WorkoutLogOut
+from app.schemas import (
+    CalendarDayOut,
+    ExerciseStrengthOut,
+    LastSessionOut,
+    MuscleVolumeOut,
+    SessionEstimateOut,
+    TodayOut,
+    WorkoutLogCreate,
+    WorkoutLogOut,
+)
 from app.services.progression import compute_next_target
+from app.services.strength_progress import strength_by_exercise
+from app.services.training_week import build_today
 
 router = APIRouter(prefix="/workouts", tags=["workouts"])
 logger = logging.getLogger(__name__)
@@ -97,6 +108,89 @@ async def list_workouts(limit: int = 30, user: User = Depends(get_current_user),
         .limit(limit)
     )
     return r.scalars().all()
+
+
+@router.get("/today", response_model=TodayOut)
+async def today(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """What to train today, where that sits in the program, and the week so far.
+
+    The whole decision - which session is next, whether today is a rest day, how much
+    volume each muscle has had - is made here. Doing it in the client would mean two
+    implementations of the same rules, drifting apart.
+    """
+    view = await build_today(db, user.id, date_type.today())
+    if not view:
+        raise HTTPException(404, "Още нямаш програма. Създай програма, за да започнеш.")
+    return TodayOut(
+        program_id=view.program_id,
+        program_name=view.program_name,
+        template_type=view.template_type,
+        goal=view.goal,
+        week_number=view.week_number,
+        total_weeks=view.total_weeks,
+        is_rest_day=view.is_rest_day,
+        trained_today=view.trained_today,
+        weighed_in_today=view.weighed_in_today,
+        sessions_this_week=view.sessions_this_week,
+        sessions_planned=view.sessions_planned,
+        calendar=[
+            CalendarDayOut(date=d.date, trained=d.trained, is_today=d.is_today) for d in view.calendar
+        ],
+        day_id=view.day_id,
+        day_name=view.day_name,
+        exercises=view.exercises,
+        estimate=(
+            SessionEstimateOut(
+                exercise_count=view.estimate.exercise_count,
+                total_sets=view.estimate.total_sets,
+                minutes=view.estimate.minutes,
+            )
+            if view.estimate
+            else None
+        ),
+        last_session=(
+            LastSessionOut(
+                date=view.last_session.date,
+                tonnage_kg=view.last_session.tonnage_kg,
+                working_sets=view.last_session.working_sets,
+            )
+            if view.last_session
+            else None
+        ),
+        weekly_volume=[
+            MuscleVolumeOut(
+                muscle_group=v.muscle_group, sets_done=v.sets_done, sets_target=v.sets_target
+            )
+            for v in view.weekly_volume
+        ],
+    )
+
+
+@router.get("/strength", response_model=list[ExerciseStrengthOut])
+async def strength_progress(
+    weeks: int = 4,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Estimated max per exercise over the last `weeks`, and how much it moved.
+
+    Computed here, from the same first-work-set benchmark the progression engine uses,
+    so the client never runs a second version of the Epley formula.
+    """
+    if not 1 <= weeks <= 52:
+        raise HTTPException(400, "Периодът трябва да е между 1 и 52 седмици.")
+    results = await strength_by_exercise(db, user.id, weeks=weeks, today=date_type.today())
+    return [
+        ExerciseStrengthOut(
+            exercise_name=e.exercise_name,
+            muscle_group=e.muscle_group,
+            best_e1rm=e.best_e1rm,
+            change_kg=e.change_kg,
+            sessions=e.sessions,
+            points=e.points,
+        )
+        for e in results
+    ]
 
 
 @router.get("/week/summary")

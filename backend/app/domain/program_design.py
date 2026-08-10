@@ -3,7 +3,7 @@
 The course is explicit that every muscle group should be trained **at least twice per
 week** ("...trained at least 2x per week. 3. Create the program split." - Training case
 studies PTC 2022). That makes the split structure a rule, not a judgment call, so it is
-decided here in code and handed to the model as a constraint (CLAUDE.md rule #5).
+decided here in code and handed to the model as a constraint.
 
 This exists because an unconstrained model produced Push/Pull/Legs over 3 days, which
 trains every muscle only once a week and violates the methodology outright.

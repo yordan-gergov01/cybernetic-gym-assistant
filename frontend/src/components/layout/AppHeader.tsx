@@ -25,7 +25,7 @@ export function AppHeader({
       >
         <div className="min-w-0">
           <h1 className="section-title truncate text-chalk-50">{title}</h1>
-          {subtitle && <p className="truncate text-xs text-chalk-500">{subtitle}</p>}
+          {subtitle && <p className="mt-1 truncate text-xs text-chalk-500">{subtitle}</p>}
         </div>
 
         {actions.length > 0 && (
@@ -39,7 +39,7 @@ export function AppHeader({
               >
                 <Icon name={action.icon} />
                 {action.badge && (
-                  <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-volt-500 ring-2 ring-ink-950" />
+                  <span className="absolute top-2.5 right-2.5 h-2 w-2 rounded-full bg-volt-500" />
                 )}
               </Link>
             ))}

@@ -23,6 +23,10 @@ export function StartProgramCard() {
   const generate = useMutation({
     mutationFn: () => programsApi.generate(8),
     onSuccess: () => {
+      // Today reads /workouts/today, not the programs list. Without invalidating it the
+      // new program only appeared after navigating away and back, which remounts the
+      // query and refetches it by accident.
+      queryClient.invalidateQueries({ queryKey: queryKeys.today })
       queryClient.invalidateQueries({ queryKey: queryKeys.programs })
       queryClient.invalidateQueries({ queryKey: queryKeys.profile })
     },

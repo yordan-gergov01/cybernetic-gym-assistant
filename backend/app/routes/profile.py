@@ -19,7 +19,7 @@ async def _apply_calculators(db: AsyncSession, profile: UserProfile, source: dic
 
     Returns True on success. Failure is logged and reported to the caller rather than
     swallowed - a profile without macros looks fine but silently breaks nutrition
-    targets and program generation (CLAUDE.md rule #12).
+    targets and program generation.
     """
     try:
         payload = dict(source)

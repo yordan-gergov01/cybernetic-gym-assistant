@@ -2,7 +2,7 @@
 
 Only object KEYS are stored in the database; the image bytes live in R2. boto3 is
 imported lazily so the app still boots when the dependency or R2 config is absent -
-the photo endpoints then fail loudly with a clear error (CLAUDE.md rule #12).
+the photo endpoints then fail loudly with a clear error.
 """
 from __future__ import annotations
 

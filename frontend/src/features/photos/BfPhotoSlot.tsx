@@ -1,6 +1,6 @@
 import { useRef } from 'react'
-import { Icon } from '../../../components/ui'
-import type { BfPhoto } from '../types'
+import { Icon } from '../../components/ui'
+import type { BfPhoto } from '../onboarding/types'
 
 /** One angle of the body-fat set: tap to shoot or pick, then the thumbnail. */
 export function BfPhotoSlot({

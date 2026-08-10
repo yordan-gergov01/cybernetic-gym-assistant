@@ -5,6 +5,7 @@
  * because a vague label makes people pick the wrong bucket and skews every downstream
  * calculation. */
 
+export { STEP_GROUP } from './flow'
 export { BF_PHOTO_ANGLES, CONFIDENCE_LABEL } from './body'
 export { GOALS, DEDICATION } from './goal'
 export { ACTIVITY, STRESS, SLEEP } from './lifestyle'

@@ -50,8 +50,10 @@ export type Profile = {
   body_fat_pct?: number | null
   goal: string
   goal_validated?: string | null
+  bf_assessment_method?: string | null
   training_status: number
   training_days_per_week: number
+  priority_muscles?: string[] | null
   calculator_results?: {
     energy?: { target_kcal?: number; protein_g?: number; fat_g?: number; carbs_g?: number; tdee_kcal?: number }
     volume?: Record<string, number>
@@ -161,6 +163,46 @@ export type Program = ProgramSummary & {
   weeks: ProgramWeek[]
 }
 
+/** GET /workouts/today — the whole Today screen, decided by the backend. */
+export type CalendarDay = { date: string; trained: boolean; is_today: boolean }
+
+export type SessionEstimate = { exercise_count: number; total_sets: number; minutes: number }
+
+export type MuscleVolume = { muscle_group: string; sets_done: number; sets_target: number | null }
+
+export type LastSession = { date: string; tonnage_kg: number; working_sets: number }
+
+export type TodayView = {
+  program_id: string
+  program_name: string
+  template_type?: string | null
+  goal?: string | null
+  week_number: number
+  total_weeks: number
+  is_rest_day: boolean
+  trained_today: boolean
+  weighed_in_today: boolean
+  sessions_this_week: number
+  sessions_planned: number
+  calendar: CalendarDay[]
+  day_id?: string | null
+  day_name?: string | null
+  exercises: ProgramExercise[]
+  estimate?: SessionEstimate | null
+  last_session?: LastSession | null
+  weekly_volume: MuscleVolume[]
+}
+
+/** GET /workouts/strength — estimated max per exercise over a window. */
+export type ExerciseStrength = {
+  exercise_name: string
+  muscle_group?: string | null
+  best_e1rm: number
+  change_kg: number
+  sessions: number
+  points: number[]
+}
+
 export type WorkoutSetInput = {
   program_exercise_id?: string | null
   exercise_name: string
@@ -169,6 +211,33 @@ export type WorkoutSetInput = {
   reps?: number | null
   rir_actual?: number | null
   is_warmup?: boolean
+}
+
+export type Notification = {
+  id: string
+  type: string
+  title?: string | null
+  body?: string | null
+  is_read: boolean
+  created_at: string
+}
+
+/** POST /programs/{id}/fatigue — the weekly recovery check-in. */
+export type FatigueAnswers = {
+  recovery_quality: 'poor' | 'fair' | 'good'
+  performance_trend: 'declining' | 'stable' | 'improving'
+  joint_pain: boolean
+  sleep_quality: 'poor' | 'fair' | 'good'
+  motivation: 'low' | 'moderate' | 'high'
+  appetite: 'decreased' | 'normal' | 'increased'
+}
+
+export type FatigueAssessment = {
+  id: string
+  week_number: number
+  agent_decision: 'continue' | 'caution' | 'deload'
+  agent_reasoning?: string | null
+  assessed_at: string
 }
 
 export type ChatMessage = { id: string; role: 'user' | 'assistant'; content: string; created_at: string }

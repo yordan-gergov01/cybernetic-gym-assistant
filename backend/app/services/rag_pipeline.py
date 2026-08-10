@@ -5,7 +5,7 @@ generation and fatigue explanations. Each stage lives in its own module
 (components/retriever, components/reranker, services/query_rewriter); this file only
 sequences them and merges results.
 
-Every stage degrades gracefully and loudly (CLAUDE.md rule #12): a missing index,
+Every stage degrades gracefully and loudly: a missing index,
 a failed embedding or an unavailable reranker logs a warning and falls back rather
 than failing the user's request.
 """

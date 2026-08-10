@@ -1,9 +1,9 @@
 """Deterministic plateau detection and program-continuation rules (Henselmans).
 
-Whether a program should keep running is a measurement, not a judgment call, so it is
-decided here in code (CLAUDE.md rule #5). Every threshold below is taken from the course
-material; the two places where the course gives a principle rather than a number are
-marked as such.
+Whether a program should keep running is a measurement, not a judgment call: the same
+log must always yield the same verdict, which rules out asking a model. Every threshold
+below is taken from the course material; the two places where the course gives a
+principle rather than a number are marked as such.
 
 Sources, with the page of the extracted PDF:
 
@@ -191,6 +191,35 @@ def classify_exercise(
         best_e1rm=best,
         latest_e1rm=e1rms[-1],
         last_session=last_session,
+    )
+
+
+@dataclass(frozen=True)
+class StrengthTrend:
+    """How an exercise's estimated max moved across a window of sessions."""
+
+    best_e1rm: float
+    change_kg: float
+    points: tuple[float, ...]
+
+
+def strength_trend(sessions: list[BenchmarkSet]) -> StrengthTrend:
+    """Estimated max and the change across the given sessions, oldest first.
+
+    The headline figure is the BEST estimated max in the window, not the latest: a set
+    logged on a bad day does not undo a max that was really lifted. The change is
+    measured from where the window started, which is what "stronger over four weeks"
+    means to the person reading it.
+    """
+    ordered = sorted(sessions, key=lambda s: s.date)
+    points = tuple(s.e1rm for s in ordered)
+    if not points:
+        return StrengthTrend(best_e1rm=0.0, change_kg=0.0, points=())
+    best = max(points)
+    return StrengthTrend(
+        best_e1rm=best,
+        change_kg=round(best - points[0], 1),
+        points=points,
     )
 
 
