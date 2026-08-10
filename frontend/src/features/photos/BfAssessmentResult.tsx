@@ -1,5 +1,5 @@
-import { CONFIDENCE_LABEL } from '../constants'
-import type { BFAssessment } from '../../../types/api'
+import { CONFIDENCE_LABEL } from '../onboarding/constants'
+import type { BFAssessment } from '../../types/api'
 
 /** What the vision model saw, stated honestly - the range and the confidence are part
  *  of the answer, not a footnote. A low-confidence read is offered, never applied on

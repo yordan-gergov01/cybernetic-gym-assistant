@@ -3,6 +3,7 @@ import { todayIso } from '../../utils/date'
 import type { BFAssessment, PhotoAngle, UserPhoto } from '../../types/api'
 
 export const photosApi = {
+  list: () => http.get<UserPhoto[]>('/photos'),
   upload: (file: File, angle: PhotoAngle, photoType = 'bf_assessment') => {
     const form = new FormData()
     form.append('file', file)

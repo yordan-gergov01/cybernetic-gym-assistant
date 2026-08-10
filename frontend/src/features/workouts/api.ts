@@ -1,5 +1,5 @@
 import { http } from '../../services/httpClient'
-import type { Program, ProgramSummary, WorkoutSetInput } from '../../types/api'
+import type { Program, ProgramSummary, TodayView, WorkoutSetInput } from '../../types/api'
 
 export type LogWorkoutPayload = {
   program_id: string
@@ -9,6 +9,8 @@ export type LogWorkoutPayload = {
 }
 
 export const workoutsApi = {
+  /** Everything the Today screen shows. The client renders it, it decides nothing. */
+  today: () => http.get<TodayView>('/workouts/today'),
   listPrograms: () => http.get<ProgramSummary[]>('/programs'),
   getProgram: (id: string) => http.get<Program>(`/programs/${id}`),
   logWorkout: (payload: LogWorkoutPayload) => http.post('/workouts', payload),

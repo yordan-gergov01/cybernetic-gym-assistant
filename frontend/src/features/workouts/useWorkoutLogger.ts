@@ -1,51 +1,50 @@
-import { useMemo, useState } from 'react'
+import { useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { queryKeys } from '../../constants/query-keys'
-import type { ProgramDay, ProgramExercise, WorkoutSetInput } from '../../types/api'
+import type { ProgramExercise, TodayView, WorkoutSetInput } from '../../types/api'
 import { todayIso } from '../../utils/date'
 import { parseDecimal } from '../../utils/number'
 import { workoutsApi } from './api'
 
 export type SetEntry = { weight: string; reps: string; rir: string; done: boolean }
 
-/** All state for the in-gym screen: which day to train, and the sets logged so far. */
-export function useTodayWorkout() {
+/** What to train today. The backend decides everything - which session is next, whether
+ *  today is a rest day, the weekly volume - so this only fetches it. */
+export function useToday() {
+  return useQuery<TodayView>({ queryKey: queryKeys.today, queryFn: workoutsApi.today, retry: false })
+}
+
+/** The sets logged during one session.
+ *
+ *  Rows start pre-filled with the deterministic progression target, so a set is normally
+ *  confirmed rather than typed - between sets, with one hand, typing is the enemy. */
+export function useWorkoutLogger({
+  programId,
+  dayId,
+  exercises,
+}: {
+  programId: string
+  dayId: string
+  exercises: ProgramExercise[]
+}) {
   const queryClient = useQueryClient()
   const [entries, setEntries] = useState<Record<string, SetEntry[]>>({})
-
-  const programs = useQuery({ queryKey: queryKeys.programs, queryFn: workoutsApi.listPrograms })
-  const activeId = programs.data?.find((p) => p.status === 'active')?.id ?? programs.data?.[0]?.id
-
-  const program = useQuery({
-    queryKey: queryKeys.program(activeId),
-    queryFn: () => workoutsApi.getProgram(activeId!),
-    enabled: !!activeId,
-  })
-
-  // TODO: pick the day by calendar position using the program start date and the
-  // completed-workout history. For now the first non-rest day of the earliest week.
-  const day: ProgramDay | undefined = useMemo(() => {
-    const weeks = [...(program.data?.weeks ?? [])].sort((a, b) => a.week_number - b.week_number)
-    for (const week of weeks) {
-      const match = [...week.days].sort((a, b) => a.day_number - b.day_number).find((d) => !d.is_rest_day)
-      if (match) return match
-    }
-    return undefined
-  }, [program.data])
 
   const logWorkout = useMutation({
     mutationFn: workoutsApi.logWorkout,
     onSuccess: () => {
       setEntries({})
-      queryClient.invalidateQueries({ queryKey: queryKeys.program(activeId) })
+      // Today changes the moment a session is logged: the next session, the week strip
+      // and the volume bars all move.
+      queryClient.invalidateQueries({ queryKey: queryKeys.today })
       queryClient.invalidateQueries({ queryKey: queryKeys.workouts })
+      queryClient.invalidateQueries({ queryKey: queryKeys.program(programId) })
     },
   })
 
   const rowsFor = (exercise: ProgramExercise): SetEntry[] =>
     entries[exercise.id] ??
     Array.from({ length: exercise.sets_prescribed ?? 3 }, () => ({
-      // Pre-fill with the deterministic progression target so the user only confirms.
       weight: exercise.target_weight_kg ? String(exercise.target_weight_kg) : '',
       reps: exercise.target_reps ? String(exercise.target_reps) : '',
       rir: '',
@@ -64,17 +63,16 @@ export function useTodayWorkout() {
     .filter((row) => row.done).length
 
   const finish = () => {
-    if (!day || !activeId) return
     const sets: WorkoutSetInput[] = []
-    for (const exercise of day.exercises) {
+    for (const exercise of exercises) {
       ;(entries[exercise.id] ?? []).forEach((row, index) => {
         if (!row.done) return
         sets.push({
           program_exercise_id: exercise.id,
           exercise_name: exercise.exercise_name,
           set_number: index + 1,
-          // parseDecimal, not Number: a comma from the phone keyboard would otherwise
-          // become NaN and the logged weight would silently arrive as null.
+          // parseDecimal, not Number: a comma from the phone keyboard would become NaN
+          // and the logged weight would silently arrive as null.
           weight_kg: parseDecimal(row.weight) ?? null,
           reps: parseDecimal(row.reps) ?? null,
           rir_actual: parseDecimal(row.rir) ?? null,
@@ -82,16 +80,10 @@ export function useTodayWorkout() {
       })
     }
     if (!sets.length) return
-    logWorkout.mutate({ program_id: activeId, day_id: day.id, date: todayIso(), sets })
+    logWorkout.mutate({ program_id: programId, day_id: dayId, date: todayIso(), sets })
   }
 
   return {
-    isLoading: programs.isLoading || program.isLoading,
-    error: programs.error ?? program.error,
-    refetch: () => programs.refetch(),
-    hasProgram: !!activeId,
-    programName: program.data?.name,
-    day,
     rowsFor,
     updateRow,
     completedCount,
