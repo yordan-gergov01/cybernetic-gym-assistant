@@ -2,7 +2,7 @@
 
 Thin wrapper over the Google GenAI SDK for image+text prompts returning JSON. The
 client is created lazily so the app boots without a Gemini key; callers get a clear
-error instead of a crash at import time (CLAUDE.md rule #12).
+error instead of a crash at import time.
 """
 from __future__ import annotations
 

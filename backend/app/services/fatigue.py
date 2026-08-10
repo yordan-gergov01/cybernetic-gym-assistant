@@ -1,9 +1,8 @@
 """Deterministic fatigue / deload decision engine (Henselmans methodology).
 
-The DECISION is made by transparent rules here - never by an LLM (see CLAUDE.md
-rule #5: if code can answer, code answers). An LLM is used elsewhere only to
-phrase the explanation for the user; the recommendation itself is deterministic
-and reproducible.
+The DECISION is made by transparent rules here, never by an LLM: the inputs are a
+fixed set of answers and the output must be reproducible and auditable. An LLM is
+used elsewhere only to phrase the explanation for the user.
 
 Henselmans deloading rationale: accumulated fatigue masks fitness. The signals
 that fatigue has outrun recovery are declining performance, poor sleep/recovery,

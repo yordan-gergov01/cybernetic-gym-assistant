@@ -1,7 +1,6 @@
 """Bulgarian -> English query rewriting for retrieval.
 
-The course corpus is English while the user writes Bulgarian. Searching with an
-English paraphrase in addition to the original question measurably lifts context
+Searching with an English paraphrase in addition to the original question measurably lifts context
 recall (+0.09 in the offline eval), so this runs on every retrieval by default.
 """
 from __future__ import annotations

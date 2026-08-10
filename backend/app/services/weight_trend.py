@@ -4,7 +4,7 @@ Daily weigh-ins are noisy (water, glycogen, gut content), so the real trend is
 extracted with an exponentially weighted moving average (EWMA) rather than raw
 readings. The weekly rate of change is the slope of the smoothed trend.
 
-The calorie recommendation is pure arithmetic (CLAUDE.md rule #5): compare the
+The calorie recommendation is pure arithmetic: compare the
 actual weekly rate to the target rate for the user's goal and convert the gap into
 a daily calorie adjustment. ~7700 kcal ≈ 1 kg of bodyweight change.
 """

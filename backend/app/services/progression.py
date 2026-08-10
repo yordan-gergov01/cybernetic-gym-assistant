@@ -1,14 +1,14 @@
 """Deterministic load progression (Henselmans double-progression).
 
-The next-session target is pure arithmetic, so it is computed here, not guessed by
-an LLM (CLAUDE.md rule #5). Rules, from the Henselmans progression guidelines:
+The next-session target is pure arithmetic, so it is computed here rather than
+guessed by a model. Rules, from the Henselmans progression guidelines:
 
 - Actual RIR ABOVE target (set was too easy)  -> add weight (compound +2.5 kg, isolation +1.25 kg), reset reps to the bottom of the range.
 - Actual RIR EQUAL to target                  -> keep weight, add one rep (up to the top of the range).
 - Actual RIR BELOW target (set was too hard)  -> hold weight, focus on technique.
 
 Weight steps are smaller for isolation lifts. When RIR was not logged we cannot judge
-effort, so we hold the weight and ask the user to log RIR next time (fail loud, rule #12).
+effort, so we hold the weight and say so in the note rather than inventing a jump.
 """
 from __future__ import annotations
 

@@ -1,8 +1,8 @@
 """Bulgarian error responses for the whole API.
 
 Every error the user can see must say what went wrong and what to do about it, in
-Bulgarian, without a technical term (CLAUDE.md rule #12 - nothing fails quietly, and a
-message nobody understands is a quiet failure).
+Bulgarian and without a technical term. A message nobody can act on is a silent
+failure with extra steps.
 
 Validation errors get this treatment here rather than in the frontend because only the
 backend knows the schema: which field failed, what its bounds are, and which values it
