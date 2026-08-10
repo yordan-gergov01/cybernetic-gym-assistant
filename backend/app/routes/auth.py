@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.security import create_access_token, hash_password, verify_password
@@ -11,13 +11,25 @@ from app.schemas import TokenResponse, UserLogin, UserRegister
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
+def normalize_email(email: str) -> str:
+    """Email addresses are matched case-insensitively.
+
+    Phone keyboards and browsers capitalise the first letter of a field by default, so
+    the same person signs up as "Ivan@..." and signs in as "ivan@..." without ever
+    noticing the difference. A case-sensitive lookup turns that into "wrong password",
+    which is both wrong and impossible for the user to diagnose.
+    """
+    return email.strip().lower()
+
+
 @router.post("/register", response_model=TokenResponse, status_code=201)
 async def register(data: UserRegister, db: AsyncSession = Depends(get_db)):
-    existing = await db.execute(select(User).where(User.email == data.email))
+    email = normalize_email(data.email)
+    existing = await db.execute(select(User).where(func.lower(User.email) == email))
     if existing.scalar_one_or_none():
         raise HTTPException(status_code=400, detail="Вече има регистрация с този имейл. Влез в профила си.")
     user = User(
-        email=data.email,
+        email=email,
         hashed_password=hash_password(data.password),
         name=data.name,
     )
@@ -35,7 +47,11 @@ async def register(data: UserRegister, db: AsyncSession = Depends(get_db)):
 
 @router.post("/login", response_model=TokenResponse)
 async def login(data: UserLogin, db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(User).where(User.email == data.email))
+    # Compared on the stored value too, so accounts created before addresses were
+    # normalised still match.
+    result = await db.execute(
+        select(User).where(func.lower(User.email) == normalize_email(data.email))
+    )
     user = result.scalar_one_or_none()
     if not user or not verify_password(data.password, user.hashed_password):
         raise HTTPException(status_code=401, detail="Грешен имейл или парола.")
