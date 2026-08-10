@@ -1,4 +1,4 @@
-"""Prompt registry — the single lookup point for prompts by name and version.
+"""Prompt registry - the single lookup point for prompts by name and version.
 
 Route/business code calls `get_prompt("name")(...)` and never references template
 functions directly. This keeps prompt selection (which version is live) in one place.

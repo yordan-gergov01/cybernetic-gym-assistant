@@ -182,8 +182,8 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
             max_tokens=4000,
         )
         choice = response.choices[0]
-        # A truncated response yields invalid JSON; say so instead of failing on a parse
-        # error with no explanation (CLAUDE.md rule #12).
+        # A truncated response yields invalid JSON, and a bare parse error tells the
+        # user nothing about what to do; name the cause instead.
         if choice.finish_reason == "length":
             logger.error("Program generation hit the token limit for user %s", user.id)
             raise HTTPException(502, "Отговорът на модела беше отрязан. Опитай пак или намали броя тренировъчни дни.")
@@ -229,9 +229,9 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
 
     description = prog_data.get("description")
     if violations:
-        # Two attempts and the rule still is not met. Ship the program rather than
-        # leaving the user with nothing, but make the shortfall visible instead of
-        # passing it off as a correct plan (CLAUDE.md rule #12).
+        # Two attempts and the frequency rule still is not met. Ship the program rather
+        # than leaving the user with nothing, but carry the shortfall in the description
+        # so it is not passed off as a correct plan.
         logger.error("Program for user %s still under-trains %s after retry", user.id, ", ".join(violations))
         description = (
             f"{description or ''}\n\n⚠️ Внимание: {', '.join(violations)} се тренира(т) по-рядко от "

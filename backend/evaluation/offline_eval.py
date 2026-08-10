@@ -32,7 +32,7 @@ EVAL_DIR = Path(__file__).resolve().parent
 GOLDEN = EVAL_DIR / "golden_dataset.json"
 RESULTS_DIR = EVAL_DIR / "results"
 
-ANSWER_SYSTEM_PROMPT = """Ти си персонален фитнес треньор и нутриционист. Работиш изцяло по методологията на Menno Henselmans.
+ANSWER_SYSTEM_PROMPT = """Ти си персонален фитнес треньор и нутриционист. Работиш изцяло по научно-обоснованата методология на Menno Henselmans.
 
 ПРАВИЛА - следвай ги стриктно:
 1. Отговаряй ВИНАГИ на БЪЛГАРСКИ

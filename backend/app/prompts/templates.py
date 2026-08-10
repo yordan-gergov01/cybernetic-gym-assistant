@@ -208,8 +208,8 @@ def program_week_template_v2(
 
     Exercise selection is the judgment call worth an LLM; repeating that week and
     progressing the load is arithmetic the deterministic engine already does
-    (CLAUDE.md rule #5). Asking for all weeks at once also produced JSON large enough
-    to be truncated mid-response.
+    for free. Asking for all weeks at once also produced JSON large enough to be
+    truncated mid-response.
     """
     equipment_list = (
         ", ".join(k for k, v in (equipment_details or {}).items() if v) or "не е уточнено"
@@ -282,7 +282,7 @@ def bf_assessment_v1(*, sex: str, angles: list[str], rubric: str, context: str =
 
     The model must ground its estimate in observed visual markers and report a range
     plus a confidence, so an uncertain read stays visible instead of being dressed up
-    as precision (CLAUDE.md rule #12).
+    as precision.
     """
     rubric_block = (
         f"КАЛИБРАЦИОННА СКАЛА от курса (DXA-верифицирани примери и техните визуални маркери):\n{rubric}"
