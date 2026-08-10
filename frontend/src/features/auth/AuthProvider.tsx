@@ -1,5 +1,5 @@
-import { useCallback, useMemo, useState, type ReactNode } from 'react'
-import { clearToken, getToken, setToken } from '../../services/httpClient'
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
+import { clearToken, getToken, onSessionExpired, setToken } from '../../services/httpClient'
 import type { AuthResponse } from '../../types/api'
 import { authApi } from './api'
 import { AuthContext } from './AuthContext'
@@ -8,13 +8,27 @@ const NAME_KEY = 'cga_name'
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthed, setIsAuthed] = useState(() => !!getToken())
+  const [sessionExpired, setSessionExpired] = useState(false)
   const [name, setName] = useState<string | null>(() => localStorage.getItem(NAME_KEY))
+
+  // The token can be rejected by any request, not just a deliberate logout. Reacting
+  // here means the user lands on the login screen the moment the session dies, instead
+  // of carrying on in a UI that can no longer save anything.
+  useEffect(
+    () =>
+      onSessionExpired(() => {
+        setIsAuthed(false)
+        setSessionExpired(true)
+      }),
+    [],
+  )
 
   const persist = useCallback((res: AuthResponse) => {
     setToken(res.access_token)
     localStorage.setItem(NAME_KEY, res.name)
     setName(res.name)
     setIsAuthed(true)
+    setSessionExpired(false)
   }, [])
 
   const login = useCallback(
@@ -28,16 +42,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [persist],
   )
 
+  // The onboarding draft is deliberately left alone: it is the user's unsaved work, and
+  // signing out - or being signed out - must not throw it away.
   const logout = useCallback(() => {
     clearToken()
     localStorage.removeItem(NAME_KEY)
     setName(null)
     setIsAuthed(false)
+    setSessionExpired(false)
   }, [])
 
   const value = useMemo(
-    () => ({ isAuthed, name, login, register, logout }),
-    [isAuthed, name, login, register, logout],
+    () => ({ isAuthed, sessionExpired, name, login, register, logout }),
+    [isAuthed, sessionExpired, name, login, register, logout],
   )
 
   return <AuthContext value={value}>{children}</AuthContext>

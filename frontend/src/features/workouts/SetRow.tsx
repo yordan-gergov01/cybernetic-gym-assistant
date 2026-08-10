@@ -1,5 +1,5 @@
 import { Icon } from '../../components/ui'
-import type { SetEntry } from './useTodayWorkout'
+import type { SetEntry } from './useWorkoutLogger'
 
 /** One logged set. The tick is a 48px target because it is pressed with sweaty hands,
  *  often without looking, between sets. */

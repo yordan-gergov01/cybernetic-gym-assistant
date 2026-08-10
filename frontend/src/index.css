@@ -29,9 +29,11 @@
 
 @layer base {
   html {
-    /* Stop iOS from auto-zooming form fields and from bouncing the page. */
+    /* Stop iOS from auto-zooming form fields and from bouncing the page. The grey
+       flash on tap is replaced by our own press feedback. */
     -webkit-text-size-adjust: 100%;
     overscroll-behavior-y: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -55,31 +57,66 @@
 /* Declared as a utility (not a component class) so the variants below can @apply it —
    Tailwind 4 only lets @apply reference utilities. */
 @utility btn {
-  /* Touch targets stay >=48px: sweaty hands, one-handed use, quick glances. */
-  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 font-semibold
-         transition-transform active:scale-[0.97] disabled:opacity-40 disabled:active:scale-100;
+  /* Touch targets stay >=48px: sweaty hands, one-handed use, quick glances.
+     Width is deliberately not set here - a button sharing a row with an input must be
+     able to size to its content. */
+  @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5
+         text-[15px] font-semibold disabled:opacity-40;
+}
+
+/* Small metadata capsule: "6 упражнения", "~75 мин", or a muscle group next to an
+   exercise. Always secondary — it never competes with the value it annotates.
+   A utility, not a component class, so .tag-pill below can @apply it. */
+/* The caption that names the value under it ("ДНЕШНАТА СЕСИЯ", "ТЕКУЩИ МАЗНИНИ").
+   Ten pixels with wide tracking keeps it subordinate to the number it labels. */
+@utility label-micro {
+  font-size: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-chalk-500);
+  font-weight: 600;
+}
+
+/* The standard panel: surface, hairline border, 16px corner. Padding is left to the
+   caller so a card can hold a list that bleeds to its own edges. */
+@utility card-surface {
+  background-color: var(--color-ink-800);
+  border: 1px solid var(--color-ink-700);
+  border-radius: 16px;
+}
+
+@utility tag {
+  @apply inline-flex items-center rounded-lg bg-ink-900 px-2.5 py-1 text-xs font-medium text-chalk-300;
 }
 
 @layer components {
   .btn-primary {
-    @apply btn bg-volt-500 text-ink-950;
+    @apply btn tap bg-volt-500 text-ink-950 active:bg-volt-600;
+  }
+  .btn-outline {
+    @apply btn tap border border-ink-700 text-chalk-50 active:bg-ink-800;
   }
   .btn-ghost {
-    @apply btn border border-ink-700 bg-ink-800 text-chalk-50;
+    @apply btn tap text-chalk-300 active:bg-ink-800;
   }
-
+  .btn-danger {
+    @apply btn tap border border-danger-400/50 text-danger-400 active:bg-danger-400/10;
+  }
   .card {
-    @apply rounded-2xl border border-ink-700 bg-ink-800 p-4;
+    @apply card-surface p-4;
   }
 
   .input {
-    @apply min-h-12 w-full rounded-xl border border-ink-700 bg-ink-900 px-4 text-chalk-50
-           placeholder:text-chalk-500 focus:border-volt-500 focus:outline-none;
+    @apply min-h-12 w-full rounded-xl border border-ink-700 bg-ink-900 px-4 text-[16px] text-chalk-50
+           outline-none placeholder:text-chalk-500 focus:border-volt-500/60;
   }
 
   .label {
     @apply mb-1.5 block text-xs font-semibold tracking-wider text-chalk-300 uppercase;
   }
+
+
 
   /* Weights, reps and percentages are the hero data — tabular so they don't jitter. */
   .stat {
@@ -87,6 +124,16 @@
   }
   .stat-sm {
     @apply font-display text-2xl leading-none font-bold tabular-nums;
+  }
+
+  .tag-pill {
+    @apply tag rounded-full px-3;
+  }
+
+  /* A tappable line in a list: exercise, setting, notification. The whole row is the
+     target, because a chevron alone is far too small to hit one-handed. */
+  .row {
+    @apply tap flex w-full items-center gap-3 rounded-2xl border border-ink-700 bg-ink-800 px-4 py-3.5 text-left active:bg-ink-900;
   }
 
   .section-title {
@@ -105,9 +152,12 @@
 /* Any pressable surface. Keeps press feedback identical app-wide. */
 @utility tap {
   transition:
-    transform 0.15s ease-out,
-    background-color 0.15s ease-out,
-    border-color 0.15s ease-out;
+    transform 150ms ease-out,
+    background-color 150ms ease-out,
+    border-color 150ms ease-out;
+  &:active {
+    transform: scale(0.97);
+  }
 }
 
 /* Numeric display: weights, reps, calories, percentages. Tabular so digits don't
@@ -131,4 +181,49 @@
 
 @utility safe-top {
   padding-top: env(safe-area-inset-top);
+}
+
+
+@keyframes slide-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@utility anim-in {
+  animation: slide-up-in 220ms ease-out both;
+}
+
+@utility anim-soft {
+  animation: soft-pulse 1.6s ease-in-out infinite;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Motion is decoration here; anyone who asks for less must get none. */
+@media (prefers-reduced-motion: reduce) {
+  .anim-in,
+  .anim-soft {
+    animation: none;
+  }
 }

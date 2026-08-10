@@ -1,6 +1,7 @@
 import { useCallback, useMemo, useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { profileApi } from './api'
+import { STEP_GROUP } from './constants'
 import { WIZARD_ONLY_KEYS } from './types'
 import type { ProfileDraft, StepId } from './types'
 import type { ProfileCreate } from '../../types/api'
@@ -118,6 +119,7 @@ export function useOnboarding(onDone: () => void) {
 
   return {
     step,
+    group: STEP_GROUP[step],
     index,
     total: STEPS.length,
     draft,

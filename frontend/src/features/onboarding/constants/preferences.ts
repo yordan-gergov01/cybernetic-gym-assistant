@@ -1,18 +1,8 @@
+import { MUSCLE_ORDER, muscleLabel } from '../../../constants/muscles'
 import type { Option } from '../../../components/ui'
 
-export const MUSCLES: Option[] = [
-  { value: 'chest', label: 'Гърди' },
-  { value: 'back', label: 'Гръб' },
-  { value: 'shoulders', label: 'Рамене' },
-  { value: 'biceps', label: 'Бицепс' },
-  { value: 'triceps', label: 'Трицепс' },
-  { value: 'quads', label: 'Квадрицепс' },
-  { value: 'hamstrings', label: 'Задно бедро' },
-  { value: 'glutes', label: 'Седалище' },
-  { value: 'calves', label: 'Прасци' },
-  { value: 'abs', label: 'Корем' },
-  { value: 'rear_delts', label: 'Задни рамене' },
-]
+/** Built from the app-wide muscle map, so a label changed there changes here too. */
+export const MUSCLES: Option[] = MUSCLE_ORDER.map((value) => ({ value, label: muscleLabel(value) }))
 
 /** Spreading priority over more than three muscles leaves none of them with enough
  *  extra volume to matter. */
