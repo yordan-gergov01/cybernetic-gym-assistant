@@ -2,7 +2,7 @@
 
 The rules live in `app.domain.plateau` as pure functions; this module only supplies them
 with data from the database and reports what came out. Nothing here decides anything by
-itself, and nothing here asks a model (CLAUDE.md rule #5).
+itself, and nothing here asks a model.
 """
 from __future__ import annotations
 
