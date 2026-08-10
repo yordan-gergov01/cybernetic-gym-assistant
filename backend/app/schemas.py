@@ -241,6 +241,56 @@ class ProgramGenerateRequest(BaseModel):
     # one is archived by default so two programs are never active at once.
     archive_active: bool = True
 
+class CalendarDayOut(BaseModel):
+    date: date
+    trained: bool
+    is_today: bool
+
+class SessionEstimateOut(BaseModel):
+    exercise_count: int
+    total_sets: int
+    minutes: int          # estimate: rest intervals plus time under the bar
+
+class MuscleVolumeOut(BaseModel):
+    muscle_group: str
+    sets_done: int
+    sets_target: Optional[int]   # None when the muscle has no target in the plan
+
+class LastSessionOut(BaseModel):
+    date: date
+    tonnage_kg: float
+    working_sets: int
+
+class TodayOut(BaseModel):
+    """The Today screen, decided by the backend so the client only renders."""
+    program_id: str
+    program_name: str
+    template_type: Optional[str]
+    goal: Optional[str]
+    week_number: int
+    total_weeks: int
+    is_rest_day: bool
+    trained_today: bool
+    weighed_in_today: bool
+    sessions_this_week: int
+    sessions_planned: int
+    calendar: list[CalendarDayOut] = []
+    day_id: Optional[str] = None
+    day_name: Optional[str] = None
+    exercises: list[ProgramExerciseOut] = []
+    estimate: Optional[SessionEstimateOut] = None
+    last_session: Optional[LastSessionOut] = None
+    weekly_volume: list[MuscleVolumeOut] = []
+
+class ExerciseStrengthOut(BaseModel):
+    """One exercise's estimated max and how it moved over the requested window."""
+    exercise_name: str
+    muscle_group: Optional[str]
+    best_e1rm: float
+    change_kg: float
+    sessions: int
+    points: list[float]      # e1RM per session, oldest first — for the sparkline
+
 class ExerciseOut(BaseModel):
     """One entry of the course exercise library (domain/exercise_library.py)."""
     name: str

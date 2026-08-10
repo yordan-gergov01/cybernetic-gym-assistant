@@ -43,8 +43,20 @@ async def get_weight_logs(
 
 
 @router.get("/trend")
-async def get_trend(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    result = await db.execute(select(WeightLog).where(WeightLog.user_id == user.id).order_by(WeightLog.date))
+async def get_trend(
+    days: int = 0,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Smoothed weight trend. `days` limits the window; 0 means the whole history.
+
+    The window is applied before the trend is computed, not after: showing a one-month
+    chart next to a rate measured over a year would be two different claims side by side.
+    """
+    query = select(WeightLog).where(WeightLog.user_id == user.id)
+    if days > 0:
+        query = query.where(WeightLog.date >= date.today() - timedelta(days=days))
+    result = await db.execute(query.order_by(WeightLog.date))
     entries = result.scalars().all()
     trend = analyze_trend([(e.date, e.weight_kg) for e in entries])
     if trend is None:
