@@ -20,7 +20,7 @@ import { TrendChart } from '../features/progress/TrendChart'
 import { WeightForm } from '../features/progress/WeightForm'
 import { profileApi } from '../features/onboarding/api'
 import { todayIso } from '../utils/date'
-import { formatRate, formatWeight } from '../utils/format'
+import { formatRateMagnitude, formatWeight } from '../utils/format'
 
 /** Windows offered for the trend. The chart and the rate always describe the same
  *  period, because the window is applied on the backend before the trend is computed. */
@@ -92,7 +92,7 @@ export function ProgressPage() {
               <p
                 className={`stat-sm mt-2 ${data?.direction === 'stable' ? 'text-chalk-50' : 'text-volt-400'}`}
               >
-                {arrow} {formatRate(Math.abs(rate))}
+                {arrow} {formatRateMagnitude(rate)}
               </p>
               <p className="text-xs text-chalk-500">кг/сед</p>
             </div>

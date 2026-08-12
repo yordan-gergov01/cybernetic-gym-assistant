@@ -1,9 +1,17 @@
 import { useState, type SubmitEvent } from 'react'
-import { Icon } from '../../components/ui'
 
 /** Free-text entry - the backend parses it (LLM + USDA), so the user types the way
- *  they'd say it: "2 яйца и 100г овес". */
-export function QuickAddForm({ onSubmit, isPending }: { onSubmit: (text: string) => void; isPending: boolean }) {
+ *  they'd say it: "2 яйца и 100г овес".
+ *
+ *  There is no voice or photo button here on purpose: nothing behind them exists yet,
+ *  and a control that does nothing is worse than one that is missing. */
+export function QuickAddForm({
+  onSubmit,
+  isPending,
+}: {
+  onSubmit: (text: string) => void
+  isPending: boolean
+}) {
   const [text, setText] = useState('')
 
   function handleSubmit(event: SubmitEvent) {
@@ -15,9 +23,9 @@ export function QuickAddForm({ onSubmit, isPending }: { onSubmit: (text: string)
   }
 
   return (
-    <form onSubmit={handleSubmit} className="mb-4 flex gap-2">
+    <form onSubmit={handleSubmit}>
       <input
-        className="input flex-1"
+        className="input"
         placeholder="напр. 2 яйца, 100г овесени ядки"
         value={text}
         onChange={(e) => setText(e.target.value)}
@@ -25,15 +33,10 @@ export function QuickAddForm({ onSubmit, isPending }: { onSubmit: (text: string)
       />
       <button
         type="submit"
-        className="btn-primary aspect-square px-0"
+        className="btn-primary mt-2 w-full"
         disabled={!text.trim() || isPending}
-        aria-label="Добави храна"
       >
-        {isPending ? (
-          <span className="h-4 w-4 animate-spin rounded-full border-2 border-ink-950/30 border-t-ink-950" />
-        ) : (
-          <Icon name="plus" size={20} />
-        )}
+        {isPending ? 'Разчитаме…' : 'Добави'}
       </button>
     </form>
   )

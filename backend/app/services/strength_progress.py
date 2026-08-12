@@ -79,5 +79,7 @@ async def strength_by_exercise(
             )
         )
 
-    results.sort(key=lambda e: e.change_kg, reverse=True)
+    # Heaviest first: the compounds are what the plan is judged on, and ranking by
+    # kilos gained floats a lateral raise above a squat.
+    results.sort(key=lambda e: e.best_e1rm, reverse=True)
     return results

@@ -90,9 +90,24 @@ export type BFAssessment = {
 
 export type NutritionTargets ={ calories: number; protein_g: number; fat_g: number; carbs_g: number }
 
+export type FoodEntry = {
+  id: string
+  meal_type?: string | null
+  food_name: string
+  quantity_g?: number | null
+  calories?: number | null
+  protein_g?: number | null
+  fat_g?: number | null
+  carbs_g?: number | null
+  /** "USDA" when the numbers came from the food database, "LLM estimate" when they
+   *  were estimated - the UI says so rather than presenting a guess as a fact. */
+  source?: string | null
+  confidence?: string | null
+}
+
 export type DailyNutrition = {
   date: string
-  entries: { id: string; food_name: string; calories?: number; protein_g?: number; quantity_g?: number }[]
+  entries: FoodEntry[]
   totals: Record<string, number>
   targets: Record<string, number>
   remaining: Record<string, number>

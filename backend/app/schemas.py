@@ -109,6 +109,7 @@ class FoodLogCreate(BaseModel):
 
 class FoodEntryOut(BaseModel):
     id: str
+    meal_type: Optional[str]   # breakfast | lunch | dinner | snack; None on older entries
     food_name: str
     quantity_g: Optional[float]
     calories: Optional[float]

@@ -8,6 +8,7 @@ export const todayIso = (): string => {
 }
 
 const WEEKDAYS_BG = ['неделя', 'понеделник', 'вторник', 'сряда', 'четвъртък', 'петък', 'събота']
+const WEEKDAYS_SHORT_BG = ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
 const MONTHS_BG = [
   'януари', 'февруари', 'март', 'април', 'май', 'юни',
   'юли', 'август', 'септември', 'октомври', 'ноември', 'декември',
@@ -35,4 +36,21 @@ export const formatRelativeTime = (isoTimestamp: string): string => {
 export const formatShortDate = (iso: string): string => {
   const d = new Date(`${iso}T00:00:00`)
   return `${d.getDate()}.${d.getMonth() + 1}`
+}
+
+/** "Чт 30" - the label on a day chip, short enough that a week fits across a phone. */
+export const formatDayChip = (iso: string): string => {
+  const d = new Date(`${iso}T00:00:00`)
+  return `${WEEKDAYS_SHORT_BG[d.getDay()]} ${d.getDate()}`
+}
+
+/** The `count` days ending today, oldest first. */
+export const recentDays = (count: number, from: string = todayIso()): string[] => {
+  const end = new Date(`${from}T00:00:00`)
+  return Array.from({ length: count }, (_, i) => {
+    const d = new Date(end)
+    d.setDate(end.getDate() - (count - 1 - i))
+    const offsetMs = d.getTimezoneOffset() * 60_000
+    return new Date(d.getTime() - offsetMs).toISOString().slice(0, 10)
+  })
 }
