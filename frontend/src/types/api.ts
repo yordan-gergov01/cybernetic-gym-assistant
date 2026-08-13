@@ -167,15 +167,65 @@ export type ProgramSummary = {
   id: string
   name: string
   description?: string | null
+  template_type?: string | null
   total_weeks: number
   status: string
   goal?: string | null
+  start_date?: string | null
+  end_date?: string | null
   created_at: string
 }
 
 /** GET /programs/{id} — the full tree. */
 export type Program = ProgramSummary & {
   weeks: ProgramWeek[]
+}
+
+/** GET /programs/{id}/review — the plateau engine's verdict on the program.
+ *  Every field here is decided deterministically by the backend (domain/plateau.py). */
+export type ProgramAction =
+  | 'extend'
+  | 'adjust_exercise'
+  | 'adjust_muscle'
+  | 'check_recovery'
+  | 'complete'
+
+export type ExerciseProgress = {
+  exercise_name: string
+  muscle_group?: string | null
+  status: 'progressing' | 'holding' | 'stalled' | 'insufficient_data'
+  sessions_since_best: number
+  best_e1rm?: number | null
+  latest_e1rm?: number | null
+  change_pct?: number | null
+}
+
+/** The heavier session prescribed to break a single missed progression. */
+export type PlateauBreaker = { exercise_name: string; weight_kg: number; reps: number }
+
+export type ProgramReview = {
+  action: ProgramAction
+  scope?: 'systemic' | 'local_muscle' | 'local_exercise' | null
+  reason_bg: string
+  muscle_group?: string | null
+  exercise_name?: string | null
+  new_rep_target?: number | null
+  total_weeks: number
+  max_weeks: number
+  exercises: ExerciseProgress[]
+  breakers: PlateauBreaker[]
+  sessions_analysed: number
+  /** Prescribed exercises with no usable work sets — shown, never silently dropped. */
+  skipped_exercises: string[]
+}
+
+/** GET /exercises — one entry of the course exercise library. */
+export type Exercise = {
+  name: string
+  category: string
+  region: string
+  muscle_group?: string | null
+  cues: string[]
 }
 
 /** GET /workouts/today — the whole Today screen, decided by the backend. */
@@ -216,6 +266,16 @@ export type ExerciseStrength = {
   change_kg: number
   sessions: number
   points: number[]
+}
+
+/** GET /workouts — only the fields the program screen reads off a logged session.
+ *  `day_id` is what marks a program day as trained; the sets themselves are not used. */
+export type WorkoutLogSummary = {
+  id: string
+  program_id?: string | null
+  day_id?: string | null
+  date: string
+  status: string
 }
 
 export type WorkoutSetInput = {

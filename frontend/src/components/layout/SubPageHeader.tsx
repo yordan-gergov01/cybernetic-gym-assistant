@@ -8,10 +8,12 @@ import { Icon } from '../ui'
  *  browser chrome to go back with. */
 export function SubPageHeader({
   title,
+  subtitle,
   action,
   onBack,
 }: {
   title: string
+  subtitle?: string
   action?: ReactNode
   onBack?: () => void
 }) {
@@ -31,7 +33,10 @@ export function SubPageHeader({
         >
           <Icon name="chevronLeft" size={22} />
         </button>
-        <h1 className="section-title min-w-0 flex-1 truncate">{title}</h1>
+        <div className="min-w-0 flex-1">
+          <h1 className="section-title truncate">{title}</h1>
+          {subtitle && <p className="num mt-0.5 truncate text-xs text-chalk-500">{subtitle}</p>}
+        </div>
         {action}
       </div>
     </header>

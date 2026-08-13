@@ -3,6 +3,7 @@ import { Screen } from '../components/layout/Screen'
 import { splitLabel } from '../constants/navigation'
 import { ErrorNote, ListRow, Loading, SectionHeader, Tag } from '../components/ui'
 import { muscleLabel } from '../constants/muscles'
+import { prescriptionLong } from '../features/programs/prescription'
 import { StartProgramCard } from '../features/programs/StartProgramCard'
 import { ActiveSession } from '../features/workouts/ActiveSession'
 import { RestDay } from '../features/workouts/RestDay'
@@ -10,23 +11,12 @@ import { SessionCard } from '../features/workouts/SessionCard'
 import { useToday } from '../features/workouts/useWorkoutLogger'
 import { WeekStrip } from '../features/workouts/WeekStrip'
 import { ApiError } from '../services/httpClient'
-import type { ProgramExercise } from '../types/api'
 
-// No calendar action yet: the program screen does not exist, and a link that silently
-// bounces back to Today is worse than no link.
 const HEADER_ACTIONS = [
+  { to: '/program', icon: 'calendar' as const, label: 'Програма' },
   { to: '/notifications', icon: 'bell' as const, label: 'Известия' },
   { to: '/profile', icon: 'settings' as const, label: 'Профил' },
 ]
-
-const prescription = (exercise: ProgramExercise): string =>
-  [
-    exercise.sets_prescribed ? `${exercise.sets_prescribed} серии` : null,
-    exercise.reps_min && exercise.reps_max ? `${exercise.reps_min}–${exercise.reps_max} повт.` : null,
-    exercise.rir_target !== null && exercise.rir_target !== undefined ? `RIR ${exercise.rir_target}` : null,
-  ]
-    .filter(Boolean)
-    .join(' · ')
 
 export function TodayPage() {
   const today = useToday()
@@ -96,7 +86,7 @@ export function TodayPage() {
                   key={exercise.id}
                   leading={<span className="num text-sm">{index + 1}</span>}
                   title={exercise.exercise_name}
-                  subtitle={prescription(exercise)}
+                  subtitle={prescriptionLong(exercise)}
                   trailing={
                     exercise.muscle_group ? <Tag>{muscleLabel(exercise.muscle_group)}</Tag> : undefined
                   }

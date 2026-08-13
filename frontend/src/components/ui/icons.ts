@@ -4,6 +4,7 @@ import {
   LuCalendarDays,
   LuCamera,
   LuCheck,
+  LuChevronDown,
   LuChevronLeft,
   LuChevronRight,
   LuCircleAlert,
@@ -14,6 +15,7 @@ import {
   LuMoon,
   LuPlus,
   LuScale,
+  LuSearch,
   LuSend,
   LuSettings,
   LuSparkles,
@@ -55,6 +57,8 @@ export const ICONS = {
   alert: LuCircleAlert,
   chevronRight: LuChevronRight,
   chevronLeft: LuChevronLeft,
+  chevronDown: LuChevronDown,
+  search: LuSearch,
 } satisfies Record<string, IconType>
 
 export type IconName = keyof typeof ICONS

@@ -7,6 +7,7 @@ import { useAuth } from '../features/auth/useAuth'
 import { profileApi } from '../features/onboarding/api'
 import { CheckInPage } from '../pages/CheckInPage'
 import { CoachPage } from '../pages/CoachPage'
+import { ExercisesPage } from '../pages/ExercisesPage'
 import { LandingPage } from '../pages/LandingPage'
 import { LoginPage } from '../pages/LoginPage'
 import { NotificationsPage } from '../pages/NotificationsPage'
@@ -14,6 +15,7 @@ import { NutritionPage } from '../pages/NutritionPage'
 import { OnboardingPage } from '../pages/OnboardingPage'
 import { PhotosPage } from '../pages/PhotosPage'
 import { ProfilePage } from '../pages/ProfilePage'
+import { ProgramPage } from '../pages/ProgramPage'
 import { ProgressPage } from '../pages/ProgressPage'
 import { RegisterPage } from '../pages/RegisterPage'
 import { TodayPage } from '../pages/TodayPage'
@@ -56,6 +58,8 @@ function AuthedRoutes() {
       <Route path="/onboarding" element={<Navigate to="/" replace />} />
       <Route element={<AppShell />}>
         <Route index element={<TodayPage />} />
+        <Route path="program" element={<ProgramPage />} />
+        <Route path="exercises" element={<ExercisesPage />} />
         <Route path="nutrition" element={<NutritionPage />} />
         <Route path="progress" element={<ProgressPage />} />
         <Route path="coach" element={<CoachPage />} />
