@@ -4,6 +4,7 @@ import type {
   FatigueAssessment,
   Profile,
   Program,
+  ProgramAdjustment,
   ProgramReview,
   ProgramSummary,
 } from '../../types/api'
@@ -16,6 +17,14 @@ export const programsApi = {
   /** Refused by the backend while something is stalling, and past the week cap. */
   extend: (id: string) => http.post<Program>(`/programs/${id}/extend`),
   archive: (id: string) => http.post<ProgramSummary>(`/programs/${id}/archive`),
+  /** Applying a verdict. Each of these rewrites every week of the program, because the
+   *  training rotation is served from the first week - see services/program_adjust.py. */
+  swapExercise: (id: string, payload: { exercise_name: string; replacement_name: string }) =>
+    http.post<ProgramAdjustment>(`/programs/${id}/exercises/swap`, payload),
+  intensifyExercise: (id: string, exerciseName: string) =>
+    http.post<ProgramAdjustment>(`/programs/${id}/exercises/intensify`, { exercise_name: exerciseName }),
+  adjustMuscle: (id: string, muscleGroup: string) =>
+    http.post<ProgramAdjustment>(`/programs/${id}/muscles/adjust`, { muscle_group: muscleGroup }),
   generate: (totalWeeks = 8) =>
     http.post<Program>('/programs/generate', { total_weeks: totalWeeks }),
   recalculate: () => http.post<Profile>('/profile/recalculate'),

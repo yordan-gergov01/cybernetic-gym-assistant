@@ -19,6 +19,7 @@ from app.domain.plateau import (
     classify_scope,
     compare_sessions,
     decide_program_continuation,
+    intensified_rep_range,
     intensified_rep_target,
     plateau_breaker_weight,
 )
@@ -219,6 +220,25 @@ def test_intensification_refuses_to_go_below_the_growth_floor():
     # p.24: under 4 reps per set the repetition volume is too low for maximum growth,
     # so the course's next option is replacing the exercise instead.
     assert intensified_rep_target(MIN_REPS_PER_SET + 3) is None
+
+
+def test_intensifying_a_range_keeps_it_as_wide_as_it_was():
+    """The prescription is a range; intensifying moves it down, it does not narrow it."""
+    low, high = intensified_rep_range(10, 15)
+    assert high == intensified_rep_target(15)
+    assert high - low == 15 - 10
+
+
+def test_intensifying_never_prescribes_fewer_reps_than_the_growth_floor():
+    low, high = intensified_rep_range(6, 8)
+    assert low >= MIN_REPS_PER_SET
+    assert high >= MIN_REPS_PER_SET
+
+
+def test_a_range_that_cannot_be_lowered_has_no_intensified_form():
+    # The top of the range is what decides; below it the exercise is replaced instead.
+    assert intensified_rep_target(MIN_REPS_PER_SET + 3) is None
+    assert intensified_rep_range(MIN_REPS_PER_SET, MIN_REPS_PER_SET + 3) is None
 
 
 def test_a_plateau_breaker_is_heavier_than_the_session_that_stalled():

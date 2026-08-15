@@ -314,6 +314,23 @@ class PlateauBreakerOut(BaseModel):
     weight_kg: float
     reps: int
 
+class ExerciseSwapRequest(BaseModel):
+    exercise_name: str                   # as prescribed in the program
+    replacement_name: str                # must exist in the course library
+
+class ExerciseIntensifyRequest(BaseModel):
+    exercise_name: str
+
+class MuscleAdjustRequest(BaseModel):
+    muscle_group: str
+
+class ProgramAdjustmentOut(BaseModel):
+    """What the program change actually did, so the user is never left guessing."""
+    action: str                      # swap | intensify | add_sets | move_exercise
+    summary_bg: str
+    exercises: list[str] = []
+    rows_changed: int                # prescribed rows rewritten, across all weeks
+
 class ProgramReviewOut(BaseModel):
     """Whether the program should continue, and what to change if not."""
     action: str                      # extend | adjust_exercise | adjust_muscle | check_recovery | complete

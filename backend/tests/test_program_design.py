@@ -10,6 +10,7 @@ from app.domain.program_design import (
     MAJOR_MUSCLES,
     MIN_WEEKLY_FREQUENCY,
     frequency_violations,
+    plan_muscle_adjustment,
     recommend_split,
     weekly_frequency,
 )
@@ -17,6 +18,18 @@ from app.domain.program_design import (
 
 def day(*muscles: str) -> dict:
     return {"exercises": [{"muscle_group": m} for m in muscles]}
+
+
+def training_day(number: int, *exercises: tuple[str, str, int]) -> dict:
+    """A day of (exercise name, muscle, sets), in the order they are performed."""
+    return {
+        "day_number": number,
+        "is_rest_day": False,
+        "exercises": [
+            {"exercise_name": name, "muscle_group": muscle, "sets_prescribed": sets, "order_index": i}
+            for i, (name, muscle, sets) in enumerate(exercises)
+        ],
+    }
 
 
 @pytest.mark.parametrize("days", [1, 2, 3, 4, 5, 6, 7])
@@ -82,6 +95,76 @@ def test_accessory_muscles_are_not_held_to_the_rule():
 def test_a_missing_muscle_is_not_a_frequency_violation():
     """Omitting direct work (e.g. the user asked not to grow it) is a different concern."""
     assert "biceps" not in frequency_violations([day("chest"), day("chest")])
+
+
+def test_frequency_is_raised_before_volume():
+    """The course's order: another session first, more sets only if it cannot fit."""
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 4), ("Cable Fly", "chest", 3)),
+        training_day(2, ("Barbell Squat", "quads", 4)),
+    ]
+    adjustment = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert adjustment.action == "move_exercise"
+    assert adjustment.to_day == 2, "the day that does not train chest gains the work"
+
+
+def test_raising_frequency_does_not_raise_the_weekly_sets():
+    """Moving, not copying: the change under test is the frequency on its own."""
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 4), ("Cable Fly", "chest", 3)),
+        training_day(2, ("Barbell Squat", "quads", 4)),
+    ]
+    adjustment = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert adjustment.from_day == 1 and adjustment.exercise_name == "Cable Fly"
+
+
+def test_the_only_exercise_for_a_muscle_is_not_moved():
+    """Relocating the single chest session leaves the frequency exactly where it was."""
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 4)),
+        training_day(2, ("Barbell Squat", "quads", 4)),
+    ]
+    adjustment = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert adjustment.action == "add_sets"
+
+
+def test_sets_are_added_when_every_day_already_trains_the_muscle():
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 4), ("Cable Fly", "chest", 3)),
+        training_day(2, ("Incline Press", "chest", 3)),
+    ]
+    adjustment = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert adjustment.action == "add_sets"
+    assert adjustment.exercise_name == "Barbell Bench Press", "the first exercise of the group"
+
+
+def test_volume_stops_at_the_optimum_instead_of_climbing_forever():
+    """At the profile's optimal weekly volume the plateau is not a volume problem."""
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 5), ("Cable Fly", "chest", 5)),
+        training_day(2, ("Incline Press", "chest", 6)),
+    ]
+    at_optimum = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert at_optimum.action == "none"
+    assert at_optimum.reason_bg
+
+    below_optimum = plan_muscle_adjustment(days, "chest", target_weekly_sets=20)
+    assert below_optimum.action == "add_sets", "the same program below the optimum still has room"
+
+
+def test_a_muscle_the_program_does_not_train_gets_no_change():
+    days = [training_day(1, ("Barbell Squat", "quads", 4))]
+    assert plan_muscle_adjustment(days, "chest").action == "none"
+
+
+def test_rest_days_never_receive_the_moved_exercise():
+    days = [
+        training_day(1, ("Barbell Bench Press", "chest", 4), ("Cable Fly", "chest", 3)),
+        {"day_number": 2, "is_rest_day": True, "exercises": []},
+        training_day(3, ("Barbell Squat", "quads", 4)),
+    ]
+    adjustment = plan_muscle_adjustment(days, "chest", target_weekly_sets=16)
+    assert adjustment.to_day == 3
 
 
 def test_threshold_comes_from_the_module():

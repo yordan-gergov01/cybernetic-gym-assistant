@@ -14,7 +14,7 @@ import { StartProgramCard } from '../features/programs/StartProgramCard'
 import { WeekAccordion } from '../features/programs/WeekAccordion'
 import { workoutsApi } from '../features/workouts/api'
 import { useToday } from '../features/workouts/useWorkoutLogger'
-import type { ProgramDay, ProgramExercise, ProgramWeek } from '../types/api'
+import type { ProgramWeek } from '../types/api'
 
 /** How far back the logged-sessions lookup reaches. A program is capped at 20 weeks, so
  *  200 sessions covers a whole program at any realistic frequency; only how many of them
@@ -74,8 +74,10 @@ function ProgramDetail({ programId }: { programId: string }) {
   // `undefined` means "nobody has touched the accordion", so the current week can open
   // itself; `null` is a week the user deliberately collapsed.
   const [openWeek, setOpenWeek] = useState<number | null | undefined>(undefined)
-  const [openDay, setOpenDay] = useState<ProgramDay | null>(null)
-  const [openExercise, setOpenExercise] = useState<ProgramExercise | null>(null)
+  // Ids, not the objects: applying a verdict rewrites the plan underneath an open
+  // sheet, and a captured object would keep showing the exercise as it used to be.
+  const [openDayId, setOpenDayId] = useState<string | null>(null)
+  const [openExerciseId, setOpenExerciseId] = useState<string | null>(null)
   const [confirmArchive, setConfirmArchive] = useState(false)
 
   const archive = useMutation({
@@ -130,6 +132,9 @@ function ProgramDetail({ programId }: { programId: string }) {
   // days and advances one slot per logged session (services/training_week.py), so every
   // logged session sits on a week-1 day row no matter which week it happened in. That
   // makes the session count - not the day id - what says how far the plan has been run.
+  const openDay = plan.weeks.flatMap((week) => week.days).find((day) => day.id === openDayId) ?? null
+  const openExercise = openDay?.exercises.find((e) => e.id === openExerciseId) ?? null
+
   const sessionsDone = (logs.data ?? []).filter((log) => log.program_id === plan.id).length
   const dayStatus = (weekNumber: number, slot: number) => {
     const position = (weekNumber - 1) * perWeek + slot
@@ -168,7 +173,7 @@ function ProgramDetail({ programId }: { programId: string }) {
           openWeek={shownWeek}
           onToggleWeek={(weekNumber) => setOpenWeek(shownWeek === weekNumber ? null : weekNumber)}
           dayStatus={dayStatus}
-          onOpenDay={setOpenDay}
+          onOpenDay={(day) => setOpenDayId(day.id)}
         />
 
         <div className="mt-4">
@@ -220,7 +225,7 @@ function ProgramDetail({ programId }: { programId: string }) {
 
       <Sheet
         open={!!openDay}
-        onClose={() => setOpenDay(null)}
+        onClose={() => setOpenDayId(null)}
         title={openDay?.day_name || 'Тренировка'}
       >
         <div className="max-h-[60vh] space-y-2 overflow-y-auto">
@@ -230,7 +235,7 @@ function ProgramDetail({ programId }: { programId: string }) {
               <button
                 key={exercise.id}
                 type="button"
-                onClick={() => setOpenExercise(exercise)}
+                onClick={() => setOpenExerciseId(exercise.id)}
                 className="tap flex w-full items-center gap-3 rounded-xl border border-ink-700 bg-ink-800 p-3.5 text-left"
               >
                 <span className="min-w-0 flex-1">
@@ -247,7 +252,11 @@ function ProgramDetail({ programId }: { programId: string }) {
         </div>
       </Sheet>
 
-      <AlternativesSheet exercise={openExercise} onClose={() => setOpenExercise(null)} />
+      <AlternativesSheet
+        programId={plan.id}
+        exercise={openExercise}
+        onClose={() => setOpenExerciseId(null)}
+      />
     </div>
   )
 }

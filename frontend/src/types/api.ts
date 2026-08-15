@@ -219,6 +219,15 @@ export type ProgramReview = {
   skipped_exercises: string[]
 }
 
+/** What applying a verdict actually changed (swap / intensify / muscles adjust).
+ *  `rows_changed` counts prescribed rows across every week, not sessions. */
+export type ProgramAdjustment = {
+  action: 'swap' | 'intensify' | 'add_sets' | 'move_exercise'
+  summary_bg: string
+  exercises: string[]
+  rows_changed: number
+}
+
 /** GET /exercises — one entry of the course exercise library. */
 export type Exercise = {
   name: string

@@ -11,20 +11,26 @@ from app.core.config import settings
 from app.core.llm import openai_client
 from app.db.database import get_db
 from app.deps import get_current_user
+from app.domain import exercise_library
 from app.domain.program_design import (
     MIN_WEEKLY_FREQUENCY,
     frequency_violations,
+    plan_muscle_adjustment,
     recommend_split,
     weekly_frequency,
 )
-from app.domain.plateau import MAX_PROGRAM_WEEKS
+from app.domain.plateau import MAX_PROGRAM_WEEKS, intensified_rep_range
 from app.models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
 from app.prompts.registry import get_prompt
 from app.schemas import (
+    ExerciseIntensifyRequest,
     ExerciseProgressOut,
+    ExerciseSwapRequest,
     FatigueAssessmentOut,
     FatigueAssessmentRequest,
+    MuscleAdjustRequest,
     PlateauBreakerOut,
+    ProgramAdjustmentOut,
     ProgramCreate,
     ProgramExerciseOut,
     ProgramGenerateRequest,
@@ -33,6 +39,14 @@ from app.schemas import (
     ProgramSummary,
 )
 from app.services.fatigue import assess_fatigue
+from app.services.program_adjust import (
+    apply_muscle_adjustment,
+    apply_rep_range,
+    apply_swap,
+    exercise_rows,
+    program_weeks,
+    template_days,
+)
 from app.services.program_progress import review_program
 from app.services.rag_pipeline import retrieve_context
 
@@ -279,6 +293,14 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
     return r.scalar_one()
 
 
+async def _owned_program(db: AsyncSession, program_id: str, user: User) -> Program:
+    r = await db.execute(select(Program).where(Program.id == program_id, Program.user_id == user.id))
+    program = r.scalar_one_or_none()
+    if not program:
+        raise HTTPException(404, "Програмата не е намерена.")
+    return program
+
+
 @router.patch("/{program_id}/exercises/{exercise_id}", response_model=ProgramExerciseOut)
 async def update_exercise(
     program_id: str,
@@ -287,8 +309,16 @@ async def update_exercise(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    _ = program_id, user
-    r = await db.execute(select(ProgramExercise).where(ProgramExercise.id == exercise_id))
+    program = await _owned_program(db, program_id, user)
+    # The row is reached through the program, not by its id alone: an id on its own says
+    # nothing about who owns it, and without the join any signed-in user could edit
+    # somebody else's program by guessing one.
+    r = await db.execute(
+        select(ProgramExercise)
+        .join(ProgramDay, ProgramExercise.day_id == ProgramDay.id)
+        .join(ProgramWeek, ProgramDay.week_id == ProgramWeek.id)
+        .where(ProgramExercise.id == exercise_id, ProgramWeek.program_id == program.id)
+    )
     ex = r.scalar_one_or_none()
     if not ex:
         raise HTTPException(404, "Упражнението не е намерено в програмата.")
@@ -298,6 +328,109 @@ async def update_exercise(
     await db.commit()
     await db.refresh(ex)
     return ex
+
+
+@router.post("/{program_id}/exercises/swap", response_model=ProgramAdjustmentOut)
+async def swap_exercise(
+    program_id: str,
+    data: ExerciseSwapRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Replace a prescribed exercise with one from the course library, in every week.
+
+    Deliberately not gated on the review: replacing an exercise is also how a user deals
+    with a machine that is taken, an injury or a movement they simply cannot perform,
+    and refusing that until something stalls would make the program unusable.
+    """
+    program = await _owned_program(db, program_id, user)
+
+    replacement = exercise_library.find(data.replacement_name)
+    if not replacement:
+        raise HTTPException(
+            404, f"Упражнението „{data.replacement_name}“ не е в библиотеката на курса."
+        )
+
+    weeks = await program_weeks(db, program.id)
+    rows = exercise_rows(weeks, data.exercise_name)
+    if not rows:
+        raise HTTPException(404, f"„{data.exercise_name}“ не е в тази програма.")
+    if rows[0].exercise_name == replacement.name:
+        raise HTTPException(400, "Избери упражнение, различно от текущото.")
+
+    return await apply_swap(db, rows, replacement)
+
+
+@router.post("/{program_id}/exercises/intensify", response_model=ProgramAdjustmentOut)
+async def intensify_exercise(
+    program_id: str,
+    data: ExerciseIntensifyRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Lower the rep target of a stalled exercise (Periodization & progress, p.24).
+
+    Gated on the review, because intensification is the course's answer to a *measured*
+    stall. Applied to a lift that is still progressing it would only cut its volume.
+    """
+    program = await _owned_program(db, program_id, user)
+
+    review = await review_program(db, program)
+    if review.decision.action != "adjust_exercise" or review.decision.exercise_name != data.exercise_name:
+        raise HTTPException(409, review.decision.reason_bg)
+
+    weeks = await program_weeks(db, program.id)
+    rows = exercise_rows(weeks, data.exercise_name)
+    if not rows:
+        raise HTTPException(404, f"„{data.exercise_name}“ не е в тази програма.")
+
+    new_range = intensified_rep_range(rows[0].reps_min, rows[0].reps_max)
+    if not new_range:
+        raise HTTPException(
+            409,
+            "Повторенията не могат да слязат по-ниско без да падне обемът под нужния за "
+            "растеж. Смени упражнението с алтернатива.",
+        )
+
+    return await apply_rep_range(db, rows, new_range)
+
+
+@router.post("/{program_id}/muscles/adjust", response_model=ProgramAdjustmentOut)
+async def adjust_muscle(
+    program_id: str,
+    data: MuscleAdjustRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Train a stalling muscle group more often, or - if the week is full - harder.
+
+    The order is the course's, and the volume ceiling is the profile's own optimal
+    weekly set count, so this can never turn a recovery problem into a volume spiral.
+    """
+    program = await _owned_program(db, program_id, user)
+
+    review = await review_program(db, program)
+    decided_for = (review.decision.muscle_group or "").strip().lower()
+    if review.decision.action != "adjust_muscle" or decided_for != data.muscle_group.strip().lower():
+        raise HTTPException(409, review.decision.reason_bg)
+
+    pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
+    profile = pr.scalar_one_or_none()
+    volume = ((profile.calculator_results or {}).get("volume") or {}) if profile else {}
+    if not isinstance(volume, dict):
+        logger.warning("Profile %s has a non-dict volume target; the set ceiling is skipped", user.id)
+        volume = {}
+
+    weeks = await program_weeks(db, program.id)
+    adjustment = plan_muscle_adjustment(
+        template_days(weeks),
+        data.muscle_group,
+        target_weekly_sets=volume.get(data.muscle_group.strip().lower()),
+    )
+    if adjustment.action == "none":
+        raise HTTPException(409, adjustment.reason_bg)
+
+    return await apply_muscle_adjustment(db, weeks, adjustment)
 
 
 @router.delete("/{program_id}", status_code=204)

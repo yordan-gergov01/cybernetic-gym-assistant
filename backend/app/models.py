@@ -136,7 +136,11 @@ class ProgramWeek(Base):
     notes: Mapped[str | None] = mapped_column(Text)
 
     program: Mapped["Program"] = relationship(back_populates="weeks")
-    days: Mapped[list["ProgramDay"]] = relationship(back_populates="week", cascade="all, delete-orphan")
+    days: Mapped[list["ProgramDay"]] = relationship(
+        back_populates="week",
+        cascade="all, delete-orphan",
+        order_by="ProgramDay.day_number",
+    )
 
 
 class ProgramDay(Base):
@@ -150,7 +154,14 @@ class ProgramDay(Base):
     notes: Mapped[str | None] = mapped_column(Text)
 
     week: Mapped["ProgramWeek"] = relationship(back_populates="days")
-    exercises: Mapped[list["ProgramExercise"]] = relationship(back_populates="day", cascade="all, delete-orphan")
+    # Ordered by the relationship itself: a day is a sequence of exercises, and without
+    # this the API returns whatever order the rows happen to come back in - which changes
+    # the moment one of them is updated.
+    exercises: Mapped[list["ProgramExercise"]] = relationship(
+        back_populates="day",
+        cascade="all, delete-orphan",
+        order_by="ProgramExercise.order_index",
+    )
 
 
 class ProgramExercise(Base):

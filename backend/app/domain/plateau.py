@@ -253,6 +253,23 @@ def intensified_rep_target(rep_target: int | None) -> int | None:
     return lowered if lowered >= MIN_REPS_PER_SET else None
 
 
+def intensified_rep_range(reps_min: int | None, reps_max: int | None) -> tuple[int, int] | None:
+    """The whole prescribed range after intensification, or None when it cannot go lower.
+
+    The course lowers the rep *target* (p.24); a program prescribes a range, so the top
+    of the range is what moves and the width is kept - a 10-15 range stays five reps
+    wide at 6-11. The bottom is clamped at MIN_REPS_PER_SET, which can collapse a narrow
+    range onto a single number (6-8 becomes 4-4); that is the intended end state, since
+    below four reps per set the repetition volume is too low for growth.
+    """
+    lowered_max = intensified_rep_target(reps_max)
+    if lowered_max is None:
+        return None
+    width = (reps_max - reps_min) if reps_min is not None and reps_max is not None else 0
+    lowered_min = max(MIN_REPS_PER_SET, lowered_max - max(0, width))
+    return lowered_min, lowered_max
+
+
 def plateau_breaker_weight(
     weight_kg: float,
     reps: int,

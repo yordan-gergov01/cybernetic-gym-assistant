@@ -35,16 +35,28 @@ const TITLES: Record<ProgramAction, string> = {
 export function ReviewCard({ programId, review }: { programId: string; review: ProgramReview }) {
   const queryClient = useQueryClient()
 
-  const extend = useMutation({
-    mutationFn: () => programsApi.extend(programId),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: queryKeys.program(programId) })
-      queryClient.invalidateQueries({ queryKey: queryKeys.programReview(programId) })
-      queryClient.invalidateQueries({ queryKey: queryKeys.programs })
-      // Today shows "седмица N от M" - the M just changed.
-      queryClient.invalidateQueries({ queryKey: queryKeys.today })
-    },
+  const refresh = () => {
+    queryClient.invalidateQueries({ queryKey: queryKeys.program(programId) })
+    queryClient.invalidateQueries({ queryKey: queryKeys.programReview(programId) })
+    queryClient.invalidateQueries({ queryKey: queryKeys.programs })
+    // Today reads the same prescription: week count, sets and rep ranges all show there.
+    queryClient.invalidateQueries({ queryKey: queryKeys.today })
+  }
+
+  const extend = useMutation({ mutationFn: () => programsApi.extend(programId), onSuccess: refresh })
+
+  const intensify = useMutation({
+    mutationFn: () => programsApi.intensifyExercise(programId, review.exercise_name ?? ''),
+    onSuccess: refresh,
   })
+
+  const adjustMuscle = useMutation({
+    mutationFn: () => programsApi.adjustMuscle(programId, review.muscle_group ?? ''),
+    onSuccess: refresh,
+  })
+
+  const applied = intensify.data ?? adjustMuscle.data
+  const applyError = intensify.error ?? adjustMuscle.error
 
   const muscle = muscleLabel(review.muscle_group)
   const title =
@@ -89,6 +101,40 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
         <Link to="/check-in" className="btn-outline mt-3 w-full">
           Направи чек-ин
         </Link>
+      )}
+
+      {applied && <p className="mt-3 text-sm text-ok-400">{applied.summary_bg}</p>}
+      {applyError && (
+        <div className="mt-3">
+          <ErrorNote error={applyError} />
+        </div>
+      )}
+
+      {/* Intensifying is the first of the two options the course gives for a single
+          stalled lift; replacing it is the other, and lives on the exercise itself. */}
+      {review.action === 'adjust_exercise' && review.new_rep_target && (
+        <button
+          type="button"
+          onClick={() => intensify.mutate()}
+          disabled={intensify.isPending}
+          className="btn-primary mt-3 w-full"
+        >
+          {intensify.isPending ? 'Прилагам…' : `Свали целта до ${review.new_rep_target} повторения`}
+        </button>
+      )}
+
+      {review.action === 'adjust_muscle' && review.muscle_group && (
+        <button
+          type="button"
+          onClick={() => adjustMuscle.mutate()}
+          disabled={adjustMuscle.isPending}
+          className="btn-primary mt-3 w-full"
+        >
+          {/* Not "raise the frequency": the backend raises it only if the week has room
+              for another session, and otherwise adds a set, so the label cannot promise
+              which of the two happens. */}
+          {adjustMuscle.isPending ? 'Прилагам…' : `Приложи промяната за ${muscle}`}
+        </button>
       )}
 
       {(review.action === 'adjust_exercise' || review.action === 'adjust_muscle') &&
