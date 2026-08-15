@@ -24,6 +24,8 @@ export function CheckInPage() {
   const today = useQuery({ queryKey: queryKeys.today, queryFn: workoutsApi.today, retry: false })
 
   const submit = useMutation({
+    // Six answered questions; the failure belongs under the button that lost them.
+    meta: { inlineError: true },
     mutationFn: (complete: FatigueAnswers) =>
       programsApi.submitFatigue(today.data!.program_id, {
         week_number: today.data!.week_number,

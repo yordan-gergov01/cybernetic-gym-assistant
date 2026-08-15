@@ -2,7 +2,15 @@ import { useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useNavigate } from 'react-router-dom'
 import { SubPageHeader } from '../components/layout/SubPageHeader'
-import { ErrorNote, Icon, ListRow, Loading, SectionHeader, Sheet } from '../components/ui'
+import {
+  ErrorNote,
+  Icon,
+  ListRow,
+  SectionHeader,
+  Sheet,
+  Skeleton,
+  SkeletonList,
+} from '../components/ui'
 import { goalLabel } from '../constants/goals'
 import { queryKeys } from '../constants/query-keys'
 import { AlternativesSheet } from '../features/exercises/AlternativesSheet'
@@ -39,7 +47,7 @@ export function ProgramPage() {
         <SubPageHeader title="Програма" />
         <main className="mx-auto max-w-lg px-4 pt-4 pb-12">
           {programs.isLoading ? (
-            <Loading />
+            <SkeletonList rows={4} />
           ) : programs.error ? (
             <ErrorNote error={programs.error} onRetry={() => programs.refetch()} />
           ) : (
@@ -96,7 +104,7 @@ function ProgramDetail({ programId }: { programId: string }) {
       <div className="min-h-dvh bg-ink-950">
         <SubPageHeader title="Програма" />
         <main className="mx-auto max-w-lg px-4 pt-4 pb-12">
-          <Loading />
+          <SkeletonList rows={4} />
         </main>
       </div>
     )
@@ -128,13 +136,13 @@ function ProgramDetail({ programId }: { programId: string }) {
   const currentWeek = isCurrent ? (today.data?.week_number ?? null) : null
   const shownWeek = openWeek === undefined ? (currentWeek ?? 1) : openWeek
 
+  const openDay = plan.weeks.flatMap((week) => week.days).find((day) => day.id === openDayId) ?? null
+  const openExercise = openDay?.exercises.find((e) => e.id === openExerciseId) ?? null
+
   // A program is a rotation, not a calendar: the backend always serves the first week's
   // days and advances one slot per logged session (services/training_week.py), so every
   // logged session sits on a week-1 day row no matter which week it happened in. That
   // makes the session count - not the day id - what says how far the plan has been run.
-  const openDay = plan.weeks.flatMap((week) => week.days).find((day) => day.id === openDayId) ?? null
-  const openExercise = openDay?.exercises.find((e) => e.id === openExerciseId) ?? null
-
   const sessionsDone = (logs.data ?? []).filter((log) => log.program_id === plan.id).length
   const dayStatus = (weekNumber: number, slot: number) => {
     const position = (weekNumber - 1) * perWeek + slot
@@ -149,7 +157,7 @@ function ProgramDetail({ programId }: { programId: string }) {
 
       <main className="mx-auto max-w-lg px-4 pt-4 pb-12">
         {review.isLoading ? (
-          <Loading />
+          <Skeleton className="h-36 w-full rounded-2xl" />
         ) : review.error ? (
           <ErrorNote error={review.error} onRetry={() => review.refetch()} />
         ) : (
@@ -188,11 +196,6 @@ function ProgramDetail({ programId }: { programId: string }) {
 
         {plan.status === 'active' && (
           <div className="mt-8">
-            {archive.error && (
-              <div className="mb-3">
-                <ErrorNote error={archive.error} />
-              </div>
-            )}
             {confirmArchive ? (
               <div className="space-y-2">
                 <p className="text-sm text-chalk-300">

@@ -31,6 +31,9 @@ export function useWorkoutLogger({
   const [entries, setEntries] = useState<Record<string, SetEntry[]>>({})
 
   const logWorkout = useMutation({
+    // A whole session's sets are in this call; if saving fails the user has to see it
+    // while the numbers are still on screen, not after a strip has faded.
+    meta: { inlineError: true },
     mutationFn: workoutsApi.logWorkout,
     onSuccess: () => {
       setEntries({})

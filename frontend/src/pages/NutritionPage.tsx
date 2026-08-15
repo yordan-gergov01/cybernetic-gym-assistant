@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { Screen } from '../components/layout/Screen'
-import { EmptyState, ErrorNote, Icon, Loading, SectionHeader } from '../components/ui'
+import { EmptyState, ErrorNote, Icon, SectionHeader, SkeletonList } from '../components/ui'
 import { mealForHour } from '../constants/nutrition'
 import { queryKeys } from '../constants/query-keys'
 import { nutritionApi } from '../features/nutrition/api'
@@ -49,7 +49,7 @@ export function NutritionPage() {
     return (
       <Screen title="Храна" actions={HEADER_ACTIONS}>
         {strip}
-        <Loading />
+        <SkeletonList rows={3} />
       </Screen>
     )
   }
@@ -73,18 +73,8 @@ export function NutritionPage() {
 
       <SectionHeader title="Бързо добавяне" />
       <QuickAddForm onSubmit={(text) => logFood.mutate(text)} isPending={logFood.isPending} />
-      {logFood.error && (
-        <div className="mt-3">
-          <ErrorNote error={logFood.error} />
-        </div>
-      )}
 
       <SectionHeader title="Днешните хранения" />
-      {deleteEntry.error && (
-        <div className="mb-3">
-          <ErrorNote error={deleteEntry.error} />
-        </div>
-      )}
       {entries.length === 0 ? (
         <EmptyState
           title="Още нищо за днес."

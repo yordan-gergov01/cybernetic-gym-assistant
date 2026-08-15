@@ -7,7 +7,7 @@ import {
   ErrorNote,
   Icon,
   ListRow,
-  Loading,
+  SkeletonList,
   SectionHeader,
 } from '../components/ui'
 import { queryKeys } from '../constants/query-keys'
@@ -68,12 +68,11 @@ export function ProgressPage() {
         <div className="mt-2">
           <WeightForm onSubmit={(kg) => logWeight.mutate(kg)} isPending={logWeight.isPending} />
         </div>
-        {logWeight.error && <ErrorNote error={logWeight.error} />}
       </section>
 
       <SectionHeader title="Тегло и тренд" />
       {trend.isLoading ? (
-        <Loading />
+        <SkeletonList rows={2} />
       ) : trend.error ? (
         <ErrorNote error={trend.error} onRetry={() => trend.refetch()} />
       ) : data?.status === 'insufficient_data' ? (
@@ -144,7 +143,7 @@ export function ProgressPage() {
 
       <SectionHeader title="Прогресия на силата" />
       {strength.isLoading ? (
-        <Loading />
+        <SkeletonList rows={3} lead={false} />
       ) : strength.error ? (
         <ErrorNote error={strength.error} onRetry={() => strength.refetch()} />
       ) : (

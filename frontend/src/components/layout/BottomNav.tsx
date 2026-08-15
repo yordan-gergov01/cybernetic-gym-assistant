@@ -3,10 +3,12 @@ import { NAV_ITEMS } from '../../constants/navigation'
 import { Icon, type IconName } from '../ui'
 
 /** Primary destinations sit in the thumb arc - the only comfortably reachable zone
- *  when the phone is held one-handed in the gym. */
+ *  when the phone is held one-handed in the gym.
+ *
+ *  Pinned by AppShell, not by itself, so the offline strip can share the same stack. */
 export function BottomNav() {
   return (
-    <nav className="safe-bottom fixed inset-x-0 bottom-0 z-40 border-t border-ink-700 bg-ink-900/95 backdrop-blur">
+    <nav className="safe-bottom border-t border-ink-700 bg-ink-900/95 backdrop-blur">
       <div className="mx-auto flex max-w-lg">
         {NAV_ITEMS.map((item) => (
           <NavLink

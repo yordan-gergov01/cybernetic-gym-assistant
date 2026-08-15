@@ -38,22 +38,46 @@ export class ApiError extends Error {
   }
 }
 
-type RequestOptions = Omit<RequestInit, 'body'> & { body?: unknown }
+type RequestOptions = Omit<RequestInit, 'body'> & { body?: unknown; timeoutMs?: number }
+
+/** A request that hangs is worse than one that fails: in the gym the user is left
+ *  staring at a spinner between sets with no way to tell whether it is still coming. */
+export const DEFAULT_TIMEOUT_MS = 15_000
+
+/** For the endpoints that wait on a model - program generation, the body-fat read, food
+ *  estimation, the coach. Thirty seconds of thinking is normal there, not a fault. */
+export const MODEL_TIMEOUT_MS = 120_000
 
 export async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
-  const { body, headers, ...rest } = options
+  const { body, headers, timeoutMs = DEFAULT_TIMEOUT_MS, signal, ...rest } = options
   const isForm = body instanceof FormData
   const token = getToken()
 
-  const response = await fetch(`${BASE}${path}`, {
-    ...rest,
-    headers: {
-      ...(isForm || body === undefined ? {} : { 'Content-Type': 'application/json' }),
-      ...(token ? { Authorization: `Bearer ${token}` } : {}),
-      ...headers,
-    },
-    body: isForm ? body : body !== undefined ? JSON.stringify(body) : undefined,
-  })
+  const timeout = new AbortController()
+  const timer = setTimeout(() => timeout.abort(), timeoutMs)
+
+  let response: Response
+  try {
+    response = await fetch(`${BASE}${path}`, {
+      ...rest,
+      signal: signal ?? timeout.signal,
+      headers: {
+        ...(isForm || body === undefined ? {} : { 'Content-Type': 'application/json' }),
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers,
+      },
+      body: isForm ? body : body !== undefined ? JSON.stringify(body) : undefined,
+    })
+  } catch (error) {
+    // No response at all: the backend cannot describe this one, so the sentence is
+    // written here. Status 0 marks it as "never reached the API" for callers that care.
+    if (error instanceof DOMException && error.name === 'AbortError') {
+      throw new ApiError(0, 'Заявката отне твърде дълго. Провери връзката и опитай пак.')
+    }
+    throw new ApiError(0, 'Няма връзка със сървъра. Провери интернета и опитай пак.')
+  } finally {
+    clearTimeout(timer)
+  }
 
   // A 401 means two completely different things depending on where it came from. On
   // the sign-in endpoints it is "wrong email or password" and the backend already says
@@ -84,10 +108,15 @@ export async function request<T>(path: string, options: RequestOptions = {}): Pr
   return response.json() as Promise<T>
 }
 
+type Options = { timeoutMs?: number }
+
 export const http = {
-  get: <T>(path: string) => request<T>(path),
-  post: <T>(path: string, body?: unknown) => request<T>(path, { method: 'POST', body }),
-  put: <T>(path: string, body?: unknown) => request<T>(path, { method: 'PUT', body }),
-  patch: <T>(path: string, body?: unknown) => request<T>(path, { method: 'PATCH', body }),
-  delete: <T>(path: string) => request<T>(path, { method: 'DELETE' }),
+  get: <T>(path: string, options?: Options) => request<T>(path, options),
+  post: <T>(path: string, body?: unknown, options?: Options) =>
+    request<T>(path, { ...options, method: 'POST', body }),
+  put: <T>(path: string, body?: unknown, options?: Options) =>
+    request<T>(path, { ...options, method: 'PUT', body }),
+  patch: <T>(path: string, body?: unknown, options?: Options) =>
+    request<T>(path, { ...options, method: 'PATCH', body }),
+  delete: <T>(path: string, options?: Options) => request<T>(path, { ...options, method: 'DELETE' }),
 }

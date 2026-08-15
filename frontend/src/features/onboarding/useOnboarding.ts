@@ -93,6 +93,9 @@ export function useOnboarding(onDone: () => void) {
   }, [])
 
   const save = useMutation({
+    // Sixteen steps of answers ride on this call, so the failure stays on the screen
+    // next to the button instead of in a strip that fades.
+    meta: { inlineError: true },
     mutationFn: (payload: ProfileCreate) => profileApi.update(payload),
     onSuccess: () => {
       localStorage.removeItem(DRAFT_KEY)

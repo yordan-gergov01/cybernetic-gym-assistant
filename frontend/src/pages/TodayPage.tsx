@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Screen } from '../components/layout/Screen'
 import { splitLabel } from '../constants/navigation'
-import { ErrorNote, ListRow, Loading, SectionHeader, Tag } from '../components/ui'
+import { ErrorNote, ListRow, SectionHeader, SkeletonList, Tag } from '../components/ui'
 import { muscleLabel } from '../constants/muscles'
 import { prescriptionLong } from '../features/programs/prescription'
 import { StartProgramCard } from '../features/programs/StartProgramCard'
@@ -25,7 +25,7 @@ export function TodayPage() {
   if (today.isLoading) {
     return (
       <Screen title="Днес" actions={HEADER_ACTIONS}>
-        <Loading />
+        <SkeletonList rows={5} />
       </Screen>
     )
   }

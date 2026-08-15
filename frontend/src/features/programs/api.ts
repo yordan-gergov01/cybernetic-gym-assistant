@@ -1,4 +1,4 @@
-import { http } from '../../services/httpClient'
+import { http, MODEL_TIMEOUT_MS } from '../../services/httpClient'
 import type {
   FatigueAnswers,
   FatigueAssessment,
@@ -25,8 +25,12 @@ export const programsApi = {
     http.post<ProgramAdjustment>(`/programs/${id}/exercises/intensify`, { exercise_name: exerciseName }),
   adjustMuscle: (id: string, muscleGroup: string) =>
     http.post<ProgramAdjustment>(`/programs/${id}/muscles/adjust`, { muscle_group: muscleGroup }),
+  /** Designing a whole program takes the model 20-40 seconds; the default timeout would
+   *  cut it off mid-answer and leave the user with nothing. */
   generate: (totalWeeks = 8) =>
-    http.post<Program>('/programs/generate', { total_weeks: totalWeeks }),
+    http.post<Program>('/programs/generate', { total_weeks: totalWeeks }, {
+      timeoutMs: MODEL_TIMEOUT_MS,
+    }),
   recalculate: () => http.post<Profile>('/profile/recalculate'),
   /** The deload decision is made by the backend from these answers, never here. */
   submitFatigue: (programId: string, payload: { week_number: number; answers: FatigueAnswers }) =>

@@ -1,6 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { SubPageHeader } from '../components/layout/SubPageHeader'
-import { EmptyState, ErrorNote, Icon, ListRow, Loading, type IconName } from '../components/ui'
+import { EmptyState, ErrorNote, Icon, ListRow, SkeletonList, type IconName } from '../components/ui'
 import { notificationsApi } from '../features/notifications/api'
 import { formatRelativeTime } from '../utils/date'
 
@@ -43,7 +43,7 @@ export function NotificationsPage() {
 
       <main className="mx-auto max-w-lg px-4 pt-4 pb-10">
         {list.isLoading ? (
-          <Loading />
+          <SkeletonList rows={4} lead={false} />
         ) : list.error ? (
           <ErrorNote error={list.error} onRetry={() => list.refetch()} />
         ) : !items.length ? (
@@ -67,12 +67,6 @@ export function NotificationsPage() {
                 }
               />
             ))}
-          </div>
-        )}
-
-        {markAll.error && (
-          <div className="mt-4">
-            <ErrorNote error={markAll.error} />
           </div>
         )}
       </main>

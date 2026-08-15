@@ -48,6 +48,8 @@ export function AlternativesSheet({
   })
 
   const swap = useMutation({
+    // The sheet covers the bottom of the screen, which is where a toast would appear.
+    meta: { inlineError: true },
     mutationFn: (replacement: string) =>
       programsApi.swapExercise(programId, { exercise_name: name, replacement_name: replacement }),
     onSuccess: () => {

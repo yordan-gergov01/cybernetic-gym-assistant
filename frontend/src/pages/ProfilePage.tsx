@@ -4,8 +4,8 @@ import {
   ErrorNote,
   Icon,
   ListRow,
-  Loading,
   SectionHeader,
+  SkeletonList,
   StatBox,
   Tag,
 } from '../components/ui'
@@ -46,7 +46,9 @@ export function ProfilePage() {
     return (
       <div className="min-h-dvh bg-ink-950">
         <SubPageHeader title="Профил" />
-        <Loading />
+        <main className="mx-auto max-w-lg px-4 pt-4">
+          <SkeletonList rows={5} />
+        </main>
       </div>
     )
   }
@@ -103,11 +105,6 @@ export function ProfilePage() {
           >
             {recalculate.isPending ? 'Преизчисляваме…' : 'Преизчисли'}
           </button>
-          {recalculate.error && (
-            <div className="mt-3">
-              <ErrorNote error={recalculate.error} />
-            </div>
-          )}
         </section>
 
         <SectionHeader title="Данни" />

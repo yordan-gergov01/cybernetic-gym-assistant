@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
-import { Callout, ErrorNote, type CalloutTone } from '../../components/ui'
+import { Callout, type CalloutTone } from '../../components/ui'
 import { muscleLabel } from '../../constants/muscles'
 import { queryKeys } from '../../constants/query-keys'
 import type { ProgramAction, ProgramReview } from '../../types/api'
@@ -55,8 +55,9 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
     onSuccess: refresh,
   })
 
+  // Failures reach the user as a toast (see main.tsx); what has to stay on the card is
+  // the change that succeeded, because it describes the program from now on.
   const applied = intensify.data ?? adjustMuscle.data
-  const applyError = intensify.error ?? adjustMuscle.error
 
   const muscle = muscleLabel(review.muscle_group)
   const title =
@@ -80,21 +81,14 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
       </p>
 
       {review.action === 'extend' && (
-        <>
-          {extend.error && (
-            <div className="mt-3">
-              <ErrorNote error={extend.error} />
-            </div>
-          )}
-          <button
-            type="button"
-            onClick={() => extend.mutate()}
-            disabled={extend.isPending}
-            className="btn-primary mt-3 w-full"
-          >
-            {extend.isPending ? 'Удължавам…' : 'Удължи с 1 седмица'}
-          </button>
-        </>
+        <button
+          type="button"
+          onClick={() => extend.mutate()}
+          disabled={extend.isPending}
+          className="btn-primary mt-3 w-full"
+        >
+          {extend.isPending ? 'Удължавам…' : 'Удължи с 1 седмица'}
+        </button>
       )}
 
       {review.action === 'check_recovery' && (
@@ -104,11 +98,6 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
       )}
 
       {applied && <p className="mt-3 text-sm text-ok-400">{applied.summary_bg}</p>}
-      {applyError && (
-        <div className="mt-3">
-          <ErrorNote error={applyError} />
-        </div>
-      )}
 
       {/* Intensifying is the first of the two options the course gives for a single
           stalled lift; replacing it is the other, and lives on the exercise itself. */}

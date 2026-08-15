@@ -16,11 +16,15 @@ export function StartProgramCard() {
   const energy = profile.data?.calculator_results?.energy
 
   const recalculate = useMutation({
+    meta: { inlineError: true },
     mutationFn: programsApi.recalculate,
     onSuccess: () => queryClient.invalidateQueries({ queryKey: queryKeys.profile }),
   })
 
   const generate = useMutation({
+    // A minute of waiting can end here; the card the user was watching is where the
+    // answer has to appear, whether it worked or not.
+    meta: { inlineError: true },
     mutationFn: () => programsApi.generate(8),
     onSuccess: () => {
       // Today reads /workouts/today, not the programs list. Without invalidating it the

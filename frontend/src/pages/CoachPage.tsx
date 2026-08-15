@@ -49,7 +49,6 @@ export function CoachPage() {
         ))}
 
         {send.isPending && <TypingBubble />}
-        {send.error && <ErrorNote error={send.error} />}
         <div ref={endRef} />
       </div>
 

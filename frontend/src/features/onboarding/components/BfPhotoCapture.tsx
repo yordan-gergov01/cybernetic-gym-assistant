@@ -27,6 +27,9 @@ export function BfPhotoCapture({
   const [pending, setPending] = useState<PhotoAngle | null>(null)
 
   const upload = useMutation({
+    // This step is inside the wizard: the slot that failed is the only thing that says
+    // which photo has to be taken again.
+    meta: { inlineError: true },
     mutationFn: ({ file, angle }: { file: File; angle: PhotoAngle }) => photosApi.upload(file, angle),
     onMutate: ({ angle }) => setPending(angle),
     onSettled: () => setPending(null),
@@ -39,6 +42,7 @@ export function BfPhotoCapture({
   })
 
   const assess = useMutation({
+    meta: { inlineError: true },
     mutationFn: () =>
       photosApi.assessBf({
         photo_ids: photos.map((p) => p.id),
