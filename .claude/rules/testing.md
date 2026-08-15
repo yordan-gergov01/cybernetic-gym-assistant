@@ -15,6 +15,19 @@ pure functions, so they are cheap to test and expensive to get wrong:
 Do **not** write tests that assert an LLM's exact wording. Grounded-answer quality is
 measured separately by `evaluation/offline_eval.py` against the golden dataset.
 
+## Against a database
+
+`tests/integration/` runs on real PostgreSQL — the database named by `TEST_DATABASE_URL`
+(default: `DATABASE_URL` + `_test`), which is created on first run and has every table
+dropped and rebuilt at the start of a session. Each test lives inside a transaction that
+is rolled back, so the services can commit exactly as they do in production. With no
+server reachable the package skips with a reason; the pure-function suite still runs.
+
+Put a test here only when the database *is* the thing under test: which rows a query
+picks (first work set, no warm-ups), whether a change reaches every week, and who is
+allowed to touch what. Rules stay in `domain/` with pure tests — an integration test that
+re-checks a threshold is slow duplication.
+
 ## How to write them
 
 - **Assert intent, not arithmetic** (CLAUDE.md rule #9). Test that "RIR above target

@@ -25,6 +25,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
 
     DATABASE_URL: str
+    # Database the integration tests build and tear down. Empty means "the main one with
+    # a _test suffix", so a fresh checkout needs no extra setup; it is never the app's
+    # own database, because the tests drop every table in it.
+    TEST_DATABASE_URL: str = ""
 
     OPENAI_API_KEY: str
     GEMINI_API_KEY: str = ""
