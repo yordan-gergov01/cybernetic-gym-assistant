@@ -8,6 +8,7 @@ import { profileApi } from '../features/onboarding/api'
 import { CheckInPage } from '../pages/CheckInPage'
 import { CoachPage } from '../pages/CoachPage'
 import { ExercisesPage } from '../pages/ExercisesPage'
+import { ForgotPasswordPage } from '../pages/ForgotPasswordPage'
 import { LandingPage } from '../pages/LandingPage'
 import { LoginPage } from '../pages/LoginPage'
 import { NotificationsPage } from '../pages/NotificationsPage'
@@ -18,6 +19,7 @@ import { ProfilePage } from '../pages/ProfilePage'
 import { ProgramPage } from '../pages/ProgramPage'
 import { ProgressPage } from '../pages/ProgressPage'
 import { RegisterPage } from '../pages/RegisterPage'
+import { ResetPasswordPage } from '../pages/ResetPasswordPage'
 import { TodayPage } from '../pages/TodayPage'
 
 /** A profile row is created empty at registration, so "has a profile" is not enough —
@@ -92,6 +94,10 @@ export function AppRouter() {
           />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          {/* Reachable only while signed out - which is the state a forgotten password
+              leaves you in. Someone already signed in changes it from the profile. */}
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+          <Route path="/reset-password" element={<ResetPasswordPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       )}

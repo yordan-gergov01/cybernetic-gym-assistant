@@ -12,6 +12,21 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
+class ForgotPasswordRequest(BaseModel):
+    email: EmailStr
+
+class ResetPasswordRequest(BaseModel):
+    token: str
+    new_password: str = Field(min_length=8)
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str = Field(min_length=8)
+
+class MessageResponse(BaseModel):
+    """A plain sentence for the user - used where there is nothing else to return."""
+    detail: str
+
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str = "bearer"

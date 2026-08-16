@@ -70,6 +70,20 @@ class Settings(BaseSettings):
         description="Comma-separated origins for FastAPI CORSMiddleware",
     )
 
+    # Where the app is reached from, used to build the link in a password-reset email.
+    # It has to be the frontend origin, not the API's - the link opens a screen.
+    FRONTEND_URL: str = "http://localhost:5173"
+
+    # Password reset. Short-lived on purpose: the link is a temporary key to the account,
+    # and mailboxes are not a safe place to leave one lying around.
+    PASSWORD_RESET_TTL_MINUTES: int = 60
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USER: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_FROM: str = ""
+    SMTP_STARTTLS: bool = True
+
     VECTORSTORE_DIR: str = "data/vectorstore"
     FAISS_INDEX_FILE: str = "henselmans_openai.index"
     FAISS_METADATA_FILE: str = "henselmans_openai_metadata.json"
@@ -96,6 +110,15 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [x.strip() for x in self.CORS_ORIGINS.split(",") if x.strip()]
+
+    @property
+    def smtp_configured(self) -> bool:
+        """Whether a reset email can actually be delivered.
+
+        Without a host there is no mail server to hand the message to; the reset flow
+        stays available either way, but says so in the log instead of pretending.
+        """
+        return bool(self.SMTP_HOST and self.SMTP_FROM)
 
     @property
     def r2_configured(self) -> bool:

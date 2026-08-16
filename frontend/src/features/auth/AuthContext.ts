@@ -7,6 +7,8 @@ export type AuthState = {
   name: string | null
   login: (email: string, password: string) => Promise<void>
   register: (email: string, password: string, name: string) => Promise<void>
+  /** Sets a new password from an emailed link and starts the session it returns. */
+  resetPassword: (token: string, newPassword: string) => Promise<void>
   logout: () => void
 }
 

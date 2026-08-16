@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { SubPageHeader } from '../components/layout/SubPageHeader'
 import {
@@ -12,6 +13,7 @@ import {
 import { queryKeys } from '../constants/query-keys'
 import { muscleLabel } from '../constants/muscles'
 import { useAuth } from '../features/auth/useAuth'
+import { ChangePasswordSheet } from '../features/auth/ChangePasswordSheet'
 import { profileApi } from '../features/onboarding/api'
 import { programsApi } from '../features/programs/api'
 import { formatKcal, formatGrams, formatWeight } from '../utils/format'
@@ -33,6 +35,7 @@ export function ProfilePage() {
   const { name, logout } = useAuth()
   const queryClient = useQueryClient()
   const profile = useQuery({ queryKey: queryKeys.profile, queryFn: profileApi.get })
+  const [changingPassword, setChangingPassword] = useState(false)
 
   const recalculate = useMutation({
     mutationFn: programsApi.recalculate,
@@ -143,6 +146,17 @@ export function ProfilePage() {
             <span className="text-chalk-300">Език</span>
             <span className="text-chalk-500">Български</span>
           </div>
+          <button
+            type="button"
+            onClick={() => setChangingPassword(true)}
+            className="tap flex w-full items-center justify-between gap-3 text-left"
+          >
+            <span className="text-chalk-300">Парола</span>
+            <span className="flex items-center gap-1 font-semibold text-volt-400">
+              Смени
+              <Icon name="chevronRight" size={16} />
+            </span>
+          </button>
           <p className="flex items-center gap-2 text-xs text-chalk-500">
             <Icon name="info" size={14} />
             Инсталирай приложението от менюто на браузъра си.
@@ -153,6 +167,8 @@ export function ProfilePage() {
           Изход
         </button>
       </main>
+
+      <ChangePasswordSheet open={changingPassword} onClose={() => setChangingPassword(false)} />
     </div>
   )
 }

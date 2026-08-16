@@ -33,6 +33,25 @@ class User(Base):
     photos: Mapped[list["UserPhoto"]] = relationship(back_populates="user")
 
 
+class PasswordResetToken(Base):
+    """A one-time key to an account, sent by email.
+
+    Only a hash of the token is stored, for the same reason passwords are: whoever reads
+    this table must not be able to walk into the accounts it belongs to. The row is kept
+    after use so a link cannot be replayed.
+    """
+
+    __tablename__ = "password_reset_tokens"
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=new_uuid)
+    user_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), index=True)
+    token_hash: Mapped[str] = mapped_column(String(64), unique=True, nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(_TS, nullable=False)
+    used_at: Mapped[datetime | None] = mapped_column(_TS)
+    created_at: Mapped[datetime] = mapped_column(_TS, default=datetime.utcnow)
+
+    user: Mapped["User"] = relationship()
+
+
 class UserProfile(Base):
     __tablename__ = "user_profiles"
     id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=new_uuid)

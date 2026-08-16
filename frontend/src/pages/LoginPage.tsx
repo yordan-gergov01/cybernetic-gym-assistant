@@ -12,12 +12,19 @@ export function LoginPage() {
       eyebrow={sessionExpired ? 'Сесията изтече' : 'Добре дошъл обратно'}
       title="Влез"
       footer={
-        <p className="text-center text-sm text-chalk-500">
-          Нямаш профил?{' '}
-          <Link to="/register" className="font-semibold text-volt-400">
-            Създай профил
-          </Link>
-        </p>
+        <div className="space-y-3 text-center text-sm text-chalk-500">
+          <p>
+            <Link to="/forgot-password" className="font-semibold text-volt-400">
+              Забравена парола?
+            </Link>
+          </p>
+          <p>
+            Нямаш профил?{' '}
+            <Link to="/register" className="font-semibold text-volt-400">
+              Създай профил
+            </Link>
+          </p>
+        </div>
       }
     >
       {sessionExpired && (

@@ -42,6 +42,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [persist],
   )
 
+  const resetPassword = useCallback(
+    async (token: string, newPassword: string) =>
+      persist(await authApi.resetPassword(token, newPassword)),
+    [persist],
+  )
+
   // The onboarding draft is deliberately left alone: it is the user's unsaved work, and
   // signing out - or being signed out - must not throw it away.
   const logout = useCallback(() => {
@@ -53,8 +59,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const value = useMemo(
-    () => ({ isAuthed, sessionExpired, name, login, register, logout }),
-    [isAuthed, sessionExpired, name, login, register, logout],
+    () => ({ isAuthed, sessionExpired, name, login, register, resetPassword, logout }),
+    [isAuthed, sessionExpired, name, login, register, resetPassword, logout],
   )
 
   return <AuthContext value={value}>{children}</AuthContext>

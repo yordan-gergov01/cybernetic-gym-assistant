@@ -1,5 +1,6 @@
 import base64
 import hashlib
+import secrets
 from datetime import datetime, timedelta
 
 import bcrypt
@@ -33,6 +34,22 @@ def verify_password(plain: str, hashed: str) -> bool:
     except ValueError:
         # Malformed or truncated hash in the database — treat as a failed login.
         return False
+
+
+def new_reset_token() -> tuple[str, str]:
+    """A password-reset token and the hash to store for it.
+
+    The raw token goes in the email and is never written down; the database only gets
+    the hash, so a leaked table cannot be used to take over accounts. SHA-256 is enough
+    here, unlike for passwords: this secret is 32 random bytes, not something a person
+    chose, so there is nothing to brute-force.
+    """
+    raw = secrets.token_urlsafe(32)
+    return raw, hash_reset_token(raw)
+
+
+def hash_reset_token(raw: str) -> str:
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()
 
 
 def create_access_token(user_id: str) -> str:
