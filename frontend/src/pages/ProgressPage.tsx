@@ -10,6 +10,7 @@ import {
   SkeletonList,
   SectionHeader,
 } from '../components/ui'
+import { STRENGTH_WEEKS, TREND_RANGES } from '../constants/history'
 import { queryKeys } from '../constants/query-keys'
 import { photosApi } from '../features/photos/api'
 import { progressApi } from '../features/progress/api'
@@ -21,17 +22,6 @@ import { WeightForm } from '../features/progress/WeightForm'
 import { profileApi } from '../features/onboarding/api'
 import { todayIso } from '../utils/date'
 import { formatRateMagnitude, formatWeight } from '../utils/format'
-
-/** Windows offered for the trend. The chart and the rate always describe the same
- *  period, because the window is applied on the backend before the trend is computed. */
-const RANGES = [
-  { label: '1 мес', days: 30 },
-  { label: '3 мес', days: 90 },
-  { label: '6 мес', days: 180 },
-  { label: 'Всичко', days: 0 },
-]
-
-const STRENGTH_WEEKS = 4
 
 export function ProgressPage() {
   const queryClient = useQueryClient()
@@ -107,7 +97,7 @@ export function ProgressPage() {
           </p>
 
           <div className="mt-4 flex flex-wrap gap-2">
-            {RANGES.map((range) => (
+            {TREND_RANGES.map((range) => (
               <Chip
                 key={range.days}
                 label={range.label}
@@ -135,11 +125,7 @@ export function ProgressPage() {
           </Link>
         }
       />
-      <BodyCompositionCard
-        bodyFatPct={profile.data?.body_fat_pct}
-        method={profile.data?.bf_assessment_method}
-        photos={photos.data ?? []}
-      />
+      <BodyCompositionCard bodyFatPct={profile.data?.body_fat_pct} photos={photos.data ?? []} />
 
       <SectionHeader title="Прогресия на силата" />
       {strength.isLoading ? (

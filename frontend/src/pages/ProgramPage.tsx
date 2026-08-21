@@ -12,6 +12,7 @@ import {
   SkeletonList,
 } from '../components/ui'
 import { goalLabel } from '../constants/goals'
+import { PROGRAM_LOG_WINDOW } from '../constants/history'
 import { queryKeys } from '../constants/query-keys'
 import { AlternativesSheet } from '../features/exercises/AlternativesSheet'
 import { programsApi } from '../features/programs/api'
@@ -23,11 +24,6 @@ import { WeekAccordion } from '../features/programs/WeekAccordion'
 import { workoutsApi } from '../features/workouts/api'
 import { useToday } from '../features/workouts/useWorkoutLogger'
 import type { ProgramWeek } from '../types/api'
-
-/** How far back the logged-sessions lookup reaches. A program is capped at 20 weeks, so
- *  200 sessions covers a whole program at any realistic frequency; only how many of them
- *  belong to this program is read. */
-const LOG_WINDOW = 200
 
 /** Sessions per week, from the plan itself - the program carries no such field, and a
  *  number that disagreed with the days listed below it would be worse than none. */
@@ -74,8 +70,8 @@ function ProgramDetail({ programId }: { programId: string }) {
     queryFn: () => programsApi.review(programId),
   })
   const logs = useQuery({
-    queryKey: queryKeys.workoutLogs(LOG_WINDOW),
-    queryFn: () => workoutsApi.list(LOG_WINDOW),
+    queryKey: queryKeys.workoutLogs(PROGRAM_LOG_WINDOW),
+    queryFn: () => workoutsApi.list(PROGRAM_LOG_WINDOW),
   })
   const today = useToday()
 
@@ -169,7 +165,7 @@ function ProgramDetail({ programId }: { programId: string }) {
             <SectionHeader title="Прогрес по упражнения" />
             <ExerciseProgressList
               exercises={review.data.exercises}
-              breakers={review.data.breakers}
+              techniques={review.data.techniques}
               skipped={review.data.skipped_exercises}
             />
           </>

@@ -1,4 +1,5 @@
 /** Date helpers. The API speaks ISO dates (YYYY-MM-DD) everywhere. */
+import { MONTHS_BG, WEEKDAYS_BG, WEEKDAYS_SHORT_BG } from '../constants/calendar'
 
 /** Today in the user's local timezone - not UTC, or logging after 02:00 lands on the wrong day. */
 export const todayIso = (): string => {
@@ -7,12 +8,6 @@ export const todayIso = (): string => {
   return new Date(now.getTime() - offsetMs).toISOString().slice(0, 10)
 }
 
-const WEEKDAYS_BG = ['неделя', 'понеделник', 'вторник', 'сряда', 'четвъртък', 'петък', 'събота']
-const WEEKDAYS_SHORT_BG = ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
-const MONTHS_BG = [
-  'януари', 'февруари', 'март', 'април', 'май', 'юни',
-  'юли', 'август', 'септември', 'октомври', 'ноември', 'декември',
-]
 
 export const formatDayLabel = (iso: string): string => {
   const d = new Date(`${iso}T00:00:00`)

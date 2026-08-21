@@ -138,6 +138,9 @@ async def _wipe(db, user_id: str) -> None:
 async def _ensure_user(db, email: str) -> User:
     user = (await db.execute(select(User).where(User.email == email))).scalar_one_or_none()
     if user:
+        # Reset it on every run: the script prints these credentials as fact, and after
+        # anyone has changed the password through the app they stopped being true.
+        user.hashed_password = hash_password(DEMO_PASSWORD)
         return user
     user = User(email=email, hashed_password=hash_password(DEMO_PASSWORD), name="Мартин")
     db.add(user)

@@ -2,8 +2,10 @@
 // Attaches the JWT, turns error responses into real Error objects (so TanStack Query
 // can surface them), and clears the session on 401 instead of failing silently.
 
+import { STORAGE_KEYS } from '../constants/storage'
+
 const BASE = '/api/v1'
-const TOKEN_KEY = 'cga_token'
+const TOKEN_KEY = STORAGE_KEYS.token
 
 export const getToken = () => localStorage.getItem(TOKEN_KEY)
 export const setToken = (token: string) => localStorage.setItem(TOKEN_KEY, token)

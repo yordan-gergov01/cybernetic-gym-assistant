@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react'
 import { clearToken, getToken, onSessionExpired, setToken } from '../../services/httpClient'
 import type { AuthResponse } from '../../types/api'
+import { STORAGE_KEYS } from '../../constants/storage'
 import { authApi } from './api'
 import { AuthContext } from './AuthContext'
 
-const NAME_KEY = 'cga_name'
+const NAME_KEY = STORAGE_KEYS.name
+
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAuthed, setIsAuthed] = useState(() => !!getToken())

@@ -1,7 +1,6 @@
 import { Icon } from '../../components/ui'
+import { WEEK_STRIP_LABELS } from '../../constants/calendar'
 import type { CalendarDay } from '../../types/api'
-
-const DAY_LABELS = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'НД']
 
 /** The current week at a glance: which days were trained, and which one is today.
  *
@@ -20,7 +19,7 @@ export function WeekStrip({ days }: { days: CalendarDay[] }) {
           }`}
         >
           <div className={`text-[10px] font-bold tracking-wider ${day.is_today ? 'text-volt-400' : 'text-chalk-500'}`}>
-            {DAY_LABELS[index]}
+            {WEEK_STRIP_LABELS[index]}
           </div>
           <div className="mt-2 grid place-items-center">
             {day.trained ? (

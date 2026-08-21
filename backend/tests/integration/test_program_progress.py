@@ -37,18 +37,34 @@ async def test_progress_on_every_exercise_extends_the_program(db):
     assert review.decision.action == "extend"
 
 
-async def test_three_sessions_without_a_new_best_change_the_exercise(db):
+async def test_two_sessions_stuck_on_the_same_weight_change_the_exercise(db):
+    """The double plateau: the same load twice without an extra rep (p.23)."""
     user = await make_user(db)
     await make_profile(db, user)
     program = await make_program(db, user, [PUSH])
     day = (await week_days(db, program, 1))[0]
 
-    await sessions(db, user, program, day, [(100, 8), (95, 8), (95, 7), (92.5, 7)])
+    await sessions(db, user, program, day, [(100, 8), (100, 8), (100, 7)])
 
     review = await review_program(db, program)
     assert review.decision.action == "adjust_exercise"
     assert review.decision.exercise_name == "Barbell Bench Press"
     assert review.new_rep_target, "the course's first option is a lower rep target"
+
+
+async def test_one_session_stuck_does_not_touch_the_program(db):
+    user = await make_user(db)
+    await make_profile(db, user)
+    program = await make_program(db, user, [PUSH])
+    day = (await week_days(db, program, 1))[0]
+
+    await sessions(db, user, program, day, [(100, 8), (100, 8)])
+
+    review = await review_program(db, program)
+    assert review.decision.action == "break_plateau"
+    assert [t.name for t in review.techniques if t.exercise_name == "Barbell Bench Press"] == [
+        "plateau_breaker"
+    ]
 
 
 async def test_only_the_first_work_set_counts_as_the_benchmark(db):
@@ -113,5 +129,6 @@ async def test_a_missed_session_gets_a_plateau_breaker_not_a_new_program(db):
 
     review = await review_program(db, program)
     assert review.decision.action == "extend", "one missed session does not rebuild the program"
-    breaker = next(b for b in review.breakers if b.exercise_name == "Barbell Bench Press")
-    assert breaker.weight_kg > 102.5
+    breaker = next(t for t in review.techniques if t.exercise_name == "Barbell Bench Press")
+    assert breaker.name == "plateau_breaker"
+    assert breaker.how_bg and breaker.source_bg, "the advice has to carry its numbers"

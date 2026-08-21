@@ -20,7 +20,7 @@ backend/
 │   ├── services/               # business logic & orchestration
 │   ├── prompts/                # versioned prompt templates + registry
 │   └── routes/                 # HTTP layer only — no business logic
-├── evaluation/                 # golden dataset + offline RAG eval + tracked results
+├── evaluation/                 # golden dataset + offline RAG eval (runs are git-ignored)
 ├── migrations/                 # Alembic
 ├── scripts/                    # healthcheck and other operational entry points
 ├── tests/                      # unit tests for the deterministic engines

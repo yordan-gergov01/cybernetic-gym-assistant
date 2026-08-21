@@ -1,11 +1,10 @@
 import { useState, type SubmitEvent } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { Callout, Field, TextInput } from '../components/ui'
+import { PASSWORD_HINT_BG } from '../constants/auth'
 import { AuthLayout } from '../features/auth/AuthLayout'
 import { useAuth } from '../features/auth/useAuth'
 import { useAuthSubmit } from '../features/auth/useAuthSubmit'
-
-const MIN_PASSWORD_LENGTH = 8
 
 /**
  * The screen the emailed link opens.
@@ -54,7 +53,7 @@ export function ResetPasswordPage() {
     <AuthLayout
       eyebrow="Нова парола"
       title="Задай парола"
-      intro={`Поне ${MIN_PASSWORD_LENGTH} знака. След това те влизаме в профила направо.`}
+      intro={`${PASSWORD_HINT_BG}. След това те влизаме в профила направо.`}
       footer={
         <p className="text-center text-sm text-chalk-500">
           Изтекъл линк?{' '}

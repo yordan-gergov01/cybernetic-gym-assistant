@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Screen } from '../components/layout/Screen'
-import { splitLabel } from '../constants/navigation'
+import { HEADER_ACTIONS, splitLabel } from '../constants/navigation'
 import { ErrorNote, ListRow, SectionHeader, SkeletonList, Tag } from '../components/ui'
 import { muscleLabel } from '../constants/muscles'
 import { prescriptionLong } from '../features/programs/prescription'
@@ -12,19 +12,13 @@ import { useToday } from '../features/workouts/useWorkoutLogger'
 import { WeekStrip } from '../features/workouts/WeekStrip'
 import { ApiError } from '../services/httpClient'
 
-const HEADER_ACTIONS = [
-  { to: '/program', icon: 'calendar' as const, label: 'Програма' },
-  { to: '/notifications', icon: 'bell' as const, label: 'Известия' },
-  { to: '/profile', icon: 'settings' as const, label: 'Профил' },
-]
-
 export function TodayPage() {
   const today = useToday()
   const [started, setStarted] = useState(false)
 
   if (today.isLoading) {
     return (
-      <Screen title="Днес" actions={HEADER_ACTIONS}>
+      <Screen title="Днес" actions={HEADER_ACTIONS.today}>
         <SkeletonList rows={5} />
       </Screen>
     )
@@ -33,7 +27,7 @@ export function TodayPage() {
   // 404 is the honest answer for "no program yet", not an error to apologise for.
   if (today.error instanceof ApiError && today.error.status === 404) {
     return (
-      <Screen title="Днес" actions={HEADER_ACTIONS}>
+      <Screen title="Днес" actions={HEADER_ACTIONS.today}>
         <StartProgramCard />
       </Screen>
     )
@@ -41,7 +35,7 @@ export function TodayPage() {
 
   if (today.error || !today.data) {
     return (
-      <Screen title="Днес" actions={HEADER_ACTIONS}>
+      <Screen title="Днес" actions={HEADER_ACTIONS.today}>
         <ErrorNote error={today.error} onRetry={today.refetch} />
       </Screen>
     )
@@ -55,7 +49,7 @@ export function TodayPage() {
 
   if (view.is_rest_day) {
     return (
-      <Screen title="Почивен ден" subtitle={subtitle} actions={HEADER_ACTIONS}>
+      <Screen title="Почивен ден" subtitle={subtitle} actions={HEADER_ACTIONS.today}>
         <WeekStrip days={view.calendar} />
         <div className="mt-4">
           <RestDay today={view} needsWeighIn={!view.weighed_in_today} />
@@ -65,7 +59,7 @@ export function TodayPage() {
   }
 
   return (
-    <Screen title={sessionTitle} subtitle={subtitle} actions={HEADER_ACTIONS}>
+    <Screen title={sessionTitle} subtitle={subtitle} actions={HEADER_ACTIONS.today}>
       <WeekStrip days={view.calendar} />
 
       <div className="mt-4">

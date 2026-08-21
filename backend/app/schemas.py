@@ -320,14 +320,20 @@ class ExerciseProgressOut(BaseModel):
     muscle_group: Optional[str]
     status: str                      # progressing | holding | stalled | insufficient_data
     sessions_since_best: int
+    # Sessions in a row on the same weight without an extra rep. Two or more is the
+    # double plateau that justifies changing the program.
+    stalled_sessions: int = 0
     best_e1rm: Optional[float] = None
     latest_e1rm: Optional[float] = None
     change_pct: Optional[float] = None
 
-class PlateauBreakerOut(BaseModel):
+class ExerciseTechniqueOut(BaseModel):
+    """One course technique for a stalled exercise, with the numbers to act on."""
     exercise_name: str
-    weight_kg: float
-    reps: int
+    name: str                        # plateau_breaker | reactive_deload | intensify | swap_exercise
+    title_bg: str
+    how_bg: str
+    source_bg: str
 
 class ExerciseSwapRequest(BaseModel):
     exercise_name: str                   # as prescribed in the program
@@ -348,7 +354,8 @@ class ProgramAdjustmentOut(BaseModel):
 
 class ProgramReviewOut(BaseModel):
     """Whether the program should continue, and what to change if not."""
-    action: str                      # extend | adjust_exercise | adjust_muscle | check_recovery | complete
+    # extend | break_plateau | adjust_exercise | adjust_muscle | check_recovery | complete
+    action: str
     scope: Optional[str] = None      # systemic | local_muscle | local_exercise
     reason_bg: str
     muscle_group: Optional[str] = None
@@ -357,7 +364,7 @@ class ProgramReviewOut(BaseModel):
     total_weeks: int
     max_weeks: int
     exercises: list[ExerciseProgressOut] = []
-    breakers: list[PlateauBreakerOut] = []
+    techniques: list[ExerciseTechniqueOut] = []
     sessions_analysed: int = 0
     # Prescribed exercises with no usable work sets yet - visible, not silently dropped.
     skipped_exercises: list[str] = []

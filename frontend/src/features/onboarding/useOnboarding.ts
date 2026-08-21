@@ -1,5 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
+import { STORAGE_KEYS } from '../../constants/storage'
 import { profileApi } from './api'
 import { STEP_GROUP } from './constants'
 import { WIZARD_ONLY_KEYS } from './types'
@@ -27,7 +28,7 @@ export const STEPS: StepId[] = [
   'nutrition',
 ]
 
-const DRAFT_KEY = 'cga_onboarding_draft'
+const DRAFT_KEY = STORAGE_KEYS.onboardingDraft
 
 /** Every step must be answered - an incomplete profile produces a bad program, which
  *  is worse than a longer setup. `strength` is the one exception: a true beginner has

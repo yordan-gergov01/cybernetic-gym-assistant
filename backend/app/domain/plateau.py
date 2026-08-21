@@ -47,11 +47,22 @@ BREAKER_CAP_REPS_ISOLATION = 5
 REP_TARGET_INTENSIFICATION = 4 
 MIN_REPS_PER_SET = 4  
 
-# The course says a DOUBLE plateau justifies changing the program (p.23) but does not
-# put a session count on it. The plateau-breaker cycle of p.7 is attempt -> breaker ->
-# attempt, so three sessions without a new best is the smallest window in which two
-# genuine attempts have failed.
-STALL_SESSIONS = 3
+# A plateau is a session that repeats the previous one: the same weight for the same or
+# fewer reps in the benchmark set. Progression Guidelines p.3-7 defines progress as more
+# reps at the same weight (or the same reps at more weight), so the absence of both is
+# the plateau - it needs no session count and no percentage.
+#
+# The course calls a *double* plateau at the same strength level cause to change the
+# program (Periodization p.23). That is the second such session in a row: the first is
+# answered inside the exercise with a plateau breaker.
+DOUBLE_PLATEAU_SESSIONS = 2
+
+# Reactive deload, p.46: the remaining sets are replaced with speed work at 60-70% of
+# 1RM for 1-5 reps. Heavier than this stops being speed work and only deepens the hole.
+SPEED_WORK_LOW_PCT = 60.0
+SPEED_WORK_HIGH_PCT = 70.0
+SPEED_WORK_MIN_REPS = 1
+SPEED_WORK_MAX_REPS = 5
 
 # The course calls a plateau systemic when it spans "unrelated" muscle groups (p.23)
 # without defining relatedness. Muscles trained together in one movement pattern are
@@ -100,9 +111,16 @@ class ExerciseProgress:
     muscle_group: str | None
     status: str # progressing | holding | stalled | insufficient_data
     sessions_since_best: int
+    # Sessions in a row that repeated the same weight without adding a rep. One is a
+    # plateau, two or more is the double plateau that justifies changing the program.
+    stalled_sessions: int = 0
     best_e1rm: float | None = None
     latest_e1rm: float | None = None
     last_session: SessionChange | None = None
+
+    @property
+    def double_plateau(self) -> bool:
+        return self.stalled_sessions >= DOUBLE_PLATEAU_SESSIONS
 
 
 @dataclass(frozen=True)
@@ -144,6 +162,28 @@ def compare_sessions(previous: BenchmarkSet, latest: BenchmarkSet, training_stat
     )
 
 
+def repeated_session(previous: BenchmarkSet, latest: BenchmarkSet) -> bool:
+    """Did this session repeat the last one instead of beating it?
+
+    The same weight for the same or fewer reps is the plateau: progress in this course is
+    more reps at a given weight until the rep target is reached, then more weight
+    (Progression Guidelines p.3). Adding weight and losing reps is *not* a plateau - that
+    is the normal cost of a heavier first set, and the reps are worked back up from there.
+    """
+    return latest.weight_kg == previous.weight_kg and latest.reps <= previous.reps
+
+
+def consecutive_stalls(sessions: list[BenchmarkSet]) -> int:
+    """How many sessions in a row repeated the weight before them, counting back."""
+    ordered = sorted(sessions, key=lambda s: s.date)
+    stalls = 0
+    for previous, latest in zip(reversed(ordered[:-1]), reversed(ordered[1:])):
+        if not repeated_session(previous, latest):
+            break
+        stalls += 1
+    return stalls
+
+
 def classify_exercise(
     exercise_name: str,
     muscle_group: str | None,
@@ -152,9 +192,11 @@ def classify_exercise(
 ) -> ExerciseProgress:
     """Classify one exercise from its benchmark sets, oldest session first.
 
-    `stalled` means two real attempts to beat the best have failed (see STALL_SESSIONS);
-    a single missed session is `holding` and is handled by the plateau breaker inside the
-    exercise, not by rebuilding the program (p.23).
+    `stalled` is decided by the sessions themselves, not by a count of sessions since a
+    best: from the second session at a weight, the same load for the same or fewer reps
+    means the exercise is stuck there. A lift that repeats its own best forever therefore
+    reads as stalled, which is what it is - it was previously read as "progressing",
+    because repeating a best kept resetting the counter.
     """
     ordered = sorted(sessions, key=lambda s: s.date)
     if len(ordered) < 2:
@@ -175,11 +217,12 @@ def classify_exercise(
     sessions_since_best = len(ordered) - 1 - best_index
 
     last_session = compare_sessions(ordered[-2], ordered[-1], training_status)
+    stalled_sessions = consecutive_stalls(ordered)
 
-    if sessions_since_best == 0:
-        status = "progressing"
-    elif sessions_since_best >= STALL_SESSIONS:
+    if stalled_sessions:
         status = "stalled"
+    elif sessions_since_best == 0:
+        status = "progressing"
     else:
         status = "holding"
 
@@ -188,6 +231,7 @@ def classify_exercise(
         muscle_group=muscle_group,
         status=status,
         sessions_since_best=sessions_since_best,
+        stalled_sessions=stalled_sessions,
         best_e1rm=best,
         latest_e1rm=e1rms[-1],
         last_session=last_session,
@@ -288,6 +332,124 @@ def plateau_breaker_weight(
     return round(min(weight_kg * (1 + PLATEAU_BREAKER_PCT / 100), cap_weight), 2)
 
 
+@dataclass(frozen=True)
+class PlateauTechnique:
+    """One course technique for getting an exercise moving again.
+
+    `how_bg` carries the actual numbers, because "intensify" or "deload" without them is
+    something the user still has to work out at the rack.
+    """
+
+    name: str          # plateau_breaker | reactive_deload | intensify | swap_exercise
+    title_bg: str
+    how_bg: str
+    source_bg: str     # which part of the course this comes from
+
+
+def reactive_deload_load(weight_kg: float, reps: int) -> tuple[float, float]:
+    """Weight range for the speed work that replaces the remaining sets (p.46).
+
+    60-70% of the estimated max: heavy enough to reach high activation, light enough that
+    the bar still moves fast. The moment the speed drops it stops being a deload.
+    """
+    one_rm = calculate_1rm(weight_kg, reps).estimated_1rm
+    return (
+        round(one_rm * SPEED_WORK_LOW_PCT / 100, 1),
+        round(one_rm * SPEED_WORK_HIGH_PCT / 100, 1),
+    )
+
+
+def reactive_deload(latest: BenchmarkSet, reps_lost: int) -> PlateauTechnique:
+    """What to do with the rest of *this* session after the benchmark set fell short.
+
+    p.46: fewer reps than last time is the signal. Just missing the last rep is answered
+    with speed work; being well short means the remaining sets are dropped altogether,
+    because speed work on top of that fatigue only digs the hole deeper.
+    """
+    if reps_lost >= 2:
+        return PlateauTechnique(
+            name="reactive_deload",
+            title_bg="Реактивен deload: спри упражнението",
+            how_bg=(
+                f"Загуби {reps_lost} повторения спрямо миналия път. Пропусни останалите серии "
+                "за това упражнение и продължи със следващото - при такава умора дори "
+                "скоростната работа само задълбочава дупката."
+            ),
+            source_bg="Periodization & progress, стр. 46",
+        )
+
+    low, high = reactive_deload_load(latest.weight_kg, latest.reps)
+    return PlateauTechnique(
+        name="reactive_deload",
+        title_bg="Реактивен deload: скоростна работа",
+        how_bg=(
+            f"Замени останалите серии с {SPEED_WORK_MIN_REPS}-{SPEED_WORK_MAX_REPS} бързи "
+            f"повторения на серия с {low}-{high} кг. Ако скоростта падне забележимо, тежестта "
+            "е висока - това вече не е deload."
+        ),
+        source_bg="Periodization & progress, стр. 46",
+    )
+
+
+def recommend_exercise_technique(
+    progress: ExerciseProgress,
+    *,
+    latest: BenchmarkSet,
+    reps_min: int | None,
+    reps_max: int | None,
+    is_isolation: bool,
+) -> PlateauTechnique:
+    """The course's answer for one stalled exercise, at the stage it has reached.
+
+    First plateau: a breaker session (p.7) - the exercise is not the problem yet, one
+    heavy low-volume session usually is enough. Double plateau at the same strength
+    level: the program for that exercise changes (p.23-24), by lowering the rep target if
+    there is room, and by replacing the exercise if there is not.
+    """
+    if not progress.double_plateau:
+        breaker = plateau_breaker_weight(latest.weight_kg, latest.reps, is_isolation=is_isolation)
+        cap = BREAKER_CAP_REPS_ISOLATION if is_isolation else BREAKER_CAP_REPS_COMPOUND
+        return PlateauTechnique(
+            name="plateau_breaker",
+            title_bg="Пробивна сесия",
+            how_bg=(
+                f"Следващия път качи на {breaker} кг за {cap}-{cap + 2} повторения - една тежка "
+                "серия с малък обем. След нея се връщаш на предишната тежест и качваш "
+                "повторенията оттам."
+            ),
+            source_bg="Progression Guidelines, стр. 7",
+        )
+
+    intensified = intensified_rep_range(reps_min, reps_max)
+    if intensified:
+        low, high = intensified
+        # A narrow range collapses onto a single number at the growth floor; "4-4 reps"
+        # is technically what it says and reads like a bug.
+        target = f"{low}" if low == high else f"{low}-{high}"
+        return PlateauTechnique(
+            name="intensify",
+            title_bg="Интензификация: по-малко повторения",
+            how_bg=(
+                f"Свали целта от {reps_min}-{reps_max} на {target} повторения и качи тежестта. "
+                "По-високата интензивност вдига силата и връща прогресията."
+            ),
+            source_bg="Periodization & progress, стр. 24",
+        )
+
+    return PlateauTechnique(
+        name="swap_exercise",
+        title_bg="Смени упражнението",
+        how_bg=(
+            f"Повторенията вече не могат да слязат под {MIN_REPS_PER_SET} на серия, без обемът "
+            "да падне под нужния за растеж. Замени упражнението с друго за същото движение - "
+            "често застоят е от прекалено голяма стъпка на тежестта, а не от самия мускул. "
+            "Ако държиш да останеш на това упражнение, следващата стъпка по курса е "
+            "периодизация."
+        ),
+        source_bg="Periodization & progress, стр. 24",
+    )
+
+
 def decide_program_continuation(
     exercises: list[ExerciseProgress],
     *,
@@ -302,16 +464,22 @@ def decide_program_continuation(
     Safe to call at any point in the program - the adjustment actions apply whenever a
     stall appears, while `extend` only means "no reason to stop" and is acted on when the
     planned weeks run out.
+
+    A *first* plateau never changes the program: the course answers it inside the
+    exercise with a breaker session (p.7), and only a double plateau at the same strength
+    level is cause to change the plan (p.23). So the program-level decision is made on
+    the double plateaus, and the single ones come back as `break_plateau`.
     """
     stalled = [e for e in exercises if e.status == "stalled"]
-    scope = classify_scope(stalled)
+    changing = [e for e in stalled if e.double_plateau]
+    scope = classify_scope(changing)
 
     if scope == "systemic":
-        muscles = ", ".join(sorted({e.muscle_group or "?" for e in stalled}))
+        muscles = ", ".join(sorted({e.muscle_group or "?" for e in changing}))
         return ProgramDecision(
             action="check_recovery",
             scope=scope,
-            stalled=stalled,
+            stalled=changing,
             reason_bg=(
                 f"Застой в несвързани мускулни групи ({muscles}). Причината най-вероятно е "
                 "системна - възстановяване, сън, стрес или калории. Програмата не се променя, "
@@ -320,31 +488,45 @@ def decide_program_continuation(
         )
 
     if scope == "local_muscle":
-        muscle = stalled[0].muscle_group
-        names = ", ".join(e.exercise_name for e in stalled)
+        muscle = changing[0].muscle_group
+        names = ", ".join(e.exercise_name for e in changing)
         return ProgramDecision(
             action="adjust_muscle",
             scope=scope,
-            stalled=stalled,
+            stalled=changing,
             muscle_group=muscle,
             reason_bg=(
-                f"Няколко упражнения за {muscle} са в застой ({names}). Първо се вдига честотата "
-                "на групата, а ако графикът не позволява - броят серии."
+                f"Няколко упражнения за {muscle} са в двоен застой ({names}). Първо се вдига "
+                "честотата на групата, а ако графикът не позволява - броят серии."
             ),
         )
 
     if scope == "local_exercise":
-        one = stalled[0]
+        one = changing[0]
         return ProgramDecision(
             action="adjust_exercise",
             scope=scope,
-            stalled=stalled,
+            stalled=changing,
             exercise_name=one.exercise_name,
             muscle_group=one.muscle_group,
             reason_bg=(
-                f"Само {one.exercise_name} е в застой. Сваля се целевият брой повторения "
-                "(интензификация) или упражнението се сменя с алтернатива - останалата програма "
-                "остава непроменена."
+                f"{one.exercise_name} е в застой {one.stalled_sessions} поредни сесии на същата "
+                "тежест. Пробивната сесия не сработи, така че се сваля целевият брой повторения "
+                "или упражнението се сменя - останалата програма остава непроменена."
+            ),
+        )
+
+    if stalled:
+        names = ", ".join(e.exercise_name for e in stalled)
+        return ProgramDecision(
+            action="break_plateau",
+            scope="local_exercise",
+            stalled=stalled,
+            exercise_name=stalled[0].exercise_name,
+            muscle_group=stalled[0].muscle_group,
+            reason_bg=(
+                f"Застой на същата тежест: {names}. Програмата не се променя заради една такава "
+                "сесия - отговорът е пробивна сесия в самото упражнение."
             ),
         )
 

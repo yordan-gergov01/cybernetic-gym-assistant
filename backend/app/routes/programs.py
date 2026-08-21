@@ -29,7 +29,7 @@ from app.schemas import (
     FatigueAssessmentOut,
     FatigueAssessmentRequest,
     MuscleAdjustRequest,
-    PlateauBreakerOut,
+    ExerciseTechniqueOut,
     ProgramAdjustmentOut,
     ProgramCreate,
     ProgramExerciseOut,
@@ -475,15 +475,22 @@ async def review_program_progress(
                 muscle_group=e.muscle_group,
                 status=e.status,
                 sessions_since_best=e.sessions_since_best,
+                stalled_sessions=e.stalled_sessions,
                 best_e1rm=e.best_e1rm,
                 latest_e1rm=e.latest_e1rm,
                 change_pct=e.last_session.change_pct if e.last_session else None,
             )
             for e in review.exercises
         ],
-        breakers=[
-            PlateauBreakerOut(exercise_name=b.exercise_name, weight_kg=b.weight_kg, reps=b.reps)
-            for b in review.breakers
+        techniques=[
+            ExerciseTechniqueOut(
+                exercise_name=t.exercise_name,
+                name=t.name,
+                title_bg=t.title_bg,
+                how_bg=t.how_bg,
+                source_bg=t.source_bg,
+            )
+            for t in review.techniques
         ],
         sessions_analysed=review.sessions_analysed,
         skipped_exercises=review.skipped_exercises,

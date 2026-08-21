@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { ErrorNote, Field, Sheet, TextInput } from '../../components/ui'
+import { MIN_PASSWORD_LENGTH, PASSWORD_HINT_BG } from '../../constants/auth'
 import { showToast } from '../../services/toast'
 import { authApi } from './api'
-
-const MIN_PASSWORD_LENGTH = 8
 
 /** Changing the password from inside the account.
  *
@@ -47,7 +46,7 @@ export function ChangePasswordSheet({ open, onClose }: { open: boolean; onClose:
           />
         </Field>
 
-        <Field label={`Нова парола (поне ${MIN_PASSWORD_LENGTH} знака)`} htmlFor="new-password">
+        <Field label={`Нова парола (${PASSWORD_HINT_BG.toLowerCase()})`} htmlFor="new-password">
           <TextInput
             id="new-password"
             type="password"

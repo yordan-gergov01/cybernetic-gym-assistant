@@ -3,6 +3,8 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { Screen } from '../components/layout/Screen'
 import { EmptyState, ErrorNote, Icon, SectionHeader, SkeletonList } from '../components/ui'
 import { mealForHour } from '../constants/nutrition'
+import { NUTRITION_VISIBLE_DAYS } from '../constants/history'
+import { HEADER_ACTIONS } from '../constants/navigation'
 import { queryKeys } from '../constants/query-keys'
 import { nutritionApi } from '../features/nutrition/api'
 import { DateStrip } from '../features/nutrition/DateStrip'
@@ -11,16 +13,11 @@ import { MacroSummary } from '../features/nutrition/MacroSummary'
 import { QuickAddForm } from '../features/nutrition/QuickAddForm'
 import { recentDays, todayIso } from '../utils/date'
 
-const HEADER_ACTIONS = [
-  { to: '/notifications', icon: 'bell' as const, label: 'Известия' },
-  { to: '/profile', icon: 'settings' as const, label: 'Профил' },
-]
 
-const VISIBLE_DAYS = 4
 
 export function NutritionPage() {
   const queryClient = useQueryClient()
-  const days = recentDays(VISIBLE_DAYS)
+  const days = recentDays(NUTRITION_VISIBLE_DAYS)
   const [date, setDate] = useState(todayIso())
 
   const invalidate = () => queryClient.invalidateQueries({ queryKey: queryKeys.nutrition(date) })
@@ -47,7 +44,7 @@ export function NutritionPage() {
 
   if (daily.isLoading) {
     return (
-      <Screen title="Храна" actions={HEADER_ACTIONS}>
+      <Screen title="Храна" actions={HEADER_ACTIONS.secondary}>
         {strip}
         <SkeletonList rows={3} />
       </Screen>
@@ -56,7 +53,7 @@ export function NutritionPage() {
 
   if (daily.error || !daily.data) {
     return (
-      <Screen title="Храна" actions={HEADER_ACTIONS}>
+      <Screen title="Храна" actions={HEADER_ACTIONS.secondary}>
         {strip}
         <ErrorNote error={daily.error} onRetry={() => daily.refetch()} />
       </Screen>
@@ -66,7 +63,7 @@ export function NutritionPage() {
   const entries = daily.data.entries
 
   return (
-    <Screen title="Храна" subtitle="Целите идват от профила ти" actions={HEADER_ACTIONS}>
+    <Screen title="Храна" subtitle="Целите идват от профила ти" actions={HEADER_ACTIONS.secondary}>
       {strip}
 
       <MacroSummary daily={daily.data} />

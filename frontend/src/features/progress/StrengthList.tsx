@@ -1,4 +1,5 @@
 import { ListRow } from '../../components/ui'
+import { STRENGTH_LIST_VISIBLE } from '../../constants/history'
 import { formatWeight } from '../../utils/format'
 import { Sparkline } from './Sparkline'
 import type { ExerciseStrength } from '../../types/api'
@@ -8,10 +9,6 @@ import type { ExerciseStrength } from '../../types/api'
  *  The estimate comes from the backend, computed from the same first-work-set benchmark
  *  the progression engine uses, so this list cannot disagree with the loads prescribed
  *  in the program. */
-/** A whole program can carry twenty-odd exercises; the screen is a summary, not a
- *  ledger. The heaviest lifts lead (the backend orders them), and the count is stated
- *  rather than the rest being dropped without a word. */
-const VISIBLE = 8
 
 export function StrengthList({ items, weeks }: { items: ExerciseStrength[]; weeks: number }) {
   if (!items.length) {
@@ -23,7 +20,7 @@ export function StrengthList({ items, weeks }: { items: ExerciseStrength[]; week
     )
   }
 
-  const shown = items.slice(0, VISIBLE)
+  const shown = items.slice(0, STRENGTH_LIST_VISIBLE)
 
   return (
     <div className="space-y-2">
@@ -46,9 +43,9 @@ export function StrengthList({ items, weeks }: { items: ExerciseStrength[]; week
           />
         )
       })}
-      {items.length > VISIBLE && (
+      {items.length > STRENGTH_LIST_VISIBLE && (
         <p className="pt-1 text-xs text-chalk-500">
-          Показани са {VISIBLE} от {items.length} упражнения, подредени по тежест.
+          Показани са {STRENGTH_LIST_VISIBLE} от {items.length} упражнения, подредени по тежест.
         </p>
       )}
     </div>

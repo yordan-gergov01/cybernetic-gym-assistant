@@ -185,6 +185,8 @@ export type Program = ProgramSummary & {
  *  Every field here is decided deterministically by the backend (domain/plateau.py). */
 export type ProgramAction =
   | 'extend'
+  /** A first plateau: the program stands, the exercise gets a breaker session. */
+  | 'break_plateau'
   | 'adjust_exercise'
   | 'adjust_muscle'
   | 'check_recovery'
@@ -195,13 +197,21 @@ export type ExerciseProgress = {
   muscle_group?: string | null
   status: 'progressing' | 'holding' | 'stalled' | 'insufficient_data'
   sessions_since_best: number
+  /** Sessions in a row on the same weight without an extra rep; 2+ is a double plateau. */
+  stalled_sessions: number
   best_e1rm?: number | null
   latest_e1rm?: number | null
   change_pct?: number | null
 }
 
-/** The heavier session prescribed to break a single missed progression. */
-export type PlateauBreaker = { exercise_name: string; weight_kg: number; reps: number }
+/** One course technique for a stalled exercise, with the numbers to act on. */
+export type ExerciseTechnique = {
+  exercise_name: string
+  name: 'plateau_breaker' | 'reactive_deload' | 'intensify' | 'swap_exercise'
+  title_bg: string
+  how_bg: string
+  source_bg: string
+}
 
 export type ProgramReview = {
   action: ProgramAction
@@ -213,7 +223,7 @@ export type ProgramReview = {
   total_weeks: number
   max_weeks: number
   exercises: ExerciseProgress[]
-  breakers: PlateauBreaker[]
+  techniques: ExerciseTechnique[]
   sessions_analysed: number
   /** Prescribed exercises with no usable work sets — shown, never silently dropped. */
   skipped_exercises: string[]

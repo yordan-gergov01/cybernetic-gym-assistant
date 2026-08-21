@@ -12,16 +12,19 @@ from app.domain.plateau import (
     ADVANCED_TRAINING_STATUS,
     MAX_PROGRAM_WEEKS,
     MIN_PROGRESS_PCT,
+    DOUBLE_PLATEAU_SESSIONS,
     MIN_REPS_PER_SET,
-    STALL_SESSIONS,
     BenchmarkSet,
     classify_exercise,
     classify_scope,
     compare_sessions,
+    consecutive_stalls,
     decide_program_continuation,
     intensified_rep_range,
     intensified_rep_target,
     plateau_breaker_weight,
+    reactive_deload,
+    recommend_exercise_technique,
 )
 
 START = date(2026, 1, 5)
@@ -35,12 +38,18 @@ def series(*sets: tuple[float, int]) -> list[BenchmarkSet]:
     ]
 
 
-def progress(name="Barbell Bench Press", muscle="chest", sets=(), status=None):
-    """One classified exercise; `status` overrides for scope-level tests."""
+def progress(name="Barbell Bench Press", muscle="chest", sets=(), status=None, stalls=None):
+    """One classified exercise; `status` overrides for scope-level tests.
+
+    A forced "stalled" defaults to a *double* plateau, because that is the state the
+    program-level decisions are about - a single one never changes the program.
+    """
     result = classify_exercise(name, muscle, series(*sets) if sets else series((100, 8), (102.5, 8)))
-    if status is None:
+    if status is None and stalls is None:
         return result
-    return type(result)(**{**result.__dict__, "status": status})
+    if stalls is None:
+        stalls = DOUBLE_PLATEAU_SESSIONS if status == "stalled" else result.stalled_sessions
+    return type(result)(**{**result.__dict__, "status": status or result.status, "stalled_sessions": stalls})
 
 
 # --- session-to-session judgement ------------------------------------------------
@@ -85,24 +94,45 @@ def test_a_new_best_this_session_is_progress():
     assert result.status == "progressing"
 
 
-def test_one_missed_session_is_not_yet_a_plateau():
-    # p.23: a single plateau has many possible causes; it is answered inside the
-    # exercise, not by rebuilding the program.
+def test_the_same_weight_for_fewer_reps_is_a_plateau():
+    # Progression Guidelines p.3: progress is more reps at a weight, then more weight.
     result = classify_exercise("Barbell Squat", "quads", series((140, 5), (145, 5), (145, 4)))
-    assert result.sessions_since_best < STALL_SESSIONS, "precondition: only one miss"
-    assert result.status == "holding"
+    assert result.status == "stalled"
+    assert result.stalled_sessions == 1
 
 
-def test_repeated_failure_to_beat_the_best_is_a_plateau():
-    sets = [(140, 5), (145, 5)] + [(145, 4)] * STALL_SESSIONS
-    result = classify_exercise("Barbell Squat", "quads", series(*sets))
+def test_repeating_the_same_weight_and_reps_is_also_a_plateau():
+    """A lift that repeats itself is stuck, however good the number is.
+
+    This is the case that used to read as "progressing": matching a personal best kept
+    resetting the counter, so a permanently flat exercise never stalled at all.
+    """
+    result = classify_exercise("Overhead Press", "shoulders", series((60, 8), (60, 8)))
     assert result.status == "stalled"
 
 
-def test_matching_the_best_again_is_not_drifting_away_from_it():
-    sets = [(140, 5), (145, 5)] + [(145, 5)] * STALL_SESSIONS
-    result = classify_exercise("Barbell Squat", "quads", series(*sets))
-    assert result.status != "stalled", "repeating a best is holding the level, not stalling"
+def test_losing_reps_after_adding_weight_is_not_a_plateau():
+    # A heavier first set costs reps; they are worked back up from there.
+    result = classify_exercise("Barbell Squat", "quads", series((140, 8), (145, 6)))
+    assert result.status != "stalled"
+
+
+def test_two_repeats_in_a_row_are_the_double_plateau():
+    result = classify_exercise("Barbell Squat", "quads", series((145, 5), (145, 5), (145, 4)))
+    assert result.stalled_sessions == DOUBLE_PLATEAU_SESSIONS
+    assert result.double_plateau
+
+
+def test_a_plateau_that_was_broken_does_not_count_any_more():
+    """The streak is what matters: beating the weight clears everything before it."""
+    result = classify_exercise("Barbell Squat", "quads", series((145, 5), (145, 5), (150, 5)))
+    assert result.stalled_sessions == 0
+    assert result.status == "progressing"
+
+
+def test_the_stall_streak_is_counted_from_the_latest_session_backwards():
+    assert consecutive_stalls(series((100, 8), (100, 8), (100, 7))) == 2
+    assert consecutive_stalls(series((100, 8), (105, 6), (105, 6))) == 1
 
 
 def test_a_single_session_cannot_be_judged():
@@ -187,7 +217,75 @@ def test_one_stalled_exercise_changes_only_that_exercise():
     ]
     decision = decide_program_continuation(exercises, total_weeks=8)
     assert decision.action == "adjust_exercise"
+
+
+def test_a_first_plateau_is_answered_inside_the_exercise():
+    """p.23: a single plateau has many causes; only a double one changes the program."""
+    exercises = [
+        progress("Lateral Raise", "shoulders", status="stalled", stalls=1),
+        progress("Barbell Squat", "quads"),
+    ]
+    decision = decide_program_continuation(exercises, total_weeks=8)
+    assert decision.action == "break_plateau"
     assert decision.exercise_name == "Lateral Raise"
+
+
+def test_a_first_plateau_does_not_send_anyone_to_recovery():
+    """Two exercises stalling once each is not evidence of a systemic problem."""
+    exercises = [
+        progress("Barbell Bench Press", "chest", status="stalled", stalls=1),
+        progress("Barbell Squat", "quads", status="stalled", stalls=1),
+    ]
+    assert decide_program_continuation(exercises, total_weeks=8).action == "break_plateau"
+
+
+# --- which technique the course prescribes ----------------------------------------
+
+
+def technique(stalls, reps=(6, 8), isolation=False, weight=100.0, done=5):
+    return recommend_exercise_technique(
+        progress("Barbell Squat", "quads", status="stalled", stalls=stalls),
+        latest=BenchmarkSet(START, weight, done),
+        reps_min=reps[0],
+        reps_max=reps[1],
+        is_isolation=isolation,
+    )
+
+
+def test_the_first_plateau_gets_a_breaker_session():
+    answer = technique(stalls=1)
+    assert answer.name == "plateau_breaker"
+    assert "кг" in answer.how_bg, "the weight to load is the point of the advice"
+
+
+def test_a_double_plateau_lowers_the_rep_target_when_there_is_room():
+    answer = technique(stalls=2, reps=(10, 15))
+    assert answer.name == "intensify"
+
+
+def test_a_double_plateau_replaces_the_exercise_when_reps_cannot_go_lower():
+    # A range topping out at 6 cannot drop four points and stay at the growth floor.
+    assert intensified_rep_range(4, 6) is None, "precondition: no room left to intensify"
+    answer = technique(stalls=2, reps=(4, 6))
+    assert answer.name == "swap_exercise"
+
+
+def test_every_technique_says_where_it_comes_from():
+    for stalls, reps in ((1, (6, 8)), (2, (10, 15)), (2, (4, 6))):
+        answer = technique(stalls=stalls, reps=reps)
+        assert answer.source_bg and answer.title_bg and answer.how_bg
+
+
+def test_missing_one_rep_is_answered_with_speed_work():
+    answer = reactive_deload(BenchmarkSet(START, 100, 7), reps_lost=1)
+    assert answer.name == "reactive_deload"
+    assert "бързи" in answer.how_bg
+
+
+def test_being_well_short_ends_the_exercise_instead():
+    # p.46: speed work on top of that much fatigue only digs the hole deeper.
+    answer = reactive_deload(BenchmarkSet(START, 100, 5), reps_lost=3)
+    assert "Пропусни" in answer.how_bg
 
 
 def test_a_stalled_muscle_group_changes_that_group_not_the_program():

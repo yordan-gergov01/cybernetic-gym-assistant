@@ -1,6 +1,6 @@
 import { ListRow, Tag } from '../../components/ui'
 import { muscleLabel } from '../../constants/muscles'
-import type { ExerciseProgress, PlateauBreaker } from '../../types/api'
+import type { ExerciseProgress, ExerciseTechnique } from '../../types/api'
 import { formatWeight } from '../../utils/format'
 
 const STATUS: Record<ExerciseProgress['status'], { label: string; className: string }> = {
@@ -15,57 +15,60 @@ const STATUS: Record<ExerciseProgress['status'], { label: string; className: str
 const ORDER: ExerciseProgress['status'][] = ['stalled', 'holding', 'progressing', 'insufficient_data']
 
 /**
- * Per-exercise progress from the program review.
+ * Per-exercise progress from the program review, each with the technique the course
+ * prescribes for it.
  *
- * The plateau-breaker weight is shown on the row of the exercise it belongs to rather
- * than in a list of its own - it is the answer to that one exercise holding still, and
- * separating them would make the user match names by hand.
+ * The advice sits under the exercise it belongs to rather than in a list of its own:
+ * it is the answer to that one lift being stuck, and separating them would make the
+ * user match names by hand.
  */
 export function ExerciseProgressList({
   exercises,
-  breakers,
+  techniques,
   skipped,
 }: {
   exercises: ExerciseProgress[]
-  breakers: PlateauBreaker[]
+  techniques: ExerciseTechnique[]
   skipped: string[]
 }) {
-  const breakerFor = new Map(breakers.map((breaker) => [breaker.exercise_name, breaker]))
-  const sorted = [...exercises].sort(
-    (a, b) => ORDER.indexOf(a.status) - ORDER.indexOf(b.status),
-  )
+  const sorted = [...exercises].sort((a, b) => ORDER.indexOf(a.status) - ORDER.indexOf(b.status))
 
   return (
     <div className="space-y-2">
       {sorted.map((exercise) => {
         const status = STATUS[exercise.status]
-        const breaker = breakerFor.get(exercise.exercise_name)
+        const advice = techniques.filter((t) => t.exercise_name === exercise.exercise_name)
         const details = [
           muscleLabel(exercise.muscle_group),
           exercise.best_e1rm ? `e1RM ${formatWeight(exercise.best_e1rm)} кг` : null,
           exercise.change_pct !== null && exercise.change_pct !== undefined
             ? `${exercise.change_pct > 0 ? '+' : ''}${exercise.change_pct}%`
             : null,
+          // The count is what separates "answer it inside the exercise" from "change
+          // the program", so it is stated rather than left implicit in the badge.
+          exercise.stalled_sessions > 1 ? `${exercise.stalled_sessions} сесии на място` : null,
         ]
           .filter(Boolean)
           .join(' · ')
 
         return (
-          <ListRow
-            key={exercise.exercise_name}
-            title={exercise.exercise_name}
-            subtitle={
-              <>
-                <span className="block">{details}</span>
-                {breaker && (
-                  <span className="block text-volt-400">
-                    Пробив: {formatWeight(breaker.weight_kg)} кг × {breaker.reps}
-                  </span>
-                )}
-              </>
-            }
-            trailing={<Tag className={status.className}>{status.label}</Tag>}
-          />
+          <div key={exercise.exercise_name}>
+            <ListRow
+              title={exercise.exercise_name}
+              subtitle={details}
+              trailing={<Tag className={status.className}>{status.label}</Tag>}
+            />
+            {advice.map((technique) => (
+              <div
+                key={technique.name}
+                className="mt-1 rounded-xl border border-ink-700 bg-ink-900 px-4 py-3"
+              >
+                <p className="label-micro text-volt-400">{technique.title_bg}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-chalk-300">{technique.how_bg}</p>
+                <p className="mt-1.5 text-xs text-chalk-500">{technique.source_bg}</p>
+              </div>
+            ))}
+          </div>
         )
       })}
 

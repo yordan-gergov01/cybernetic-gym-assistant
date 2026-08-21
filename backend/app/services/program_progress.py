@@ -15,15 +15,18 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.domain.plateau import (
     BenchmarkSet,
     ExerciseProgress,
+    PlateauTechnique,
     ProgramDecision,
     classify_exercise,
     decide_program_continuation,
     intensified_rep_target,
-    plateau_breaker_weight,
+    reactive_deload,
+    recommend_exercise_technique,
 )
 from app.models import Program, ProgramDay, ProgramExercise, ProgramWeek, WorkoutLog, WorkoutSet
 
 logger = logging.getLogger(__name__)
+
 
 # Muscle groups trained mostly by isolation work - same split progression.py uses for
 # load steps, repeated here because the plateau breaker cap differs for them (p.7).
@@ -31,19 +34,33 @@ _ISOLATION_MUSCLES = {"biceps", "triceps", "calves", "rear_delts", "abs", "forea
 
 
 @dataclass
-class BreakerSuggestion:
-    """A plateau-breaker session for an exercise that missed its progress once."""
+class ExerciseTechnique:
+    """A course technique, attached to the exercise it is prescribed for."""
 
     exercise_name: str
-    weight_kg: float
-    reps: int
+    name: str
+    title_bg: str
+    how_bg: str
+    source_bg: str
+
+
+def _attach(exercise_name: str, technique: PlateauTechnique) -> ExerciseTechnique:
+    """The technique carries no exercise of its own - it is pure advice until it is
+    pinned to the lift it was worked out for."""
+    return ExerciseTechnique(
+        exercise_name=exercise_name,
+        name=technique.name,
+        title_bg=technique.title_bg,
+        how_bg=technique.how_bg,
+        source_bg=technique.source_bg,
+    )
 
 
 @dataclass
 class ProgramReview:
     decision: ProgramDecision
     exercises: list[ExerciseProgress] = field(default_factory=list)
-    breakers: list[BreakerSuggestion] = field(default_factory=list)
+    techniques: list[ExerciseTechnique] = field(default_factory=list)
     new_rep_target: int | None = None       # set when the decision is adjust_exercise
     sessions_analysed: int = 0
     skipped_exercises: list[str] = field(default_factory=list)
@@ -104,7 +121,7 @@ async def review_program(db: AsyncSession, program: Program) -> ProgramReview:
     series = await _benchmark_series(db, program.id)
 
     progress: list[ExerciseProgress] = []
-    breakers: list[BreakerSuggestion] = []
+    techniques: list[ExerciseTechnique] = []
     skipped: list[str] = []
 
     for name, prescribed_ex in prescribed.items():
@@ -120,20 +137,32 @@ async def review_program(db: AsyncSession, program: Program) -> ProgramReview:
         )
         progress.append(result)
 
-        # p.7: a single missed session is answered inside the exercise, with a breaker
-        # session, not by touching the program.
-        if result.status == "holding":
-            latest = sessions[-1]
-            is_isolation = (prescribed_ex.muscle_group or "").lower() in _ISOLATION_MUSCLES
-            breakers.append(
-                BreakerSuggestion(
-                    exercise_name=name,
-                    weight_kg=plateau_breaker_weight(
-                        latest.weight_kg, latest.reps, is_isolation=is_isolation
+        latest = sessions[-1]
+        is_isolation = (prescribed_ex.muscle_group or "").lower() in _ISOLATION_MUSCLES
+
+        # p.7 prescribes a breaker session whenever a workout did not progress as
+        # planned, which covers both the exercise stuck on its weight and the one that
+        # simply came out worse. How far the stall has gone decides which technique
+        # `recommend_exercise_technique` returns.
+        if result.status in ("stalled", "holding"):
+            techniques.append(
+                _attach(
+                    name,
+                    recommend_exercise_technique(
+                        result,
+                        latest=latest,
+                        reps_min=prescribed_ex.reps_min,
+                        reps_max=prescribed_ex.reps_max,
+                        is_isolation=is_isolation,
                     ),
-                    reps=latest.reps,
                 )
             )
+
+        # Orthogonal to the plateau itself: losing reps is the course's signal to cut
+        # the rest of *that* session short (p.46), whatever happens to the program.
+        if result.last_session and result.last_session.reps_dropped and len(sessions) >= 2:
+            reps_lost = sessions[-2].reps - latest.reps
+            techniques.append(_attach(name, reactive_deload(latest, reps_lost)))
 
     decision = decide_program_continuation(progress, total_weeks=program.total_weeks)
 
@@ -152,7 +181,7 @@ async def review_program(db: AsyncSession, program: Program) -> ProgramReview:
     return ProgramReview(
         decision=decision,
         exercises=progress,
-        breakers=breakers,
+        techniques=techniques,
         new_rep_target=new_rep_target,
         sessions_analysed=sum(len(s) for s in series.values()),
         skipped_exercises=skipped,

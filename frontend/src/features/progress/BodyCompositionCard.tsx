@@ -3,18 +3,12 @@ import { Icon } from '../../components/ui'
 import { formatShortDate } from '../../utils/date'
 import type { UserPhoto } from '../../types/api'
 
-/** Current body fat plus the assessment history as thumbnails.
- *
- *  The percentage is shown with how it was arrived at, because a visual estimate and a
- *  caliper reading are not the same claim and the user should not have to remember which
- *  one this was. */
+/** Current body fat plus the assessment history as thumbnails. */
 export function BodyCompositionCard({
   bodyFatPct,
-  method,
   photos,
 }: {
   bodyFatPct?: number | null
-  method?: string | null
   photos: UserPhoto[]
 }) {
   const assessed = photos.filter((p) => p.bf_pct_assessed !== null && p.bf_pct_assessed !== undefined)
@@ -25,9 +19,6 @@ export function BodyCompositionCard({
         <div className="min-w-0">
           <p className="label-micro">Текущи мазнини</p>
           <p className="stat mt-2">{bodyFatPct !== null && bodyFatPct !== undefined ? `${bodyFatPct}%` : '—'}</p>
-          <p className="mt-1 truncate text-xs text-chalk-500">
-            {method || 'Още няма оценка'}
-          </p>
         </div>
         <Link
           to="/photos"

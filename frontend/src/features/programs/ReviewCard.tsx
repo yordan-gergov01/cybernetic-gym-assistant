@@ -11,6 +11,7 @@ import { programsApi } from './api'
  *  says it in words too. */
 const TONES: Record<ProgramAction, CalloutTone> = {
   extend: 'ok',
+  break_plateau: 'warn',
   adjust_exercise: 'warn',
   adjust_muscle: 'warn',
   check_recovery: 'danger',
@@ -19,6 +20,7 @@ const TONES: Record<ProgramAction, CalloutTone> = {
 
 const TITLES: Record<ProgramAction, string> = {
   extend: 'Програмата продължава',
+  break_plateau: 'Застой: пробивна сесия',
   adjust_exercise: 'Смени или интензифицирай упражнението',
   adjust_muscle: 'Вдигни честотата на групата',
   check_recovery: 'Провери възстановяването',
