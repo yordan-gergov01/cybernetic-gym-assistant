@@ -27,14 +27,22 @@ env/
 ENV/
 .conda/
 
-# Data 
-data/raw/
-data/processed/
-data/vectorstore/
+# Course material and everything derived from it. The PT Certification content is
+# copyrighted and must never be committed: raw files, the extracted text, the chunks and
+# the FAISS index all carry it.
+#
+# Written without a leading directory on purpose. The previous patterns were
+# "data/processed/" and friends, which git anchors to the repository root, so they never
+# matched backend/data/ and 237 files were tracked for months.
+data/
 *.pdf
 *.xlsx
 *.docx
 *.csv
+
+# Offline evaluation runs. Each result file embeds the retrieved course passages in its
+# `contexts` field, so the runs stay local and only their scores are quoted in the README.
+backend/evaluation/results/
 
 # FAISS indexes
 *.index
