@@ -24,7 +24,7 @@ async def chat(
     r = await db.execute(
         select(ChatMessage).where(ChatMessage.user_id == user.id).order_by(ChatMessage.created_at.desc()).limit(10)
     )
-    history = list(reversed(r.scalars().all()))
+    history = [{"role": m.role, "content": m.content} for m in reversed(r.scalars().all())]
 
     pr = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
     profile = pr.scalar_one_or_none()
@@ -37,14 +37,13 @@ async def chat(
         lvl = levels[profile.training_status - 1] if profile.training_status in (1, 2, 3) else "—"
         profile_ctx = get_prompt("chat_profile_block")(lvl, profile.goal_validated or profile.goal, e)
 
-    context = await retrieve_context(data.content)
+    # The history goes to retrieval too, not just to the model: on its own a follow-up
+    # like "а за жени?" retrieves noise, because the subject lives in the previous turn.
+    context = await retrieve_context(data.content, history=history)
 
     system = get_prompt("chat_system")(settings.RESPONSE_LANGUAGE, profile_ctx, context)
 
-    messages = [{"role": "system", "content": system}]
-    for msg in history:
-        messages.append({"role": msg.role, "content": msg.content})
-    messages.append({"role": "user", "content": data.content})
+    messages = [{"role": "system", "content": system}, *history, {"role": "user", "content": data.content}]
 
     resp = await openai_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,

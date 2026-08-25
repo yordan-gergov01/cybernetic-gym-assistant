@@ -52,6 +52,12 @@ class Settings(BaseSettings):
     # Candidate pool pulled from FAISS before reranking narrows to RERANKING_TOP_N.
     RETRIEVAL_CANDIDATES: int = 30
     RERANKING_TOP_N: int = 4
+    # Cosine floor below which a chunk counts as "not in the course material".
+    # Measured on the golden dataset with text-embedding-3-large: the worst chunk of an
+    # on-topic question scores 0.47, the best chunk of an off-topic one 0.31, so 0.38 sits
+    # in the empty band between them. Recalibrate if EMBEDDING_MODEL changes — the scale
+    # is model-specific.
+    RETRIEVAL_MIN_SCORE: float = 0.38
     RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
     # Off by default: the local cross-encoder needs ~2.3GB RAM, impractical on small
     # machines. Enable only on a host with headroom (or swap in an API reranker).

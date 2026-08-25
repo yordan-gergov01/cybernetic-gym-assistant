@@ -333,6 +333,27 @@ def rag_query_rewrite_v1(question: str) -> str:
     )
 
 
+def rag_query_rewrite_v2(question: str, history: str = "") -> str:
+    """v2 resolves the question against the conversation before translating it.
+
+    v1 saw the last message alone, so a follow-up like "а за жени?" was rewritten to
+    "women" and retrieved noise. The preceding turns carry the subject; the model's job
+    is to fold them back in and return a query that stands on its own.
+    """
+    if not history:
+        return rag_query_rewrite_v1(question)
+    return f"""Conversation so far:
+{history}
+
+Latest user message: {question}
+
+The latest message may be a follow-up that only makes sense together with the conversation
+above (pronouns, ellipsis, "and for X?"). Resolve it into a SELF-CONTAINED English search
+query (5-12 words) for a fitness science knowledge base (Henselmans PTC course).
+If the latest message already stands on its own, translate it and ignore the conversation.
+Reply ONLY with the search query, nothing else."""
+
+
 # PROGRAM GENERATION
 
 def program_generation_v1(
