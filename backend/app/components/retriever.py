@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from dataclasses import dataclass
 
 import faiss
@@ -19,6 +20,17 @@ logger = logging.getLogger(__name__)
 
 _index = None
 _meta: list | None = None
+
+# Chunk ids are "<source document>__<00042>", numbered in reading order, so a chunk's
+# neighbour in the document is one step away in this number. Four calculator chunks are
+# named differently and simply never have a neighbour.
+_CHUNK_ID = re.compile(r"^(.*)__(\d+)$")
+
+# Consecutive chunks were cut with CHUNK_OVERLAP, so each one repeats the tail of the
+# previous - a median of 300 characters. These bound the search for that repeated part:
+# below the minimum a match is coincidence, above the maximum it is not an overlap.
+_MIN_OVERLAP = 30
+_MAX_OVERLAP = 600
 
 
 @dataclass
@@ -55,6 +67,63 @@ def passes_filters(m: dict, filters: dict | None) -> bool:
         if actual != wanted:
             return False
     return True
+
+
+def chunk_position(chunk_id: str) -> tuple[str, int] | None:
+    """Return (source document, ordinal) for a chunk id, or None if it is not numbered."""
+    m = _CHUNK_ID.match(chunk_id or "")
+    return (m.group(1), int(m.group(2))) if m else None
+
+
+def join_overlapping(first: str, second: str) -> str:
+    """Concatenate two consecutive chunks without repeating the part they share."""
+    limit = min(len(first), len(second), _MAX_OVERLAP)
+    for size in range(limit, _MIN_OVERLAP, -1):
+        if first[-size:] == second[:size]:
+            return first + second[size:]
+    return first + "\n" + second
+
+
+def merge_adjacent(items: list[tuple[float, dict]]) -> list[tuple[float, dict]]:
+    """Fuse chunks that are consecutive in the same document into one continuous span.
+
+    Retrieval regularly returns neighbouring chunks for the same question; handing the
+    model both means handing it the overlap twice and spending a context slot on text it
+    already has. A span keeps the best score of its parts, so merging never promotes a
+    weaker passage above a stronger one.
+    """
+    ordered: dict[str, dict[int, tuple[float, dict]]] = {}
+    loose: list[tuple[float, dict]] = []
+    for score, m in items:
+        pos = chunk_position(m.get("chunk_id", ""))
+        if pos is None:
+            loose.append((score, m))
+            continue
+        source, ordinal = pos
+        ordered.setdefault(source, {})[ordinal] = (score, m)
+
+    spans: list[tuple[float, dict]] = list(loose)
+    for by_ordinal in ordered.values():
+        run: list[int] = []
+        for ordinal in sorted(by_ordinal) + [None]:
+            if run and ordinal == run[-1] + 1:
+                run.append(ordinal)
+                continue
+            if run:
+                spans.append(_span([by_ordinal[o] for o in run]))
+            run = [ordinal] if ordinal is not None else []
+    return sorted(spans, key=lambda x: x[0], reverse=True)
+
+
+def _span(run: list[tuple[float, dict]]) -> tuple[float, dict]:
+    """Collapse one run of consecutive chunks into a single (score, chunk)."""
+    if len(run) == 1:
+        return run[0]
+    text = run[0][1]["text"]
+    for _, m in run[1:]:
+        text = join_overlapping(text, m["text"])
+    merged = {**run[0][1], "text": text, "merged_chunk_ids": [m["chunk_id"] for _, m in run]}
+    return max(score for score, _ in run), merged
 
 
 async def embed(query: str) -> np.ndarray:

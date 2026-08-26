@@ -1,4 +1,4 @@
-"""RAG orchestration: rewrite -> dual vector retrieval -> rerank -> format.
+"""RAG orchestration: rewrite -> dual vector retrieval -> rerank -> fuse -> format.
 
 The single entry point for grounded course context, shared by chat, program
 generation and fatigue explanations. Each stage lives in its own module
@@ -14,7 +14,7 @@ from __future__ import annotations
 import logging
 
 from app.components.reranker import rerank
-from app.components.retriever import RetrievedChunk, embed, load_index, search
+from app.components.retriever import RetrievedChunk, embed, load_index, merge_adjacent, search
 from app.core.config import settings
 from app.services.query_rewriter import rewrite_query
 
@@ -37,6 +37,9 @@ async def retrieve(
 
     `history` is the preceding conversation ({"role", "content"} messages); it is used
     only to resolve a follow-up question into a self-contained search query.
+
+    `top_n` counts spans, not chunks: chunks that follow one another in the same document
+    are returned fused into a single continuous passage.
     """
     try:
         index, meta = load_index()
@@ -85,9 +88,20 @@ async def retrieve(
     # against the resolved query whenever the rewrite produced one.
     ranked = await rerank(standalone or query, pool)
 
+    # Fusing neighbours frees context slots, so keep pulling candidates until top_n spans
+    # are full: the same budget then carries more of the course instead of the same
+    # passage twice.
+    selected: list[tuple[float, dict]] = []
+    spans: list[tuple[float, dict]] = []
+    for item in ranked:
+        selected.append(item)
+        spans = merge_adjacent(selected)
+        if len(spans) >= top_n:
+            break
+
     return [
         RetrievedChunk(text=m["text"], source=m.get("source", ""), score=float(score), metadata=m)
-        for score, m in ranked[:top_n]
+        for score, m in spans[:top_n]
     ]
 
 
