@@ -1,11 +1,16 @@
 """Offline RAG evaluation against the golden dataset.
 
 Runs the real retrieval pipeline (app.services.rag_pipeline) over evaluation/
-golden_dataset.json, generates an answer per question, and scores four RAGAS-style
-metrics with an LLM judge: faithfulness, answer relevancy, context precision and
-context recall.
+golden_dataset.json and scores it two ways.
+
+Retrieval is scored deterministically against each question's expected_sources -
+hit rate and MRR, no judge, seconds per run - so a change to chunking, rewriting or
+ranking can be measured cheaply and often. Answer quality is scored by an LLM judge on
+four RAGAS-style metrics (faithfulness, answer relevancy, context precision, context
+recall) using the same chat prompt the app ships, so the numbers describe the product.
 
 Usage (from backend/):
+    python -m evaluation.offline_eval --retrieval-only   # fast, no judge
     python -m evaluation.offline_eval                    # writes evaluation/results/<label>.json
     python -m evaluation.offline_eval --label rerank_on  # name the run
     python -m evaluation.offline_eval --compare query_rewrite
@@ -18,7 +23,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-import time
 from datetime import datetime
 from pathlib import Path
 
@@ -26,27 +30,12 @@ import numpy as np
 
 from app.core.config import settings
 from app.core.llm import openai_client
+from app.prompts.registry import active_version, get_prompt
 from app.services.rag_pipeline import retrieve
 
 EVAL_DIR = Path(__file__).resolve().parent
 GOLDEN = EVAL_DIR / "golden_dataset.json"
 RESULTS_DIR = EVAL_DIR / "results"
-
-ANSWER_SYSTEM_PROMPT = """Ти си персонален фитнес треньор и нутриционист. Работиш изцяло по научно-обоснованата методология на Menno Henselmans.
-
-ПРАВИЛА - следвай ги стриктно:
-1. Отговаряй ВИНАГИ на БЪЛГАРСКИ
-2. Ползвай КИЛОГРАМИ и метри, никога pounds или inches
-3. Бъди ДИРЕКТЕН и ПРАКТИЧЕН - давай конкретни числа и препоръки
-4. НЕ изнасяй лекции и НЕ цитирай проучвания, ако не са поискани
-5. Говори като треньор, не като учебник - просто, ясно, приложимо
-6. Ако нещо не е покрито в контекста, кажи го честно
-7. Адаптирай отговора спрямо нивото и целта на потребителя
-8. Посочвай винаги имената на упражненията единствено и САМО на английски език
-9. Задължително базирай всичките си отговори САМО на ресурсите от курса
-
-Контекст от курса на Henselmans (използвай САМО тази информация за факти):
-{context}"""
 
 
 async def _judge(prompt: str, max_tokens: int = 500) -> dict:
@@ -61,11 +50,18 @@ async def _judge(prompt: str, max_tokens: int = 500) -> dict:
 
 
 async def generate_answer(question: str, chunks) -> str:
-    context = "\n\n".join(f"[{c.source}]\n{c.text}" for c in chunks)
+    """Answer with the prompt the chat endpoint ships.
+
+    The eval used to carry its own system prompt, so faithfulness described a system no
+    user ever talked to. There is no profile block here - the golden questions are not
+    tied to a user.
+    """
+    context = "\n\n".join(f"[Източник: {c.source}]\n{c.text}" for c in chunks)
+    system = get_prompt("chat_system")(settings.RESPONSE_LANGUAGE, "", context)
     resp = await openai_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[
-            {"role": "system", "content": ANSWER_SYSTEM_PROMPT.format(context=context)},
+            {"role": "system", "content": system},
             {"role": "user", "content": question},
         ],
         temperature=0.4,
@@ -105,7 +101,9 @@ Return JSON: {{"score": float, "reason": "brief"}}. Reply ONLY with valid JSON."
 
 
 async def score_context_precision(question: str, contexts: list[str]) -> float:
-    chunks_txt = "\n".join(f"Chunk {i+1}: {c[:300]}" for i, c in enumerate(contexts))
+    # Judge the passage that was actually sent to the model. Truncating here made the
+    # judge rate a fused span on its opening lines and call the rest irrelevant.
+    chunks_txt = "\n".join(f"Chunk {i+1}: {c}" for i, c in enumerate(contexts))
     d = await _judge(f"""Evaluate the relevance of each retrieved chunk to the question.
 
 Question: {question}
@@ -120,7 +118,10 @@ Return JSON: {{"chunk_scores": [1, 0, ...], "score": float (mean)}}. Reply ONLY 
 
 
 async def score_context_recall(question: str, ground_truth: str, contexts: list[str]) -> float:
-    ctx = "\n---\n".join(contexts)[:2000]
+    # No cap: a claim that sits past the cut-off is not missing from the context, it is
+    # missing from what the judge was shown - which is how recall got underreported as
+    # passages grew longer.
+    ctx = "\n---\n".join(contexts)
     d = await _judge(f"""You are evaluating a RAG retrieval system.
 
 Question: {question}
@@ -135,17 +136,43 @@ Reply ONLY with valid JSON.""")
     return float(d.get("score", 0.0))
 
 
-async def evaluate(top_n: int = 5) -> dict:
+def score_retrieval(expected_sources: list[str], sources: list[str]) -> tuple[float, float]:
+    """Did retrieval reach a document that contains the answer, and how high up?
+
+    Deterministic, so a retrieval change can be judged in seconds and for the price of
+    the embeddings, instead of 30 questions x 5 judge calls. Returns (hit, reciprocal
+    rank of the first expected source).
+    """
+    if not expected_sources:
+        return 0.0, 0.0
+    for rank, source in enumerate(sources, 1):
+        if source in expected_sources:
+            return 1.0, 1.0 / rank
+    return 0.0, 0.0
+
+
+async def evaluate(top_n: int | None = None, judge: bool = True) -> dict:
+    top_n = top_n or settings.RERANKING_TOP_N
     questions = json.loads(GOLDEN.read_text(encoding="utf-8"))["questions"]
     results = []
     print(f"Evaluating {len(questions)} questions (top_n={top_n}, "
-          f"rerank={settings.RERANK_ENABLED}, rewrite={settings.QUERY_REWRITE_ENABLED})...", flush=True)
+          f"rerank={settings.RERANK_ENABLED}, rewrite={settings.QUERY_REWRITE_ENABLED}, "
+          f"judge={judge})...", flush=True)
 
     for i, q in enumerate(questions, 1):
         chunks = await retrieve(q["question"], top_n=top_n)
         contexts = [c.text for c in chunks]
+        sources = [c.source for c in chunks]
+        row = {**q, "contexts": contexts, "sources": sources}
+        row["source_hit"], row["source_mrr"] = score_retrieval(q.get("expected_sources", []), sources)
+        if not judge:
+            row["judge_error"] = None
+            print(f'  [{i:02d}/{len(questions)}] {q["id"]} | hit={row["source_hit"]:.0f} '
+                  f'mrr={row["source_mrr"]:.2f} | {", ".join(sources[:2])}', flush=True)
+            results.append(row)
+            continue
         answer = await generate_answer(q["question"], chunks)
-        row = {**q, "answer": answer, "contexts": contexts, "sources": [c.source for c in chunks]}
+        row["answer"] = answer
         try:
             row["faithfulness"] = await score_faithfulness(q["question"], answer, contexts)
             row["answer_relevancy"] = await score_answer_relevancy(q["question"], answer)
@@ -165,11 +192,18 @@ async def evaluate(top_n: int = 5) -> dict:
             row["judge_error"] = str(e)
             print(f'  [{i:02d}/{len(questions)}] {q["id"]} JUDGE ERROR: {e}', flush=True)
         results.append(row)
-        time.sleep(0.3)
+        await asyncio.sleep(0.3)
 
+    # Retrieval metrics stand on their own: they never depend on the judge, so they are
+    # averaged over every question, judged or not.
+    summary = {
+        "source_hit_rate": round(float(np.mean([r["source_hit"] for r in results])), 4),
+        "source_mrr": round(float(np.mean([r["source_mrr"] for r in results])), 4),
+    }
     metrics = ["faithfulness", "answer_relevancy", "context_precision", "context_recall", "ragas_score"]
-    scored = [r for r in results if r["judge_error"] is None]
-    summary = {m: round(float(np.mean([r[m] for r in scored])), 4) for m in metrics} if scored else {}
+    scored = [r for r in results if r.get("judge_error") is None and r.get("ragas_score") is not None]
+    if scored:
+        summary.update({m: round(float(np.mean([r[m] for r in scored])), 4) for m in metrics})
     cats = sorted({q["category"] for q in questions})
     by_cat = {
         c: round(float(np.mean([r["ragas_score"] for r in scored if r["category"] == c])), 4)
@@ -180,14 +214,20 @@ async def evaluate(top_n: int = 5) -> dict:
         "config": {
             "llm": settings.PRIMARY_MODEL,
             "embedding": settings.EMBEDDING_MODEL,
+            "chat_prompt_version": active_version("chat_system"),
+            "retrieval_min_score": settings.RETRIEVAL_MIN_SCORE,
             "rerank_enabled": settings.RERANK_ENABLED,
             "reranker_model": settings.RERANKER_MODEL if settings.RERANK_ENABLED else None,
             "query_rewrite_enabled": settings.QUERY_REWRITE_ENABLED,
             "candidates": settings.RETRIEVAL_CANDIDATES,
             "top_n": top_n,
         },
+        "judged": judge,
         "scored_questions": len(scored),
-        "judge_errors": [r["id"] for r in results if r["judge_error"]],
+        "judge_errors": [r["id"] for r in results if r.get("judge_error")],
+        # Named, not just counted: a hit rate that drops should say which questions lost
+        # their document.
+        "source_misses": [r["id"] for r in results if not r["source_hit"]],
         "summary": summary,
         "by_category": by_cat,
         "questions": results,
@@ -197,22 +237,37 @@ async def evaluate(top_n: int = 5) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser(description="Offline RAG evaluation")
     ap.add_argument("--label", default="run", help="name for the result file")
-    ap.add_argument("--top-n", type=int, default=5)
+    ap.add_argument("--top-n", type=int, default=settings.RERANKING_TOP_N,
+                    help="passages per question (default: the value production retrieves with)")
+    ap.add_argument("--retrieval-only", action="store_true",
+                    help="score retrieval against expected_sources and skip the LLM judge")
     ap.add_argument("--compare", help="label of a previous run in results/ to diff against")
     args = ap.parse_args()
 
-    report = asyncio.run(evaluate(top_n=args.top_n))
+    report = asyncio.run(evaluate(top_n=args.top_n, judge=not args.retrieval_only))
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     out = RESULTS_DIR / f"{args.label}.json"
     out.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"\n==== {args.label} ({report['scored_questions']} scored"
+    scope = f"{report['scored_questions']} scored" if report["judged"] else "retrieval only"
+    print(f"\n==== {args.label} ({scope}"
           f"{', %d judge errors' % len(report['judge_errors']) if report['judge_errors'] else ''}) ====")
     baseline = None
     if args.compare:
         p = RESULTS_DIR / f"{args.compare}.json"
         if p.exists():
-            baseline = json.loads(p.read_text(encoding="utf-8"))["summary"]
+            previous = json.loads(p.read_text(encoding="utf-8"))
+            baseline = previous["summary"]
+            # Two runs are only comparable when the retrieval change is the single
+            # variable. Runs made before a config was recorded cannot prove that.
+            differences = [
+                k for k, v in report["config"].items() if (previous.get("config") or {}).get(k) != v
+            ]
+            if previous.get("config") is None:
+                print(f"(warning: '{args.compare}' recorded no config; the diff below may "
+                      f"reflect a different prompt or model, not this run's change)")
+            elif differences:
+                print(f"(warning: '{args.compare}' differs in {', '.join(differences)})")
         else:
             print(f"(no baseline '{args.compare}' in results/)")
     for m, v in report["summary"].items():
@@ -220,6 +275,8 @@ def main() -> None:
             print(f"  {m:20} {baseline[m]:.4f} -> {v:.4f}  ({v - baseline[m]:+.4f})")
         else:
             print(f"  {m:20} {v:.4f}")
+    if report["source_misses"]:
+        print(f"  no expected document retrieved for: {', '.join(report['source_misses'])}")
     print("saved:", out)
 
 
