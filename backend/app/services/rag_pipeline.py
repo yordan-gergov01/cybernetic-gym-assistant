@@ -12,6 +12,7 @@ than failing the user's request.
 from __future__ import annotations
 
 import logging
+from dataclasses import dataclass
 
 from app.components.reranker import rerank
 from app.components.retriever import RetrievedChunk, embed, load_index, merge_adjacent, search
@@ -20,7 +21,20 @@ from app.services.query_rewriter import rewrite_query
 
 logger = logging.getLogger(__name__)
 
-__all__ = ["RetrievedChunk", "retrieve", "retrieve_context"]
+__all__ = ["Retrieval", "RetrievedChunk", "format_context", "retrieve", "retrieve_context"]
+
+
+@dataclass
+class Retrieval:
+    """What retrieval returned, and what it actually searched for.
+
+    The resolved query is part of the result because it is the first thing to look at
+    when an answer is wrong: a follow-up resolved into the wrong subject explains a bad
+    passage far better than the passage does.
+    """
+
+    chunks: list[RetrievedChunk]
+    resolved_query: str | None = None
 
 
 async def retrieve(
@@ -31,7 +45,7 @@ async def retrieve(
     candidates: int | None = None,
     filters: dict | None = None,
     rewrite: bool = True,
-) -> list[RetrievedChunk]:
+) -> Retrieval:
     """Return the most relevant course chunks for `query`, or [] when the course does
     not cover it.
 
@@ -45,9 +59,9 @@ async def retrieve(
         index, meta = load_index()
     except Exception:
         logger.warning("FAISS index/metadata unavailable; retrieving no context", exc_info=True)
-        return []
+        return Retrieval([])
     if not meta:
-        return []
+        return Retrieval([])
 
     top_n = top_n or settings.RERANKING_TOP_N
     candidates = candidates or settings.RETRIEVAL_CANDIDATES
@@ -81,7 +95,7 @@ async def retrieve(
             "No chunk reached the relevance floor (%.2f) for %r; returning no context",
             settings.RETRIEVAL_MIN_SCORE, query[:80],
         )
-        return []
+        return Retrieval([], standalone)
 
     pool = sorted(relevant, key=lambda x: x[0], reverse=True)[:candidates]
     # A follow-up ("а за жени?") means nothing to the cross-encoder on its own, so rerank
@@ -99,10 +113,13 @@ async def retrieve(
         if len(spans) >= top_n:
             break
 
-    return [
-        RetrievedChunk(text=m["text"], source=m.get("source", ""), score=float(score), metadata=m)
-        for score, m in spans[:top_n]
-    ]
+    return Retrieval(
+        [
+            RetrievedChunk(text=m["text"], source=m.get("source", ""), score=float(score), metadata=m)
+            for score, m in spans[:top_n]
+        ],
+        standalone,
+    )
 
 
 async def retrieve_context(
@@ -118,9 +135,16 @@ async def retrieve_context(
     Returns "" when nothing relevant is found, so callers can tell the model there is
     no course context rather than letting it answer ungrounded.
     """
-    chunks = await retrieve(
+    result = await retrieve(
         query, history=history, top_n=top_n, candidates=candidates, filters=filters
     )
-    if not chunks:
-        return ""
+    return format_context(result.chunks)
+
+
+def format_context(chunks: list[RetrievedChunk]) -> str:
+    """Tag each passage with its source so the model can cite it.
+
+    Returns "" for no passages, which is what tells the prompt to say the course does not
+    cover the question.
+    """
     return "\n\n".join(f"[Източник: {c.source}]\n{c.text}" for c in chunks)

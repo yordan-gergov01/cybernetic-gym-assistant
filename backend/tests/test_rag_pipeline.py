@@ -56,7 +56,7 @@ async def test_a_question_the_course_does_not_cover_returns_no_context(monkeypat
     assert all(sim < FLOOR for sim, _ in off_topic)  # precondition
     _install(monkeypatch, hits_per_query=[off_topic, off_topic])
 
-    assert await rag_pipeline.retrieve("коя е столицата на Австралия?") == []
+    assert (await rag_pipeline.retrieve("коя е столицата на Австралия?")).chunks == []
     assert await rag_pipeline.retrieve_context("коя е столицата на Австралия?") == ""
 
 
@@ -68,7 +68,7 @@ async def test_only_the_chunks_above_the_floor_are_kept(monkeypatch):
     ]
     _install(monkeypatch, hits_per_query=[mixed, []])
 
-    chunks = await rag_pipeline.retrieve("колко протеин на килограм?", top_n=10)
+    chunks = (await rag_pipeline.retrieve("колко протеин на килограм?", top_n=10)).chunks
 
     assert [c.metadata["chunk_id"] for c in chunks] == ["relevant", "borderline"]
 
@@ -84,7 +84,7 @@ async def test_a_chunk_found_by_both_query_variants_keeps_its_best_similarity(mo
         ],
     )
 
-    chunks = await rag_pipeline.retrieve("колко протеин?")
+    chunks = (await rag_pipeline.retrieve("колко протеин?")).chunks
 
     assert len(chunks) == 1
     assert chunks[0].score == FLOOR + 0.30
@@ -207,7 +207,7 @@ async def test_fusing_neighbours_frees_the_slot_for_another_document(monkeypatch
         (FLOOR + 0.10, _chunk("Energy PTC 2022__00003", "another document")),
     ], []])
 
-    chunks = await rag_pipeline.retrieve("колко протеин?", top_n=2)
+    chunks = (await rag_pipeline.retrieve("колко протеин?", top_n=2)).chunks
 
     assert [c.source for c in chunks] == ["Protein PTC 2022.pdf", "Energy PTC 2022.pdf"]
     assert chunks[0].text == "first half " + shared + "second half"

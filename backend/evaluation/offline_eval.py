@@ -160,7 +160,7 @@ async def evaluate(top_n: int | None = None, judge: bool = True) -> dict:
           f"judge={judge})...", flush=True)
 
     for i, q in enumerate(questions, 1):
-        chunks = await retrieve(q["question"], top_n=top_n)
+        chunks = (await retrieve(q["question"], top_n=top_n)).chunks
         contexts = [c.text for c in chunks]
         sources = [c.source for c in chunks]
         row = {**q, "contexts": contexts, "sources": sources}

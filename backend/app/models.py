@@ -305,6 +305,49 @@ class ChatMessage(Base):
     user: Mapped["User"] = relationship(back_populates="chat_messages")
 
 
+class AiInteraction(Base):
+    """One row per call to a model: what was asked, what was retrieved, what it cost.
+
+    Without it the only record of a coaching answer is the answer itself, which cannot
+    say which course passages produced it, which prompt version was live, or whether the
+    user waited two seconds or twenty. Retrieved passages are stored as chunk ids and
+    scores rather than as text: the ids reconstruct the exact context from the index, and
+    the course material stays out of the application database.
+
+    A failed call is recorded too - a trace that only covers successes hides precisely
+    the requests worth investigating.
+    """
+
+    __tablename__ = "ai_interactions"
+    id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=new_uuid)
+    user_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), index=True)
+    # Which flow asked: chat | program | fatigue. Metrics are only useful broken down by it.
+    surface: Mapped[str] = mapped_column(String(30), nullable=False)
+    # The answer this trace explains, when the flow stores one.
+    message_id: Mapped[str | None] = mapped_column(UUID(as_uuid=False), ForeignKey("chat_messages.id"))
+
+    query: Mapped[str] = mapped_column(Text, nullable=False)
+    # What retrieval actually searched on after the follow-up was resolved.
+    resolved_query: Mapped[str | None] = mapped_column(Text)
+    retrieved: Mapped[list | None] = mapped_column(JSONB)
+
+    prompt_name: Mapped[str | None] = mapped_column(String(50))
+    prompt_version: Mapped[str | None] = mapped_column(String(10))
+    model: Mapped[str | None] = mapped_column(String(60))
+    temperature: Mapped[float | None] = mapped_column(Float)
+    input_tokens: Mapped[int | None] = mapped_column(Integer)
+    output_tokens: Mapped[int | None] = mapped_column(Integer)
+
+    retrieval_ms: Mapped[int | None] = mapped_column(Integer)
+    generation_ms: Mapped[int | None] = mapped_column(Integer)
+    total_ms: Mapped[int | None] = mapped_column(Integer)
+    error: Mapped[str | None] = mapped_column(Text)
+
+    created_at: Mapped[datetime] = mapped_column(_TS, default=datetime.utcnow, index=True)
+
+    user: Mapped["User"] = relationship()
+
+
 class Notification(Base):
     __tablename__ = "notifications"
     id: Mapped[str] = mapped_column(UUID(as_uuid=False), primary_key=True, default=new_uuid)
