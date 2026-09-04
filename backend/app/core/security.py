@@ -10,6 +10,30 @@ from app.core.config import settings
 
 _BCRYPT_ROUNDS = 12
 
+MIN_PASSWORD_LENGTH = 8
+
+
+def password_problems(password: str) -> list[str]:
+    """Which requirements a password fails: length, letter, digit, symbol.
+
+    The account holds body photos, weight history and health answers, and "12345678"
+    passes a length check on its own.
+
+    Codes, not sentences: this module decides what a password must be, while how to say
+    that to a user is Bulgarian prose and belongs with the rest of it in core/errors.
+    """
+    problems = []
+    if len(password) < MIN_PASSWORD_LENGTH:
+        problems.append("length")
+    if not any(c.isalpha() for c in password):
+        problems.append("letter")
+    if not any(c.isdigit() for c in password):
+        problems.append("digit")
+    # A space is a typo in a password field, not a deliberate symbol, and it is invisible.
+    if not any(not c.isalnum() and not c.isspace() for c in password):
+        problems.append("symbol")
+    return problems
+
 
 def _prepare(password: str) -> bytes:
     """Reduce the password to a fixed 44-byte token before bcrypt.

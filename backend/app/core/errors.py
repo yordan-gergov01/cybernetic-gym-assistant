@@ -22,6 +22,8 @@ from fastapi import Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
+from app.core.security import MIN_PASSWORD_LENGTH
+
 logger = logging.getLogger(__name__)
 
 # What the user calls each field. Kept as singular noun phrases so they agree with the
@@ -52,6 +54,8 @@ _FIELD_LABELS = {
     "dietary_restrictions": "Хранителният режим",
     "email": "Имейлът",
     "password": "Паролата",
+    "new_password": "Новата парола",
+    "current_password": "Текущата парола",
     "name": "Името",
     "weight_kg": "Теглото",
     "reps": "Броят повторения",
@@ -67,6 +71,22 @@ _FIELD_LABELS = {
     "calories": "Броят калории",
     "food_name": "Името на храната",
 }
+
+
+# What each failed password requirement is called when the user reads it.
+_PASSWORD_REQUIREMENTS_BG = {
+    "length": f"поне {MIN_PASSWORD_LENGTH} знака",
+    "letter": "буква",
+    "digit": "цифра",
+    "symbol": "специален знак (например ! ? # @)",
+}
+
+
+def _join_bg(items: list[str]) -> str:
+    """Bulgarian list: "a, b и c" - the last separator is a word, not a comma."""
+    if len(items) == 1:
+        return items[0]
+    return ", ".join(items[:-1]) + " и " + items[-1]
 
 
 def _label(loc: tuple[Any, ...]) -> str:
@@ -122,6 +142,11 @@ def _reason(error: dict) -> str:
         return f"приема само: {_options(ctx.get('expected'))}"
     if kind in ("string_type", "string_pattern_mismatch"):
         return "е в невалиден формат"
+    if kind == "password_weak":
+        # The only custom validator whose refusal is written for the user, so it is the
+        # only one allowed past the generic wording below.
+        missing = [_PASSWORD_REQUIREMENTS_BG[code] for code in ctx.get("missing", [])]
+        return f"трябва да съдържа {_join_bg(missing)}" if missing else "е твърде слаба"
     if kind == "value_error":
         # EmailStr and custom validators land here, but their message is English prose
         # ("An email address must have an @-sign") and must not reach the user.

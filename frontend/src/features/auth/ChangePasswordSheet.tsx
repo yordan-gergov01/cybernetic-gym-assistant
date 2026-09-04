@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useMutation } from '@tanstack/react-query'
 import { ErrorNote, Field, Sheet, TextInput } from '../../components/ui'
-import { MIN_PASSWORD_LENGTH, PASSWORD_HINT_BG } from '../../constants/auth'
+import { PASSWORD_HINT_BG, passwordProblem } from '../../constants/auth'
 import { showToast } from '../../services/toast'
 import { authApi } from './api'
 
@@ -13,7 +13,7 @@ import { authApi } from './api'
 export function ChangePasswordSheet({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [current, setCurrent] = useState('')
   const [next, setNext] = useState('')
-  const [tooShort, setTooShort] = useState(false)
+  const [problem, setProblem] = useState<string | null>(null)
 
   const change = useMutation({
     // The sheet covers the bottom of the screen, where a toast would appear.
@@ -28,7 +28,7 @@ export function ChangePasswordSheet({ open, onClose }: { open: boolean; onClose:
   function close() {
     setCurrent('')
     setNext('')
-    setTooShort(false)
+    setProblem(null)
     change.reset()
     onClose()
   }
@@ -53,13 +53,13 @@ export function ChangePasswordSheet({ open, onClose }: { open: boolean; onClose:
             value={next}
             onChange={(e) => setNext(e.target.value)}
             autoComplete="new-password"
-            invalid={tooShort}
+            invalid={problem !== null}
           />
         </Field>
 
-        {tooShort && (
+        {problem && (
           <p role="alert" className="text-sm text-danger-400">
-            Новата парола трябва да е поне {MIN_PASSWORD_LENGTH} знака.
+            {problem}
           </p>
         )}
         {change.error && <ErrorNote error={change.error} />}
@@ -68,13 +68,14 @@ export function ChangePasswordSheet({ open, onClose }: { open: boolean; onClose:
           type="button"
           disabled={change.isPending || !current || !next}
           onClick={() => {
-            // Checked before the request so a too-short password comes back as one
-            // sentence about the field, not as a schema error.
-            if (next.length < MIN_PASSWORD_LENGTH) {
-              setTooShort(true)
+            // Checked before the request so a weak password comes back as one sentence
+            // about the field, not as a schema error.
+            const weak = passwordProblem(next)
+            if (weak) {
+              setProblem(weak)
               return
             }
-            setTooShort(false)
+            setProblem(null)
             change.mutate()
           }}
           className="btn-primary w-full"

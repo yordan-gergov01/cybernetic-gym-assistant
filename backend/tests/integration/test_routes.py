@@ -8,7 +8,7 @@ from app.core.security import create_access_token
 
 from .factories import make_profile, make_program, make_user, prescribed
 
-CREDENTIALS = {"email": "new@example.com", "password": "hunter2hunter2", "name": "Нов"}
+CREDENTIALS = {"email": "new@example.com", "password": "hunter2hunter2!", "name": "Нов"}
 
 UPPER = ("Upper", [("Barbell Bench Press", "chest", 4, 6, 8)])
 

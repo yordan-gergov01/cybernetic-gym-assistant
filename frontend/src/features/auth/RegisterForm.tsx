@@ -1,5 +1,6 @@
 import { useState, type SubmitEvent } from 'react'
 import { Field, TextInput } from '../../components/ui'
+import { PASSWORD_HINT_BG } from '../../constants/auth'
 import { useAuth } from './useAuth'
 import { useAuthSubmit } from './useAuthSubmit'
 
@@ -47,7 +48,7 @@ export function RegisterForm() {
         />
       </Field>
 
-      <Field label="Парола" htmlFor="password" hint="Поне 8 символа.">
+      <Field label="Парола" htmlFor="password" hint={`${PASSWORD_HINT_BG}.`}>
         <TextInput
           id="password"
           type="password"

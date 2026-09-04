@@ -30,7 +30,7 @@ Day = tuple[str, list[Exercise]]
 
 
 async def make_user(db: AsyncSession, email: str = "lifter@example.com") -> User:
-    user = User(email=email, hashed_password=hash_password("hunter2hunter2"), name="Lifter")
+    user = User(email=email, hashed_password=hash_password("hunter2hunter2!"), name="Lifter")
     db.add(user)
     await db.flush()
     return user

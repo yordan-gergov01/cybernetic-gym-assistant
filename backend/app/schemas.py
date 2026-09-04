@@ -1,11 +1,29 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import AfterValidator, BaseModel, EmailStr, Field
+from pydantic_core import PydanticCustomError
 from datetime import datetime, date
-from typing import Literal, Optional
+from typing import Annotated, Literal, Optional
+
+from app.core.security import password_problems
+
 
 # AUTH
+def _password_policy(value: str) -> str:
+    """Adapt the password rule to pydantic. The rule itself lives in core.security; the
+    wording of the refusal lives in core.errors, with every other Bulgarian message."""
+    missing = password_problems(value)
+    if missing:
+        raise PydanticCustomError("password_weak", "password is too weak", {"missing": missing})
+    return value
+
+
+# Every place a password is *set* uses this; signing in deliberately does not, or every
+# account created under the old rule would be locked out of an app it already owns.
+Password = Annotated[str, AfterValidator(_password_policy)]
+
+
 class UserRegister(BaseModel):
     email: EmailStr
-    password: str = Field(min_length=8)
+    password: Password
     name: str = Field(min_length=1, max_length=100)
 
 class UserLogin(BaseModel):
@@ -17,11 +35,11 @@ class ForgotPasswordRequest(BaseModel):
 
 class ResetPasswordRequest(BaseModel):
     token: str
-    new_password: str = Field(min_length=8)
+    new_password: Password
 
 class ChangePasswordRequest(BaseModel):
     current_password: str
-    new_password: str = Field(min_length=8)
+    new_password: Password
 
 class MessageResponse(BaseModel):
     """A plain sentence for the user - used where there is nothing else to return."""

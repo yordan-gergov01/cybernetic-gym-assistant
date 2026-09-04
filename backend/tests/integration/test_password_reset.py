@@ -13,8 +13,8 @@ from app.models import PasswordResetToken, User
 
 from .factories import make_user
 
-PASSWORD = "hunter2hunter2"
-NEW_PASSWORD = "correct-horse-battery"
+PASSWORD = "hunter2hunter2!"
+NEW_PASSWORD = "correct-horse-battery9"
 
 
 async def issued_token(db, client, email: str) -> str:
@@ -65,7 +65,7 @@ async def test_a_reset_link_works_only_once(client, db):
         "/api/v1/auth/reset-password", json={"token": token, "new_password": NEW_PASSWORD}
     )
     second = await client.post(
-        "/api/v1/auth/reset-password", json={"token": token, "new_password": "another-one-entirely"}
+        "/api/v1/auth/reset-password", json={"token": token, "new_password": "another-one-entirely9"}
     )
 
     assert first.status_code == 200
