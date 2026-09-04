@@ -302,6 +302,13 @@ class ChatMessage(Base):
     content: Mapped[str] = mapped_column(Text, nullable=False)
     created_at: Mapped[datetime] = mapped_column(_TS, default=datetime.utcnow)
 
+    # +1 or -1 from the user on an answer. The comment is what makes a downvote usable:
+    # the score says an answer was wrong, the words say what was wrong with it, and a
+    # rejected answer is only worth a golden question once someone knows which part failed.
+    rating: Mapped[int | None] = mapped_column(Integer)
+    rating_comment: Mapped[str | None] = mapped_column(Text)
+    rated_at: Mapped[datetime | None] = mapped_column(_TS)
+
     user: Mapped["User"] = relationship(back_populates="chat_messages")
 
 

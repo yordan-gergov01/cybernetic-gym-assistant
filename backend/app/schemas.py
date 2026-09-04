@@ -413,7 +413,14 @@ class ChatMessageOut(BaseModel):
     role: str
     content: str
     created_at: datetime
+    rating: Optional[int] = None
     class Config: from_attributes = True
+
+class ChatMessageRating(BaseModel):
+    """A verdict on one answer. -1 and +1 only: a five-point scale invites a middle that
+    says nothing, and this signal exists to separate answers worth studying from the rest."""
+    rating: Literal[-1, 1]
+    comment: Optional[str] = Field(default=None, max_length=1000)
 
 class ChatResponse(BaseModel):
     answer: str

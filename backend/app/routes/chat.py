@@ -1,6 +1,7 @@
+from datetime import datetime
 from time import perf_counter
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -10,7 +11,7 @@ from app.db.database import get_db
 from app.deps import get_current_user
 from app.models import AiInteraction, ChatMessage, User, UserProfile
 from app.prompts.registry import active_version, get_prompt
-from app.schemas import ChatMessageCreate, ChatMessageOut, ChatResponse
+from app.schemas import ChatMessageCreate, ChatMessageOut, ChatMessageRating, ChatResponse
 from app.services.rag_pipeline import format_context, retrieve
 from app.services.tracing import ms_since, record_interaction, summarize_chunks
 
@@ -114,6 +115,37 @@ async def get_history(
         select(ChatMessage).where(ChatMessage.user_id == user.id).order_by(ChatMessage.created_at.desc()).limit(limit)
     )
     return list(reversed(r.scalars().all()))
+
+
+@router.post("/messages/{message_id}/rating", status_code=204)
+async def rate_message(
+    message_id: str,
+    data: ChatMessageRating,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Record what the user thought of one answer.
+
+    This is the only judgement of answer quality that comes from the person the answer was
+    written for. Joined with the trace behind the message it says which retrieval and which
+    prompt version produced a reply worth keeping - and a rejected answer is a candidate
+    for the evaluation set, where questions otherwise have to be invented.
+
+    Re-rating replaces the previous verdict; people change their minds after reading again.
+    """
+    r = await db.execute(
+        select(ChatMessage).where(ChatMessage.id == message_id, ChatMessage.user_id == user.id)
+    )
+    message = r.scalar_one_or_none()
+    if message is None:
+        raise HTTPException(404, "Съобщението не е намерено.")
+    if message.role != "assistant":
+        raise HTTPException(400, "Оценява се отговорът на треньора, не собственият ти въпрос.")
+
+    message.rating = data.rating
+    message.rating_comment = (data.comment or "").strip() or None
+    message.rated_at = datetime.utcnow()
+    await db.commit()
 
 
 @router.delete("/history", status_code=204)
