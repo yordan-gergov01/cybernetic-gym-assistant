@@ -12,6 +12,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
+from app.domain.muscles import muscle_bg
+
 MIN_WEEKLY_FREQUENCY = 2
 
 # Groups the ≥2x rule is enforced on. Small accessory muscles are left out: the course
@@ -123,7 +125,7 @@ def plan_muscle_adjustment(
             exercise_name=None,
             from_day=None,
             to_day=None,
-            reason_bg=f"Програмата не съдържа упражнения за {muscle}.",
+            reason_bg=f"Програмата не съдържа упражнения за {muscle_bg(muscle)}.",
         )
 
     free_days = [d for d in training_days if not _muscle_exercises(d, muscle)]
@@ -145,7 +147,7 @@ def plan_muscle_adjustment(
             from_day=source.get("day_number"),
             to_day=free_days[0].get("day_number"),
             reason_bg=(
-                f"Честотата на {muscle} се вдига от {len(with_muscle)}× на "
+                f"Честотата на {muscle_bg(muscle)} се вдига от {len(with_muscle)}× на "
                 f"{len(with_muscle) + 1}× седмично - {moving.get('exercise_name')} се мести "
                 f"в ден {free_days[0].get('day_number')}, без да се променя седмичният обем."
             ),
@@ -161,7 +163,7 @@ def plan_muscle_adjustment(
             from_day=None,
             to_day=None,
             reason_bg=(
-                f"Обемът за {muscle} вече е {planned} серии седмично при оптимум "
+                f"Обемът за {muscle_bg(muscle)} вече е {planned} серии седмично при оптимум "
                 f"{target_weekly_sets}. Застоят не е от липса на обем - провери "
                 "възстановяването и храненето, преди да се добавя още."
             ),
@@ -176,7 +178,7 @@ def plan_muscle_adjustment(
         from_day=None,
         to_day=None,
         reason_bg=(
-            f"Графикът не позволява по-висока честота за {muscle}, затова "
+            f"Графикът не позволява по-висока честота за {muscle_bg(muscle)}, затова "
             f"{primary.get('exercise_name')} получава още една серия "
             f"({planned} → {planned + 1} седмично)."
         ),

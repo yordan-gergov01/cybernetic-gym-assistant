@@ -33,6 +33,7 @@ from dataclasses import dataclass, field
 from datetime import date
 
 from app.domain.calculators import calculate_1rm
+from app.domain.muscles import muscle_bg
 
 # thresholds from the course
 
@@ -475,7 +476,7 @@ def decide_program_continuation(
     scope = classify_scope(changing)
 
     if scope == "systemic":
-        muscles = ", ".join(sorted({e.muscle_group or "?" for e in changing}))
+        muscles = ", ".join(sorted({muscle_bg(e.muscle_group) or "?" for e in changing}))
         return ProgramDecision(
             action="check_recovery",
             scope=scope,
@@ -496,7 +497,7 @@ def decide_program_continuation(
             stalled=changing,
             muscle_group=muscle,
             reason_bg=(
-                f"Няколко упражнения за {muscle} са в двоен застой ({names}). Първо се вдига "
+                f"Няколко упражнения за {muscle_bg(muscle)} са в двоен застой ({names}). Първо се вдига "
                 "честотата на групата, а ако графикът не позволява - броят серии."
             ),
         )
