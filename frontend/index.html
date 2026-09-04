@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- iOS ignores the web manifest's icons; without this the home screen shows a
+         screenshot of the page instead of the app's mark. -->
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <!-- viewport-fit=cover lets the layout extend under the notch; the CSS pads content
          back with env(safe-area-inset-*). user-scalable=no stops double-tap zoom while
          tapping through sets in the gym. -->
