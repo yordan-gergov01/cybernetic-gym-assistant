@@ -1,7 +1,7 @@
 """Vector retrieval component: FAISS index access, embeddings and metadata filtering.
 
 Owns the index/metadata cache (loaded once per process) and knows nothing about
-prompts, rewriting or reranking — those live one layer up in services/rag_pipeline.py.
+prompts, rewriting or reranking - those live one layer up in services/rag_pipeline.py.
 """
 from __future__ import annotations
 
@@ -126,11 +126,20 @@ def _span(run: list[tuple[float, dict]]) -> tuple[float, dict]:
     return max(score for score, _ in run), merged
 
 
-async def embed(query: str) -> np.ndarray:
-    resp = await openai_client.embeddings.create(model=settings.EMBEDDING_MODEL, input=[query])
-    emb = np.array(resp.data[0].embedding, dtype="float32").reshape(1, -1)
-    faiss.normalize_L2(emb)
-    return emb
+async def embed_many(queries: list[str]) -> list[np.ndarray]:
+    """Embed several queries in one call, in the order they were given.
+
+    The query variants are known at the same moment, so embedding them one at a time only
+    buys an extra round trip to the API per variant. Results are ordered by the index the
+    API reports rather than by arrival, which is what pairs a vector with its query.
+    """
+    resp = await openai_client.embeddings.create(model=settings.EMBEDDING_MODEL, input=queries)
+    embeddings = []
+    for item in sorted(resp.data, key=lambda d: d.index):
+        emb = np.array(item.embedding, dtype="float32").reshape(1, -1)
+        faiss.normalize_L2(emb)
+        embeddings.append(emb)
+    return embeddings
 
 
 def search(emb: np.ndarray, index, meta: list, candidates: int, filters: dict | None) -> list[tuple[float, dict]]:

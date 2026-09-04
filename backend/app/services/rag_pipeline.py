@@ -11,17 +11,18 @@ than failing the user's request.
 """
 from __future__ import annotations
 
+import asyncio
 import logging
 from dataclasses import dataclass
 
 from app.components.reranker import rerank
-from app.components.retriever import RetrievedChunk, embed, load_index, merge_adjacent, search
+from app.components.retriever import RetrievedChunk, embed_many, load_index, merge_adjacent, search
 from app.core.config import settings
 from app.services.query_rewriter import rewrite_query
 
 logger = logging.getLogger(__name__)
 
-__all__ = ["Retrieval", "RetrievedChunk", "format_context", "retrieve", "retrieve_context"]
+__all__ = ["Retrieval", "RetrievedChunk", "format_context", "retrieve", "retrieve_context", "warmup"]
 
 
 @dataclass
@@ -73,15 +74,16 @@ async def retrieve(
         if standalone and standalone.lower() != query.lower():
             queries.append(standalone)
 
+    try:
+        embeddings = await embed_many(queries)
+    except Exception:
+        logger.warning("Embedding the query failed; retrieving no context", exc_info=True)
+        return Retrieval([], standalone)
+
     # Dual retrieval: merge hits from every query variant, keeping the best similarity
     # per chunk (dedup by chunk_id).
     merged: dict[str, tuple[float, dict]] = {}
-    for q in queries:
-        try:
-            emb = await embed(q)
-        except Exception:
-            logger.warning("Embedding failed for a query variant; skipping it", exc_info=True)
-            continue
+    for emb in embeddings:
         for sim, m in search(emb, index, meta, candidates, filters):
             cid = m.get("chunk_id") or str(id(m))
             if cid not in merged or sim > merged[cid][0]:
@@ -120,6 +122,20 @@ async def retrieve(
         ],
         standalone,
     )
+
+
+async def warmup() -> None:
+    """Read the index into memory before anyone asks a question.
+
+    Loading it is ~74 MB of blocking disk I/O. Left to the first request it lands on a
+    real user, and blocks the event loop for every other request while it happens. A
+    failure here is not fatal: retrieval still loads on demand and degrades loudly.
+    """
+    try:
+        index, _ = await asyncio.to_thread(load_index)
+        logger.info("Vector index preloaded: %d vectors", index.ntotal)
+    except Exception:
+        logger.warning("Could not preload the vector index; it will load on first use", exc_info=True)
 
 
 async def retrieve_context(

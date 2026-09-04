@@ -4,7 +4,16 @@ FAISS, the embedding API and the rewriter are replaced with stubs — what is un
 is what the pipeline does with their results: which chunks it is willing to call course
 context, and which query the rest of the pipeline sees for a follow-up question.
 """
-from app.components.retriever import _MIN_OVERLAP, chunk_position, join_overlapping, merge_adjacent
+from types import SimpleNamespace
+
+from app.components import retriever
+from app.components.retriever import (
+    _MIN_OVERLAP,
+    chunk_position,
+    embed_many,
+    join_overlapping,
+    merge_adjacent,
+)
 from app.core.config import settings
 from app.services import rag_pipeline
 from app.services.query_rewriter import _HISTORY_TURNS, format_history
@@ -30,9 +39,9 @@ def _install(monkeypatch, *, hits_per_query, rewritten="protein intake per kg"):
         calls["rewrite"] = {"question": question, "history": history}
         return rewritten
 
-    async def fake_embed(q):
-        calls.setdefault("embedded", []).append(q)
-        return q
+    async def fake_embed_many(queries):
+        calls["embedded"] = list(queries)
+        return list(queries)
 
     async def fake_rerank(query, pool):
         calls["rerank_query"] = query
@@ -40,7 +49,7 @@ def _install(monkeypatch, *, hits_per_query, rewritten="protein intake per kg"):
 
     monkeypatch.setattr(rag_pipeline, "load_index", lambda: ("index", [_chunk("seed")]))
     monkeypatch.setattr(rag_pipeline, "rewrite_query", fake_rewrite)
-    monkeypatch.setattr(rag_pipeline, "embed", fake_embed)
+    monkeypatch.setattr(rag_pipeline, "embed_many", fake_embed_many)
     monkeypatch.setattr(rag_pipeline, "rerank", fake_rerank)
     monkeypatch.setattr(
         rag_pipeline, "search",
@@ -223,3 +232,56 @@ def test_a_short_coincidental_match_is_not_treated_as_an_overlap():
 
     assert joined.count("second chunk") == 1
     assert joined.count(coincidence) == 2
+
+
+# EMBEDDING THE QUERY VARIANTS
+
+
+def _fake_embeddings(monkeypatch, vectors: list[tuple[int, list[float]]]):
+    """Answer an embeddings call with (index, vector) pairs, in the given order."""
+    calls = {}
+
+    async def fake_create(model, input):
+        calls["input"] = input
+        calls["count"] = calls.get("count", 0) + 1
+        return SimpleNamespace(
+            data=[SimpleNamespace(index=i, embedding=v) for i, v in vectors]
+        )
+
+    monkeypatch.setattr(retriever.openai_client.embeddings, "create", fake_create)
+    return calls
+
+
+async def test_the_query_variants_are_embedded_in_a_single_call(monkeypatch):
+    """Both variants are known at once; asking for them separately only buys a second
+    round trip to the API."""
+    calls = _fake_embeddings(monkeypatch, [(0, [1.0, 0.0]), (1, [0.0, 1.0])])
+
+    await embed_many(["колко протеин?", "protein intake per kg"])
+
+    assert calls["count"] == 1
+    assert calls["input"] == ["колко протеин?", "protein intake per kg"]
+
+
+async def test_a_vector_is_paired_with_its_own_query_when_the_api_answers_out_of_order(monkeypatch):
+    """The API may return a batch in any order; pairing by arrival would search the
+    corpus with the other query's vector."""
+    _fake_embeddings(monkeypatch, [(1, [0.0, 1.0]), (0, [1.0, 0.0])])
+
+    first, second = await embed_many(["query one", "query two"])
+
+    assert first.tolist() == [[1.0, 0.0]], "the first vector belongs to the first query"
+    assert second.tolist() == [[0.0, 1.0]]
+
+
+async def test_a_failed_embedding_call_leaves_the_answer_ungrounded_rather_than_wrong(monkeypatch):
+    """Without vectors there is nothing to search, so the honest result is no context."""
+    async def fail(queries):
+        raise RuntimeError("embeddings API is down")
+
+    _install(monkeypatch, hits_per_query=[[(FLOOR + 0.2, _chunk("c1"))]])
+    monkeypatch.setattr(rag_pipeline, "embed_many", fail)
+
+    result = await rag_pipeline.retrieve("колко протеин?")
+
+    assert result.chunks == []
