@@ -1,13 +1,12 @@
-from datetime import date, datetime, timedelta
-
 from fastapi import APIRouter, Depends
 from sqlalchemy import select, update
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.database import get_db
 from app.deps import get_current_user
-from app.models import Notification, Program, User, UserProfile, WeightLog, WorkoutLog
+from app.models import Notification, User
 from app.schemas import NotificationOut
+from app.services.notifications import generate_for_user
 
 router = APIRouter(prefix="/notifications", tags=["notifications"])
 
@@ -55,52 +54,9 @@ async def generate_notifications(
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
 ):
-    today = date.today()
-    created = []
+    """Generate today's reminders for the caller.
 
-    wr = await db.execute(select(WeightLog).where(WeightLog.user_id == user.id, WeightLog.date == today))
-    if not wr.scalar_one_or_none():
-        db.add(
-            Notification(
-                user_id=user.id,
-                type="weight_reminder",
-                title="Не забравяй да логнеш теглото си",
-                body="Дневното тегло помага за точен анализ на прогреса.",
-                scheduled_for=datetime.utcnow(),
-            )
-        )
-        created.append("weight_reminder")
-
-    pr_prof = await db.execute(select(UserProfile).where(UserProfile.user_id == user.id))
-    profile = pr_prof.scalar_one_or_none()
-    training_days_per_week = profile.training_days_per_week if profile else None
-
-    pr = await db.execute(select(Program).where(Program.user_id == user.id, Program.status == "active"))
-    program = pr.scalar_one_or_none()
-
-    if program and training_days_per_week:
-        week_start = today - timedelta(days=today.weekday())
-        wl = await db.execute(
-            select(WorkoutLog).where(
-                WorkoutLog.user_id == user.id,
-                WorkoutLog.date >= week_start,
-                WorkoutLog.status == "completed",
-            )
-        )
-        done_this_week = len(wl.scalars().all())
-        remaining = training_days_per_week - done_this_week
-
-        if remaining > 0:
-            db.add(
-                Notification(
-                    user_id=user.id,
-                    type="workout_reminder",
-                    title=f"Още {remaining} тренировки тази седмица",
-                    body=f"Направил си {done_this_week} от {training_days_per_week} тренировки.",
-                    scheduled_for=datetime.utcnow(),
-                )
-            )
-            created.append("workout_reminder")
-
-    await db.commit()
-    return {"created": created}
+    The scheduler does this on its own; the endpoint stays because the app can ask for a
+    refresh when it opens, and because it is how the rules are exercised by hand.
+    """
+    return {"created": await generate_for_user(db, user.id)}

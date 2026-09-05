@@ -1,3 +1,4 @@
+import asyncio
 import logging
 from contextlib import asynccontextmanager
 
@@ -8,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.core.errors import unhandled_exception_handler, validation_exception_handler
 from app.router import api_router
+from app.services.notifications import run_scheduler
 from app.services.rag_pipeline import warmup
 
 logging.basicConfig(
@@ -18,9 +20,20 @@ logging.basicConfig(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Pay for the vector index at boot, not on the first person who asks a question."""
+    """Pay for the vector index at boot, not on the first person who asks a question,
+    and keep the reminders running without anyone pressing a button."""
     await warmup()
-    yield
+    scheduler = (
+        asyncio.create_task(run_scheduler()) if settings.NOTIFICATIONS_SCHEDULER_ENABLED else None
+    )
+    try:
+        yield
+    finally:
+        if scheduler:
+            scheduler.cancel()
+            # Wait for it to actually stop, so shutdown does not race a half-written
+            # notification against the closing database pool.
+            await asyncio.gather(scheduler, return_exceptions=True)
 
 
 app = FastAPI(title=settings.APP_NAME, version="1.0.0", lifespan=lifespan)

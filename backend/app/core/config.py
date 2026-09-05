@@ -68,6 +68,14 @@ class Settings(BaseSettings):
 
     RESPONSE_LANGUAGE: str = "bulgarian"
 
+    # Reminders are generated in the background instead of waiting for the app to ask.
+    # The hour is local to the server: nobody wants a reminder to weigh in at 03:00.
+    NOTIFICATIONS_SCHEDULER_ENABLED: bool = True
+    NOTIFICATIONS_HOUR: int = 9
+    # How often to look. Generating is idempotent per day, so waking often costs a query
+    # and buys tolerance to restarts - a missed fixed alarm would skip the whole day.
+    NOTIFICATIONS_INTERVAL_MINUTES: int = 60
+
     APP_HOST: str = "0.0.0.0"
     APP_PORT: int = 8000
 
