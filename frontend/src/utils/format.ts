@@ -23,5 +23,12 @@ export const formatRate = (kgPerWeek: number | null | undefined): string =>
 export const formatDelta = (value: number | null | undefined): string =>
   value === null || value === undefined ? '-' : `${value > 0 ? '+' : ''}${Math.round(value)}`
 
+/** mm:ss, zero-padded so a running clock never changes width mid-count. */
+export const formatClock = (seconds: number): string => {
+  const minutes = Math.floor(seconds / 60)
+  const rest = seconds % 60
+  return `${String(minutes).padStart(2, '0')}:${String(rest).padStart(2, '0')}`
+}
+
 export const clampPercent = (value: number, max: number): number =>
   max > 0 ? Math.min(100, Math.max(0, (value / max) * 100)) : 0

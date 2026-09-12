@@ -9,6 +9,18 @@ export const todayIso = (): string => {
 }
 
 
+/** Whole seconds left until `deadline`, never negative.
+ *
+ *  Rounded up, so something with 0.4s to run still reads 1: a countdown that shows 0
+ *  while it is still running is the one number it must not get wrong. */
+export const secondsUntil = (deadlineMs: number, nowMs: number = Date.now()): number =>
+  Math.max(0, Math.ceil((deadlineMs - nowMs) / 1000))
+
+/** Whole seconds elapsed since `start`, floored - 90.9s of work is 90 whole seconds. */
+export const secondsSince = (startMs: number, nowMs: number = Date.now()): number =>
+  Math.max(0, Math.floor((nowMs - startMs) / 1000))
+
+
 export const formatDayLabel = (iso: string): string => {
   const d = new Date(`${iso}T00:00:00`)
   return `${WEEKDAYS_BG[d.getDay()]}, ${d.getDate()} ${MONTHS_BG[d.getMonth()]}`

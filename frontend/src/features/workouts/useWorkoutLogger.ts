@@ -54,6 +54,19 @@ export function useWorkoutLogger({
       done: false,
     }))
 
+  /** An extra set beyond the prescribed count. People do them, and a set performed but
+   *  not logged is a hole in the volume the coaching decisions are made from. */
+  const addRow = (exercise: ProgramExercise) => {
+    setEntries((prev) => {
+      const rows = prev[exercise.id] ?? rowsFor(exercise)
+      const last = rows[rows.length - 1]
+      return {
+        ...prev,
+        [exercise.id]: [...rows, { weight: last?.weight ?? '', reps: last?.reps ?? '', rir: '', done: false }],
+      }
+    })
+  }
+
   const updateRow = (exercise: ProgramExercise, index: number, patch: Partial<SetEntry>) => {
     setEntries((prev) => {
       const rows = prev[exercise.id] ?? rowsFor(exercise)
@@ -64,6 +77,13 @@ export function useWorkoutLogger({
   const completedCount = Object.values(entries)
     .flat()
     .filter((row) => row.done).length
+
+  // Exercises nobody has touched yet still count towards the session: the bar has to
+  // show how much of the whole workout is left, not how much of what has been opened.
+  const plannedCount = exercises.reduce(
+    (total, exercise) => total + (entries[exercise.id]?.length ?? exercise.sets_prescribed ?? 3),
+    0,
+  )
 
   const finish = () => {
     const sets: WorkoutSetInput[] = []
@@ -89,7 +109,9 @@ export function useWorkoutLogger({
   return {
     rowsFor,
     updateRow,
+    addRow,
     completedCount,
+    plannedCount,
     finish,
     isSaving: logWorkout.isPending,
     saveError: logWorkout.error,

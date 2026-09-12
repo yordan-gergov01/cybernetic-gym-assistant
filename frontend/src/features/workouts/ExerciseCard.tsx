@@ -1,3 +1,4 @@
+import { Icon } from '../../components/ui'
 import type { ProgramExercise } from '../../types/api'
 import { SetRow } from './SetRow'
 import type { SetEntry } from './useWorkoutLogger'
@@ -6,10 +7,12 @@ export function ExerciseCard({
   exercise,
   rows,
   onChangeRow,
+  onAddRow,
 }: {
   exercise: ProgramExercise
   rows: SetEntry[]
   onChangeRow: (index: number, patch: Partial<SetEntry>) => void
+  onAddRow: () => void
 }) {
   const doneCount = rows.filter((r) => r.done).length
   const allDone = doneCount === rows.length
@@ -57,6 +60,15 @@ export function ExerciseCard({
           <SetRow key={index} index={index} entry={row} onChange={(patch) => onChangeRow(index, patch)} />
         ))}
       </div>
+
+      <button
+        type="button"
+        onClick={onAddRow}
+        className="mt-3 flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-dashed border-ink-700 text-sm font-semibold text-chalk-500 active:scale-[0.99]"
+      >
+        <Icon name="plus" size={16} />
+        Добави серия
+      </button>
     </section>
   )
 }
