@@ -19,11 +19,12 @@ from app.domain.program_design import (
     recommend_split,
     weekly_frequency,
 )
-from app.domain.plateau import MAX_PROGRAM_WEEKS, intensified_rep_range
+from app.domain.plateau import MAX_PROGRAM_WEEKS, intensified_rep_range, undulating_rep_targets
 from app.models import FatigueAssessment, Program, ProgramDay, ProgramExercise, ProgramWeek, User, UserProfile
 from app.prompts.registry import get_prompt
 from app.schemas import (
     ExerciseIntensifyRequest,
+    ExercisePeriodizeRequest,
     ExerciseProgressOut,
     ExerciseSwapRequest,
     FatigueAssessmentOut,
@@ -43,6 +44,8 @@ from app.services.program_adjust import (
     apply_muscle_adjustment,
     apply_rep_range,
     apply_swap,
+    apply_undulation,
+    weekly_occurrences,
     exercise_rows,
     program_weeks,
     template_days,
@@ -393,6 +396,54 @@ async def intensify_exercise(
         )
 
     return await apply_rep_range(db, rows, new_range)
+
+
+@router.post("/{program_id}/exercises/periodize", response_model=ProgramAdjustmentOut)
+async def periodize_exercise(
+    program_id: str,
+    data: ExercisePeriodizeRequest,
+    user: User = Depends(get_current_user),
+    db: AsyncSession = Depends(get_db),
+):
+    """Give a stalled exercise two alternating rep targets (Periodization & progress, p.25).
+
+    The last branch of the course's decision tree: when the rep target cannot go lower
+    and the lift is one worth keeping, its progression model changes instead of the lift.
+    Gated on the review naming this exercise, and on the review actually prescribing
+    periodization for it - an exercise that can still be intensified should be.
+    """
+    program = await _owned_program(db, program_id, user)
+
+    review = await review_program(db, program)
+    if review.decision.action != "adjust_exercise" or review.decision.exercise_name != data.exercise_name:
+        raise HTTPException(409, review.decision.reason_bg)
+    prescribed = next(
+        (t for t in review.techniques if t.exercise_name == data.exercise_name), None
+    )
+    if prescribed is None or prescribed.name != "periodize":
+        raise HTTPException(
+            409,
+            "Курсът предписва периодизация чак когато повторенията не могат да слязат "
+            "по-ниско. Виж какво е препоръчано за това упражнение.",
+        )
+
+    weeks = await program_weeks(db, program.id)
+    rows = exercise_rows(weeks, data.exercise_name)
+    if not rows:
+        raise HTTPException(404, f"„{data.exercise_name}“ не е в тази програма.")
+    if weekly_occurrences(weeks, data.exercise_name) < 2:
+        raise HTTPException(
+            409,
+            "Упражнението се прави веднъж седмично - няма между какво да се редува. "
+            "Първо вдигни честотата му.",
+        )
+
+    undulation = undulating_rep_targets(rows[0].reps_min, rows[0].reps_max)
+    if not undulation:
+        raise HTTPException(409, "Упражнението няма зададен диапазон повторения.")
+
+    heavy, volume = undulation
+    return await apply_undulation(db, weeks, data.exercise_name, heavy, volume)
 
 
 @router.post("/{program_id}/muscles/adjust", response_model=ProgramAdjustmentOut)

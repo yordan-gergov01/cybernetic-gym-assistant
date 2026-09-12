@@ -48,6 +48,14 @@ BREAKER_CAP_REPS_ISOLATION = 5
 REP_TARGET_INTENSIFICATION = 4 
 MIN_REPS_PER_SET = 4  
 
+# Undulating periodization, p.29-30: the point is that each session of the exercise
+# carries a different stimulus. The two targets are kept the same distance apart as an
+# intensification step, because a smaller gap is the same session written twice.
+UNDULATION_REP_GAP = REP_TARGET_INTENSIFICATION
+# A beginner does not need periodization (p.33): while linear weight increases are still
+# possible, alternating the stimulus can only slow them down.
+NOVICE_TRAINING_STATUS = 1
+
 # A plateau is a session that repeats the previous one: the same weight for the same or
 # fewer reps in the benchmark set. Progression Guidelines p.3-7 defines progress as more
 # reps at the same weight (or the same reps at more weight), so the absence of both is
@@ -315,6 +323,27 @@ def intensified_rep_range(reps_min: int | None, reps_max: int | None) -> tuple[i
     return lowered_min, lowered_max
 
 
+def undulating_rep_targets(
+    reps_min: int | None, reps_max: int | None
+) -> tuple[tuple[int, int], tuple[int, int]] | None:
+    """The two rep ranges an exercise alternates between under daily undulation.
+
+    Periodization is reached only when the target can no longer be lowered, so the
+    exercise is already the heavy one. The second stimulus therefore has to be built
+    upwards: the current range stays as the heavy session and a lighter, higher-rep
+    session is added beside it. That is also what lets the course's volume requirement
+    survive the high-intensity work (p.30).
+
+    Returns None when the program never stated a range, since there is nothing to
+    alternate around and inventing one would be a guess dressed as a prescription.
+    """
+    if reps_min is None or reps_max is None:
+        return None
+    heavy = (reps_min, reps_max)
+    volume = (reps_min + UNDULATION_REP_GAP, reps_max + UNDULATION_REP_GAP)
+    return heavy, volume
+
+
 def plateau_breaker_weight(
     weight_kg: float,
     reps: int,
@@ -341,7 +370,7 @@ class PlateauTechnique:
     something the user still has to work out at the rack.
     """
 
-    name: str          # plateau_breaker | reactive_deload | intensify | swap_exercise
+    name: str          # plateau_breaker | reactive_deload | intensify | periodize | swap_exercise
     title_bg: str
     how_bg: str
     source_bg: str     # which part of the course this comes from
@@ -399,13 +428,20 @@ def recommend_exercise_technique(
     reps_min: int | None,
     reps_max: int | None,
     is_isolation: bool,
+    training_status: int,
 ) -> PlateauTechnique:
     """The course's answer for one stalled exercise, at the stage it has reached.
 
     First plateau: a breaker session (p.7) - the exercise is not the problem yet, one
     heavy low-volume session usually is enough. Double plateau at the same strength
-    level: the program for that exercise changes (p.23-24), by lowering the rep target if
-    there is room, and by replacing the exercise if there is not.
+    level: the program for that exercise changes (p.23-24).
+
+    The decision tree on p.25 gives three ways to change it: intensification, then either
+    switching the exercise or periodizing it. Intensification comes first while the rep
+    target still has room. After that the two remaining branches are told apart by
+    whether the exercise is one you would replace: the course's own example of an easy
+    swap is a lateral raise, while nobody rebuilds a program around dropping the squat,
+    so isolation work is switched and the compounds are periodized instead.
     """
     if not progress.double_plateau:
         breaker = plateau_breaker_weight(latest.weight_kg, latest.reps, is_isolation=is_isolation)
@@ -437,15 +473,29 @@ def recommend_exercise_technique(
             source_bg="Periodization & progress, стр. 24",
         )
 
+    undulation = undulating_rep_targets(reps_min, reps_max)
+    if not is_isolation and training_status != NOVICE_TRAINING_STATUS and undulation:
+        (heavy_min, heavy_max), (volume_min, volume_max) = undulation
+        return PlateauTechnique(
+            name="periodize",
+            title_bg="Периодизация: редувай стимула между сесиите",
+            how_bg=(
+                f"Повторенията не могат да слязат под {MIN_REPS_PER_SET} на серия, а упражнението "
+                "си струва да се задържи. Спри да правиш еднакви сесии: първата седмично остава "
+                f"тежка с {heavy_min}-{heavy_max} повторения, втората е обемна с "
+                f"{volume_min}-{volume_max} повторения при по-малка тежест. Всяка сесия се сравнява "
+                "със същия тип отпреди, така че прогресията пак става измерима."
+            ),
+            source_bg="Periodization & progress, стр. 25 и 29-30",
+        )
+
     return PlateauTechnique(
         name="swap_exercise",
         title_bg="Смени упражнението",
         how_bg=(
             f"Повторенията вече не могат да слязат под {MIN_REPS_PER_SET} на серия, без обемът "
             "да падне под нужния за растеж. Замени упражнението с друго за същото движение - "
-            "често застоят е от прекалено голяма стъпка на тежестта, а не от самия мускул. "
-            "Ако държиш да останеш на това упражнение, следващата стъпка по курса е "
-            "периодизация."
+            "често застоят е от прекалено голяма стъпка на тежестта, а не от самия мускул."
         ),
         source_bg="Periodization & progress, стр. 24",
     )

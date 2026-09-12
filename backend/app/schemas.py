@@ -348,7 +348,7 @@ class ExerciseProgressOut(BaseModel):
 class ExerciseTechniqueOut(BaseModel):
     """One course technique for a stalled exercise, with the numbers to act on."""
     exercise_name: str
-    name: str                        # plateau_breaker | reactive_deload | intensify | swap_exercise
+    name: str                        # plateau_breaker | reactive_deload | intensify | periodize | swap_exercise
     title_bg: str
     how_bg: str
     source_bg: str
@@ -358,6 +358,9 @@ class ExerciseSwapRequest(BaseModel):
     replacement_name: str                # must exist in the course library
 
 class ExerciseIntensifyRequest(BaseModel):
+    exercise_name: str
+
+class ExercisePeriodizeRequest(BaseModel):
     exercise_name: str
 
 class MuscleAdjustRequest(BaseModel):

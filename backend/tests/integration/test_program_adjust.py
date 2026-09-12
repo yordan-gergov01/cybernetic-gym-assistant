@@ -11,6 +11,8 @@ from app.domain.exercise_library import find
 from app.models import WorkoutSet
 from app.domain.program_design import plan_muscle_adjustment
 from app.services.program_adjust import (
+    apply_undulation,
+    weekly_occurrences,
     apply_muscle_adjustment,
     apply_rep_range,
     apply_swap,
@@ -142,3 +144,63 @@ async def test_a_full_week_gets_a_set_instead_of_a_session(db):
 
     assert change.action == "add_sets"
     assert {row.sets_prescribed for row in await prescribed(db, program, "Barbell Bench Press")} == {5}
+
+
+# --- periodization: two stimuli inside one week -------------------------------------
+
+TWICE_A_WEEK = ("Upper A", [("Barbell Bench Press", "chest", 4, 4, 6)])
+AGAIN = ("Upper B", [("Barbell Bench Press", "chest", 4, 4, 6)])
+
+
+async def test_undulation_gives_the_week_two_different_sessions(db):
+    """Alternating inside the week is the point: the next session has to carry a
+    different stimulus than the last one."""
+    user = await make_user(db)
+    program = await make_program(db, user, [TWICE_A_WEEK, AGAIN], weeks=WEEKS)
+    weeks = await program_weeks(db, program.id)
+
+    await apply_undulation(db, weeks, "Barbell Bench Press", (4, 6), (8, 10))
+
+    rows = await prescribed(db, program, "Barbell Bench Press")
+    assert {(row.reps_min, row.reps_max) for row in rows} == {(4, 6), (8, 10)}
+
+
+async def test_every_week_gets_both_sessions_not_alternating_weeks(db):
+    """Spreading the two targets over separate weeks would be a slow linear change
+    wearing undulation's name."""
+    user = await make_user(db)
+    program = await make_program(db, user, [TWICE_A_WEEK, AGAIN], weeks=WEEKS)
+    weeks = await program_weeks(db, program.id)
+
+    await apply_undulation(db, weeks, "Barbell Bench Press", (4, 6), (8, 10))
+
+    per_week = {}
+    for week in await program_weeks(db, program.id):
+        per_week[week.week_number] = {
+            (e.reps_min, e.reps_max)
+            for day in week.days for e in day.exercises
+            if e.exercise_name == "Barbell Bench Press"
+        }
+    assert all(targets == {(4, 6), (8, 10)} for targets in per_week.values()), per_week
+
+
+async def test_the_heavy_session_keeps_the_target_the_lifter_is_already_on(db):
+    """The exercise someone is stuck on must not become lighter everywhere at once."""
+    user = await make_user(db)
+    program = await make_program(db, user, [TWICE_A_WEEK, AGAIN], weeks=1)
+    weeks = await program_weeks(db, program.id)
+
+    await apply_undulation(db, weeks, "Barbell Bench Press", (4, 6), (8, 10))
+
+    first_day = sorted(weeks[0].days, key=lambda d: d.day_number)[0]
+    heavy = [e for e in first_day.exercises if e.exercise_name == "Barbell Bench Press"][0]
+    assert (heavy.reps_min, heavy.reps_max) == (4, 6)
+
+
+async def test_an_exercise_trained_once_a_week_has_nothing_to_alternate(db):
+    user = await make_user(db)
+    program = await make_program(db, user, [TWICE_A_WEEK, LOWER], weeks=WEEKS)
+    weeks = await program_weeks(db, program.id)
+
+    assert weekly_occurrences(weeks, "Barbell Squat") == 1
+    assert weekly_occurrences(weeks, "Barbell Bench Press") == 1

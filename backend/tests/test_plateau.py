@@ -20,11 +20,14 @@ from app.domain.plateau import (
     compare_sessions,
     consecutive_stalls,
     decide_program_continuation,
+    NOVICE_TRAINING_STATUS,
+    UNDULATION_REP_GAP,
     intensified_rep_range,
     intensified_rep_target,
     plateau_breaker_weight,
     reactive_deload,
     recommend_exercise_technique,
+    undulating_rep_targets,
 )
 
 START = date(2026, 1, 5)
@@ -242,13 +245,14 @@ def test_a_first_plateau_does_not_send_anyone_to_recovery():
 # --- which technique the course prescribes ----------------------------------------
 
 
-def technique(stalls, reps=(6, 8), isolation=False, weight=100.0, done=5):
+def technique(stalls, reps=(6, 8), isolation=False, weight=100.0, done=5, status=2):
     return recommend_exercise_technique(
         progress("Barbell Squat", "quads", status="stalled", stalls=stalls),
         latest=BenchmarkSet(START, weight, done),
         reps_min=reps[0],
         reps_max=reps[1],
         is_isolation=isolation,
+        training_status=status,
     )
 
 
@@ -263,16 +267,60 @@ def test_a_double_plateau_lowers_the_rep_target_when_there_is_room():
     assert answer.name == "intensify"
 
 
-def test_a_double_plateau_replaces_the_exercise_when_reps_cannot_go_lower():
+def test_an_isolation_exercise_is_replaced_when_reps_cannot_go_lower():
+    """The course's own example of an easy swap is a lateral raise: the stall is usually
+    the weight increment, not the muscle."""
     # A range topping out at 6 cannot drop four points and stay at the growth floor.
     assert intensified_rep_range(4, 6) is None, "precondition: no room left to intensify"
-    answer = technique(stalls=2, reps=(4, 6))
+
+    answer = technique(stalls=2, reps=(4, 6), isolation=True)
+
     assert answer.name == "swap_exercise"
 
 
+def test_a_compound_is_periodized_rather_than_dropped():
+    """Nobody rebuilds a program around abandoning the squat, so the exercise stays and
+    its progression model changes instead - the last branch of the course's tree."""
+    assert intensified_rep_range(4, 6) is None, "precondition: no room left to intensify"
+
+    answer = technique(stalls=2, reps=(4, 6), isolation=False)
+
+    assert answer.name == "periodize"
+    assert "4-6" in answer.how_bg, "the heavy session keeps the range it already has"
+    assert "8-10" in answer.how_bg, "and the second session is the other stimulus"
+
+
+def test_a_novice_is_not_given_periodization():
+    """While linear weight increases still work, alternating the stimulus can only slow
+    them down - a beginner needs a different exercise, not a cleverer program."""
+    answer = technique(stalls=2, reps=(4, 6), status=NOVICE_TRAINING_STATUS)
+
+    assert answer.name == "swap_exercise"
+
+
+def test_an_exercise_without_a_rep_range_is_not_periodized():
+    """There is nothing to alternate around, and inventing a range would be a guess
+    presented as a prescription."""
+    answer = technique(stalls=2, reps=(None, None))
+
+    assert answer.name == "swap_exercise"
+
+
+def test_the_two_undulating_targets_are_a_real_change_of_stimulus():
+    heavy, volume = undulating_rep_targets(6, 8)
+
+    assert volume[0] - heavy[0] == UNDULATION_REP_GAP
+    assert volume[1] - heavy[1] == UNDULATION_REP_GAP
+
+
 def test_every_technique_says_where_it_comes_from():
-    for stalls, reps in ((1, (6, 8)), (2, (10, 15)), (2, (4, 6))):
-        answer = technique(stalls=stalls, reps=reps)
+    for stalls, reps, isolation in (
+        (1, (6, 8), False),
+        (2, (10, 15), False),
+        (2, (4, 6), True),
+        (2, (4, 6), False),
+    ):
+        answer = technique(stalls=stalls, reps=reps, isolation=isolation)
         assert answer.source_bg and answer.title_bg and answer.how_bg
 
 

@@ -207,7 +207,7 @@ export type ExerciseProgress = {
 /** One course technique for a stalled exercise, with the numbers to act on. */
 export type ExerciseTechnique = {
   exercise_name: string
-  name: 'plateau_breaker' | 'reactive_deload' | 'intensify' | 'swap_exercise'
+  name: 'plateau_breaker' | 'reactive_deload' | 'intensify' | 'periodize' | 'swap_exercise'
   title_bg: string
   how_bg: string
   source_bg: string
@@ -229,10 +229,10 @@ export type ProgramReview = {
   skipped_exercises: string[]
 }
 
-/** What applying a verdict actually changed (swap / intensify / muscles adjust).
+/** What applying a verdict actually changed (swap / intensify / periodize / muscles adjust).
  *  `rows_changed` counts prescribed rows across every week, not sessions. */
 export type ProgramAdjustment = {
-  action: 'swap' | 'intensify' | 'add_sets' | 'move_exercise'
+  action: 'swap' | 'intensify' | 'periodize' | 'add_sets' | 'move_exercise'
   summary_bg: string
   exercises: string[]
   rows_changed: number

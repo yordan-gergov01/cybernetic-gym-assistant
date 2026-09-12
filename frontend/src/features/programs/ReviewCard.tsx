@@ -52,14 +52,27 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
     onSuccess: refresh,
   })
 
+  const periodize = useMutation({
+    mutationFn: () => programsApi.periodizeExercise(programId, review.exercise_name ?? ''),
+    onSuccess: refresh,
+  })
+
   const adjustMuscle = useMutation({
     mutationFn: () => programsApi.adjustMuscle(programId, review.muscle_group ?? ''),
     onSuccess: refresh,
   })
 
+  // The course reaches periodization only once the rep target cannot go lower, so the
+  // button appears exactly when the review says so - never as a second option offered
+  // beside intensification.
+  const periodization = review.techniques.find(
+    (technique) =>
+      technique.exercise_name === review.exercise_name && technique.name === 'periodize',
+  )
+
   // Failures reach the user as a toast (see main.tsx); what has to stay on the card is
   // the change that succeeded, because it describes the program from now on.
-  const applied = intensify.data ?? adjustMuscle.data
+  const applied = intensify.data ?? periodize.data ?? adjustMuscle.data
 
   const muscle = muscleLabel(review.muscle_group)
   const title =
@@ -101,8 +114,9 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
 
       {applied && <p className="mt-3 text-sm text-ok-400">{applied.summary_bg}</p>}
 
-      {/* Intensifying is the first of the two options the course gives for a single
-          stalled lift; replacing it is the other, and lives on the exercise itself. */}
+      {/* Intensifying is the first of the three answers the course gives for a single
+          stalled lift. Replacing it is the second and lives on the exercise itself;
+          periodizing it is the last, and only once the target cannot go lower. */}
       {review.action === 'adjust_exercise' && review.new_rep_target && (
         <button
           type="button"
@@ -111,6 +125,17 @@ export function ReviewCard({ programId, review }: { programId: string; review: P
           className="btn-primary mt-3 w-full"
         >
           {intensify.isPending ? 'Прилагам…' : `Свали целта до ${review.new_rep_target} повторения`}
+        </button>
+      )}
+
+      {review.action === 'adjust_exercise' && periodization && (
+        <button
+          type="button"
+          onClick={() => periodize.mutate()}
+          disabled={periodize.isPending}
+          className="btn-primary mt-3 w-full"
+        >
+          {periodize.isPending ? 'Прилагам…' : 'Раздели на тежка и обемна сесия'}
         </button>
       )}
 

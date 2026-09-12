@@ -154,6 +154,7 @@ async def review_program(db: AsyncSession, program: Program) -> ProgramReview:
                         reps_min=prescribed_ex.reps_min,
                         reps_max=prescribed_ex.reps_max,
                         is_isolation=is_isolation,
+                        training_status=program.training_status,
                     ),
                 )
             )

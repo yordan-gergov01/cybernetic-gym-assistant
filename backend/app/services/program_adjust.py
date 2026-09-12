@@ -136,6 +136,64 @@ async def apply_rep_range(
     )
 
 
+async def apply_undulation(
+    db: AsyncSession,
+    weeks: list[ProgramWeek],
+    exercise_name: str,
+    heavy: tuple[int, int],
+    volume: tuple[int, int],
+) -> ProgramChange:
+    """Give one exercise two rep targets that alternate between its sessions.
+
+    The alternation is inside each week, not across weeks: undulation is about the next
+    session carrying a different stimulus than the last one, and spreading the two
+    targets over separate weeks would just be a slow linear change with extra steps.
+
+    The first session of the week keeps the heavy target it already had, so the exercise
+    the lifter is stuck on is not suddenly lighter everywhere.
+    """
+    changed = 0
+    for week in weeks:
+        occurrences = [
+            exercise
+            for day in week.days
+            for exercise in day.exercises
+            if exercise.exercise_name == exercise_name
+        ]
+        for index, row in enumerate(occurrences):
+            row.reps_min, row.reps_max = heavy if index % 2 == 0 else volume
+            changed += 1
+    await db.commit()
+
+    logger.info("Undulated %s across %d prescribed rows", exercise_name, changed)
+    return ProgramChange(
+        action="periodize",
+        summary_bg=(
+            f"{exercise_name}: сесиите вече не са еднакви - първата в седмицата остава "
+            f"{heavy[0]}-{heavy[1]} повторения, втората става {volume[0]}-{volume[1]} при "
+            f"по-малка тежест. Променени са {changed} тренировки."
+        ),
+        exercises=[exercise_name],
+        rows_changed=changed,
+    )
+
+
+def weekly_occurrences(weeks: list[ProgramWeek], exercise_name: str) -> int:
+    """How many times a week the exercise is trained, by the first week of the program.
+
+    Undulation needs two sessions to alternate between; one session a week can only ever
+    carry one stimulus.
+    """
+    if not weeks:
+        return 0
+    return len([
+        exercise
+        for day in weeks[0].days
+        for exercise in day.exercises
+        if exercise.exercise_name == exercise_name
+    ])
+
+
 async def apply_muscle_adjustment(
     db: AsyncSession, weeks: list[ProgramWeek], adjustment: MuscleAdjustment
 ) -> ProgramChange:

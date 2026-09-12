@@ -23,6 +23,9 @@ export const programsApi = {
     http.post<ProgramAdjustment>(`/programs/${id}/exercises/swap`, payload),
   intensifyExercise: (id: string, exerciseName: string) =>
     http.post<ProgramAdjustment>(`/programs/${id}/exercises/intensify`, { exercise_name: exerciseName }),
+
+  periodizeExercise: (id: string, exerciseName: string) =>
+    http.post<ProgramAdjustment>(`/programs/${id}/exercises/periodize`, { exercise_name: exerciseName }),
   adjustMuscle: (id: string, muscleGroup: string) =>
     http.post<ProgramAdjustment>(`/programs/${id}/muscles/adjust`, { muscle_group: muscleGroup }),
   /** Designing a whole program takes the model 20-40 seconds; the default timeout would
