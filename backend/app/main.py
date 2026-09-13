@@ -8,6 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.errors import unhandled_exception_handler, validation_exception_handler
+from app.core.http import close_http_client, http_client
 from app.router import api_router
 from app.services.notifications import run_scheduler
 from app.services.rag_pipeline import warmup
@@ -21,8 +22,10 @@ logging.basicConfig(
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Pay for the vector index at boot, not on the first person who asks a question,
-    and keep the reminders running without anyone pressing a button."""
+    keep the reminders running without anyone pressing a button, and hold one HTTP
+    connection pool for the whole process instead of one per outbound call."""
     await warmup()
+    http_client()
     scheduler = (
         asyncio.create_task(run_scheduler()) if settings.NOTIFICATIONS_SCHEDULER_ENABLED else None
     )
@@ -34,6 +37,7 @@ async def lifespan(app: FastAPI):
             # Wait for it to actually stop, so shutdown does not race a half-written
             # notification against the closing database pool.
             await asyncio.gather(scheduler, return_exceptions=True)
+        await close_http_client()
 
 
 app = FastAPI(title=settings.APP_NAME, version="1.0.0", lifespan=lifespan)

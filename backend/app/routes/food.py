@@ -2,13 +2,13 @@ import json
 import logging
 from datetime import date as date_type
 
-import httpx
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
+from app.core.http import http_client
 from app.core.llm import openai_client
 from app.db.database import get_db
 from app.deps import get_current_user
@@ -62,18 +62,16 @@ def parse_usda_nutrients(food_data: dict, qty: float) -> dict:
 async def lookup_usda(item: FoodItem) -> dict | None:
     try:
         q = item.food_name_en + (f" {item.cooking_method}" if item.cooking_method else "")
-        async with httpx.AsyncClient() as client:
-            r = await client.get(
-                f"{settings.USDA_BASE_URL.rstrip('/')}/foods/search",
-                params={
-                    "api_key": settings.USDA_API_KEY,
-                    "query": q,
-                    "dataType": ["Foundation", "SR Legacy"],
-                    "pageSize": 3,
-                },
-                timeout=8,
-            )
-            foods = r.json().get("foods", [])
+        r = await http_client().get(
+            f"{settings.USDA_BASE_URL.rstrip('/')}/foods/search",
+            params={
+                "api_key": settings.USDA_API_KEY,
+                "query": q,
+                "dataType": ["Foundation", "SR Legacy"],
+                "pageSize": 3,
+            },
+        )
+        foods = r.json().get("foods", [])
         if not foods:
             return None
         ntr = parse_usda_nutrients(foods[0], item.quantity_g)

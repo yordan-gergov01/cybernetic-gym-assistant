@@ -35,6 +35,9 @@ class Settings(BaseSettings):
 
     USDA_API_KEY: str = "DEMO_KEY"
     USDA_BASE_URL: str = "https://api.nal.usda.gov/fdc/v1"
+    # Ceiling on any outbound third-party call. A food lookup runs once per item in a
+    # meal, so a hanging host must not hold the whole request open.
+    HTTP_TIMEOUT_SECONDS: float = 8.0
 
     # Cloudflare R2 (S3-compatible) - stores progress/BF% photos. DB keeps only the key.
     R2_ENDPOINT_URL: str = ""
