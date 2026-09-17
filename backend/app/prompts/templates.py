@@ -90,6 +90,49 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+def chat_system_v3(response_language: str, profile_block: str, context: str) -> str:
+    """v3 keeps the grounding and drops the citations.
+
+    v2 asked the model to cite the source of every claim, so answers read
+    "...2.0-2.2 г/кг (източник: [Protein PTC 2022.pdf])". Which files the coach reads is
+    internal; a person asking how much protein to eat is owed the number, not the
+    library. The passages arrive unlabelled as well, so there is no name to repeat even
+    by accident - the answer is still grounded, it just stops narrating where it came
+    from.
+    """
+    bg = _is_bulgarian(response_language)
+    has_context = bool(context.strip())
+    if bg:
+        intro = "Ти си персонален AI фитнес треньор по методологията на Menno Henselmans."
+        grounding = (
+            "ОСНОВАВАНЕ: Отговаряй приоритетно спрямо КОНТЕКСТА по-долу. "
+            "НЕ споменавай източници, файлове, модули или номера на страници и НЕ пиши "
+            "препратки в скоби - потребителят иска отговора, не откъде идва. "
+            "Ако контекстът НЕ покрива въпроса, кажи ясно, че нямаш конкретна информация по темата, "
+            "и обозначи общите съвети като такива. Не измисляй числа или проучвания."
+        )
+        context_label = (
+            "Контекст:" if has_context
+            else "Няма намерен релевантен контекст за този въпрос."
+        )
+    else:
+        intro = "You are a personal AI fitness coach trained on Menno Henselmans methodology."
+        grounding = (
+            "GROUNDING: Base your answer primarily on the CONTEXT below. "
+            "Do NOT mention sources, files, modules or page numbers, and do NOT add bracketed "
+            "references - the user wants the answer, not where it came from. "
+            "If the context does NOT cover the question, say clearly that you have no specific "
+            "information on it, and label any general advice as such. Never invent numbers or studies."
+        )
+        context_label = "Context:" if has_context else "No relevant context was found for this question."
+    return f"""{intro}
+{chat_language_rules_v1(response_language)}
+{grounding}
+{profile_block}
+{context_label}
+{context}"""
+
+
 def program_week_template_v3(
     *,
     level_label: str,

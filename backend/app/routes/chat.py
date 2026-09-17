@@ -1,8 +1,8 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from time import perf_counter
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import delete, select
+from sqlalchemy import case, delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
@@ -17,6 +17,12 @@ from app.services.tracing import ms_since, record_interaction, summarize_chunks
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
+# Within one exchange a question comes before its answer, whatever the clock says. The
+# two can be written in the same microsecond - a stubbed or cached model answers that
+# fast - and equal timestamps leave the order to the database, which showed answers
+# above the questions that caused them.
+_QUESTION_FIRST = case((ChatMessage.role == "user", 0), else_=1)
+
 # Warm enough for coaching language, cool enough to keep the numbers it is given.
 CHAT_TEMPERATURE = 0.4
 
@@ -28,8 +34,15 @@ async def chat(
     db: AsyncSession = Depends(get_db),
 ):
     started = perf_counter()
+    # The question was asked now; the answer is saved seconds later, once the model has
+    # replied. Stamping both at save time gave a pair one identical timestamp, and the
+    # history then ordered them arbitrarily - answers showed above their own questions.
+    asked_at = datetime.now(timezone.utc)
     r = await db.execute(
-        select(ChatMessage).where(ChatMessage.user_id == user.id).order_by(ChatMessage.created_at.desc()).limit(10)
+        select(ChatMessage)
+        .where(ChatMessage.user_id == user.id)
+        .order_by(ChatMessage.created_at.desc(), _QUESTION_FIRST.desc())
+        .limit(10)
     )
     history = [{"role": m.role, "content": m.content} for m in reversed(r.scalars().all())]
 
@@ -89,8 +102,13 @@ async def chat(
     generation_ms = ms_since(generation_started)
     answer = resp.choices[0].message.content
 
-    db.add(ChatMessage(user_id=user.id, role="user", content=data.content))
-    assistant_msg = ChatMessage(user_id=user.id, role="assistant", content=answer)
+    db.add(ChatMessage(user_id=user.id, role="user", content=data.content, created_at=asked_at))
+    # Stamped from the same clock as the question, and explicitly: the column stores a
+    # timezone, while the model's default fills it with a naive value, and mixing the two
+    # in one exchange puts the answer hours away from its own question.
+    assistant_msg = ChatMessage(
+        user_id=user.id, role="assistant", content=answer, created_at=datetime.now(timezone.utc)
+    )
     db.add(assistant_msg)
     await db.commit()
     await db.refresh(assistant_msg)
@@ -112,7 +130,10 @@ async def get_history(
     db: AsyncSession = Depends(get_db),
 ):
     r = await db.execute(
-        select(ChatMessage).where(ChatMessage.user_id == user.id).order_by(ChatMessage.created_at.desc()).limit(limit)
+        select(ChatMessage)
+        .where(ChatMessage.user_id == user.id)
+        .order_by(ChatMessage.created_at.desc(), _QUESTION_FIRST.desc())
+        .limit(limit)
     )
     return list(reversed(r.scalars().all()))
 
@@ -144,7 +165,7 @@ async def rate_message(
 
     message.rating = data.rating
     message.rating_comment = (data.comment or "").strip() or None
-    message.rated_at = datetime.utcnow()
+    message.rated_at = datetime.now(timezone.utc)
     await db.commit()
 
 

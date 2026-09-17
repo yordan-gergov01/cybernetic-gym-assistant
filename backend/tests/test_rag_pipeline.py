@@ -285,3 +285,4 @@ async def test_a_failed_embedding_call_leaves_the_answer_ungrounded_rather_than_
     result = await rag_pipeline.retrieve("колко протеин?")
 
     assert result.chunks == []
+

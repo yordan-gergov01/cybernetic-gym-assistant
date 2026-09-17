@@ -86,3 +86,17 @@ async def test_a_failed_generation_is_recorded_and_leaves_no_half_conversation(
 
     messages = (await db.execute(select(ChatMessage))).scalars().all()
     assert not messages, "nothing was answered, so nothing belongs in the history"
+
+
+async def test_a_question_is_stored_before_the_answer_to_it(client, db, monkeypatch):
+    """Both used to be stamped when the answer was saved, so a pair shared one timestamp
+    and the history was free to show the answer above the question that caused it."""
+    user = await make_user(db)
+    _stub_retrieval(monkeypatch)
+    _stub_model(monkeypatch)
+
+    await client.post("/api/v1/chat", json={"content": "Колко протеин?"}, headers=auth(user))
+
+    history = await client.get("/api/v1/chat/history", headers=auth(user))
+    roles = [m["role"] for m in history.json()]
+    assert roles == ["user", "assistant"]

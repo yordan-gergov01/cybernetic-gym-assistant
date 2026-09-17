@@ -158,9 +158,15 @@ async def retrieve_context(
 
 
 def format_context(chunks: list[RetrievedChunk]) -> str:
-    """Tag each passage with its source so the model can cite it.
+    """The retrieved passages as one block for the prompt, with no source names.
+
+    Each passage used to be labelled with its module, and the model repeated the label
+    in its answers. Which files the coach reads is internal: the user asked for coaching,
+    not for an inventory of the course material. Leaving the names out of the prompt is
+    what makes that reliable - an instruction not to mention them only asks the model to
+    remember.
 
     Returns "" for no passages, which is what tells the prompt to say the course does not
     cover the question.
     """
-    return "\n\n".join(f"[Източник: {c.source}]\n{c.text}" for c in chunks)
+    return "\n\n---\n\n".join(c.text for c in chunks)

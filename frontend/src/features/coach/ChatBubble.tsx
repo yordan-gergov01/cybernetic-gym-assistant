@@ -1,6 +1,6 @@
 import type { ChatMessage } from '../../types/api'
 
-const typeDelay = [0, 150, 300];
+const typeDelay = [0, 150, 300]
 
 export function ChatBubble({ message }: { message: ChatMessage }) {
   const isUser = message.role === 'user'
@@ -16,6 +16,7 @@ export function ChatBubble({ message }: { message: ChatMessage }) {
     </div>
   )
 }
+
 
 export function TypingBubble() {
   return (

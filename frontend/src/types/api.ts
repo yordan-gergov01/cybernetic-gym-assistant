@@ -334,4 +334,12 @@ export type FatigueAssessment = {
   assessed_at: string
 }
 
-export type ChatMessage = { id: string; role: 'user' | 'assistant'; content: string; created_at: string }
+export type ChatMessage = {
+  id: string
+  role: 'user' | 'assistant'
+  content: string
+  created_at: string
+  rating?: number | null
+}
+
+export type ChatAnswer = { answer: string; message_id: string }
