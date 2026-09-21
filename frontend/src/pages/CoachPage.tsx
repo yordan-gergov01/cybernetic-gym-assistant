@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { Screen } from '../components/layout/Screen'
 import { ErrorNote, Icon, Loading, Sheet } from '../components/ui'
-import { queryKeys } from '../constants/query-keys'
-import { coachApi } from '../features/coach/api'
 import { ChatBubble, TypingBubble } from '../features/coach/ChatBubble'
 import { ChatComposer } from '../features/coach/ChatComposer'
+import { useCoachChat } from '../features/coach/useCoachChat'
 
 /** Openers for an empty conversation.
  *
@@ -20,28 +18,17 @@ const SUGGESTIONS = [
 ]
 
 export function CoachPage() {
-  const queryClient = useQueryClient()
   const endRef = useRef<HTMLDivElement>(null)
   const [clearOpen, setClearOpen] = useState(false)
-
-  const history = useQuery({ queryKey: queryKeys.chat, queryFn: () => coachApi.history() })
-  const send = useMutation({
-    mutationFn: coachApi.send,
-    onSuccess: () => queryClient.invalidateQueries({ queryKey: queryKeys.chat }),
-  })
-  const clear = useMutation({
-    mutationFn: coachApi.clear,
-    onSuccess: () => {
-      setClearOpen(false)
-      queryClient.invalidateQueries({ queryKey: queryKeys.chat })
-    },
-  })
-
-  const messages = history.data ?? []
+  const { history, messages, pending, ask, discard, isAnswering, clear } = useCoachChat()
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [messages.length, send.isPending])
+    // Smoothly for a new message, instantly while the answer is being written: a smooth
+    // scroll restarted on every token never arrives anywhere.
+    endRef.current?.scrollIntoView({ behavior: pending?.answer ? 'auto' : 'smooth' })
+  }, [messages.length, pending?.question, pending?.answer])
+
+  const isEmpty = !messages.length && !pending
 
   return (
     <Screen title="Треньор" subtitle="Отговорите се основават на курса на Henselmans">
@@ -62,7 +49,7 @@ export function CoachPage() {
           {history.isLoading && <Loading />}
           {history.error && <ErrorNote error={history.error} onRetry={() => history.refetch()} />}
 
-          {!history.isLoading && !messages.length && (
+          {!history.isLoading && isEmpty && (
             <div className="space-y-3">
               <p className="text-sm text-chalk-500">
                 Питай за тренировки, хранене или възстановяване. Ето откъде да започнеш:
@@ -72,8 +59,8 @@ export function CoachPage() {
                   <button
                     key={question}
                     type="button"
-                    onClick={() => send.mutate(question)}
-                    disabled={send.isPending}
+                    onClick={() => ask(question)}
+                    disabled={isAnswering}
                     className="min-h-11 rounded-xl border border-ink-700 bg-ink-900 px-4 py-2.5 text-left text-sm text-chalk-300 active:scale-[0.99] disabled:opacity-60"
                   >
                     {question}
@@ -84,17 +71,37 @@ export function CoachPage() {
           )}
 
           {messages.map((message) => (
-            <ChatBubble key={message.id} message={message} />
+            <ChatBubble key={message.id} role={message.role} content={message.content} />
           ))}
 
-          {send.isPending && <TypingBubble />}
+          {/* The turn in flight. Nothing here is stored yet: on failure the question stays
+              on screen so it can be sent again without being typed again. */}
+          {pending && (
+            <>
+              <ChatBubble role="user" content={pending.question} />
+              {pending.answer ? (
+                <ChatBubble role="assistant" content={pending.answer} />
+              ) : (
+                !pending.failed && <TypingBubble />
+              )}
+              {pending.failed && (
+                <div className="space-y-2">
+                  <ErrorNote error={pending.failed} onRetry={() => ask(pending.question)} />
+                  <button type="button" onClick={discard} className="btn-ghost w-full">
+                    Откажи въпроса
+                  </button>
+                </div>
+              )}
+            </>
+          )}
+
           {/* The composer is sticky and overlays the end of the list, so the last
               message - citations included - needs room to clear it. */}
           <div ref={endRef} className="h-14" />
         </div>
 
         <div className="sticky bottom-[4.5rem] mt-4 bg-ink-950 pt-2">
-          <ChatComposer onSend={(text) => send.mutate(text)} isPending={send.isPending} />
+          <ChatComposer onSend={ask} isPending={isAnswering} />
         </div>
       </div>
 

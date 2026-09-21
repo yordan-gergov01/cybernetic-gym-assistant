@@ -1,7 +1,11 @@
+import logging
+from collections.abc import AsyncGenerator
 from datetime import date, datetime, timezone
 from time import perf_counter
 
 from fastapi import APIRouter, Depends, HTTPException
+from fastapi.responses import EventSourceResponse
+from fastapi.sse import ServerSentEvent
 from sqlalchemy import case, delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -11,11 +15,13 @@ from app.db.database import get_db
 from app.deps import get_current_user
 from app.models import AiInteraction, ChatMessage, User, UserProfile
 from app.prompts.registry import active_version, get_prompt
-from app.schemas import ChatMessageCreate, ChatMessageOut, ChatMessageRating, ChatResponse
+from app.schemas import ChatMessageCreate, ChatMessageOut, ChatMessageRating
 from app.services.rag_pipeline import format_context, retrieve
 from app.services.nutrition import daily_intake
 from app.services.tracing import ms_since, record_interaction, summarize_chunks
 from app.services.training_week import build_today
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -28,13 +34,25 @@ _QUESTION_FIRST = case((ChatMessage.role == "user", 0), else_=1)
 # Warm enough for coaching language, cool enough to keep the numbers it is given.
 CHAT_TEMPERATURE = 0.4
 
+# Shown instead of the answer when generation breaks. The stream is already open by
+# then, so there is no status code left to carry a message - the client only ever sees
+# this sentence.
+GENERATION_FAILED = "Треньорът не успя да отговори. Опитай пак след малко."
 
-@router.post("", response_model=ChatResponse)
+
+@router.post("", response_class=EventSourceResponse)
 async def chat(
     data: ChatMessageCreate,
     user: User = Depends(get_current_user),
     db: AsyncSession = Depends(get_db),
-):
+) -> AsyncGenerator[ServerSentEvent, None]:
+    """Answer one question, a token at a time.
+
+    Retrieval plus generation is 3-6 seconds; delivered in one piece that is 3-6 seconds
+    of a blank screen. The answer is streamed so reading can start on the first sentence,
+    and the turn is only written down once it is whole: a truncated coaching answer saved
+    as if it were complete is worse than no answer at all.
+    """
     started = perf_counter()
     # The question was asked now; the answer is saved seconds later, once the model has
     # replied. Stamping both at save time gave a pair one identical timestamp, and the
@@ -125,20 +143,51 @@ async def chat(
         )
 
     generation_started = perf_counter()
+    pieces: list[str] = []
+    # A streamed response carries no usage by default, and the trace is worth little
+    # without it: cost per answer is the number that decides whether a model stays.
+    usage = None
     try:
-        resp = await openai_client.chat.completions.create(
+        stream = await openai_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=messages,
             temperature=CHAT_TEMPERATURE,
             max_tokens=1000,
+            stream=True,
+            stream_options={"include_usage": True},
         )
+        async for chunk in stream:
+            # The usage chunk arrives last and carries no choices; a content chunk
+            # carries no usage. Neither may be read as if it were the other.
+            if chunk.usage is not None:
+                usage = chunk.usage
+            if not chunk.choices:
+                continue
+            piece = chunk.choices[0].delta.content
+            if piece:
+                pieces.append(piece)
+                yield ServerSentEvent(event="delta", data={"text": piece})
     except Exception as exc:
         # The calls worth investigating are the ones that failed, so the trace is written
-        # before the error leaves the route.
+        # before the failure is reported.
         await record_interaction(db, trace(error=str(exc), generation_ms=ms_since(generation_started)))
-        raise
+        logger.warning("Chat generation failed for user %s", user.id, exc_info=True)
+        yield ServerSentEvent(event="error", data={"detail": GENERATION_FAILED})
+        return
     generation_ms = ms_since(generation_started)
-    answer = resp.choices[0].message.content
+    answer = "".join(pieces)
+
+    if not answer.strip():
+        # The call succeeded and said nothing. Storing that as an answer would leave an
+        # empty coach bubble in the history with no way to tell it from a lost message.
+        await record_interaction(db, trace(
+            error="the model returned an empty answer",
+            generation_ms=generation_ms,
+            input_tokens=getattr(usage, "prompt_tokens", None),
+            output_tokens=getattr(usage, "completion_tokens", None),
+        ))
+        yield ServerSentEvent(event="error", data={"detail": GENERATION_FAILED})
+        return
 
     db.add(ChatMessage(user_id=user.id, role="user", content=data.content, created_at=asked_at))
     # Stamped from the same clock as the question, and explicitly: the column stores a
@@ -154,11 +203,13 @@ async def chat(
     await record_interaction(db, trace(
         message_id=assistant_msg.id,
         generation_ms=generation_ms,
-        input_tokens=getattr(resp.usage, "prompt_tokens", None),
-        output_tokens=getattr(resp.usage, "completion_tokens", None),
+        input_tokens=getattr(usage, "prompt_tokens", None),
+        output_tokens=getattr(usage, "completion_tokens", None),
     ))
 
-    return ChatResponse(answer=answer, message_id=assistant_msg.id)
+    # Closes the turn: the client swaps the text it streamed for the stored message, and
+    # the id is what lets the answer be rated afterwards.
+    yield ServerSentEvent(event="done", data={"message_id": assistant_msg.id})
 
 
 @router.get("/history", response_model=list[ChatMessageOut])

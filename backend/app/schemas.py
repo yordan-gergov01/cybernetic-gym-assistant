@@ -443,10 +443,6 @@ class ChatMessageRating(BaseModel):
     rating: Literal[-1, 1]
     comment: Optional[str] = Field(default=None, max_length=1000)
 
-class ChatResponse(BaseModel):
-    answer: str
-    message_id: str
-
 # NOTIFICATIONS
 class NotificationOut(BaseModel):
     id: str

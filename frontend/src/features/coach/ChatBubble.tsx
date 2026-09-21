@@ -1,9 +1,7 @@
-import type { ChatMessage } from '../../types/api'
-
 const typeDelay = [0, 150, 300]
 
-export function ChatBubble({ message }: { message: ChatMessage }) {
-  const isUser = message.role === 'user'
+export function ChatBubble({ role, content }: { role: string; content: string }) {
+  const isUser = role === 'user'
   return (
     <div
       className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
@@ -12,7 +10,7 @@ export function ChatBubble({ message }: { message: ChatMessage }) {
           : 'mr-auto rounded-bl-md border border-ink-700 bg-ink-800 text-chalk-50'
       }`}
     >
-      {message.content}
+      {content}
     </div>
   )
 }

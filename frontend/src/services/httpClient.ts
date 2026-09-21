@@ -50,37 +50,17 @@ export const DEFAULT_TIMEOUT_MS = 15_000
  *  estimation, the coach. Thirty seconds of thinking is normal there, not a fault. */
 export const MODEL_TIMEOUT_MS = 120_000
 
-export async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
-  const { body, headers, timeoutMs = DEFAULT_TIMEOUT_MS, signal, ...rest } = options
-  const isForm = body instanceof FormData
-  const token = getToken()
-
-  const timeout = new AbortController()
-  const timer = setTimeout(() => timeout.abort(), timeoutMs)
-
-  let response: Response
-  try {
-    response = await fetch(`${BASE}${path}`, {
-      ...rest,
-      signal: signal ?? timeout.signal,
-      headers: {
-        ...(isForm || body === undefined ? {} : { 'Content-Type': 'application/json' }),
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
-        ...headers,
-      },
-      body: isForm ? body : body !== undefined ? JSON.stringify(body) : undefined,
-    })
-  } catch (error) {
-    // No response at all: the backend cannot describe this one, so the sentence is
-    // written here. Status 0 marks it as "never reached the API" for callers that care.
-    if (error instanceof DOMException && error.name === 'AbortError') {
-      throw new ApiError(0, 'Заявката отне твърде дълго. Провери връзката и опитай пак.')
-    }
-    throw new ApiError(0, 'Няма връзка със сървъра. Провери интернета и опитай пак.')
-  } finally {
-    clearTimeout(timer)
+/** No response at all: the backend cannot describe this one, so the sentence is written
+ *  here. Status 0 marks it as "never reached the API" for callers that care. */
+function unreachable(error: unknown): ApiError {
+  if (error instanceof DOMException && error.name === 'AbortError') {
+    return new ApiError(0, 'Заявката отне твърде дълго. Провери връзката и опитай пак.')
   }
+  return new ApiError(0, 'Няма връзка със сървъра. Провери интернета и опитай пак.')
+}
 
+/** Throw if the API refused the request, in the one shape every screen knows how to show. */
+async function rejectFailures(response: Response, path: string): Promise<void> {
   // A 401 means two completely different things depending on where it came from. On
   // the sign-in endpoints it is "wrong email or password" and the backend already says
   // so; anywhere else it is a token the API no longer accepts, which ends the session.
@@ -105,9 +85,118 @@ export async function request<T>(path: string, options: RequestOptions = {}): Pr
     }
     throw new ApiError(response.status, detail, fields)
   }
+}
+
+export async function request<T>(path: string, options: RequestOptions = {}): Promise<T> {
+  const { body, headers, timeoutMs = DEFAULT_TIMEOUT_MS, signal, ...rest } = options
+  const isForm = body instanceof FormData
+  const token = getToken()
+
+  const timeout = new AbortController()
+  const timer = setTimeout(() => timeout.abort(), timeoutMs)
+
+  let response: Response
+  try {
+    response = await fetch(`${BASE}${path}`, {
+      ...rest,
+      signal: signal ?? timeout.signal,
+      headers: {
+        ...(isForm || body === undefined ? {} : { 'Content-Type': 'application/json' }),
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...headers,
+      },
+      body: isForm ? body : body !== undefined ? JSON.stringify(body) : undefined,
+    })
+  } catch (error) {
+    throw unreachable(error)
+  } finally {
+    clearTimeout(timer)
+  }
+
+  await rejectFailures(response, path)
 
   if (response.status === 204) return undefined as T
   return response.json() as Promise<T>
+}
+
+/** One Server-Sent Event: the name the server tagged it with, and its raw `data` text. */
+export type SseEvent = { event: string; data: string }
+
+/** POST and read the reply as it is written, instead of waiting for all of it.
+ *
+ *  `EventSource` cannot do this - it is GET-only and cannot carry the Authorization
+ *  header - so the stream is read off `fetch` by hand. The timeout covers the whole
+ *  answer rather than only the headers: on a streamed reply the headers arrive at once,
+ *  so a timeout that stopped there would guard nothing. */
+export async function* streamEvents(
+  path: string,
+  body: unknown,
+  { timeoutMs = MODEL_TIMEOUT_MS }: Options = {},
+): AsyncGenerator<SseEvent> {
+  const token = getToken()
+  const timeout = new AbortController()
+  const timer = setTimeout(() => timeout.abort(), timeoutMs)
+
+  try {
+    let response: Response
+    try {
+      response = await fetch(`${BASE}${path}`, {
+        method: 'POST',
+        signal: timeout.signal,
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'text/event-stream',
+          ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        },
+        body: JSON.stringify(body),
+      })
+    } catch (error) {
+      throw unreachable(error)
+    }
+
+    await rejectFailures(response, path)
+    if (!response.body) throw new ApiError(0, 'Отговорът не пристигна. Опитай пак.')
+
+    const reader = response.body.getReader()
+    const decoder = new TextDecoder()
+    let buffer = ''
+    for (;;) {
+      let chunk: ReadableStreamReadResult<Uint8Array>
+      try {
+        chunk = await reader.read()
+      } catch (error) {
+        throw unreachable(error)
+      }
+      if (chunk.done) break
+      // A UTF-8 character can be split across two chunks, and Bulgarian spends two bytes
+      // a letter - decoding each chunk on its own would cut letters in half.
+      buffer += decoder.decode(chunk.value, { stream: true })
+      for (;;) {
+        const end = buffer.indexOf(EVENT_SEPARATOR)
+        if (end === -1) break
+        const event = parseEvent(buffer.slice(0, end))
+        buffer = buffer.slice(end + EVENT_SEPARATOR.length)
+        if (event) yield event
+      }
+    }
+  } finally {
+    clearTimeout(timer)
+  }
+}
+
+/** SSE ends an event with a blank line. */
+const EVENT_SEPARATOR = '\n\n'
+
+/** One `event:`/`data:` block, or null for a block that names no event - a keep-alive
+ *  comment, or the empty tail after the last separator. */
+function parseEvent(block: string): SseEvent | null {
+  let event = ''
+  const data: string[] = []
+  for (const line of block.replace(/\r/g, '').split('\n')) {
+    if (line.startsWith('event:')) event = line.slice(6).trim()
+    else if (line.startsWith('data:')) data.push(line.slice(5).replace(/^ /, ''))
+  }
+  return event ? { event, data: data.join('\n') } : null
 }
 
 type Options = { timeoutMs?: number }

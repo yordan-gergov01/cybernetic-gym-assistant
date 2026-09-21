@@ -342,4 +342,3 @@ export type ChatMessage = {
   rating?: number | null
 }
 
-export type ChatAnswer = { answer: string; message_id: string }
