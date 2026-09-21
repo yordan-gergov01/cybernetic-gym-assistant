@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from time import perf_counter
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -13,7 +13,9 @@ from app.models import AiInteraction, ChatMessage, User, UserProfile
 from app.prompts.registry import active_version, get_prompt
 from app.schemas import ChatMessageCreate, ChatMessageOut, ChatMessageRating, ChatResponse
 from app.services.rag_pipeline import format_context, retrieve
+from app.services.nutrition import daily_intake
 from app.services.tracing import ms_since, record_interaction, summarize_chunks
+from app.services.training_week import build_today
 
 router = APIRouter(prefix="/chat", tags=["chat"])
 
@@ -57,6 +59,40 @@ async def chat(
         lvl = levels[profile.training_status - 1] if profile.training_status in (1, 2, 3) else "—"
         profile_ctx = get_prompt("chat_profile_block")(lvl, profile.goal_validated or profile.goal, e)
 
+    # What the program says about today, as facts rather than as something to reason
+    # about: asked what to train, the coach used to answer from the course material and
+    # invent a session that was not the user's.
+    today = await build_today(db, user.id, date.today())
+    today_ctx = ""
+    if today:
+        today_ctx = get_prompt("chat_today_block")(
+            day_name=today.day_name,
+            is_rest_day=today.is_rest_day,
+            trained_today=today.trained_today,
+            week_number=today.week_number,
+            total_weeks=today.total_weeks,
+            exercises=[
+                {
+                    "name": e.exercise_name,
+                    "sets": e.sets_prescribed,
+                    "reps_min": e.reps_min,
+                    "reps_max": e.reps_max,
+                    "rir": e.rir_target,
+                    "target_weight_kg": e.target_weight_kg,
+                    "note": e.target_note,
+                }
+                for e in today.exercises
+            ],
+        )
+
+    intake = await daily_intake(db, user.id, date.today())
+    nutrition_ctx = get_prompt("chat_nutrition_block")(
+        totals=intake.totals,
+        targets=intake.targets,
+        remaining=intake.remaining,
+        has_targets=intake.has_targets,
+    )
+
     # The history goes to retrieval too, not just to the model: on its own a follow-up
     # like "а за жени?" retrieves noise, because the subject lives in the previous turn.
     retrieval_started = perf_counter()
@@ -64,7 +100,9 @@ async def chat(
     retrieval_ms = ms_since(retrieval_started)
     context = format_context(retrieval.chunks)
 
-    system = get_prompt("chat_system")(settings.RESPONSE_LANGUAGE, profile_ctx, context)
+    system = get_prompt("chat_system")(
+        settings.RESPONSE_LANGUAGE, "\n".join(part for part in (profile_ctx, today_ctx) if part), context
+    )
 
     messages = [{"role": "system", "content": system}, *history, {"role": "user", "content": data.content}]
 
@@ -171,5 +209,17 @@ async def rate_message(
 
 @router.delete("/history", status_code=204)
 async def clear_history(user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
+    """Erase the conversation, and what was recorded about it.
+
+    The user is told the history is deleted, and a trace holds their question verbatim,
+    so it cannot stay behind. Traces of answered turns would follow their message through
+    the foreign key anyway; the ones left by a failed generation have no message to
+    follow and are removed here.
+    """
+    await db.execute(
+        delete(AiInteraction).where(
+            AiInteraction.user_id == user.id, AiInteraction.surface == "chat"
+        )
+    )
     await db.execute(delete(ChatMessage).where(ChatMessage.user_id == user.id))
     await db.commit()

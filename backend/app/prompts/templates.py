@@ -90,6 +90,75 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+def chat_today_block_v1(
+    *,
+    day_name: str | None,
+    is_rest_day: bool,
+    trained_today: bool,
+    week_number: int,
+    total_weeks: int,
+    exercises: list[dict],
+) -> str:
+    """What the user's program prescribes for today, as facts the model may not invent.
+
+    Without it the coach answered "what should I train today?" from the course material
+    and produced a plausible workout that was not the user's: right body part, wrong
+    exercises. The session is decided by program generation and the progression engine,
+    so it is read out here, never reasoned about.
+    """
+    if is_rest_day:
+        return "ДНЕШНАТА ТРЕНИРОВКА: днес е почивен ден по програмата."
+    if not exercises:
+        return ""
+
+    lines = [f"ДНЕШНАТА ТРЕНИРОВКА (седмица {week_number} от {total_weeks}) - {day_name or 'тренировка'}:"]
+    for index, exercise in enumerate(exercises, 1):
+        reps = f"{exercise['reps_min']}-{exercise['reps_max']}" if exercise.get("reps_min") else "?"
+        parts = [f"{exercise['sets']} серии x {reps} повт."]
+        if exercise.get("rir") is not None:
+            parts.append(f"RIR {exercise['rir']}")
+        if exercise.get("target_weight_kg"):
+            parts.append(f"цел {exercise['target_weight_kg']} кг")
+        if exercise.get("note"):
+            parts.append(exercise["note"])
+        lines.append(f"{index}. {exercise['name']} - {', '.join(parts)}")
+    if trained_today:
+        lines.append("Тази тренировка вече е записана днес.")
+    return "\n".join(lines)
+
+
+def chat_nutrition_block_v1(
+    *, totals: dict, targets: dict, remaining: dict, has_targets: bool
+) -> str:
+    """Today's intake against today's target, as the app already counted it.
+
+    Asked how much is left to eat, the coach has to read the number the food screen
+    shows. Working it out from the conversation would produce a second, quieter answer
+    that contradicts the one on screen.
+    """
+    if not has_targets:
+        # No target does not mean nothing is known: what was logged today is still a
+        # fact, and "you have eaten 1450 kcal, no target is set" beats silence that the
+        # model then fills in for itself.
+        if not totals.get("calories"):
+            return ""
+        return (
+            f"ДНЕШНО ХРАНЕНЕ: изядени {totals.get('calories', 0):.0f} ккал, "
+            f"протеин {totals.get('protein_g', 0):.0f} г. Няма зададена дневна цел."
+        )
+    return (
+        "ДНЕШНО ХРАНЕНЕ (изядено / цел / остават): "
+        f"{totals.get('calories', 0):.0f} / {targets.get('calories', 0):.0f} / "
+        f"{remaining.get('calories', 0):.0f} ккал | "
+        f"протеин {totals.get('protein_g', 0):.0f} / {targets.get('protein_g', 0):.0f} / "
+        f"{remaining.get('protein_g', 0):.0f} г | "
+        f"мазнини {totals.get('fat_g', 0):.0f} / {targets.get('fat_g', 0):.0f} / "
+        f"{remaining.get('fat_g', 0):.0f} г | "
+        f"въглехидрати {totals.get('carbs_g', 0):.0f} / {targets.get('carbs_g', 0):.0f} / "
+        f"{remaining.get('carbs_g', 0):.0f} г"
+    )
+
+
 def chat_system_v3(response_language: str, profile_block: str, context: str) -> str:
     """v3 keeps the grounding and drops the citations.
 
@@ -122,6 +191,71 @@ def chat_system_v3(response_language: str, profile_block: str, context: str) -> 
             "Do NOT mention sources, files, modules or page numbers, and do NOT add bracketed "
             "references - the user wants the answer, not where it came from. "
             "If the context does NOT cover the question, say clearly that you have no specific "
+            "information on it, and label any general advice as such. Never invent numbers or studies."
+        )
+        context_label = "Context:" if has_context else "No relevant context was found for this question."
+    return f"""{intro}
+{chat_language_rules_v1(response_language)}
+{grounding}
+{profile_block}
+{context_label}
+{context}"""
+
+
+def chat_system_v4(response_language: str, profile_block: str, context: str) -> str:
+    """v4 lets the user's own program answer for itself.
+
+    v3 grounded every answer in the course material, so "what should I train today?" was
+    answered from general principles and the model invented a session. The program is not
+    something to reason about - it was generated and progressed deterministically, and
+    the block below states it. The course context stays for the why.
+
+
+    Carried over from v3: v2 asked the model to cite the source of every claim, so answers read
+    "...2.0-2.2 г/кг (източник: [Protein PTC 2022.pdf])". Which files the coach reads is
+    internal; a person asking how much protein to eat is owed the number, not the
+    library. The passages arrive unlabelled as well, so there is no name to repeat even
+    by accident - the answer is still grounded, it just stops narrating where it came
+    from.
+    """
+    bg = _is_bulgarian(response_language)
+    has_context = bool(context.strip())
+    if bg:
+        intro = "Ти си персонален AI фитнес треньор по методологията на Menno Henselmans."
+        grounding = (
+            "ОСНОВАВАНЕ: Отговаряй приоритетно спрямо КОНТЕКСТА по-долу. "
+            "НЕ споменавай източници, файлове, модули или номера на страници и НЕ пиши "
+            "препратки в скоби - потребителят иска отговора, не откъде идва. "
+            "ДАННИ ЗА ПОТРЕБИТЕЛЯ: всичко лично - програмата, днешната тренировка, изядените "
+            "калории и макроси, целите - ти е дадено в блоковете по-горе и НИКЪДЕ другаде. "
+            "Когато такъв блок е наличен, той е истината: изброявай числата и упражненията "
+            "точно както са написани. "
+            "Когато блокът ЛИПСВА, а въпросът иска такива данни, отговори че нямаш достъп до "
+            "тази информация в момента, и кажи къде в приложението се вижда. НЕ гадай, НЕ "
+            "изчислявай наум и НЕ измисляй упражнения, тежести, калории или записи - "
+            "приложението вече ги знае точно и разминаването е по-лошо от липсващ отговор. "
+            "Ако контекстът от курса НЕ покрива въпроса, кажи ясно, че нямаш конкретна информация по темата, "
+            "и обозначи общите съвети като такива. Не измисляй числа или проучвания."
+        )
+        context_label = (
+            "Контекст:" if has_context
+            else "Няма намерен релевантен контекст за този въпрос."
+        )
+    else:
+        intro = "You are a personal AI fitness coach trained on Menno Henselmans methodology."
+        grounding = (
+            "GROUNDING: Base your answer primarily on the CONTEXT below. "
+            "Do NOT mention sources, files, modules or page numbers, and do NOT add bracketed "
+            "references - the user wants the answer, not where it came from. "
+            "USER DATA: everything personal - the program, today's session, the calories and "
+            "macros eaten, the targets - reaches you in the blocks above and NOWHERE else. "
+            "When such a block is present it is the truth: read out its numbers and exercises "
+            "exactly as written. When the block is MISSING and the question asks for that data, "
+            "say you do not have access to it right now and point to where the app shows it. "
+            "Do NOT guess, do NOT calculate it yourself and do NOT invent exercises, weights, "
+            "calories or records - the app already knows them exactly, and disagreeing with it "
+            "is worse than not answering. "
+            "If the course context does NOT cover the question, say clearly that you have no specific "
             "information on it, and label any general advice as such. Never invent numbers or studies."
         )
         context_label = "Context:" if has_context else "No relevant context was found for this question."

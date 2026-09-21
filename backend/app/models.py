@@ -330,8 +330,12 @@ class AiInteraction(Base):
     user_id: Mapped[str] = mapped_column(UUID(as_uuid=False), ForeignKey("users.id"), index=True)
     # Which flow asked: chat | program | fatigue. Metrics are only useful broken down by it.
     surface: Mapped[str] = mapped_column(String(30), nullable=False)
-    # The answer this trace explains, when the flow stores one.
-    message_id: Mapped[str | None] = mapped_column(UUID(as_uuid=False), ForeignKey("chat_messages.id"))
+    # The answer this trace explains, when the flow stores one. Deleting the conversation
+    # takes its traces with it: the row holds the question verbatim, so keeping it would
+    # leave the conversation in a second table after the user was told it was erased.
+    message_id: Mapped[str | None] = mapped_column(
+        UUID(as_uuid=False), ForeignKey("chat_messages.id", ondelete="CASCADE")
+    )
 
     query: Mapped[str] = mapped_column(Text, nullable=False)
     # What retrieval actually searched on after the follow-up was resolved.

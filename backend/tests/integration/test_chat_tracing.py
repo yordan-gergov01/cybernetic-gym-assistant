@@ -14,7 +14,7 @@ from app.models import AiInteraction, ChatMessage
 from app.routes import chat as chat_route
 from app.services.rag_pipeline import Retrieval
 
-from .factories import make_user
+from .factories import make_profile, make_program, make_user
 from .test_routes import auth
 
 PASSAGE = RetrievedChunk(
@@ -100,3 +100,60 @@ async def test_a_question_is_stored_before_the_answer_to_it(client, db, monkeypa
     history = await client.get("/api/v1/chat/history", headers=auth(user))
     roles = [m["role"] for m in history.json()]
     assert roles == ["user", "assistant"]
+
+
+async def test_clearing_the_conversation_takes_its_traces_with_it(client, db, monkeypatch):
+    """The foreign key to chat_messages made the delete fail outright, and a trace keeps
+    the question verbatim - leaving it behind would contradict what the screen promises."""
+    user = await make_user(db)
+    _stub_retrieval(monkeypatch)
+    _stub_model(monkeypatch)
+    await client.post("/api/v1/chat", json={"content": "Колко протеин?"}, headers=auth(user))
+    assert (await db.execute(select(AiInteraction))).scalars().all(), "precondition: a trace exists"
+
+    cleared = await client.delete("/api/v1/chat/history", headers=auth(user))
+
+    assert cleared.status_code == 204
+    assert not (await db.execute(select(ChatMessage))).scalars().all()
+    assert not (await db.execute(select(AiInteraction))).scalars().all()
+
+
+async def test_a_failed_turn_leaves_nothing_behind_either(client, db, monkeypatch):
+    """Its trace has no message to be deleted along with, and it holds the question."""
+    user = await make_user(db)
+    _stub_retrieval(monkeypatch)
+    _stub_model(monkeypatch, fail=True)
+    with pytest.raises(RuntimeError):
+        await client.post("/api/v1/chat", json={"content": "Колко протеин?"}, headers=auth(user))
+
+    await client.delete("/api/v1/chat/history", headers=auth(user))
+
+    assert not (await db.execute(select(AiInteraction))).scalars().all()
+
+
+async def test_the_answer_is_given_the_session_the_program_prescribes(client, db, monkeypatch):
+    """Asked what to train, the coach used to answer from the course material and invent
+    a workout. The prescription has to reach the model as text it can only read out."""
+    user = await make_user(db)
+    await make_profile(db, user)
+    program = await make_program(db, user, [("Горна част Б", [("Overhead Press", "shoulders", 4, 5, 8)])])
+    _stub_retrieval(monkeypatch)
+
+    seen = {}
+
+    async def capture(**kwargs):
+        seen["system"] = kwargs["messages"][0]["content"]
+        return SimpleNamespace(
+            choices=[SimpleNamespace(message=SimpleNamespace(content="ok"))],
+            usage=SimpleNamespace(prompt_tokens=10, completion_tokens=5),
+        )
+
+    monkeypatch.setattr(chat_route.openai_client.chat.completions, "create", capture)
+
+    await client.post(
+        "/api/v1/chat", json={"content": "Какво тренирам днес?"}, headers=auth(user)
+    )
+
+    assert "Overhead Press" in seen["system"], "the prescribed exercise never reached the model"
+    assert "ДНЕШНАТА ТРЕНИРОВКА" in seen["system"]
+    assert program

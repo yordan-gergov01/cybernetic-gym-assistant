@@ -19,9 +19,12 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
         "v1": templates.chat_system_v1,
         "v2": templates.chat_system_v2,
         "v3": templates.chat_system_v3,
+        "v4": templates.chat_system_v4,
     },
     "chat_language_rules": {"v1": templates.chat_language_rules_v1},
     "chat_profile_block": {"v1": templates.chat_profile_block_v1},
+    "chat_today_block": {"v1": templates.chat_today_block_v1},
+    "chat_nutrition_block": {"v1": templates.chat_nutrition_block_v1},
     "rag_query_rewrite": {"v1": templates.rag_query_rewrite_v1, "v2": templates.rag_query_rewrite_v2},
     "bf_assessment": {"v1": templates.bf_assessment_v1},
     "program_generation": {"v1": templates.program_generation_v1},
@@ -33,7 +36,7 @@ _REGISTRY: dict[str, dict[str, Callable[..., str]]] = {
 
 # Which version is live per prompt.
 _ACTIVE_VERSIONS: dict[str, str] = {name: "v1" for name in _REGISTRY}
-_ACTIVE_VERSIONS["chat_system"] = "v3"  # cites the module the passage is labelled with
+_ACTIVE_VERSIONS["chat_system"] = "v4"  # today's session comes from the program, not the model
 _ACTIVE_VERSIONS["rag_query_rewrite"] = "v2"  # resolves follow-up questions against the chat history
 _ACTIVE_VERSIONS["program_week_template"] = "v3"  # split + frequency decided in code, not by the model
 

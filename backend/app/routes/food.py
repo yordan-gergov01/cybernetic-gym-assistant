@@ -12,9 +12,10 @@ from app.core.http import http_client
 from app.core.llm import openai_client
 from app.db.database import get_db
 from app.deps import get_current_user
-from app.models import FoodLog, NutritionTarget, User
+from app.models import FoodLog, User
 from app.prompts.registry import get_prompt
 from app.schemas import DailyNutritionSummary, FoodLogCreate
+from app.services.nutrition import daily_intake
 
 router = APIRouter(prefix="/food", tags=["food"])
 logger = logging.getLogger(__name__)
@@ -137,25 +138,14 @@ async def log_food(data: FoodLogCreate, user: User = Depends(get_current_user), 
 
 @router.get("/daily/{log_date}", response_model=DailyNutritionSummary)
 async def get_daily(log_date: date_type, user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
-    entries_r = await db.execute(select(FoodLog).where(FoodLog.user_id == user.id, FoodLog.date == log_date))
-    entries = entries_r.scalars().all()
-    totals = {k: round(sum(getattr(e, k) or 0 for e in entries), 1) for k in ["calories", "protein_g", "fat_g", "carbs_g"]}
-    nt_r = await db.execute(select(NutritionTarget).where(NutritionTarget.user_id == user.id))
-    nt = nt_r.scalar_one_or_none()
-    targets = (
-        {
-            "calories": nt.calories or 2000,
-            "protein_g": nt.protein_g or 150,
-            "fat_g": nt.fat_g or 60,
-            "carbs_g": nt.carbs_g or 200,
-        }
-        if nt
-        else {}
-    )
-    remaining = {k: round(targets.get(k, 0) - totals.get(k, 0), 1) for k in totals}
-    pct = {k: round(totals.get(k, 0) / targets.get(k, 1) * 100, 1) if targets.get(k) else 0 for k in totals}
+    intake = await daily_intake(db, user.id, log_date)
     return DailyNutritionSummary(
-        date=log_date, entries=entries, totals=totals, targets=targets, remaining=remaining, pct_complete=pct
+        date=log_date,
+        entries=intake.entries,
+        totals=intake.totals,
+        targets=intake.targets,
+        remaining=intake.remaining,
+        pct_complete=intake.pct_complete,
     )
 
 
