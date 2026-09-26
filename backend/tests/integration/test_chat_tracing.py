@@ -37,8 +37,10 @@ def _stub_retrieval(monkeypatch, resolved="protein intake for women per kg"):
     monkeypatch.setattr(chat_route, "retrieve", fake_retrieve)
 
 
-def _delta(text: str) -> SimpleNamespace:
-    return SimpleNamespace(usage=None, choices=[SimpleNamespace(delta=SimpleNamespace(content=text))])
+def _delta(text: str, finish_reason: str | None = None) -> SimpleNamespace:
+    return SimpleNamespace(usage=None, choices=[
+        SimpleNamespace(delta=SimpleNamespace(content=text), finish_reason=finish_reason)
+    ])
 
 
 def _usage(prompt_tokens=1200, completion_tokens=180) -> SimpleNamespace:
@@ -49,11 +51,12 @@ def _usage(prompt_tokens=1200, completion_tokens=180) -> SimpleNamespace:
     )
 
 
-def _stub_model(monkeypatch, pieces=("2.0-2.2 ", "г на кг."), fail_after=None):
+def _stub_model(monkeypatch, pieces=("2.0-2.2 ", "г на кг."), fail_after=None, finish_reason="stop"):
     """Replace the model with a stream of `pieces`.
 
     `fail_after` breaks the stream once that many pieces have been sent, which is the
     case that decides whether a half-finished answer can reach the history.
+    `finish_reason` is how the model says it stopped: "length" means the token cap cut it.
     """
 
     async def fake_create(**kwargs):
@@ -64,11 +67,12 @@ def _stub_model(monkeypatch, pieces=("2.0-2.2 ", "г на кг."), fail_after=No
                 yield _delta(piece)
             if fail_after is not None:
                 raise RuntimeError("upstream model timeout")
+            yield _delta("", finish_reason=finish_reason)
             yield _usage()
 
         return stream()
 
-    monkeypatch.setattr(chat_route.openai_client.chat.completions, "create", fake_create)
+    monkeypatch.setattr(chat_route.chat_client.chat.completions, "create", fake_create)
 
 
 def _events(response) -> list[tuple[str, dict]]:
@@ -173,6 +177,24 @@ async def test_an_answer_cut_off_midway_is_not_kept(client, db, monkeypatch):
     assert not (await db.execute(select(ChatMessage))).scalars().all()
 
 
+async def test_an_answer_cut_off_by_the_token_cap_is_not_kept(client, db, monkeypatch):
+    """The stream ended cleanly, but because the cap was reached, not because the answer
+    was finished. Kept, it would read as a complete answer that simply stops."""
+    user = await make_user(db)
+    _stub_retrieval(monkeypatch)
+    _stub_model(monkeypatch, pieces=("Програмата за начинаещ е ", "3 дни: ден 1 - "),
+                finish_reason="length")
+
+    events = await _ask(client, user)
+
+    assert _text(events), "precondition: the start of the answer was streamed"
+    assert events[-1] == ("error", {"detail": chat_route.ANSWER_TOO_LONG})
+    assert not (await db.execute(select(ChatMessage))).scalars().all()
+    trace = (await db.execute(select(AiInteraction))).scalar_one()
+    assert "max_tokens" in trace.error and trace.message_id is None
+    assert trace.output_tokens == 180, "a cut-off answer still cost its tokens"
+
+
 async def test_an_empty_answer_is_a_failure_not_a_message(client, db, monkeypatch):
     """A call that succeeds and says nothing would otherwise leave a blank coach bubble
     that cannot be told apart from a lost one."""
@@ -249,7 +271,7 @@ async def test_the_answer_is_given_the_session_the_program_prescribes(client, db
 
         return stream()
 
-    monkeypatch.setattr(chat_route.openai_client.chat.completions, "create", capture)
+    monkeypatch.setattr(chat_route.chat_client.chat.completions, "create", capture)
 
     await _ask(client, user, "Какво тренирам днес?")
 

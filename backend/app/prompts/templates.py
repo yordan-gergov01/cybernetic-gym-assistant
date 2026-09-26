@@ -90,6 +90,37 @@ def chat_system_v2(response_language: str, profile_block: str, context: str) -> 
 {context}"""
 
 
+def chat_system_v5(response_language: str, profile_block: str, context: str) -> str:
+    """v5 is v4 with a length rule, for a model that writes long.
+
+    Moving generation to Qwen made the median answer four times longer - 1600 characters
+    against 411 - and a tenth of them ran past the token cap mid-sentence. The app is read
+    on a phone between sets, where the answer has to fit the moment: the direct answer
+    first, then the one reason that matters. Everything v4 says still holds; this only
+    adds how much of it to say.
+    """
+    rules = chat_language_rules_v1(response_language)
+    if _is_bulgarian(response_language):
+        length = (
+            "ДЪЛЖИНА: Потребителят чете от телефон, често между сериите. Отговаряй кратко - "
+            "обикновено до 150 думи. Започни с прекия отговор, после най-важното обяснение. "
+            "Без въведение, без преповтаряне на въпроса и без обобщение накрая. По-дълго само "
+            "ако потребителят изрично поиска подробен план или разяснение."
+        )
+    else:
+        length = (
+            "LENGTH: The user reads on a phone, often between sets. Keep it short - usually "
+            "under 150 words. Lead with the direct answer, then the one explanation that "
+            "matters. No preamble, no restating the question, no closing summary. Go longer "
+            "only when the user explicitly asks for a detailed plan or explanation."
+        )
+    # The rules line is built by the same helper v4 uses, so it is always there to anchor
+    # on; the length rule sits beside the other rules instead of after the passages.
+    return chat_system_v4(response_language, profile_block, context).replace(
+        rules, f"{rules}\n{length}", 1
+    )
+
+
 def chat_today_block_v1(
     *,
     day_name: str | None,

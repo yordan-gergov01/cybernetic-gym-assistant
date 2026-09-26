@@ -9,7 +9,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
 from app.core.http import http_client
-from app.core.llm import openai_client
+from app.core.llm import chat_client
 from app.db.database import get_db
 from app.deps import get_current_user
 from app.models import FoodLog, User
@@ -31,7 +31,7 @@ class FoodItem(BaseModel):
 
 async def extract_food_items(text: str) -> list[FoodItem]:
     prompt = get_prompt("food_extraction")(text)
-    r = await openai_client.chat.completions.create(
+    r = await chat_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"},
@@ -89,7 +89,7 @@ async def lookup_llm(item: FoodItem) -> dict:
         quantity_g=item.quantity_g,
         food_name_bg=item.food_name_bg,
     )
-    r = await openai_client.chat.completions.create(
+    r = await chat_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"},

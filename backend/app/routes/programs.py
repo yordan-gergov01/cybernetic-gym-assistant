@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.orm import selectinload
 
 from app.core.config import settings
-from app.core.llm import openai_client
+from app.core.llm import chat_client
 from app.db.database import get_db
 from app.deps import get_current_user
 from app.domain import exercise_library
@@ -191,7 +191,7 @@ async def generate_ai_program(data: ProgramGenerateRequest, user: User = Depends
             context=context,
             retry_feedback=feedback,
         )
-        response = await openai_client.chat.completions.create(
+        response = await chat_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=[{"role": "user", "content": prompt}],
             response_format={"type": "json_object"},
@@ -670,7 +670,7 @@ async def _explain_fatigue_bg(decision, answers: dict) -> str:
             answers=answers,
             context=context,
         )
-        resp = await openai_client.chat.completions.create(
+        resp = await chat_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.3,

@@ -29,7 +29,7 @@ from pathlib import Path
 import numpy as np
 
 from app.core.config import settings
-from app.core.llm import openai_client
+from app.core.llm import chat_client
 from app.prompts.registry import active_version, get_prompt
 from app.services.rag_pipeline import retrieve
 
@@ -39,7 +39,7 @@ RESULTS_DIR = EVAL_DIR / "results"
 
 
 async def _judge(prompt: str, max_tokens: int = 500) -> dict:
-    resp = await openai_client.chat.completions.create(
+    resp = await chat_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[{"role": "user", "content": prompt}],
         response_format={"type": "json_object"},
@@ -58,7 +58,7 @@ async def generate_answer(question: str, chunks) -> str:
     """
     context = "\n\n".join(f"[Източник: {c.source}]\n{c.text}" for c in chunks)
     system = get_prompt("chat_system")(settings.RESPONSE_LANGUAGE, "", context)
-    resp = await openai_client.chat.completions.create(
+    resp = await chat_client.chat.completions.create(
         model=settings.PRIMARY_MODEL,
         messages=[
             {"role": "system", "content": system},

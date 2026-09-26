@@ -31,6 +31,13 @@ class Settings(BaseSettings):
     TEST_DATABASE_URL: str = ""
 
     OPENAI_API_KEY: str
+    # Generation runs on Groq's free tier, through its OpenAI-compatible API.
+    GROQ_API_KEY: str
+    GROQ_BASE_URL: str = "https://api.groq.com/openai/v1"
+    # The free tier allows 8K tokens a minute per model, and a program generation alone
+    # is ~6K. The client waits out a 429 using the retry-after Groq sends, so a burst
+    # costs seconds instead of failing the request.
+    LLM_MAX_RETRIES: int = 4
     GEMINI_API_KEY: str = ""
 
     USDA_API_KEY: str = "DEMO_KEY"
@@ -45,7 +52,11 @@ class Settings(BaseSettings):
     R2_SECRET_ACCESS_KEY: str = ""
     R2_BUCKET: str = ""
 
-    PRIMARY_MODEL: str = "gpt-4o-mini"
+    # Measured on the 30 golden questions against gpt-4o-mini, same passages, paired:
+    # significantly better Bulgarian, faithfulness no worse, and it accepts the call
+    # shapes the app already uses (temperature, max_tokens, json_object) with no
+    # reasoning tokens eating the budget of a short call like the 40-token rewrite.
+    PRIMARY_MODEL: str = "qwen/qwen3.8-27b"
     EMBEDDING_MODEL: str = "text-embedding-3-large"
     GEMINI_VISION_MODEL: str = "gemini-3.6-flash"
 

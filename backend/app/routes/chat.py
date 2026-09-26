@@ -10,7 +10,7 @@ from sqlalchemy import case, delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.core.config import settings
-from app.core.llm import openai_client
+from app.core.llm import chat_client
 from app.db.database import get_db
 from app.deps import get_current_user
 from app.models import AiInteraction, ChatMessage, User, UserProfile
@@ -34,10 +34,17 @@ _QUESTION_FIRST = case((ChatMessage.role == "user", 0), else_=1)
 # Warm enough for coaching language, cool enough to keep the numbers it is given.
 CHAT_TEMPERATURE = 0.4
 
+# Groq's free tier refuses any request asking for more than 1000 output tokens from
+# this model - a hard 429, not one that waiting clears. A tenth of Qwen's answers on the
+# golden questions ran past that under chat_system v4; v5's length rule is what keeps
+# them inside it, and an answer that still reaches the cap is refused, not stored.
+CHAT_MAX_TOKENS = 1000
+
 # Shown instead of the answer when generation breaks. The stream is already open by
 # then, so there is no status code left to carry a message - the client only ever sees
 # this sentence.
 GENERATION_FAILED = "Треньорът не успя да отговори. Опитай пак след малко."
+ANSWER_TOO_LONG = "Отговорът стана твърде дълъг и прекъсна. Опитай да зададеш по-конкретен въпрос."
 
 
 @router.post("", response_class=EventSourceResponse)
@@ -144,15 +151,16 @@ async def chat(
 
     generation_started = perf_counter()
     pieces: list[str] = []
+    finish_reason = None
     # A streamed response carries no usage by default, and the trace is worth little
     # without it: cost per answer is the number that decides whether a model stays.
     usage = None
     try:
-        stream = await openai_client.chat.completions.create(
+        stream = await chat_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=messages,
             temperature=CHAT_TEMPERATURE,
-            max_tokens=1000,
+            max_tokens=CHAT_MAX_TOKENS,
             stream=True,
             stream_options={"include_usage": True},
         )
@@ -163,6 +171,7 @@ async def chat(
                 usage = chunk.usage
             if not chunk.choices:
                 continue
+            finish_reason = chunk.choices[0].finish_reason or finish_reason
             piece = chunk.choices[0].delta.content
             if piece:
                 pieces.append(piece)
@@ -176,6 +185,19 @@ async def chat(
         return
     generation_ms = ms_since(generation_started)
     answer = "".join(pieces)
+
+    if finish_reason == "length":
+        # Stopped by the token cap mid-thought. It was on screen as it arrived, but it is
+        # not kept: the history would show it as a finished answer with nothing to say
+        # where it broke off - the same reason a stream cut by the network is not kept.
+        await record_interaction(db, trace(
+            error=f"the answer was cut off at max_tokens={CHAT_MAX_TOKENS}",
+            generation_ms=generation_ms,
+            input_tokens=getattr(usage, "prompt_tokens", None),
+            output_tokens=getattr(usage, "completion_tokens", None),
+        ))
+        yield ServerSentEvent(event="error", data={"detail": ANSWER_TOO_LONG})
+        return
 
     if not answer.strip():
         # The call succeeded and said nothing. Storing that as an answer would leave an

@@ -11,7 +11,7 @@ from __future__ import annotations
 import logging
 
 from app.core.config import settings
-from app.core.llm import openai_client
+from app.core.llm import chat_client
 from app.prompts.registry import get_prompt
 
 logger = logging.getLogger(__name__)
@@ -41,7 +41,7 @@ async def rewrite_query(question: str, history: list[dict] | None = None) -> str
         return None
     try:
         prompt = get_prompt("rag_query_rewrite")(question, format_history(history))
-        resp = await openai_client.chat.completions.create(
+        resp = await chat_client.chat.completions.create(
             model=settings.PRIMARY_MODEL,
             messages=[{"role": "user", "content": prompt}],
             temperature=0.0,

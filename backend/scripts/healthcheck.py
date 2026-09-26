@@ -77,7 +77,7 @@ def check_storage() -> bool:
 
 
 def check_config() -> bool:
-    missing = [k for k in ("OPENAI_API_KEY", "DATABASE_URL", "SECRET_KEY") if not getattr(settings, k, None)]
+    missing = [k for k in ("OPENAI_API_KEY", "GROQ_API_KEY", "DATABASE_URL", "SECRET_KEY") if not getattr(settings, k, None)]
     if missing:
         _line(FAIL, "config", f"missing: {', '.join(missing)}")
         return False
